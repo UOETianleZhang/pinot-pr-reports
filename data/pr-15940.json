@@ -1,0 +1,37 @@
+{
+  "number": 15937,
+  "title": "Add support for custom query timeout configuration",
+  "html_url": "https://github.com/apache/pinot/pull/15940",
+  "merged_at": "2025-05-28T14:05:12Z",
+  "files": [
+    "<li>pinot-common/src/main/java/org/apache/pinot/common/config/QueryConfig.java</li>",
+    "<li>pinot-config/src/main/resources/pinot-defaults.yaml</li>",
+    "<li>pinot-broker/src/main/java/org/apache/pinot/broker/BrokerRequestHandler.java</li>"
+  ],
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.config.QueryConfig",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getDefaultTimeout()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) long getCustomTimeout(),"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.broker.BrokerRequestHandler",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getDefaultTimeout()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) long setTimeout(java.time.Duration)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    }
+  ]
+}

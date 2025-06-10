@@ -1,0 +1,67 @@
+{
+  "number": 15944,
+  "title": "GET /logicalTables API to return database specific tables.",
+  "html_url": "https://github.com/apache/pinot/pull/15944",
+  "merged_at": "2025-05-30T14:37:39Z",
+  "files": [
+    "<li>pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResource.java</li>",
+    "<li>pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java</li>",
+    "<li>pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResourceTest.java</li>"
+  ],
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.auth.broker.RequesterIdentity",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getClientIp()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.DefaultRequestContext",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getOfflineResponseSerMemAllocatedBytes()",
+        "PUBLIC(+) long getOfflineThreadMemAllocatedBytes()",
+        "PUBLIC(+) long getOfflineTotalMemAllocatedBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.RequestContext",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) long getOfflineResponseSerMemAllocatedBytes()",
+        "PUBLIC(+) ABSTRACT(+) long getOfflineThreadMemAllocatedBytes()",
+        "PUBLIC(+) ABSTRACT(+) long getOfflineTotalMemAllocatedBytes()",
+        "PUBLIC(+) ABSTRACT(+) long getRealtimeResponseSerMemAllocatedBytes()",
+        "PUBLIC(+) ABSTRACT(+) long getRealtimeThreadMemAllocatedBytes()",
+        "PUBLIC(+) ABSTRACT(+) long getRealtimeTotalMemAllocatedBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void setOfflineResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(+) ABSTRACT(+) void setOfflineThreadMemAllocatedBytes(long)",
+        "PUBLIC(+) ABSTRACT(+) void setOfflineTotalMemAllocatedBytes(long)",
+        "PUBLIC(+) ABSTRACT(+) void setRealtimeResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(+) ABSTRACT(+) void setRealtimeThreadMemAllocatedBytes(long)",
+        "PUBLIC(+) ABSTRACT(+) void setRealtimeTotalMemAllocatedBytes(long)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ACCURATE_GROUP_BY_WITHOUT_ORDER_BY"
+      ]
+    }
+  ]
+}
