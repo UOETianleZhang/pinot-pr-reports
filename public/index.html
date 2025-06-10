@@ -14,6 +14,16 @@
     <!-- Date range filters -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-center mb-8 space-y-4 sm:space-y-0 sm:space-x-4">
       <div class="flex items-center space-x-2">
+        <label for="preset" class="font-medium">Quick select:</label>
+        <select id="preset"
+                class="border border-gray-300 rounded px-2 py-1 bg-white">
+          <option value="">– custom –</option>
+          <option value="24h">Last 24 hours</option>
+          <option value="7d">Last Week</option>
+          <option value="30d">Last Month</option>
+        </select>
+      </div>
+      <div class="flex items-center space-x-2">
         <label for="since" class="font-medium">Since:</label>
         <input type="date" id="since" class="border border-gray-300 rounded px-2 py-1" />
       </div>
@@ -30,42 +40,75 @@
   <script>
     // Use a relative path so fetching works when serving from project root
     const DATA_URL = './data';
+    const presetEl = document.getElementById('preset');
+    const sinceEl = document.getElementById('since');
+    const untilEl = document.getElementById('until');
+    const loadBtn = document.getElementById('loadBtn');
 
-    function isoDateOffset(days) {
-      const d = new Date(); d.setDate(d.getDate() - days);
+    function formatYMD(d) {
       return d.toISOString().slice(0,10);
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const sinceInput = document.getElementById('since'),
-            untilInput = document.getElementById('until'),
-            loadBtn    = document.getElementById('loadBtn');
+    function applyPreset(preset) {
+      if (!preset) {
+        sinceEl.disabled = false;
+        untilEl.disabled = false;
+        return;
+      }
 
-      untilInput.value = new Date().toISOString().slice(0,10);
-      sinceInput.value = isoDateOffset(7);
+      const now = new Date();
+      let since;
+
+      if (preset.endsWith('h')) {
+        const hrs = parseInt(preset, 10);
+        since = new Date(now.getTime() - hrs * 3600_000);
+      }
+      else if (preset.endsWith('d')) {
+        const days = parseInt(preset, 10);
+        since = new Date(now);
+        since.setDate(now.getDate() - days);
+      }
+      else {
+        console.warn('Unknown preset:', preset);
+        return applyPreset('');
+      }
+
+      sinceEl.value = formatYMD(since);
+      untilEl.value = formatYMD(now);
+
+      sinceEl.disabled = true;
+      untilEl.disabled = true;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      presetEl.value = '';
+      applyPreset('');
+
+      presetEl.addEventListener('change', e => applyPreset(e.target.value));
 
       loadBtn.addEventListener('click', () => {
         loadBtn.disabled   = true;
         loadBtn.textContent = 'Loading...';
-        loadReport(sinceInput.value, untilInput.value)
-          .finally(() => {
-            loadBtn.disabled   = false;
-            loadBtn.textContent = 'Load';
-          });
+
+        loadReport(sinceEl.value, untilEl.value)
+            .finally(() => {
+              loadBtn.disabled   = false;
+              loadBtn.textContent = 'Load';
+            });
       });
 
       loadBtn.click();
     });
 
+    function inRange(dateStr, since, until) {
+      const d = new Date(dateStr), s = new Date(since), u = new Date(until);
+      return d >= s && d <= u;
+    }
+
     async function fetchJSON(url) {
       const res = await fetch(url, { headers:{ 'Accept':'application/json' } });
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
       return res.json();
-    }
-
-    function inRange(dateStr, since, until) {
-      const d = new Date(dateStr), s = new Date(since), u = new Date(until);
-      return d >= s && d <= u;
     }
 
     async function loadReport(since, until) {
