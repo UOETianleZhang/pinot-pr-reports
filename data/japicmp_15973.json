@@ -1,0 +1,166 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeTableDataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/BaseTableDedupMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/TableDedupMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/TableDedupMetadataManagerFactory.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/upsert/BaseTableUpsertMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/upsert/TableUpsertMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/upsert/TableUpsertMetadataManagerFactory.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/BaseSegmentOperationsThrottler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/SegmentAllIndexPreprocessThrottler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/SegmentDownloadThrottler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/SegmentStarTreePreprocessThrottler.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/dedup/TableDedupMetadataManagerFactoryTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentDedupTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplUpsertComparisonColTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplUpsertTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/upsert/TableUpsertMetadataManagerFactoryTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-10T17:50:36Z",
+  "number": 15973,
+  "title": "Make SegmentOperationsThrottler more extensible and modify interfaces for upsert and dedup to take this as an argument",
+  "url": "https://github.com/apache/pinot/pull/15973",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.dedup.BaseTableDedupMetadataManager",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) org.apache.pinot.segment.local.utils.SegmentOperationsThrottler _segmentOperationsThrottler"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.dedup.TableDedupMetadataManager",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.dedup.TableDedupMetadataManagerFactory",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.dedup.TableDedupMetadataManager create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.dedup.TableDedupMetadataManager create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.upsert.BaseTableUpsertMetadataManager",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) org.apache.pinot.segment.local.utils.SegmentOperationsThrottler _segmentOperationsThrottler"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.upsert.TableUpsertMetadataManager",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.upsert.TableUpsertMetadataManagerFactory",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.upsert.TableUpsertMetadataManager create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.upsert.TableUpsertMetadataManager create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.data.manager.TableDataManager, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.BaseSegmentOperationsThrottler",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getQueueLength()",
+        "PUBLIC(+) ABSTRACT(+) void updateCountMetric(int)",
+        "PUBLIC(+) ABSTRACT(+) void updateThresholdMetric(int)"
+      ],
+      "removedFields": [
+        "PROTECTED(-) org.apache.pinot.common.metrics.ServerGauge _thresholdGauge",
+        "PROTECTED(-) org.apache.pinot.common.metrics.ServerGauge _countGauge"
+      ],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.SegmentAllIndexPreprocessThrottler",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void updateCountMetric(int)",
+        "PUBLIC(+) void updateThresholdMetric(int)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.SegmentDownloadThrottler",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) int getQueueLength()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void updateCountMetric(int)",
+        "PUBLIC(+) void updateThresholdMetric(int)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.SegmentStarTreePreprocessThrottler",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void updateCountMetric(int)",
+        "PUBLIC(+) void updateThresholdMetric(int)"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.BaseServerStarter",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.segment.local.utils.SegmentAllIndexPreprocessThrottler createSegmentAllIndexPreprocessThrottler()",
+        "PROTECTED(+) org.apache.pinot.segment.local.utils.SegmentDownloadThrottler createSegmentDownloadThrottler()",
+        "PROTECTED(+) org.apache.pinot.segment.local.utils.SegmentStarTreePreprocessThrottler createSegmentStarTreePreprocessThrottler()"
+      ],
+      "removedFields": [],
+      "addedFields": []
+    }
+  ]
+}
