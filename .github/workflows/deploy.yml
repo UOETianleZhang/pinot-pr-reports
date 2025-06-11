@@ -3,6 +3,11 @@ name: Build & Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+  workflow_dispatch: []
+
+permissions:
+  pages: write
+  contents: read
 
 jobs:
   build-and-deploy:
@@ -18,5 +23,11 @@ jobs:
         run: npm ci
       - name: Generate manifest.json
         run: npm run build
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./data
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        uses: actions/deploy-pages@v1
