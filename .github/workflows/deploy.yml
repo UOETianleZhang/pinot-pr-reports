@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - update-index-html
-  workflow_dispatch: []
+  workflow_dispatch:
 
 permissions:
   pages: write
