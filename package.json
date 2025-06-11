@@ -1,0 +1,23 @@
+{
+  "name": "pinot-pr-reports",
+  "version": "1.0.0",
+  "description": "A website which pulls Pinot PR information and provides PR reports as a website",
+  "scripts": {
+    "build": "node scripts/generate-manifest.js",
+    "dev":    "npm run build && serve .",
+    "deploy":       "gh-pages -d . "
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UOETianleZhang/pinot-pr-reports.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

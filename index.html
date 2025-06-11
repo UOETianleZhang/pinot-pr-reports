@@ -39,7 +39,7 @@
 
   <script>
     // Use a relative path so fetching works when serving from project root
-    const DATA_URL = './data';
+    const MANIFEST_URL = './data/manifest.json';
     const presetEl = document.getElementById('preset');
     const sinceEl = document.getElementById('since');
     const untilEl = document.getElementById('until');
@@ -115,20 +115,29 @@
       const content = document.getElementById('content');
       content.innerHTML = '';
 
-      let fileList;
+      let manifest;
       try {
-        fileList = await fetchJSON('/list-files');
+        manifest = await fetchJSON(MANIFEST_URL);
       } catch (e) {
         content.innerHTML = `<p class="text-red-600">Error loading json file list: ${e.message}</p>`;
         return;
       }
-      console.log("fileList: " + fileList);
+      console.log("manifest: " + manifest);
+
+      const fileList = Array.isArray(manifest)
+          ? manifest
+          : manifest.files;
+      if (!fileList || !fileList.length) {
+        content.innerHTML = '<p class="text-red-600">No JSON files listed in the manifest.</p>';
+        return;
+      }
 
       let prs;
       try {
-        const fetches = fileList.map(fn => {
-          console.log("fetching ", fn);
-          return fetchJSON(`./data/${fn}`)
+        const fetches = fileList.map(name => {
+          const url = `./data/${name}`;
+          console.log("fetching ", url);
+          return fetchJSON(url)
         });
         console.log("fetches: ", fetches);
         prs = await Promise.all(fetches);
