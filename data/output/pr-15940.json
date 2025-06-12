@@ -1,16 +1,17 @@
 {
-  "number": 15937,
-  "title": "Add support for custom query timeout configuration",
-  "html_url": "https://github.com/apache/pinot/pull/15940",
-  "merged_at": "2025-05-28T14:05:12Z",
   "files": [
     "<li>pinot-common/src/main/java/org/apache/pinot/common/config/QueryConfig.java</li>",
     "<li>pinot-config/src/main/resources/pinot-defaults.yaml</li>",
     "<li>pinot-broker/src/main/java/org/apache/pinot/broker/BrokerRequestHandler.java</li>"
   ],
+  "mergedAt": "2025-05-28T14:05:12Z",
+  "number": 15937,
+  "title": "Add support for custom query timeout configuration",
+  "url": "https://github.com/apache/pinot/pull/15940",
   "jcmpClasses": [
     {
       "className": "org.apache.pinot.common.config.QueryConfig",
+      "type": "modification",
       "compatible": false,
       "removedMethods": [
         "PUBLIC(-) long getDefaultTimeout()"
@@ -19,7 +20,9 @@
         "PUBLIC(+) long getCustomTimeout(),"
       ],
       "removedFields": [],
-      "addedFields": []
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.broker.BrokerRequestHandler",
@@ -31,7 +34,9 @@
         "PUBLIC(+) long setTimeout(java.time.Duration)"
       ],
       "removedFields": [],
-      "addedFields": []
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
     }
   ]
 }

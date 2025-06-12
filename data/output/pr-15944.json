@@ -1,26 +1,30 @@
 {
-  "number": 15944,
-  "title": "GET /logicalTables API to return database specific tables.",
-  "html_url": "https://github.com/apache/pinot/pull/15944",
-  "merged_at": "2025-05-30T14:37:39Z",
   "files": [
     "<li>pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResource.java</li>",
     "<li>pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java</li>",
     "<li>pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResourceTest.java</li>"
   ],
+  "mergedAt": "2025-05-30T14:37:39Z",
+  "number": 15944,
+  "title": "GET /logicalTables API to return database specific tables.",
+  "url": "https://github.com/apache/pinot/pull/15944",
   "jcmpClasses": [
     {
       "className": "org.apache.pinot.spi.auth.broker.RequesterIdentity",
+      "type": "modification",
       "compatible": false,
       "removedMethods": [
         "PUBLIC(-) java.lang.String getClientIp()"
       ],
       "addedMethods": [],
       "removedFields": [],
-      "addedFields": []
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.trace.DefaultRequestContext",
+      "type": "modification",
       "compatible": true,
       "removedMethods": [],
       "addedMethods": [
@@ -29,10 +33,13 @@
         "PUBLIC(+) long getOfflineTotalMemAllocatedBytes()"
       ],
       "removedFields": [],
-      "addedFields": []
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.trace.RequestContext",
+      "type": "modification",
       "compatible": true,
       "removedMethods": [],
       "addedMethods": [
@@ -44,10 +51,13 @@
         "PUBLIC(+) ABSTRACT(+) long getRealtimeTotalMemAllocatedBytes()"
       ],
       "removedFields": [],
-      "addedFields": []
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
       "compatible": true,
       "removedMethods": [],
       "addedMethods": [
@@ -61,7 +71,9 @@
       "removedFields": [],
       "addedFields": [
         "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ACCURATE_GROUP_BY_WITHOUT_ORDER_BY"
-      ]
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
     }
   ]
 }

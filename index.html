@@ -39,7 +39,7 @@
 
   <script>
     // Use a relative path so fetching works when serving from project root
-    const MANIFEST_URL = './data/manifest.json';
+    const MANIFEST_URL = './data/output/manifest.json';
     const presetEl = document.getElementById('preset');
     const sinceEl = document.getElementById('since');
     const untilEl = document.getElementById('until');
@@ -135,7 +135,7 @@
       let prs;
       try {
         const fetches = fileList.map(name => {
-          const url = `./data/${name}`;
+          const url = `./data/output/${name}`;
           console.log("fetching ", url);
           return fetchJSON(url)
         });
@@ -147,7 +147,7 @@
         return;
       }
 
-      const filtered = prs.filter(pr => inRange(pr.merged_at.slice(0, 10), since, until));
+      const filtered = prs.filter(pr => inRange(pr.mergedAt.slice(0, 10), since, until));
       if (!prs.length) {
         content.innerHTML = `<p class="text-center text-gray-600">No PRs merged between ${since} and ${until}.</p>`;
         return;
@@ -163,9 +163,9 @@
         title.className = 'flex items-baseline justify-between';
         title.innerHTML =
           `<h2 class="text-2xl font-semibold">
-             <a href="${pr.html_url}" target="_blank" class="text-blue-600 hover:underline">#${pr.number} ${pr.title}</a>
+             <a href="${pr.url}" target="_blank" class="text-blue-600 hover:underline">#${pr.number} ${pr.title}</a>
            </h2>
-           <span class="text-sm text-gray-500">merged: ${new Date(pr.merged_at).toLocaleString()}</span>`;
+           <span class="text-sm text-gray-500">merged: ${new Date(pr.mergedAt).toLocaleString()}</span>`;
         card.appendChild(title);
 
         // Changed files
@@ -196,29 +196,31 @@
           clsDiv.appendChild(status);
 
           // backward-incompatible (removed methods & fields)
-          if (cls.removedMethods.length || cls.removedFields.length) {
+          if (!cls.compatible) {
             card.classList.add('border-red-400');
             clsDiv.innerHTML +=
               `<p class="text-red-600 font-semibold">⚠️ Backward-incompatible changes:</p>
               <ul class="bg-red-50 p-2 rounded mt-1 overflow-auto text-black">
                 ${cls.removedMethods.map(m => `<li>${m}</li>`).join('')}
                 ${cls.removedFields.map(f => `<li>${f}</li>`).join('')}
+                ${cls.removedConstructors.map(c => `<li>${c}</li>`).join('')}
               </ul>`;
           }
 
           // additions (added methods & fields)
-          if (cls.addedMethods.length || cls.addedFields.length) {
+          if (cls.compatible) {
             clsDiv.innerHTML +=
               `<p class="text-green-600 font-semibold mt-2">✔️ Additions:</p>
               <ul class="bg-green-50 p-2 rounded mt-1 overflow-auto text-black">
                 ${cls.addedMethods.map(m => `<li>${m}</li>`).join('')}
                 ${cls.addedFields.map(f => `<li>${f}</li>`).join('')}
+                ${cls.addedConstructors.map(c => `<li>${c}</li>`).join('')}
               </ul>`;
           }
 
           // no API diffs
-          if ((!cls.removedMethods.length && !cls.removedFields.length) &&
-              (!cls.addedMethods.length && !cls.addedFields.length)) {
+          if ((!cls.removedMethods.length && !cls.removedFields.length && !cls.removedConstructors.length) &&
+              (!cls.addedMethods.length && !cls.addedFields.length && !cls.addedConstructors.length)) {
             clsDiv.innerHTML += `<p class="text-gray-500 mt-1">No API-surface changes detected.</p>`;
           }
           apiSection.appendChild(clsDiv);
