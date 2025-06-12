@@ -172,12 +172,14 @@
         const changedSection = document.createElement('div');
         changedSection.className = 'mt-4';
         changedSection.innerHTML = `<h3 class="font-medium">Changed files:</h3>
-          <ul class="list-disc ml-5 mt-1">${pr.files.join('')}</ul>`;
+          <ul class="list-disc ml-5 mt-1">
+            ${pr.files.map(file => `<li>${file}</li>`).join('')}
+          </ul>`;
         card.appendChild(changedSection);
 
         const apiSection = document.createElement('div');
         apiSection.className = 'mt-4';
-        apiSection.innerHTML = '<h3 class="font-medium">API Changes:</h3>';
+        apiSection.innerHTML = '<h3 class="font-medium">Class Changes:</h3>';
 
         for (const cls of pr.jcmpClasses || []) {
           console.log("cls: ", cls);
