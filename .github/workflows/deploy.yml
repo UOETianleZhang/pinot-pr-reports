@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - update-index-html
   workflow_dispatch: {}
 
 permissions:
