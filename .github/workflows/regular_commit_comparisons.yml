@@ -1,0 +1,29 @@
+name: Regular PR Change Collection
+
+on:
+  schedule:
+    - cron: "*/30 * * * *" #every 30 minutes
+
+jobs:
+  commit-compare:
+    runs-on: ubuntu-latest
+    name: Commit Comparer
+    steps:
+      - name: Get current date
+        id: datetime
+        run: echo "current_datetime_minus_30m=$(date -u -v-30M +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      #      - name: Install dependencies
+      #        run: npm ci
+      #      - name: Generate manifest.json
+      #        run: npm run build
+      - name: Run report+json generator process
+        run: |
+          scripts/.pinot_realtime_commit_compare.sh "$current_datetime_minus_30m"
+        env:
+          GH_TOKEN: ${{ secrets.COMMIT_CHANGE_REPORT }}
