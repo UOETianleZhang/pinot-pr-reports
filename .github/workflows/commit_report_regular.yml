@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Commit Comparer
     steps:
-      - name: Get current date
+      - name: Get current date minus 1 hour
         id: datetime
         run: echo "current_datetime_minus_1h=$(date -u --date="1 hour ago" +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
       - name: Check out code
