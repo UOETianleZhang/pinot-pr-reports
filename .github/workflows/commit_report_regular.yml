@@ -24,7 +24,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Run report+json generator process
         run: |
-          .scripts/.pinot_regular_commit_compare.sh "$current_datetime_minus_1h"
+          scripts/.pinot_regular_commit_compare.sh "$current_datetime_minus_1h"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit and push changes
