@@ -1,0 +1,42 @@
+name: Backfill Commit Comparison Generator
+
+on:
+  workflow_dispatch:
+    inputs:
+      startDate:
+        description: "Start datetime for commit range. (UTC; ISO 8601; required)"
+        required: true
+      endDate:
+        description: "End datetime for commit range. (UTC; ISO 8601; required)"
+        required: true
+
+jobs:
+  commit-compare:
+    runs-on: ubuntu-latest
+    name: Commit Comparer
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Configure Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Run report+json generator process
+        run: |
+          .scripts/.pinot_backfill_commit_compare.sh ${{ github.event.inputs.startDate }} ${{ github.event.inputs.endDate }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit and push changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git pull
+            git add .
+            git commit -m "Add commit reports"
+            git push
+          else
+            echo "Reports already exist for all commits in provided range."
+          fi

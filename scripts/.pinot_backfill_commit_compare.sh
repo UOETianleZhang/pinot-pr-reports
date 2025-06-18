@@ -1,19 +1,21 @@
 #!/bin/bash
 
-# get count of commits from last hour. if there are no commits, exit the script
-echo "$1"
-commitcount=$(gh api repos/apache/pinot/commits --jq ".[] | select(.commit.committer.date >= \"$1\")" | wc -l)
+# get commits between the two times provided. if there are no commits, exit the script
+# note: I could do below with git log --before --after as well after cloning pinot
+commits=$(gh api repos/apache/pinot/commits --jq ".[] | select(.commit.committer.date >= \"$1\") | select(.commit.committer.date <= \"$2\") | .sha" | tr "\n" " ")
+IFS=' ' read -r -a hashlist <<< "$commits"
+commitcount="${#hashlist[@]}"
 if [[ commitcount -eq 0 ]]; then
-  echo "There have been no commits in the last hour."
+  echo "There were no commits made to Pinot in the provided time range."
   exit 0
 fi
 
-# need # of commits + 1 to get the "old commit" for the earliest new commit
-git clone --branch master --depth $((commitcount+1)) https://github.com/apache/pinot.git
+# check out entire repo and get baseline commit for oldest commit in time range
+git clone --branch master https://github.com/apache/pinot.git
 cd pinot || exit
 version="$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | tr -d "%")" # there's a % at the end for some reason
-log="$(git log --pretty=format:"%H" | tr "\n" " ")"
-IFS=' ' read -r -a hashlist <<< "$log"
+baseline=$(git log --pretty=format:"%H" -1 "${hashlist[$((commitcount-1))]}"^)
+hashlist+=("$baseline")
 cd ..
 echo "commits being processed:" "${hashlist[*]}"
 
@@ -31,7 +33,6 @@ if [ ! -e japicmp.jar ]; then
   fi
 fi
 
-# get japicmp output for all commits
 arrlen=${#hashlist[@]}
 for i in $( seq 1 "$((arrlen - 1))" ); do
   latest_pr="$(gh api repos/apache/pinot/commits/"${hashlist[$((i-1))]}"/pulls \
@@ -111,6 +112,7 @@ for i in $( seq 1 "$((arrlen - 1))" ); do
 done
 
 echo "done with file generation"
+
 # "unclone" repos
 rm -rf pinot
 
