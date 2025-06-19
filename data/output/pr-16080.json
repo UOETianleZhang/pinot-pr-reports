@@ -1,0 +1,92 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BaseBrokerStarter.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageQueryThrottler.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/requesthandler/MultiStageQueryThrottlerTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/worker/WorkerQueryServer.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/executor/HardLimitExecutor.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/HardLimitExecutorTest.java"
+  ],
+  "mergedAt": "2025-06-18T22:40:24Z",
+  "number": 16080,
+  "title": "Add multistage thread limiting configs at the broker and server level",
+  "url": "https://github.com/apache/pinot/pull/16080",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.requesthandler.MultiStageQueryThrottler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "int calculateMaxServerQueryThreads()",
+        "PRIVATE(+) int calculateSemaphoreLimit()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _maxServerQueryThreadsFromBrokerConfig"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) MultiStageQueryThrottler()"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) MultiStageQueryThrottler(org.apache.pinot.spi.env.PinotConfiguration)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.server.worker.WorkerQueryServer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.env.PinotConfiguration _configuration"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.executor.HardLimitExecutor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_MSE_MAX_SERVER_QUERY_THREADS",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_MSE_MAX_SERVER_QUERY_THREADS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Server",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_MSE_MAX_EXECUTION_THREADS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_MSE_MAX_EXECUTION_THREADS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

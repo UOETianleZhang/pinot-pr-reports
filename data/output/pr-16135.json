@@ -1,0 +1,42 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/strategy/BalancedNumSegmentAssignmentStrategy.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentUtilsTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java"
+  ],
+  "mergedAt": "2025-06-18T18:52:53Z",
+  "number": 16135,
+  "title": "Replace Helix AutoRebalanceStrategy with deterministic algorithm",
+  "url": "https://github.com/apache/pinot/pull/16135",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.segment.SegmentAssignmentUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> rebalanceTableWithHelixAutoRebalanceStrategy(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.List<java.lang.String>, int)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> rebalanceNonReplicaGroupBasedTable(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.List<java.lang.String>, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.segment.strategy.BalancedNumSegmentAssignmentStrategy",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.lang.String _tableNameWithType"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
