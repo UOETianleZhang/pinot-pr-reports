@@ -1,0 +1,286 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/BaseJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/NonEquiJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/operands/FilterOperand.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/operands/FunctionOperand.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/operands/LiteralOperand.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/operands/ReferenceOperand.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/operands/TransformOperand.java"
+  ],
+  "mergedAt": "2025-06-19T17:02:25Z",
+  "number": 16152,
+  "title": "Reduce array copying for non-equi join condition evaluation",
+  "url": "https://github.com/apache/pinot/pull/16152",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) boolean matchNonEquiConditions(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) java.util.List<java.lang.Object> joinRowView(java.lang.Object[], java.lang.Object[])",
+        "PROTECTED(+) boolean matchNonEquiConditions(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator$JoinedRowView",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.BaseJoinOperator$JoinedRowView of(java.lang.Object[], java.lang.Object[], int, int)",
+        "PUBLIC(+) int size()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) int _size",
+        "PROTECTED(+) FINAL(+) int _leftSize"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PROTECTED(+) BaseJoinOperator$JoinedRowView(int, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator$JoinedRowView$BothNotNullView",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object get(int)",
+        "PUBLIC(+) java.lang.Object[] toArray()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.Object[] _rightRow",
+        "PRIVATE(+) FINAL(+) java.lang.Object[] _leftRow"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) BaseJoinOperator$JoinedRowView$BothNotNullView(java.lang.Object[], java.lang.Object[], int, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator$JoinedRowView$LeftNotNullView",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object get(int)",
+        "PUBLIC(+) java.lang.Object[] toArray()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.Object[] _leftRow"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) BaseJoinOperator$JoinedRowView$LeftNotNullView(java.lang.Object[], int, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator$JoinedRowView$RightNotNullView",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object get(int)",
+        "PUBLIC(+) java.lang.Object[] toArray()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.Object[] _rightRow"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) BaseJoinOperator$JoinedRowView$RightNotNullView(java.lang.Object[], int, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand$And",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand$In",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand$IsNotTrue",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand$IsTrue",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand$Not",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand$Or",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FilterOperand$Predicate",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Integer apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Integer apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.FunctionOperand",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Object apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.LiteralOperand",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Object apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.ReferenceOperand",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Object apply(java.lang.Object[])"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.operands.TransformOperand",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) java.lang.Object apply(java.util.List<java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
