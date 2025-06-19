@@ -1,0 +1,19 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/AddIngestionComponent.tsx",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/AddRealTimeIngestionComponent.tsx",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/AddRealtimeTableOp.tsx",
+    "pinot-plugins/pinot-input-format/pinot-json/src/test/java/org/apache/pinot/plugin/inputformat/json/JSONMessageDecoderTest.java",
+    "pinot-plugins/pinot-input-format/pinot-json/src/test/resources/data/test_sample_data.json",
+    "pinot-plugins/pinot-input-format/pinot-json/src/test/resources/data/test_sample_data_schema_no_time_field.json",
+    "pinot-plugins/pinot-input-format/pinot-json/src/test/resources/data/test_sample_data_schema_with_outgoing_time_spec.json",
+    "pinot-plugins/pinot-input-format/pinot-json/src/test/resources/data/test_sample_data_schema_without_outgoing_time_spec.json",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/README.md",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-base/src/main/java/org/apache/pinot/plugin/stream/kafka/KafkaJSONMessageDecoder.java"
+  ],
+  "mergedAt": "2025-06-19T01:29:45Z",
+  "number": 16150,
+  "title": "Remove usage of deprecated KafkaJSONMessageDecoder",
+  "url": "https://github.com/apache/pinot/pull/16150",
+  "jcmpClasses": []
+}
