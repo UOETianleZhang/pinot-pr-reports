@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Commit Comparer
     steps:
-      - name: Get current date minus 1 hour
+      - name: Get start time of previous successful workflow
         id: datetime
-        run: echo "current_datetime_minus_1h=$(date -u --date="1 hour ago" +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_ENV
+        run: echo "last_workflow_run=$(gh run list -R matvj250/test_repo_2_for_cloning --workflow commit_report_realtime.yml --status success --limit 1 --json startedAt --jq '.[] | .startedAt')" >> $GITHUB_ENV
       - name: Check out code
         uses: actions/checkout@v3
       - name: Set up Node.js
@@ -24,7 +24,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Run report+json generator process
         run: |
-          scripts/.pinot_regular_commit_compare.sh "$current_datetime_minus_1h"
+          scripts/.pinot_regular_commit_compare.sh "$last_workflow_run"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit and push changes
@@ -35,5 +35,5 @@ jobs:
             git commit -m "Add commit reports"
             git push
           else
-            echo "No commits made in the last hour."
+            echo "No commits made since last workflow's start time."
           fi
