@@ -37,7 +37,7 @@ arrlen=${#hashlist[@]}
 for i in $( seq 1 "$((arrlen - 1))" ); do
   latest_pr="$(gh api repos/apache/pinot/commits/"${hashlist[$((i-1))]}"/pulls \
           -H "Accept: application/vnd.github.groot-preview+json" | jq '.[0].number')" # corresponding PR number
-  if [[ -e data/japicmp/pr-"$latest_pr".txt ]]; then
+  if [[ -e data/japicmp/pr-"$latest_pr".json ]]; then
     echo "The change report for this PR already exists. The workflow will continue and just skip the process for this one."
     continue
   fi
