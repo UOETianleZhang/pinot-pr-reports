@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Get start time of previous successful workflow
         id: datetime
-        run: echo "last_workflow_run=$(gh run list -R matvj250/test_repo_2_for_cloning --workflow commit_report_regular.yml --status success --limit 1 --json startedAt --jq '.[] | .startedAt')" >> $GITHUB_ENV
+        run: echo "last_workflow_run=$(gh run list -R UOETianleZhang/pinot-pr-reports --workflow commit_report_regular.yml --status success --limit 1 --json startedAt --jq '.[] | .startedAt')" >> $GITHUB_ENV
       - name: Check out code
         uses: actions/checkout@v3
       - name: Set up Node.js
