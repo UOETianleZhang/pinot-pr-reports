@@ -1,13 +1,12 @@
 #!/bin/bash
 
-# Each workflow besides the very first one will look at all commits between the start time of the previous workflow
-# and the start time of this workflow.
+# Each workflow besides the very first one will look at all commits from the start time of the previous workflow.
 # If there are no commits within this timeframe, exit the script.
 last_workflow_run=$(gh run list -R UOETianleZhang/pinot-pr-reports --workflow commit_report_regular.yml --status success --limit 1 --json startedAt --jq '.[] | .startedAt')
-current_workflow_run=$(gh run list -R UOETianleZhang/pinot-pr-reports --workflow commit_report_regular.yml --status in_progress --limit 1 --json startedAt --jq '.[] | .startedAt')
+#current_workflow_run=$(gh run list -R UOETianleZhang/pinot-pr-reports --workflow commit_report_regular.yml --status in_progress --limit 1 --json startedAt --jq '.[] | .startedAt')
 echo "Start time of last workflow run (lower bound):""$last_workflow_run"
-echo "Start time of current workflow run (upper bound):""$current_workflow_run"
-commitcount=$(gh api repos/apache/pinot/commits --jq ".[] | select(.commit.committer.date >= \"$last_workflow_run\") | select(.commit.committer.date <= \"$current_workflow_run\")" | wc -l)
+#echo "Start time of current workflow run (upper bound):""$current_workflow_run"
+commitcount=$(gh api repos/apache/pinot/commits --jq ".[] | select(.commit.committer.date >= \"$last_workflow_run\")" | wc -l)
 if [[ commitcount -eq 0 ]]; then
   echo "There have been no commits since those processed by the last run of this workflow."
   exit 0
