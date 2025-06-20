@@ -24,11 +24,11 @@
         </select>
       </div>
       <div class="flex items-center space-x-2">
-        <label for="since" class="font-medium">Since:</label>
+        <label for="since" class="font-medium whitespace-nowrap">Since (UTC date):</label>
         <input type="date" id="since" class="border border-gray-300 rounded px-2 py-1" />
       </div>
       <div class="flex items-center space-x-2">
-        <label for="until" class="font-medium">Until:</label>
+        <label for="until" class="font-medium whitespace-nowrap">Until (UTC date):</label>
         <input type="date" id="until" class="border border-gray-300 rounded px-2 py-1" />
       </div>
       <button id="loadBtn" class="flex-none bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded shadow min-w-[110px]">Load</button>
@@ -100,9 +100,8 @@
       loadBtn.click();
     });
 
-    function inRange(dateStr, since, until) {
-      const d = new Date(dateStr), s = new Date(since), u = new Date(until);
-      return d >= s && d <= u;
+    function inRange(mergedAt, since, until) {
+      return mergedAt >= since && mergedAt <= until;
     }
 
     async function fetchJSON(url) {
@@ -111,7 +110,16 @@
       return res.json();
     }
 
+    function toPacificDateStr(utcIsoStr) {
+      const pstDate = new Date(utcIsoStr).toLocaleDateString("en-CA", {
+        timeZone: "America/Los_Angeles",
+      });
+      return pstDate;
+    }
+
     async function loadReport(since, until) {
+      console.log("since: " + since);
+      console.log("until: " + until);
       const content = document.getElementById('content');
       content.innerHTML = '';
 
@@ -147,7 +155,11 @@
         return;
       }
 
-      const filtered = prs.filter(pr => inRange(pr.mergedAt.slice(0, 10), since, until));
+      const filtered = prs.filter(pr => {
+        const mergedAtPST = toPacificDateStr(pr.mergedAt);
+        return inRange(mergedAtPST, since, until);
+      });
+
       if (!prs.length) {
         content.innerHTML = `<p class="text-center text-gray-600">No PRs merged between ${since} and ${until}.</p>`;
         return;
