@@ -197,33 +197,34 @@
           status.className = 'italic text-sm';
           clsDiv.appendChild(status);
 
-          // backward-incompatible (removed methods & fields)
           if (!cls.compatible) {
-            card.classList.add('border-red-400');
-            clsDiv.innerHTML +=
-              `<p class="text-red-600 font-semibold">⚠️ Backward-incompatible changes:</p>
-              <ul class="bg-red-50 p-2 rounded mt-1 overflow-auto text-black">
-                ${cls.removedMethods.map(m => `<li>${m}</li>`).join('')}
-                ${cls.removedFields.map(f => `<li>${f}</li>`).join('')}
-                ${cls.removedConstructors.map(c => `<li>${c}</li>`).join('')}
-              </ul>`;
-          }
-
-          // additions (added methods & fields)
-          if (cls.compatible) {
-            clsDiv.innerHTML +=
-              `<p class="text-green-600 font-semibold mt-2">✔️ Additions:</p>
-              <ul class="bg-green-50 p-2 rounded mt-1 overflow-auto text-black">
-                ${cls.addedMethods.map(m => `<li>${m}</li>`).join('')}
-                ${cls.addedFields.map(f => `<li>${f}</li>`).join('')}
-                ${cls.addedConstructors.map(c => `<li>${c}</li>`).join('')}
-              </ul>`;
+            clsDiv.innerHTML += `<h2 class="text-red-600 font-semibold">⚠️ Backward-Incompatible Changes:</h2>`;
+          } else {
+            clsDiv.innerHTML += `<h2 class="text-green-600 font-semibold mt-2">✔️ Compatible changes:</h2>`;
           }
 
           // no API diffs
           if ((!cls.removedMethods.length && !cls.removedFields.length && !cls.removedConstructors.length) &&
               (!cls.addedMethods.length && !cls.addedFields.length && !cls.addedConstructors.length)) {
-            clsDiv.innerHTML += `<p class="text-gray-500 mt-1">No API-surface changes detected.</p>`;
+            clsDiv.innerHTML += `<h4 class="text-gray-500 mt-1">No API-surface changes detected.</h4>`;
+          }
+          if (cls.removedMethods.length || cls.removedFields.length || cls.removedConstructors.length) {
+            clsDiv.innerHTML += `
+            <h4 class="text-red-600">Removals: </h4>
+            <ul class="bg-red-50 p-2 rounded mt-1 overflow-auto text-black">
+              ${cls.removedMethods.map(m => `<li>${m}</li>`).join('')}
+              ${cls.removedFields.map(f => `<li>${f}</li>`).join('')}
+              ${cls.removedConstructors.map(c => `<li>${c}</li>`).join('')}
+            </ul>`
+          }
+          if (cls.addedMethods.length || cls.addedFields.length || cls.addedConstructors.length) {
+            clsDiv.innerHTML += `
+            <h4 class="text-green-600">Additions: </h4>
+            <ul class="bg-green-50 p-2 rounded mt-1 overflow-auto text-black">
+              ${cls.addedMethods.map(m => `<li>${m}</li>`).join('')}
+              ${cls.addedFields.map(f => `<li>${f}</li>`).join('')}
+              ${cls.addedConstructors.map(c => `<li>${c}</li>`).join('')}
+            </ul>`
           }
           apiSection.appendChild(clsDiv);
           card.appendChild(apiSection);
