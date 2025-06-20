@@ -1,0 +1,147 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/datatable/DataTableImplV4.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/CPUMemThreadLevelAccountingObjects.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/InstanceResponseOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/combine/BaseCombineOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/transport/DataTableHandler.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/TestThreadMXBean.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/BenchmarkThreadResourceUsageProvider.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceSnapshot.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageProvider.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java"
+  ],
+  "mergedAt": "2025-06-20T05:34:30Z",
+  "number": 16051,
+  "title": "Make ThreadResourceUsageProvider a Helper/Utility Class.",
+  "url": "https://github.com/apache/pinot/pull/16051",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.CPUMemThreadLevelAccountingObjects$ThreadEntry",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void updateCpuSnapshot()",
+        "PUBLIC(+) void updateMemorySnapshot()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.accounting.ThreadResourceSnapshot _threadResourceSnapshot"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.spi.accounting.ThreadResourceUsageProvider getThreadResourceUsageProvider()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.lang.ThreadLocal<org.apache.pinot.spi.accounting.ThreadResourceUsageProvider> _threadResourceUsageProvider"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.perf.BenchmarkThreadResourceUsageProvider$MyState",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "org.apache.pinot.spi.accounting.ThreadResourceUsageProvider _threadResourceUsageProvider"
+      ],
+      "addedFields": [
+        "org.apache.pinot.spi.accounting.ThreadResourceSnapshot _threadResourceSnapshot"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceSnapshot",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getAllocatedBytes()",
+        "PUBLIC(+) long getCpuTimeNs()",
+        "PUBLIC(+) void reset()",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) long _startAllocatedBytes",
+        "PRIVATE(+) long _startCpuTime"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ThreadResourceSnapshot()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) long getCurrentThreadAllocatedBytes()",
+        "PUBLIC(+) STATIC(+) long getCurrentThreadCpuTime()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) long _startBytesAllocated",
+        "PRIVATE(-) FINAL(-) long _startTimeNs"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$DefaultThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

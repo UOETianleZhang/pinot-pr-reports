@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-20T04:56:26Z",
+  "number": 16154,
+  "title": "Bump org.webjars:swagger-ui from 5.24.1-1 to 5.25.2",
+  "url": "https://github.com/apache/pinot/pull/16154",
+  "jcmpClasses": []
+}

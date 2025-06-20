@@ -1,0 +1,40 @@
+{
+  "files": [
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/main/java/org/apache/pinot/plugin/stream/kafka20/KafkaPartitionLevelConnectionHandler.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/main/java/org/apache/pinot/plugin/stream/kafka20/KafkaStreamMetadataProvider.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/main/java/org/apache/pinot/plugin/stream/kafka30/KafkaPartitionLevelConnectionHandler.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/main/java/org/apache/pinot/plugin/stream/kafka30/KafkaStreamMetadataProvider.java"
+  ],
+  "mergedAt": "2025-06-20T04:55:39Z",
+  "number": 16129,
+  "title": "Reuse Kafka admin client for better performance",
+  "url": "https://github.com/apache/pinot/pull/16129",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka20.KafkaPartitionLevelConnectionHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) org.apache.kafka.clients.admin.AdminClient _adminClient"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka30.KafkaPartitionLevelConnectionHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) org.apache.kafka.clients.admin.AdminClient _adminClient"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
