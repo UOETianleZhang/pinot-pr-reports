@@ -28,4 +28,8 @@ npm run build
 This scans the `data/` directory and creates or updates `data/output/manifest.json` listing all `*.json` files.
 
 ## GitHub Actions Deployment
-This site is automatically built and deployed on push to the `main` or via manual run in the GHA Actions tab.
+This site is automatically built and deployed on push to the `main` or via manual run in the GitHub Actions tab.
+
+## Backfilling PR Reports
+
+Since this repo was created >10 years after the first commit to Apache Pinot, there are thousands of PRs that don't have reports reflected here. There's a Github Action called "Backfill Commit Comparison Generator" to help fix that issue. All the user needs to do is input the date range of the merged PRs they want reports for. (Note that both dates need to be in UTC and in ISO 8601, i.e. '1970-01-01T00:00:00Z'.)
