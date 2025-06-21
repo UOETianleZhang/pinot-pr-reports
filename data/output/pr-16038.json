@@ -1,0 +1,61 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/ObjectLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/PrimitiveLookupTable.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/HashJoinOperatorTest.java",
+    "pinot-query-runtime/src/test/resources/queries/LeftAntiJoins.json"
+  ],
+  "mergedAt": "2025-06-20T20:15:16Z",
+  "number": 16038,
+  "title": "Fix null join key matching in multi-stage hash joins",
+  "url": "https://github.com/apache/pinot/pull/16038",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.HashJoinOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) boolean handleNullKey(java.lang.Object, java.lang.Object[], java.util.List<java.lang.Object[]>)",
+        "PRIVATE(+) boolean isNullKey(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.List<java.lang.Object[]> _nullKeyRightRows"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.lang.Object _valueForNullKey"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Object getKey()",
+        "PUBLIC(-) java.lang.Object getValue()",
+        "PUBLIC(-) java.lang.Object setValue(java.lang.Object)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PrimitiveLookupTable$1(org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}

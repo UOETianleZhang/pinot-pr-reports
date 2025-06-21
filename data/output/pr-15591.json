@@ -1,0 +1,144 @@
+{
+  "files": [
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterIntegrationTestUtils.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/BigNumberOfSegmentsIntegrationTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/ImmutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/ImmutableSegmentLoader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/column/PhysicalColumnIndexContainer.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/ColumnMetadataTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/column/PhysicalColumnIndexContainerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/SegmentPreProcessorTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/ColumnMetadata.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/IndexService.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/metadata/ColumnMetadataImpl.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/metadata/SegmentMetadataImpl.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/TablesResource.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/TablesResourceTest.java"
+  ],
+  "mergedAt": "2025-06-20T19:02:36Z",
+  "number": 15591,
+  "title": "Reduce segment metadata memory overhead.",
+  "url": "https://github.com/apache/pinot/pull/15591",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.column.PhysicalColumnIndexContainer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.Map<org.apache.pinot.segment.spi.index.IndexType,org.apache.pinot.segment.spi.index.IndexReader> _readersByIndex"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.local.segment.index.column.PhysicalColumnIndexContainer$IndexTypeMap _indexTypeMap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.column.PhysicalColumnIndexContainer$IndexTypeMap",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()",
+        "STATIC(+) org.apache.pinot.segment.local.segment.index.column.PhysicalColumnIndexContainer$IndexTypeMap get(java.util.List<org.apache.pinot.segment.spi.index.IndexType>, java.util.List<org.apache.pinot.segment.spi.index.IndexReader>)",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.IndexReader getIndex(org.apache.pinot.segment.spi.index.IndexType<?,I,?>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.segment.spi.index.IndexReader[] EMPTY_READERS",
+        "PRIVATE(+) FINAL(+) short _shift",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.spi.index.IndexReader[] _readers",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.segment.local.segment.index.column.PhysicalColumnIndexContainer$IndexTypeMap EMPTY"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PhysicalColumnIndexContainer$IndexTypeMap(short, org.apache.pinot.segment.spi.index.IndexReader[])"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.ColumnMetadata",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getIndexSize(int)",
+        "PUBLIC(+) long getIndexSizeFor(org.apache.pinot.segment.spi.index.IndexType)",
+        "PUBLIC(+) short getIndexType(int)",
+        "PUBLIC(+) int getNumIndexes()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int INDEX_NOT_FOUND"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.IndexService",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.IndexType<?,?,?> get(long)",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.IndexType<?,?,?> get(int)",
+        "PUBLIC(+) short getNumericId(java.lang.String)",
+        "PUBLIC(+) short getNumericId(org.apache.pinot.segment.spi.index.IndexType)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) it.unimi.dsi.fastutil.objects.Object2ShortOpenHashMap<java.lang.String> _allIndexPosById",
+        "PUBLIC(+) STATIC(+) FINAL(+) short UNKNOWN_INDEX"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.metadata.ColumnMetadataImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void addIndexSize(short, long)",
+        "PUBLIC(+) long getIndexSize(int)",
+        "PUBLIC(+) long getIndexSizeFor(org.apache.pinot.segment.spi.index.IndexType)",
+        "PUBLIC(+) short getIndexType(int)",
+        "PUBLIC(+) int getNumIndexes()",
+        "PRIVATE(+) STATIC(+) long unpackIndexSize(long)",
+        "PRIVATE(+) STATIC(+) short unpackIndexType(long)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.Map<org.apache.pinot.segment.spi.index.IndexType<?,?,?>,java.lang.Long> _indexSizeMap"
+      ],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) long SIZE_MASK",
+        "PRIVATE(+) FINAL(+) it.unimi.dsi.fastutil.longs.LongArrayList _indexTypeSizeList"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) ColumnMetadataImpl(org.apache.pinot.spi.data.FieldSpec, int, int, boolean, java.lang.Comparable<?>, java.lang.Comparable<?>, boolean, boolean, int, int, int, int, org.apache.pinot.segment.spi.partition.PartitionFunction, java.util.Set<java.lang.Integer>, java.util.Map<org.apache.pinot.segment.spi.index.IndexType<?,?,?>,java.lang.Long>, boolean)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) ColumnMetadataImpl(org.apache.pinot.spi.data.FieldSpec, int, int, boolean, java.lang.Comparable<?>, java.lang.Comparable<?>, boolean, boolean, int, int, int, int, org.apache.pinot.segment.spi.partition.PartitionFunction, java.util.Set<java.lang.Integer>, it.unimi.dsi.fastutil.longs.LongArrayList, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.metadata.ColumnMetadataImpl$Builder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void setIndexSizeList(it.unimi.dsi.fastutil.longs.LongArrayList)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) java.util.Map<org.apache.pinot.segment.spi.index.IndexType<?,?,?>,java.lang.Long> _indexSizeMap"
+      ],
+      "addedFields": [
+        "PRIVATE(+) it.unimi.dsi.fastutil.longs.LongArrayList _indexSizeList"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
