@@ -8,243 +8,223 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen overflow-y-scroll">
-  <div class="max-w-5xl mx-auto p-6">
-    <h1 class="text-4xl font-bold text-center mb-6">Apache Pinot PR Report</h1>
+<div class="max-w-5xl mx-auto p-6">
+  <h1 class="text-4xl font-bold text-center mb-6">Apache Pinot PR Report</h1>
 
-    <!-- Date range filters -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-center mb-8 space-y-4 sm:space-y-0 sm:space-x-4">
-      <div class="flex items-center space-x-2">
-        <label for="preset" class="font-medium">Quick select:</label>
-        <select id="preset"
-                class="border border-gray-300 rounded px-2 py-1 bg-white">
-          <option value="">– custom –</option>
-          <option value="24h">Last 24 hours</option>
-          <option value="7d">Last Week</option>
-          <option value="30d">Last Month</option>
-        </select>
-      </div>
-      <div class="flex items-center space-x-2">
-        <label for="since" class="font-medium whitespace-nowrap">Since (UTC date):</label>
-        <input type="date" id="since" class="border border-gray-300 rounded px-2 py-1" />
-      </div>
-      <div class="flex items-center space-x-2">
-        <label for="until" class="font-medium whitespace-nowrap">Until (UTC date):</label>
-        <input type="date" id="until" class="border border-gray-300 rounded px-2 py-1" />
-      </div>
-      <button id="loadBtn" class="flex-none bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded shadow min-w-[110px]">Load</button>
+  <!-- Date range filters -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-center mb-8 space-y-4 sm:space-y-0 sm:space-x-4">
+    <div class="flex items-center space-x-2">
+      <label for="preset" class="font-medium">Quick select:</label>
+      <select id="preset"
+              class="border border-gray-300 rounded px-2 py-1 bg-white">
+        <option value="">– custom –</option>
+        <option value="24h">Last 24 hours</option>
+        <option value="7d">Last Week</option>
+        <option value="30d">Last Month</option>
+      </select>
     </div>
-
-    <div id="content" class="space-y-6"></div>
+    <div class="flex items-center space-x-2">
+      <label for="since" class="font-medium whitespace-nowrap">Since (PST date):</label>
+      <input type="date" id="since" class="border border-gray-300 rounded px-2 py-1" />
+    </div>
+    <div class="flex items-center space-x-2">
+      <label for="until" class="font-medium whitespace-nowrap">Until (PST date):</label>
+      <input type="date" id="until" class="border border-gray-300 rounded px-2 py-1" />
+    </div>
+    <button id="loadBtn" class="flex-none bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded shadow min-w-[110px]">Load</button>
   </div>
 
-  <script>
-    // Use a relative path so fetching works when serving from project root
-    const MANIFEST_URL = './data/output/manifest.json';
-    const presetEl = document.getElementById('preset');
-    const sinceEl = document.getElementById('since');
-    const untilEl = document.getElementById('until');
-    const loadBtn = document.getElementById('loadBtn');
+  <div id="content" class="space-y-6"></div>
+</div>
 
-    function formatYMD(d) {
-      return d.toISOString().slice(0,10);
+<script>
+  const MANIFEST_URL = './data/output/manifest.json';
+  const presetEl = document.getElementById('preset');
+  const sinceEl = document.getElementById('since');
+  const untilEl = document.getElementById('until');
+  const loadBtn = document.getElementById('loadBtn');
+
+  // Format date in PST YYYY-MM-DD for inputs
+  function formatYMD(d) {
+    return d.toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+  }
+
+  function applyPreset(preset) {
+    if (!preset) {
+      sinceEl.disabled = false;
+      untilEl.disabled = false;
+      return;
     }
 
-    function applyPreset(preset) {
-      if (!preset) {
-        sinceEl.disabled = false;
-        untilEl.disabled = false;
-        return;
-      }
+    const now = new Date();
+    let since;
 
-      const now = new Date();
-      let since;
-
-      if (preset.endsWith('h')) {
-        const hrs = parseInt(preset, 10);
-        since = new Date(now.getTime() - hrs * 3600_000);
-      }
-      else if (preset.endsWith('d')) {
-        const days = parseInt(preset, 10);
-        since = new Date(now);
-        since.setDate(now.getDate() - days);
-      }
-      else {
-        console.warn('Unknown preset:', preset);
-        return applyPreset('');
-      }
-
-      sinceEl.value = formatYMD(since);
-      untilEl.value = formatYMD(now);
-
-      sinceEl.disabled = true;
-      untilEl.disabled = true;
+    if (preset.endsWith('h')) {
+      const hrs = parseInt(preset, 10);
+      since = new Date(now.getTime() - hrs * 3600_000);
+    }
+    else if (preset.endsWith('d')) {
+      const days = parseInt(preset, 10);
+      since = new Date(now);
+      since.setDate(now.getDate() - days);
+    } else {
+      return applyPreset('');
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      presetEl.value = '';
-      applyPreset('');
+    sinceEl.value = formatYMD(since);
+    untilEl.value = formatYMD(now);
 
-      presetEl.addEventListener('change', e => applyPreset(e.target.value));
+    sinceEl.disabled = true;
+    untilEl.disabled = true;
+  }
 
-      loadBtn.addEventListener('click', () => {
-        loadBtn.disabled   = true;
-        loadBtn.textContent = 'Loading...';
+  document.addEventListener('DOMContentLoaded', () => {
+    presetEl.value = '';
+    applyPreset('');
 
-        loadReport(sinceEl.value, untilEl.value)
-            .finally(() => {
-              loadBtn.disabled   = false;
-              loadBtn.textContent = 'Load';
-            });
-      });
+    presetEl.addEventListener('change', e => applyPreset(e.target.value));
+    loadBtn.addEventListener('click', () => {
+      loadBtn.disabled   = true;
+      loadBtn.textContent = 'Loading...';
 
-      loadBtn.click();
+      loadReport(sinceEl.value, untilEl.value)
+          .finally(() => {
+            loadBtn.disabled   = false;
+            loadBtn.textContent = 'Load';
+          });
     });
 
-    function inRange(mergedAt, since, until) {
-      return mergedAt >= since && mergedAt <= until;
+    // initial load
+    loadBtn.click();
+  });
+
+  function inRange(mergedAt, since, until) {
+    return mergedAt >= since && mergedAt <= until;
+  }
+
+  async function fetchJSON(url) {
+    const res = await fetch(url, { headers:{ 'Accept':'application/json' } });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    return res.json();
+  }
+
+  // Convert UTC ISO to PST YYYY-MM-DD
+  function toPacificDateStr(utcIsoStr) {
+    return new Date(utcIsoStr).toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' });
+  }
+
+  async function loadReport(since, until) {
+    const content = document.getElementById('content');
+    content.innerHTML = '';
+
+    let manifest;
+    try {
+      manifest = await fetchJSON(MANIFEST_URL);
+    } catch (e) {
+      content.innerHTML = `<p class="text-red-600">Error loading manifest: ${e.message}</p>`;
+      return;
     }
 
-    async function fetchJSON(url) {
-      const res = await fetch(url, { headers:{ 'Accept':'application/json' } });
-      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-      return res.json();
+    const fileList = Array.isArray(manifest) ? manifest : manifest.files;
+    if (!fileList?.length) {
+      content.innerHTML = '<p class="text-red-600">No JSON files listed in the manifest.</p>';
+      return;
     }
 
-    function toPacificDateStr(utcIsoStr) {
-      const pstDate = new Date(utcIsoStr).toLocaleDateString("en-CA", {
-        timeZone: "America/Los_Angeles",
-      });
-      return pstDate;
+    let prs;
+    try {
+      prs = await Promise.all(
+          fileList.map(name => fetchJSON(`./data/output/${name}`))
+      );
+    } catch (e) {
+      content.innerHTML = `<p class="text-red-600">Error loading PR data: ${e.message}</p>`;
+      return;
     }
 
-    async function loadReport(since, until) {
-      console.log("since: " + since);
-      console.log("until: " + until);
-      const content = document.getElementById('content');
-      content.innerHTML = '';
+    // Filter then sort descending by merge time
+    const filtered = prs
+        .filter(pr => {
+          const mergedAtPST = toPacificDateStr(pr.mergedAt);
+          return inRange(mergedAtPST, since, until);
+        })
+        .sort((a, b) => new Date(b.mergedAt) - new Date(a.mergedAt));
 
-      let manifest;
-      try {
-        manifest = await fetchJSON(MANIFEST_URL);
-      } catch (e) {
-        content.innerHTML = `<p class="text-red-600">Error loading json file list: ${e.message}</p>`;
-        return;
-      }
-      console.log("manifest: " + manifest);
+    if (!filtered.length) {
+      content.innerHTML = `<p class="text-center text-gray-600">No PRs merged between ${since} and ${until} PST.</p>`;
+      return;
+    }
 
-      const fileList = Array.isArray(manifest)
-          ? manifest
-          : manifest.files;
-      if (!fileList || !fileList.length) {
-        content.innerHTML = '<p class="text-red-600">No JSON files listed in the manifest.</p>';
-        return;
-      }
+    for (const pr of filtered) {
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-lg shadow p-6 border-2';
 
-      let prs;
-      try {
-        const fetches = fileList.map(name => {
-          const url = `./data/output/${name}`;
-          console.log("fetching ", url);
-          return fetchJSON(url)
-        });
-        console.log("fetches: ", fetches);
-        prs = await Promise.all(fetches);
-        console.log("prs: ", prs);
-      } catch (e) {
-        content.innerHTML = `<p class="text-red-600">Error loading one of the PR files: ${e.message}</p>`;
-        return;
-      }
-
-      const filtered = prs.filter(pr => {
-        const mergedAtPST = toPacificDateStr(pr.mergedAt);
-        return inRange(mergedAtPST, since, until);
-      });
-
-      if (!prs.length) {
-        content.innerHTML = `<p class="text-center text-gray-600">No PRs merged between ${since} and ${until}.</p>`;
-        return;
-      }
-      console.log("filtered: ", filtered);
-
-      for (const pr of filtered) {
-        const card = document.createElement('div');
-        card.className = 'bg-white rounded-lg shadow p-6 border-2';
-
-        // Title + merge time
-        const title = document.createElement('div');
-        title.className = 'flex items-baseline justify-between';
-        title.innerHTML =
+      // Title + merge time (PST)
+      const title = document.createElement('div');
+      title.className = 'flex items-baseline justify-between';
+      title.innerHTML =
           `<h2 class="text-2xl font-semibold">
              <a href="${pr.url}" target="_blank" class="text-blue-600 hover:underline">#${pr.number} ${pr.title}</a>
            </h2>
-           <span class="text-sm text-gray-500">merged: ${new Date(pr.mergedAt).toLocaleString()}</span>`;
-        card.appendChild(title);
+           <span class="text-sm text-gray-500">merged: ${new Date(pr.mergedAt).toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })} PST</span>`;
+      card.appendChild(title);
 
-        // Changed files
-        const changedSection = document.createElement('div');
-        changedSection.className = 'mt-4';
-        changedSection.innerHTML = `<h3 class="font-medium">Changed files:</h3>
+      // Changed files section
+      const changedSection = document.createElement('div');
+      changedSection.className = 'mt-4';
+      changedSection.innerHTML = `<h3 class="font-medium">Changed files:</h3>
           <ul class="list-disc ml-5 mt-1">
-            ${pr.files.map(file => `<li>${file}</li>`).join('')}
+            ${pr.files.map(f => `<li>${f}</li>`).join('')}
           </ul>`;
-        card.appendChild(changedSection);
+      card.appendChild(changedSection);
 
-        const apiSection = document.createElement('div');
-        apiSection.className = 'mt-4';
-        apiSection.innerHTML = '<h3 class="font-medium">Class Changes:</h3>';
+      // API compatibility section
+      const apiSection = document.createElement('div');
+      apiSection.className = 'mt-4';
+      apiSection.innerHTML = '<h3 class="font-medium">Class Changes:</h3>';
 
-        for (const cls of pr.jcmpClasses || []) {
-          console.log("cls: ", cls);
+      for (const cls of pr.jcmpClasses || []) {
+        const clsDiv = document.createElement('div');
+        const base = 'mt-2 rounded-md p-3';
+        const color = cls.compatible
+            ? 'border-2 border-green-300 text-green-700'
+            : 'border-2 border-red-300 text-red-700';
 
-          const base = 'mt-2 rounded-md p-3';
-          const color = cls.compatible
-              ? 'border-2 border-green-300 text-green-700'
-              : 'border-2 border-red-300   text-red-700';
+        clsDiv.className = `${base} ${color}`;
+        clsDiv.textContent = cls.className + ' — ';
+        const status = document.createElement('span');
+        status.textContent = cls.compatible ? 'Compatible' : 'Incompatible';
+        status.className = 'italic text-sm';
+        clsDiv.appendChild(status);
 
-          const clsDiv = document.createElement('div');
-          clsDiv.className = `${base} ${color}`;
-          clsDiv.textContent = cls.className + ' — ';
-          const status = document.createElement('span');
-          status.textContent = cls.compatible ? 'Compatible' : 'Incompatible';
-          status.className = 'italic text-sm';
-          clsDiv.appendChild(status);
-
-          if (!cls.compatible) {
-            clsDiv.innerHTML += `<h2 class="text-red-600 font-semibold">⚠️ Backward-Incompatible Changes:</h2>`;
-          } else {
-            clsDiv.innerHTML += `<h2 class="text-green-600 font-semibold mt-2">✔️ Compatible changes:</h2>`;
-          }
-
-          // no API diffs
-          if ((!cls.removedMethods.length && !cls.removedFields.length && !cls.removedConstructors.length) &&
-              (!cls.addedMethods.length && !cls.addedFields.length && !cls.addedConstructors.length)) {
-            clsDiv.innerHTML += `<h4 class="text-gray-500 mt-1">No API-surface changes detected.</h4>`;
-          }
-          if (cls.removedMethods.length || cls.removedFields.length || cls.removedConstructors.length) {
-            clsDiv.innerHTML += `
-            <h4 class="text-red-600">Removals: </h4>
-            <ul class="bg-red-50 p-2 rounded mt-1 overflow-auto text-black">
-              ${cls.removedMethods.map(m => `<li>${m}</li>`).join('')}
-              ${cls.removedFields.map(f => `<li>${f}</li>`).join('')}
-              ${cls.removedConstructors.map(c => `<li>${c}</li>`).join('')}
-            </ul>`
-          }
-          if (cls.addedMethods.length || cls.addedFields.length || cls.addedConstructors.length) {
-            clsDiv.innerHTML += `
-            <h4 class="text-green-600">Additions: </h4>
-            <ul class="bg-green-50 p-2 rounded mt-1 overflow-auto text-black">
-              ${cls.addedMethods.map(m => `<li>${m}</li>`).join('')}
-              ${cls.addedFields.map(f => `<li>${f}</li>`).join('')}
-              ${cls.addedConstructors.map(c => `<li>${c}</li>`).join('')}
-            </ul>`
-          }
-          apiSection.appendChild(clsDiv);
-          card.appendChild(apiSection);
+        if (!cls.removedMethods.length && !cls.removedFields.length && !cls.removedConstructors.length &&
+            !cls.addedMethods.length && !cls.addedFields.length && !cls.addedConstructors.length) {
+          clsDiv.innerHTML += `<h4 class="text-gray-500 mt-1">No API-surface changes detected.</h4>`;
+        }
+        if (cls.removedMethods.length || cls.removedFields.length || cls.removedConstructors.length) {
+          clsDiv.innerHTML += `
+              <h4 class="text-red-600">⚠ Removals:</h4>
+              <ul class="bg-red-50 p-2 rounded mt-1 overflow-auto text-black">
+                ${cls.removedMethods.map(m => `<li>${m}</li>`).join('')}
+                ${cls.removedFields.map(f => `<li>${f}</li>`).join('')}
+                ${cls.removedConstructors.map(c => `<li>${c}</li>`).join('')}
+              </ul>`;
+        }
+        if (cls.addedMethods.length || cls.addedFields.length || cls.addedConstructors.length) {
+          clsDiv.innerHTML += `
+              <h4 class="text-green-600">✔ Additions:</h4>
+              <ul class="bg-green-50 p-2 rounded mt-1 overflow-auto text-black">
+                ${cls.addedMethods.map(m => `<li>${m}</li>`).join('')}
+                ${cls.addedFields.map(f => `<li>${f}</li>`).join('')}
+                ${cls.addedConstructors.map(c => `<li>${c}</li>`).join('')}
+              </ul>`;
         }
 
-        content.appendChild(card);
+        apiSection.appendChild(clsDiv);
       }
+      card.appendChild(apiSection);
+      content.appendChild(card);
     }
-  </script>
+  }
+</script>
 </body>
 </html>

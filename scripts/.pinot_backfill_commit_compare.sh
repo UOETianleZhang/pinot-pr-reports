@@ -1,121 +1,175 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# scripts/.pinot_backfill_commit_compare.sh
 
-# get commits between the two times provided. if there are no commits, exit the script
-# note: I could do below with git log --before --after as well after cloning pinot
-commits=$(gh api repos/apache/pinot/commits --jq ".[] | select(.commit.committer.date >= \"$1\") | select(.commit.committer.date <= \"$2\") | .sha" | tr "\n" " ")
-IFS=' ' read -r -a hashlist <<< "$commits"
-commitcount="${#hashlist[@]}"
-if [[ commitcount -eq 0 ]]; then
-  echo "There were no commits made to Pinot in the provided time range."
+set -euo pipefail
+
+# 0) Ensure required tools are present
+for cmd in gh mvn node; do
+  command -v "$cmd" >/dev/null 2>&1 || {
+    echo "Error: '$cmd' not found in PATH." >&2
+    exit 1
+  }
+done
+
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") --start <ISO8601> --end <ISO8601> [--outdir <path>]
+
+Options:
+  -s, --start     Start of interval (UTC ISO 8601)
+  -e, --end       End of interval   (UTC ISO 8601)
+  -o, --outdir    Base output dir (default: data)
+  -h, --help      Show this help and exit
+
+Environment:
+  DRY_RUN=true    Skip builds & diffs; just print which PRs would be processed.
+EOF
+  exit 1
+}
+
+# --- parse flags ---
+START_DATE=""
+END_DATE=""
+OUTDIR="data"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -s|--start)     START_DATE="$2"; shift 2;;
+    -e|--end)       END_DATE="$2";   shift 2;;
+    -o|--outdir)    OUTDIR="$2";     shift 2;;
+    -h|--help)      usage;;
+    *) echo "Unknown option: $1" >&2; usage;;
+  esac
+done
+
+if [[ -z "$START_DATE" || -z "$END_DATE" ]]; then
+  echo "Error: both --start and --end are required" >&2
+  usage
+fi
+
+echo "➡️  Backfilling from $START_DATE to $END_DATE into ‘$OUTDIR’..."
+
+# --- vars ---
+REPO_URL="https://github.com/apache/pinot.git"
+REPO_DIR="pinot"
+JAPICMP_VER="0.23.1"
+JAPICMP_JAR="japicmp.jar"
+JAR_NEW="commit_jars_new"
+JAR_OLD="commit_jars_old"
+JAPICMP_OUT="$OUTDIR/japicmp"
+JSON_OUT="$OUTDIR/output"
+
+# 1) Fresh clone
+rm -rf "$REPO_DIR"
+git clone --branch master "$REPO_URL" "$REPO_DIR"
+
+# 2) Collect SHAs
+PR_SHAS=()
+while IFS= read -r sha; do
+  PR_SHAS+=("$sha")
+done < <(
+  git -C "$REPO_DIR" log \
+    --since="$START_DATE" --until="$END_DATE" \
+    --reverse --format='%H'
+)
+
+if (( ${#PR_SHAS[@]} == 0 )); then
+  echo "ℹ️  No commits found."
   exit 0
 fi
 
-# check out entire repo and get baseline commit for oldest commit in time range
-git clone --branch master https://github.com/apache/pinot.git
-cd pinot || exit
-version="$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | tr -d "%")" # there's a % at the end for some reason
-baseline=$(git log --pretty=format:"%H" -1 "${hashlist[$((commitcount-1))]}"^)
-hashlist+=("$baseline")
-cd ..
-echo "commits being processed:" "${hashlist[*]}"
+# 3) Baseline & version
+pushd "$REPO_DIR" >/dev/null
+BASELINE_SHA=$(git rev-parse "${PR_SHAS[0]}^")
+VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | tr -d '%')
+popd >/dev/null
 
-# make temp directories, download japicmp
-mkdir commit_jars_old
-mkdir commit_jars_new
-if [ ! -e japicmp.jar ]; then
-  JAPICMP_VER=0.23.1
-  curl -fSL \
-  -o japicmp.jar \
-  "https://repo1.maven.org/maven2/com/github/siom79/japicmp/japicmp/${JAPICMP_VER}/japicmp-${JAPICMP_VER}-jar-with-dependencies.jar"
-  if [ ! -f japicmp.jar ]; then
-    echo "Error: Failed to download japicmp.jar."
-    exit 1
-  fi
+# 4) Prepare temp dirs & outputs
+rm -rf "$JAR_NEW" "$JAR_OLD"
+mkdir -p "$JAR_NEW" "$JAR_OLD"
+mkdir -p "$JAPICMP_OUT" "$JSON_OUT"
+
+# 5) Japicmp jar
+if [[ ! -f "$JAPICMP_JAR" ]]; then
+  curl -fSL -o "$JAPICMP_JAR" \
+    "https://repo1.maven.org/maven2/com/github/siom79/japicmp/japicmp/${JAPICMP_VER}/japicmp-${JAPICMP_VER}-jar-with-dependencies.jar"
 fi
 
-arrlen=${#hashlist[@]}
-for i in $( seq 1 "$((arrlen - 1))" ); do
-  latest_pr="$(gh api repos/apache/pinot/commits/"${hashlist[$((i-1))]}"/pulls \
-          -H "Accept: application/vnd.github.groot-preview+json" | jq '.[0].number')" # corresponding PR number
-  if [[ -e data/japicmp/pr-"$latest_pr".json ]]; then
-    echo "The change report for this PR already exists. The workflow will continue and just skip the process for this one."
+# 6) Loop PRs
+for SHA in "${PR_SHAS[@]}"; do
+  PR_NUM=$(gh api repos/apache/pinot/commits/"$SHA"/pulls \
+    -H "Accept: application/vnd.github.groot-preview+json" \
+    --jq '.[0].number')
+
+  # DRY RUN?
+  if [[ "${DRY_RUN:-false}" == "true" ]]; then
+    echo "[DRY-RUN] PR #${PR_NUM}: baseline $BASELINE_SHA → $SHA"
+    BASELINE_SHA="$SHA"
     continue
   fi
-  # we're only running mvn clean install twice for a PR at the beginning
-  # since afterwards, we'll always have one of the two sets of jars downloaded already
-  if [[ $i -eq 1 ]]; then
-    cd pinot || exit
-    git checkout "${hashlist[$((i-1))]}"
-    mvn clean install -DskipTests -q
-    echo "mvn clean #""$((i-1))"" done"
-    paths="$(find . -type f -name "*${version}.jar" -print | tr "\n" " ")" # get all module jars made by mvn clean install
-    IFS=' ' read -r -a namelist <<< "$paths"
-    cd ..
-    for name in "${namelist[@]}"; do
-      mv "pinot/$name" commit_jars_new # move them into folder in the base repo
-    done
-  fi
-  cd pinot || exit
-  git checkout "${hashlist[$i]}"
-  mvn clean install -DskipTests -q
-  echo "mvn clean #""$i"" done"
-  paths2="$(find . -type f -name "*${version}.jar" -print | tr "\n" " ")"
-  IFS=' ' read -r -a namelist2 <<< "$paths2"
-  cd ..
-  for name in "${namelist2[@]}"; do
-    mv "pinot/$name" commit_jars_old
-  done
 
-  # fail process if either temp directory doesn't have files, meaning something went wrong
-  if [ -z "$( ls -A 'commit_jars_new' )" ]; then
-      echo "The jars for the latest PR were not collected properly. Please investigate the cause of this."
-      exit 1
-  elif [ -z "$( ls -A 'commit_jars_old' )" ]; then
-      echo "The jars for the second-latest PR were not collected properly. Please investigate the cause of this."
-      exit 1
+  # Skip if already done
+  if [[ -f "$JAPICMP_OUT/pr-${PR_NUM}.json" ]]; then
+    echo "⚡ #${PR_NUM} exists; skipping."
+    BASELINE_SHA="$SHA"
+    continue
   fi
 
-  # generate japicmp reports for each file
-  touch pr-"$latest_pr".txt
-  for filename in commit_jars_new/*; do
-    name="$(basename "$filename")"
-    if [ ! -f commit_jars_old/"$name" ]; then
-      echo "It seems $name does not exist in the previous pull request. Please make sure this is intended." >> pr-"$latest_pr".txt
-      echo "" >> pr-"$latest_pr".txt
+  echo "▶ PR #${PR_NUM} (commit $SHA)"
+
+  # a) Build baseline
+  pushd "$REPO_DIR" >/dev/null
+  git checkout "$BASELINE_SHA"
+  mvn clean install -T1C -DskipTests -q
+  popd >/dev/null
+  find "$REPO_DIR" -name "*${VERSION}.jar" -exec mv {} "$JAR_NEW/" \;
+
+  # b) Build current
+  pushd "$REPO_DIR" >/dev/null
+  git checkout "$SHA"
+  mvn clean install -T1C -DskipTests -q
+  popd >/dev/null
+  find "$REPO_DIR" -name "*${VERSION}.jar" -exec mv {} "$JAR_OLD/" \;
+
+  # sanity-check
+  [[ -n "$(ls -A "$JAR_NEW")" ]] || { echo "❌ No new jars"; exit 1; }
+  [[ -n "$(ls -A "$JAR_OLD")" ]] || { echo "❌ No old jars"; exit 1; }
+
+  # c) Run japicmp
+  TXT="pr-${PR_NUM}.txt"
+  : > "$TXT"
+  for NEWJ in "$JAR_NEW"/*.jar; do
+    NAME=$(basename "$NEWJ")
+    OLDJ="$JAR_OLD/$NAME"
+    if [[ ! -f "$OLDJ" ]]; then
+      echo "Missing in previous PR: $NAME" >> "$TXT"
+      echo >> "$TXT"
       continue
     fi
-    OLD=commit_jars_old/"$name"
-    NEW=commit_jars_new/"$name"
-    java -jar japicmp.jar \
-      --old "$OLD" \
-      --new "$NEW" \
-      -a private \
-      --no-annotations \
-      --ignore-missing-classes \
-      --only-modified >> pr-"$latest_pr".txt
+    java -jar "$JAPICMP_JAR" \
+      --old "$OLDJ" --new "$NEWJ" \
+      -a private --no-annotations --ignore-missing-classes --only-modified \
+      >> "$TXT"
   done
 
-  # create json
-  metadata=$(gh pr view "$latest_pr" -R apache/pinot --json title,number,mergedAt,files,url -q '.files |= [.[] | .path]')
+  # d) Parse to JSON
+  METADATA=$(gh pr view "$PR_NUM" -R apache/pinot \
+    --json title,number,mergedAt,files,url \
+    --jq '.files |= [.[]|.path]')
   node scripts/parse_japicmp.js \
-    --input pr-"$latest_pr".txt \
-    --metadata "$metadata" \
-    --output pr-"$latest_pr".json
+    --input "$TXT" --metadata "$METADATA" \
+    --output "pr-${PR_NUM}.json"
 
-  mv pr-"$latest_pr".txt data/japicmp
-  mv pr-"$latest_pr".json data/output
+  mv "$TXT"                "$JAPICMP_OUT/"
+  mv "pr-${PR_NUM}.json"   "$JSON_OUT/"
 
-  # move commit_jars_old to commit_jars_new
-  # since the "old" PR is now being analyzed for changes
-  rm -rf commit_jars_new/*
-  mv commit_jars_old/* commit_jars_new
+  # e) Rotate
+  rm -rf "${JAR_NEW:?}"/*
+  mv "$JAR_OLD"/* "$JAR_NEW"/
+  BASELINE_SHA="$SHA"
 done
 
-echo "done with file generation"
+# 7) Cleanup
+rm -rf "$REPO_DIR" "$JAR_NEW" "$JAR_OLD"
 
-# "unclone" repos
-rm -rf pinot
-
-# remove temp directories
-rm -rf commit_jars_old
-rm -rf commit_jars_new
+echo "✅ Backfill complete."

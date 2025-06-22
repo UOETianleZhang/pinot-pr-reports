@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-plugins/pinot-file-system/pinot-s3/pom.xml"
+  ],
+  "mergedAt": "2025-06-11T04:27:36Z",
+  "number": 16052,
+  "title": "add guava as dep in pinot-s3",
+  "url": "https://github.com/apache/pinot/pull/16052",
+  "jcmpClasses": []
+}

@@ -34,3 +34,7 @@ jobs:
           else
             echo "No commits made since last workflow's start time."
           fi
+      - name: Trigger Pages Deploy
+        run: gh workflow run deploy-pages.yml --ref main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

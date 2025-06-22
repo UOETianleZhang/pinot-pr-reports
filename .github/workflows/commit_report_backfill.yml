@@ -1,42 +1,94 @@
-name: Backfill Commit Comparison Generator
+# .github/workflows/parallel_backfill.yml
+name: Parallel Commit Backfill
 
 on:
   workflow_dispatch:
     inputs:
-      startDate:
-        description: "Start datetime for commit range. (UTC; ISO 8601; required)"
-        required: true
-      endDate:
-        description: "End datetime for commit range. (UTC; ISO 8601; required)"
-        required: true
+      days:
+        description: "Days back to backfill"
+        default: 30
+        required: false
 
 jobs:
-  commit-compare:
+  backfill:
     runs-on: ubuntu-latest
-    name: Commit Comparer
+    strategy:
+      matrix:
+        chunk: [0,1,2,3,4,5]       # 6 chunks
     steps:
-      - name: Check out code
+      - name: Checkout repo
         uses: actions/checkout@v3
+
+      - name: Set up Java & Maven
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y maven openjdk-17-jdk
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Configure Git user
+
+      - name: Compute date window
+        id: dates
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Run report+json generator process
+          END=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          CHUNK_SIZE=$(( ( ${{ github.event.inputs.days }} + 5 ) / 6 ))
+          OFFSET=$(( CHUNK_SIZE * matrix.chunk ))
+          START=$(date -u -d "$END - $OFFSET days" +"%Y-%m-%dT%H:%M:%SZ")
+          END_CHUNK=$(date -u -d "$START + $CHUNK_SIZE days" +"%Y-%m-%dT%H:%M:%SZ")
+          echo "::set-output name=start::$START"
+          echo "::set-output name=end::$END_CHUNK"
+
+      - name: Run backfill for chunk ${{ matrix.chunk }}
         run: |
-          scripts/.pinot_backfill_commit_compare.sh ${{ github.event.inputs.startDate }} ${{ github.event.inputs.endDate }}
+          CHUNK_DIR="data/chunk-${{ matrix.chunk }}"
+          scripts/.pinot_backfill_commit_compare.sh \
+            --start "${{ steps.dates.outputs.start }}" \
+            --end   "${{ steps.dates.outputs.end }}" \
+            --outdir "$CHUNK_DIR"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit and push changes
+
+      - name: Upload chunk artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: chunk-${{ matrix.chunk }}
+          path: data/chunk-${{ matrix.chunk }}
+
+  merge:
+    needs: backfill
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download all chunk artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts/
+
+      - name: Combine all reports
+        run: |
+          mkdir -p data/japicmp data/output
+          find artifacts/ -type f -path "*/japicmp/*.json" \
+            -exec cp {} data/japicmp/ \;
+          find artifacts/ -type f -path "*/output/*.json" \
+            -exec cp {} data/output/ \;
+
+      - name: Commit & push combined reports
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
-            git pull
-            git add .
-            git commit -m "Add commit reports"
+            git add data/japicmp data/output
+            git commit -m "chore: backfill commit reports for last ${{ github.event.inputs.days }} days"
             git push
           else
-            echo "Reports already exist for all commits in provided range."
+            echo "No new reports to commit"
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger Pages Deploy
+        run: gh workflow run deploy-pages.yml --ref main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
