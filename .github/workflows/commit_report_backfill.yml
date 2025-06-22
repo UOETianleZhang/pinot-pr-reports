@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        chunk: [0,1,2,3,4,5]       # 6 chunks
+        chunk: [0,1,2,3,4,5]    # 6 slices of the total window
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -29,16 +29,26 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Compute date window
+      - name: Compute date window for chunk ${{ matrix.chunk }}
         id: dates
         run: |
-          END=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          CHUNK_SIZE=$(( ( ${{ github.event.inputs.days }} + 5 ) / 6 ))
-          OFFSET=$(( CHUNK_SIZE * matrix.chunk ))
-          START=$(date -u -d "$END - $OFFSET days" +"%Y-%m-%dT%H:%M:%SZ")
-          END_CHUNK=$(date -u -d "$START + $CHUNK_SIZE days" +"%Y-%m-%dT%H:%M:%SZ")
-          echo "::set-output name=start::$START"
-          echo "::set-output name=end::$END_CHUNK"
+          # Total days to backfill
+          DAYS=${{ github.event.inputs.days }}
+          # How many slices (must match matrix length)
+          SLICES=6
+          # Ceiling division
+          CHUNK_SIZE=$(( (DAYS + SLICES - 1) / SLICES ))
+
+          NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          OFFSET=$(( matrix.chunk * CHUNK_SIZE ))
+
+          # End of this slice is NOW minus OFFSET days
+          CHUNK_END=$(date -u -d "$NOW - $OFFSET days" +"%Y-%m-%dT%H:%M:%SZ")
+          # Start of this slice is CHUNK_END minus CHUNK_SIZE days
+          CHUNK_START=$(date -u -d "$CHUNK_END - $CHUNK_SIZE days" +"%Y-%m-%dT%H:%M:%SZ")
+
+          echo "::set-output name=start::$CHUNK_START"
+          echo "::set-output name=end::$CHUNK_END"
 
       - name: Run backfill for chunk ${{ matrix.chunk }}
         run: |
