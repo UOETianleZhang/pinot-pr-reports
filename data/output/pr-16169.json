@@ -1,0 +1,65 @@
+{
+  "files": [
+    "pinot-tools/src/main/java/org/apache/pinot/tools/AuthQuickstart.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/TimeSeriesEngineAuthQuickStart.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/TimeSeriesEngineQuickStart.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/QuickstartRunner.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/utils/AuthUtils.java",
+    "pinot-tools/src/main/resources/scripts/timeseries/query.txt",
+    "pinot-tools/src/main/resources/scripts/timeseries/run_ts_query.py"
+  ],
+  "mergedAt": "2025-06-22T19:25:18Z",
+  "number": 16169,
+  "title": "[timeseries] Adding working E2E quickstart for TimeSeriesEngineAuth",
+  "url": "https://github.com/apache/pinot/pull/16169",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.tools.admin.command.QuickstartRunner",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) QuickstartRunner(java.util.List<org.apache.pinot.tools.QuickstartTableRequest>, int, int, int, int, java.io.File, java.util.Map<java.lang.String,java.lang.Object>, org.apache.pinot.spi.auth.AuthProvider)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.tools.TimeSeriesEngineAuthQuickStart",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthProvider getAuthProvider()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.Object> getConfigOverrides()",
+        "PUBLIC(+) STATIC(+) void main(java.lang.String[])",
+        "PUBLIC(+) java.util.List<java.lang.String> types()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TimeSeriesEngineAuthQuickStart()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.tools.utils.AuthUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.lang.Object> getAuthQuickStartDefaultConfigs()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_AUTH_TOKEN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) AuthUtils()"
+      ]
+    }
+  ]
+}
