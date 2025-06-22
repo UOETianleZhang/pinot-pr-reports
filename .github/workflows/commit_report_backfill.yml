@@ -1,25 +1,26 @@
+# .github/workflows/parallel_backfill.yml
 name: Parallel Commit Backfill
 
 on:
   workflow_dispatch:
     inputs:
       start_offset_days:
-        description: "How many days ago to start (e.g. 30 → start from 30 days ago)"
+        description: "How many days ago to start (e.g. 30 → begin window 30 days ago)"
         required: true
         default: 30
       backfill_days:
-        description: "How many days to backfill from that start"
+        description: "How many days from that start to backfill"
         required: true
         default: 30
 
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 4320        # per‐job timeout (max 6 h); bump up to 720 if needed
+    timeout-minutes: 360          # per‐job timeout (6h). Bump to 720 if needed.
     strategy:
-      fail-fast: false          # let all matrix slices run, even if one errors
+      fail-fast: false            # let all matrix slices run, even if one fails
       matrix:
-        chunk: [0,1,2,3,4,5]     # 6 parallel slices;
+        chunk: [0,1,2,3,4,5]       # 6 parallel slices; adjust count & array if you want finer chunks
 
     steps:
       - name: Checkout repo
@@ -44,8 +45,8 @@ jobs:
           CHUNK_SIZE=$(( (DAYS + SLICES - 1) / SLICES ))
 
           NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          # This slice ends at NOW - START_OFFSET - (chunk * CHUNK_SIZE)
-          OFFSET_DAYS=$(( START_OFFSET + matrix.chunk * CHUNK_SIZE ))
+          # This slice ends at NOW minus START_OFFSET days, then minus (chunk * CHUNK_SIZE)
+          OFFSET_DAYS=$(( START_OFFSET + ${{ matrix.chunk }} * CHUNK_SIZE ))
           CHUNK_END=$(date -u -d "$NOW - $OFFSET_DAYS days" +"%Y-%m-%dT%H:%M:%SZ")
           CHUNK_START=$(date -u -d "$CHUNK_END - $CHUNK_SIZE days" +"%Y-%m-%dT%H:%M:%SZ")
 
@@ -53,7 +54,7 @@ jobs:
           echo "::set-output name=end::$CHUNK_END"
 
       - name: Run backfill for chunk ${{ matrix.chunk }}
-        continue-on-error: true    # produce partial output even if it fails
+        continue-on-error: true     # produce whatever you can, even on failure/timeouts
         run: |
           CHUNK_DIR="data/chunk-${{ matrix.chunk }}"
           mkdir -p "$CHUNK_DIR"
@@ -64,7 +65,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload chunk-artifact
+      - name: Upload chunk artifact
         uses: actions/upload-artifact@v4
         with:
           name: chunk-${{ matrix.chunk }}
@@ -72,26 +73,30 @@ jobs:
 
   merge:
     needs: backfill
-    if: ${{ always() }}        # run even if backfill failed/timed-out
+    if: ${{ always() }}          # run even if some chunks failed
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Download all chunk artifacts
+      - name: Download chunk artifacts
         uses: actions/download-artifact@v4
         with:
           path: artifacts/
+          if-no-files-found: ignore    # don’t fail if a chunk had no output
 
       - name: Combine all reports
         run: |
           mkdir -p data/japicmp data/output
-          # collect every japicmp JSON
-          find artifacts/ -type f -path "*/japicmp/*.json" \
-            -exec cp {} data/japicmp/ \;
-          # collect every parsed JSON
-          find artifacts/ -type f -path "*/output/*.json" \
-            -exec cp {} data/output/ \;
+          if [[ -d artifacts ]]; then
+            find artifacts/ -type f -path "*/japicmp/*.json" \
+              -exec cp {} data/japicmp/ \;
+            find artifacts/ -type f -path "*/output/*.json" \
+              -exec cp {} data/output/ \;
+          else
+            echo "⚠️  No artifacts directory—nothing to merge."
+          fi
 
       - name: Commit & push combined reports
         run: |
@@ -99,10 +104,10 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add data/japicmp data/output
-            git commit -m "chore: backfill commit reports (last ${{ github.event.inputs.backfill_days }}d from ${{ github.event.inputs.start_offset_days }}d ago)"
+            git commit -m "chore: backfill ${GITHUB_EVENT_INPUTS_BACKFILL_DAYS}d from ${GITHUB_EVENT_INPUTS_START_OFFSET_DAYS}d ago"
             git push
           else
-            echo "No new reports to commit"
+            echo "ℹ️  No new reports to commit."
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
