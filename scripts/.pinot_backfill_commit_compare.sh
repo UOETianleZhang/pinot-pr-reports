@@ -117,23 +117,41 @@ for SHA in "${PR_SHAS[@]}"; do
 
   echo "▶ PR #${PR_NUM} (commit $SHA)"
 
-  # a) Build baseline
+  # a) Build baseline (resilient to failure)
   pushd "$REPO_DIR" >/dev/null
   git checkout "$BASELINE_SHA"
-  mvn clean install -T1C -DskipTests -q
+  if ! mvn clean install -T1C -DskipTests -q; then
+    echo "⚠️ Maven build failed at baseline $BASELINE_SHA for PR #${PR_NUM}, skipping this PR."
+    popd >/dev/null
+    BASELINE_SHA="$SHA"
+    continue
+  fi
   popd >/dev/null
   find "$REPO_DIR" -name "*${VERSION}.jar" -exec mv {} "$JAR_NEW/" \;
 
-  # b) Build current
+  # b) Build current (resilient to failure)
   pushd "$REPO_DIR" >/dev/null
   git checkout "$SHA"
-  mvn clean install -T1C -DskipTests -q
+  if ! mvn clean install -T1C -DskipTests -q; then
+    echo "⚠️ Maven build failed at current commit $SHA for PR #${PR_NUM}, skipping this PR."
+    popd >/dev/null
+    BASELINE_SHA="$SHA"
+    continue
+  fi
   popd >/dev/null
   find "$REPO_DIR" -name "*${VERSION}.jar" -exec mv {} "$JAR_OLD/" \;
 
   # sanity-check
-  [[ -n "$(ls -A "$JAR_NEW")" ]] || { echo "❌ No new jars"; exit 1; }
-  [[ -n "$(ls -A "$JAR_OLD")" ]] || { echo "❌ No old jars"; exit 1; }
+  if [[ -z "$(ls -A "$JAR_NEW")" ]]; then
+    echo "❌ No new jars; skipping PR #${PR_NUM}."
+    BASELINE_SHA="$SHA"
+    continue
+  fi
+  if [[ -z "$(ls -A "$JAR_OLD")" ]]; then
+    echo "❌ No old jars; skipping PR #${PR_NUM}."
+    BASELINE_SHA="$SHA"
+    continue
+  fi
 
   # c) Run japicmp
   TXT="pr-${PR_NUM}.txt"
