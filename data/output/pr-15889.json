@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/utils/Utils.tsx"
+  ],
+  "mergedAt": "2025-05-23T22:15:03Z",
+  "number": 15889,
+  "title": "[bugfix][ui] Fix: rendering of table sizes in OSS UI when table size returns -1.",
+  "url": "https://github.com/apache/pinot/pull/15889",
+  "jcmpClasses": []
+}

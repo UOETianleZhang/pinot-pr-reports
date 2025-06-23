@@ -1,0 +1,76 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/executor/OpChainSchedulerService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/server/QueryServer.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/QueryServerEnclosure.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/query/QueryThreadContext.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-05-22T12:04:16Z",
+  "number": 15445,
+  "title": "Direct mse query server",
+  "url": "https://github.com/apache/pinot/pull/15445",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.QueryRunner",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void notifyErrorAfterSubmission(int, org.apache.pinot.query.runtime.blocks.ErrorMseBlock, long, org.apache.pinot.query.routing.WorkerMetadata, org.apache.pinot.query.routing.StagePlan, long)",
+        "PRIVATE(-) void processQueryBlocking(org.apache.pinot.query.routing.WorkerMetadata, org.apache.pinot.query.routing.StagePlan, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.util.concurrent.ExecutorService getExecutorService()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.service.server.QueryServer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) io.grpc.Server buildGrpcServer(io.grpc.ServerBuilder<T>)",
+        "PRIVATE(-) org.apache.pinot.common.proto.Worker$ExplainResponse calculateExplainPlanForStage(org.apache.pinot.common.proto.Worker$StagePlan, org.apache.pinot.query.routing.WorkerMetadata[], java.util.Map<java.lang.String,java.lang.String>)",
+        "PRIVATE(-) org.apache.pinot.query.routing.StagePlan deserializePlan(org.apache.pinot.common.proto.Worker$StagePlan)",
+        "PRIVATE(-) void explainInternal(org.apache.pinot.common.proto.Worker$QueryRequest, io.grpc.stub.StreamObserver<org.apache.pinot.common.proto.Worker$ExplainResponse>, java.util.Map<java.lang.String,java.lang.String>)",
+        "PRIVATE(-) void submitInternal(org.apache.pinot.common.proto.Worker$QueryRequest, java.util.Map<java.lang.String,java.lang.String>)",
+        "PRIVATE(-) void submitTimeSeriesInternal(org.apache.pinot.common.proto.Worker$TimeSeriesQueryRequest, io.grpc.stub.StreamObserver<org.apache.pinot.common.proto.Worker$TimeSeriesResponse>)",
+        "PRIVATE(-) java.util.concurrent.CompletableFuture<java.lang.Void> submitWorker(org.apache.pinot.query.routing.WorkerMetadata, org.apache.pinot.query.routing.StagePlan, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [
+        "void forEachStage(org.apache.pinot.common.proto.Worker$QueryRequest, java.util.function.BiFunction<org.apache.pinot.query.routing.StagePlan,org.apache.pinot.query.routing.WorkerMetadata,W>, java.util.function.Consumer<java.util.List<W>>)",
+        "PRIVATE(+) void submitStage(org.apache.pinot.common.proto.Worker$StagePlan, java.util.function.BiFunction<org.apache.pinot.query.routing.StagePlan,org.apache.pinot.query.routing.WorkerMetadata,W>, java.util.function.Consumer<W>)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.concurrent.ExecutorService _timeSeriesExecutorService",
+        "PRIVATE(-) FINAL(-) java.util.concurrent.ExecutorService _explainExecutorService",
+        "PRIVATE(-) FINAL(-) java.util.concurrent.ExecutorService _submissionExecutorService"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ExecutorService _querySubmissionExecutorService"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Server",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String DEFAULT_TIMESERIES_EXEC_CONFIG_PREFIX",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String DEFAULT_MULTISTAGE_SUBMISSION_EXEC_TYPE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String MULTISTAGE_TIMESERIES_EXEC_CONFIG_PREFIX",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String MULTISTAGE_SUBMISSION_EXEC_CONFIG_PREFIX"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

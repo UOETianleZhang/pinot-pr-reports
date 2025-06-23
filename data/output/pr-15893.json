@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/combine/CombineSlowOperatorsTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/prefetch/DefaultFetchPlannerTest.java"
+  ],
+  "mergedAt": "2025-05-23T22:01:44Z",
+  "number": 15893,
+  "title": "Fix test failures introduced in #15869",
+  "url": "https://github.com/apache/pinot/pull/15893",
+  "jcmpClasses": []
+}

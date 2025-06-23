@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-segment-spi/resources/pinot-segment-spi-japicmp-baseline.jar",
+    "pinot-spi/resources/pinot-spi-japicmp-baseline.jar"
+  ],
+  "mergedAt": "2025-05-23T22:02:54Z",
+  "number": 15879,
+  "title": "update the Baseline jars for japicmp plugin to fix the build failure.",
+  "url": "https://github.com/apache/pinot/pull/15879",
+  "jcmpClasses": []
+}

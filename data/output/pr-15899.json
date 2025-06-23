@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-26T13:44:24Z",
+  "number": 15899,
+  "title": "Bump dropwizard-metrics.version from 4.2.30 to 4.2.32",
+  "url": "https://github.com/apache/pinot/pull/15899",
+  "jcmpClasses": []
+}

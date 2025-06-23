@@ -1,0 +1,167 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/DoubleLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/FloatLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/IntLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/LongLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/LookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/ObjectLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/PrimitiveLookupTable.java",
+    "pinot-query-runtime/src/test/resources/queries/NullHandling.json"
+  ],
+  "mergedAt": "2025-05-22T23:41:59Z",
+  "number": 15848,
+  "title": "Modify primitive lookup tables to accept null values",
+  "url": "https://github.com/apache/pinot/pull/15848",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.DoubleLookupTable",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void addRowNotNullKey(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(-) boolean containsNotNullKey(java.lang.Object)",
+        "PUBLIC(-) void finishNotNullKey()",
+        "PUBLIC(-) java.lang.Object lookupNotNullKey(java.lang.Object)",
+        "PUBLIC(-) java.util.Set<java.util.Map$Entry<java.lang.Object,java.lang.Object>> notNullKeyEntrySet()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void addRow(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(+) boolean containsKey(java.lang.Object)",
+        "PUBLIC(+) java.util.Set<java.util.Map$Entry> entrySet()",
+        "PUBLIC(+) void finish()",
+        "PUBLIC(+) java.lang.Object lookup(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.FloatLookupTable",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void addRowNotNullKey(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(-) boolean containsNotNullKey(java.lang.Object)",
+        "PUBLIC(-) void finishNotNullKey()",
+        "PUBLIC(-) java.lang.Object lookupNotNullKey(java.lang.Object)",
+        "PUBLIC(-) java.util.Set<java.util.Map$Entry<java.lang.Object,java.lang.Object>> notNullKeyEntrySet()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void addRow(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(+) boolean containsKey(java.lang.Object)",
+        "PUBLIC(+) java.util.Set<java.util.Map$Entry> entrySet()",
+        "PUBLIC(+) void finish()",
+        "PUBLIC(+) java.lang.Object lookup(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.IntLookupTable",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void addRowNotNullKey(java.lang.Object, java.lang.Object[])",
+        "PROTECTED(-) boolean containsNotNullKey(java.lang.Object)",
+        "PROTECTED(-) void finishNotNullKey()",
+        "PROTECTED(-) java.lang.Object lookupNotNullKey(java.lang.Object)",
+        "PROTECTED(-) java.util.Set<java.util.Map$Entry<java.lang.Object,java.lang.Object>> notNullKeyEntrySet()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void addRow(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(+) boolean containsKey(java.lang.Object)",
+        "PUBLIC(+) java.util.Set<java.util.Map$Entry> entrySet()",
+        "PUBLIC(+) void finish()",
+        "PUBLIC(+) java.lang.Object lookup(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.LongLookupTable",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void addRowNotNullKey(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(-) boolean containsNotNullKey(java.lang.Object)",
+        "PUBLIC(-) void finishNotNullKey()",
+        "PUBLIC(-) java.lang.Object lookupNotNullKey(java.lang.Object)",
+        "PUBLIC(-) java.util.Set<java.util.Map$Entry<java.lang.Object,java.lang.Object>> notNullKeyEntrySet()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void addRow(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(+) boolean containsKey(java.lang.Object)",
+        "PUBLIC(+) java.util.Set<java.util.Map$Entry> entrySet()",
+        "PUBLIC(+) void finish()",
+        "PUBLIC(+) java.lang.Object lookup(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.LookupTable",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) STATIC(-) java.lang.Object convertValueToList(java.lang.Object)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void addRow(java.lang.Object, java.lang.Object[])",
+        "PROTECTED(-) ABSTRACT(-) void addRowNotNullKey(java.lang.Object, java.lang.Object[])",
+        "PUBLIC(-) boolean containsKey(java.lang.Object)",
+        "PROTECTED(-) ABSTRACT(-) boolean containsNotNullKey(java.lang.Object)",
+        "PUBLIC(-) java.util.Set<java.util.Map$Entry<java.lang.Object,java.lang.Object>> entrySet()",
+        "PUBLIC(-) void finish()",
+        "PROTECTED(-) ABSTRACT(-) void finishNotNullKey()",
+        "PUBLIC(-) java.lang.Object lookup(java.lang.Object)",
+        "PROTECTED(-) ABSTRACT(-) java.lang.Object lookupNotNullKey(java.lang.Object)",
+        "PROTECTED(-) ABSTRACT(-) java.util.Set<java.util.Map$Entry<java.lang.Object,java.lang.Object>> notNullKeyEntrySet()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.lang.Object _valueForNullKey"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PrimitiveLookupTable()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Object getKey()",
+        "PUBLIC(-) java.lang.Object getValue()",
+        "PUBLIC(-) java.lang.Object setValue(java.lang.Object)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PrimitiveLookupTable$1(org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}

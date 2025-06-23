@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-21T22:15:57Z",
+  "number": 15867,
+  "title": "Bump org.eclipse.sisu:sisu-maven-plugin from 0.9.0.M3 to 0.9.0.M4",
+  "url": "https://github.com/apache/pinot/pull/15867",
+  "jcmpClasses": []
+}

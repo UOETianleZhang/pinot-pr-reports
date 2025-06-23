@@ -1,0 +1,41 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterIntegrationTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/metadata/SegmentMetadataImpl.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-05-21T23:39:12Z",
+  "number": 15856,
+  "title": "Fix index loading for invisible columns",
+  "url": "https://github.com/apache/pinot/pull/15856",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) void addPhysicalColumns(java.util.List<java.lang.Object>, java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) void addPhysicalColumns(java.util.List, java.util.Collection<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Segment$BuiltInVirtualColumn",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.util.Set<java.lang.String> BUILT_IN_VIRTUAL_COLUMNS"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

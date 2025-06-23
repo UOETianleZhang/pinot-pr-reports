@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/ControllerRequestClient.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterIntegrationTest.java"
+  ],
+  "mergedAt": "2025-05-26T05:04:19Z",
+  "number": 15870,
+  "title": "Encode Segment Reload Request",
+  "url": "https://github.com/apache/pinot/pull/15870",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.ControllerRequestClient",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

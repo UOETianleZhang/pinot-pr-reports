@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-21T22:21:12Z",
+  "number": 15849,
+  "title": "Bump kafka3.version from 3.9.0 to 3.9.1",
+  "url": "https://github.com/apache/pinot/pull/15849",
+  "jcmpClasses": []
+}

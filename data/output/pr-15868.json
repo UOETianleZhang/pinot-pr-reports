@@ -1,0 +1,410 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/AccessControl.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/HttpRequesterIdentity.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/AllowAllAccessControlFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/BasicAuthAccessControlFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/ZkBasicAuthAccessControlFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/grpc/BrokerGrpcServer.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/grpc/GrpcRequesterIdentity.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/querylog/QueryLogger.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandlerDelegate.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/api/AccessControlBackwardCompatibleTest.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/querylog/QueryLoggerTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/server/access/AccessControl.java",
+    "pinot-core/src/main/java/org/apache/pinot/server/access/AllowAllAccessFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/server/access/BasicAuthAccessFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/server/access/GrpcRequesterIdentity.java",
+    "pinot-core/src/main/java/org/apache/pinot/server/access/HttpRequesterIdentity.java",
+    "pinot-core/src/main/java/org/apache/pinot/server/access/ZkBasicAuthAccessFactory.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/access/CertBasedTlsChannelAccessControlFactory.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/ServerResourceUtils.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/AccessControlTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/auth/broker/RequesterIdentity.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/auth/server/RequesterIdentity.java"
+  ],
+  "mergedAt": "2025-05-22T17:37:33Z",
+  "number": 15868,
+  "title": "Migrating broker.api.RequesterIdentity and server.access.RequesterIdentity to pinot-spi",
+  "url": "https://github.com/apache/pinot/pull/15868",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.api.AccessControl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity)",
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(-) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.util.Set<java.lang.String>)",
+        "PUBLIC(-) boolean hasAccess(org.apache.pinot.spi.auth.broker.RequesterIdentity)",
+        "PUBLIC(-) boolean hasAccess(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(-) boolean hasAccess(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity)",
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(+) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, java.util.Set<java.lang.String>)",
+        "PUBLIC(+) boolean hasAccess(org.apache.pinot.broker.api.RequesterIdentity)",
+        "PUBLIC(+) boolean hasAccess(org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(+) boolean hasAccess(org.apache.pinot.broker.api.RequesterIdentity, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.api.HttpRequesterIdentity",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.api.RequesterIdentity",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getClientIp()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RequesterIdentity()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.broker.AllowAllAccessControlFactory$AllowAllAccessControl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(-) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(+) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.broker.BasicAuthAccessControlFactory$BasicAuthAccessControl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity)",
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(-) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) java.util.Optional<org.apache.pinot.core.auth.BasicAuthPrincipal> getPrincipalOpt(org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity)",
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(+) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, java.util.Set<java.lang.String>)",
+        "PRIVATE(+) java.util.Optional<org.apache.pinot.core.auth.BasicAuthPrincipal> getPrincipalOpt(org.apache.pinot.broker.api.RequesterIdentity)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.broker.ZkBasicAuthAccessControlFactory$BasicAuthAccessControl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity)",
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(-) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) java.util.Optional<org.apache.pinot.core.auth.ZkBasicAuthPrincipal> getPrincipalAuth(org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity)",
+        "PUBLIC(+) org.apache.pinot.spi.auth.AuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(+) org.apache.pinot.spi.auth.TableAuthorizationResult authorize(org.apache.pinot.broker.api.RequesterIdentity, java.util.Set<java.lang.String>)",
+        "PRIVATE(+) java.util.Optional<org.apache.pinot.core.auth.ZkBasicAuthPrincipal> getPrincipalAuth(org.apache.pinot.broker.api.RequesterIdentity)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.grpc.GrpcRequesterIdentity",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.querylog.QueryLogger$QueryLogParams",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) QueryLogger$QueryLogParams(org.apache.pinot.spi.trace.RequestContext, java.lang.String, org.apache.pinot.common.response.BrokerResponse, org.apache.pinot.broker.querylog.QueryLogger$QueryLogParams$QueryEngine, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.broker.requesthandler.BaseSingleStageBrokerRequestHandler$ServerStats)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) QueryLogger$QueryLogParams(org.apache.pinot.spi.trace.RequestContext, java.lang.String, org.apache.pinot.common.response.BrokerResponse, org.apache.pinot.broker.querylog.QueryLogger$QueryLogParams$QueryEngine, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.broker.requesthandler.BaseSingleStageBrokerRequestHandler$ServerStats)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BaseBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.BrokerResponse handleRequest(com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)",
+        "PROTECTED(-) ABSTRACT(-) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PROTECTED(-) org.apache.pinot.spi.auth.TableAuthorizationResult hasTableAccess(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.util.Set<java.lang.String>, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.BrokerResponse handleRequest(com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)",
+        "PROTECTED(+) ABSTRACT(+) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PROTECTED(+) org.apache.pinot.spi.auth.TableAuthorizationResult hasTableAccess(org.apache.pinot.broker.api.RequesterIdentity, java.util.Set<java.lang.String>, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BaseSingleStageBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.broker.requesthandler.BaseSingleStageBrokerRequestHandler$CompileResult compileRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PROTECTED(-) org.apache.pinot.common.response.BrokerResponse doHandleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PRIVATE(-) org.apache.pinot.common.response.broker.BrokerResponseNative getEmptyBrokerOnlyResponse(org.apache.pinot.common.request.PinotQuery, org.apache.pinot.common.request.PinotQuery, org.apache.pinot.spi.trace.RequestContext, java.lang.String, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.data.Schema, java.lang.String, java.lang.String)",
+        "PROTECTED(-) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PRIVATE(-) void handleSubquery(org.apache.pinot.common.request.PinotQuery, long, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PRIVATE(-) void handleSubquery(org.apache.pinot.common.request.Expression, long, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.broker.requesthandler.BaseSingleStageBrokerRequestHandler$CompileResult compileRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PROTECTED(+) org.apache.pinot.common.response.BrokerResponse doHandleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PRIVATE(+) org.apache.pinot.common.response.broker.BrokerResponseNative getEmptyBrokerOnlyResponse(org.apache.pinot.common.request.PinotQuery, org.apache.pinot.common.request.PinotQuery, org.apache.pinot.spi.trace.RequestContext, java.lang.String, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.data.Schema, java.lang.String, java.lang.String)",
+        "PROTECTED(+) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PRIVATE(+) void handleSubquery(org.apache.pinot.common.request.PinotQuery, long, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PRIVATE(+) void handleSubquery(org.apache.pinot.common.request.Expression, long, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.common.response.BrokerResponse handleRequest(com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.response.BrokerResponse handleRequest(com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandlerDelegate",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.BrokerResponse handleRequest(com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.BrokerResponse handleRequest(com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.MultiStageBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void checkAuthorization(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.query.QueryEnvironment$CompiledQuery)",
+        "PROTECTED(-) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PROTECTED(-) org.apache.pinot.common.response.BrokerResponse handleRequestThrowing(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(-) org.apache.pinot.common.response.BrokerResponse query(org.apache.pinot.query.QueryEnvironment$CompiledQuery, long, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.common.utils.Timer)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void checkAuthorization(org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.query.QueryEnvironment$CompiledQuery)",
+        "PROTECTED(+) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)",
+        "PROTECTED(+) org.apache.pinot.common.response.BrokerResponse handleRequestThrowing(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(+) org.apache.pinot.common.response.BrokerResponse query(org.apache.pinot.query.QueryEnvironment$CompiledQuery, long, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.common.utils.Timer)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.TimeSeriesRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.common.response.BrokerResponse handleRequest(long, java.lang.String, org.apache.pinot.sql.parsers.SqlNodeAndOptions, com.fasterxml.jackson.databind.JsonNode, org.apache.pinot.broker.api.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.broker.api.AccessControl)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.access.AccessControl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) boolean hasDataAccess(org.apache.pinot.spi.auth.server.RequesterIdentity, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean hasDataAccess(org.apache.pinot.server.access.RequesterIdentity, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.access.AllowAllAccessFactory$1",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean hasDataAccess(org.apache.pinot.spi.auth.server.RequesterIdentity, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean hasDataAccess(org.apache.pinot.server.access.RequesterIdentity, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.access.BasicAuthAccessFactory$BasicAuthAccessControl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.Collection<java.lang.String> getTokens(org.apache.pinot.spi.auth.server.RequesterIdentity)",
+        "PUBLIC(-) boolean hasDataAccess(org.apache.pinot.spi.auth.server.RequesterIdentity, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Collection<java.lang.String> getTokens(org.apache.pinot.server.access.RequesterIdentity)",
+        "PUBLIC(+) boolean hasDataAccess(org.apache.pinot.server.access.RequesterIdentity, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.access.GrpcRequesterIdentity",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.access.HttpRequesterIdentity",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.access.RequesterIdentity",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RequesterIdentity()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.server.access.ZkBasicAuthAccessFactory$BasicAuthAccessControl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.Collection<java.lang.String> getTokens(org.apache.pinot.spi.auth.server.RequesterIdentity)",
+        "PUBLIC(-) boolean hasDataAccess(org.apache.pinot.spi.auth.server.RequesterIdentity, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Collection<java.lang.String> getTokens(org.apache.pinot.server.access.RequesterIdentity)",
+        "PUBLIC(+) boolean hasDataAccess(org.apache.pinot.server.access.RequesterIdentity, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.auth.broker.RequesterIdentity",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getClientIp()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RequesterIdentity()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.auth.server.RequesterIdentity",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RequesterIdentity()"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
