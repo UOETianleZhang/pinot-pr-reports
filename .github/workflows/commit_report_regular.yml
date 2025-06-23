@@ -2,38 +2,50 @@ name: Regular Commit Comparison Generator
 
 on:
   schedule:
-    - cron: "23 */1 * * *" # every hour at 23rd minute
+    - cron: "23 */1 * * *" # every hour at the 23rd minute
+  workflow_dispatch: {}       # allow manual “Run workflow” trigger
 
 jobs:
   commit-compare:
     runs-on: ubuntu-latest
     name: Commit Comparer
     steps:
-      - name: Check out code
+      - name: Check out code (full history)
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0      # ensure we have all commits for pull/rebase
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global pull.rebase true
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - name: Configure Git user
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Run report+json generator process
         run: |
           scripts/.pinot_regular_commit_compare.sh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Commit and push changes
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
-            git pull
-            git add .
-            git commit -m "Add commit reports"
-            git push
+            # Rebase local main onto remote, integrating any changes
+            git pull --rebase origin main
+            git add data/japicmp data/output
+            git commit -m "chore: add commit reports"
+            git push origin main
           else
             echo "No commits made since last workflow's start time."
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Trigger Pages Deploy
         run: gh workflow run deploy.yml --ref main
         env:
