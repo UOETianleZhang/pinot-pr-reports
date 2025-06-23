@@ -75,10 +75,11 @@ jobs:
     needs: backfill
     if: ${{ always() }}          # run even if some chunks failed
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
+      - name: Checkout repo (full history)
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0     # ← pull all commits, not just a single ref
 
       - name: Download chunk artifacts
         uses: actions/download-artifact@v4
@@ -98,11 +99,15 @@ jobs:
             echo "⚠️  No artifacts directory—nothing to merge."
           fi
 
+      - name: Sync with remote main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
+
       - name: Commit & push combined reports
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
             git add data/japicmp data/output
             git commit -m "chore: backfill ${GITHUB_EVENT_INPUTS_BACKFILL_DAYS}d from ${GITHUB_EVENT_INPUTS_START_OFFSET_DAYS}d ago"
             git push
