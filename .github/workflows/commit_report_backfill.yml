@@ -16,7 +16,7 @@ on:
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 360          # per‐job timeout (6h). Bump to 720 if needed.
+    timeout-minutes: 2880          # per‐job timeout (48h).
     strategy:
       fail-fast: false            # let all matrix slices run, even if one fails
       matrix:
