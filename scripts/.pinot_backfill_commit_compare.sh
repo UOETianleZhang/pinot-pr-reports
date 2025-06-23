@@ -132,7 +132,7 @@ for SHA in "${PR_SHAS[@]}"; do
   # b) Build current (resilient to failure)
   pushd "$REPO_DIR" >/dev/null
   git checkout "$SHA"
-  if ! mvn clean install -T1C -DskipTests -q; then
+  if ! mvn install -T1C -DskipTests -q; then
     echo "⚠️ Maven build failed at current commit $SHA for PR #${PR_NUM}, skipping this PR."
     popd >/dev/null
     BASELINE_SHA="$SHA"
