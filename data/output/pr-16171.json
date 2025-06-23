@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-minion/src/main/java/org/apache/pinot/minion/taskfactory/TaskFactoryRegistry.java",
+    "pinot-minion/src/test/java/org/apache/pinot/minion/taskfactory/TaskFactoryRegistryTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/Obfuscator.java"
+  ],
+  "mergedAt": "2025-06-23T06:51:33Z",
+  "number": 16171,
+  "title": "feat: Mask sensitive task configuration values in logs",
+  "url": "https://github.com/apache/pinot/pull/16171",
+  "jcmpClasses": []
+}
