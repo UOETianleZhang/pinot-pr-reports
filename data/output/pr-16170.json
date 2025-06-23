@@ -1,0 +1,41 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/BasicAuthAccessControlFactory.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/broker/BasicAuthAccessControlFactoryGrpcTest.java",
+    "pinot-clients/pinot-jdbc-client/src/main/java/org/apache/pinot/client/examples/PinotJdbcExample.java",
+    "pinot-clients/pinot-jdbc-client/src/main/java/org/apache/pinot/client/grpc/PinotGrpcConnection.java",
+    "pinot-clients/pinot-jdbc-client/src/main/java/org/apache/pinot/client/utils/DriverUtils.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/AuthQuickstart.java"
+  ],
+  "mergedAt": "2025-06-23T06:47:50Z",
+  "number": 16170,
+  "title": "Support broker grpc connection with auth",
+  "url": "https://github.com/apache/pinot/pull/16170",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.client.examples.PinotJdbcExample",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void testPinotJdbcForQuickStart(java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
+        "PUBLIC(+) STATIC(+) void testPinotJdbcForQuickStart(java.lang.String, java.lang.String, java.util.Properties)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.client.grpc.PinotGrpcConnection",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
