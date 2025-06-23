@@ -39,37 +39,40 @@ jobs:
       - name: Compute date window for chunk ${{ matrix.chunk }}
         id: dates
         run: |
-          DAYS=${{ github.event.inputs.backfill_days }}
+          # Inputs
           START_OFFSET=${{ github.event.inputs.start_offset_days }}
+          BACKFILL_DAYS=${{ github.event.inputs.backfill_days }}
           SLICES=6
-          CHUNK_SIZE=$(( (DAYS + SLICES - 1) / SLICES ))
+          CHUNK=${{ matrix.chunk }}
 
+          # Now & absolute window
           NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          # This slice ends at NOW minus START_OFFSET days, then minus (chunk * CHUNK_SIZE)
-          OFFSET_DAYS=$(( START_OFFSET + ${{ matrix.chunk }} * CHUNK_SIZE ))
-          CHUNK_END=$(date -u -d "$NOW - $OFFSET_DAYS days" +"%Y-%m-%dT%H:%M:%SZ")
-          CHUNK_START=$(date -u -d "$CHUNK_END - $CHUNK_SIZE days" +"%Y-%m-%dT%H:%M:%SZ")
+          WINDOW_START=$(date -u -d "$NOW - $START_OFFSET days" +"%Y-%m-%dT%H:%M:%SZ")
+          WINDOW_END=$(date -u -d "$WINDOW_START + $BACKFILL_DAYS days" +"%Y-%m-%dT%H:%M:%SZ")
+          echo "Full window: $WINDOW_START → $WINDOW_END"
 
-          echo "::set-output name=start::$CHUNK_START"
-          echo "::set-output name=end::$CHUNK_END"
+          # Compute per-slice base and remainder
+          BASE=$(( BACKFILL_DAYS / SLICES ))
+          REM=$(( BACKFILL_DAYS % SLICES ))
 
-      - name: Run backfill for chunk ${{ matrix.chunk }}
-        continue-on-error: true     # produce whatever you can, even on failure/timeouts
-        run: |
-          CHUNK_DIR="data/chunk-${{ matrix.chunk }}"
-          mkdir -p "$CHUNK_DIR"
-          scripts/.pinot_backfill_commit_compare.sh \
-            --start "${{ steps.dates.outputs.start }}" \
-            --end   "${{ steps.dates.outputs.end }}" \
-            --outdir "$CHUNK_DIR"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Each of the first REM slices gets BASE+1 days; the rest get BASE days
+          if (( CHUNK < REM )); then
+            SLICE_SIZE=$(( BASE + 1 ))
+            SLICE_OFFSET=$(( CHUNK * (BASE + 1) ))
+          else
+            SLICE_SIZE=$BASE
+            SLICE_OFFSET=$(( REM * (BASE + 1) + (CHUNK - REM) * BASE ))
+          fi
 
-      - name: Upload chunk artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: chunk-${{ matrix.chunk }}
-          path: data/chunk-${{ matrix.chunk }}
+          # Compute this slice’s start & end
+          CHUNK_START=$(date -u -d "$WINDOW_START + $SLICE_OFFSET days" +"%Y-%m-%dT%H:%M:%SZ")
+          CHUNK_END=$(date -u -d "$CHUNK_START + $SLICE_SIZE days" +"%Y-%m-%dT%H:%M:%SZ")
+
+          echo "Slice #$CHUNK: $CHUNK_START → $CHUNK_END"
+
+          # Expose to next steps
+          echo "start=$CHUNK_START" >> $GITHUB_OUTPUT
+          echo "end=$CHUNK_END"   >> $GITHUB_OUTPUT
 
   merge:
     needs: backfill
