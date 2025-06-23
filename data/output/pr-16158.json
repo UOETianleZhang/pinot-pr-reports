@@ -1,0 +1,11 @@
+{
+  "files": [
+    "docker/images/pinot/etc/jmx_prometheus_javaagent/configs/pinot.yml",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java"
+  ],
+  "mergedAt": "2025-06-23T16:48:52Z",
+  "number": 16158,
+  "title": "Fixes realtimeBytesConsumed metric and adds to JMX export rule",
+  "url": "https://github.com/apache/pinot/pull/16158",
+  "jcmpClasses": []
+}
