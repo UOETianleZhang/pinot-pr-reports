@@ -4,27 +4,29 @@ name: Parallel Commit Backfill
 on:
   workflow_dispatch:
     inputs:
+      # How many days ago to begin the window (e.g. 30 → window starts 30 days ago)
       start_offset_days:
-        description: "How many days ago to start (e.g. 30 → begin window 30 days ago)"
+        description: "Days ago to start backfill window"
         required: true
         default: 30
+      # How many days long the window should be
       backfill_days:
-        description: "How many days from that start to backfill"
+        description: "Length of backfill window, in days"
         required: true
         default: 30
 
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 2880          # per‐job timeout (48h).
+    timeout-minutes: 2880        # 48h
     strategy:
-      fail-fast: false            # let all matrix slices run, even if one fails
+      fail-fast: false          # let all matrix slices run, even if some fail
       matrix:
-        chunk: [0,1,2,3,4,5]       # 6 parallel slices; adjust count & array if you want finer chunks
+        chunk: [0,1,2,3,4,5]     # 6 parallel slices; change count & array if desired
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Set up Java & Maven
         run: |
@@ -32,63 +34,81 @@ jobs:
           sudo apt-get install -y maven openjdk-17-jdk
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Compute date window for chunk ${{ matrix.chunk }}
+      - name: Compute full window & this chunk’s window
         id: dates
         run: |
-          # Inputs
           START_OFFSET=${{ github.event.inputs.start_offset_days }}
           BACKFILL_DAYS=${{ github.event.inputs.backfill_days }}
           SLICES=6
           CHUNK=${{ matrix.chunk }}
 
-          # Now & absolute window
+          # Compute absolute window
           NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           WINDOW_START=$(date -u -d "$NOW - $START_OFFSET days" +"%Y-%m-%dT%H:%M:%SZ")
           WINDOW_END=$(date -u -d "$WINDOW_START + $BACKFILL_DAYS days" +"%Y-%m-%dT%H:%M:%SZ")
+
           echo "Full window: $WINDOW_START → $WINDOW_END"
 
-          # Compute per-slice base and remainder
+          # Divide into SLICES chunks, distributing remainder among first slices
           BASE=$(( BACKFILL_DAYS / SLICES ))
           REM=$(( BACKFILL_DAYS % SLICES ))
-
-          # Each of the first REM slices gets BASE+1 days; the rest get BASE days
           if (( CHUNK < REM )); then
             SLICE_SIZE=$(( BASE + 1 ))
-            SLICE_OFFSET=$(( CHUNK * (BASE + 1) ))
+            SLICE_OFFSET=$(( CHUNK * SLICE_SIZE ))
           else
             SLICE_SIZE=$BASE
             SLICE_OFFSET=$(( REM * (BASE + 1) + (CHUNK - REM) * BASE ))
           fi
 
-          # Compute this slice’s start & end
           CHUNK_START=$(date -u -d "$WINDOW_START + $SLICE_OFFSET days" +"%Y-%m-%dT%H:%M:%SZ")
           CHUNK_END=$(date -u -d "$CHUNK_START + $SLICE_SIZE days" +"%Y-%m-%dT%H:%M:%SZ")
+          # Cap to WINDOW_END
+          if [[ "$(date -d "$CHUNK_END" +%s)" -gt "$(date -d "$WINDOW_END" +%s)" ]]; then
+            CHUNK_END="$WINDOW_END"
+          fi
 
           echo "Slice #$CHUNK: $CHUNK_START → $CHUNK_END"
-
-          # Expose to next steps
           echo "start=$CHUNK_START" >> $GITHUB_OUTPUT
-          echo "end=$CHUNK_END"   >> $GITHUB_OUTPUT
+          echo "end=$CHUNK_END"     >> $GITHUB_OUTPUT
+
+      - name: Run backfill for chunk ${{ matrix.chunk }}
+        continue-on-error: true
+        run: |
+          CHUNK_DIR="data/chunk-${{ matrix.chunk }}"
+          mkdir -p "$CHUNK_DIR"
+          scripts/.pinot_backfill_commit_compare.sh \
+            --start "${{ steps.dates.outputs.start }}" \
+            --end   "${{ steps.dates.outputs.end }}" \
+            --outdir "$CHUNK_DIR"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload chunk artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.chunk }}
+          path: data/chunk-${{ matrix.chunk }}
 
   merge:
     needs: backfill
-    if: ${{ always() }}          # run even if some chunks failed
+    if: ${{ always() }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo (full history)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0     # ← pull all commits, not just a single ref
+          fetch-depth: 0
 
       - name: Download chunk artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           path: artifacts/
-          if-no-files-found: ignore    # don’t fail if a chunk had no output
+          if-no-files-found: ignore
 
       - name: Combine all reports
         run: |
@@ -99,7 +119,7 @@ jobs:
             find artifacts/ -type f -path "*/output/*.json" \
               -exec cp {} data/output/ \;
           else
-            echo "⚠️  No artifacts directory—nothing to merge."
+            echo "ℹ️ No artifacts to merge."
           fi
 
       - name: Sync with remote main
@@ -115,7 +135,7 @@ jobs:
             git commit -m "chore: backfill ${GITHUB_EVENT_INPUTS_BACKFILL_DAYS}d from ${GITHUB_EVENT_INPUTS_START_OFFSET_DAYS}d ago"
             git push
           else
-            echo "ℹ️  No new reports to commit."
+            echo "ℹ️ No new reports to commit."
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -123,4 +143,4 @@ jobs:
       - name: Trigger Pages deploy
         run: gh workflow run deploy.yml --ref main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
