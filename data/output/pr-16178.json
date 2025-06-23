@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-23T16:44:37Z",
+  "number": 16178,
+  "title": "Bump com.puppycrawl.tools:checkstyle from 10.25.0 to 10.25.1",
+  "url": "https://github.com/apache/pinot/pull/16178",
+  "jcmpClasses": []
+}

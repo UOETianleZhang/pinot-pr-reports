@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-23T16:44:53Z",
+  "number": 16179,
+  "title": "Bump org.jetbrains.kotlin:kotlin-bom from 2.1.21 to 2.2.0",
+  "url": "https://github.com/apache/pinot/pull/16179",
+  "jcmpClasses": []
+}

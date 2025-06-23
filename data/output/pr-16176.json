@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-23T16:43:27Z",
+  "number": 16176,
+  "title": "Bump it.unimi.dsi:fastutil from 8.5.15 to 8.5.16",
+  "url": "https://github.com/apache/pinot/pull/16176",
+  "jcmpClasses": []
+}

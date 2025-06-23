@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentRestletResource.java"
+  ],
+  "mergedAt": "2025-06-23T16:37:24Z",
+  "number": 15996,
+  "title": "Improving response for deleteSegmentsFromSequenceNum",
+  "url": "https://github.com/apache/pinot/pull/15996",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotSegmentRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.api.resources.SuccessResponse deleteSegmentsFromSequenceNum(java.lang.String, java.util.List<java.lang.String>, boolean, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String deleteSegmentsFromSequenceNum(java.lang.String, java.util.List<java.lang.String>, boolean, boolean, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
