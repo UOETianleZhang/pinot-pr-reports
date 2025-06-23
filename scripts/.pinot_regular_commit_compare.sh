@@ -49,7 +49,7 @@ for i in $( seq 1 "$((arrlen - 1))" ); do
   if [[ $i -eq 1 ]]; then
     cd pinot || exit
     git checkout "${hashlist[$((i-1))]}"
-    mvn clean install -DskipTests -q
+    mvn install -DskipTests -q
     echo "mvn clean #""$((i-1))"" done"
     paths="$(find . -type f -name "*${version}.jar" -print | tr "\n" " ")" # get all module jars made by mvn clean install
     IFS=' ' read -r -a namelist <<< "$paths"
@@ -60,7 +60,7 @@ for i in $( seq 1 "$((arrlen - 1))" ); do
   fi
   cd pinot || exit
   git checkout "${hashlist[$i]}"
-  mvn clean install -DskipTests -q
+  mvn install -DskipTests -q
   echo "mvn clean #""$i"" done"
   paths2="$(find . -type f -name "*${version}.jar" -print | tr "\n" " ")"
   IFS=' ' read -r -a namelist2 <<< "$paths2"
