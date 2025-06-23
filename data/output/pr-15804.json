@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-15T16:25:56Z",
+  "number": 15804,
+  "title": "Bump swagger.version from 1.6.15 to 1.6.16",
+  "url": "https://github.com/apache/pinot/pull/15804",
+  "jcmpClasses": []
+}

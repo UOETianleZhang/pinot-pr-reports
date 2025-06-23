@@ -1,0 +1,135 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/BrokerRoutingManager.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/TableCache.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metadata/ZKMetadataProvider.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/LogicalTableConfigUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/PinotTableRestletResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotUserWithAccessLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/TableCacheTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/LogicalTableConfig.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/LogicalTableConfigBuilder.java"
+  ],
+  "mergedAt": "2025-05-09T13:42:17Z",
+  "number": 15720,
+  "title": "Add configs to logical tables",
+  "url": "https://github.com/apache/pinot/pull/15720",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.config.provider.TableCache",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> createExpressionOverrideMap(java.lang.String, org.apache.pinot.spi.config.table.QueryConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.TableCache$LogicalTableConfigInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> _expressionOverrideMap"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.LogicalTableConfigUtils",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.data.LogicalTableConfig fromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(-) STATIC(-) org.apache.helix.zookeeper.datamodel.ZNRecord toZNRecord(org.apache.pinot.spi.data.LogicalTableConfig)",
+        "PUBLIC(-) STATIC(-) void validateLogicalTableConfig(org.apache.pinot.spi.data.LogicalTableConfig, java.util.function.Predicate<java.lang.String>, java.util.function.Predicate<java.lang.String>, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LogicalTableConfigUtils()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.LogicalTableUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.data.LogicalTableConfig fromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(+) STATIC(+) org.apache.helix.zookeeper.datamodel.ZNRecord toZNRecord(org.apache.pinot.spi.data.LogicalTableConfig)",
+        "PUBLIC(+) STATIC(+) void validateLogicalTableName(org.apache.pinot.spi.data.LogicalTableConfig, java.util.function.Predicate<java.lang.String>, java.util.function.Predicate<java.lang.String>, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LogicalTableUtils()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.data.LogicalTableConfig",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.config.table.QueryConfig getQueryConfig()",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.QuotaConfig getQuotaConfig()",
+        "PUBLIC(-) java.lang.String getRefOfflineTableName()",
+        "PUBLIC(-) java.lang.String getRefRealtimeTableName()",
+        "PUBLIC(-) void setQueryConfig(org.apache.pinot.spi.config.table.QueryConfig)",
+        "PUBLIC(-) void setQuotaConfig(org.apache.pinot.spi.config.table.QuotaConfig)",
+        "PUBLIC(-) void setRefOfflineTableName(java.lang.String)",
+        "PUBLIC(-) void setRefRealtimeTableName(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) int hashCode()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.config.table.QueryConfig _queryConfig",
+        "PRIVATE(-) java.lang.String _refOfflineTableName",
+        "PRIVATE(-) java.lang.String _refRealtimeTableName",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String REF_REALTIME_TABLE_NAME_KEY",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String REF_OFFLINE_TABLE_NAME_KEY",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String QUERY_CONFIG_KEY",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String QUOTA_CONFIG_KEY",
+        "PRIVATE(-) org.apache.pinot.spi.config.table.QuotaConfig _quotaConfig"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.builder.LogicalTableConfigBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.utils.builder.LogicalTableConfigBuilder setQueryConfig(org.apache.pinot.spi.config.table.QueryConfig)",
+        "PUBLIC(-) org.apache.pinot.spi.utils.builder.LogicalTableConfigBuilder setQuotaConfig(org.apache.pinot.spi.config.table.QuotaConfig)",
+        "PUBLIC(-) org.apache.pinot.spi.utils.builder.LogicalTableConfigBuilder setRefOfflineTableName(java.lang.String)",
+        "PUBLIC(-) org.apache.pinot.spi.utils.builder.LogicalTableConfigBuilder setRefRealtimeTableName(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.config.table.QueryConfig _queryConfig",
+        "PRIVATE(-) java.lang.String _refOfflineTableName",
+        "PRIVATE(-) org.apache.pinot.spi.config.table.QuotaConfig _quotaConfig",
+        "PRIVATE(-) java.lang.String _refRealtimeTableName"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

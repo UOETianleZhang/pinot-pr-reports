@@ -1,0 +1,24 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/BrokerRoutingManager.java"
+  ],
+  "mergedAt": "2025-05-09T17:55:25Z",
+  "number": 15747,
+  "title": "Reduce the warning for SegmentPartitionMetadataManager on non-partitioned tables",
+  "url": "https://github.com/apache/pinot/pull/15747",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.routing.BrokerRoutingManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) boolean _enablePartitionMetadataManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

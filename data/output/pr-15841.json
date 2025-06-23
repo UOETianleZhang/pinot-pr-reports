@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/startree/StarTreeBuilderUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/startree/v2/builder/StarTreeBuilderUtilsTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/startree/AggregationSpec.java"
+  ],
+  "mergedAt": "2025-05-19T22:28:40Z",
+  "number": 15841,
+  "title": "Do not re-generate star-tree when index version changes",
+  "url": "https://github.com/apache/pinot/pull/15841",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.spi.index.startree.AggregationSpec",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean shouldModifyStarTree(org.apache.pinot.segment.spi.index.startree.AggregationSpec)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

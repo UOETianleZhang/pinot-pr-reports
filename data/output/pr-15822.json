@@ -1,0 +1,42 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerTest.java"
+  ],
+  "mergedAt": "2025-05-19T22:08:47Z",
+  "number": 15822,
+  "title": "Fix up rebalance batching partitionId calculation to account for COMPLETED segment partitioning differently as done in RealtimeSegmentAssignment",
+  "url": "https://github.com/apache/pinot/pull/15822",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) int fetch(java.lang.String, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) int fetch(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcherImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) int fetch(java.lang.String, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) int fetch(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceJobConstants.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalanceObserver.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/ZkBasedTableRebalanceObserver.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/relocation/SegmentRelocator.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TestZkBasedTableRebalanceObserver.java"
+  ],
+  "mergedAt": "2025-05-15T15:44:10Z",
+  "number": 15806,
+  "title": "Minor cleanups in rebalance related code",
+  "url": "https://github.com/apache/pinot/pull/15806",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver$Trigger",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver$Trigger NEXT_ASSIGNMENT_CALCULATION_TRIGGER"
+      ],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver$Trigger NEXT_ASSINGMENT_CALCULATION_TRIGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.Map<java.lang.String,java.lang.Integer> getConsumingSegmentsAge(java.util.Map<java.lang.String,org.apache.pinot.common.metadata.segment.SegmentZKMetadata>, org.slf4j.Logger)",
+        "STATIC(-) int getNumRemainingSegmentReplicasToProcess(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) int getNumRemainingSegmentReplicasToProcess(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>, org.slf4j.Logger, boolean)",
+        "STATIC(-) boolean isExternalViewConverged(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) boolean isExternalViewConverged(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>, org.slf4j.Logger)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Map<java.lang.String,java.lang.Integer> getConsumingSegmentsAge(java.lang.String, java.util.Map<java.lang.String,org.apache.pinot.common.metadata.segment.SegmentZKMetadata>, org.slf4j.Logger)",
+        "STATIC(+) int getNumRemainingSegmentReplicasToProcess(java.lang.String, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>)",
+        "PRIVATE(+) STATIC(+) int getNumRemainingSegmentReplicasToProcess(java.lang.String, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>, org.slf4j.Logger, boolean)",
+        "STATIC(+) boolean isExternalViewConverged(java.lang.String, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>)",
+        "PRIVATE(+) STATIC(+) boolean isExternalViewConverged(java.lang.String, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, boolean, java.util.Set<java.lang.String>, org.slf4j.Logger)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

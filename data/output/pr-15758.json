@@ -1,0 +1,27 @@
+{
+  "files": [
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/TableConfigBuilder.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/utils/builder/TableConfigBuilderTest.java"
+  ],
+  "mergedAt": "2025-05-09T22:16:20Z",
+  "number": 15758,
+  "title": "Add skipSegmentPreprocess flag to TableConfigBuilder",
+  "url": "https://github.com/apache/pinot/pull/15758",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.utils.builder.TableConfigBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.utils.builder.TableConfigBuilder setSkipSegmentPreprocess(boolean)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) boolean _skipSegmentPreprocess"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

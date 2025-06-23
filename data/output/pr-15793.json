@@ -1,0 +1,28 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/DateTimeFunctions.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/function/DateTimeFunctionsTest.java"
+  ],
+  "mergedAt": "2025-05-20T15:16:40Z",
+  "number": 15793,
+  "title": "Add ISO 8601 date conversion functions and tests",
+  "url": "https://github.com/apache/pinot/pull/15793",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.function.scalar.DateTimeFunctions",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) long fromIso8601(java.lang.String)",
+        "PUBLIC(-) STATIC(-) long[] fromIso8601MV(java.lang.String[])",
+        "PUBLIC(-) STATIC(-) java.lang.String toIso8601(long)",
+        "PUBLIC(-) STATIC(-) java.lang.String[] toIso8601MV(long[])"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

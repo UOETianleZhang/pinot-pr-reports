@@ -1,0 +1,105 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/TableCache.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metadata/ZKMetadataProvider.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/LogicalTableUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/helix/PinotHelixPropertyStoreZnRecordProvider.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotUserWithAccessLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/TableCacheTest.java"
+  ],
+  "mergedAt": "2025-05-09T06:05:05Z",
+  "number": 15733,
+  "title": "Logical table schema enforcement.",
+  "url": "https://github.com/apache/pinot/pull/15733",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.config.provider.TableCache",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.spi.data.Schema getLogicalTableSchema(java.lang.String)",
+        "PRIVATE(+) org.apache.pinot.spi.data.Schema getPhysicalTableSchema(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metadata.ZKMetadataProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isSchemaExists(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.helix.PinotHelixPropertyStoreZnRecordProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.utils.helix.PinotHelixPropertyStoreZnRecordProvider forLogicalTable(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.LogicalTableUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void validateLogicalTableName(org.apache.pinot.spi.data.LogicalTableConfig, java.util.function.Predicate<java.lang.String>, java.util.function.Predicate<java.lang.String>, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void validateLogicalTableName(org.apache.pinot.spi.data.LogicalTableConfig, java.util.List<java.lang.String>, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotLogicalTableResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.controller.api.resources.SuccessResponse updateLogicalTable(org.apache.pinot.spi.data.LogicalTableConfig)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.controller.api.resources.SuccessResponse updateLogicalTable(java.lang.String, org.apache.pinot.spi.data.LogicalTableConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_BROKER_TENANT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.List<java.lang.String> getAllSchemaNames()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

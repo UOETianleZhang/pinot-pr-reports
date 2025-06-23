@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/SchemaUtils.java"
+  ],
+  "mergedAt": "2025-05-16T18:23:43Z",
+  "number": 15809,
+  "title": "remove Nullable on primitive type",
+  "url": "https://github.com/apache/pinot/pull/15809",
+  "jcmpClasses": []
+}

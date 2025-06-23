@@ -1,0 +1,76 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/ExchangeStrategy.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PlanFragmentAndMailboxAssignment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/RelToPRelConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/nodes/PhysicalAggregate.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/nodes/PhysicalExchange.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/ExchangeStrategyTest.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json"
+  ],
+  "mergedAt": "2025-05-16T22:29:37Z",
+  "number": 15813,
+  "title": "[multistage] Bug Fixes and Improvements to Physical Optimizer",
+  "url": "https://github.com/apache/pinot/pull/15813",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.ExchangeStrategy",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.calcite.rel.RelDistribution getRelDistribution(org.apache.pinot.query.planner.physical.v2.ExchangeStrategy, java.util.List<java.lang.Integer>)",
+        "PUBLIC(-) boolean isRequireKeys()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) boolean _requireKeys"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) ExchangeStrategy(java.lang.String, int, boolean)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) ExchangeStrategy(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.nodes.PhysicalAggregate",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.calcite.rel.RelWriter explainTerms(org.apache.calcite.rel.RelWriter)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.nodes.PhysicalExchange",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.calcite.rel.RelDistribution getRelDistribution(org.apache.pinot.query.planner.physical.v2.ExchangeStrategy, java.util.List<java.lang.Integer>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.PlanFragmentAndMailboxAssignment",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.calcite.rel.RelDistribution$Type inferDistributionType(org.apache.pinot.query.planner.physical.v2.ExchangeStrategy)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

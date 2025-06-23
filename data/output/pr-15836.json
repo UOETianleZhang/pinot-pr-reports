@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/ExceptionUtils.java"
+  ],
+  "mergedAt": "2025-05-19T12:44:37Z",
+  "number": 15836,
+  "title": "include exception messages chain on broker response",
+  "url": "https://github.com/apache/pinot/pull/15836",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.ExceptionUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.lang.String consolidateExceptionTraces(java.lang.Throwable)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

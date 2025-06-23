@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentFactory.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/StrictRealtimeSegmentAssignment.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/assignment/segment/StrictRealtimeSegmentAssignmentTest.java"
+  ],
+  "mergedAt": "2025-05-20T18:52:14Z",
+  "number": 15853,
+  "title": "Revert \"make dedup table use strict replica group assignment too (#15778)\"",
+  "url": "https://github.com/apache/pinot/pull/15853",
+  "jcmpClasses": []
+}

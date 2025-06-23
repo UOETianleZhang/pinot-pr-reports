@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/queries/TransformQueriesTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterIntegrationTest.java"
+  ],
+  "mergedAt": "2025-05-09T17:54:39Z",
+  "number": 15745,
+  "title": "Add a test to create star-tree on new added columns",
+  "url": "https://github.com/apache/pinot/pull/15745",
+  "jcmpClasses": []
+}

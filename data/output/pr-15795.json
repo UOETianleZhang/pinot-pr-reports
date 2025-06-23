@@ -1,0 +1,14 @@
+{
+  "files": [
+    ".github/workflows/pinot_tests.yml",
+    ".github/workflows/scripts/.pinot_linter.sh",
+    "pinot-dependency-verifier/README.md",
+    "pinot-dependency-verifier/src/main/java/org/apache/pinot/verifier/PinotCustomDependencyVersionRule.java",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-15T20:12:35Z",
+  "number": 15795,
+  "title": "Add Maven Enforcer Rule to automatically enforce Dependency Management Guidelines during PR check-in (Part 2)",
+  "url": "https://github.com/apache/pinot/pull/15795",
+  "jcmpClasses": []
+}

@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-dependency-verifier/src/main/java/org/apache/pinot/verifier/PinotCustomDependencyVersionRule.java",
+    "pinot-dependency-verifier/src/test/java/org/apache/pinot/verifier/PinotCustomDependencyVersionRuleTest.java"
+  ],
+  "mergedAt": "2025-05-16T16:43:17Z",
+  "number": 15816,
+  "title": "Verify if skipped submodule POMs contain hardcoded versions",
+  "url": "https://github.com/apache/pinot/pull/15816",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.verifier.PinotCustomDependencyVersionRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void verifyNoHardcodedVersions(org.apache.maven.project.MavenProject, java.util.List<org.apache.maven.model.Dependency>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

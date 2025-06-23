@@ -1,0 +1,28 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalanceIntegrationTest.java"
+  ],
+  "mergedAt": "2025-05-20T19:27:46Z",
+  "number": 15838,
+  "title": "Modify strictReplicaGroup rebalance batching to categorize on current+target instances to partitionId to currentAssignment",
+  "url": "https://github.com/apache/pinot/pull/15838",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) java.util.Map<org.apache.commons.lang3.tuple.Pair<java.util.Set<java.lang.String>,java.util.Set<java.lang.String>>,java.util.Map<java.lang.Integer,java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>>> getCurrentAndTargetInstancesToPartitionIdToCurrentAssignmentMap(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.Integer,java.util.Map<java.util.Set<java.lang.String>,java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>>> getPartitionIdToAssignedInstancesToCurrentAssignmentMap(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

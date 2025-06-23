@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/SegmentPreProcessor.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/utils/SegmentMetadataUtils.java"
+  ],
+  "mergedAt": "2025-05-09T17:55:00Z",
+  "number": 15746,
+  "title": "Cleanup the segment metadata reading logic in SegmentPreProcessor",
+  "url": "https://github.com/apache/pinot/pull/15746",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.SegmentPreProcessor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl _segmentMetadata"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

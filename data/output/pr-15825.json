@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/QueryRunnerTest.java"
+  ],
+  "mergedAt": "2025-05-19T21:22:51Z",
+  "number": 15825,
+  "title": "[Flaky-test] Fix QueryRunnerTest.testSqlWithExceptionMsgChecker()",
+  "url": "https://github.com/apache/pinot/pull/15825",
+  "jcmpClasses": []
+}

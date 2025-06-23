@@ -1,0 +1,61 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/queries/TextSearchQueriesTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/impl/invertedindex/NativeMutableTextIndex.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/text/NativeTextIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/text/CaseAwareStandardAnalyzer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/store/TextIndexUtils.java"
+  ],
+  "mergedAt": "2025-05-20T13:29:51Z",
+  "number": 15830,
+  "title": "Refactor CaseSensitiveAnalyzer and StandardAnalyzer to CaseAwareStandardAnalyzer",
+  "url": "https://github.com/apache/pinot/pull/15830",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.text.CaseAwareStandardAnalyzer",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) org.apache.lucene.analysis.Analyzer$TokenStreamComponents createComponents(java.lang.String)",
+        "PUBLIC(-) int getMaxTokenLength()",
+        "PUBLIC(-) boolean isCaseSensitive()",
+        "PROTECTED(-) org.apache.lucene.analysis.TokenStream normalize(java.lang.String, org.apache.lucene.analysis.TokenStream)",
+        "PUBLIC(-) void setMaxTokenLength(int)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) int _maxTokenLength",
+        "PRIVATE(-) FINAL(-) boolean _caseSensitive",
+        "PUBLIC(-) STATIC(-) FINAL(-) int DEFAULT_MAX_TOKEN_LENGTH"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) CaseAwareStandardAnalyzer(org.apache.lucene.analysis.CharArraySet)",
+        "PUBLIC(-) CaseAwareStandardAnalyzer()",
+        "PUBLIC(-) CaseAwareStandardAnalyzer(org.apache.lucene.analysis.CharArraySet, boolean)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.text.CaseSensitiveAnalyzer",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.lucene.analysis.Analyzer$TokenStreamComponents createComponents(java.lang.String)",
+        "PUBLIC(+) int getMaxTokenLength()",
+        "PUBLIC(+) void setMaxTokenLength(int)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) int _maxTokenLength",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_MAX_TOKEN_LENGTH"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CaseSensitiveAnalyzer(org.apache.lucene.analysis.CharArraySet)",
+        "PUBLIC(+) CaseSensitiveAnalyzer()"
+      ]
+    }
+  ]
+}

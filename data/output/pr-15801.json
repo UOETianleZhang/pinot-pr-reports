@@ -1,0 +1,382 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/blocks/RowHeapDataBlock.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/LeafOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/LookupJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MultiStageOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/PlanNodeToOpChain.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/LeafOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MailboxReceiveOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/OperatorTestUtil.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/plan/MultiStageQueryStatsTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/ResourceBasedQueriesTest.java"
+  ],
+  "mergedAt": "2025-05-15T18:22:11Z",
+  "number": 15801,
+  "title": "Rename LeafStageOperator to LeafOperator",
+  "url": "https://github.com/apache/pinot/pull/15801",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "void addResultsBlock(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)",
+        "PRIVATE(-) org.apache.pinot.query.planner.plannode.ExplainedNode asNode(org.apache.pinot.core.plan.ExplainInfo)",
+        "PUBLIC(-) void cancel(java.lang.Throwable)",
+        "PROTECTED(-) void cancelSseTasks()",
+        "PUBLIC(-) void close()",
+        "PRIVATE(-) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeColumnIndexedMseBlock(org.apache.pinot.core.operator.blocks.results.SelectionResultsBlock, int[])",
+        "PRIVATE(-) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeDirectMseBlock(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)",
+        "PRIVATE(-) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeMseBlock(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)",
+        "PRIVATE(-) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeSelectMseBlock(org.apache.pinot.core.operator.blocks.results.SelectionResultsBlock)",
+        "PUBLIC(-) STATIC(-) void convertRow(java.lang.Object[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[])",
+        "PROTECTED(-) org.apache.pinot.common.datatable.StatMap<?> copyStatMaps()",
+        "PROTECTED(-) void earlyTerminate()",
+        "PUBLIC(-) org.apache.pinot.query.planner.plannode.ExplainedNode explain()",
+        "PUBLIC(-) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> getChildOperators()",
+        "PRIVATE(-) STATIC(-) int[] getColumnIndices(org.apache.pinot.core.operator.blocks.results.SelectionResultsBlock)",
+        "PUBLIC(-) org.apache.pinot.common.utils.DataSchema getDataSchema()",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock getNextBlock()",
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PUBLIC(-) java.util.List<org.apache.pinot.core.query.request.ServerQueryRequest> getRequests()",
+        "PRIVATE(-) STATIC(-) boolean inOrder(int[])",
+        "PROTECTED(-) org.slf4j.Logger logger()",
+        "PRIVATE(-) void mergeExecutionStats(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) void registerExecution(long, int)",
+        "PRIVATE(-) STATIC(-) java.lang.Object[] reorderAndConvertRow(java.lang.Object[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[], int[])",
+        "PRIVATE(-) STATIC(-) java.lang.Object[] reorderRow(java.lang.Object[], int[])",
+        "PRIVATE(-) java.util.concurrent.Future<java.lang.Void> startExecution()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.LeafOperator$StatKey> _statMap",
+        "PRIVATE(-) FINAL(-) java.util.List<org.apache.pinot.core.query.request.ServerQueryRequest> _requests",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.core.query.executor.QueryExecutor _queryExecutor",
+        "PRIVATE(-) FINAL(-) java.util.concurrent.BlockingQueue<org.apache.pinot.core.operator.blocks.results.BaseResultsBlock> _blockingQueue",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) VOLATILE(-) java.util.concurrent.Future<java.lang.Void> _executionFuture",
+        "PRIVATE(-) FINAL(-) java.util.concurrent.ExecutorService _executorService",
+        "PRIVATE(-) VOLATILE(-) java.util.Map<java.lang.Integer,java.lang.String> _exceptions",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.utils.DataSchema _dataSchema",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.apache.pinot.core.operator.blocks.results.MetadataResultsBlock LAST_RESULTS_BLOCK"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) LeafOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.core.query.request.ServerQueryRequest>, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.core.query.executor.QueryExecutor, java.util.concurrent.ExecutorService)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$ResultsBlockConsumer",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void send(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafOperator$ResultsBlockConsumer(org.apache.pinot.query.runtime.operator.LeafOperator)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$StatKey",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.datatable.StatMap$Type getType()",
+        "PUBLIC(-) void updateBrokerMetadata(org.apache.pinot.common.datatable.StatMap<org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey>, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.LeafOperator$StatKey>)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey valueOf(java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey[] values()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey MIN_CONSUMING_FRESHNESS_TIME_MS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_DOCS_SCANNED",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_GROUPS_LIMIT_REACHED",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey TABLE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_SEGMENTS_PRUNED_BY_SERVER",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey EMITTED_ROWS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_CONSUMING_SEGMENTS_PROCESSED",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_ENTRIES_SCANNED_POST_FILTER",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey THREAD_CPU_TIME_NS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_CONSUMING_SEGMENTS_MATCHED",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey _brokerKey",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_SEGMENTS_PRUNED_INVALID",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_RESIZES",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey SYSTEM_ACTIVITIES_CPU_TIME_NS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_SEGMENTS_MATCHED",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.datatable.StatMap$Type _type",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_GROUPS_WARNING_LIMIT_REACHED",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey TOTAL_DOCS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey RESIZE_TIME_MS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_SEGMENTS_PRUNED_BY_LIMIT",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_SEGMENTS_QUERIED",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_CONSUMING_SEGMENTS_QUERIED",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_SEGMENTS_PRUNED_BY_VALUE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_ENTRIES_SCANNED_IN_FILTER",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey RESPONSE_SER_CPU_TIME_NS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey EXECUTION_TIME_MS",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey NUM_SEGMENTS_PROCESSED"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafOperator$StatKey(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)",
+        "PRIVATE(-) LeafOperator$StatKey(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$StatKey$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean includeDefaultInJson()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafOperator$StatKey$1(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$StatKey$2",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean includeDefaultInJson()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafOperator$StatKey$2(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$StatKey$3",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long merge(long, long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafOperator$StatKey$3(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$StatKey$4",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getStatName()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafOperator$StatKey$4(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafStageOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "void addResultsBlock(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)",
+        "PRIVATE(+) org.apache.pinot.query.planner.plannode.ExplainedNode asNode(org.apache.pinot.core.plan.ExplainInfo)",
+        "PUBLIC(+) void cancel(java.lang.Throwable)",
+        "PROTECTED(+) void cancelSseTasks()",
+        "PUBLIC(+) void close()",
+        "PRIVATE(+) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeColumnIndexedMseBlock(org.apache.pinot.core.operator.blocks.results.SelectionResultsBlock, int[])",
+        "PRIVATE(+) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeDirectMseBlock(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)",
+        "PRIVATE(+) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeMseBlock(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)",
+        "PRIVATE(+) org.apache.pinot.query.runtime.blocks.RowHeapDataBlock composeSelectMseBlock(org.apache.pinot.core.operator.blocks.results.SelectionResultsBlock)",
+        "PUBLIC(+) STATIC(+) void convertRow(java.lang.Object[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[])",
+        "PROTECTED(+) org.apache.pinot.common.datatable.StatMap<?> copyStatMaps()",
+        "PROTECTED(+) void earlyTerminate()",
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.ExplainedNode explain()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> getChildOperators()",
+        "PRIVATE(+) STATIC(+) int[] getColumnIndices(org.apache.pinot.core.operator.blocks.results.SelectionResultsBlock)",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema getDataSchema()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock getNextBlock()",
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.core.query.request.ServerQueryRequest> getRequests()",
+        "PRIVATE(+) STATIC(+) boolean inOrder(int[])",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PRIVATE(+) void mergeExecutionStats(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) void registerExecution(long, int)",
+        "PRIVATE(+) STATIC(+) java.lang.Object[] reorderAndConvertRow(java.lang.Object[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[], int[])",
+        "PRIVATE(+) STATIC(+) java.lang.Object[] reorderRow(java.lang.Object[], int[])",
+        "PRIVATE(+) java.util.concurrent.Future<java.lang.Void> startExecution()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey> _statMap",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.core.query.request.ServerQueryRequest> _requests",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.query.executor.QueryExecutor _queryExecutor",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.BlockingQueue<org.apache.pinot.core.operator.blocks.results.BaseResultsBlock> _blockingQueue",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) VOLATILE(+) java.util.concurrent.Future<java.lang.Void> _executionFuture",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ExecutorService _executorService",
+        "PRIVATE(+) VOLATILE(+) java.util.Map<java.lang.Integer,java.lang.String> _exceptions",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _dataSchema",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.core.operator.blocks.results.MetadataResultsBlock LAST_RESULTS_BLOCK"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LeafStageOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.core.query.request.ServerQueryRequest>, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.core.query.executor.QueryExecutor, java.util.concurrent.ExecutorService)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafStageOperator$ResultsBlockConsumer",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void send(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LeafStageOperator$ResultsBlockConsumer(org.apache.pinot.query.runtime.operator.LeafStageOperator)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.datatable.StatMap$Type getType()",
+        "PUBLIC(+) void updateBrokerMetadata(org.apache.pinot.common.datatable.StatMap<org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey>, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey>)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey MIN_CONSUMING_FRESHNESS_TIME_MS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_DOCS_SCANNED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_GROUPS_LIMIT_REACHED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey TABLE",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_SEGMENTS_PRUNED_BY_SERVER",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey EMITTED_ROWS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_CONSUMING_SEGMENTS_PROCESSED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_ENTRIES_SCANNED_POST_FILTER",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey THREAD_CPU_TIME_NS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_CONSUMING_SEGMENTS_MATCHED",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey _brokerKey",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_SEGMENTS_PRUNED_INVALID",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_RESIZES",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey SYSTEM_ACTIVITIES_CPU_TIME_NS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_SEGMENTS_MATCHED",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.datatable.StatMap$Type _type",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_GROUPS_WARNING_LIMIT_REACHED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey TOTAL_DOCS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey RESIZE_TIME_MS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_SEGMENTS_PRUNED_BY_LIMIT",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_SEGMENTS_QUERIED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_CONSUMING_SEGMENTS_QUERIED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_SEGMENTS_PRUNED_BY_VALUE",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_ENTRIES_SCANNED_IN_FILTER",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey RESPONSE_SER_CPU_TIME_NS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey EXECUTION_TIME_MS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey NUM_SEGMENTS_PROCESSED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LeafStageOperator$StatKey(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)",
+        "PRIVATE(+) LeafStageOperator$StatKey(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean includeDefaultInJson()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LeafStageOperator$StatKey$1(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey$2",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean includeDefaultInJson()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LeafStageOperator$StatKey$2(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey$3",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long merge(long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LeafStageOperator$StatKey$3(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafStageOperator$StatKey$4",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getStatName()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LeafStageOperator$StatKey$4(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type, org.apache.pinot.common.response.broker.BrokerResponseNativeV2$StatKey)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LookupJoinOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

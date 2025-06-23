@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-distribution/pinot-assembly.xml",
+    "pinot-tools/pom.xml"
+  ],
+  "mergedAt": "2025-05-18T15:50:42Z",
+  "number": 15792,
+  "title": "Remove pinot-orc from the packaged distribution",
+  "url": "https://github.com/apache/pinot/pull/15792",
+  "jcmpClasses": []
+}

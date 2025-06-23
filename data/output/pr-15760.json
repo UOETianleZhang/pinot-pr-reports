@@ -1,0 +1,156 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/BrokerMeter.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PhysicalPlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/PinotLogicalQueryPlanner.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PRelNodeTreeValidator.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PRelToPlanNodeConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRuleTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-05-10T06:06:09Z",
+  "number": 15760,
+  "title": "[multistage] Add Support for Inferring Invalid Segment Partition Id",
+  "url": "https://github.com/apache/pinot/pull/15760",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.BrokerMeter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.BrokerMeter INVALID_SEGMENT_PARTITION_IN_QUERY"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isInferInvalidSegmentPartition(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.context.PhysicalPlannerContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Map<java.lang.String,java.lang.String> getQueryOptions()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.Map<java.lang.String,java.lang.String> _queryOptions"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PhysicalPlannerContext(org.apache.pinot.core.routing.RoutingManager, java.lang.String, int, long, java.lang.String, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PhysicalPlannerContext(org.apache.pinot.core.routing.RoutingManager, java.lang.String, int, long, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult assignTableScan(java.lang.String, java.util.List<java.lang.String>, org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$InstanceIdToSegments, java.util.Map<java.lang.String,org.apache.pinot.core.routing.TablePartitionInfo>, boolean)",
+        "STATIC(-) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult attemptPartitionedDistribution(java.lang.String, java.util.List<java.lang.String>, java.util.Map<java.lang.String,java.util.List<java.lang.String>>, org.apache.pinot.core.routing.TablePartitionInfo, boolean)",
+        "STATIC(-) java.util.Map<java.lang.Integer,java.util.List<java.lang.String>> getInvalidSegmentsByInferredPartition(java.util.List<java.lang.String>, boolean, java.lang.String, int)",
+        "STATIC(-) int inferPartitionId(java.lang.String, int)",
+        "STATIC(-) java.util.List<java.lang.String> sampleSegmentsForLogging(java.util.List<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "STATIC(+) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult assignTableScan(java.lang.String, java.util.List<java.lang.String>, org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$InstanceIdToSegments, java.util.Map<java.lang.String,org.apache.pinot.core.routing.TablePartitionInfo>)",
+        "STATIC(+) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult attemptPartitionedDistribution(java.lang.String, java.util.List<java.lang.String>, java.util.Map<java.lang.String,java.util.List<java.lang.String>>, org.apache.pinot.core.routing.TablePartitionInfo)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) int LIMIT_OF_INVALID_SEGMENTS_TO_LOG",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.BrokerMetrics BROKER_METRICS"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.PRelNodeTreeValidator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void emitMetrics(org.apache.pinot.query.planner.physical.v2.PRelNode)",
+        "PUBLIC(-) STATIC(-) void validate(org.apache.pinot.query.planner.physical.v2.PRelNode)",
+        "PRIVATE(-) STATIC(-) void walk(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNodeTreeValidator$Context)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.BrokerMetrics BROKER_METRICS"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) PRelNodeTreeValidator()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.PRelNodeTreeValidator$Context",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "int _windowCount",
+        "int _joinCount"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) PRelNodeTreeValidator$Context()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.PRelToPlanNodeConverter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _joinFound",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode> _tracker",
+        "PRIVATE(+) boolean _windowFunctionFound",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.metrics.BrokerMetrics _brokerMetrics"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) PRelToPlanNodeConverter()"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PRelToPlanNodeConverter(org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String INFER_INVALID_SEGMENT_PARTITION"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

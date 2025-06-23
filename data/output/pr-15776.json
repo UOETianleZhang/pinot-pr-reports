@@ -1,0 +1,233 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BrokerResourceOnlineOfflineStateModelFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BrokerUserDefinedMessageHandlerFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/BrokerRoutingManager.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/messages/LogicalTableConfigRefreshMessage.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metadata/ZKMetadataProvider.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/LogicalTableConfigUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/BaseLogicalTableIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/LogicalTableWithOneOfflineOneRealtimeTableIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/LogicalTableWithOneRealtimeTableIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/LogicalTableWithTwelveOfflineOneRealtimeTableIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/LogicalTableWithTwoOfflineOneRealtimeTableIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/table/LogicalTableRouteProvider.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/timeboundary/MinTimeBoundaryStrategy.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/timeboundary/TimeBoundaryStrategy.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/timeboundary/TimeBoundaryStrategyService.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/routing/table/BaseTableRouteTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/routing/table/LogicalTableRouteProviderCalculateRouteTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/routing/table/LogicalTableRouteProviderGetRouteTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/timeboundary/MinTimeBoundaryStrategyTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/timeboundary/TimeBoundaryStrategyServiceTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/LogicalTableConfig.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/TimeBoundaryConfig.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/ControllerRequestURLBuilder.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/LogicalTableConfigBuilder.java"
+  ],
+  "mergedAt": "2025-05-20T06:25:29Z",
+  "number": 15776,
+  "title": "Logical table time boundary",
+  "url": "https://github.com/apache/pinot/pull/15776",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.broker.helix.BrokerUserDefinedMessageHandlerFactory$RefreshLogicalTableConfigMessageHandler",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.messaging.handling.HelixTaskResult handleMessage()",
+        "PUBLIC(-) void onError(java.lang.Exception, org.apache.helix.messaging.handling.MessageHandler$ErrorCode, org.apache.helix.messaging.handling.MessageHandler$ErrorType)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) java.lang.String _logicalTableName"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "BrokerUserDefinedMessageHandlerFactory$RefreshLogicalTableConfigMessageHandler(org.apache.pinot.broker.broker.helix.BrokerUserDefinedMessageHandlerFactory, org.apache.pinot.common.messages.LogicalTableConfigRefreshMessage, org.apache.helix.NotificationContext)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.BrokerRoutingManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void buildRoutingForLogicalTable(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.messages.LogicalTableConfigRefreshMessage",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getLogicalTableName()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String REFRESH_LOGICAL_TABLE_CONFIG_MSG_SUB_TYPE",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String TABLE_NAME_KEY"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) LogicalTableConfigRefreshMessage(org.apache.helix.model.Message)",
+        "PUBLIC(-) LogicalTableConfigRefreshMessage(java.lang.String)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metadata.ZKMetadataProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isTableConfigExists(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void sendLogicalTableConfigRefreshMessage(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.timeboundary.MinTimeBoundaryStrategy",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.core.routing.TimeBoundaryInfo computeTimeBoundary(org.apache.pinot.spi.data.LogicalTableConfig, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(-) java.lang.String getName()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MinTimeBoundaryStrategy()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.timeboundary.TimeBoundaryStrategy",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.core.routing.TimeBoundaryInfo computeTimeBoundary(org.apache.pinot.spi.data.LogicalTableConfig, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(-) ABSTRACT(-) java.lang.String getName()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.timeboundary.TimeBoundaryStrategyService",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.timeboundary.TimeBoundaryStrategyService fromServiceLoader()",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.timeboundary.TimeBoundaryStrategyService getInstance()",
+        "PUBLIC(-) org.apache.pinot.query.timeboundary.TimeBoundaryStrategy getTimeBoundaryStrategy(java.lang.String)",
+        "PUBLIC(-) STATIC(-) void setInstance(org.apache.pinot.query.timeboundary.TimeBoundaryStrategyService)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.Map<java.lang.String,org.apache.pinot.query.timeboundary.TimeBoundaryStrategy> _strategyMap",
+        "PRIVATE(-) STATIC(-) VOLATILE(-) org.apache.pinot.query.timeboundary.TimeBoundaryStrategyService _instance"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) TimeBoundaryStrategyService(java.util.Map<java.lang.String,org.apache.pinot.query.timeboundary.TimeBoundaryStrategy>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.data.LogicalTableConfig",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.data.TimeBoundaryConfig getTimeBoundaryConfig()",
+        "PUBLIC(-) boolean isHybridLogicalTable()",
+        "PUBLIC(-) void setTimeBoundaryConfig(org.apache.pinot.spi.data.TimeBoundaryConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.data.TimeBoundaryConfig _timeBoundaryConfig",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String TIME_BOUNDARY_CONFIG_KEY"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.data.TimeBoundaryConfig",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getBoundaryStrategy()",
+        "PUBLIC(-) java.util.Map<java.lang.String,java.lang.Object> getParameters()",
+        "PUBLIC(-) void setBoundaryStrategy(java.lang.String)",
+        "PUBLIC(-) void setParameters(java.util.Map<java.lang.String,java.lang.Object>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.lang.String _boundaryStrategy",
+        "PRIVATE(-) java.util.Map<java.lang.String,java.lang.Object> _parameters"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TimeBoundaryConfig(java.lang.String, java.util.Map<java.lang.String,java.lang.Object>)",
+        "PUBLIC(-) TimeBoundaryConfig()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.builder.ControllerRequestURLBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String forSegmentMetadata(java.lang.String, org.apache.pinot.spi.config.table.TableType)",
+        "PUBLIC(-) java.lang.String forTableTimeBoundary(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.builder.LogicalTableConfigBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.utils.builder.LogicalTableConfigBuilder setTimeBoundaryConfig(org.apache.pinot.spi.data.TimeBoundaryConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.data.TimeBoundaryConfig _timeBoundaryConfig"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

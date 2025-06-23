@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/io/util/VarLengthValueWriter.java"
+  ],
+  "mergedAt": "2025-05-15T18:39:15Z",
+  "number": 15779,
+  "title": "Precondition for overflow in VarLengthValueWriter",
+  "url": "https://github.com/apache/pinot/pull/15779",
+  "jcmpClasses": []
+}

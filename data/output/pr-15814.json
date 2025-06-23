@@ -1,0 +1,52 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metadata/ZKMetadataProvider.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/TableConfigsRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java"
+  ],
+  "mergedAt": "2025-05-15T22:56:27Z",
+  "number": 15814,
+  "title": "Dont apply Decorator to the table configs in Rest API",
+  "url": "https://github.com/apache/pinot/pull/15814",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metadata.ZKMetadataProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, boolean, boolean)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, boolean, boolean)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.table.TableConfig getTableConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, boolean, boolean)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.spi.config.table.TableConfig toTableConfig(org.apache.helix.zookeeper.datamodel.ZNRecord, boolean, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, boolean)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, boolean)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.TableConfig getTableConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, boolean)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.spi.config.table.TableConfig toTableConfig(org.apache.helix.zookeeper.datamodel.ZNRecord, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig(java.lang.String, boolean, boolean)",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig(java.lang.String, boolean, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig(java.lang.String, boolean)",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

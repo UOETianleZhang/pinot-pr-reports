@@ -1,0 +1,85 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/custom/TextIndicesTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/text/CaseSensitiveAnalyzer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/store/TextIndexUtils.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/TextIndexConfig.java",
+    "pinot-tools/src/main/resources/examples/batch/fineFoodReviews/fineFoodReviews_offline_table_config.json",
+    "pinot-tools/src/main/resources/examples/stream/fineFoodReviews/fineFoodReviews_realtime_table_config.json"
+  ],
+  "mergedAt": "2025-05-17T07:12:48Z",
+  "number": 15803,
+  "title": "[New Feature] Case-Sensitive Text Indexing",
+  "url": "https://github.com/apache/pinot/pull/15803",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.text.CaseSensitiveAnalyzer",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) org.apache.lucene.analysis.Analyzer$TokenStreamComponents createComponents(java.lang.String)",
+        "PUBLIC(-) int getMaxTokenLength()",
+        "PUBLIC(-) void setMaxTokenLength(int)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) int _maxTokenLength",
+        "PUBLIC(-) STATIC(-) FINAL(-) int DEFAULT_MAX_TOKEN_LENGTH"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) CaseSensitiveAnalyzer(org.apache.lucene.analysis.CharArraySet)",
+        "PUBLIC(-) CaseSensitiveAnalyzer()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.store.TextIndexUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.lucene.analysis.Analyzer getStandardAnalyzerWithCustomizedStopWords(java.util.List<java.lang.String>, java.util.List<java.lang.String>, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.lucene.analysis.standard.StandardAnalyzer getStandardAnalyzerWithCustomizedStopWords(java.util.List<java.lang.String>, java.util.List<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.TextIndexConfig",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean isCaseSensitive()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) boolean LUCENE_INDEX_DEFAULT_CASE_SENSITIVE_INDEX",
+        "PRIVATE(-) FINAL(-) boolean _caseSensitive"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TextIndexConfig(java.lang.Boolean, org.apache.pinot.spi.config.table.FSTType, java.lang.Object, boolean, boolean, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.Boolean, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Integer, java.lang.Boolean, org.apache.pinot.segment.spi.index.TextIndexConfig$DocIdTranslatorMode, java.lang.Boolean)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.TextIndexConfig$AbstractBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.segment.spi.index.TextIndexConfig$AbstractBuilder withCaseSensitive(boolean)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PROTECTED(-) boolean _caseSensitive"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

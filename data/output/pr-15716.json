@@ -1,0 +1,61 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ControllerGauge.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/ControllerAdminApiApplication.java"
+  ],
+  "mergedAt": "2025-05-09T19:01:52Z",
+  "number": 15716,
+  "title": "Metric for HTTP Thread Utilization (Controller)",
+  "url": "https://github.com/apache/pinot/pull/15716",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.ControllerGauge",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.ControllerGauge HTTP_THREAD_UTILIZATION"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.ControllerAdminApiApplication",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void registerHttpThreadUtilizationGauge(org.apache.pinot.common.metrics.ControllerMetrics)",
+        "PUBLIC(-) void start(java.util.List<org.apache.pinot.core.transport.ListenerConfig>, org.apache.pinot.common.metrics.ControllerMetrics)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void start(java.util.List<org.apache.pinot.core.transport.ListenerConfig>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.ControllerAdminApiApplication$ActiveThreadProbe",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) int getActiveCount()",
+        "PUBLIC(-) void onTaskCompleteEvent(org.glassfish.grizzly.threadpool.AbstractThreadPool, java.lang.Runnable)",
+        "PUBLIC(-) void onTaskDequeueEvent(org.glassfish.grizzly.threadpool.AbstractThreadPool, java.lang.Runnable)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.concurrent.atomic.AtomicInteger _active"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ControllerAdminApiApplication$ActiveThreadProbe()"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
