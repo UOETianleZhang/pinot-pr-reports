@@ -97,15 +97,21 @@ jobs:
     needs: backfill
     if: ${{ always() }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo (full history)
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Download chunk artifacts
-        uses: actions/download-artifact@v4
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync with remote main
+        run: |
+          git pull --rebase origin main
+
+      - uses: actions/download-artifact@v4
         with:
           path: artifacts/
           if-no-files-found: ignore
@@ -118,24 +124,14 @@ jobs:
               -exec cp {} data/japicmp/ \;
             find artifacts/ -type f -path "*/output/*.json" \
               -exec cp {} data/output/ \;
-          else
-            echo "ℹ️ No artifacts to merge."
           fi
-
-      - name: Sync with remote main
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
 
       - name: Commit & push combined reports
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
             git add data/japicmp data/output
-            git commit -m "chore: backfill ${GITHUB_EVENT_INPUTS_BACKFILL_DAYS}d from ${GITHUB_EVENT_INPUTS_START_OFFSET_DAYS}d ago"
-            git push
-          else
-            echo "ℹ️ No new reports to commit."
+            git commit -m "chore: backfill…"
+            git push origin main
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -143,4 +139,4 @@ jobs:
       - name: Trigger Pages deploy
         run: gh workflow run deploy.yml --ref main
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -35,10 +35,12 @@ jobs:
       - name: Commit and push changes
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
-            # Rebase local main onto remote, integrating any changes
-            git pull --rebase origin main
+            # 1) Stage & commit all new reports
             git add data/japicmp data/output
             git commit -m "chore: add commit reports"
+            # 2) Rebase onto the latest main (incorporates any remote pushes)
+            git pull --rebase origin main
+            # 3) Push the rebased branch back
             git push origin main
           else
             echo "No commits made since last workflow's start time."
