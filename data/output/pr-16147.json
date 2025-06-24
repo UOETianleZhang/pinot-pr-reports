@@ -1,0 +1,228 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/TransformFunctionType.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/request/context/RequestContextUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/request/context/predicate/TextMatchPredicate.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/TextMatchFilterOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/transform/function/TextMatchTransformFunction.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/TextSearchQueriesTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/custom/MultiColumnTextIndicesTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/impl/invertedindex/MultiColumnRealtimeLuceneTextIndex.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/impl/invertedindex/RealtimeLuceneTextIndex.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/text/LuceneTextIndexReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/text/MultiColumnLuceneTextIndexReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/LuceneTextIndexUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/LuceneTextIndexUtilsTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/reader/MultiColumnTextIndexReader.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/reader/TextIndexReader.java"
+  ],
+  "mergedAt": "2025-06-24T21:39:05Z",
+  "number": 16147,
+  "title": "Allow Users to specify text search options as TEXT_MATCH params in text search query",
+  "url": "https://github.com/apache/pinot/pull/16147",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.request.context.predicate.TextMatchPredicate",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getOptions()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _options"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TextMatchPredicate(org.apache.pinot.common.request.context.ExpressionContext, java.lang.String, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.transform.function.TextMatchTransformFunction",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String _options"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.realtime.impl.invertedindex.MultiColumnRealtimeLuceneTextIndex",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String, java.lang.String, java.lang.String)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithOptions(java.lang.String, java.lang.String, org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithoutOptions(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.realtime.impl.invertedindex.RealtimeLuceneTextIndex",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String, java.lang.String)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithOptions(java.lang.String, org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithoutOptions(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexReader",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String, java.lang.String)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithOptions(java.lang.String, org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithoutOptions(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.MultiColumnLuceneTextIndexReader",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String, java.lang.String, java.lang.String)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithOptions(java.lang.String, java.lang.String, org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIdsWithoutOptions(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.LuceneTextIndexUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions createOptions(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.lucene.search.Query createQueryParserWithOptions(java.lang.String, org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions, java.lang.String, org.apache.lucene.analysis.Analyzer)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,java.lang.String> parseOptionsString(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_OPERATOR_OR",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String COMPLEX_PHRASE_QUERY_PARSER_CLASS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CLASSIC_QUERY_PARSER",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PARSER_CLASSIC",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_OPERATOR_AND",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String STANDARD_QUERY_PARSER_CLASS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PARSER_STANDARD",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TRUE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PARSER_COMPLEX",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String FALSE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDefaultOperator()",
+        "PUBLIC(+) float getFuzzyMinSim()",
+        "PUBLIC(+) int getFuzzyPrefixLength()",
+        "PUBLIC(+) java.lang.String getLocale()",
+        "PUBLIC(+) int getMaxDeterminizedStates()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getOptions()",
+        "PUBLIC(+) java.lang.String getParser()",
+        "PUBLIC(+) int getPhraseSlop()",
+        "PUBLIC(+) java.lang.String getTimeZone()",
+        "PUBLIC(+) boolean isAllowLeadingWildcard()",
+        "PUBLIC(+) boolean isAnalyzeWildcard()",
+        "PUBLIC(+) boolean isAutoGeneratePhraseQueries()",
+        "PUBLIC(+) boolean isEnablePositionIncrements()",
+        "PUBLIC(+) boolean isLowercaseExpandedTerms()",
+        "PUBLIC(+) boolean isSplitOnWhitespace()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.String> _options"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneTextIndexUtils$LuceneTextIndexOptions(java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$OptionKey",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PARSER",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ANALYZE_WILDCARD",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String AUTO_GENERATE_PHRASE_QUERIES",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String LOWERCASE_EXPANDED_TERMS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String LOCALE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TIME_ZONE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String FUZZY_PREFIX_LENGTH",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ALLOW_LEADING_WILDCARD",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SPLIT_ON_WHITESPACE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_OPERATOR",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ENABLE_POSITION_INCREMENTS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PHRASE_SLOP",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String FUZZY_MIN_SIM",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MAX_DETERMINIZED_STATES"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneTextIndexUtils$OptionKey()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.reader.MultiColumnTextIndexReader",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String, java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.reader.TextIndexReader",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

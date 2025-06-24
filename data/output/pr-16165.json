@@ -1,0 +1,86 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/restlet/resources/ValidDocIdsBitmapResponse.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/restlet/resources/ValidDocIdsMetadataInfo.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/MinionTaskUtils.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompaction/UpsertCompactionTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/upsertcompaction/UpsertCompactionTaskGeneratorTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/TablesResource.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/BaseResourceTest.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/TablesResourceTest.java"
+  ],
+  "mergedAt": "2025-06-24T22:30:14Z",
+  "number": 16165,
+  "title": "Add server status in the validDocIds info API - Upsert Tables",
+  "url": "https://github.com/apache/pinot/pull/16165",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.restlet.resources.ValidDocIdsBitmapResponse",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getInstanceId()",
+        "PUBLIC(+) org.apache.pinot.common.utils.ServiceStatus$Status getServerStatus()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.ServiceStatus$Status _serverStatus",
+        "PRIVATE(+) FINAL(+) java.lang.String _instanceId"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ValidDocIdsBitmapResponse(java.lang.String, java.lang.String, org.apache.pinot.common.restlet.resources.ValidDocIdsType, byte[])"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ValidDocIdsBitmapResponse(java.lang.String, java.lang.String, org.apache.pinot.common.restlet.resources.ValidDocIdsType, byte[], java.lang.String, org.apache.pinot.common.utils.ServiceStatus$Status)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.restlet.resources.ValidDocIdsMetadataInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getInstanceId()",
+        "PUBLIC(+) org.apache.pinot.common.utils.ServiceStatus$Status getServerStatus()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.ServiceStatus$Status _serverStatus",
+        "PRIVATE(+) FINAL(+) java.lang.String _instanceId"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ValidDocIdsMetadataInfo(java.lang.String, long, long, long, java.lang.String, org.apache.pinot.common.restlet.resources.ValidDocIdsType, long, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ValidDocIdsMetadataInfo(java.lang.String, long, long, long, java.lang.String, org.apache.pinot.common.restlet.resources.ValidDocIdsType, long, long, java.lang.String, org.apache.pinot.common.utils.ServiceStatus$Status)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,java.util.List<java.lang.String>> getServerToOnlineSegmentsMapFromEV(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.api.resources.TablesResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
