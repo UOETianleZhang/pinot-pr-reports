@@ -13,10 +13,10 @@
       "type": "modification",
       "compatible": false,
       "removedMethods": [
-        "PRIVATE(-) org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskDebugInfo getTaskDebugInfo(org.apache.helix.task.WorkflowContext, java.lang.String, int)"
+        "PRIVATE(-) org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskDebugInfo getTaskDebugInfo(org.apache.helix.task.WorkflowContext, java.lang.String, java.lang.String, int)"
       ],
       "addedMethods": [
-        "PRIVATE(+) org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskDebugInfo getTaskDebugInfo(org.apache.helix.task.WorkflowContext, java.lang.String, java.lang.String, int)"
+        "PRIVATE(+) org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskDebugInfo getTaskDebugInfo(org.apache.helix.task.WorkflowContext, java.lang.String, int)"
       ],
       "removedFields": [],
       "addedFields": [],

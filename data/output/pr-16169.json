@@ -16,50 +16,50 @@
     {
       "className": "org.apache.pinot.tools.admin.command.QuickstartRunner",
       "type": "modification",
-      "compatible": true,
+      "compatible": false,
       "removedMethods": [],
       "addedMethods": [],
       "removedFields": [],
       "addedFields": [],
-      "removedConstructors": [],
-      "addedConstructors": [
-        "PUBLIC(+) QuickstartRunner(java.util.List<org.apache.pinot.tools.QuickstartTableRequest>, int, int, int, int, java.io.File, java.util.Map<java.lang.String,java.lang.Object>, org.apache.pinot.spi.auth.AuthProvider)"
-      ]
+      "removedConstructors": [
+        "PUBLIC(-) QuickstartRunner(java.util.List<org.apache.pinot.tools.QuickstartTableRequest>, int, int, int, int, java.io.File, java.util.Map<java.lang.String,java.lang.Object>, org.apache.pinot.spi.auth.AuthProvider)"
+      ],
+      "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.tools.TimeSeriesEngineAuthQuickStart",
-      "type": "addition",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) org.apache.pinot.spi.auth.AuthProvider getAuthProvider()",
-        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.Object> getConfigOverrides()",
-        "PUBLIC(+) STATIC(+) void main(java.lang.String[])",
-        "PUBLIC(+) java.util.List<java.lang.String> types()"
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.auth.AuthProvider getAuthProvider()",
+        "PUBLIC(-) java.util.Map<java.lang.String,java.lang.Object> getConfigOverrides()",
+        "PUBLIC(-) STATIC(-) void main(java.lang.String[])",
+        "PUBLIC(-) java.util.List<java.lang.String> types()"
       ],
+      "addedMethods": [],
       "removedFields": [],
       "addedFields": [],
-      "removedConstructors": [],
-      "addedConstructors": [
-        "PUBLIC(+) TimeSeriesEngineAuthQuickStart()"
-      ]
+      "removedConstructors": [
+        "PUBLIC(-) TimeSeriesEngineAuthQuickStart()"
+      ],
+      "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.tools.utils.AuthUtils",
-      "type": "addition",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.lang.Object> getAuthQuickStartDefaultConfigs()"
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,java.lang.Object> getAuthQuickStartDefaultConfigs()"
       ],
-      "removedFields": [],
-      "addedFields": [
-        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_AUTH_TOKEN"
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String DEFAULT_AUTH_TOKEN"
       ],
-      "removedConstructors": [],
-      "addedConstructors": [
-        "PRIVATE(+) AuthUtils()"
-      ]
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) AuthUtils()"
+      ],
+      "addedConstructors": []
     }
   ]
 }

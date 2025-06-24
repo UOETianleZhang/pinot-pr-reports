@@ -12,10 +12,10 @@
       "type": "modification",
       "compatible": false,
       "removedMethods": [
-        "PUBLIC(-) org.apache.pinot.controller.api.resources.SuccessResponse deleteSegmentsFromSequenceNum(java.lang.String, java.util.List<java.lang.String>, boolean, javax.ws.rs.core.HttpHeaders)"
+        "PUBLIC(-) java.lang.String deleteSegmentsFromSequenceNum(java.lang.String, java.util.List<java.lang.String>, boolean, boolean, javax.ws.rs.core.HttpHeaders)"
       ],
       "addedMethods": [
-        "PUBLIC(+) java.lang.String deleteSegmentsFromSequenceNum(java.lang.String, java.util.List<java.lang.String>, boolean, boolean, javax.ws.rs.core.HttpHeaders)"
+        "PUBLIC(+) org.apache.pinot.controller.api.resources.SuccessResponse deleteSegmentsFromSequenceNum(java.lang.String, java.util.List<java.lang.String>, boolean, javax.ws.rs.core.HttpHeaders)"
       ],
       "removedFields": [],
       "addedFields": [],

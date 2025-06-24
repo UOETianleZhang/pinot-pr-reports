@@ -15,12 +15,12 @@
     {
       "className": "org.apache.pinot.client.examples.PinotJdbcExample",
       "type": "modification",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) STATIC(+) void testPinotJdbcForQuickStart(java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
-        "PUBLIC(+) STATIC(+) void testPinotJdbcForQuickStart(java.lang.String, java.lang.String, java.util.Properties)"
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void testPinotJdbcForQuickStart(java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
+        "PUBLIC(-) STATIC(-) void testPinotJdbcForQuickStart(java.lang.String, java.lang.String, java.util.Properties)"
       ],
+      "addedMethods": [],
       "removedFields": [],
       "addedFields": [],
       "removedConstructors": [],
