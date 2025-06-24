@@ -1,0 +1,68 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PhysicalPlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PlanFragmentAndMailboxAssignment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/PhysicalOptRuleSet.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/RootExchangeInsertRule.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json"
+  ],
+  "mergedAt": "2025-06-02T21:59:49Z",
+  "number": 15943,
+  "title": "[multistage] Cleanup Plan Fragmenter Logic + Mailbox Receive Sort Fixes",
+  "url": "https://github.com/apache/pinot/pull/15943",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.context.PhysicalPlannerContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.query.routing.QueryServerInstance getBrokerQueryServerInstance()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.RootExchangeInsertRule",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.lang.String brokerWorkerId()",
+        "PUBLIC(-) org.apache.pinot.query.planner.physical.v2.PRelNode execute(org.apache.pinot.query.planner.physical.v2.PRelNode)",
+        "PRIVATE(-) org.apache.calcite.rel.RelCollation inferCollation(org.apache.pinot.query.planner.physical.v2.PRelNode)",
+        "PRIVATE(-) int nodeId()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.context.PhysicalPlannerContext _context"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RootExchangeInsertRule(org.apache.pinot.query.context.PhysicalPlannerContext)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.PlanFragmentAndMailboxAssignment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.query.planner.PlanFragment createFragment(int, org.apache.pinot.query.planner.plannode.PlanNode, java.util.List<org.apache.pinot.query.planner.PlanFragment>, org.apache.pinot.query.planner.physical.v2.PlanFragmentAndMailboxAssignment$Context, java.util.List<java.lang.String>)",
+        "PRIVATE(-) void process(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.plannode.PlanNode, int, org.apache.pinot.query.planner.physical.v2.PlanFragmentAndMailboxAssignment$Context)",
+        "PRIVATE(-) void processTableScan(org.apache.pinot.query.planner.physical.v2.nodes.PhysicalTableScan, int, org.apache.pinot.query.planner.physical.v2.PlanFragmentAndMailboxAssignment$Context)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.query.planner.PlanFragment createFragment(int, org.apache.pinot.query.planner.plannode.PlanNode, java.util.List<org.apache.pinot.query.planner.PlanFragment>, org.apache.pinot.query.planner.physical.v2.PlanFragmentAndMailboxAssignment$Context)",
+        "PRIVATE(+) void visit(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.plannode.PlanNode, org.apache.pinot.query.planner.PlanFragment, org.apache.pinot.query.planner.physical.v2.PlanFragmentAndMailboxAssignment$Context)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) int FIRST_NON_ROOT_FRAGMENT_ID"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

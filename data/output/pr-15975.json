@@ -1,0 +1,14 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/CalciteSqlParser.java",
+    "pinot-controller/src/main/resources/app/pages/Query.tsx",
+    "pinot-core/pom.xml",
+    "pinot-core/src/test/java/org/apache/pinot/queries/HistogramQueriesTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/ResourceBasedQueriesTest.java"
+  ],
+  "mergedAt": "2025-06-03T10:31:51Z",
+  "number": 15975,
+  "title": "Apply some o11y:",
+  "url": "https://github.com/apache/pinot/pull/15975",
+  "jcmpClasses": []
+}

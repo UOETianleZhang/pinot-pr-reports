@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-05T20:19:47Z",
+  "number": 16014,
+  "title": "Bump org.glassfish.jersey:jersey-bom from 2.46 to 2.47",
+  "url": "https://github.com/apache/pinot/pull/16014",
+  "jcmpClasses": []
+}

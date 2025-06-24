@@ -1,0 +1,101 @@
+{
+  "files": [
+    "pinot-tools/src/main/java/org/apache/pinot/tools/ClusterStateVerifier.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/PinotIdealStateChanger.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/PinotNumReplicaChanger.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/PinotTableRebalancer.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/PinotZKChanger.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/MoveReplicaGroup.java"
+  ],
+  "mergedAt": "2025-06-03T02:40:47Z",
+  "number": 15961,
+  "title": "Fix PinotZKChanger HelixManager instance names",
+  "url": "https://github.com/apache/pinot/pull/15961",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.tools.PinotIdealStateChanger",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.helix.model.IdealState applyChangesToIdealState(org.apache.helix.model.IdealState)",
+        "PUBLIC(-) STATIC(-) void main(java.lang.String[])",
+        "PUBLIC(-) void updateIdealState()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) boolean _dryRun",
+        "PRIVATE(-) FINAL(-) java.lang.String _tableNameWithType"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PinotIdealStateChanger(java.lang.String, java.lang.String, java.lang.String, boolean)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tools.PinotIdealstateChanger",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.helix.model.IdealState applyChangesToIdealState(org.apache.helix.model.IdealState)",
+        "PUBLIC(+) STATIC(+) void main(java.lang.String[])",
+        "PUBLIC(+) void updateIdealState()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _dryRun",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotIdealstateChanger(java.lang.String, java.lang.String, java.lang.String, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.tools.PinotIdealStateChanger$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.model.IdealState apply(org.apache.helix.model.IdealState)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PinotIdealStateChanger$1(org.apache.pinot.tools.PinotIdealStateChanger)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tools.PinotIdealstateChanger$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.helix.model.IdealState apply(org.apache.helix.model.IdealState)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PinotIdealstateChanger$1(org.apache.pinot.tools.PinotIdealstateChanger)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.tools.PinotZKChanger",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PinotZKChanger(java.lang.String, java.lang.String, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PinotZKChanger(java.lang.String, java.lang.String)"
+      ]
+    }
+  ]
+}

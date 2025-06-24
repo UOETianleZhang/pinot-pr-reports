@@ -1,0 +1,111 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PhysicalPlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/parser/CalciteRexExpressionParser.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/LeafStageToPinotQuery.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRuleTest.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/server/ServerPlanRequestVisitor.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-04T23:11:34Z",
+  "number": 15959,
+  "title": "[multistage] Add Support for Broker Server/Segment Pruning",
+  "url": "https://github.com/apache/pinot/pull/15959",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.context.PhysicalPlannerContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isUseBrokerPruning(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.parser.CalciteRexExpressionParser",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) org.apache.pinot.common.request.Expression compileAndExpression(org.apache.pinot.query.planner.logical.RexExpression$FunctionCall, java.util.List<org.apache.pinot.common.request.Expression>)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.common.request.Expression compileFunctionExpression(org.apache.pinot.query.planner.logical.RexExpression$FunctionCall, java.util.List<org.apache.pinot.common.request.Expression>)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.common.request.Expression compileOrExpression(org.apache.pinot.query.planner.logical.RexExpression$FunctionCall, java.util.List<org.apache.pinot.common.request.Expression>)",
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.common.request.Expression> convertAggregateList(java.util.List<org.apache.pinot.common.request.Expression>, java.util.List<org.apache.pinot.query.planner.logical.RexExpression$FunctionCall>, java.util.List<java.lang.Integer>, java.util.List<org.apache.pinot.common.request.Expression>)",
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.common.request.Expression> convertRexNodes(java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, java.util.List<org.apache.pinot.common.request.Expression>)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.common.request.Expression inputRefToIdentifier(org.apache.pinot.query.planner.logical.RexExpression$InputRef, java.util.List<org.apache.pinot.common.request.Expression>)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.request.Expression toExpression(org.apache.pinot.query.planner.logical.RexExpression, java.util.List<org.apache.pinot.common.request.Expression>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.common.request.Expression compileAndExpression(org.apache.pinot.query.planner.logical.RexExpression$FunctionCall, org.apache.pinot.common.request.PinotQuery)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.common.request.Expression compileFunctionExpression(org.apache.pinot.query.planner.logical.RexExpression$FunctionCall, org.apache.pinot.common.request.PinotQuery)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.common.request.Expression compileOrExpression(org.apache.pinot.query.planner.logical.RexExpression$FunctionCall, org.apache.pinot.common.request.PinotQuery)",
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.common.request.Expression> convertAggregateList(java.util.List<org.apache.pinot.common.request.Expression>, java.util.List<org.apache.pinot.query.planner.logical.RexExpression$FunctionCall>, java.util.List<java.lang.Integer>, org.apache.pinot.common.request.PinotQuery)",
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.common.request.Expression> convertRexNodes(java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.common.request.PinotQuery)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.common.request.Expression inputRefToIdentifier(org.apache.pinot.query.planner.logical.RexExpression$InputRef, org.apache.pinot.common.request.PinotQuery)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.request.Expression toExpression(org.apache.pinot.query.planner.logical.RexExpression, org.apache.pinot.common.request.PinotQuery)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.LeafStageToPinotQuery",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) void accumulateBottomToTop(org.apache.calcite.rel.RelNode, java.util.List<org.apache.calcite.rel.RelNode>)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.request.PinotQuery createPinotQueryForRouting(java.lang.String, org.apache.calcite.rel.RelNode, boolean)",
+        "PRIVATE(-) STATIC(-) void handleFilter(org.apache.calcite.rel.core.Filter, org.apache.pinot.common.request.PinotQuery)",
+        "PRIVATE(-) STATIC(-) void handleProject(org.apache.calcite.rel.core.Project, org.apache.pinot.common.request.PinotQuery)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.common.request.PinotQuery initializePinotQueryForTableScan(java.lang.String, org.apache.calcite.rel.core.TableScan)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafStageToPinotQuery()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.query.planner.physical.v2.nodes.PhysicalTableScan assignTableScan(org.apache.pinot.query.planner.physical.v2.nodes.PhysicalTableScan, long, org.apache.pinot.common.request.PinotQuery)",
+        "STATIC(-) org.apache.pinot.common.request.PinotQuery deepCopyWithTableType(org.apache.pinot.common.request.PinotQuery, org.apache.pinot.spi.config.table.TableType)",
+        "STATIC(-) org.apache.pinot.query.planner.physical.v2.PRelNode extractCurrentLeafStageParent(java.util.Deque<org.apache.pinot.query.planner.physical.v2.PRelNode>)",
+        "PRIVATE(-) java.util.Map<java.lang.String,org.apache.pinot.core.routing.RoutingTable> getRoutingTable(org.apache.pinot.common.request.PinotQuery, long)",
+        "PRIVATE(-) org.apache.pinot.core.routing.RoutingTable getRoutingTableSingleTableType(org.apache.pinot.common.request.PinotQuery, long)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.query.planner.physical.v2.nodes.PhysicalTableScan assignTableScan(org.apache.pinot.query.planner.physical.v2.nodes.PhysicalTableScan, long)",
+        "PRIVATE(+) java.util.Map<java.lang.String,org.apache.pinot.core.routing.RoutingTable> getRoutingTable(java.lang.String, long)",
+        "PRIVATE(+) org.apache.pinot.core.routing.RoutingTable getRoutingTable(java.lang.String, org.apache.pinot.spi.config.table.TableType, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String USE_BROKER_PRUNING"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

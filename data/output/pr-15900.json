@@ -1,0 +1,45 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/LogicalTableConfigUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSchemaRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/TableConfigsRestletResource.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/PinotSchemaRestletResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/PinotTableRestletResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/TableConfigsRestletResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java"
+  ],
+  "mergedAt": "2025-06-03T14:04:09Z",
+  "number": 15900,
+  "title": "Schema and table config deletion to validate with logical table ref table names",
+  "url": "https://github.com/apache/pinot/pull/15900",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.LogicalTableConfigUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean checkPhysicalTableRefExists(org.apache.pinot.spi.data.LogicalTableConfig, java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTableRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void validateLogicalTableReference(java.lang.String, org.apache.pinot.spi.config.table.TableType)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

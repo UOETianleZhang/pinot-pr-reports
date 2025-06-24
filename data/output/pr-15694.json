@@ -1,0 +1,110 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineSmallBufferTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/GrpcSendingMailbox.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/MailboxService.java"
+  ],
+  "mergedAt": "2025-06-06T06:35:48Z",
+  "number": 15694,
+  "title": "Improve byte-based gRPC block splitting",
+  "url": "https://github.com/apache/pinot/pull/15694",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.mailbox.GrpcSendingMailbox",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void processAndSend(org.apache.pinot.query.runtime.blocks.MseBlock, java.util.List<org.apache.pinot.segment.spi.memory.DataBuffer>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void splitAndSend(org.apache.pinot.query.runtime.blocks.MseBlock, java.util.List<org.apache.pinot.segment.spi.memory.DataBuffer>)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.mailbox.GrpcSendingMailbox$Sender _sender"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _maxByteStringSize",
+        "PRIVATE(+) FINAL(+) boolean _splitBlocks"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) GrpcSendingMailbox(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.query.mailbox.channel.ChannelManager, java.lang.String, int, long, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.MailboxSendOperator$StatKey>, int)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) GrpcSendingMailbox(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.query.mailbox.channel.ChannelManager, java.lang.String, int, long, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.MailboxSendOperator$StatKey>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.GrpcSendingMailbox$MseBlockSerializer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.GrpcSendingMailbox$NonSplitSender",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) int processAndSend(org.apache.pinot.common.datablock.DataBlock)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) GrpcSendingMailbox$NonSplitSender(org.apache.pinot.query.mailbox.GrpcSendingMailbox)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.GrpcSendingMailbox$Sender",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) ABSTRACT(-) int processAndSend(org.apache.pinot.common.datablock.DataBlock)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PROTECTED(-) FINAL(-) org.apache.pinot.query.mailbox.GrpcSendingMailbox _mailbox"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PROTECTED(-) GrpcSendingMailbox$Sender(org.apache.pinot.query.mailbox.GrpcSendingMailbox)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.GrpcSendingMailbox$SplitSender",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) int processAndSend(org.apache.pinot.common.datablock.DataBlock)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _maxByteStringSize"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) GrpcSendingMailbox$SplitSender(org.apache.pinot.query.mailbox.GrpcSendingMailbox, int)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.MailboxService",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _maxByteStringSize"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/DebugResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/TableSize.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/TableViews.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/SegmentStatusChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/util/TableSizeReader.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/StorageQuotaChecker.java",
+    "pinot-controller/src/main/resources/app/requests/index.ts",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/TableSizeReaderTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotSegmentRestletResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/SegmentStatusCheckerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/StorageQuotaCheckerTest.java"
+  ],
+  "mergedAt": "2025-05-27T17:37:42Z",
+  "number": 15725,
+  "title": "[bugfix] Remove deleting segments from table status info",
+  "url": "https://github.com/apache/pinot/pull/15725",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.TableSize",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.util.TableSizeReader$TableSizeDetails getTableSize(java.lang.String, boolean, boolean, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.util.TableSizeReader$TableSizeDetails getTableSize(java.lang.String, boolean, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.TableViews",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getSegmentsStatusDetails(java.lang.String, java.lang.String, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(-) java.util.List<org.apache.pinot.controller.api.resources.SegmentStatusInfo> getSegmentStatuses(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getSegmentsStatusDetails(java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.controller.api.resources.SegmentStatusInfo> getSegmentStatuses(org.apache.pinot.controller.api.resources.TableViews$TableView, org.apache.pinot.controller.api.resources.TableViews$TableView)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Map<java.lang.String,java.util.List<java.lang.String>> getServerToSegmentsMap(java.lang.String, java.lang.String, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,java.util.List<java.lang.String>> getServerToSegmentsMap(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.util.TableSizeReader",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.util.TableSizeReader$TableSizeDetails getTableSizeDetails(java.lang.String, int, boolean)",
+        "PUBLIC(-) org.apache.pinot.controller.util.TableSizeReader$TableSubTypeSizeDetails getTableSubtypeSize(java.lang.String, int, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.util.TableSizeReader$TableSizeDetails getTableSizeDetails(java.lang.String, int)",
+        "PUBLIC(+) org.apache.pinot.controller.util.TableSizeReader$TableSubTypeSizeDetails getTableSubtypeSize(java.lang.String, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

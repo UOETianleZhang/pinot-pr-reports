@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/server/QueryServer.java"
+  ],
+  "mergedAt": "2025-05-27T02:39:12Z",
+  "number": 15905,
+  "title": "Fix MSE worker thread initialization for TSE.",
+  "url": "https://github.com/apache/pinot/pull/15905",
+  "jcmpClasses": []
+}

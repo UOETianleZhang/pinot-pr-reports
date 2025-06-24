@@ -1,0 +1,38 @@
+{
+  "files": [
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/main/java/org/apache/pinot/plugin/stream/kafka20/KafkaStreamMetadataProvider.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/main/java/org/apache/pinot/plugin/stream/kafka30/KafkaStreamMetadataProvider.java"
+  ],
+  "mergedAt": "2025-06-04T07:48:53Z",
+  "number": 15641,
+  "title": "Use Kafka Admin client to Fetch offsets instead of Kafka Consumer",
+  "url": "https://github.com/apache/pinot/pull/15641",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka20.KafkaStreamMetadataProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean isValidOffsetInfo(java.util.Map<org.apache.kafka.common.TopicPartition,org.apache.kafka.clients.admin.ListOffsetsResult$ListOffsetsResultInfo>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka30.KafkaStreamMetadataProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean isValidOffsetInfo(java.util.Map<org.apache.kafka.common.TopicPartition,org.apache.kafka.clients.admin.ListOffsetsResult$ListOffsetsResultInfo>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/messages/TableConfigSchemaRefreshMessage.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerMeter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/SegmentMessageHandlerFactory.java"
+  ],
+  "mergedAt": "2025-06-03T23:08:07Z",
+  "number": 15956,
+  "title": "Pinot Server : Refresh message for Table Schema ",
+  "url": "https://github.com/apache/pinot/pull/15956",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.messages.TableConfigSchemaRefreshMessage",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getTableNameWithType()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String REFRESH_TABLE_CONFIG_AND_SCHEMA",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String TABLE_NAME_KEY"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TableConfigSchemaRefreshMessage(org.apache.helix.model.Message)",
+        "PUBLIC(-) TableConfigSchemaRefreshMessage(java.lang.String)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metrics.ServerMeter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.ServerMeter TABLE_CONFIG_AND_SCHEMA_REFRESH_FAILURES"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void sendTableConfigSchemaRefreshMessage(java.lang.String, java.util.List<java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SegmentMessageHandlerFactory$TableSchemaRefreshMessageHandler",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.messaging.handling.HelixTaskResult handleMessage()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "SegmentMessageHandlerFactory$TableSchemaRefreshMessageHandler(org.apache.pinot.server.starter.helix.SegmentMessageHandlerFactory, org.apache.pinot.common.messages.TableConfigSchemaRefreshMessage, org.apache.pinot.common.metrics.ServerMetrics, org.apache.helix.NotificationContext)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}

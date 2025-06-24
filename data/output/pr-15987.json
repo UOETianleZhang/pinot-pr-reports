@@ -1,0 +1,55 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/RealtimeSegmentValidationManager.java"
+  ],
+  "mergedAt": "2025-06-06T22:31:57Z",
+  "number": 15987,
+  "title": "Allow RealtimeSegmentValidationManager to fix error segments for partial upsert and dedup tables.",
+  "url": "https://github.com/apache/pinot/pull/15987",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void repairSegmentsInErrorStateForPauselessConsumption(org.apache.pinot.spi.config.table.TableConfig, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void repairSegmentsInErrorStateForPauselessConsumption(org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.RealtimeSegmentValidationManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean shouldRepairErrorSegmentsForPartialUpsertOrDedup(java.util.Properties)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String REPAIR_ERROR_SEGMENTS_FOR_PARTIAL_UPSERT_OR_DEDUP"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.RealtimeSegmentValidationManager$Context",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) boolean _repairErrorSegmentsForPartialUpsertOrDedup"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

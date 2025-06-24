@@ -1,0 +1,93 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/AggregateOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/AsofJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/BaseJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/NonEquiJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/WindowAggregateOperator.java"
+  ],
+  "mergedAt": "2025-06-04T10:41:38Z",
+  "number": 15977,
+  "title": "Modify MSE operators to release memory once computation finished",
+  "url": "https://github.com/apache/pinot/pull/15977",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.AggregateOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.AsofJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void onEosProduced()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) ABSTRACT(-) void onEosProduced()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.HashJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void onEosProduced()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.NonEquiJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void onEosProduced()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.WindowAggregateOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.runtime.operator.window.WindowFrame _windowFrame",
+        "PRIVATE(+) FINAL(+) java.util.Map<org.apache.pinot.core.data.table.Key,java.util.List<java.lang.Object[]>> _partitionRows"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

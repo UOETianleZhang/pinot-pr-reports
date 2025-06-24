@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/datablock/ZeroCopyDataBlockSerde.java"
+  ],
+  "mergedAt": "2025-06-05T06:49:35Z",
+  "number": 15991,
+  "title": "Fix an issue while deserializing stats on error",
+  "url": "https://github.com/apache/pinot/pull/15991",
+  "jcmpClasses": []
+}

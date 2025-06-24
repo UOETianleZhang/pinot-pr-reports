@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/MultipleSelectComponent.tsx"
+  ],
+  "mergedAt": "2025-06-07T00:33:45Z",
+  "number": 16009,
+  "title": "[bugfix][ui] rename component to MultipleSelectComponent to match filename",
+  "url": "https://github.com/apache/pinot/pull/16009",
+  "jcmpClasses": []
+}

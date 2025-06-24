@@ -1,0 +1,51 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/DefaultRebalancePreChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalancePreChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java"
+  ],
+  "mergedAt": "2025-06-04T00:29:37Z",
+  "number": 15984,
+  "title": "Check `batchSizePerServer` in Rebalance Config Pre-check",
+  "url": "https://github.com/apache/pinot/pull/15984",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.DefaultRebalancePreChecker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.controller.helix.core.rebalance.RebalancePreCheckerResult checkRebalanceConfig(org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, org.apache.pinot.spi.config.table.TableConfig, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.controller.helix.core.rebalance.RebalancePreCheckerResult checkRebalanceConfig(org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, org.apache.pinot.spi.config.table.TableConfig, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)"
+      ],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) int RECOMMENDED_BATCH_SIZE",
+        "PUBLIC(-) STATIC(-) FINAL(-) int SEGMENT_ADD_THRESHOLD"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalancePreChecker$PreCheckContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult getRebalanceSummaryResult()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult _rebalanceSummaryResult"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RebalancePreChecker$PreCheckContext(java.lang.String, java.lang.String, org.apache.pinot.spi.config.table.TableConfig, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, org.apache.pinot.controller.util.TableSizeReader$TableSubTypeSizeDetails, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) RebalancePreChecker$PreCheckContext(java.lang.String, java.lang.String, org.apache.pinot.spi.config.table.TableConfig, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, org.apache.pinot.controller.util.TableSizeReader$TableSubTypeSizeDetails, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BrokerResourceOnlineOfflineStateModelFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BrokerUserDefinedMessageHandlerFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/queryquota/HelixExternalViewBasedQueryQuotaManager.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/queryquota/QueryQuotaManager.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metadata/ZKMetadataProvider.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/ControllerRequestClient.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/QueryQuotaClusterIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/BaseLogicalTableIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/LogicalTableWithTwoOfflineOneRealtimeTableIntegrationTest.java"
+  ],
+  "mergedAt": "2025-05-27T07:27:28Z",
+  "number": 15839,
+  "title": "Logical table query quota enforcement - SSE",
+  "url": "https://github.com/apache/pinot/pull/15839",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.queryquota.HelixExternalViewBasedQueryQuotaManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean acquireLogicalTable(java.lang.String)",
+        "PRIVATE(-) java.lang.String constructLogicalTableConfigPath(java.lang.String)",
+        "PRIVATE(-) void createOrUpdateRateLimiter(java.lang.String, org.apache.helix.model.ExternalView, org.apache.pinot.spi.config.table.QuotaConfig, org.apache.zookeeper.data.Stat)",
+        "PUBLIC(-) void initOrUpdateLogicalTableQueryQuota(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void createOrUpdateRateLimiter(java.lang.String, org.apache.helix.model.ExternalView, org.apache.pinot.spi.config.table.QuotaConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.queryquota.QueryQuotaManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) boolean acquireLogicalTable(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.ControllerRequestClient",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void addLogicalTableConfig(org.apache.pinot.spi.data.LogicalTableConfig)",
+        "PUBLIC(-) void updateLogicalTableConfig(org.apache.pinot.spi.data.LogicalTableConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "files": [
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterIntegrationTestUtils.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-integration-tests/pom.xml",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesIntegrationTest.java",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-03T04:26:24Z",
+  "number": 15960,
+  "title": "[timeseries] Introducing integration tests for time series engine",
+  "url": "https://github.com/apache/pinot/pull/15960",
+  "jcmpClasses": []
+}

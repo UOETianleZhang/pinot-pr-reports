@@ -1,0 +1,150 @@
+{
+  "files": [
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/SendStatsPredicate.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/worker/WorkerQueryServer.java"
+  ],
+  "mergedAt": "2025-05-27T17:29:36Z",
+  "number": 15895,
+  "title": "Reduce ZK access for SendStatsPredicate",
+  "url": "https://github.com/apache/pinot/pull/15895",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.server.starter.helix.SendStatsPredicate create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.helix.HelixManager)",
+        "PUBLIC(-) ABSTRACT(-) boolean isSendStats()",
+        "PUBLIC(-) ABSTRACT(-) boolean needWatchForInstanceConfigChange()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.server.starter.helix.SendStatsPredicate create(org.apache.pinot.spi.env.PinotConfiguration)",
+        "PUBLIC(+) ABSTRACT(+) boolean getSendStats()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate$Mode",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.server.starter.helix.SendStatsPredicate create(org.apache.helix.HelixManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.server.starter.helix.SendStatsPredicate create()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate$Mode$1",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.server.starter.helix.SendStatsPredicate create(org.apache.helix.HelixManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.server.starter.helix.SendStatsPredicate create()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate$Mode$2",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.server.starter.helix.SendStatsPredicate create(org.apache.helix.HelixManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.server.starter.helix.SendStatsPredicate create()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate$Mode$2$1",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean isSendStats()",
+        "PUBLIC(-) boolean needWatchForInstanceConfigChange()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean getSendStats()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate$Mode$3",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.server.starter.helix.SendStatsPredicate create(org.apache.helix.HelixManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.server.starter.helix.SendStatsPredicate create()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate$Mode$3$1",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean isSendStats()",
+        "PUBLIC(-) boolean needWatchForInstanceConfigChange()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean getSendStats()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SendStatsPredicate$Safe",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.lang.String getVersion(org.apache.helix.model.InstanceConfig)",
+        "PUBLIC(-) boolean isSendStats()",
+        "PRIVATE(-) boolean needVersionCheck(java.lang.String)",
+        "PUBLIC(-) boolean needWatchForInstanceConfigChange()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean getSendStats()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.lang.String _clusterName",
+        "PRIVATE(-) org.apache.helix.HelixAdmin _helixAdmin",
+        "PRIVATE(-) FINAL(-) java.util.Map<java.lang.String,java.lang.String> _problematicVersionsById",
+        "PRIVATE(-) FINAL(-) org.apache.helix.HelixManager _helixManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) SendStatsPredicate$Safe(org.apache.helix.HelixManager)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) SendStatsPredicate$Safe()"
+      ]
+    }
+  ]
+}

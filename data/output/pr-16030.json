@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java"
+  ],
+  "mergedAt": "2025-06-06T21:19:21Z",
+  "number": 16030,
+  "title": "Fix misleading start offset in data loss log",
+  "url": "https://github.com/apache/pinot/pull/16030",
+  "jcmpClasses": []
+}

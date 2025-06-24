@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/BalancedInstanceSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/ReplicaGroupInstanceSelector.java"
+  ],
+  "mergedAt": "2025-06-04T01:32:56Z",
+  "number": 15986,
+  "title": "Honor 'numReplicaGroupsToQuery' when 'useFixedReplica' is set",
+  "url": "https://github.com/apache/pinot/pull/15986",
+  "jcmpClasses": []
+}

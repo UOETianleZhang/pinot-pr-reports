@@ -1,0 +1,58 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRuleTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-06T00:20:10Z",
+  "number": 16023,
+  "title": "[multistage] Add Support for inferRealtimeSegmentPartition",
+  "url": "https://github.com/apache/pinot/pull/16023",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isInferRealtimeSegmentPartition(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult assignTableScan(java.lang.String, java.util.List<java.lang.String>, org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$InstanceIdToSegments, java.util.Map<java.lang.String,org.apache.pinot.core.routing.TablePartitionInfo>, boolean, boolean)",
+        "STATIC(-) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult attemptPartitionedDistribution(java.lang.String, java.util.List<java.lang.String>, java.util.Map<java.lang.String,java.util.List<java.lang.String>>, org.apache.pinot.core.routing.TablePartitionInfo, boolean, boolean)",
+        "STATIC(-) org.apache.pinot.core.routing.TablePartitionInfo buildTablePartitionInfoWithInferredPartitions(java.lang.String, java.util.Map<java.lang.String,java.util.List<java.lang.String>>, org.apache.pinot.core.routing.TablePartitionInfo)"
+      ],
+      "addedMethods": [
+        "STATIC(+) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult assignTableScan(java.lang.String, java.util.List<java.lang.String>, org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$InstanceIdToSegments, java.util.Map<java.lang.String,org.apache.pinot.core.routing.TablePartitionInfo>, boolean)",
+        "STATIC(+) org.apache.pinot.query.planner.physical.v2.opt.rules.LeafStageWorkerAssignmentRule$TableScanWorkerAssignmentResult attemptPartitionedDistribution(java.lang.String, java.util.List<java.lang.String>, java.util.Map<java.lang.String,java.util.List<java.lang.String>>, org.apache.pinot.core.routing.TablePartitionInfo, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String INFER_REALTIME_SEGMENT_PARTITION"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

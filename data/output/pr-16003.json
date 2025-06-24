@@ -1,0 +1,48 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesIntegrationTest.java",
+    "pinot-timeseries/pinot-timeseries-planner/pom.xml",
+    "pinot-timeseries/pinot-timeseries-planner/src/main/java/org/apache/pinot/tsdb/planner/TimeSeriesQueryEnvironment.java",
+    "pinot-timeseries/pinot-timeseries-planner/src/main/java/org/apache/pinot/tsdb/planner/physical/TableScanVisitor.java",
+    "pinot-timeseries/pinot-timeseries-spi/src/main/java/org/apache/pinot/tsdb/spi/plan/LeafTimeSeriesPlanNode.java"
+  ],
+  "mergedAt": "2025-06-05T20:06:15Z",
+  "number": 16003,
+  "title": "[timeseries] Support Raw Table Names for Time Series Queries",
+  "url": "https://github.com/apache/pinot/pull/16003",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.tsdb.planner.physical.TableScanVisitor",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.tsdb.spi.plan.BaseTimeSeriesPlanNode addTableTypeInfoToPlan(org.apache.pinot.tsdb.spi.plan.BaseTimeSeriesPlanNode)",
+        "PRIVATE(-) java.lang.String getTableNameWithType(org.apache.pinot.core.transport.TableRouteInfo)",
+        "PUBLIC(-) void init(org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.query.routing.table.TableRouteProvider, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void init(org.apache.pinot.core.routing.RoutingManager)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.common.config.provider.TableCache _tableCache",
+        "PRIVATE(-) org.apache.pinot.query.routing.table.TableRouteProvider _tableRouteProvider"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tsdb.spi.plan.LeafTimeSeriesPlanNode",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.tsdb.spi.plan.LeafTimeSeriesPlanNode withTableName(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

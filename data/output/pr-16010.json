@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/GrpcSendingMailbox.java"
+  ],
+  "mergedAt": "2025-06-06T10:42:58Z",
+  "number": 16010,
+  "title": "Change the logs in case of error while sending messages through GRPC",
+  "url": "https://github.com/apache/pinot/pull/16010",
+  "jcmpClasses": []
+}

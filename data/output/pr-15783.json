@@ -1,0 +1,54 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/SegmentBuildFailureException.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManagerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/realtime/utils/FailureInjectingRealtimeSegmentDataManager.java"
+  ],
+  "mergedAt": "2025-06-04T21:29:36Z",
+  "number": 15783,
+  "title": "Fails Online Transition for Segment Build Failures",
+  "url": "https://github.com/apache/pinot/pull/15783",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeSegmentDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void reportSegmentBuildFailure(java.lang.String, java.lang.Exception)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeSegmentDataManager$PartitionConsumer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void handleSegmentBuildFailure()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.SegmentBuildFailureException",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) SegmentBuildFailureException(java.lang.String, java.lang.Throwable)",
+        "PUBLIC(-) SegmentBuildFailureException(java.lang.String)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}

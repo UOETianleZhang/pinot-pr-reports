@@ -1,0 +1,15 @@
+{
+  "files": [
+    ".github/workflows/pinot_tests.yml",
+    "pinot-segment-spi/pom.xml",
+    "pinot-segment-spi/resources/pinot-segment-spi-japicmp-baseline.jar",
+    "pinot-spi/pom.xml",
+    "pinot-spi/resources/pinot-spi-japicmp-baseline.jar",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-06T02:08:32Z",
+  "number": 15982,
+  "title": "Move the SPI check to GHA and deprecate baseline jar",
+  "url": "https://github.com/apache/pinot/pull/15982",
+  "jcmpClasses": []
+}

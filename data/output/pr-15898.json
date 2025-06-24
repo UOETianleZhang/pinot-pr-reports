@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/pages/Query.tsx"
+  ],
+  "mergedAt": "2025-05-27T07:00:27Z",
+  "number": 15898,
+  "title": "Change Pinot UI to be able to show json on error and MSE stats if any",
+  "url": "https://github.com/apache/pinot/pull/15898",
+  "jcmpClasses": []
+}

@@ -1,0 +1,71 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Query/VisualizeQueryStageStats.tsx",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/InStageStatsTreeBuilder.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/MultiStageStatsTreeBuilder.java"
+  ],
+  "mergedAt": "2025-05-27T11:07:24Z",
+  "number": 15901,
+  "title": "Better mse stats",
+  "url": "https://github.com/apache/pinot/pull/15901",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.InStageStatsTreeBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) com.fasterxml.jackson.databind.node.ObjectNode recursiveCase(org.apache.pinot.query.planner.plannode.BasePlanNode, org.apache.pinot.query.runtime.operator.MultiStageOperator$Type, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PRIVATE(-) com.fasterxml.jackson.databind.node.ObjectNode selfNode(org.apache.pinot.query.runtime.operator.MultiStageOperator$Type, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitAggregate(org.apache.pinot.query.planner.plannode.AggregateNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitExchange(org.apache.pinot.query.planner.plannode.ExchangeNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitExplained(org.apache.pinot.query.planner.plannode.ExplainedNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitFilter(org.apache.pinot.query.planner.plannode.FilterNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitJoin(org.apache.pinot.query.planner.plannode.JoinNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitMailboxReceive(org.apache.pinot.query.planner.plannode.MailboxReceiveNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitMailboxSend(org.apache.pinot.query.planner.plannode.MailboxSendNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitProject(org.apache.pinot.query.planner.plannode.ProjectNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitSetOp(org.apache.pinot.query.planner.plannode.SetOpNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitSort(org.apache.pinot.query.planner.plannode.SortNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitTableScan(org.apache.pinot.query.planner.plannode.TableScanNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitValue(org.apache.pinot.query.planner.plannode.ValueNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.node.ObjectNode visitWindow(org.apache.pinot.query.planner.plannode.WindowNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) com.fasterxml.jackson.databind.node.ObjectNode recursiveCase(org.apache.pinot.query.planner.plannode.BasePlanNode, org.apache.pinot.query.runtime.operator.MultiStageOperator$Type)",
+        "PRIVATE(+) com.fasterxml.jackson.databind.node.ObjectNode selfNode(org.apache.pinot.query.runtime.operator.MultiStageOperator$Type)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitAggregate(org.apache.pinot.query.planner.plannode.AggregateNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitExchange(org.apache.pinot.query.planner.plannode.ExchangeNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitExplained(org.apache.pinot.query.planner.plannode.ExplainedNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitFilter(org.apache.pinot.query.planner.plannode.FilterNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitJoin(org.apache.pinot.query.planner.plannode.JoinNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitMailboxReceive(org.apache.pinot.query.planner.plannode.MailboxReceiveNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitMailboxSend(org.apache.pinot.query.planner.plannode.MailboxSendNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitProject(org.apache.pinot.query.planner.plannode.ProjectNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitSetOp(org.apache.pinot.query.planner.plannode.SetOpNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitSort(org.apache.pinot.query.planner.plannode.SortNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitTableScan(org.apache.pinot.query.planner.plannode.TableScanNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitValue(org.apache.pinot.query.planner.plannode.ValueNode, java.lang.Void)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitWindow(org.apache.pinot.query.planner.plannode.WindowNode, java.lang.Void)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _parallelism"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) InStageStatsTreeBuilder$Context(int)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}

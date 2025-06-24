@@ -1,0 +1,224 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/instance/ImplicitRealtimeTablePartitionSelector.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/instance/InstanceAssignmentDriver.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/instance/InstancePartitionSelectorFactory.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/instance/InstanceReplicaGroupPartitionSelector.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceResult.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceSummaryResult.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/assignment/instance/InstanceAssignmentTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalanceIntegrationTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/TableConfigUtilsTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/table/assignment/InstanceAssignmentConfig.java"
+  ],
+  "mergedAt": "2025-06-06T15:41:55Z",
+  "number": 15930,
+  "title": "Add new ImplicitRealtimeTablePartitionSelector strategy for instance assignment",
+  "url": "https://github.com/apache/pinot/pull/15930",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.instance.ImplicitRealtimeTablePartitionSelector",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) int getNumInstancesPerPartition(int)",
+        "PROTECTED(-) int getNumPartitions()",
+        "PRIVATE(-) int getStreamNumPartitions(org.apache.pinot.spi.stream.StreamMetadataProvider)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _numPartitions"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ImplicitRealtimeTablePartitionSelector(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.config.table.assignment.InstanceReplicaGroupPartitionConfig, java.lang.String, org.apache.pinot.common.assignment.InstancePartitions, boolean)",
+        "ImplicitRealtimeTablePartitionSelector(org.apache.pinot.spi.config.table.assignment.InstanceReplicaGroupPartitionConfig, java.lang.String, org.apache.pinot.common.assignment.InstancePartitions, boolean, org.apache.pinot.spi.stream.StreamMetadataProvider)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.instance.InstanceAssignmentDriver",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "org.apache.pinot.common.assignment.InstancePartitions getInstancePartitions(java.lang.String, org.apache.pinot.spi.config.table.assignment.InstanceAssignmentConfig, java.util.List<org.apache.helix.model.InstanceConfig>, org.apache.pinot.common.assignment.InstancePartitions, boolean, org.apache.pinot.controller.helix.core.assignment.instance.InstancePartitionSelector)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.instance.InstancePartitionSelectorFactory",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.controller.helix.core.assignment.instance.InstancePartitionSelector getInstance(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.config.table.assignment.InstanceAssignmentConfig$PartitionSelector, org.apache.pinot.spi.config.table.assignment.InstanceReplicaGroupPartitionConfig, java.lang.String, org.apache.pinot.common.assignment.InstancePartitions, org.apache.pinot.common.assignment.InstancePartitions, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.helix.core.assignment.instance.InstancePartitionSelector getInstance(org.apache.pinot.spi.config.table.assignment.InstanceAssignmentConfig$PartitionSelector, org.apache.pinot.spi.config.table.assignment.InstanceReplicaGroupPartitionConfig, java.lang.String, org.apache.pinot.common.assignment.InstancePartitions, org.apache.pinot.common.assignment.InstancePartitions, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.instance.InstanceReplicaGroupPartitionSelector",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceResult",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary$ConsumingSegmentSummaryPerServer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$RebalanceChangeInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$SegmentInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ServerInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ServerSegmentChangeInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$TagInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.TableConfigUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) void validateInstanceAssignmentConfigs(org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.table.assignment.InstanceAssignmentConfig$PartitionSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.config.table.assignment.InstanceAssignmentConfig$PartitionSelector IMPLICIT_REALTIME_TABLE_PARTITION_SELECTOR"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

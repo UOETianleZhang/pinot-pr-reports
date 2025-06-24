@@ -1,0 +1,64 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManagerTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/PartitionGroupConsumptionStatus.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/PartitionGroupMetadataFetcher.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/IngestionConfigUtils.java"
+  ],
+  "mergedAt": "2025-06-06T21:04:57Z",
+  "number": 15957,
+  "title": "Always use segment partition id as stream partition id for single stream",
+  "url": "https://github.com/apache/pinot/pull/15957",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeSegmentDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _streamPartitionId"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _streamPatitionGroupId"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _streamPartitionId"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _streamPartitionGroupId"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PartitionGroupConsumptionStatus(int, int, int, org.apache.pinot.spi.stream.StreamPartitionMsgOffset, org.apache.pinot.spi.stream.StreamPartitionMsgOffset, java.lang.String)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.PartitionGroupMetadataFetcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.lang.Boolean fetchMultipleStreams()",
+        "PRIVATE(-) java.lang.Boolean fetchSingleStream()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _topicNames"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

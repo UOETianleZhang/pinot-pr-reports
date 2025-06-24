@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/HelixInstanceDataManager.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/starter/helix/HelixInstanceDataManagerTest.java"
+  ],
+  "mergedAt": "2025-06-02T22:03:56Z",
+  "number": 15876,
+  "title": "Add sanity checks to ensure write permissions for instance data and s…",
+  "url": "https://github.com/apache/pinot/pull/15876",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.server.starter.helix.HelixInstanceDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "void initInstanceSegmentTarDir(java.io.File)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

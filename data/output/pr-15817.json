@@ -1,0 +1,114 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/LLCSegmentName.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/SegmentUtils.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/utils/SegmentUtilsTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/RealtimeSegmentAssignment.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/StrictRealtimeSegmentAssignment.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/strategy/ReplicaGroupSegmentAssignmentStrategy.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeTableDataManager.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskExecutor.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskGenerator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/SegmentPreloadUtils.java"
+  ],
+  "mergedAt": "2025-06-03T22:20:16Z",
+  "number": 15817,
+  "title": "Modify OFFLINE and REALTIME completed segments to calculate default partitionId based on same logic as consuming segments rather than 0",
+  "url": "https://github.com/apache/pinot/pull/15817",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.LLCSegmentName",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LLCSegmentName(java.lang.String, int, int, java.lang.String, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.SegmentUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) int getDefaultPartitionId(java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.lang.Integer getPartitionIdFromSegmentName(java.lang.String)",
+        "STATIC(-) java.lang.Integer getPartitionIdFromSegmentPartitionMetadata(org.apache.pinot.common.metadata.segment.SegmentPartitionMetadata, java.lang.String)",
+        "PRIVATE(-) STATIC(-) java.lang.Integer getPartitionIdFromSegmentZKMetadata(org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.lang.Integer getSegmentPartitionId(java.lang.String, java.lang.String, org.apache.helix.HelixManager, java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.lang.Integer getSegmentPartitionId(org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.lang.String)",
+        "PUBLIC(-) STATIC(-) int getSegmentPartitionIdOrDefault(java.lang.String, java.lang.String, org.apache.helix.HelixManager, java.lang.String)",
+        "PUBLIC(-) STATIC(-) int getSegmentPartitionIdOrDefault(org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.lang.Integer getPartitionIdFromRealtimeSegmentName(java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.lang.Integer getRealtimeSegmentPartitionId(java.lang.String, java.lang.String, org.apache.helix.HelixManager, java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.lang.Integer getRealtimeSegmentPartitionId(java.lang.String, org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.lang.String)",
+        "PRIVATE(+) STATIC(+) java.lang.Integer getRealtimeSegmentPartitionId(org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.segment.SegmentAssignmentUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.Integer,java.util.List<java.lang.String>> getOfflineInstancePartitionIdToSegmentsMap(java.util.Set<java.lang.String>, int, java.lang.String, org.apache.helix.HelixManager, java.lang.String)",
+        "PUBLIC(+) STATIC(+) int getOfflineSegmentPartitionId(java.lang.String, java.lang.String, org.apache.helix.HelixManager, java.lang.String)",
+        "PRIVATE(+) STATIC(+) int getPartitionId(org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.lang.String, java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.Integer,java.util.List<java.lang.String>> getRealtimeInstancePartitionIdToSegmentsMap(java.util.Set<java.lang.String>, int, java.lang.String, org.apache.helix.HelixManager, java.lang.String)",
+        "PUBLIC(+) STATIC(+) int getRealtimeSegmentPartitionId(java.lang.String, java.lang.String, org.apache.helix.HelixManager, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) int fetch(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) int fetch(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcherImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) int fetch(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) int fetch(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<org.apache.pinot.spi.config.table.assignment.InstancePartitionsType,org.apache.pinot.common.assignment.InstancePartitions> _instancePartitionsMap"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) TableRebalancer$PartitionIdFetcherImpl(java.lang.String, java.lang.String, org.apache.helix.HelixManager, boolean)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) TableRebalancer$PartitionIdFetcherImpl(java.lang.String, java.lang.String, org.apache.helix.HelixManager, boolean, java.util.Map<org.apache.pinot.spi.config.table.assignment.InstancePartitionsType,org.apache.pinot.common.assignment.InstancePartitions>)"
+      ]
+    }
+  ]
+}

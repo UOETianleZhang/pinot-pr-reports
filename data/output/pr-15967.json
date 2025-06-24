@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/executor/OpChainSchedulerService.java"
+  ],
+  "mergedAt": "2025-06-03T07:58:58Z",
+  "number": 15967,
+  "title": "Invalidate from cache the stats of opchains that finish successfully.",
+  "url": "https://github.com/apache/pinot/pull/15967",
+  "jcmpClasses": []
+}

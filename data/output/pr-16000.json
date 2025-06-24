@@ -1,0 +1,75 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PhysicalPlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeWorkerAssignmentRule.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-07T01:04:06Z",
+  "number": 16000,
+  "title": "[multistage] Lite Mode with Scatter Gather Execution",
+  "url": "https://github.com/apache/pinot/pull/16000",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isRunInBroker(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) STATIC(-) boolean isUseBrokerPruning(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) STATIC(-) boolean isUseLiteMode(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) STATIC(-) boolean isUsePhysicalOptimizer(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.context.PhysicalPlannerContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isUseBrokerPruning(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) STATIC(+) boolean isUsePhysicalOptimizer(java.util.Map<java.lang.String,java.lang.String>)",
+        "PRIVATE(+) STATIC(+) boolean useLiteMode(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.LiteModeWorkerAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) boolean _runInBroker"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String RUN_IN_BROKER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

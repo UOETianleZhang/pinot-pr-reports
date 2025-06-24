@@ -1,0 +1,32 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/AggregateOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/SortOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/SortedMailboxReceiveOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/utils/SortUtils.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/SortOperatorTest.java"
+  ],
+  "mergedAt": "2025-06-06T18:11:24Z",
+  "number": 16021,
+  "title": "Fix MSE SortOperator to avoid precision loss",
+  "url": "https://github.com/apache/pinot/pull/16021",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.utils.SortUtils$SortComparator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean[] _useDoubleComparison"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) SortUtils$SortComparator(java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) SortUtils$SortComparator(org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean)"
+      ]
+    }
+  ]
+}
