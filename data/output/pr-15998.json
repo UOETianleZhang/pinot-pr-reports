@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/HelixInstanceDataManagerConfig.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/starter/helix/HelixInstanceDataManagerConfigTest.java"
+  ],
+  "mergedAt": "2025-06-24T18:02:39Z",
+  "number": 15998,
+  "title": "Support set default tier configurations from cluster server config",
+  "url": "https://github.com/apache/pinot/pull/15998",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.server.starter.helix.HelixInstanceDataManagerConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_TIER_CONFIG_KEY_PREFIX"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

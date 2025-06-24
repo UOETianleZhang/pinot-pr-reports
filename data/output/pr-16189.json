@@ -1,0 +1,32 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalanceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/DefaultTenantRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/relocation/SegmentRelocator.java"
+  ],
+  "mergedAt": "2025-06-24T18:14:34Z",
+  "number": 16189,
+  "title": "Simplify TableRebalanceManager API",
+  "url": "https://github.com/apache/pinot/pull/16189",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalanceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalanceTable(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, java.lang.String, boolean, boolean)",
+        "PUBLIC(-) java.util.concurrent.CompletableFuture<org.apache.pinot.controller.helix.core.rebalance.RebalanceResult> rebalanceTableAsync(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, java.lang.String, boolean, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalanceTable(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, java.lang.String, boolean)",
+        "PUBLIC(+) java.util.concurrent.CompletableFuture<org.apache.pinot.controller.helix.core.rebalance.RebalanceResult> rebalanceTableAsync(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, java.lang.String, boolean)",
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalanceTableDryRun(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
