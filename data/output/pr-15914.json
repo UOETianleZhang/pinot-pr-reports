@@ -1,0 +1,59 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeConsumptionRateManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/ServerRateLimitConfigChangeListener.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/ServerRateLimitConfigChangeListenerTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java"
+  ],
+  "mergedAt": "2025-06-16T08:50:04Z",
+  "number": 15914,
+  "title": "Handles server's rate limit config change without restart",
+  "url": "https://github.com/apache/pinot/pull/15914",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ConsumptionRateLimiter createServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics)",
+        "PUBLIC(-) void updateServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$RateLimiterImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.ServerRateLimitConfigChangeListener",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void onChange(java.util.Set<java.lang.String>, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.metrics.ServerMetrics _serverMetrics",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ServerRateLimitConfigChangeListener(org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}

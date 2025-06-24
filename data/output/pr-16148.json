@@ -1,0 +1,48 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/core/geospatial/transform/GeoFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/BaseTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/DateTruncTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/DistinctFromTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/NullHandlingTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/DefaultAggregationExecutorTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/groupby/DictionaryBasedGroupKeyGeneratorTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/SegmentWithNullValueVectorTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/SerializedBytesQueriesTest.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/BenchmarkNativeAndLuceneBasedLike.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/BenchmarkNativeVsLuceneTextIndex.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/RawIndexBenchmark.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/StringDictionaryPerfTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplAggregateMetricsTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/creator/OnHeapDictionariesTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/SegmentGenerationWithTimeColumnTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/SegmentPartitionTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/readers/PinotSegmentUtil.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/readers/GenericRow.java"
+  ],
+  "mergedAt": "2025-06-19T00:54:03Z",
+  "number": 16148,
+  "title": "Cleanup deprecated GenericRow methods",
+  "url": "https://github.com/apache/pinot/pull/16148",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.data.readers.GenericRow",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void putValues(java.util.Map<java.lang.String,java.lang.Object>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.data.readers.GenericRow createOrReuseRow(org.apache.pinot.spi.data.readers.GenericRow)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.data.readers.GenericRow fromBytes(byte[])",
+        "PUBLIC(+) java.util.Set<java.util.Map$Entry<java.lang.String,java.lang.Object>> getEntrySet()",
+        "PUBLIC(+) java.lang.String[] getFieldNames()",
+        "PUBLIC(+) byte[] toBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

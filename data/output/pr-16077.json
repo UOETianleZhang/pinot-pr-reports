@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MultiStageOperator.java"
+  ],
+  "mergedAt": "2025-06-13T06:22:19Z",
+  "number": 16077,
+  "title": "Add exception for resource limit exceeded in MultiStageOperator",
+  "url": "https://github.com/apache/pinot/pull/16077",
+  "jcmpClasses": []
+}

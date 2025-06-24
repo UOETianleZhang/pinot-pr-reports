@@ -18,73 +18,73 @@
       "className": "org.apache.pinot.broker.requesthandler.MultiStageQueryThrottler",
       "type": "modification",
       "compatible": false,
-      "removedMethods": [],
-      "addedMethods": [
+      "removedMethods": [
         "int calculateMaxServerQueryThreads()",
-        "PRIVATE(+) int calculateSemaphoreLimit()"
+        "PRIVATE(-) int calculateSemaphoreLimit()"
       ],
-      "removedFields": [],
-      "addedFields": [
-        "PRIVATE(+) FINAL(+) int _maxServerQueryThreadsFromBrokerConfig"
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _maxServerQueryThreadsFromBrokerConfig"
       ],
+      "addedFields": [],
       "removedConstructors": [
-        "PUBLIC(-) MultiStageQueryThrottler()"
+        "PUBLIC(-) MultiStageQueryThrottler(org.apache.pinot.spi.env.PinotConfiguration)"
       ],
       "addedConstructors": [
-        "PUBLIC(+) MultiStageQueryThrottler(org.apache.pinot.spi.env.PinotConfiguration)"
+        "PUBLIC(+) MultiStageQueryThrottler()"
       ]
     },
     {
       "className": "org.apache.pinot.server.worker.WorkerQueryServer",
       "type": "modification",
-      "compatible": false,
+      "compatible": true,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [
-        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.env.PinotConfiguration _configuration"
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.env.PinotConfiguration _configuration"
       ],
-      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.executor.HardLimitExecutor",
       "type": "modification",
-      "compatible": true,
+      "compatible": false,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [],
-      "addedFields": [
-        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
       ],
+      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
       "type": "modification",
-      "compatible": true,
+      "compatible": false,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [],
-      "addedFields": [
-        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_MSE_MAX_SERVER_QUERY_THREADS",
-        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_MSE_MAX_SERVER_QUERY_THREADS"
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_MSE_MAX_SERVER_QUERY_THREADS",
+        "PUBLIC(-) STATIC(-) FINAL(-) int DEFAULT_MSE_MAX_SERVER_QUERY_THREADS"
       ],
+      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.utils.CommonConstants$Server",
       "type": "modification",
-      "compatible": true,
+      "compatible": false,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [],
-      "addedFields": [
-        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_MSE_MAX_EXECUTION_THREADS",
-        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_MSE_MAX_EXECUTION_THREADS"
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) int DEFAULT_MSE_MAX_EXECUTION_THREADS",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_MSE_MAX_EXECUTION_THREADS"
       ],
+      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     }

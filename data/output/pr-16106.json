@@ -1,0 +1,165 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/ControllerConf.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotRealtimeTableResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTenantRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/controllerjob/ControllerJobTypes.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalanceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/ZkBasedTableRebalanceObserver.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/ZkBasedTenantRebalanceObserver.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/util/ControllerZkHelixUtils.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceCheckerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalancerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/util/ControllerZkHelixUtilsTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/LLCRealtimeClusterIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalanceIntegrationTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/controller/ControllerJobType.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-16T03:31:35Z",
+  "number": 16106,
+  "title": "Refactor ControllerJobType enum into extensible interface",
+  "url": "https://github.com/apache/pinot/pull/16106",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.ControllerConf",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.Integer DEFAULT_MAXIMUM_CONTROLLER_JOBS_IN_ZK"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean canDelete(org.apache.commons.lang3.tuple.Pair<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)",
+        "PUBLIC(+) java.lang.Integer getZkNumJobsLimit()",
+        "PUBLIC(+) STATIC(+) void init(org.apache.pinot.controller.ControllerConf)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType TABLE_REBALANCE",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType TENANT_REBALANCE",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.util.EnumMap<org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType,java.lang.Integer> ZK_NUM_JOBS_LIMIT",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType RELOAD_SEGMENT",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType FORCE_COMMIT",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ControllerJobType(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean canDelete(org.apache.commons.lang3.tuple.Pair<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)",
+        "PUBLIC(-) java.lang.Integer getZkNumJobsLimit()",
+        "PUBLIC(-) STATIC(-) void init(org.apache.pinot.controller.ControllerConf)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes valueOf(java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes[] values()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes TABLE_REBALANCE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes TENANT_REBALANCE",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.util.EnumMap<org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes,java.lang.Integer> ZK_NUM_JOBS_LIMIT",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes RELOAD_SEGMENT",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.controller.helix.core.controllerjob.ControllerJobTypes FORCE_COMMIT",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) ControllerJobTypes(java.lang.String, int)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean addControllerJobToZK(java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.controller.ControllerJobType)",
+        "PUBLIC(-) boolean addControllerJobToZK(java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.controller.ControllerJobType, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>)",
+        "PUBLIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getAllJobs(java.util.Set<org.apache.pinot.spi.controller.ControllerJobType>, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>)",
+        "PUBLIC(-) java.util.Map<java.lang.String,java.lang.String> getControllerJobZKMetadata(java.lang.String, org.apache.pinot.spi.controller.ControllerJobType)",
+        "PUBLIC(-) boolean updateJobsForTable(java.lang.String, org.apache.pinot.spi.controller.ControllerJobType, java.util.function.Consumer<java.util.Map<java.lang.String,java.lang.String>>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean addControllerJobToZK(java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType)",
+        "PUBLIC(+) boolean addControllerJobToZK(java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>)",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getAllJobs(java.util.EnumSet<org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType>, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>)",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getControllerJobZKMetadata(java.lang.String, org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType)",
+        "PUBLIC(+) boolean updateJobsForTable(java.lang.String, org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType, java.util.function.Consumer<java.util.Map<java.lang.String,java.lang.String>>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.util.ControllerZkHelixUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean addControllerJobToZK(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.controller.ControllerJobType, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>)",
+        "STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> expireControllerJobsInZk(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, org.apache.pinot.spi.controller.ControllerJobType)",
+        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getAllControllerJobs(java.util.Set<org.apache.pinot.spi.controller.ControllerJobType>, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean addControllerJobToZK(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>)",
+        "STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> expireControllerJobsInZk(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType)",
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getAllControllerJobs(java.util.EnumSet<org.apache.pinot.controller.helix.core.controllerjob.ControllerJobType>, java.util.function.Predicate<java.util.Map<java.lang.String,java.lang.String>>, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.controller.ControllerJobType",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean canDelete(org.apache.commons.lang3.tuple.Pair<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)",
+        "PUBLIC(-) java.lang.Integer getZkNumJobsLimit()",
+        "PUBLIC(-) ABSTRACT(-) java.lang.String name()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$ControllerJob",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.Integer DEFAULT_MAXIMUM_CONTROLLER_JOBS_IN_ZK"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

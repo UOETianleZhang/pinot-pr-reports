@@ -14,48 +14,48 @@
     {
       "className": "org.apache.pinot.query.runtime.operator.HashJoinOperator",
       "type": "modification",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PRIVATE(+) boolean handleNullKey(java.lang.Object, java.lang.Object[], java.util.List<java.lang.Object[]>)",
-        "PRIVATE(+) boolean isNullKey(java.lang.Object)"
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean handleNullKey(java.lang.Object, java.lang.Object[], java.util.List<java.lang.Object[]>)",
+        "PRIVATE(-) boolean isNullKey(java.lang.Object)"
       ],
-      "removedFields": [],
-      "addedFields": [
-        "PRIVATE(+) java.util.List<java.lang.Object[]> _nullKeyRightRows"
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.util.List<java.lang.Object[]> _nullKeyRightRows"
       ],
+      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable",
       "type": "modification",
-      "compatible": false,
+      "compatible": true,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [
-        "PRIVATE(-) java.lang.Object _valueForNullKey"
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.Object _valueForNullKey"
       ],
-      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable$1",
-      "type": "deletion",
-      "compatible": false,
-      "removedMethods": [
-        "PUBLIC(-) java.lang.Object getKey()",
-        "PUBLIC(-) java.lang.Object getValue()",
-        "PUBLIC(-) java.lang.Object setValue(java.lang.Object)"
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object getKey()",
+        "PUBLIC(+) java.lang.Object getValue()",
+        "PUBLIC(+) java.lang.Object setValue(java.lang.Object)"
       ],
-      "addedMethods": [],
       "removedFields": [],
       "addedFields": [],
-      "removedConstructors": [
+      "removedConstructors": [],
+      "addedConstructors": [
         "PrimitiveLookupTable$1(org.apache.pinot.query.runtime.operator.join.PrimitiveLookupTable)"
-      ],
-      "addedConstructors": []
+      ]
     }
   ]
 }

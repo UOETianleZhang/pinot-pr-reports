@@ -13,26 +13,26 @@
     {
       "className": "org.apache.pinot.plugin.stream.kafka20.KafkaPartitionLevelConnectionHandler",
       "type": "modification",
-      "compatible": true,
+      "compatible": false,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [],
-      "addedFields": [
-        "PROTECTED(+) FINAL(+) org.apache.kafka.clients.admin.AdminClient _adminClient"
+      "removedFields": [
+        "PROTECTED(-) FINAL(-) org.apache.kafka.clients.admin.AdminClient _adminClient"
       ],
+      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.plugin.stream.kafka30.KafkaPartitionLevelConnectionHandler",
       "type": "modification",
-      "compatible": true,
+      "compatible": false,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [],
-      "addedFields": [
-        "PROTECTED(+) FINAL(+) org.apache.kafka.clients.admin.AdminClient _adminClient"
+      "removedFields": [
+        "PROTECTED(-) FINAL(-) org.apache.kafka.clients.admin.AdminClient _adminClient"
       ],
+      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     }

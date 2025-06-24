@@ -1,0 +1,173 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiNodesOfflineClusterIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/DispatchablePlanContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/WorkerManager.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-13T21:46:11Z",
+  "number": 16084,
+  "title": "Reduce fanout of intermediate stage",
+  "url": "https://github.com/apache/pinot/pull/16084",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isUseLeafServerForIntermediateStage(java.util.Map<java.lang.String,java.lang.String>, boolean)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.context.PlannerContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.QueryEnvironment$Config getEnvConfig()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.QueryEnvironment$Config _envConfig"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean defaultUseLeafServerForIntermediateStage()",
+        "PRIVATE(-) boolean defaultUseLeafServerForIntermediateStageInitialize()",
+        "PUBLIC(-) FINAL(-) org.apache.pinot.query.ImmutableQueryEnvironment$Config withDefaultUseLeafServerForIntermediateStage(boolean)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) boolean defaultUseLeafServerForIntermediateStage"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, boolean, org.apache.pinot.query.routing.WorkerManager)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, org.apache.pinot.query.routing.WorkerManager)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) FINAL(-) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder defaultUseLeafServerForIntermediateStage(boolean)",
+        "PRIVATE(-) boolean defaultUseLeafServerForIntermediateStageIsSet()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) long OPT_BIT_DEFAULT_USE_LEAF_SERVER_FOR_INTERMEDIATE_STAGE",
+        "PRIVATE(-) boolean defaultUseLeafServerForIntermediateStage"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$InitShim",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "boolean defaultUseLeafServerForIntermediateStage()",
+        "void defaultUseLeafServerForIntermediateStage(boolean)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) byte defaultUseLeafServerForIntermediateStageBuildStage",
+        "PRIVATE(-) boolean defaultUseLeafServerForIntermediateStage"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.DispatchablePlanContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Set<org.apache.pinot.query.routing.QueryServerInstance> getLeafServerInstances()",
+        "PUBLIC(-) java.util.Set<java.lang.String> getNonLookupTables()",
+        "PUBLIC(-) boolean isUseLeafServerForIntermediateStage()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.Set<java.lang.String> _nonLookupTables",
+        "PRIVATE(-) FINAL(-) java.util.Set<org.apache.pinot.query.routing.QueryServerInstance> _leafServerInstances"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment$Config",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean defaultUseLeafServerForIntermediateStage()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.routing.WorkerManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void addLeafServersToContext(org.apache.pinot.query.planner.physical.DispatchablePlanMetadata, org.apache.pinot.query.planner.physical.DispatchablePlanContext)",
+        "PRIVATE(-) java.util.List<org.apache.pinot.query.routing.QueryServerInstance> getCandidateServersPerTables(org.apache.pinot.query.planner.physical.DispatchablePlanContext)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) boolean DEFAULT_USE_LEAF_SERVER_FOR_INTERMEDIATE_STAGE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_USE_LEAF_SERVER_FOR_INTERMEDIATE_STAGE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String USE_LEAF_SERVER_FOR_INTERMEDIATE_STAGE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

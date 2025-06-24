@@ -1,0 +1,54 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/common/MinionConstants.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskExecutor.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskExecutorTest.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskGeneratorTest.java"
+  ],
+  "mergedAt": "2025-06-18T18:25:09Z",
+  "number": 16086,
+  "title": "[UpsertCompactMerge] Use max ZK creation time of merging segments for merged segments to prevent replica inconsistencies",
+  "url": "https://github.com/apache/pinot/pull/16086",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.common.MinionConstants$UpsertCompactMergeTask",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String MAX_ZK_CREATION_TIME_MILLIS_KEY"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.upsertcompactmerge.UpsertCompactMergeTaskExecutor",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "long getMaxZKCreationTimeFromConfig(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.upsertcompactmerge.UpsertCompactMergeTaskGenerator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) long getMaxZKCreationTimeMillis(java.util.List<org.apache.pinot.plugin.minion.tasks.upsertcompactmerge.UpsertCompactMergeTaskGenerator$SegmentMergerMetadata>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

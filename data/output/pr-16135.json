@@ -15,10 +15,10 @@
       "type": "modification",
       "compatible": false,
       "removedMethods": [
-        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> rebalanceTableWithHelixAutoRebalanceStrategy(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.List<java.lang.String>, int)"
+        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> rebalanceNonReplicaGroupBasedTable(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.List<java.lang.String>, int)"
       ],
       "addedMethods": [
-        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> rebalanceNonReplicaGroupBasedTable(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.List<java.lang.String>, int)"
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> rebalanceTableWithHelixAutoRebalanceStrategy(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.List<java.lang.String>, int)"
       ],
       "removedFields": [],
       "addedFields": [],
@@ -28,13 +28,13 @@
     {
       "className": "org.apache.pinot.controller.helix.core.assignment.segment.strategy.BalancedNumSegmentAssignmentStrategy",
       "type": "modification",
-      "compatible": false,
+      "compatible": true,
       "removedMethods": [],
       "addedMethods": [],
-      "removedFields": [
-        "PRIVATE(-) java.lang.String _tableNameWithType"
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String _tableNameWithType"
       ],
-      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     }

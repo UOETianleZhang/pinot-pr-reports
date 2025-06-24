@@ -1,0 +1,78 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/resources/PinotClientRequest.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandlerDelegate.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesAuthIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesIntegrationTest.java"
+  ],
+  "mergedAt": "2025-06-13T20:04:29Z",
+  "number": 16066,
+  "title": "[timeseries] Adding requester level access control check for timeseries queries",
+  "url": "https://github.com/apache/pinot/pull/16066",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.api.resources.PinotClientRequest",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse executeTimeSeriesQuery(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse executeTimeSeriesQuery(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandlerDelegate",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.TimeSeriesRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void firstStageAccessControlCheck(org.apache.pinot.spi.auth.broker.RequesterIdentity)",
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

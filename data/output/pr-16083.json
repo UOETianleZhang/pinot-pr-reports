@@ -1,0 +1,27 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiNodesOfflineClusterIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/WorkerManager.java"
+  ],
+  "mergedAt": "2025-06-12T17:08:49Z",
+  "number": 16083,
+  "title": "[MSE] For constant expression query, solve it with a single random server",
+  "url": "https://github.com/apache/pinot/pull/16083",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.routing.WorkerManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.List<org.apache.pinot.core.transport.ServerInstance> getCandidateServers(org.apache.pinot.query.planner.physical.DispatchablePlanContext)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.List<org.apache.pinot.core.transport.ServerInstance> assignServerInstances(org.apache.pinot.query.planner.physical.DispatchablePlanContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

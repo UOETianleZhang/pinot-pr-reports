@@ -1,0 +1,236 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotAggregateReduceFunctionsRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotEvaluateLiteralRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotFilterJoinRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotJoinPushTransitivePredicatesRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotProjectJoinTransposeRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotQueryRuleSets.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotSeminJoinDistinctProjectRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/QueryCompilationTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/QueryPlannerRuleOptionsTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-18T18:17:03Z",
+  "number": 15999,
+  "title": "Enable dynamically turning on/off optProgram rules",
+  "url": "https://github.com/apache/pinot/pull/15999",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.util.Set<java.lang.String> getSkipPlannerRules(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotAggregateReduceFunctionsRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotAggregateReduceFunctionsRule instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEvaluateLiteralRule$Filter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotEvaluateLiteralRule$Filter instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) PinotEvaluateLiteralRule$Filter(org.apache.calcite.tools.RelBuilderFactory, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEvaluateLiteralRule$Filter(org.apache.calcite.tools.RelBuilderFactory)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEvaluateLiteralRule$Project",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotEvaluateLiteralRule$Project instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) PinotEvaluateLiteralRule$Project(org.apache.calcite.tools.RelBuilderFactory, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEvaluateLiteralRule$Project(org.apache.calcite.tools.RelBuilderFactory)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotFilterJoinRule$PinotFilterIntoJoinRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotFilterJoinRule$PinotFilterIntoJoinRule instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotFilterJoinRule$PinotJoinConditionPushRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotFilterJoinRule$PinotJoinConditionPushRule instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotJoinPushTransitivePredicatesRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotJoinPushTransitivePredicatesRule instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotProjectJoinTransposeRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotProjectJoinTransposeRule instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotSeminJoinDistinctProjectRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotSeminJoinDistinctProjectRule instanceWithDescription(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PinotSeminJoinDistinctProjectRule(org.apache.calcite.tools.RelBuilderFactory, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PinotSeminJoinDistinctProjectRule(org.apache.calcite.tools.RelBuilderFactory)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) java.util.List<org.apache.calcite.plan.RelOptRule> filterRuleList(java.util.List<org.apache.calcite.plan.RelOptRule>, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) org.apache.calcite.plan.hep.HepProgram getOptProgram(java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) boolean isRuleSkipped(java.lang.String, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) boolean noRulesSkipped(java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.calcite.plan.hep.HepProgram getOptProgram()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$PlannerRuleNames",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_JOIN_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String JOIN_CONDITION_PUSH",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_FILTER",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_TO_SEMI_JOIN",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_REMOVE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_CORRELATE_LEFT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String UNION_TO_DISTINCT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_FILTER_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String AGGREGATE_REDUCE_FUNCTIONS",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_UNION",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_CORRELATE_RIGHT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_MERGE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String FILTER_SET_OP_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String AGGREGATE_PROJECT_MERGE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_TO_LOGICAL_PROJECT_AND_WINDOW",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String AGGREGATE_REMOVE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String FILTER_INTO_JOIN",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String AGGREGATE_CASE_TO_FILTER",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String FILTER_MERGE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String AGGREGATE_JOIN_TRANSPOSE_EXTENDED",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String JOIN_PUSH_EXPRESSIONS",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String AGGREGATE_UNION_AGGREGATE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String SORT_REMOVE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String FILTER_PROJECT_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String JOIN_PUSH_TRANSITIVE_PREDICATES",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_AGGREGATE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_SET_OP_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_JOIN_RIGHT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PROJECT_WINDOW_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String FILTER_AGGREGATE_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String AGGREGATE_JOIN_TRANSPOSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_JOIN_LEFT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_PROJECT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String EVALUATE_LITERAL_FILTER",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String EVALUATE_LITERAL_PROJECT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String SEMIN_JOIN_DISTINCT_PROJECT",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PRUNE_EMPTY_SORT"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) CommonConstants$Broker$PlannerRuleNames()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String SKIP_PLANNER_RULES"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

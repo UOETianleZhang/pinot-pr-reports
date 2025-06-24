@@ -1,0 +1,29 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/HybridClusterIntegrationTest.java"
+  ],
+  "mergedAt": "2025-06-13T21:07:49Z",
+  "number": 16102,
+  "title": "Fix TableDoesNotExistError for hybrid tables in MSE queries in controller API",
+  "url": "https://github.com/apache/pinot/pull/16102",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.Set<java.lang.String> getBrokerTenants(java.util.List<java.lang.String>, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Set<java.lang.String> getBrokerTenantsUnion(java.util.List<org.apache.pinot.spi.config.table.TableConfig>, java.util.List<org.apache.pinot.spi.data.LogicalTableConfig>)",
+        "PRIVATE(+) java.util.List<org.apache.pinot.spi.data.LogicalTableConfig> getListLogicalTableConfigs(java.util.List<java.lang.String>, java.lang.String)",
+        "PRIVATE(+) java.util.List<org.apache.pinot.spi.config.table.TableConfig> getListTableConfigs(java.util.List<java.lang.String>, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

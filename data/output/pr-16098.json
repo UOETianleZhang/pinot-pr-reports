@@ -1,0 +1,10 @@
+{
+  "files": [
+    ".github/workflows/scripts/pr-tests/.pinot_tests_unit.sh"
+  ],
+  "mergedAt": "2025-06-13T05:52:47Z",
+  "number": 16098,
+  "title": "Temporary fix of CI error by running unit tests single-threadedly",
+  "url": "https://github.com/apache/pinot/pull/16098",
+  "jcmpClasses": []
+}

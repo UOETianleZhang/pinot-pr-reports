@@ -1,0 +1,258 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/query/pruner/BloomFilterSegmentPruner.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/pruner/ColumnValueSegmentPruner.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/pruner/SegmentPrunerService.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/pruner/SelectionQuerySegmentPruner.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/pruner/ValueBasedSegmentPruner.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/pruner/BloomFilterSegmentPrunerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/pruner/ColumnValueSegmentPrunerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/pruner/SegmentPrunerServiceTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/pruner/SelectionQuerySegmentPrunerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/custom/MapTypeTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/IndexSegmentUtils.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/EmptyIndexSegment.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/ImmutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/column/DefaultNullValueVirtualColumnProvider.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/datasource/EmptyDataSource.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/virtualcolumn/DocIdVirtualColumnProvider.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/virtualcolumn/VirtualColumnProvider.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/IndexSegment.java"
+  ],
+  "mergedAt": "2025-06-13T22:37:51Z",
+  "number": 15350,
+  "title": "Support for Virtual DataSource",
+  "url": "https://github.com/apache/pinot/pull/15350",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.query.pruner.BloomFilterSegmentPruner",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean pruneSegmentWithFetchContext(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.segment.spi.FetchContext, org.apache.pinot.common.request.context.FilterContext, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache, org.apache.pinot.core.query.request.context.QueryContext)",
+        "boolean pruneSegmentWithPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.Predicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache, org.apache.pinot.core.query.request.context.QueryContext)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) boolean pruneSegmentWithFetchContext(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.segment.spi.FetchContext, org.apache.pinot.common.request.context.FilterContext, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache)",
+        "boolean pruneSegmentWithPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.Predicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.pruner.ColumnValueSegmentPruner",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean pruneEqPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.EqPredicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache, org.apache.pinot.core.query.request.context.QueryContext)",
+        "PRIVATE(-) boolean pruneInPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.InPredicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache, org.apache.pinot.core.query.request.context.QueryContext)",
+        "PRIVATE(-) boolean pruneRangePredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.RangePredicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.request.context.QueryContext)",
+        "boolean pruneSegmentWithPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.Predicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache, org.apache.pinot.core.query.request.context.QueryContext)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) boolean pruneEqPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.EqPredicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache)",
+        "PRIVATE(+) boolean pruneInPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.InPredicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache)",
+        "PRIVATE(+) boolean pruneRangePredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.RangePredicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>)",
+        "boolean pruneSegmentWithPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.Predicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.pruner.SegmentPrunerService",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) java.util.List<org.apache.pinot.segment.spi.IndexSegment> removeEmptySegments(java.util.List<org.apache.pinot.segment.spi.IndexSegment>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) boolean isInvalidSegment(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.core.query.request.context.QueryContext)",
+        "PRIVATE(+) STATIC(+) java.util.List<org.apache.pinot.segment.spi.IndexSegment> removeInvalidSegments(java.util.List<org.apache.pinot.segment.spi.IndexSegment>, org.apache.pinot.core.query.request.context.QueryContext, org.apache.pinot.core.query.pruner.SegmentPrunerStatistics)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) boolean pruneSegment(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.FilterContext, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache, org.apache.pinot.core.query.request.context.QueryContext)",
+        "ABSTRACT(-) boolean pruneSegmentWithPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.Predicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache, org.apache.pinot.core.query.request.context.QueryContext)"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) boolean pruneSegment(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.FilterContext, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache)",
+        "ABSTRACT(+) boolean pruneSegmentWithPredicate(org.apache.pinot.segment.spi.IndexSegment, org.apache.pinot.common.request.context.predicate.Predicate, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.query.pruner.ValueBasedSegmentPruner$ValueCache)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.immutable.EmptyIndexSegment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.segment.spi.datasource.DataSource getDataSource(java.lang.String, org.apache.pinot.spi.data.Schema)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.immutable.ImmutableSegmentImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.segment.spi.datasource.DataSource getDataSource(java.lang.String, org.apache.pinot.spi.data.Schema)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.IndexSegmentUtils",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.datasource.DataSource createVirtualDataSource(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) IndexSegmentUtils()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.mutable.MutableSegmentImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.segment.spi.datasource.DataSource getDataSource(java.lang.String, org.apache.pinot.spi.data.Schema)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.column.BaseVirtualColumnProvider",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.column.ColumnIndexContainer buildColumnIndexContainer(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)",
+        "PROTECTED(+) org.apache.pinot.segment.spi.index.metadata.ColumnMetadataImpl$Builder getColumnMetadataBuilder(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) BaseVirtualColumnProvider()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.column.DefaultNullValueVirtualColumnProvider",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.datasource.EmptyDataSource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) EmptyDataSource(org.apache.pinot.spi.data.FieldSpec)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) EmptyDataSource(org.apache.pinot.segment.spi.ColumnMetadata)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.datasource.EmptyDataSource$EmptyDataSourceMetadata",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "EmptyDataSource$EmptyDataSourceMetadata(org.apache.pinot.spi.data.FieldSpec)"
+      ],
+      "addedConstructors": [
+        "EmptyDataSource$EmptyDataSourceMetadata(org.apache.pinot.segment.spi.ColumnMetadata)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.virtualcolumn.DocIdVirtualColumnProvider",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.virtualcolumn.DocIdVirtualColumnProvider$DocIdSortedIndexReader",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.segment.spi.datasource.DataSource buildDataSource(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.IndexSegment",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

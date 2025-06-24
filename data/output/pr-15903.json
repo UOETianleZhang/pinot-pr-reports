@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/SegmentResetTest.java"
+  ],
+  "mergedAt": "2025-06-12T17:32:29Z",
+  "number": 15903,
+  "title": "Continue Segment Reset post instance errors",
+  "url": "https://github.com/apache/pinot/pull/15903",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void resetPartitionAllState(java.lang.String, java.lang.String, java.util.Set<java.lang.String>, java.util.List<java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

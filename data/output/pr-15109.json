@@ -1,0 +1,581 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BrokerUserDefinedMessageHandlerFactory.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/messages/QueryWorkloadRefreshMessage.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metadata/ZKMetadataProvider.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryWorkloadConfigUtils.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/utils/config/QueryWorkloadConfigUtilsTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/Constants.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryWorkloadRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/QueryWorkloadManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/scheme/DefaultPropagationScheme.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/scheme/PropagationScheme.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/scheme/PropagationSchemeProvider.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/scheme/PropagationUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/scheme/TablePropagationScheme.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/scheme/TenantPropagationScheme.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/splitter/CostSplitter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/workload/splitter/DefaultCostSplitter.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/workload/PropagationUtilsTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/auth/Actions.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/QueryWorkloadMessageHandlerFactory.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/workload/EnforcementProfile.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/workload/InstanceCost.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/workload/NodeConfig.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/workload/PropagationScheme.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/workload/QueryWorkloadConfig.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-13T16:28:19Z",
+  "number": 15109,
+  "title": "[Query Resource Isolation] Workload Configs",
+  "url": "https://github.com/apache/pinot/pull/15109",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.broker.helix.BrokerUserDefinedMessageHandlerFactory$QueryWorkloadRefreshMessageHandler",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.messaging.handling.HelixTaskResult handleMessage()",
+        "PUBLIC(-) void onError(java.lang.Exception, org.apache.helix.messaging.handling.MessageHandler$ErrorCode, org.apache.helix.messaging.handling.MessageHandler$ErrorType)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) java.lang.String _queryWorkloadName",
+        "FINAL(-) org.apache.pinot.spi.config.workload.InstanceCost _instanceCost"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "BrokerUserDefinedMessageHandlerFactory$QueryWorkloadRefreshMessageHandler(org.apache.pinot.common.messages.QueryWorkloadRefreshMessage, org.apache.helix.NotificationContext)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.messages.QueryWorkloadRefreshMessage",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.config.workload.InstanceCost getInstanceCost()",
+        "PUBLIC(-) java.lang.String getQueryWorkloadName()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String DELETE_QUERY_WORKLOAD_MSG_SUB_TYPE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String INSTANCE_COST",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String QUERY_WORKLOAD_NAME",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String REFRESH_QUERY_WORKLOAD_MSG_SUB_TYPE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) QueryWorkloadRefreshMessage(org.apache.helix.model.Message)",
+        "PUBLIC(-) QueryWorkloadRefreshMessage(java.lang.String, java.lang.String, org.apache.pinot.spi.config.workload.InstanceCost)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metadata.ZKMetadataProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.lang.String constructPropertyStorePathForQueryWorkloadConfig(java.lang.String)",
+        "PUBLIC(-) STATIC(-) void deleteQueryWorkloadConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.spi.config.workload.QueryWorkloadConfig> getAllQueryWorkloadConfigs(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)",
+        "PUBLIC(-) STATIC(-) java.lang.String getPropertyStoreWorkloadConfigsPrefix()",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.QueryWorkloadConfig getQueryWorkloadConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.lang.String)",
+        "PUBLIC(-) STATIC(-) boolean setQueryWorkloadConfig(org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.spi.config.workload.QueryWorkloadConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String PROPERTYSTORE_QUERY_WORKLOAD_CONFIGS_PREFIX"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryWorkloadConfigUtils",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.QueryWorkloadConfig fromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.InstanceCost getInstanceCostFromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,org.apache.pinot.spi.config.workload.InstanceCost> getQueryWorkloadConfigsFromController(java.lang.String, java.lang.String, org.apache.pinot.spi.config.workload.NodeConfig$Type)",
+        "PUBLIC(-) STATIC(-) void updateZNRecordWithInstanceCost(org.apache.helix.zookeeper.datamodel.ZNRecord, java.lang.String, org.apache.pinot.spi.config.workload.InstanceCost)",
+        "PUBLIC(-) STATIC(-) void updateZNRecordWithWorkloadConfig(org.apache.helix.zookeeper.datamodel.ZNRecord, org.apache.pinot.spi.config.workload.QueryWorkloadConfig)",
+        "PUBLIC(-) STATIC(-) java.util.List<java.lang.String> validateQueryWorkloadConfig(org.apache.pinot.spi.config.workload.QueryWorkloadConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.apache.pinot.common.utils.http.HttpClient HTTP_CLIENT",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) QueryWorkloadConfigUtils()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryWorkloadConfigUtils$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "QueryWorkloadConfigUtils$1()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryWorkloadConfigUtils$2",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "QueryWorkloadConfigUtils$2()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.Constants",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String QUERY_WORKLOAD_TAG"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryWorkloadRestletResource",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) javax.ws.rs.core.Response deleteQueryWorkloadConfig(java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(-) java.lang.String getQueryWorkloadConfig(java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(-) java.lang.String getQueryWorkloadConfigForInstance(java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(-) java.lang.String getQueryWorkloadConfigs(javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(-) javax.ws.rs.core.Response refreshQueryWorkloadConfig(java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(-) javax.ws.rs.core.Response updateQueryWorkloadConfig(java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PinotQueryWorkloadRestletResource()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void deleteQueryWorkloadConfig(java.lang.String)",
+        "PUBLIC(-) java.util.List<org.apache.pinot.spi.config.workload.QueryWorkloadConfig> getAllQueryWorkloadConfigs()",
+        "PUBLIC(-) java.util.List<java.lang.String> getAllServerInstances()",
+        "PUBLIC(-) org.apache.pinot.spi.config.workload.QueryWorkloadConfig getQueryWorkloadConfig(java.lang.String)",
+        "PUBLIC(-) org.apache.pinot.controller.workload.QueryWorkloadManager getQueryWorkloadManager()",
+        "PUBLIC(-) void sendQueryWorkloadRefreshMessage(java.util.Map<java.lang.String,org.apache.pinot.common.messages.QueryWorkloadRefreshMessage>)",
+        "PUBLIC(-) void setQueryWorkloadConfig(org.apache.pinot.spi.config.workload.QueryWorkloadConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.workload.QueryWorkloadManager _queryWorkloadManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.QueryWorkloadManager",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Map<java.lang.String,org.apache.pinot.spi.config.workload.InstanceCost> getWorkloadToInstanceCostFor(java.lang.String)",
+        "PUBLIC(-) void propagateDeleteWorkloadMessage(org.apache.pinot.spi.config.workload.QueryWorkloadConfig)",
+        "PUBLIC(-) void propagateWorkloadFor(java.lang.String)",
+        "PUBLIC(-) void propagateWorkloadUpdateMessage(org.apache.pinot.spi.config.workload.QueryWorkloadConfig)",
+        "PRIVATE(-) java.util.Set<java.lang.String> resolveInstances(org.apache.pinot.spi.config.workload.NodeConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.workload.splitter.CostSplitter _costSplitter",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.workload.scheme.PropagationSchemeProvider _propagationSchemeProvider",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) QueryWorkloadManager(org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.scheme.DefaultPropagationScheme",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Set<java.lang.String> resolveInstances(org.apache.pinot.spi.config.workload.NodeConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) DefaultPropagationScheme(org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.scheme.PropagationScheme",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) java.util.Set<java.lang.String> resolveInstances(org.apache.pinot.spi.config.workload.NodeConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.scheme.PropagationSchemeProvider",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.workload.scheme.PropagationScheme getPropagationScheme(org.apache.pinot.spi.config.workload.PropagationScheme$Type)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PropagationSchemeProvider(org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.scheme.PropagationUtils",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) void collectHelixTagsForTable(java.util.List<java.lang.String>, org.apache.pinot.spi.config.table.TenantConfig, org.apache.pinot.spi.config.table.TableType)",
+        "PRIVATE(-) STATIC(-) java.util.List<java.lang.String> getAllPossibleHelixTagsFor(java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.util.List<java.lang.String> getHelixTagsForTable(org.apache.pinot.controller.helix.core.PinotHelixResourceManager, java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,java.util.Set<java.lang.String>> getHelixTagToInstances(org.apache.pinot.controller.helix.core.PinotHelixResourceManager)",
+        "PUBLIC(-) STATIC(-) java.util.Set<org.apache.pinot.spi.config.workload.QueryWorkloadConfig> getQueryWorkloadConfigsForTags(org.apache.pinot.controller.helix.core.PinotHelixResourceManager, java.util.List<java.lang.String>, java.util.List<org.apache.pinot.spi.config.workload.QueryWorkloadConfig>)",
+        "PUBLIC(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<org.apache.pinot.spi.config.workload.NodeConfig$Type,java.util.Set<java.lang.String>>> getTableToHelixTags(org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) PropagationUtils()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.scheme.TablePropagationScheme",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Set<java.lang.String> resolveInstances(org.apache.pinot.spi.config.workload.NodeConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TablePropagationScheme(org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.scheme.TenantPropagationScheme",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Set<java.lang.String> resolveInstances(org.apache.pinot.spi.config.workload.NodeConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TenantPropagationScheme(org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.splitter.CostSplitter",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.spi.config.workload.InstanceCost computeInstanceCost(org.apache.pinot.spi.config.workload.NodeConfig, java.util.Set<java.lang.String>, java.lang.String)",
+        "PUBLIC(-) ABSTRACT(-) java.util.Map<java.lang.String,org.apache.pinot.spi.config.workload.InstanceCost> computeInstanceCostMap(org.apache.pinot.spi.config.workload.NodeConfig, java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.workload.splitter.DefaultCostSplitter",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.config.workload.InstanceCost computeInstanceCost(org.apache.pinot.spi.config.workload.NodeConfig, java.util.Set<java.lang.String>, java.lang.String)",
+        "PUBLIC(-) java.util.Map<java.lang.String,org.apache.pinot.spi.config.workload.InstanceCost> computeInstanceCostMap(org.apache.pinot.spi.config.workload.NodeConfig, java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) DefaultCostSplitter()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.auth.Actions$Cluster",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String GET_INSTANCE_QUERY_WORKLOAD_CONFIG",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String GET_QUERY_WORKLOAD_CONFIG",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String DELETE_QUERY_WORKLOAD_CONFIG",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String UPDATE_QUERY_WORKLOAD_CONFIG"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.QueryWorkloadMessageHandlerFactory",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.messaging.handling.MessageHandler createHandler(org.apache.helix.model.Message, org.apache.helix.NotificationContext)",
+        "PUBLIC(-) java.lang.String getMessageType()",
+        "PUBLIC(-) void reset()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.metrics.ServerMetrics _metrics"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) QueryWorkloadMessageHandlerFactory(org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.QueryWorkloadMessageHandlerFactory$QueryWorkloadRefreshMessageHandler",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.messaging.handling.HelixTaskResult handleMessage()",
+        "PUBLIC(-) void onError(java.lang.Exception, org.apache.helix.messaging.handling.MessageHandler$ErrorCode, org.apache.helix.messaging.handling.MessageHandler$ErrorType)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) java.lang.String _queryWorkloadName",
+        "FINAL(-) org.apache.pinot.spi.config.workload.InstanceCost _instanceCost"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "QueryWorkloadMessageHandlerFactory$QueryWorkloadRefreshMessageHandler(org.apache.pinot.common.messages.QueryWorkloadRefreshMessage, org.apache.helix.NotificationContext)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.workload.EnforcementProfile",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getCpuCostNs()",
+        "PUBLIC(-) long getMemoryCostBytes()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String CPU_COST_NS",
+        "PRIVATE(-) long _cpuCostNs",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String MEMORY_COST_BYTES",
+        "PRIVATE(-) long _memoryCostBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) EnforcementProfile(long, long)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.workload.InstanceCost",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getCpuCostNs()",
+        "PUBLIC(-) long getMemoryCostBytes()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String CPU_COST_NS",
+        "PRIVATE(-) long _cpuCostNs",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String MEMORY_COST_BYTES",
+        "PRIVATE(-) long _memoryCostBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) InstanceCost(long, long)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.workload.NodeConfig",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.config.workload.EnforcementProfile getEnforcementProfile()",
+        "PUBLIC(-) org.apache.pinot.spi.config.workload.NodeConfig$Type getNodeType()",
+        "PUBLIC(-) org.apache.pinot.spi.config.workload.PropagationScheme getPropagationScheme()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String ENFORCEMENT_PROFILE",
+        "PRIVATE(-) org.apache.pinot.spi.config.workload.EnforcementProfile _enforcementProfile",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String NODE_TYPE",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String PROPAGATION_SCHEME",
+        "PRIVATE(-) org.apache.pinot.spi.config.workload.PropagationScheme _propagationScheme",
+        "PRIVATE(-) org.apache.pinot.spi.config.workload.NodeConfig$Type _nodeType"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) NodeConfig(org.apache.pinot.spi.config.workload.NodeConfig$Type, org.apache.pinot.spi.config.workload.EnforcementProfile, org.apache.pinot.spi.config.workload.PropagationScheme)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.workload.NodeConfig$Type",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.NodeConfig$Type forValue(java.lang.String)",
+        "PUBLIC(-) java.lang.String getJsonValue()",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.NodeConfig$Type valueOf(java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.NodeConfig$Type[] values()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.config.workload.NodeConfig$Type SERVER_NODE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.config.workload.NodeConfig$Type BROKER_NODE",
+        "PRIVATE(-) FINAL(-) java.lang.String _value"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) NodeConfig$Type(java.lang.String, int, java.lang.String)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.workload.PropagationScheme",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.config.workload.PropagationScheme$Type getPropagationType()",
+        "PUBLIC(-) java.util.List<java.lang.String> getValues()",
+        "PUBLIC(-) void setPropagationType(org.apache.pinot.spi.config.workload.PropagationScheme$Type)",
+        "PUBLIC(-) void setValues(java.util.List<java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.config.workload.PropagationScheme$Type _propagationType",
+        "PRIVATE(-) java.util.List<java.lang.String> _values",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String VALUES",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String PROPAGATION_TYPE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PropagationScheme(org.apache.pinot.spi.config.workload.PropagationScheme$Type, java.util.List<java.lang.String>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.workload.PropagationScheme$Type",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.PropagationScheme$Type forValue(java.lang.String)",
+        "PUBLIC(-) java.lang.String getJsonValue()",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.PropagationScheme$Type valueOf(java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.workload.PropagationScheme$Type[] values()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.config.workload.PropagationScheme$Type TABLE",
+        "PRIVATE(-) FINAL(-) java.lang.String _value",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.config.workload.PropagationScheme$Type TENANT"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) PropagationScheme$Type(java.lang.String, int, java.lang.String)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.workload.QueryWorkloadConfig",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.List<org.apache.pinot.spi.config.workload.NodeConfig> getNodeConfigs()",
+        "PUBLIC(-) java.lang.String getQueryWorkloadName()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.util.List<org.apache.pinot.spi.config.workload.NodeConfig> _nodeConfigs",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String QUERY_WORKLOAD_NAME",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String NODE_CONFIGS",
+        "PRIVATE(-) java.lang.String _queryWorkloadName"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) QueryWorkloadConfig(java.lang.String, java.util.List<org.apache.pinot.spi.config.workload.NodeConfig>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String QUERY_WORKLOAD"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

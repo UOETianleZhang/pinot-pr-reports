@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-16T13:34:22Z",
+  "number": 16114,
+  "title": "Bump com.fasterxml.jackson:jackson-bom from 2.19.0 to 2.19.1",
+  "url": "https://github.com/apache/pinot/pull/16114",
+  "jcmpClasses": []
+}

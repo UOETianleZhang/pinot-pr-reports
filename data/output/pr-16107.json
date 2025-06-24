@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/retention/RetentionManager.java"
+  ],
+  "mergedAt": "2025-06-14T19:21:55Z",
+  "number": 16107,
+  "title": "[bugfix] Fixing the issue that Pinot RetentionManager may delete serving OFFLINE segments from deep store unexpectedly.",
+  "url": "https://github.com/apache/pinot/pull/16107",
+  "jcmpClasses": []
+}

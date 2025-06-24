@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/SchemaUtils.java"
+  ],
+  "mergedAt": "2025-06-12T17:13:14Z",
+  "number": 16091,
+  "title": "Fix up the schema validation to perform most validations for virtual columns as well",
+  "url": "https://github.com/apache/pinot/pull/16091",
+  "jcmpClasses": []
+}

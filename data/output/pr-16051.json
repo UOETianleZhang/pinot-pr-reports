@@ -21,16 +21,16 @@
     {
       "className": "org.apache.pinot.core.accounting.CPUMemThreadLevelAccountingObjects$ThreadEntry",
       "type": "modification",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) void updateCpuSnapshot()",
-        "PUBLIC(+) void updateMemorySnapshot()"
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void updateCpuSnapshot()",
+        "PUBLIC(-) void updateMemorySnapshot()"
       ],
-      "removedFields": [],
-      "addedFields": [
-        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.accounting.ThreadResourceSnapshot _threadResourceSnapshot"
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.accounting.ThreadResourceSnapshot _threadResourceSnapshot"
       ],
+      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
@@ -39,15 +39,15 @@
       "type": "modification",
       "compatible": false,
       "removedMethods": [
-        "PRIVATE(-) org.apache.pinot.spi.accounting.ThreadResourceUsageProvider getThreadResourceUsageProvider()"
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String, long, long)"
       ],
       "addedMethods": [
-        "PUBLIC(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+        "PRIVATE(+) org.apache.pinot.spi.accounting.ThreadResourceUsageProvider getThreadResourceUsageProvider()"
       ],
-      "removedFields": [
-        "PRIVATE(-) FINAL(-) java.lang.ThreadLocal<org.apache.pinot.spi.accounting.ThreadResourceUsageProvider> _threadResourceUsageProvider"
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.ThreadLocal<org.apache.pinot.spi.accounting.ThreadResourceUsageProvider> _threadResourceUsageProvider"
       ],
-      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
@@ -58,43 +58,43 @@
       "removedMethods": [],
       "addedMethods": [],
       "removedFields": [
-        "org.apache.pinot.spi.accounting.ThreadResourceUsageProvider _threadResourceUsageProvider"
+        "org.apache.pinot.spi.accounting.ThreadResourceSnapshot _threadResourceSnapshot"
       ],
       "addedFields": [
-        "org.apache.pinot.spi.accounting.ThreadResourceSnapshot _threadResourceSnapshot"
+        "org.apache.pinot.spi.accounting.ThreadResourceUsageProvider _threadResourceUsageProvider"
       ],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.accounting.ThreadResourceSnapshot",
-      "type": "addition",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) long getAllocatedBytes()",
-        "PUBLIC(+) long getCpuTimeNs()",
-        "PUBLIC(+) void reset()",
-        "PUBLIC(+) java.lang.String toString()"
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getAllocatedBytes()",
+        "PUBLIC(-) long getCpuTimeNs()",
+        "PUBLIC(-) void reset()",
+        "PUBLIC(-) java.lang.String toString()"
       ],
-      "removedFields": [],
-      "addedFields": [
-        "PRIVATE(+) long _startAllocatedBytes",
-        "PRIVATE(+) long _startCpuTime"
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) long _startAllocatedBytes",
+        "PRIVATE(-) long _startCpuTime"
       ],
-      "removedConstructors": [],
-      "addedConstructors": [
-        "PUBLIC(+) ThreadResourceSnapshot()"
-      ]
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ThreadResourceSnapshot()"
+      ],
+      "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
       "type": "modification",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) ABSTRACT(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void updateQueryUsageConcurrently(java.lang.String, long, long)"
       ],
+      "addedMethods": [],
       "removedFields": [],
       "addedFields": [],
       "removedConstructors": [],
@@ -104,27 +104,27 @@
       "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageProvider",
       "type": "modification",
       "compatible": false,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) STATIC(+) long getCurrentThreadAllocatedBytes()",
-        "PUBLIC(+) STATIC(+) long getCurrentThreadCpuTime()"
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) long getCurrentThreadAllocatedBytes()",
+        "PUBLIC(-) STATIC(-) long getCurrentThreadCpuTime()"
       ],
-      "removedFields": [
-        "PRIVATE(-) FINAL(-) long _startBytesAllocated",
-        "PRIVATE(-) FINAL(-) long _startTimeNs"
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _startBytesAllocated",
+        "PRIVATE(+) FINAL(+) long _startTimeNs"
       ],
-      "addedFields": [],
       "removedConstructors": [],
       "addedConstructors": []
     },
     {
       "className": "org.apache.pinot.spi.trace.Tracing$DefaultThreadResourceUsageAccountant",
       "type": "modification",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String, long, long)"
       ],
+      "addedMethods": [],
       "removedFields": [],
       "addedFields": [],
       "removedConstructors": [],
@@ -133,11 +133,11 @@
     {
       "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
       "type": "modification",
-      "compatible": true,
-      "removedMethods": [],
-      "addedMethods": [
-        "PUBLIC(+) STATIC(+) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void updateQueryUsageConcurrently(java.lang.String, long, long)"
       ],
+      "addedMethods": [],
       "removedFields": [],
       "addedFields": [],
       "removedConstructors": [],

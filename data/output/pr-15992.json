@@ -1,0 +1,24 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java"
+  ],
+  "mergedAt": "2025-06-16T12:22:46Z",
+  "number": 15992,
+  "title": "Use stats cache on error instead of the chained mechanism",
+  "url": "https://github.com/apache/pinot/pull/15992",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.service.dispatch.QueryDispatcher$QueryResult",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.service.dispatch.QueryDispatcher$QueryResult withStats(org.apache.pinot.query.runtime.plan.MultiStageQueryStats)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
