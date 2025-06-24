@@ -1,0 +1,33 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/restlet/resources/ValidDocIdsMetadataInfo.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/upsertcompaction/UpsertCompactionTaskGeneratorTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/TablesResource.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/TablesResourceTest.java"
+  ],
+  "mergedAt": "2025-05-30T17:39:12Z",
+  "number": 15938,
+  "title": "Add segmentCreationTimeMillis in validDocIdsMetadata ",
+  "url": "https://github.com/apache/pinot/pull/15938",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.restlet.resources.ValidDocIdsMetadataInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getSegmentCreationTimeMillis()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) long _segmentCreationTimeMillis"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ValidDocIdsMetadataInfo(java.lang.String, long, long, long, java.lang.String, org.apache.pinot.common.restlet.resources.ValidDocIdsType, long, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ValidDocIdsMetadataInfo(java.lang.String, long, long, long, java.lang.String, org.apache.pinot.common.restlet.resources.ValidDocIdsType, long)"
+      ]
+    }
+  ]
+}

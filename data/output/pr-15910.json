@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-query-runtime/pom.xml",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/QueryRunnerTest.java"
+  ],
+  "mergedAt": "2025-05-28T08:37:55Z",
+  "number": 15910,
+  "title": "MSE: Return partial stats on errors send by servers",
+  "url": "https://github.com/apache/pinot/pull/15910",
+  "jcmpClasses": []
+}

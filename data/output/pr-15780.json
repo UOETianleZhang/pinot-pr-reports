@@ -1,0 +1,176 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/BrokerRoutingManager.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/segmentpartition/SegmentPartitionMetadataManager.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/routing/segmentpartition/SegmentPartitionMetadataManagerTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/RoutingManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/TablePartitionInfo.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/TablePartitionReplicatedServersInfo.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/WorkerManager.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/QueryEnvironmentTestBase.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRuleTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/testutils/MockRoutingManagerFactory.java"
+  ],
+  "mergedAt": "2025-05-29T23:21:23Z",
+  "number": 15780,
+  "title": "[multistage] Handle Excluded New Segments in MSE Physical Optimizer",
+  "url": "https://github.com/apache/pinot/pull/15780",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.routing.BrokerRoutingManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo getTablePartitionReplicatedServersInfo(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.segmentpartition.SegmentPartitionMetadataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void computeAllTablePartitionInfo()",
+        "PRIVATE(-) void computeTablePartitionReplicatedServersInfo()",
+        "PUBLIC(-) org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo getTablePartitionReplicatedServersInfo()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) TRANSIENT(-) org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo _tablePartitionReplicatedServersInfo"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.routing.RoutingManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo getTablePartitionReplicatedServersInfo(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.routing.TablePartitionInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.List<java.util.List<java.lang.String>> getSegmentsByPartition()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.routing.TablePartitionInfo$PartitionInfo[] getPartitionInfoMap()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.List<java.util.List<java.lang.String>> _segmentsByPartition"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.routing.TablePartitionInfo$PartitionInfo[] _partitionInfoMap"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) TablePartitionInfo(java.lang.String, java.lang.String, java.lang.String, int, java.util.List<java.util.List<java.lang.String>>, java.util.List<java.lang.String>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TablePartitionInfo(java.lang.String, java.lang.String, java.lang.String, int, org.apache.pinot.core.routing.TablePartitionInfo$PartitionInfo[], java.util.List<java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.routing.TablePartitionInfo$PartitionInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) FINAL(+) java.util.Set<java.lang.String> _fullyReplicatedServers",
+        "PUBLIC(+) FINAL(+) java.util.List<java.lang.String> _segments"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TablePartitionInfo$PartitionInfo(java.util.Set<java.lang.String>, java.util.List<java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) int getNumPartitions()",
+        "PUBLIC(-) java.lang.String getPartitionColumn()",
+        "PUBLIC(-) java.lang.String getPartitionFunctionName()",
+        "PUBLIC(-) org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo$PartitionInfo[] getPartitionInfoMap()",
+        "PUBLIC(-) java.util.List<java.lang.String> getSegmentsWithInvalidPartition()",
+        "PUBLIC(-) java.lang.String getTableNameWithType()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _numPartitions",
+        "PRIVATE(-) FINAL(-) java.util.List<java.lang.String> _segmentsWithInvalidPartition",
+        "PRIVATE(-) FINAL(-) java.lang.String _partitionFunctionName",
+        "PRIVATE(-) FINAL(-) java.lang.String _partitionColumn",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo$PartitionInfo[] _partitionInfoMap",
+        "PRIVATE(-) FINAL(-) java.lang.String _tableNameWithType"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TablePartitionReplicatedServersInfo(java.lang.String, java.lang.String, java.lang.String, int, org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo$PartitionInfo[], java.util.List<java.lang.String>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo$PartitionInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) FINAL(-) java.util.Set<java.lang.String> _fullyReplicatedServers",
+        "PUBLIC(-) FINAL(-) java.util.List<java.lang.String> _segments"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TablePartitionReplicatedServersInfo$PartitionInfo(java.util.Set<java.lang.String>, java.util.List<java.lang.String>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.routing.WorkerManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) void verifyCompatibility(org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo, org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) void verifyCompatibility(org.apache.pinot.core.routing.TablePartitionInfo, org.apache.pinot.core.routing.TablePartitionInfo)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.routing.WorkerManager$PartitionTableInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) org.apache.pinot.query.routing.WorkerManager$PartitionTableInfo fromTablePartitionInfo(org.apache.pinot.core.routing.TablePartitionReplicatedServersInfo, org.apache.pinot.spi.config.table.TableType)"
+      ],
+      "addedMethods": [
+        "STATIC(+) org.apache.pinot.query.routing.WorkerManager$PartitionTableInfo fromTablePartitionInfo(org.apache.pinot.core.routing.TablePartitionInfo, org.apache.pinot.spi.config.table.TableType)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

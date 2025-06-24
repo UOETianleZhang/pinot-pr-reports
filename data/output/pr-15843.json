@@ -1,0 +1,44 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/MultiStageReplicaGroupSelector.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/routing/instanceselector/InstanceSelectorTest.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/assignment/InstancePartitions.java"
+  ],
+  "mergedAt": "2025-05-30T21:41:43Z",
+  "number": 15843,
+  "title": "[multistage] Enhance MultiStageReplicaGroupSelector to Tolerate Partial Replica Failures Across Instance Partitions",
+  "url": "https://github.com/apache/pinot/pull/15843",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.MultiStageReplicaGroupSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.commons.lang3.tuple.Pair<java.util.Map<java.lang.String,java.lang.String>,java.util.Map<java.lang.String,java.lang.String>> assign(java.util.Set<java.lang.String>, org.apache.pinot.broker.routing.instanceselector.SegmentStates, org.apache.pinot.common.assignment.InstancePartitions, int)",
+        "PRIVATE(-) org.apache.commons.lang3.tuple.Pair<java.util.Map<java.lang.String,java.lang.String>,java.util.Map<java.lang.String,java.lang.String>> computeOptionalSegments(java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.broker.routing.instanceselector.SegmentStates)",
+        "PRIVATE(-) void getSelectedInstancesForPartition(java.util.Map<java.lang.String,java.util.Set<java.lang.String>>, java.util.Set<java.lang.String>, int, int, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.commons.lang3.tuple.Pair<java.util.Map<java.lang.String,java.lang.String>,java.util.Map<java.lang.String,java.lang.String>> tryAssigning(java.util.List<java.lang.String>, org.apache.pinot.broker.routing.instanceselector.SegmentStates, org.apache.pinot.common.assignment.InstancePartitions, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.assignment.InstancePartitions",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Map<java.lang.String,java.lang.Integer> getInstanceToPartitionIdMap()",
+        "PRIVATE(-) org.apache.commons.lang3.tuple.Pair<java.lang.Integer,java.lang.Integer> getPartitionIdAndReplicaGroupId(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

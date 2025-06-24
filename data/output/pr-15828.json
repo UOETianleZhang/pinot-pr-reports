@@ -1,0 +1,314 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/querylog/QueryLogger.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseBrokerRequestHandler.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/querylog/QueryLoggerTest.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/datatable/DataTable.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/datatable/DataTableImplV4.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerMeter.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/BrokerResponse.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/broker/BrokerResponseNative.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/broker/BrokerResponseNativeV2.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/InstanceResponseOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/blocks/results/BaseResultsBlock.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/combine/BaseCombineOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/combine/BaseSingleBlockCombineOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/combine/CombineOperatorUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/combine/SelectionOnlyCombineOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/streaming/BaseStreamingCombineOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/logger/ServerQueryLogger.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/reduce/ExecutionStatsAggregator.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/common/datatable/DataTableSerDeTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/InnerSegmentSelectionSingleValueQueriesTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterMemBasedServerQueryKillingTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/LeafOperator.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/DefaultRequestContext.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/RequestContext.java"
+  ],
+  "mergedAt": "2025-05-29T20:15:35Z",
+  "number": 15828,
+  "title": "Add memory allocation stats per query on server",
+  "url": "https://github.com/apache/pinot/pull/15828",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry OFFLINE_MEM_ALLOCATED_BYTES",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry REALTIME_MEM_ALLOCATED_BYTES"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry$18",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "void doFormat(java.lang.StringBuilder, org.apache.pinot.broker.querylog.QueryLogger, org.apache.pinot.broker.querylog.QueryLogger$QueryLogParams)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) QueryLogger$QueryLogEntry$18(java.lang.String, int, java.lang.String, char)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry$19",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "void doFormat(java.lang.StringBuilder, org.apache.pinot.broker.querylog.QueryLogger, org.apache.pinot.broker.querylog.QueryLogger$QueryLogParams)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) QueryLogger$QueryLogEntry$19(java.lang.String, int, java.lang.String, char)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.datatable.DataTable$MetadataKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.datatable.DataTable$MetadataKey THREAD_MEM_ALLOCATED_BYTES",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.datatable.DataTable$MetadataKey RESPONSE_SER_MEM_ALLOCATED_BYTES"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metrics.ServerMeter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.ServerMeter TOTAL_MEM_ALLOCATED_BYTES",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.ServerMeter THREAD_MEM_ALLOCATED_BYTES",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.metrics.ServerMeter RESPONSE_SER_MEM_ALLOCATED_BYTES"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.broker.BrokerResponseNative",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getOfflineResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) long getOfflineThreadMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeThreadMemAllocatedBytes()",
+        "PUBLIC(-) void setOfflineResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(-) void setOfflineThreadMemAllocatedBytes(long)",
+        "PUBLIC(-) void setRealtimeResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(-) void setRealtimeThreadMemAllocatedBytes(long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) long _realtimeThreadMemAllocatedBytes",
+        "PRIVATE(-) long _offlineThreadMemAllocatedBytes",
+        "PRIVATE(-) long _realtimeTotalMemAllocatedBytes",
+        "PRIVATE(-) long _offlineTotalMemAllocatedBytes",
+        "PRIVATE(-) long _offlineResponseSerMemAllocatedBytes",
+        "PRIVATE(-) long _realtimeResponseSerMemAllocatedBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.broker.BrokerResponseNativeV2",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getOfflineResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) long getOfflineThreadMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeThreadMemAllocatedBytes()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.BrokerResponse",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) long getOfflineResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getOfflineThreadMemAllocatedBytes()",
+        "PUBLIC(-) long getOfflineTotalMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getRealtimeResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getRealtimeThreadMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeTotalMemAllocatedBytes()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.blocks.results.BaseResultsBlock",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getExecutionThreadMemAllocatedBytes()",
+        "PUBLIC(-) void setExecutionThreadMemAllocatedBytes(long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) long _executionThreadMemAllocatedBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.combine.BaseCombineOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PROTECTED(-) FINAL(-) java.util.concurrent.atomic.AtomicLong _totalWorkerThreadMemAllocatedBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.combine.CombineOperatorUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void setExecutionStatistics(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock, java.util.List<org.apache.pinot.core.common.Operator>, long, int, long)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void setExecutionStatistics(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock, java.util.List<org.apache.pinot.core.common.Operator>, long, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.InstanceResponseOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void calculateResourceUsage(int, long, long, long, long, long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PROTECTED(-) long _threadMemAllocatedBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.reduce.ExecutionStatsAggregator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) long _realtimeThreadMemAllocatedBytes",
+        "PRIVATE(-) long _offlineThreadMemAllocatedBytes",
+        "PRIVATE(-) long _realtimeTotalMemAllocatedBytes",
+        "PRIVATE(-) long _offlineTotalMemAllocatedBytes",
+        "PRIVATE(-) long _offlineResponseSerMemAllocatedBytes",
+        "PRIVATE(-) long _realtimeResponseSerMemAllocatedBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$StatKey",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey THREAD_MEM_ALLOCATED_BYTES",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.LeafOperator$StatKey RESPONSE_SER_MEM_ALLOCATED_BYTES"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.DefaultRequestContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getOfflineResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) long getOfflineThreadMemAllocatedBytes()",
+        "PUBLIC(-) long getOfflineTotalMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeThreadMemAllocatedBytes()",
+        "PUBLIC(-) long getRealtimeTotalMemAllocatedBytes()",
+        "PUBLIC(-) void setOfflineResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(-) void setOfflineThreadMemAllocatedBytes(long)",
+        "PUBLIC(-) void setOfflineTotalMemAllocatedBytes(long)",
+        "PUBLIC(-) void setRealtimeResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(-) void setRealtimeThreadMemAllocatedBytes(long)",
+        "PUBLIC(-) void setRealtimeTotalMemAllocatedBytes(long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) long _realtimeThreadMemAllocatedBytes",
+        "PRIVATE(-) long _offlineThreadMemAllocatedBytes",
+        "PRIVATE(-) long _realtimeTotalMemAllocatedBytes",
+        "PRIVATE(-) long _offlineTotalMemAllocatedBytes",
+        "PRIVATE(-) long _offlineResponseSerMemAllocatedBytes",
+        "PRIVATE(-) long _realtimeResponseSerMemAllocatedBytes"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.RequestContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) long getOfflineResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getOfflineThreadMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getOfflineTotalMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getRealtimeResponseSerMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getRealtimeThreadMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) long getRealtimeTotalMemAllocatedBytes()",
+        "PUBLIC(-) ABSTRACT(-) void setOfflineResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(-) ABSTRACT(-) void setOfflineThreadMemAllocatedBytes(long)",
+        "PUBLIC(-) ABSTRACT(-) void setOfflineTotalMemAllocatedBytes(long)",
+        "PUBLIC(-) ABSTRACT(-) void setRealtimeResponseSerMemAllocatedBytes(long)",
+        "PUBLIC(-) ABSTRACT(-) void setRealtimeThreadMemAllocatedBytes(long)",
+        "PUBLIC(-) ABSTRACT(-) void setRealtimeTotalMemAllocatedBytes(long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

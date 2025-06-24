@@ -1,0 +1,192 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/tier/FixedTierSegmentSelector.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/tier/TierFactory.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/tier/TierSegmentSelector.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/tier/TimeBasedTierSegmentSelector.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/TierConfigUtils.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/tier/TierConfigUtilsTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/tier/TierSegmentSelectorTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentUploadDownloadRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/upload/ZKOperator.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/BaseSegmentAssignment.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/upload/ZKOperatorTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManagerAssignmentTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManagerStatelessTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/assignment/segment/OfflineNonReplicaGroupTieredSegmentAssignmentTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/assignment/segment/RealtimeNonReplicaGroupTieredSegmentAssignmentTest.java"
+  ],
+  "mergedAt": "2025-05-29T23:48:42Z",
+  "number": 15933,
+  "title": "Reduce ZK access for tier metadata update, and fix parallel push",
+  "url": "https://github.com/apache/pinot/pull/15933",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.tier.FixedTierSegmentSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean selectSegment(java.lang.String, org.apache.pinot.common.metadata.segment.SegmentZKMetadata)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean selectSegment(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.helix.HelixManager _helixManager"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) FixedTierSegmentSelector(java.util.Set<java.lang.String>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) FixedTierSegmentSelector(org.apache.helix.HelixManager, java.util.Set<java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.tier.TierFactory",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.tier.Tier getTier(org.apache.pinot.spi.config.table.TierConfig)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.tier.Tier getTier(org.apache.pinot.spi.config.table.TierConfig, java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.tier.Tier getTier(org.apache.pinot.spi.config.table.TierConfig, org.apache.helix.HelixManager)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.tier.Tier getTier(org.apache.pinot.spi.config.table.TierConfig, org.apache.helix.HelixManager, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.tier.TierSegmentSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) boolean selectSegment(java.lang.String, org.apache.pinot.common.metadata.segment.SegmentZKMetadata)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean selectSegment(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.tier.TimeBasedTierSegmentSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean selectSegment(java.lang.String, org.apache.pinot.common.metadata.segment.SegmentZKMetadata)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean selectSegment(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.helix.HelixManager _helixManager"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) TimeBasedTierSegmentSelector(java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TimeBasedTierSegmentSelector(org.apache.helix.HelixManager, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TierConfigUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.common.tier.Tier> getSortedTiers(java.util.List<org.apache.pinot.spi.config.table.TierConfig>)",
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.common.tier.Tier> getSortedTiersForStorageType(java.util.List<org.apache.pinot.spi.config.table.TierConfig>, java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.common.tier.Tier> getSortedTiersForStorageType(java.util.List<org.apache.pinot.spi.config.table.TierConfig>, java.lang.String, java.util.Map<java.lang.String,java.util.Set<java.lang.String>>)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.tier.Tier getTier(java.util.List<org.apache.pinot.spi.config.table.TierConfig>, java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.assignment.InstancePartitions getTieredInstancePartitions(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.common.tier.Tier, org.apache.helix.HelixManager)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.common.assignment.InstancePartitions getTieredInstancePartitionsForSegment(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.util.List<org.apache.pinot.common.tier.Tier>, org.apache.helix.HelixManager)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.common.tier.Tier> getSortedTiers(java.util.List<org.apache.pinot.spi.config.table.TierConfig>, org.apache.helix.HelixManager)",
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.common.tier.Tier> getSortedTiersForStorageType(java.util.List<org.apache.pinot.spi.config.table.TierConfig>, java.lang.String, org.apache.helix.HelixManager)",
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.common.tier.Tier> getSortedTiersForStorageType(java.util.List<org.apache.pinot.spi.config.table.TierConfig>, java.lang.String, org.apache.helix.HelixManager, java.util.Map<java.lang.String,java.util.Set<java.lang.String>>)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.assignment.InstancePartitions getTieredInstancePartitionsForSegment(org.apache.pinot.spi.config.table.TableConfig, java.lang.String, java.util.List<org.apache.pinot.common.tier.Tier>, org.apache.helix.HelixManager)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.upload.ZKOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void completeSegmentOperations(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, java.net.URI, java.io.File, java.lang.String, java.lang.String, java.lang.String, long, boolean, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(-) void completeSegmentsOperations(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, boolean, boolean, javax.ws.rs.core.HttpHeaders, java.util.List<org.apache.pinot.controller.api.upload.SegmentUploadMetadata>)",
+        "PRIVATE(-) void copyNewSegmentToDeepStoreIfNeeded(java.lang.String, java.lang.String, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, java.io.File, java.lang.String, java.net.URI, boolean, long)",
+        "PRIVATE(-) org.apache.pinot.common.metadata.segment.SegmentZKMetadata createNewSegmentZKMetadata(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.segment.spi.SegmentMetadata, java.lang.String, java.lang.String, long, javax.ws.rs.core.HttpHeaders, java.util.List<org.apache.pinot.common.tier.Tier>, boolean, long)",
+        "PRIVATE(-) void deleteSegmentsIfNeeded(java.lang.String, java.util.Collection<java.lang.String>, long, boolean)",
+        "PRIVATE(-) void processExistingSegment(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, org.apache.helix.zookeeper.datamodel.ZNRecord, java.net.URI, java.io.File, java.lang.String, java.lang.String, java.lang.String, long, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(-) void processExistingSegments(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, boolean, javax.ws.rs.core.HttpHeaders, java.util.List<org.apache.pinot.controller.api.upload.SegmentUploadMetadata>)",
+        "PRIVATE(-) void processNewSegment(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, java.net.URI, java.io.File, java.lang.String, java.lang.String, java.lang.String, long, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(-) void processNewSegments(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, boolean, javax.ws.rs.core.HttpHeaders, java.util.List<org.apache.pinot.controller.api.upload.SegmentUploadMetadata>)",
+        "PRIVATE(-) void releaseParallelPushLock(java.lang.String, org.apache.pinot.common.metadata.segment.SegmentZKMetadata, long)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void completeSegmentOperations(java.lang.String, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, java.net.URI, java.io.File, java.lang.String, java.lang.String, java.lang.String, long, boolean, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(+) void completeSegmentsOperations(java.lang.String, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, boolean, boolean, javax.ws.rs.core.HttpHeaders, java.util.List<org.apache.pinot.controller.api.upload.SegmentUploadMetadata>)",
+        "PRIVATE(+) void deleteSegmentsIfNeeded(java.lang.String, java.util.List<java.lang.String>, long, boolean)",
+        "PRIVATE(+) void processExistingSegment(java.lang.String, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, org.apache.helix.zookeeper.datamodel.ZNRecord, java.net.URI, java.io.File, java.lang.String, java.lang.String, java.lang.String, long, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(+) void processExistingSegments(java.lang.String, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, boolean, javax.ws.rs.core.HttpHeaders, java.util.List<org.apache.pinot.controller.api.upload.SegmentUploadMetadata>)",
+        "PRIVATE(+) void processNewSegment(java.lang.String, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, java.net.URI, java.io.File, java.lang.String, java.lang.String, java.lang.String, long, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(+) void processNewSegments(java.lang.String, org.apache.pinot.common.utils.FileUploadDownloadClient$FileUploadType, boolean, javax.ws.rs.core.HttpHeaders, java.util.List<org.apache.pinot.controller.api.upload.SegmentUploadMetadata>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.segment.SegmentAssignmentUtils$TierSegmentAssignment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "SegmentAssignmentUtils$TierSegmentAssignment(org.apache.helix.HelixManager, java.lang.String, java.util.List<org.apache.pinot.common.tier.Tier>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)"
+      ],
+      "addedConstructors": [
+        "SegmentAssignmentUtils$TierSegmentAssignment(java.lang.String, java.util.List<org.apache.pinot.common.tier.Tier>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void assignSegment(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.common.metadata.segment.SegmentZKMetadata)",
+        "PUBLIC(-) void assignSegments(org.apache.pinot.spi.config.table.TableConfig, java.util.Map<java.lang.String,org.apache.pinot.common.metadata.segment.SegmentZKMetadata>)",
+        "PRIVATE(-) java.util.Map<org.apache.pinot.spi.config.table.assignment.InstancePartitionsType,org.apache.pinot.common.assignment.InstancePartitions> getInstacePartitionsMap(org.apache.pinot.spi.config.table.TableConfig, java.lang.String)",
+        "PUBLIC(-) java.util.List<org.apache.pinot.common.tier.Tier> getSortedTiers(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) boolean needTieredSegmentAssignment(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) boolean updateSegmentTargetTier(java.lang.String, org.apache.pinot.common.metadata.segment.SegmentZKMetadata, java.util.List<org.apache.pinot.common.tier.Tier>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void assignTableSegment(java.lang.String, java.lang.String)",
+        "PUBLIC(+) void assignTableSegments(java.lang.String, java.util.List<java.lang.String>)",
+        "PRIVATE(+) java.lang.String updateSegmentTargetTier(java.lang.String, java.lang.String, java.util.List<org.apache.pinot.common.tier.Tier>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

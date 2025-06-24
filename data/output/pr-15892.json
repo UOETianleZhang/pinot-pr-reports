@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-plugins/pinot-input-format/pinot-confluent-json/pom.xml",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-29T19:03:14Z",
+  "number": 15892,
+  "title": "Apply BOM to pin transitive dependencies",
+  "url": "https://github.com/apache/pinot/pull/15892",
+  "jcmpClasses": []
+}

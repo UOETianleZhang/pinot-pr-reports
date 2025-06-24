@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-28T18:12:00Z",
+  "number": 15928,
+  "title": "Bump commons-beanutils:commons-beanutils from 1.10.1 to 1.11.0",
+  "url": "https://github.com/apache/pinot/pull/15928",
+  "jcmpClasses": []
+}

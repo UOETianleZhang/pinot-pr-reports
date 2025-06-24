@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-28T18:10:29Z",
+  "number": 15925,
+  "title": "Bump com.google.protobuf:protobuf-bom from 3.25.5 to 3.25.8",
+  "url": "https://github.com/apache/pinot/pull/15925",
+  "jcmpClasses": []
+}

@@ -1,0 +1,263 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/InstanceDataManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/LogicalTableContext.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/logicaltable/BaseLogicalTableIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/catalog/PinotCatalog.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/DispatchablePlanContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/DispatchablePlanMetadata.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/DispatchablePlanVisitor.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/WorkerManager.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/WorkerMetadata.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/table/ImplicitHybridTableRouteProvider.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/table/LogicalTableRouteInfo.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/table/LogicalTableRouteProvider.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/table/PhysicalTableRouteProvider.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/timeboundary/MinTimeBoundaryStrategy.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/timeboundary/TimeBoundaryStrategy.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/routing/table/BaseTableRouteTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/routing/table/ImplicitHybridTableRouteProviderCalculateRouteTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/routing/table/ImplicitHybridTableRouteProviderGetTableRouteTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/timeboundary/MinTimeBoundaryStrategyTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/server/ServerPlanRequestUtils.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/HelixInstanceDataManager.java"
+  ],
+  "mergedAt": "2025-05-30T13:54:31Z",
+  "number": 15773,
+  "title": "[Logical Table] Support logical tables in MSE.",
+  "url": "https://github.com/apache/pinot/pull/15773",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.Set<java.lang.String> getBrokerTenantsUnion(java.util.List<org.apache.pinot.spi.config.table.TableConfig>, java.util.List<org.apache.pinot.spi.data.LogicalTableConfig>)",
+        "PRIVATE(-) java.util.List<org.apache.pinot.spi.data.LogicalTableConfig> getListLogicalTableConfigs(java.util.List<java.lang.String>, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Set<java.lang.String> getBrokerTenantsUnion(java.util.List<org.apache.pinot.spi.config.table.TableConfig>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getActualLogicalTableName(java.lang.String, java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.InstanceDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.core.data.manager.LogicalTableContext getLogicalTableContext(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.LogicalTableContext",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.data.LogicalTableConfig getLogicalTableConfig()",
+        "PUBLIC(-) org.apache.pinot.spi.data.Schema getLogicalTableSchema()",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getRefOfflineTableConfig()",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getRefRealtimeTableConfig()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.config.table.TableConfig _refOfflineTableConfig",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.data.Schema _logicalTableSchema",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.data.LogicalTableConfig _logicalTableConfig",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.config.table.TableConfig _refRealtimeTableConfig"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) LogicalTableContext(org.apache.pinot.spi.data.LogicalTableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.DispatchablePlanMetadata",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.routing.table.LogicalTableRouteInfo getLogicalTableRouteInfo()",
+        "PUBLIC(-) java.util.Map<java.lang.Integer,java.util.Map<java.lang.String,java.util.List<java.lang.String>>> getWorkerIdToTableSegmentsMap()",
+        "PUBLIC(-) void setLogicalTableRouteInfo(org.apache.pinot.query.routing.table.LogicalTableRouteInfo)",
+        "PUBLIC(-) void setWorkerIdToTableSegmentsMap(java.util.Map<java.lang.Integer,java.util.Map<java.lang.String,java.util.List<java.lang.String>>>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.util.Map<java.lang.Integer,java.util.Map<java.lang.String,java.util.List<java.lang.String>>> _workerIdToTableSegmentsMap",
+        "PRIVATE(-) org.apache.pinot.query.routing.table.LogicalTableRouteInfo _logicalTableRouteInfo"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.routing.table.ImplicitHybridTableRouteProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void fillRouteMetadata(org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo, org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(-) void fillTableConfigMetadata(org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo, java.lang.String, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.routing.table.LogicalTableRouteInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getLogicalTableName()",
+        "PUBLIC(-) org.apache.pinot.query.timeboundary.TimeBoundaryStrategy getTimeBoundaryStrategy()",
+        "PUBLIC(-) void setLogicalTableName(java.lang.String)",
+        "PUBLIC(-) void setTimeBoundaryStrategy(org.apache.pinot.query.timeboundary.TimeBoundaryStrategy)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.lang.String _logicalTableName",
+        "PRIVATE(-) org.apache.pinot.query.timeboundary.TimeBoundaryStrategy _timeBoundaryStrategy"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.data.LogicalTableConfig _logicalTable"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LogicalTableRouteInfo(org.apache.pinot.spi.data.LogicalTableConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.routing.table.LogicalTableRouteProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void fillRouteMetadata(org.apache.pinot.query.routing.table.LogicalTableRouteInfo, org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(-) void fillTableConfigMetadata(org.apache.pinot.query.routing.table.LogicalTableRouteInfo, java.lang.String, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.routing.WorkerManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) void assignTableSegmentsToWorkers(org.apache.pinot.query.routing.table.LogicalTableRouteInfo, org.apache.pinot.query.planner.physical.DispatchablePlanMetadata)",
+        "PRIVATE(-) void assignWorkersToNonPartitionedLeafFragmentForLogicalTable(org.apache.pinot.query.planner.physical.DispatchablePlanMetadata, org.apache.pinot.query.planner.physical.DispatchablePlanContext)",
+        "PRIVATE(-) STATIC(-) void transferToServerInstanceLogicalSegmentsMap(java.lang.String, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>, java.util.Map<org.apache.pinot.core.transport.ServerInstance,java.util.Map<java.lang.String,java.util.List<java.lang.String>>>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.routing.WorkerMetadata",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.Map<java.lang.String,java.util.List<java.lang.String>> deserializeStringSegmentListMap(java.lang.String)",
+        "PUBLIC(-) java.util.Map<java.lang.String,java.util.List<java.lang.String>> getLogicalTableSegmentsMap()",
+        "PUBLIC(-) void setLogicalTableSegmentsMap(java.util.Map<java.lang.String,java.util.List<java.lang.String>>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String LOGICAL_TABLE_SEGMENTS_MAP_KEY"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.timeboundary.MinTimeBoundaryStrategy",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.core.routing.TimeBoundaryInfo computeTimeBoundary(org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(-) void init(org.apache.pinot.spi.data.LogicalTableConfig, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.routing.TimeBoundaryInfo computeTimeBoundary(org.apache.pinot.spi.data.LogicalTableConfig, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.core.routing.RoutingManager)"
+      ],
+      "removedFields": [
+        "java.util.Map<java.lang.String,org.apache.pinot.spi.data.DateTimeFormatSpec> _dateTimeFormatSpecMap"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.timeboundary.TimeBoundaryStrategy",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.core.routing.TimeBoundaryInfo computeTimeBoundary(org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(-) ABSTRACT(-) void init(org.apache.pinot.spi.data.LogicalTableConfig, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.routing.TimeBoundaryInfo computeTimeBoundary(org.apache.pinot.spi.data.LogicalTableConfig, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.core.routing.RoutingManager)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.server.ServerPlanRequestUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) org.apache.pinot.common.request.InstanceRequest compileInstanceRequest(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.common.request.PinotQuery, org.apache.pinot.core.routing.TimeBoundaryInfo, org.apache.pinot.spi.config.table.TableType, java.lang.String, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, java.util.List<java.lang.String>, java.util.List<org.apache.pinot.common.request.TableSegmentsInfo>)",
+        "PRIVATE(-) STATIC(-) java.util.List<org.apache.pinot.common.request.InstanceRequest> constructLogicalTableServerQueryRequests(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.common.request.PinotQuery, org.apache.pinot.core.data.manager.InstanceDataManager)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.common.request.InstanceRequest compileInstanceRequest(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.common.request.PinotQuery, org.apache.pinot.core.routing.TimeBoundaryInfo, org.apache.pinot.spi.config.table.TableType, java.util.List<java.lang.String>, org.apache.pinot.segment.local.data.manager.TableDataManager)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.HelixInstanceDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.core.data.manager.LogicalTableContext getLogicalTableContext(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

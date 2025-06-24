@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-30T21:15:10Z",
+  "number": 15945,
+  "title": "Bump spark3.version from 3.5.3 to 3.5.6",
+  "url": "https://github.com/apache/pinot/pull/15945",
+  "jcmpClasses": []
+}

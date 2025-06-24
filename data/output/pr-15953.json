@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/DefaultRebalancePreChecker.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java"
+  ],
+  "mergedAt": "2025-05-30T22:16:23Z",
+  "number": 15953,
+  "title": "Add Pre-check for downtime and minAvailableReplica for Pauseless Tables",
+  "url": "https://github.com/apache/pinot/pull/15953",
+  "jcmpClasses": []
+}

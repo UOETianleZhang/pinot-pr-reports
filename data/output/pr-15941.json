@@ -1,0 +1,146 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/PinotDispatchPlanner.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/colocated/ColocationKey.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/colocated/GreedyShuffleRewriteContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/colocated/GreedyShuffleRewritePreComputeVisitor.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/colocated/GreedyShuffleRewriteVisitor.java"
+  ],
+  "mergedAt": "2025-05-30T01:22:20Z",
+  "number": 15941,
+  "title": "[multistage] Remove Old Colocated Join Implementation",
+  "url": "https://github.com/apache/pinot/pull/15941",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.planner.physical.colocated.ColocationKey",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void addIndex(int)",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) java.lang.String getHashAlgorithm()",
+        "PUBLIC(+) java.util.List<java.lang.Integer> getIndices()",
+        "PUBLIC(+) int getNumPartitions()",
+        "PUBLIC(+) int hashCode()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) int _numPartitions",
+        "PRIVATE(+) java.util.List<java.lang.Integer> _indices",
+        "PRIVATE(+) java.lang.String _hashAlgorithm"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ColocationKey(int, java.lang.String)",
+        "PUBLIC(+) ColocationKey(int, int, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "void addLeafNode(java.lang.Integer, org.apache.pinot.query.planner.plannode.PlanNode)",
+        "java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> getColocationKeys(java.lang.Integer)",
+        "java.util.List<org.apache.pinot.query.planner.plannode.PlanNode> getLeafNodes(java.lang.Integer)",
+        "org.apache.pinot.query.planner.plannode.PlanNode getRootPlanNode(java.lang.Integer)",
+        "boolean isJoinStage(java.lang.Integer)",
+        "boolean isSetOpStage(java.lang.Integer)",
+        "void markJoinStage(java.lang.Integer)",
+        "void markSetOpStage(java.lang.Integer)",
+        "void setColocationKeys(java.lang.Integer, java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey>)",
+        "void setRootPlanNode(java.lang.Integer, org.apache.pinot.query.planner.plannode.PlanNode)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.Integer> _joinStages",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.Integer,java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>> _leafNodes",
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.Integer> _setOpStages",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.Integer,org.apache.pinot.query.planner.plannode.PlanNode> _rootPlanNode",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.Integer,java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey>> _senderInputColocationKeys"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "GreedyShuffleRewriteContext()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewritePreComputeVisitor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "STATIC(+) org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext preComputeContext(org.apache.pinot.query.planner.plannode.PlanNode)",
+        "PUBLIC(+) java.lang.Integer process(org.apache.pinot.query.planner.plannode.PlanNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.lang.Integer visitJoin(org.apache.pinot.query.planner.plannode.JoinNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.lang.Integer visitMailboxReceive(org.apache.pinot.query.planner.plannode.MailboxReceiveNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.lang.Integer visitSetOp(org.apache.pinot.query.planner.plannode.SetOpNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.lang.Integer visitTableScan(org.apache.pinot.query.planner.plannode.TableScanNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "GreedyShuffleRewritePreComputeVisitor()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteVisitor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) boolean allAreSuperSet(java.lang.Iterable<java.lang.Integer>, org.apache.pinot.query.planner.plannode.MailboxSendNode)",
+        "PRIVATE(+) boolean areServersSuperset(int, int)",
+        "PRIVATE(+) boolean canJoinBeColocated(org.apache.pinot.query.planner.plannode.JoinNode)",
+        "PRIVATE(+) boolean canServerAssignmentAllowShuffleSkip(int, int, int)",
+        "PRIVATE(+) STATIC(+) boolean checkPartitionScheme(org.apache.pinot.query.planner.plannode.MailboxReceiveNode, org.apache.pinot.query.planner.plannode.MailboxReceiveNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PRIVATE(+) STATIC(+) boolean colocationKeyCondition(java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey>, java.util.List<java.lang.Integer>)",
+        "PRIVATE(+) STATIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> computeNewColocationKeys(java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey>, java.util.Map<java.lang.Integer,java.lang.Integer>)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.query.planner.physical.colocated.ColocationKey getEquivalentSenderKey(java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey>, java.util.List<java.lang.Integer>)",
+        "PRIVATE(+) boolean noneIsJoin(java.lang.Iterable<java.lang.Integer>, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) STATIC(+) void optimizeShuffles(org.apache.pinot.query.planner.plannode.PlanNode, java.util.Map<java.lang.Integer,org.apache.pinot.query.planner.physical.DispatchablePlanMetadata>, org.apache.pinot.common.config.provider.TableCache)",
+        "PRIVATE(+) STATIC(+) boolean partitionKeyConditionForJoin(org.apache.pinot.query.planner.plannode.MailboxReceiveNode, org.apache.pinot.query.planner.plannode.MailboxSendNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitAggregate(org.apache.pinot.query.planner.plannode.AggregateNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitExchange(org.apache.pinot.query.planner.plannode.ExchangeNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitExplained(org.apache.pinot.query.planner.plannode.ExplainedNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitFilter(org.apache.pinot.query.planner.plannode.FilterNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitJoin(org.apache.pinot.query.planner.plannode.JoinNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitMailboxReceive(org.apache.pinot.query.planner.plannode.MailboxReceiveNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitMailboxSend(org.apache.pinot.query.planner.plannode.MailboxSendNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitProject(org.apache.pinot.query.planner.plannode.ProjectNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitSetOp(org.apache.pinot.query.planner.plannode.SetOpNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitSort(org.apache.pinot.query.planner.plannode.SortNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitTableScan(org.apache.pinot.query.planner.plannode.TableScanNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitValue(org.apache.pinot.query.planner.plannode.ValueNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.query.planner.physical.colocated.ColocationKey> visitWindow(org.apache.pinot.query.planner.plannode.WindowNode, org.apache.pinot.query.planner.physical.colocated.GreedyShuffleRewriteContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.Integer,org.apache.pinot.query.planner.physical.DispatchablePlanMetadata> _dispatchablePlanMetadataMap",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) boolean _canSkipShuffleForJoin",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.config.provider.TableCache _tableCache"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) GreedyShuffleRewriteVisitor(org.apache.pinot.common.config.provider.TableCache, java.util.Map<java.lang.Integer,org.apache.pinot.query.planner.physical.DispatchablePlanMetadata>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.PinotDispatchPlanner",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void runPhysicalOptimizers(org.apache.pinot.query.planner.plannode.PlanNode, org.apache.pinot.query.planner.physical.DispatchablePlanContext, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

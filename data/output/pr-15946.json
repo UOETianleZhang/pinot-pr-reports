@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-30T21:15:39Z",
+  "number": 15946,
+  "title": "Bump com.mchange:c3p0 from 0.11.0-pre2 to 0.11.1",
+  "url": "https://github.com/apache/pinot/pull/15946",
+  "jcmpClasses": []
+}

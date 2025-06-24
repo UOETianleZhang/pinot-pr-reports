@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/BaseHybridClusterIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/HybridClusterIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalanceIntegrationTest.java"
+  ],
+  "mergedAt": "2025-05-28T15:40:49Z",
+  "number": 15929,
+  "title": "Refactor TableRebalanceIntegrationTest / HybridClusterIntegrationTest to avoid duplication in test runs",
+  "url": "https://github.com/apache/pinot/pull/15929",
+  "jcmpClasses": []
+}

@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-05-28T18:04:18Z",
+  "number": 15923,
+  "title": "Bump org.jline:jline from 3.30.3 to 3.30.4",
+  "url": "https://github.com/apache/pinot/pull/15923",
+  "jcmpClasses": []
+}

@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotLogicalTableResourceTest.java"
+  ],
+  "mergedAt": "2025-05-30T14:37:39Z",
+  "number": 15944,
+  "title": "GET /logicalTables API to return database specific tables.",
+  "url": "https://github.com/apache/pinot/pull/15944",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotHelixResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.List<java.lang.String> getAllLogicalTableNames(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

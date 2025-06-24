@@ -1,0 +1,250 @@
+{
+  "files": [
+    "pinot-common/src/main/proto/plan.proto",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotJoinExchangeNodeInsertRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/PlanNodeToRelConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/RelToPlanNodeConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/plannode/JoinNode.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/serde/PlanNodeDeserializer.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/serde/PlanNodeSerializer.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/AsofJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/BaseJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/NonEquiJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/PlanNodeToOpChain.java",
+    "pinot-query-runtime/src/test/resources/queries/AsOfJoin.json"
+  ],
+  "mergedAt": "2025-05-28T04:42:46Z",
+  "number": 15630,
+  "title": "ASOF JOIN",
+  "url": "https://github.com/apache/pinot/pull/15630",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.proto.Plan$JoinNode",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()",
+        "PUBLIC(-) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()",
+        "PUBLIC(-) boolean hasMatchCondition()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) int MATCHCONDITION_FIELD_NUMBER",
+        "PRIVATE(-) int bitField0_",
+        "PRIVATE(-) org.apache.pinot.common.proto.Expressions$Expression matchCondition_"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$JoinNode$Builder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.proto.Plan$JoinNode$Builder clearMatchCondition()",
+        "PUBLIC(-) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()",
+        "PUBLIC(-) org.apache.pinot.common.proto.Expressions$Expression$Builder getMatchConditionBuilder()",
+        "PRIVATE(-) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getMatchConditionFieldBuilder()",
+        "PUBLIC(-) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()",
+        "PUBLIC(-) boolean hasMatchCondition()",
+        "PRIVATE(-) void maybeForceBuilderInitialization()",
+        "PUBLIC(-) org.apache.pinot.common.proto.Plan$JoinNode$Builder mergeMatchCondition(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(-) org.apache.pinot.common.proto.Plan$JoinNode$Builder setMatchCondition(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(-) org.apache.pinot.common.proto.Plan$JoinNode$Builder setMatchCondition(org.apache.pinot.common.proto.Expressions$Expression$Builder)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> matchConditionBuilder_",
+        "PRIVATE(-) org.apache.pinot.common.proto.Expressions$Expression matchCondition_"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$JoinNodeOrBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()",
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()",
+        "PUBLIC(-) ABSTRACT(-) boolean hasMatchCondition()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$JoinStrategy",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) int AS_OF_VALUE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.proto.Plan$JoinStrategy AS_OF"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$JoinType",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) int ASOF_VALUE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.proto.Plan$JoinType LEFT_ASOF",
+        "PUBLIC(-) STATIC(-) FINAL(-) int LEFT_ASOF_VALUE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.common.proto.Plan$JoinType ASOF"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.RelToPlanNodeConverter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.query.planner.plannode.JoinNode convertLogicalAsofJoin(org.apache.calcite.rel.logical.LogicalAsofJoin)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.JoinNode",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.planner.logical.RexExpression getMatchCondition()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.planner.logical.RexExpression _matchCondition"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) JoinNode(int, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.planner.plannode.PlanNode$NodeHint, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, org.apache.calcite.rel.core.JoinRelType, java.util.List<java.lang.Integer>, java.util.List<java.lang.Integer>, java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.query.planner.plannode.JoinNode$JoinStrategy, org.apache.pinot.query.planner.logical.RexExpression)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.JoinNode$JoinStrategy",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.planner.plannode.JoinNode$JoinStrategy ASOF"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.AsofJoinOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void addRowsToRightTable(java.util.List<java.lang.Object[]>)",
+        "PROTECTED(-) java.util.List<java.lang.Object[]> buildJoinedRows(org.apache.pinot.query.runtime.blocks.MseBlock$Data)",
+        "PROTECTED(-) java.util.List<java.lang.Object[]> buildNonMatchRightRows()",
+        "PRIVATE(-) java.lang.Object[] closestMatch(java.lang.Comparable<?>, java.util.NavigableMap<java.lang.Comparable<?>,java.lang.Object[]>)",
+        "PROTECTED(-) void finishBuildingRightTable()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType _matchConditionType",
+        "PRIVATE(-) FINAL(-) int _leftMatchKeyIndex",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.planner.partitioning.KeySelector<?> _leftKeySelector",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.planner.partitioning.KeySelector<?> _rightKeySelector",
+        "PRIVATE(-) FINAL(-) java.util.Map<java.lang.Object,java.util.NavigableMap<java.lang.Comparable<?>,java.lang.Object[]>> _rightTable",
+        "PRIVATE(-) FINAL(-) int _rightMatchKeyIndex",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) AsofJoinOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.query.planner.plannode.JoinNode)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType valueOf(java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType[] values()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType GREATER_THAN_OR_EQUAL",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType GREATER_THAN",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType LESS_THAN_OR_EQUAL",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.AsofJoinOperator$MatchConditionType LESS_THAN"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) AsofJoinOperator$MatchConditionType(java.lang.String, int)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) ABSTRACT(-) void addRowsToRightTable(java.util.List<java.lang.Object[]>)",
+        "PROTECTED(-) ABSTRACT(-) void finishBuildingRightTable()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.HashJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void addRowsToRightTable(java.util.List<java.lang.Object[]>)",
+        "PROTECTED(-) void finishBuildingRightTable()"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) void buildRightTable()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.NonEquiJoinOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void addRowsToRightTable(java.util.List<java.lang.Object[]>)",
+        "PROTECTED(-) void finishBuildingRightTable()"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) void buildRightTable()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
