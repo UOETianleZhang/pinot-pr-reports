@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java"
+  ],
+  "mergedAt": "2025-06-24T23:35:02Z",
+  "number": 16134,
+  "title": "Adds log while skipping creation of new consuming segment",
+  "url": "https://github.com/apache/pinot/pull/16134",
+  "jcmpClasses": []
+}
