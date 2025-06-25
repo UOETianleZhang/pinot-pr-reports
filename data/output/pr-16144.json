@@ -1,0 +1,62 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/DefaultRebalancePreChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceConfig.java",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/RebalanceServer/RebalanceServerConfigurationOption.tsx",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/RebalanceServer/RebalanceServerConfigurationOptions/RebalanceServerConfigurationOptionDouble.tsx",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/RebalanceServer/RebalanceServerOptions.ts"
+  ],
+  "mergedAt": "2025-06-25T21:54:25Z",
+  "number": 16144,
+  "title": "Add new parameter in Table Rebalance API: Disk Utilization Pre-check Threshold Override",
+  "url": "https://github.com/apache/pinot/pull/16144",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTableRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, boolean, int, int, int, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, double, boolean, int, int, int, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.DefaultRebalancePreChecker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) double _diskUtilizationThreshold"
+      ],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) double _defaultDiskUtilizationThreshold"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) double getDiskUtilizationThreshold()",
+        "PUBLIC(+) void setDiskUtilizationThreshold(double)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) double _diskUtilizationThreshold"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
