@@ -1,0 +1,37 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/PinotAppConfigs.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/PinotControllerAppConfigsTest.java",
+    "pinot-minion/src/main/java/org/apache/pinot/minion/taskfactory/TaskFactoryRegistry.java",
+    "pinot-minion/src/test/java/org/apache/pinot/minion/taskfactory/TaskFactoryRegistryTest.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/mergerollup/MergeRollupTaskExecutor.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/realtimetoofflinesegments/RealtimeToOfflineSegmentsTaskExecutor.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/refreshsegment/RefreshSegmentTaskExecutor.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/segmentgenerationandpush/SegmentGenerationAndPushTaskExecutor.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/segmentgenerationandpush/SegmentGenerationAndPushTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompaction/UpsertCompactionTaskExecutor.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskExecutor.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/PinotServerAppConfigsTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/env/PinotConfiguration.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/Obfuscator.java"
+  ],
+  "mergedAt": "2025-06-25T08:35:30Z",
+  "number": 16192,
+  "title": "Add Obfuscator for task configs in minion task loggers",
+  "url": "https://github.com/apache/pinot/pull/16192",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.utils.Obfuscator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.utils.Obfuscator DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

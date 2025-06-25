@@ -1,0 +1,54 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/AccessControlFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/BasicAuthAccessControlFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/ZkBasicAuthAccessControlFactory.java"
+  ],
+  "mergedAt": "2025-06-25T08:35:13Z",
+  "number": 16194,
+  "title": "Support GrpcRequesterIdentity in ZkBasicAuthAccessControlFactory",
+  "url": "https://github.com/apache/pinot/pull/16194",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.broker.AccessControlFactory",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Collection<java.lang.String> extractAuthorizationTokens(org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String HEADER_AUTHORIZATION"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.broker.BasicAuthAccessControlFactory",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String HEADER_AUTHORIZATION"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.broker.ZkBasicAuthAccessControlFactory",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String HEADER_AUTHORIZATION"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
