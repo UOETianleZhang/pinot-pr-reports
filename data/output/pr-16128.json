@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerGauge.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java"
+  ],
+  "mergedAt": "2025-06-25T07:21:18Z",
+  "number": 16128,
+  "title": "Adds server startup check meter",
+  "url": "https://github.com/apache/pinot/pull/16128",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.ServerGauge",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerGauge STARTUP_STATUS_CHECK_IN_PROGRESS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
