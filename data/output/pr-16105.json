@@ -1,0 +1,33 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/FileUploadDownloadClient.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotAdminUserLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotUserWithAccessLogicalTableResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/BaseClusterIntegrationTest.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/BasicAuthTestUtils.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/CursorWithAuthIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesAuthIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/UrlAuthRealtimeIntegrationTest.java"
+  ],
+  "mergedAt": "2025-06-25T02:18:07Z",
+  "number": 16105,
+  "title": "[testing] Enhancing integration test support for authentication flows",
+  "url": "https://github.com/apache/pinot/pull/16105",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.FileUploadDownloadClient",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.utils.SimpleHttpResponse uploadSegment(java.net.URI, java.lang.String, java.io.File, java.util.List<org.apache.hc.core5.http.Header>, java.lang.String, org.apache.pinot.spi.config.table.TableType)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

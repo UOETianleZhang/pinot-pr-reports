@@ -1,0 +1,31 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/H3IndexTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/JsonIndexTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/RangeIndexTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/TextIndexTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/VectorIndexTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/creator/VectorIndexConfig.java",
+    "pinot-segment-spi/src/test/java/org/apache/pinot/segment/spi/index/VectorConfigTest.java"
+  ],
+  "mergedAt": "2025-06-25T00:19:38Z",
+  "number": 16191,
+  "title": "[index] Add json creator initializer for VectorIndexConfig",
+  "url": "https://github.com/apache/pinot/pull/16191",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.spi.index.creator.VectorIndexConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) VectorIndexConfig(java.lang.Boolean, java.lang.String, int, int, org.apache.pinot.segment.spi.index.creator.VectorIndexConfig$VectorDistanceFunction, java.util.Map<java.lang.String,java.lang.String>)"
+      ]
+    }
+  ]
+}

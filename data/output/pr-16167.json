@@ -1,0 +1,113 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/resources/PinotClientRequest.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandlerDelegate.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-timeseries/pinot-timeseries-planner/src/main/java/org/apache/pinot/tsdb/planner/TimeSeriesQueryEnvironment.java",
+    "pinot-timeseries/pinot-timeseries-planner/src/main/java/org/apache/pinot/tsdb/planner/physical/TableScanVisitor.java",
+    "pinot-timeseries/pinot-timeseries-planner/src/main/java/org/apache/pinot/tsdb/planner/physical/TimeSeriesDispatchablePlan.java"
+  ],
+  "mergedAt": "2025-06-25T01:40:22Z",
+  "number": 16167,
+  "title": "[timeseries] Adding table level access control check for timeseries queries",
+  "url": "https://github.com/apache/pinot/pull/16167",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.api.resources.PinotClientRequest",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse executeTimeSeriesQuery(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse executeTimeSeriesQuery(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandlerDelegate",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.TimeSeriesRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(+) void tableLevelAccessControlCheck(javax.ws.rs.core.HttpHeaders, java.util.List<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tsdb.planner.physical.TableScanVisitor$Context",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void addTableName(java.lang.String)",
+        "PUBLIC(+) java.util.List<java.lang.String> getTableNames()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _tableNames"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tsdb.planner.physical.TimeSeriesDispatchablePlan",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<java.lang.String> getTableNames()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _tableNames"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) TimeSeriesDispatchablePlan(java.lang.String, java.util.List<org.apache.pinot.tsdb.planner.physical.TimeSeriesQueryServerInstance>, org.apache.pinot.tsdb.spi.plan.BaseTimeSeriesPlanNode, java.util.List<org.apache.pinot.tsdb.spi.plan.BaseTimeSeriesPlanNode>, org.apache.pinot.tsdb.spi.TimeBuckets, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.util.List<java.lang.String>>>, java.util.Map<java.lang.String,java.lang.Integer>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TimeSeriesDispatchablePlan(java.lang.String, java.util.List<org.apache.pinot.tsdb.planner.physical.TimeSeriesQueryServerInstance>, org.apache.pinot.tsdb.spi.plan.BaseTimeSeriesPlanNode, java.util.List<org.apache.pinot.tsdb.spi.plan.BaseTimeSeriesPlanNode>, org.apache.pinot.tsdb.spi.TimeBuckets, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.util.List<java.lang.String>>>, java.util.Map<java.lang.String,java.lang.Integer>, java.util.List<java.lang.String>)"
+      ]
+    }
+  ]
+}

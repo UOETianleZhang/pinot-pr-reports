@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/PinotBrokerTimeSeriesResponse.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesIntegrationTest.java"
+  ],
+  "mergedAt": "2025-06-25T02:17:33Z",
+  "number": 16196,
+  "title": "[timeseries] Returning empty timeseries response for empty time buckets",
+  "url": "https://github.com/apache/pinot/pull/16196",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse newEmptyResponse()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

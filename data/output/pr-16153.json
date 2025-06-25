@@ -1,0 +1,92 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/catalog/PinotNameMatcher.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/collections/FlatViewList.java"
+  ],
+  "mergedAt": "2025-06-24T23:41:14Z",
+  "number": 16153,
+  "title": "Move FlatViewList to org.apache.pinot.common.collections",
+  "url": "https://github.com/apache/pinot/pull/16153",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.collections.FlatViewList",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean add(java.lang.Object)",
+        "PUBLIC(+) void add(int, java.lang.Object)",
+        "PUBLIC(+) boolean addAll(java.util.Collection<? extends T>)",
+        "PUBLIC(+) boolean addAll(int, java.util.Collection<? extends T>)",
+        "PRIVATE(+) java.util.stream.Stream<T> asStream()",
+        "PUBLIC(+) void clear()",
+        "PUBLIC(+) boolean contains(java.lang.Object)",
+        "PUBLIC(+) boolean containsAll(java.util.Collection<?>)",
+        "PUBLIC(+) java.lang.Object get(int)",
+        "PUBLIC(+) int indexOf(java.lang.Object)",
+        "PUBLIC(+) boolean isEmpty()",
+        "PUBLIC(+) java.util.Iterator<T> iterator()",
+        "PUBLIC(+) int lastIndexOf(java.lang.Object)",
+        "PUBLIC(+) java.util.ListIterator<T> listIterator()",
+        "PUBLIC(+) java.util.ListIterator<T> listIterator(int)",
+        "PUBLIC(+) boolean remove(java.lang.Object)",
+        "PUBLIC(+) java.lang.Object remove(int)",
+        "PUBLIC(+) boolean removeAll(java.util.Collection<?>)",
+        "PUBLIC(+) boolean retainAll(java.util.Collection<?>)",
+        "PUBLIC(+) java.lang.Object set(int, java.lang.Object)",
+        "PUBLIC(+) int size()",
+        "PUBLIC(+) java.util.List<T> subList(int, int)",
+        "PUBLIC(+) java.lang.Object[] toArray()",
+        "PUBLIC(+) java.lang.Object[] toArray(java.lang.Object[])"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List[]<T> _parts"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) FlatViewList(java.util.List[]<T>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.list.FlatViewList",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean add(java.lang.Object)",
+        "PUBLIC(-) void add(int, java.lang.Object)",
+        "PUBLIC(-) boolean addAll(java.util.Collection<? extends T>)",
+        "PUBLIC(-) boolean addAll(int, java.util.Collection<? extends T>)",
+        "PRIVATE(-) java.util.stream.Stream<T> asStream()",
+        "PUBLIC(-) void clear()",
+        "PUBLIC(-) boolean contains(java.lang.Object)",
+        "PUBLIC(-) boolean containsAll(java.util.Collection<?>)",
+        "PUBLIC(-) java.lang.Object get(int)",
+        "PUBLIC(-) int indexOf(java.lang.Object)",
+        "PUBLIC(-) boolean isEmpty()",
+        "PUBLIC(-) java.util.Iterator<T> iterator()",
+        "PUBLIC(-) int lastIndexOf(java.lang.Object)",
+        "PUBLIC(-) java.util.ListIterator<T> listIterator()",
+        "PUBLIC(-) java.util.ListIterator<T> listIterator(int)",
+        "PUBLIC(-) boolean remove(java.lang.Object)",
+        "PUBLIC(-) java.lang.Object remove(int)",
+        "PUBLIC(-) boolean removeAll(java.util.Collection<?>)",
+        "PUBLIC(-) boolean retainAll(java.util.Collection<?>)",
+        "PUBLIC(-) java.lang.Object set(int, java.lang.Object)",
+        "PUBLIC(-) int size()",
+        "PUBLIC(-) java.util.List<T> subList(int, int)",
+        "PUBLIC(-) java.lang.Object[] toArray()",
+        "PUBLIC(-) java.lang.Object[] toArray(java.lang.Object[])"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.List[]<T> _parts"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) FlatViewList(java.util.List[]<T>)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
