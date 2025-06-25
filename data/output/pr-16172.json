@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java"
+  ],
+  "mergedAt": "2025-06-25T06:30:42Z",
+  "number": 16172,
+  "title": "Reduce logs and improve logging when queries are terminated due to OOM.",
+  "url": "https://github.com/apache/pinot/pull/16172",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) void logQueryResourceUsage(java.util.Map<java.lang.String,? extends org.apache.pinot.spi.accounting.QueryResourceTracker>)",
+        "PROTECTED(+) void logTerminatedQuery(org.apache.pinot.spi.accounting.QueryResourceTracker, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

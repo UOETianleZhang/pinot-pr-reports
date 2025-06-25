@@ -1,0 +1,178 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/ForceCommitBatchConfig.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotRealtimeTableResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceConfig.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalanceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalanceObserver.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalanceProgressStats.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/ZkBasedTableRebalanceObserver.java",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/RebalanceServer/RebalanceServerOptions.ts",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/BaseClusterIntegrationTestSet.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/BasePauselessRealtimeIngestionTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalanceIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalancePauselessIntegrationTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/ControllerRequestURLBuilder.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/PinotTableRebalancer.java"
+  ],
+  "mergedAt": "2025-06-25T05:53:16Z",
+  "number": 16096,
+  "title": "Force Commit Consuming Segments Before Moved during Table Rebalance",
+  "url": "https://github.com/apache/pinot/pull/16096",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.ForceCommitBatchConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_STATUS_CHECK_TIMEOUT_SEC",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_BATCH_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_STATUS_CHECK_INTERVAL_SEC"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTableRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, boolean, int, int, int, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void waitUntilPrevBatchIsComplete(java.lang.String, java.util.Set<java.lang.String>, org.apache.pinot.controller.api.resources.ForceCommitBatchConfig)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void waitUntilSegmentsForceCommitted(java.lang.String, java.util.Set<java.lang.String>, org.apache.pinot.controller.api.resources.ForceCommitBatchConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getForceCommitBatchSize()",
+        "PUBLIC(+) int getForceCommitBatchStatusCheckIntervalMs()",
+        "PUBLIC(+) int getForceCommitBatchStatusCheckTimeoutMs()",
+        "PUBLIC(+) boolean isForceCommit()",
+        "PUBLIC(+) void setForceCommit(boolean)",
+        "PUBLIC(+) void setForceCommitBatchSize(int)",
+        "PUBLIC(+) void setForceCommitBatchStatusCheckIntervalMs(int)",
+        "PUBLIC(+) void setForceCommitBatchStatusCheckTimeoutMs(int)",
+        "PUBLIC(+) java.lang.String toQueryString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) int _forceCommitBatchStatusCheckTimeoutMs",
+        "PRIVATE(+) int _forceCommitBatchStatusCheckIntervalMs",
+        "PRIVATE(+) int _forceCommitBatchSize",
+        "PRIVATE(+) boolean _forceCommit"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver$RebalanceContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getNumSegmentsForceCommitted()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _numSegmentsForceCommitted"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TableRebalanceObserver$RebalanceContext(long, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, int)",
+        "PUBLIC(+) TableRebalanceObserver$RebalanceContext(int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver$Trigger",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver$Trigger FORCE_COMMIT_END_TRIGGER",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver$Trigger FORCE_COMMIT_START_TRIGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalanceProgressStats$RebalanceProgressStats",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) boolean _isForceCommittingConsumingSegments",
+        "PUBLIC(+) int _totalSegmentsForceCommitted"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.helix.model.IdealState forceCommitConsumingSegmentsAndWait(java.lang.String, java.util.Set<java.lang.String>, org.slf4j.Logger, int, int, int)",
+        "STATIC(+) java.util.Set<java.lang.String> getMovingConsumingSegments(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager _pinotLLCRealtimeSegmentManager"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) TableRebalancer(org.apache.helix.HelixManager, org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver, org.apache.pinot.common.metrics.ControllerMetrics, org.apache.pinot.controller.helix.core.rebalance.RebalancePreChecker, org.apache.pinot.controller.util.TableSizeReader)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TableRebalancer(org.apache.helix.HelixManager, org.apache.pinot.controller.helix.core.rebalance.TableRebalanceObserver, org.apache.pinot.common.metrics.ControllerMetrics, org.apache.pinot.controller.helix.core.rebalance.RebalancePreChecker, org.apache.pinot.controller.util.TableSizeReader, org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.builder.ControllerRequestURLBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String forTableConsumingSegmentsInfo(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
