@@ -1,0 +1,42 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/RowLevelSecurityIntegrationTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-26T10:01:39Z",
+  "number": 16174,
+  "title": "Broker configuration to enable row filters",
+  "url": "https://github.com/apache/pinot/pull/16174",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BaseBrokerRequestHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) boolean _enableRowColumnLevelAuth"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_BROKER_ENABLE_ROW_COLUMN_LEVEL_AUTH",
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_BROKER_ENABLE_ROW_COLUMN_LEVEL_AUTH"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
