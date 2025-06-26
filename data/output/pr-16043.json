@@ -1,0 +1,222 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/AccessControl.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/BasicAuthAccessControlFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/CalciteSqlParser.java",
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/rewriter/QueryRewriterFactory.java",
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/rewriter/RlsFiltersRewriter.java",
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/rewriter/RlsUtils.java",
+    "pinot-common/src/test/java/org/apache/pinot/sql/parsers/rewriter/QueryRewriterFactoryTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/auth/BasicAuthPrincipal.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/auth/BasicAuthUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/auth/ZkBasicAuthPrincipal.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/auth/BasicAuthTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/auth/ZkBasicAuthTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/RowLevelSecurityIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/server/ServerPlanRequestUtils.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/auth/TableRowColAccessResult.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/auth/TableRowColAccessResultImpl.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-06-26T06:43:35Z",
+  "number": 16043,
+  "title": "Adding changes for supporting RLS",
+  "url": "https://github.com/apache/pinot/pull/16043",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.api.AccessControl",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.auth.TableRowColAccessResult getRowColFilters(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.broker.BasicAuthAccessControlFactory$BasicAuthAccessControl",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.auth.TableRowColAccessResult getRowColFilters(org.apache.pinot.spi.auth.broker.RequesterIdentity, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.sql.parsers.CalciteSqlParser",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void queryRewrite(org.apache.pinot.common.request.PinotQuery, java.lang.Class<? extends org.apache.pinot.sql.parsers.rewriter.QueryRewriter>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.sql.parsers.rewriter.RlsFiltersRewriter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.request.PinotQuery rewrite(org.apache.pinot.common.request.PinotQuery)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RlsFiltersRewriter()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.sql.parsers.rewriter.RlsUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.lang.String buildRlsFilterKey(java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.lang.String> extractRlsFilters(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) STATIC(+) java.lang.String getRlsFilterForTable(java.util.Map<java.lang.String,java.lang.String>, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) RlsUtils()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.auth.BasicAuthPrincipal",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Optional<java.util.List<java.lang.String>> getRLSFilters(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.util.List<java.lang.String>> _rlsFilters"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) BasicAuthPrincipal(java.lang.String, java.lang.String, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, java.util.Map<java.lang.String,java.util.List<java.lang.String>>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.auth.BasicAuthUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String RLS_FILTER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.auth.ZkBasicAuthPrincipal",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ZkBasicAuthPrincipal(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, java.util.Map<java.lang.String,java.util.List<java.lang.String>>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment$CompiledQuery",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.context.PlannerContext getPlannerContext()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.server.ServerPlanRequestUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.OpChain compileLeafStage(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.routing.StagePlan, org.apache.pinot.core.query.executor.QueryExecutor, java.util.concurrent.ExecutorService, java.util.function.BiConsumer<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.pinot.query.runtime.operator.MultiStageOperator>, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.OpChain compileLeafStage(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.routing.StagePlan, org.apache.pinot.core.query.executor.QueryExecutor, java.util.concurrent.ExecutorService, java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.OpChain compileLeafStage(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.routing.StagePlan, org.apache.pinot.core.query.executor.QueryExecutor, java.util.concurrent.ExecutorService, java.util.function.BiConsumer<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.pinot.query.runtime.operator.MultiStageOperator>, boolean, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.auth.TableRowColAccessResult",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) java.util.Optional<java.util.List<java.lang.String>> getRLSFilters()",
+        "PUBLIC(+) ABSTRACT(+) void setRLSFilters(java.util.List<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.auth.TableRowColAccessResultImpl",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Optional<java.util.List<java.lang.String>> getRLSFilters()",
+        "PUBLIC(+) void setRLSFilters(java.util.List<java.lang.String>)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.auth.TableRowColAccessResult unrestricted()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.List<java.lang.String> _rlsFilters",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.spi.auth.TableRowColAccessResult UNRESTRICTED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TableRowColAccessResultImpl(java.util.List<java.lang.String>)",
+        "PUBLIC(+) TableRowColAccessResultImpl()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String RLS_FILTERS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
