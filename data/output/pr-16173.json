@@ -1,0 +1,38 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeTableDataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/data/manager/TableDataManager.java"
+  ],
+  "mergedAt": "2025-06-26T22:37:43Z",
+  "number": 16173,
+  "title": "Removes Ingestion Metrics of Inactive Partitions from the Committing Server",
+  "url": "https://github.com/apache/pinot/pull/16173",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeTableDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void onConsumingToOnline(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.data.manager.TableDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void onConsumingToOnline(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
