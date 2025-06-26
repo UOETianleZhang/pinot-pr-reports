@@ -1,0 +1,321 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/assignment/InstanceAssignmentConfigUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/assignment/InstancePartitionsUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/LogicalTableMetadataCache.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/TableCache.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metadata/ZKMetadataProvider.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/SchemaUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/SchemaSerDeUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/TableConfigSerDeUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/TableConfigUtils.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/utils/config/SchemaSerDeUtilsTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/utils/config/TableConfigSerDeUtilsTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/utils/config/TableConfigUtilsTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotInstanceAssignmentRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTenantRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/BaseSegmentAssignment.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/strategy/ReplicaGroupSegmentAssignmentStrategy.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/DefaultTenantRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/util/TableRetentionValidator.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/TableSizeReaderTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/offline/DimensionTableDataManagerTest.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/BenchmarkDimensionTableOverhead.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/mergerollup/MergeRollupTaskExecutorTest.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/purge/PurgeTaskExecutorTest.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/realtimetoofflinesegments/RealtimeToOfflineSegmentsTaskExecutorTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/IndexLoadingConfig.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/SchemaUtils.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/TableConfigUtilsTest.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/config/table/TableConfigTest.java",
+    "pinot-spi/src/test/resources/testConfigs/jsonIndexConfig.json",
+    "pinot-spi/src/test/resources/testConfigs/multipleIndexConfig.json",
+    "pinot-spi/src/test/resources/testConfigs/multipleIndexPartialUpsertConfig.json",
+    "pinot-spi/src/test/resources/testConfigs/multipleIndexPartialUpsertMultipleComparisonColumnConfig.json",
+    "pinot-spi/src/test/resources/testConfigs/noIndexConfig.json",
+    "pinot-spi/src/test/resources/testConfigs/rangeIndexConfig.json",
+    "pinot-spi/src/test/resources/testConfigs/textIndexConfig.json",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/UpdateSegmentState.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/MoveReplicaGroup.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/ValidateConfigCommand.java"
+  ],
+  "mergedAt": "2025-06-25T22:53:43Z",
+  "number": 16193,
+  "title": "Put ser/de into separate util for TableConfig and Schema",
+  "url": "https://github.com/apache/pinot/pull/16193",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.assignment.InstancePartitionsUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean hasPreConfiguredInstancePartitions(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.config.table.assignment.InstancePartitionsType)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.SchemaSerDeUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.data.Schema fromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(+) STATIC(+) org.apache.helix.zookeeper.datamodel.ZNRecord toZNRecord(org.apache.pinot.spi.data.Schema)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) SchemaSerDeUtils()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigSerDeUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.TableConfig fromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(+) STATIC(+) org.apache.helix.zookeeper.datamodel.ZNRecord toZNRecord(org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String FIELD_MISSING_MESSAGE_TEMPLATE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) TableConfigSerDeUtils()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigSerDeUtils$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableConfigSerDeUtils$1()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigSerDeUtils$2",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableConfigSerDeUtils$2()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigSerDeUtils$3",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableConfigSerDeUtils$3()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigSerDeUtils$4",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableConfigSerDeUtils$4()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigSerDeUtils$5",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableConfigSerDeUtils$5()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigSerDeUtils$6",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableConfigSerDeUtils$6()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigUtils",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void convertFromLegacyTableConfig(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.table.TableConfig fromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(-) STATIC(-) java.lang.String getPartitionColumn(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) STATIC(-) java.util.Set<java.lang.String> getRelevantTags(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) STATIC(-) boolean hasPreConfiguredInstancePartitions(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) STATIC(-) boolean hasPreConfiguredInstancePartitions(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.config.table.assignment.InstancePartitionsType)",
+        "PRIVATE(-) STATIC(-) void overwriteConfig(com.fasterxml.jackson.databind.JsonNode, com.fasterxml.jackson.databind.JsonNode)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.config.table.TableConfig overwriteTableConfigForTier(org.apache.pinot.spi.config.table.TableConfig, java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.helix.zookeeper.datamodel.ZNRecord toZNRecord(org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String FIELD_MISSING_MESSAGE_TEMPLATE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) TableConfigUtils()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigUtils$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "TableConfigUtils$1()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigUtils$2",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "TableConfigUtils$2()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigUtils$3",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "TableConfigUtils$3()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigUtils$4",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "TableConfigUtils$4()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigUtils$5",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "TableConfigUtils$5()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.TableConfigUtils$6",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "TableConfigUtils$6()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.SchemaUtils",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean deleteSchema(java.lang.String, int, java.lang.String)",
+        "PUBLIC(-) STATIC(-) boolean equalsIgnoreVersion(org.apache.pinot.spi.data.Schema, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.data.Schema fromZNRecord(org.apache.helix.zookeeper.datamodel.ZNRecord)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.data.Schema getSchema(java.lang.String, int, java.lang.String)",
+        "PUBLIC(-) STATIC(-) void main(java.lang.String[])",
+        "PUBLIC(-) STATIC(-) boolean postSchema(java.lang.String, int, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) STATIC(-) org.apache.helix.zookeeper.datamodel.ZNRecord toZNRecord(org.apache.pinot.spi.data.Schema)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.apache.hc.client5.http.impl.classic.CloseableHttpClient HTTP_CLIENT",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) SchemaUtils()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.TableConfigUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void convertFromLegacyTableConfig(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(+) STATIC(+) java.lang.String getPartitionColumn(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(+) STATIC(+) java.util.Set<java.lang.String> getRelevantTags(org.apache.pinot.spi.config.table.TableConfig)",
+        "PRIVATE(+) STATIC(+) void overwriteConfig(com.fasterxml.jackson.databind.JsonNode, com.fasterxml.jackson.databind.JsonNode)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.TableConfig overwriteTableConfigForTier(org.apache.pinot.spi.config.table.TableConfig, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
