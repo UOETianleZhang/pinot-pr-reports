@@ -1,0 +1,77 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotLogicalAggregateRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/traits/TraitAssignment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PinotDataDistribution.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/mapping/PinotDistMapping.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeSortInsertRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/WorkerExchangeAssignmentRule.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json"
+  ],
+  "mergedAt": "2025-06-26T16:50:03Z",
+  "number": 16204,
+  "title": "[multistage] Enable runInBroker / useBrokerPruning by Default + Misc. Improvements",
+  "url": "https://github.com/apache/pinot/pull/16204",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotLogicalAggregateRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) boolean isGroupTrimmingEnabled(org.apache.calcite.plan.RelOptRuleCall, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) boolean isGroupTrimmingEnabled(org.apache.calcite.plan.RelOptRuleCall, java.util.Map<java.lang.String,java.lang.String>, org.apache.calcite.rel.core.Aggregate)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.mapping.PinotDistMapping",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean doesDropCollation(org.apache.calcite.rel.RelNode)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.LiteModeWorkerAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.planner.physical.v2.PRelNode addExchangeAndWorkers(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PinotDataDistribution)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.physical.v2.PRelNode addExchangeAndWorkers(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNode, java.util.List<java.lang.String>)",
+        "PRIVATE(+) org.apache.pinot.query.planner.physical.v2.nodes.PhysicalExchange computeLeafExchange(org.apache.pinot.query.planner.physical.v2.PRelNode, java.util.List<java.lang.String>)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.query.planner.physical.v2.PinotDataDistribution inferPDD(org.apache.pinot.query.planner.physical.v2.PRelNode, java.util.List<org.apache.pinot.query.planner.physical.v2.PRelNode>, java.util.List<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.PinotDataDistribution",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.physical.v2.PinotDataDistribution apply(org.apache.pinot.query.planner.physical.v2.mapping.PinotDistMapping, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
