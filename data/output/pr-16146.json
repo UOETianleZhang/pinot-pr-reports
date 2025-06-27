@@ -1,0 +1,272 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/restlet/resources/PrimaryKeyCountInfo.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/PinotTaskManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/DiskUtilizationChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/RealtimeSegmentValidationManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/ResourceUtilizationChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/ResourceUtilizationManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/UtilizationChecker.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/DiskUtilizationCheckerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/RealtimeSegmentValidationManagerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/ResourceUtilizationManagerTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeTableDataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/BasePartitionDedupMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/BaseTableDedupMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/ConcurrentMapPartitionDedupMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/PartitionDedupMetadataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/dedup/TableDedupMetadataManager.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/dedup/BasePartitionDedupMetadataManagerTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/InstanceResource.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/PrimaryKeyCount.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/PrimaryKeyCountTest.java"
+  ],
+  "mergedAt": "2025-06-27T04:32:27Z",
+  "number": 16146,
+  "title": "Make the ResourceUtilizationChecker more easily extensible and add a PK count endpoint to the server side",
+  "url": "https://github.com/apache/pinot/pull/16146",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.restlet.resources.PrimaryKeyCountInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getInstanceId()",
+        "PUBLIC(+) long getLastUpdatedTimeInEpochMs()",
+        "PUBLIC(+) long getNumPrimaryKeys()",
+        "PUBLIC(+) java.util.Set<java.lang.String> getUpsertAndDedupTables()",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _numPrimaryKeys",
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _upsertAndDedupTables",
+        "PRIVATE(+) FINAL(+) long _lastUpdatedTimeInEpochMs",
+        "PRIVATE(+) FINAL(+) java.lang.String _instanceId"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PrimaryKeyCountInfo(java.lang.String, long, java.util.Set<java.lang.String>, long)",
+        "PUBLIC(+) PrimaryKeyCountInfo(java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.BaseControllerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) void addUtilizationChecker(org.apache.pinot.controller.validation.UtilizationChecker)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) java.util.List<org.apache.pinot.controller.validation.UtilizationChecker> _utilizationCheckers"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.DiskUtilizationChecker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void computeDiskUtilization(com.google.common.collect.BiMap<java.lang.String,java.lang.String>, org.apache.pinot.controller.util.CompletionServiceHelper)",
+        "PUBLIC(-) boolean isDiskUtilizationWithinLimits(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void computeResourceUtilization(com.google.common.collect.BiMap<java.lang.String,java.lang.String>, org.apache.pinot.controller.util.CompletionServiceHelper)",
+        "PUBLIC(+) java.lang.String getName()",
+        "PUBLIC(+) boolean isResourceUtilizationWithinLimits(java.lang.String, org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.ResourceUtilizationChecker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.validation.DiskUtilizationChecker _diskUtilizationChecker"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.controller.validation.UtilizationChecker> _utilizationCheckers"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ResourceUtilizationChecker(org.apache.pinot.controller.ControllerConf, org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager, org.apache.pinot.common.metrics.ControllerMetrics, org.apache.pinot.controller.validation.DiskUtilizationChecker, java.util.concurrent.Executor, org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ResourceUtilizationChecker(org.apache.pinot.controller.ControllerConf, org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager, org.apache.pinot.common.metrics.ControllerMetrics, java.util.List<org.apache.pinot.controller.validation.UtilizationChecker>, java.util.concurrent.Executor, org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.ResourceUtilizationManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean isResourceUtilizationWithinLimits(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean isResourceUtilizationWithinLimits(java.lang.String, org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.validation.DiskUtilizationChecker _diskUtilizationChecker"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.controller.validation.UtilizationChecker> _utilizationCheckers"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ResourceUtilizationManager(org.apache.pinot.controller.ControllerConf, org.apache.pinot.controller.validation.DiskUtilizationChecker)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ResourceUtilizationManager(org.apache.pinot.controller.ControllerConf, java.util.List<org.apache.pinot.controller.validation.UtilizationChecker>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.UtilizationChecker",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void computeResourceUtilization(com.google.common.collect.BiMap<java.lang.String,java.lang.String>, org.apache.pinot.controller.util.CompletionServiceHelper)",
+        "PUBLIC(+) ABSTRACT(+) java.lang.String getName()",
+        "PUBLIC(+) ABSTRACT(+) boolean isResourceUtilizationWithinLimits(java.lang.String, org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose TASK_GENERATION",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckPurpose REALTIME_INGESTION"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) UtilizationChecker$CheckPurpose(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeTableDataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.local.dedup.TableDedupMetadataManager getTableDedupMetadataManager()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.dedup.BasePartitionDedupMetadataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) ABSTRACT(-) long getNumPrimaryKeys()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.dedup.BaseTableDedupMetadataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.Integer,java.lang.Long> getPartitionToPrimaryKeyCount()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.dedup.ConcurrentMapPartitionDedupMetadataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.dedup.PartitionDedupMetadataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) long getNumPrimaryKeys()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.dedup.TableDedupMetadataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) java.util.Map<java.lang.Integer,java.lang.Long> getPartitionToPrimaryKeyCount()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.api.resources.InstanceResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getPrimaryKeyCountInfo(javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.api.resources.PrimaryKeyCount",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.restlet.resources.PrimaryKeyCountInfo computeNumberOfPrimaryKeys(java.lang.String, org.apache.pinot.core.data.manager.InstanceDataManager)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.Integer,java.lang.Long> getPartitionToPrimaryKeyCount(org.apache.pinot.core.data.manager.realtime.RealtimeTableDataManager)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PrimaryKeyCount()"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/query/optimizer/filter/TextMatchFilterOptimizer.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/optimizer/QueryOptimizerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/TextSearchQueriesTest.java"
+  ],
+  "mergedAt": "2025-06-27T04:22:27Z",
+  "number": 16203,
+  "title": "Handle text search options param in TEXT_MATCH in text filter optimizer.",
+  "url": "https://github.com/apache/pinot/pull/16203",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.query.optimizer.filter.TextMatchFilterOptimizer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) boolean hasTextMatchOptions(java.util.List<org.apache.pinot.common.request.Expression>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
