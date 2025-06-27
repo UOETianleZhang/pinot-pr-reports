@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-plugins/pinot-input-format/pinot-thrift/pom.xml",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-27T03:31:26Z",
+  "number": 16207,
+  "title": "Bump org.apache.thrift:libthrift from 0.18.1 to 0.22.0",
+  "url": "https://github.com/apache/pinot/pull/16207",
+  "jcmpClasses": []
+}
