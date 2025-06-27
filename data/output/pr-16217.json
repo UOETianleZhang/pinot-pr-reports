@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-27T19:07:05Z",
+  "number": 16217,
+  "title": "Bump com.dynatrace.hash4j:hash4j from 0.22.0 to 0.23.0",
+  "url": "https://github.com/apache/pinot/pull/16217",
+  "jcmpClasses": []
+}
