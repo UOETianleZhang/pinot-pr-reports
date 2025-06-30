@@ -1,0 +1,68 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManagerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/PauselessDedupRealtimeIngestionSegmentCommitFailureTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/PauselessRealtimeIngestionSegmentCommitFailureTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/realtime/utils/FailureInjectingRealtimeSegmentDataManager.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/realtime/utils/FailureInjectingRealtimeTableDataManager.java",
+    "pinot-integration-tests/src/test/resources/dedupPauselessIngestionTestData.tar.gz",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/table/DisasterRecoveryMode.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/table/ingestion/StreamIngestionConfig.java"
+  ],
+  "mergedAt": "2025-06-30T22:07:33Z",
+  "number": 16071,
+  "title": "Adds Disaster Recovery modes for Pauseless",
+  "url": "https://github.com/apache/pinot/pull/16071",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) boolean allowRepairOfErrorSegments(boolean, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.table.DisasterRecoveryMode",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.DisasterRecoveryMode valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.DisasterRecoveryMode[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.config.table.DisasterRecoveryMode ALWAYS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.config.table.DisasterRecoveryMode DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) DisasterRecoveryMode(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.config.table.ingestion.StreamIngestionConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.config.table.DisasterRecoveryMode getDisasterRecoveryMode()",
+        "PUBLIC(+) void setDisasterRecoveryMode(org.apache.pinot.spi.config.table.DisasterRecoveryMode)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.spi.config.table.DisasterRecoveryMode _disasterRecoveryMode"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-30T22:21:15Z",
+  "number": 16239,
+  "title": "Upgrade Helix version to 1.3.2",
+  "url": "https://github.com/apache/pinot/pull/16239",
+  "jcmpClasses": []
+}
