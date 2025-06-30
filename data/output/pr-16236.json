@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-30T19:41:56Z",
+  "number": 16236,
+  "title": "Bump org.testcontainers:testcontainers-bom from 1.21.2 to 1.21.3",
+  "url": "https://github.com/apache/pinot/pull/16236",
+  "jcmpClasses": []
+}

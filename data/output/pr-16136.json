@@ -1,0 +1,198 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceSummaryResult.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalanceResult.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalancerTest.java"
+  ],
+  "mergedAt": "2025-06-30T20:36:19Z",
+  "number": 16136,
+  "title": "Enhanced Tenant Rebalance Result with Aggregated Summary and Pre-check Result",
+  "url": "https://github.com/apache/pinot/pull/16136",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary$ConsumingSegmentSummaryPerServer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$SegmentInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ServerInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ServerSegmentChangeInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$TagInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary aggregateConsumingSegmentSummary(java.util.List<org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary>)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedServerSegmentChangeInfo> aggregateServerSegmentChangeInfo(java.util.List<org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult>)",
+        "PRIVATE(+) void computeAggregatedPreChecks(java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>)",
+        "PRIVATE(+) void computeAggregatedRebalanceSummary(java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>)",
+        "PRIVATE(+) void computeStatusSummary(java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>)",
+        "PRIVATE(+) STATIC(+) java.util.List<org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$TagInfo> createAggregatedTagsInfo(java.util.List<org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult>, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedServerSegmentChangeInfo>)",
+        "PUBLIC(+) java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedPrecheckResult> getAggregatedPreChecksResult()",
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult getAggregatedRebalanceSummary()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.controller.helix.core.rebalance.RebalanceResult$Status,java.lang.Integer> getStatusSummary()",
+        "PUBLIC(+) int getTotalTables()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.Map<org.apache.pinot.controller.helix.core.rebalance.RebalanceResult$Status,java.lang.Integer> _statusSummary",
+        "PRIVATE(+) java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedPrecheckResult> _aggregatedPreChecksResult",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult _aggregatedRebalanceSummary",
+        "PRIVATE(+) FINAL(+) int _totalTables"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) TenantRebalanceResult(java.lang.String, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TenantRebalanceResult(java.lang.String, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>, int, java.util.Map<org.apache.pinot.controller.helix.core.rebalance.RebalanceResult$Status,java.lang.Integer>, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedPrecheckResult>, org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedConsumingSegmentSummaryPerServer",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "void merge(org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary$ConsumingSegmentSummaryPerServer)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TenantRebalanceResult$AggregatedConsumingSegmentSummaryPerServer()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedPrecheckResult",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getErroredTables()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getPassedTables()",
+        "PUBLIC(+) int getTablesErroredCount()",
+        "PUBLIC(+) int getTablesPassedCount()",
+        "PUBLIC(+) int getTablesWarnedCount()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getWarnedTables()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.String> _warnedTables",
+        "PRIVATE(+) FINAL(+) int _tablesWarnedCount",
+        "PRIVATE(+) FINAL(+) int _tablesPassedCount",
+        "PRIVATE(+) FINAL(+) int _tablesErroredCount",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.String> _passedTables",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.String> _erroredTables"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TenantRebalanceResult$AggregatedPrecheckResult(int, int, int, java.util.Map<java.lang.String,java.lang.String>, java.util.Map<java.lang.String,java.lang.String>, java.util.Map<java.lang.String,java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedSegmentInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TenantRebalanceResult$AggregatedSegmentInfo(java.util.List<org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult>, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedServerSegmentChangeInfo>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedServerInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TenantRebalanceResult$AggregatedServerInfo(java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedServerSegmentChangeInfo>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedServerSegmentChangeInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "void merge(org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ServerSegmentChangeInfo)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TenantRebalanceResult$AggregatedServerSegmentChangeInfo()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult$AggregatedTagInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "void merge(org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$TagInfo)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TenantRebalanceResult$AggregatedTagInfo(java.lang.String)"
+      ]
+    }
+  ]
+}

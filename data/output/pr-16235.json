@@ -1,0 +1,71 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-06-30T19:41:37Z",
+  "number": 16235,
+  "title": "Bump immutables.version from 2.10.1 to 2.11.0",
+  "url": "https://github.com/apache/pinot/pull/16235",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotImplicitTableHintRule$Config",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean equalTo(int, org.apache.pinot.calcite.rel.rules.ImmutablePinotImplicitTableHintRule$Config)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotImplicitTableHintRule$Config)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotImplicitTableHintRule$Config$Builder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void from(short, java.lang.Object)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void mergeInternal(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutableTableOptions",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean equalTo(int, org.apache.pinot.calcite.rel.rules.ImmutableTableOptions)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutableTableOptions)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean equalTo(int, org.apache.pinot.query.ImmutableQueryEnvironment$Config)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.query.ImmutableQueryEnvironment$Config)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

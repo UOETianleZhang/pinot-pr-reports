@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/main/java/org/apache/pinot/plugin/stream/kafka30/KafkaPartitionLevelConnectionHandler.java"
+  ],
+  "mergedAt": "2025-06-30T19:42:57Z",
+  "number": 16227,
+  "title": "Bug fix: close admin client on consumer close in Kafka 3.0",
+  "url": "https://github.com/apache/pinot/pull/16227",
+  "jcmpClasses": []
+}
