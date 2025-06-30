@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PlanFragmentAndMailboxAssignment.java"
+  ],
+  "mergedAt": "2025-06-30T16:59:06Z",
+  "number": 16224,
+  "title": "[multistage] Fix Bug in MailboxInfo Ordering",
+  "url": "https://github.com/apache/pinot/pull/16224",
+  "jcmpClasses": []
+}
