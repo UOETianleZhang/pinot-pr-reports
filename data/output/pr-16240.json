@@ -1,0 +1,231 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PhysicalPlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeSortInsertRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeWorkerAssignmentRule.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-07-01T02:34:36Z",
+  "number": 16240,
+  "title": "[multistage] Add broker config defaults for physical optimizer and lite mode settings",
+  "url": "https://github.com/apache/pinot/pull/16240",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isRunInBroker(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) STATIC(-) boolean isUseBrokerPruning(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) STATIC(-) boolean isUseLiteMode(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) STATIC(-) boolean isUsePhysicalOptimizer(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) int getLiteModeServerStageLimit(java.util.Map<java.lang.String,java.lang.String>, int)",
+        "PUBLIC(+) STATIC(+) boolean isRunInBroker(java.util.Map<java.lang.String,java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean isUseBrokerPruning(java.util.Map<java.lang.String,java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean isUseLiteMode(java.util.Map<java.lang.String,java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean isUsePhysicalOptimizer(java.util.Map<java.lang.String,java.lang.String>, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.context.PhysicalPlannerContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getLiteModeServerStageLimit()",
+        "PUBLIC(+) boolean isRunInBroker()",
+        "PUBLIC(+) boolean isUseBrokerPruning()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _runInBroker",
+        "PRIVATE(+) FINAL(+) boolean _useBrokerPruning",
+        "PRIVATE(+) FINAL(+) int _liteModeServerStageLimit"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PhysicalPlannerContext(org.apache.pinot.core.routing.RoutingManager, java.lang.String, int, long, java.lang.String, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PhysicalPlannerContext(org.apache.pinot.core.routing.RoutingManager, java.lang.String, int, long, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, boolean, boolean, boolean, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int defaultLiteModeServerStageLimit()",
+        "PRIVATE(+) int defaultLiteModeServerStageLimitInitialize()",
+        "PUBLIC(+) boolean defaultRunInBroker()",
+        "PRIVATE(+) boolean defaultRunInBrokerInitialize()",
+        "PUBLIC(+) boolean defaultUseBrokerPruning()",
+        "PRIVATE(+) boolean defaultUseBrokerPruningInitialize()",
+        "PUBLIC(+) boolean defaultUseLiteMode()",
+        "PRIVATE(+) boolean defaultUseLiteModeInitialize()",
+        "PUBLIC(+) boolean defaultUsePhysicalOptimizer()",
+        "PRIVATE(+) boolean defaultUsePhysicalOptimizerInitialize()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config withDefaultLiteModeServerStageLimit(int)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config withDefaultRunInBroker(boolean)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config withDefaultUseBrokerPruning(boolean)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config withDefaultUseLiteMode(boolean)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config withDefaultUsePhysicalOptimizer(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean defaultUseBrokerPruning",
+        "PRIVATE(+) FINAL(+) int defaultLiteModeServerStageLimit",
+        "PRIVATE(+) FINAL(+) boolean defaultRunInBroker",
+        "PRIVATE(+) FINAL(+) boolean defaultUsePhysicalOptimizer",
+        "PRIVATE(+) FINAL(+) boolean defaultUseLiteMode"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, boolean, org.apache.pinot.query.routing.WorkerManager)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, int, org.apache.pinot.query.routing.WorkerManager)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder defaultLiteModeServerStageLimit(int)",
+        "PRIVATE(+) boolean defaultLiteModeServerStageLimitIsSet()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder defaultRunInBroker(boolean)",
+        "PRIVATE(+) boolean defaultRunInBrokerIsSet()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder defaultUseBrokerPruning(boolean)",
+        "PRIVATE(+) boolean defaultUseBrokerPruningIsSet()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder defaultUseLiteMode(boolean)",
+        "PRIVATE(+) boolean defaultUseLiteModeIsSet()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder defaultUsePhysicalOptimizer(boolean)",
+        "PRIVATE(+) boolean defaultUsePhysicalOptimizerIsSet()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean defaultUseBrokerPruning",
+        "PRIVATE(+) int defaultLiteModeServerStageLimit",
+        "PRIVATE(+) STATIC(+) FINAL(+) long OPT_BIT_DEFAULT_USE_PHYSICAL_OPTIMIZER",
+        "PRIVATE(+) STATIC(+) FINAL(+) long OPT_BIT_DEFAULT_USE_BROKER_PRUNING",
+        "PRIVATE(+) boolean defaultRunInBroker",
+        "PRIVATE(+) boolean defaultUseLiteMode",
+        "PRIVATE(+) STATIC(+) FINAL(+) long OPT_BIT_DEFAULT_LITE_MODE_SERVER_STAGE_LIMIT",
+        "PRIVATE(+) STATIC(+) FINAL(+) long OPT_BIT_DEFAULT_RUN_IN_BROKER",
+        "PRIVATE(+) boolean defaultUsePhysicalOptimizer",
+        "PRIVATE(+) STATIC(+) FINAL(+) long OPT_BIT_DEFAULT_USE_LITE_MODE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$InitShim",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "int defaultLiteModeServerStageLimit()",
+        "void defaultLiteModeServerStageLimit(int)",
+        "boolean defaultRunInBroker()",
+        "void defaultRunInBroker(boolean)",
+        "boolean defaultUseBrokerPruning()",
+        "void defaultUseBrokerPruning(boolean)",
+        "boolean defaultUseLiteMode()",
+        "void defaultUseLiteMode(boolean)",
+        "boolean defaultUsePhysicalOptimizer()",
+        "void defaultUsePhysicalOptimizer(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte defaultUsePhysicalOptimizerBuildStage",
+        "PRIVATE(+) boolean defaultUseBrokerPruning",
+        "PRIVATE(+) byte defaultLiteModeServerStageLimitBuildStage",
+        "PRIVATE(+) int defaultLiteModeServerStageLimit",
+        "PRIVATE(+) byte defaultRunInBrokerBuildStage",
+        "PRIVATE(+) byte defaultUseBrokerPruningBuildStage",
+        "PRIVATE(+) boolean defaultRunInBroker",
+        "PRIVATE(+) boolean defaultUsePhysicalOptimizer",
+        "PRIVATE(+) boolean defaultUseLiteMode",
+        "PRIVATE(+) byte defaultUseLiteModeBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.LiteModeSortInsertRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) int DEFAULT_SERVER_STAGE_LIMIT"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment$Config",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int defaultLiteModeServerStageLimit()",
+        "PUBLIC(+) boolean defaultRunInBroker()",
+        "PUBLIC(+) boolean defaultUseBrokerPruning()",
+        "PUBLIC(+) boolean defaultUseLiteMode()",
+        "PUBLIC(+) boolean defaultUsePhysicalOptimizer()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_USE_PHYSICAL_OPTIMIZER",
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_USE_BROKER_PRUNING",
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_USE_LITE_MODE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_USE_LITE_MODE",
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_USE_PHYSICAL_OPTIMIZER",
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_RUN_IN_BROKER",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_RUN_IN_BROKER",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_USE_BROKER_PRUNING",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_LITE_MODE_LEAF_STAGE_LIMIT",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_LITE_MODE_LEAF_STAGE_LIMIT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String LITE_MODE_SERVER_STAGE_LIMIT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

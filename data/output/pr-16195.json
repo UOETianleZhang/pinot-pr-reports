@@ -1,0 +1,113 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/datatable/DataTable.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/datatable/DataTableImplV4.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/datatable/DataTableUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/blocks/results/SelectionResultsBlock.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/reduce/SelectionDataTableReducer.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/selection/SelectionOperatorService.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/selection/SelectionOrderByTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/LeafOperator.java"
+  ],
+  "mergedAt": "2025-07-01T00:06:05Z",
+  "number": 16195,
+  "title": "[SSE] Remove redundant sorting when broker receives sorted block",
+  "url": "https://github.com/apache/pinot/pull/16195",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.datatable.DataTable$MetadataKey",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.datatable.DataTable$MetadataKey SORTED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.datatable.DataTable$MetadataValueType",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.datatable.DataTable$MetadataValueType BOOLEAN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.datatable.DataTableUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean decodeBoolean(java.nio.ByteBuffer)",
+        "PUBLIC(+) STATIC(+) byte[] encodeBoolean(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.blocks.results.SelectionResultsBlock",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getResultsMetadata()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.selection.SelectionOperatorService",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.broker.ResultTable renderResultTableWithOrdering()"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.Object[] formatRow(int, java.lang.Object[], org.apache.pinot.common.utils.DataSchema$ColumnDataType[])",
+        "PRIVATE(+) org.roaringbitmap.RoaringBitmap[][] getdataTableNullBitmaps(java.util.List<org.apache.pinot.common.datatable.DataTable>)",
+        "PRIVATE(+) java.lang.Object[] getDataTableRow(org.apache.pinot.common.datatable.DataTable, int, org.roaringbitmap.RoaringBitmap[])",
+        "PRIVATE(+) STATIC(+) org.roaringbitmap.RoaringBitmap[] getNullBitmap(org.apache.pinot.common.datatable.DataTable)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> heapSortDataTable(java.util.Collection<org.apache.pinot.common.datatable.DataTable>)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> nWayMergeDataTables(java.util.List<org.apache.pinot.common.datatable.DataTable>)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> processSingleDataTable(org.apache.pinot.common.datatable.DataTable)",
+        "PRIVATE(+) STATIC(+) void setNullsForRow(org.roaringbitmap.RoaringBitmap[], int, java.lang.Object[])"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.PriorityQueue<java.lang.Object[]> _rows"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _limit"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.selection.SelectionOperatorService$MergeItem",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) int _dataTableId",
+        "FINAL(+) java.lang.Object[] _row"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "SelectionOperatorService$MergeItem(java.lang.Object[], int)"
+      ]
+    }
+  ]
+}
