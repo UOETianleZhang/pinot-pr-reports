@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-01T20:11:18Z",
+  "number": 16246,
+  "title": "Bump org.checkerframework:checker-qual from 3.49.4 to 3.49.5",
+  "url": "https://github.com/apache/pinot/pull/16246",
+  "jcmpClasses": []
+}

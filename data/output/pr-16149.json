@@ -1,0 +1,115 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/ServiceStartableUtils.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/PinotSchemaRestletResourceTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/SanitizationTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/recordtransformer/RecordTransformerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/ColumnMetadataTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/SegmentPreProcessorTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/metadata/ColumnMetadataImpl.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/DimensionFieldSpec.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/FieldSpec.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/MetricFieldSpec.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/data/FieldSpecTest.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/data/SchemaTest.java"
+  ],
+  "mergedAt": "2025-07-01T20:16:05Z",
+  "number": 16149,
+  "title": "Allow setting MaxLengthExceedStrategy/MaxLength default settings for json column via cluster config",
+  "url": "https://github.com/apache/pinot/pull/16149",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.ServiceStartableUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void initFieldSpecConfig(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.data.DimensionFieldSpec",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) DimensionFieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, int, java.lang.Object)",
+        "PUBLIC(-) DimensionFieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, int, java.lang.Object, org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) DimensionFieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, java.lang.Integer, java.lang.Object, org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy)",
+        "PUBLIC(+) DimensionFieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, java.lang.Integer, java.lang.Object)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.data.FieldSpec",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void setMaxLength(int)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) int getDefaultJsonMaxLength()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy getDefaultJsonMaxLengthExceedStrategy()",
+        "PUBLIC(+) int getEffectiveMaxLength()",
+        "PUBLIC(+) org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy getEffectiveMaxLengthExceedStrategy()",
+        "PUBLIC(+) STATIC(+) void setDefaultJsonMaxLength(int)",
+        "PUBLIC(+) STATIC(+) void setDefaultJsonMaxLengthExceedStrategy(org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy)",
+        "PUBLIC(+) void setMaxLength(java.lang.Integer)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy _defaultJsonMaxLengthExceedStrategy",
+        "PRIVATE(+) STATIC(+) int _defaultJsonMaxLength"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) FieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, int, java.lang.Object, org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy)",
+        "PUBLIC(-) FieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, int, java.lang.Object)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) FieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, java.lang.Integer, java.lang.Object)",
+        "PUBLIC(+) FieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, java.lang.Integer, java.lang.Object, org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.data.MetricFieldSpec",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MetricFieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, java.lang.Object, int, org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) MetricFieldSpec(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, java.lang.Object, java.lang.Integer, org.apache.pinot.spi.data.FieldSpec$MaxLengthExceedStrategy)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$FieldSpecConfigs",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_DEFAULT_JSON_MAX_LENGTH_EXCEED_STRATEGY",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_DEFAULT_JSON_MAX_LENGTH"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CommonConstants$FieldSpecConfigs()"
+      ]
+    }
+  ]
+}
