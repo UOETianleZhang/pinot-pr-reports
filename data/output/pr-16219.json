@@ -1,0 +1,125 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/QueryMonitorConfig.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactoryTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java"
+  ],
+  "mergedAt": "2025-07-01T11:39:41Z",
+  "number": 16219,
+  "title": "Dynamic PerQueryCPUMemAccountant Config on Servers ",
+  "url": "https://github.com/apache/pinot/pull/16219",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) int getEntryCount()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.config.provider.PinotClusterConfigChangeListener getClusterConfigChangeListener()",
+        "PUBLIC(+) org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$WatcherTask getWatcherTask()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "PUBLIC",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.accounting.QueryMonitorConfig getQueryMonitorConfig()",
+        "PRIVATE(+) void logQueryMonitorConfig()",
+        "PUBLIC(+) void onChange(java.util.Set<java.lang.String>, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _alarmingSleepTimeDenominator",
+        "PRIVATE(-) FINAL(-) long _panicLevel",
+        "PRIVATE(-) FINAL(-) int _alarmingSleepTime",
+        "PRIVATE(-) FINAL(-) long _criticalLevel",
+        "PRIVATE(-) FINAL(-) long _criticalLevelAfterGC",
+        "PRIVATE(-) FINAL(-) long _alarmingLevel",
+        "PRIVATE(-) FINAL(-) long _minMemoryFootprintForKill",
+        "PRIVATE(-) FINAL(-) long _cpuTimeBasedKillingThresholdNS",
+        "PRIVATE(-) FINAL(-) boolean _publishHeapUsageMetric",
+        "PRIVATE(-) FINAL(-) long _maxHeapSize",
+        "PRIVATE(-) FINAL(-) int _gcWaitTime",
+        "PRIVATE(-) FINAL(-) boolean _isQueryKilledMetricEnabled",
+        "PRIVATE(-) FINAL(-) boolean _isCPUTimeBasedKillingEnabled",
+        "PRIVATE(-) FINAL(-) int _gcBackoffCount",
+        "PRIVATE(-) FINAL(-) int _normalSleepTime",
+        "PRIVATE(-) FINAL(-) boolean _oomKillQueryEnabled"
+      ],
+      "addedFields": [
+        "PROTECTED(+) java.util.concurrent.atomic.AtomicReference<org.apache.pinot.core.accounting.QueryMonitorConfig> _queryMonitorConfig"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.QueryMonitorConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getAlarmingLevel()",
+        "PUBLIC(+) int getAlarmingSleepTime()",
+        "PUBLIC(+) long getCpuTimeBasedKillingThresholdNS()",
+        "PUBLIC(+) long getCriticalLevel()",
+        "PUBLIC(+) long getCriticalLevelAfterGC()",
+        "PUBLIC(+) int getGcBackoffCount()",
+        "PUBLIC(+) int getGcWaitTime()",
+        "PUBLIC(+) long getMaxHeapSize()",
+        "PUBLIC(+) long getMinMemoryFootprintForKill()",
+        "PUBLIC(+) int getNormalSleepTime()",
+        "PUBLIC(+) long getPanicLevel()",
+        "PUBLIC(+) boolean isCpuTimeBasedKillingEnabled()",
+        "PUBLIC(+) boolean isOomKillQueryEnabled()",
+        "PUBLIC(+) boolean isPublishHeapUsageMetric()",
+        "PUBLIC(+) boolean isQueryKilledMetricEnabled()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _minMemoryFootprintForKill",
+        "PRIVATE(+) FINAL(+) long _cpuTimeBasedKillingThresholdNS",
+        "PRIVATE(+) FINAL(+) int _alarmingSleepTimeDenominator",
+        "PRIVATE(+) FINAL(+) boolean _publishHeapUsageMetric",
+        "PRIVATE(+) FINAL(+) long _maxHeapSize",
+        "PRIVATE(+) FINAL(+) int _gcWaitTime",
+        "PRIVATE(+) FINAL(+) long _panicLevel",
+        "PRIVATE(+) FINAL(+) boolean _isQueryKilledMetricEnabled",
+        "PRIVATE(+) FINAL(+) int _alarmingSleepTime",
+        "PRIVATE(+) FINAL(+) boolean _isCPUTimeBasedKillingEnabled",
+        "PRIVATE(+) FINAL(+) long _criticalLevel",
+        "PRIVATE(+) FINAL(+) int _gcBackoffCount",
+        "PRIVATE(+) FINAL(+) long _criticalLevelAfterGC",
+        "PRIVATE(+) FINAL(+) long _alarmingLevel",
+        "PRIVATE(+) FINAL(+) int _normalSleepTime",
+        "PRIVATE(+) FINAL(+) boolean _oomKillQueryEnabled"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "QueryMonitorConfig(org.apache.pinot.core.accounting.QueryMonitorConfig, java.util.Set<java.lang.String>, java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) QueryMonitorConfig(org.apache.pinot.spi.env.PinotConfiguration, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.config.provider.PinotClusterConfigChangeListener getClusterConfigChangeListener()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

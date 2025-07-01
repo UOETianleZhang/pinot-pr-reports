@@ -1,0 +1,122 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/querylog/QueryLogger.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/querylog/QueryLoggerTest.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/BrokerMeter.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/BrokerResponse.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/broker/BrokerResponseNative.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/broker/BrokerResponseNativeV2.java"
+  ],
+  "mergedAt": "2025-07-01T12:49:15Z",
+  "number": 16208,
+  "title": "Introduce rlsFiltersApplied in the broker response",
+  "url": "https://github.com/apache/pinot/pull/16208",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry RLS_FILTERS_APPLIED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.querylog.QueryLogger$QueryLogEntry$21",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "void doFormat(java.lang.StringBuilder, org.apache.pinot.broker.querylog.QueryLogger, org.apache.pinot.broker.querylog.QueryLogger$QueryLogParams)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) QueryLogger$QueryLogEntry$21(java.lang.String, int, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.MultiStageBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void checkAuthorization(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.query.QueryEnvironment$CompiledQuery)",
+        "PRIVATE(-) org.apache.pinot.common.response.BrokerResponse query(org.apache.pinot.query.QueryEnvironment$CompiledQuery, long, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.common.utils.Timer)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void checkAuthorization(org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.query.QueryEnvironment$CompiledQuery, java.util.concurrent.atomic.AtomicBoolean)",
+        "PRIVATE(+) org.apache.pinot.common.response.BrokerResponse query(org.apache.pinot.query.QueryEnvironment$CompiledQuery, long, org.apache.pinot.spi.auth.broker.RequesterIdentity, org.apache.pinot.spi.trace.RequestContext, javax.ws.rs.core.HttpHeaders, org.apache.pinot.common.utils.Timer, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metrics.BrokerMeter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.BrokerMeter RLS_FILTERS_APPLIED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.broker.BrokerResponseNative",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean getRLSFiltersApplied()",
+        "PUBLIC(+) void setRLSFiltersApplied(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _rlsFiltersApplied"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.broker.BrokerResponseNativeV2",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean getRLSFiltersApplied()",
+        "PUBLIC(+) void setRLSFiltersApplied(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _rlsFiltersApplied"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.BrokerResponse",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean getRLSFiltersApplied()",
+        "PUBLIC(+) ABSTRACT(+) void setRLSFiltersApplied(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
