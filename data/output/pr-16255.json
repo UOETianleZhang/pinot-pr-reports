@@ -1,0 +1,71 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/PinotTaskManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/DiskUtilizationChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/RealtimeSegmentValidationManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/ResourceUtilizationManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/UtilizationChecker.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/DiskUtilizationCheckerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/RealtimeSegmentValidationManagerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/ResourceUtilizationManagerTest.java"
+  ],
+  "mergedAt": "2025-07-02T18:16:57Z",
+  "number": 16255,
+  "title": "Update the UtilizationChecker and ResourceUtilizationManager to return an enum instead of boolean",
+  "url": "https://github.com/apache/pinot/pull/16255",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.validation.DiskUtilizationChecker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.ResourceUtilizationManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.UtilizationChecker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.UtilizationChecker$CheckResult",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckResult valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckResult[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckResult UNDETERMINED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckResult PASS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.validation.UtilizationChecker$CheckResult FAIL"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) UtilizationChecker$CheckResult(java.lang.String, int)"
+      ]
+    }
+  ]
+}
