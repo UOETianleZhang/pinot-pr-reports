@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/function/InbuiltFunctionEvaluator.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/function/InbuiltFunctionEvaluatorTest.java"
+  ],
+  "mergedAt": "2025-07-02T14:07:05Z",
+  "number": 16229,
+  "title": "Handle null values appropriately for AND / OR / NOT in InbuiltFunctionEvaluator",
+  "url": "https://github.com/apache/pinot/pull/16229",
+  "jcmpClasses": []
+}
