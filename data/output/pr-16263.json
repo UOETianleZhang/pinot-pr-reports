@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-02T19:29:40Z",
+  "number": 16263,
+  "title": "Bump org.apache.maven.enforcer:enforcer-api from 3.5.0 to 3.6.0",
+  "url": "https://github.com/apache/pinot/pull/16263",
+  "jcmpClasses": []
+}

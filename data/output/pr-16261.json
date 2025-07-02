@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-02T19:29:22Z",
+  "number": 16261,
+  "title": "Bump software.amazon.awssdk:bom from 2.31.74 to 2.31.75",
+  "url": "https://github.com/apache/pinot/pull/16261",
+  "jcmpClasses": []
+}

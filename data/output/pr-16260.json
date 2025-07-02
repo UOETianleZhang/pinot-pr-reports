@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-02T19:28:56Z",
+  "number": 16260,
+  "title": "Bump com.squareup.okio:okio-bom from 3.14.0 to 3.15.0",
+  "url": "https://github.com/apache/pinot/pull/16260",
+  "jcmpClasses": []
+}
