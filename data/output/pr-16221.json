@@ -1,0 +1,61 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PhysicalPlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/WorkerExchangeAssignmentRule.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/context/PhysicalPlannerContextTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeWorkerAssignmentRuleTest.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java",
+    "pinot-query-runtime/src/test/resources/queries/BasicQuery.json"
+  ],
+  "mergedAt": "2025-07-02T00:53:28Z",
+  "number": 16221,
+  "title": "[multistage] Add Support for Values in Physical Optimizer",
+  "url": "https://github.com/apache/pinot/pull/16221",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.context.PhysicalPlannerContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getRandomInstanceId()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PhysicalPlannerContext(org.apache.pinot.core.routing.RoutingManager, java.lang.String, int, long, java.lang.String, java.util.Map<java.lang.String,java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.LiteModeWorkerAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) void accumulateWorkers(org.apache.pinot.query.planner.physical.v2.PRelNode, java.util.Set<java.lang.String>)",
+        "STATIC(-) java.lang.String sampleWorker(java.util.List<java.lang.String>)",
+        "STATIC(-) java.lang.String stripIdPrefixFromWorker(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.util.Random RANDOM"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.WorkerExchangeAssignmentRule",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
