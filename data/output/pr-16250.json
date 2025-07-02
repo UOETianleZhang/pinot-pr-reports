@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/response/broker/BrokerResponseNative.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/broker/BrokerResponseNativeV2.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/RowLevelSecurityIntegrationTest.java"
+  ],
+  "mergedAt": "2025-07-02T06:40:30Z",
+  "number": 16250,
+  "title": "Add JsonProperty to correctly serialized and deserialize `rlsFiltersApplied`",
+  "url": "https://github.com/apache/pinot/pull/16250",
+  "jcmpClasses": []
+}
