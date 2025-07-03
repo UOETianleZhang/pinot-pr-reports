@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/core/data/function/InbuiltFunctionEvaluatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/function/InbuiltFunctionEvaluatorTest.java"
+  ],
+  "mergedAt": "2025-07-03T05:29:35Z",
+  "number": 16264,
+  "title": "Consolidate duplicate InbuiltFunctionEvaluatorTest classes",
+  "url": "https://github.com/apache/pinot/pull/16264",
+  "jcmpClasses": []
+}
