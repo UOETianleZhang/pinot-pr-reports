@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/mergerollup/MergeRollupTaskUtils.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/mergerollup/MergeRollupTaskUtilsTest.java"
+  ],
+  "mergedAt": "2025-07-03T00:11:32Z",
+  "number": 16209,
+  "title": "Improve merge rollup task validation.",
+  "url": "https://github.com/apache/pinot/pull/16209",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.mergerollup.MergeRollupTaskUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> getValidConfigKeys()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
