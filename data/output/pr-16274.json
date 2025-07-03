@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-03T17:58:50Z",
+  "number": 16274,
+  "title": "Bump com.github.luben:zstd-jni from 1.5.7-3 to 1.5.7-4",
+  "url": "https://github.com/apache/pinot/pull/16274",
+  "jcmpClasses": []
+}

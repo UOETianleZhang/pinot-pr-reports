@@ -1,0 +1,10 @@
+{
+  "files": [
+    ".github/workflows/scripts/pr-tests/.pinot_tests_unit.sh"
+  ],
+  "mergedAt": "2025-07-03T18:31:12Z",
+  "number": 16275,
+  "title": "Revert \"Allow CI unit test set 1 to run multi-threaded\"",
+  "url": "https://github.com/apache/pinot/pull/16275",
+  "jcmpClasses": []
+}
