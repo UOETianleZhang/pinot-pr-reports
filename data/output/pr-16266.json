@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/DefaultRebalancePreChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java"
+  ],
+  "mergedAt": "2025-07-02T23:25:11Z",
+  "number": 16266,
+  "title": "Formatting clean-up for rebalance",
+  "url": "https://github.com/apache/pinot/pull/16266",
+  "jcmpClasses": []
+}
