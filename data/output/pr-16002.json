@@ -1,0 +1,141 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/geospatial/BaseH3IndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/geospatial/OffHeapH3IndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/geospatial/OnHeapH3IndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/h3/H3IndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/BaseIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/ForwardIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/InvertedIndexAndDictionaryBasedForwardIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/bloomfilter/BloomFilterHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/BaseDefaultColumnHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/FSTIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/H3IndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/InvertedIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/JsonIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/RangeIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/TextIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/VectorIndexHandler.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/H3IndexTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/creator/IndexCreationContext.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/creator/GeoSpatialIndexCreator.java"
+  ],
+  "mergedAt": "2025-07-03T16:02:43Z",
+  "number": 16002,
+  "title": "Handle null Geometry gracefully In H3Index",
+  "url": "https://github.com/apache/pinot/pull/16002",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.geospatial.BaseH3IndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) java.lang.String _tableNameWithType"
+      ],
+      "removedConstructors": [
+        "BaseH3IndexCreator(java.io.File, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ],
+      "addedConstructors": [
+        "BaseH3IndexCreator(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.geospatial.OffHeapH3IndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) OffHeapH3IndexCreator(java.io.File, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) OffHeapH3IndexCreator(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.geospatial.OnHeapH3IndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) OnHeapH3IndexCreator(java.io.File, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) OnHeapH3IndexCreator(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.InvertedIndexAndDictionaryBasedForwardIndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) InvertedIndexAndDictionaryBasedForwardIndexCreator(java.lang.String, org.apache.pinot.segment.spi.store.SegmentDirectory, boolean, org.apache.pinot.segment.spi.index.ForwardIndexConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) InvertedIndexAndDictionaryBasedForwardIndexCreator(java.lang.String, org.apache.pinot.segment.spi.store.SegmentDirectory, boolean, org.apache.pinot.segment.spi.index.ForwardIndexConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, boolean, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.creator.IndexCreationContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) java.lang.String getTableNameWithType()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.creator.IndexCreationContext$Builder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.creator.IndexCreationContext$Builder withTableNameWithType(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String _tableNameWithType"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.creator.IndexCreationContext$Common",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getTableNameWithType()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) IndexCreationContext$Common(java.io.File, int, int, int, boolean, org.apache.pinot.spi.data.FieldSpec, boolean, int, int, int, boolean, java.lang.Comparable<?>, java.lang.Comparable<?>, boolean, java.lang.Object, boolean, boolean, boolean, org.apache.pinot.segment.spi.creator.ColumnStatistics, boolean, java.io.File, int[])"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) IndexCreationContext$Common(java.io.File, int, int, int, boolean, org.apache.pinot.spi.data.FieldSpec, boolean, int, int, int, boolean, java.lang.Comparable<?>, java.lang.Comparable<?>, boolean, java.lang.Object, boolean, boolean, boolean, org.apache.pinot.segment.spi.creator.ColumnStatistics, boolean, java.io.File, int[], java.lang.String)"
+      ]
+    }
+  ]
+}
