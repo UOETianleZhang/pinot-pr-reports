@@ -1,0 +1,330 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/TextIndexCreationTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/BaseQueriesTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/ForwardIndexDisabledMultiValueQueriesWithReloadTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/ForwardIndexDisabledSingleValueQueriesTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/ForwardIndexHandlerReloadQueriesTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/RangeQueriesTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/ImmutableSegmentLoader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentIndexCreationDriverImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/bloom/BloomIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/dictionary/DictionaryIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/forward/ForwardIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/fst/FstIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/h3/H3IndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/inverted/InvertedIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/json/JsonIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/BaseIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/ForwardIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/SegmentPreProcessor.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/bloomfilter/BloomFilterHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/BaseDefaultColumnHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/DefaultColumnHandlerFactory.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/V1DefaultColumnHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/V3DefaultColumnHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/FSTIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/H3IndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/InvertedIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/JsonIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/MultiColumnTextIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/RangeIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/TextIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/VectorIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/nullvalue/NullValueIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/range/RangeIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/text/TextIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/vector/VectorIndexType.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/creator/BitmapInvertedIndexTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/converter/SegmentV1V2ToV3FormatConverterTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/ForwardIndexHandlerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/LoaderTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/SegmentPreProcessorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/DefaultColumnHandlerTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/IndexType.java",
+    "pinot-segment-spi/src/test/java/org/apache/pinot/segment/spi/index/IndexServiceTest.java"
+  ],
+  "mergedAt": "2025-07-03T06:23:41Z",
+  "number": 16267,
+  "title": "Always use Schema from IndexLoadingConfig when loading segments",
+  "url": "https://github.com/apache/pinot/pull/16267",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.immutable.ImmutableSegmentLoader",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.ImmutableSegment load(java.io.File, org.apache.pinot.spi.utils.ReadMode, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.ImmutableSegment load(java.io.File, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.ImmutableSegment load(java.io.File, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, boolean)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.ImmutableSegment load(java.io.File, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, boolean, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)",
+        "PUBLIC(-) STATIC(-) boolean needPreprocess(org.apache.pinot.segment.spi.store.SegmentDirectory, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) STATIC(-) void preprocess(java.io.File, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)",
+        "PRIVATE(-) STATIC(-) void preprocessSegment(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) void preprocessSegment(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.BaseIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) org.apache.pinot.spi.data.Schema _schema"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) BaseIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BaseIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.bloomfilter.BloomFilterHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BloomFilterHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BloomFilterHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.defaultcolumn.BaseDefaultColumnHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) org.apache.pinot.spi.config.table.TableConfig _tableConfig"
+      ],
+      "removedConstructors": [
+        "PROTECTED(-) BaseDefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ],
+      "addedConstructors": [
+        "PROTECTED(+) BaseDefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.SegmentMetadata, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.defaultcolumn.DefaultColumnHandlerFactory",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.segment.index.loader.defaultcolumn.DefaultColumnHandler getDefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.segment.index.loader.defaultcolumn.DefaultColumnHandler getDefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.defaultcolumn.V1DefaultColumnHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) V1DefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) V1DefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.defaultcolumn.V3DefaultColumnHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) V3DefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) V3DefaultColumnHandler(java.io.File, org.apache.pinot.segment.spi.index.metadata.SegmentMetadataImpl, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.ForwardIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.data.Schema _schema"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ForwardIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) ForwardIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.data.Schema, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ForwardIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig)",
+        "PUBLIC(+) ForwardIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.FSTIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) FSTIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) FSTIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.H3IndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) H3IndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) H3IndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.InvertedIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) InvertedIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) InvertedIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.JsonIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) JsonIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) JsonIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.MultiColumnTextIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MultiColumnTextIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.MultiColumnTextIndexConfig, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) MultiColumnTextIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.config.table.MultiColumnTextIndexConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.RangeIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RangeIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) RangeIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.TextIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TextIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TextIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.VectorIndexHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) VectorIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) VectorIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.SegmentPreProcessor",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean processMultiColTextIndex(java.io.File, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) boolean processMultiColTextIndex(java.io.File, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.net.URI _indexDirURI"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.config.table.TableConfig _tableConfig"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) SegmentPreProcessor(org.apache.pinot.segment.spi.store.SegmentDirectory, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig, org.apache.pinot.spi.data.Schema)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) SegmentPreProcessor(org.apache.pinot.segment.spi.store.SegmentDirectory, org.apache.pinot.segment.local.segment.index.loader.IndexLoadingConfig)"
+      ]
+    }
+  ]
+}
