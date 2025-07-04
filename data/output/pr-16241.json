@@ -1,0 +1,93 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageQueryThrottler.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/requesthandler/MultiStageQueryThrottlerTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/executor/HardLimitExecutor.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/query/QueryThreadExceedStrategy.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/HardLimitExecutorTest.java"
+  ],
+  "mergedAt": "2025-07-04T06:37:59Z",
+  "number": 16241,
+  "title": "Log only mode for multistage query thread limiting",
+  "url": "https://github.com/apache/pinot/pull/16241",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.requesthandler.MultiStageQueryThrottler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.query.QueryThreadExceedStrategy _exceedStrategy"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.executor.HardLimitExecutor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.query.QueryThreadExceedStrategy _exceedStrategy"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) HardLimitExecutor(int, java.util.concurrent.ExecutorService, org.apache.pinot.spi.query.QueryThreadExceedStrategy)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.query.QueryThreadExceedStrategy",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.query.QueryThreadExceedStrategy valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.query.QueryThreadExceedStrategy[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.query.QueryThreadExceedStrategy LOG",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.query.QueryThreadExceedStrategy ERROR",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.query.QueryThreadExceedStrategy WAIT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) QueryThreadExceedStrategy(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_MSE_MAX_SERVER_QUERY_THREADS_EXCEED_STRATEGY",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_MSE_MAX_SERVER_QUERY_THREADS_EXCEED_STRATEGY"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Server",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_MSE_MAX_EXECUTION_THREADS_EXCEED_STRATEGY",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_MSE_MAX_EXECUTION_THREADS_EXCEED_STRATEGY"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

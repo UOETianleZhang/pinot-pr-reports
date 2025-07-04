@@ -1,0 +1,287 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/BinaryWorkloadScheduler.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/QuerySchedulerFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/fcfs/BoundedFCFSScheduler.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/fcfs/FCFSQueryScheduler.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/resources/BinaryWorkloadResourceManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/resources/PolicyBasedResourceManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/resources/ResourceManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/resources/UnboundedResourceManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/tokenbucket/TokenPriorityScheduler.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/ResourceManagerAccountingTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/scheduler/MultiLevelPriorityQueueTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/scheduler/PrioritySchedulerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/scheduler/QuerySchedulerFactoryTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/scheduler/resources/ResourceManagerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/scheduler/resources/UnboundedResourceManagerTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/QueryServerEnclosure.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/ServerInstance.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/worker/WorkerQueryServer.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutor.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutorTest.java"
+  ],
+  "mergedAt": "2025-07-04T06:30:20Z",
+  "number": 16271,
+  "title": "Throttle SSE & MSE Tasks if Server heap usage is above a threshold",
+  "url": "https://github.com/apache/pinot/pull/16271",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean throttleQuerySubmission()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$WatcherTask",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getHeapUsageBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.BinaryWorkloadScheduler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BinaryWorkloadScheduler(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BinaryWorkloadScheduler(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.fcfs.BoundedFCFSScheduler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.core.query.scheduler.fcfs.BoundedFCFSScheduler create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.query.scheduler.fcfs.BoundedFCFSScheduler create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.fcfs.FCFSQueryScheduler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) FCFSQueryScheduler(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) FCFSQueryScheduler(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.QuerySchedulerFactory",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.core.query.scheduler.QueryScheduler create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.query.scheduler.QueryScheduler create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.resources.BinaryWorkloadResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BinaryWorkloadResourceManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BinaryWorkloadResourceManager(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.resources.PolicyBasedResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PolicyBasedResourceManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PolicyBasedResourceManager(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.resources.ResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ResourceManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ResourceManager(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.resources.UnboundedResourceManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) UnboundedResourceManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) UnboundedResourceManager(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.tokenbucket.TokenPriorityScheduler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.core.query.scheduler.tokenbucket.TokenPriorityScheduler create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.query.scheduler.tokenbucket.TokenPriorityScheduler create(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.QueryRunner",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.data.manager.InstanceDataManager, org.apache.pinot.common.config.TlsConfig, java.util.function.BooleanSupplier)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void init(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.data.manager.InstanceDataManager, org.apache.pinot.common.config.TlsConfig, java.util.function.BooleanSupplier, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.ServerInstance",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ServerInstance(org.apache.pinot.server.conf.ServerConf, org.apache.helix.HelixManager, org.apache.pinot.server.access.AccessControlFactory, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler, org.apache.pinot.server.starter.helix.SendStatsPredicate)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ServerInstance(org.apache.pinot.server.conf.ServerConf, org.apache.helix.HelixManager, org.apache.pinot.server.access.AccessControlFactory, org.apache.pinot.segment.local.utils.SegmentOperationsThrottler, org.apache.pinot.server.starter.helix.SendStatsPredicate, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.server.worker.WorkerQueryServer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) WorkerQueryServer(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.data.manager.InstanceDataManager, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.server.starter.helix.SendStatsPredicate)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) WorkerQueryServer(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.data.manager.InstanceDataManager, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.server.starter.helix.SendStatsPredicate, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean throttleQuerySubmission()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.executor.ThrottleOnCriticalHeapUsageExecutor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) void checkTaskAllowed()",
+        "PROTECTED(+) java.util.concurrent.Callable<T> decorate(java.util.concurrent.Callable<T>)",
+        "PROTECTED(+) java.lang.Runnable decorate(java.lang.Runnable)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant _threadResourceUsageAccountant"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ThrottleOnCriticalHeapUsageExecutor(java.util.concurrent.ExecutorService, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Server",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_ENABLE_QUERY_SCHEDULER_THROTTLING_ON_HEAP_USAGE",
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_ENABLE_QUERY_SCHEDULER_THROTTLING_ON_HEAP_USAGE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
