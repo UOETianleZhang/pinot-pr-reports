@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManagerTest.java"
+  ],
+  "mergedAt": "2025-07-05T02:14:12Z",
+  "number": 16279,
+  "title": "Fix the potential deadlock for consuming segment",
+  "url": "https://github.com/apache/pinot/pull/16279",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeSegmentDataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) int CONSUMER_THREAD_INTERRUPT_INTERVAL_MS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
