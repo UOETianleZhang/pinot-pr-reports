@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerGauge.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/ConsumerCoordinator.java"
+  ],
+  "mergedAt": "2025-07-06T21:55:35Z",
+  "number": 16278,
+  "title": "Adds metric to emit consumer sempahore acquire time",
+  "url": "https://github.com/apache/pinot/pull/16278",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.ServerGauge",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerGauge CONSUMER_LOCK_WAIT_TIME_MS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
