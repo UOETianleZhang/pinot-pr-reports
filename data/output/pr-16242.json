@@ -1,0 +1,363 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/proto/plan.proto",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/PinotLogicalQueryPlanner.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/PlanFragmenter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/RelToPlanNodeConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/partitioning/EmptyKeySelector.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/partitioning/HashFunctionSelector.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/partitioning/KeySelectorFactory.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/partitioning/MultiColumnKeySelector.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/partitioning/SingleColumnKeySelector.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PRelToPlanNodeConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/plannode/ExchangeNode.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/plannode/MailboxSendNode.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/serde/PlanNodeDeserializer.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/serde/PlanNodeSerializer.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/logical/StagesTestBase.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/partitioning/HashFunctionSelectorTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/partitioning/KeySelectorHashFunctionTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MailboxSendOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/exchange/BlockExchange.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-07-06T21:28:26Z",
+  "number": 16242,
+  "title": "[multistage] Add configurable hash function support for KeySelector in query planning",
+  "url": "https://github.com/apache/pinot/pull/16242",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.proto.Plan$MailboxSendNode",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getHashFunction()",
+        "PUBLIC(+) com.google.protobuf.ByteString getHashFunctionBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int HASHFUNCTION_FIELD_NUMBER",
+        "PRIVATE(+) VOLATILE(+) java.lang.Object hashFunction_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$MailboxSendNode$Builder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$MailboxSendNode$Builder clearHashFunction()",
+        "PUBLIC(+) java.lang.String getHashFunction()",
+        "PUBLIC(+) com.google.protobuf.ByteString getHashFunctionBytes()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$MailboxSendNode$Builder setHashFunction(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$MailboxSendNode$Builder setHashFunctionBytes(com.google.protobuf.ByteString)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.Object hashFunction_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$MailboxSendNodeOrBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) java.lang.String getHashFunction()",
+        "PUBLIC(+) ABSTRACT(+) com.google.protobuf.ByteString getHashFunctionBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String defaultHashFunction()",
+        "PRIVATE(+) java.lang.String defaultHashFunctionInitialize()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config withDefaultHashFunction(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String defaultHashFunction"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, int, org.apache.pinot.query.routing.WorkerManager)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, int, java.lang.String, org.apache.pinot.query.routing.WorkerManager)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder defaultHashFunction(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String defaultHashFunction"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$InitShim",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "java.lang.String defaultHashFunction()",
+        "void defaultHashFunction(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte defaultHashFunctionBuildStage",
+        "PRIVATE(+) java.lang.String defaultHashFunction"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.PinotLogicalQueryPlanner",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.planner.SubPlan makePlan(org.apache.calcite.rel.RelRoot, org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode>, boolean)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.query.planner.PlanFragment planNodeToPlanFragment(org.apache.pinot.query.planner.plannode.PlanNode, org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode>, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.SubPlan makePlan(org.apache.calcite.rel.RelRoot, org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode>, boolean, java.lang.String)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.query.planner.PlanFragment planNodeToPlanFragment(org.apache.pinot.query.planner.plannode.PlanNode, org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode>, boolean, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.RelToPlanNodeConverter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _hashFunction"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) RelToPlanNodeConverter(org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) RelToPlanNodeConverter(org.apache.pinot.query.planner.logical.TransformationTracker$Builder<org.apache.pinot.query.planner.plannode.PlanNode,org.apache.calcite.rel.RelNode>, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.partitioning.EmptyKeySelector",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.partitioning.EmptyKeySelector getInstance(java.lang.String)",
+        "PUBLIC(+) java.lang.String hashAlgorithm()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _hashFunction"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) EmptyKeySelector(java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.partitioning.HashFunctionSelector",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) int absHashCode(java.lang.Object)",
+        "PUBLIC(+) STATIC(+) int computeHash(java.lang.Object, java.lang.String)",
+        "PUBLIC(+) STATIC(+) int computeMultiHash(java.lang.Object[], int[], java.lang.String)",
+        "PRIVATE(+) STATIC(+) int hashCode(java.lang.Object)",
+        "PRIVATE(+) STATIC(+) int hashCode(java.lang.Object[], int[])",
+        "PRIVATE(+) STATIC(+) int murmur2(java.lang.Object)",
+        "PRIVATE(+) STATIC(+) int murmur2(java.lang.Object[], int[])",
+        "PRIVATE(+) STATIC(+) int murmur3(java.lang.Object)",
+        "PRIVATE(+) STATIC(+) int murmur3(java.lang.Object[], int[])",
+        "PRIVATE(+) STATIC(+) byte[] toBytes(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MURMUR3",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MURMUR2",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String HASH_CODE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) HashFunctionSelector()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.partitioning.KeySelectorFactory",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.partitioning.KeySelector<?> getKeySelector(java.util.List<java.lang.Integer>, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.partitioning.MultiColumnKeySelector",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String hashAlgorithm()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _hashFunction"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) MultiColumnKeySelector(int[], java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.partitioning.SingleColumnKeySelector",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String hashAlgorithm()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _hashFunction"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) SingleColumnKeySelector(int, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.ExchangeNode",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getHashFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _hashFunction"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ExchangeNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean, boolean, java.util.Set<java.lang.String>, org.apache.pinot.query.planner.physical.v2.ExchangeStrategy)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ExchangeNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean, boolean, java.util.Set<java.lang.String>, org.apache.pinot.query.planner.physical.v2.ExchangeStrategy, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.MailboxSendNode",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getHashFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _hashFunction"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) MailboxSendNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, java.util.BitSet, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean)",
+        "PUBLIC(-) MailboxSendNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean)",
+        "PUBLIC(-) MailboxSendNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, java.util.List<java.lang.Integer>, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) MailboxSendNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, int, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean, java.lang.String)",
+        "PUBLIC(+) MailboxSendNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, java.util.List<java.lang.Integer>, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean, java.lang.String)",
+        "PRIVATE(+) MailboxSendNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, java.util.BitSet, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment$Config",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String defaultHashFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.exchange.BlockExchange",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.exchange.BlockExchange getExchange(java.util.List<org.apache.pinot.query.mailbox.SendingMailbox>, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, org.apache.pinot.query.runtime.blocks.BlockSplitter, java.util.function.Function<java.util.List<org.apache.pinot.query.mailbox.SendingMailbox>,java.lang.Integer>)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.exchange.BlockExchange getExchange(java.util.List<org.apache.pinot.query.mailbox.SendingMailbox>, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, org.apache.pinot.query.runtime.blocks.BlockSplitter)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.exchange.BlockExchange getExchange(java.util.List<org.apache.pinot.query.mailbox.SendingMailbox>, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, org.apache.pinot.query.runtime.blocks.BlockSplitter, java.util.function.Function<java.util.List<org.apache.pinot.query.mailbox.SendingMailbox>,java.lang.Integer>, java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.exchange.BlockExchange getExchange(java.util.List<org.apache.pinot.query.mailbox.SendingMailbox>, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, org.apache.pinot.query.runtime.blocks.BlockSplitter, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.MailboxSendOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) org.apache.pinot.query.runtime.operator.exchange.BlockExchange getBlockExchange(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, int, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.MailboxSendOperator$StatKey>, org.apache.pinot.query.runtime.blocks.BlockSplitter)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.query.runtime.operator.exchange.BlockExchange getBlockExchange(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, int, org.apache.pinot.query.planner.plannode.MailboxSendNode, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.MailboxSendOperator$StatKey>, org.apache.pinot.query.runtime.blocks.BlockSplitter)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_BROKER_DEFAULT_HASH_FUNCTION",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_BROKER_DEFAULT_HASH_FUNCTION"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
