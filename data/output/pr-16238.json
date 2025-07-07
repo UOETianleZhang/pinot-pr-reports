@@ -1,0 +1,88 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotQueryRuleSets.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/QueryPlannerRuleOptionsTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-07-07T21:16:43Z",
+  "number": 16238,
+  "title": "[Planner] Support disabling rule by default and enabling it with a queryOption",
+  "url": "https://github.com/apache/pinot/pull/16238",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Set<java.lang.String> getUsePlannerRules(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) java.util.List<org.apache.calcite.plan.RelOptRule> filterRuleList(java.util.List<org.apache.calcite.plan.RelOptRule>, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) org.apache.calcite.plan.hep.HepProgram getOptProgram(java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) boolean isRuleSkipped(java.lang.String, java.util.Set<java.lang.String>)",
+        "PRIVATE(-) STATIC(-) boolean noRulesSkipped(java.util.Set<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.util.List<org.apache.calcite.plan.RelOptRule> filterRuleList(java.util.List<org.apache.calcite.plan.RelOptRule>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)",
+        "PRIVATE(+) STATIC(+) org.apache.calcite.plan.hep.HepProgram getOptProgram(java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)",
+        "PRIVATE(+) STATIC(+) boolean isRuleSkipped(java.lang.String, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.util.Set<java.lang.String> DEFAULT_DISABLED_RULES"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$PlannerRuleNames",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SORT_JOIN_COPY",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SORT_JOIN_TRANSPOSE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String USE_PLANNER_RULES"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

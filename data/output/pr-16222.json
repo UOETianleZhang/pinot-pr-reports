@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalanceIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TableRebalancePauselessIntegrationTest.java"
+  ],
+  "mergedAt": "2025-07-07T21:09:17Z",
+  "number": 16222,
+  "title": "Extend the timeout in TableRebalanceIntegrationTest and TableRebalancePauselessIntegrationTest",
+  "url": "https://github.com/apache/pinot/pull/16222",
+  "jcmpClasses": []
+}

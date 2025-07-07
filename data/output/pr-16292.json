@@ -1,0 +1,13 @@
+{
+  "files": [
+    "helm/README-dev.md",
+    "helm/index.yaml",
+    "helm/pinot-0.3.4.tgz",
+    "helm/pinot/Chart.yaml"
+  ],
+  "mergedAt": "2025-07-07T21:05:59Z",
+  "number": 16292,
+  "title": "Release helmChart 0.3.4",
+  "url": "https://github.com/apache/pinot/pull/16292",
+  "jcmpClasses": []
+}
