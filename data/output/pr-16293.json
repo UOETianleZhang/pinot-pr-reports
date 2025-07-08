@@ -1,0 +1,13 @@
+{
+  "files": [
+    "helm/index.yaml",
+    "helm/pinot-0.3.1.tgz",
+    "helm/pinot-0.3.2.tgz",
+    "helm/pinot-0.3.3.tgz"
+  ],
+  "mergedAt": "2025-07-08T04:19:02Z",
+  "number": 16293,
+  "title": "repacking helm 0.3.1/0.3.2/0.3.3 with correct Charter version",
+  "url": "https://github.com/apache/pinot/pull/16293",
+  "jcmpClasses": []
+}
