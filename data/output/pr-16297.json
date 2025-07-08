@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/query/GroupByOperator.java"
+  ],
+  "mergedAt": "2025-07-08T20:32:18Z",
+  "number": 16297,
+  "title": "[SSE] Segment limit when order-by on group-by keys",
+  "url": "https://github.com/apache/pinot/pull/16297",
+  "jcmpClasses": []
+}

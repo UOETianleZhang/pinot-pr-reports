@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-08T19:55:52Z",
+  "number": 16301,
+  "title": "Bump com.diffplug.spotless:spotless-maven-plugin from 2.44.5 to 2.45.0",
+  "url": "https://github.com/apache/pinot/pull/16301",
+  "jcmpClasses": []
+}

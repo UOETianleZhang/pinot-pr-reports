@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/CLPEncodingRealtimeIntegrationTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/fwd/CLPForwardIndexCreatorV2.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/forward/CLPForwardIndexReaderV2.java"
+  ],
+  "mergedAt": "2025-07-08T20:27:49Z",
+  "number": 16298,
+  "title": "Fixed couple of  issues in CLP V2  implementation and added integration tests.",
+  "url": "https://github.com/apache/pinot/pull/16298",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.forward.CLPForwardIndexReaderV2",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.compression.ChunkCompressionType getCompressionType()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

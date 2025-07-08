@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-08T19:56:28Z",
+  "number": 16302,
+  "title": "Bump flink.version from 1.20.1 to 1.20.2",
+  "url": "https://github.com/apache/pinot/pull/16302",
+  "jcmpClasses": []
+}
