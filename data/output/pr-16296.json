@@ -1,0 +1,128 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/PhysicalPlannerContext.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/DistHashFunction.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/HashDistributionDesc.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PRelToPlanNodeConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/PlanFragmentAndMailboxAssignment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/nodes/PhysicalExchange.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/AggregatePushdownRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/RootExchangeInsertRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/SortPushdownRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/WorkerExchangeAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/plannode/MailboxSendNode.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/logical/StagesTestBase.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/PinotDataDistributionTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRuleTest.java"
+  ],
+  "mergedAt": "2025-07-08T06:47:01Z",
+  "number": 16296,
+  "title": "[multistage] Support Hash Functions Gracefully in V2 Optimizer",
+  "url": "https://github.com/apache/pinot/pull/16296",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.context.PhysicalPlannerContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction getDefaultHashFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction _defaultHashFunction"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PhysicalPlannerContext(org.apache.pinot.core.routing.RoutingManager, java.lang.String, int, long, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, boolean, boolean, boolean, int)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PhysicalPlannerContext(org.apache.pinot.core.routing.RoutingManager, java.lang.String, int, long, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, boolean, boolean, boolean, int, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.DistHashFunction",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isSupported(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction MURMUR3",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction MURMUR",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction HASHCODE",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction ABSHASHCODE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) DistHashFunction(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.HashDistributionDesc",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) HashDistributionDesc(java.util.List<java.lang.Integer>, java.lang.String, int)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) HashDistributionDesc(java.util.List<java.lang.Integer>, org.apache.pinot.query.planner.physical.v2.DistHashFunction, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.nodes.PhysicalExchange",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction getHashFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.physical.v2.DistHashFunction _hashFunction"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PhysicalExchange(int, org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PinotDataDistribution, java.util.List<java.lang.Integer>, org.apache.pinot.query.planner.physical.v2.ExchangeStrategy, org.apache.calcite.rel.RelCollation, org.apache.pinot.calcite.rel.traits.PinotExecStrategyTrait)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PhysicalExchange(int, org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PinotDataDistribution, java.util.List<java.lang.Integer>, org.apache.pinot.query.planner.physical.v2.ExchangeStrategy, org.apache.calcite.rel.RelCollation, org.apache.pinot.calcite.rel.traits.PinotExecStrategyTrait, org.apache.pinot.query.planner.physical.v2.DistHashFunction)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.WorkerExchangeAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String DEFAULT_HASH_FUNCTION"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.MailboxSendNode",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MailboxSendNode(int, org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, int, org.apache.pinot.calcite.rel.logical.PinotRelExchangeType, org.apache.calcite.rel.RelDistribution$Type, java.util.List<java.lang.Integer>, boolean, java.util.List<org.apache.calcite.rel.RelFieldCollation>, boolean)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
