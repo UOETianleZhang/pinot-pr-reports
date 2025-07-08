@@ -1,0 +1,53 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotQueryRuleSets.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotWindowSplitRule.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/calcite/rel/rules/PinotWindowSplitRuleTest.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json",
+    "pinot-query-planner/src/test/resources/queries/WindowFunctionPlans.json"
+  ],
+  "mergedAt": "2025-07-08T15:38:55Z",
+  "number": 16109,
+  "title": "[multistage] Multiple Window Group Support",
+  "url": "https://github.com/apache/pinot/pull/16109",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotWindowSplitRule",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean matches(org.apache.calcite.plan.RelOptRuleCall)",
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotWindowSplitRule INSTANCE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotWindowSplitRule()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotWindowSplitRule$RexConstantRefShifter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.calcite.rel.core.Window$Group apply(org.apache.calcite.rel.core.Window$Group)",
+        "PUBLIC(+) org.apache.calcite.rex.RexNode visitCall(org.apache.calcite.rex.RexCall)",
+        "PUBLIC(+) org.apache.calcite.rex.RexNode visitInputRef(org.apache.calcite.rex.RexInputRef)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _originalInputFieldCount",
+        "PRIVATE(+) FINAL(+) int _shift"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PinotWindowSplitRule$RexConstantRefShifter(int, int)"
+      ]
+    }
+  ]
+}
