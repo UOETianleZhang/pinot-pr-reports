@@ -1,0 +1,27 @@
+{
+  "files": [
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/BaseClusterIntegrationTest.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/ControllerRequestURLBuilder.java"
+  ],
+  "mergedAt": "2025-07-09T04:20:37Z",
+  "number": 16300,
+  "title": "Helper methods in integration test base classes",
+  "url": "https://github.com/apache/pinot/pull/16300",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.utils.builder.ControllerRequestURLBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String forValidDocIdsMetadata(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
