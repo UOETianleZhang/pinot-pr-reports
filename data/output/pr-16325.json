@@ -1,0 +1,44 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/store/TextIndexUtils.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-07-10T22:21:46Z",
+  "number": 16325,
+  "title": "Make Lucene IndexSearcher maxClauseCount configurable.",
+  "url": "https://github.com/apache/pinot/pull/16325",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.store.TextIndexUtils$LuceneMaxClauseCountConfigChangeListener",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onChange(java.util.Set<java.lang.String>, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TextIndexUtils$LuceneMaxClauseCountConfigChangeListener()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Lucene",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_LUCENE_MAX_CLAUSE_COUNT",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_LUCENE_MAX_CLAUSE_COUNT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CommonConstants$Lucene()"
+      ]
+    }
+  ]
+}
