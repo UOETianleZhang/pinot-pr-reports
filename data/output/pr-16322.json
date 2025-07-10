@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-10T18:01:43Z",
+  "number": 16322,
+  "title": "Bump commons-validator:commons-validator from 1.9.0 to 1.10.0",
+  "url": "https://github.com/apache/pinot/pull/16322",
+  "jcmpClasses": []
+}
