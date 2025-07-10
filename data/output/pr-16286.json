@@ -1,0 +1,38 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java"
+  ],
+  "mergedAt": "2025-07-10T21:08:59Z",
+  "number": 16286,
+  "title": "[timeseries] Adding controller endpoint to access timeseries API",
+  "url": "https://github.com/apache/pinot/pull/16286",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) javax.ws.rs.core.StreamingOutput constructQueryExceptionResponse(org.apache.pinot.spi.exception.QueryErrorMessage)",
+        "PUBLIC(-) void sendPostRaw(java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, java.io.OutputStream)",
+        "PUBLIC(-) javax.ws.rs.core.StreamingOutput sendRequestRaw(java.lang.String, java.lang.String, com.fasterxml.jackson.databind.node.ObjectNode, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) javax.ws.rs.core.StreamingOutput executeTimeSeriesQuery(javax.ws.rs.core.HttpHeaders, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
+        "PRIVATE(+) javax.ws.rs.core.StreamingOutput executeTimeSeriesQueryCatching(javax.ws.rs.core.HttpHeaders, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
+        "PRIVATE(+) java.util.Map<java.lang.String,java.lang.String> extractHeaders(javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(+) java.lang.String getHost(org.apache.helix.model.InstanceConfig)",
+        "PRIVATE(+) org.apache.helix.model.InstanceConfig getInstanceConfig(java.lang.String)",
+        "PRIVATE(+) int getPort(org.apache.helix.model.InstanceConfig)",
+        "PRIVATE(+) java.lang.String getTimeSeriesQueryURL(java.lang.String, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
+        "PUBLIC(+) javax.ws.rs.core.StreamingOutput handleTimeSeriesQueryRange(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(+) void sendRequestRaw(java.lang.String, java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, java.io.OutputStream)",
+        "PUBLIC(+) javax.ws.rs.core.StreamingOutput sendRequestRaw(java.lang.String, java.lang.String, java.lang.String, com.fasterxml.jackson.databind.node.ObjectNode, java.util.Map<java.lang.String,java.lang.String>)",
+        "PRIVATE(+) javax.ws.rs.core.StreamingOutput sendTimeSeriesRequestToBroker(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
