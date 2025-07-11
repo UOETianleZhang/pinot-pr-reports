@@ -1,0 +1,56 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountCancelTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/QueryMonitorConfigTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/TestResourceAccountant.java"
+  ],
+  "mergedAt": "2025-07-11T12:34:27Z",
+  "number": 16299,
+  "title": "Eliminate duplicate cancel attempts in PerQueryCPUMemAccountant",
+  "url": "https://github.com/apache/pinot/pull/16299",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Map<java.lang.String,org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$AggregatedStats> aggregate(boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void addThreadEntry(java.lang.Thread, org.apache.pinot.core.accounting.CPUMemThreadLevelAccountingObjects$ThreadEntry)",
+        "PROTECTED(+) void cancelQuery(org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$AggregatedStats)",
+        "PROTECTED(+) org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$WatcherTask createWatcherTask()",
+        "PUBLIC(+) java.util.Set<java.lang.String> getCancelSentQueries()",
+        "PUBLIC(+) java.util.Set<java.lang.String> getInactiveQueries()",
+        "PROTECTED(+) java.util.Map<java.lang.String,org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$AggregatedStats> getQueryResourcesImpl()",
+        "PUBLIC(+) void reapFinishedTasks()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) java.util.Set<java.lang.String> _cancelSentQueries"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PROTECTED(+) PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant(org.apache.pinot.spi.env.PinotConfiguration, boolean, boolean, boolean, java.util.Set<java.lang.String>, java.lang.String, org.apache.pinot.spi.config.instance.InstanceType)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$WatcherTask",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void interruptRunnerThread(java.lang.Thread)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void interruptRunnerThread(org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$AggregatedStats)",
+        "PUBLIC(+) void runOnce()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
