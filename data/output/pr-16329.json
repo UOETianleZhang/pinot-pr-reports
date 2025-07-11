@@ -1,0 +1,11 @@
+{
+  "files": [
+    "README.md",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-11T02:29:43Z",
+  "number": 16329,
+  "title": "docs: add macOS gRPC Java plugin build workaround and instructions",
+  "url": "https://github.com/apache/pinot/pull/16329",
+  "jcmpClasses": []
+}
