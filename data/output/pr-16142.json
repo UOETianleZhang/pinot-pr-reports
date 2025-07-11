@@ -1,0 +1,110 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountCancelTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/QueryServerEnclosure.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/DefaultAccountantTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/PerQueryCPUMemAccountantTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/QueryRunnerAccountingTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/MseCancelCallback.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-07-11T17:01:25Z",
+  "number": 16142,
+  "title": "Use QueryCancelCallback to cancel queries from ThreadResourceUsageAccountant",
+  "url": "https://github.com/apache/pinot/pull/16142",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void cancelQuery(org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$AggregatedStats)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void cancelQuery(java.lang.String, java.lang.Thread)",
+        "PUBLIC(+) org.apache.pinot.spi.accounting.MseCancelCallback getQueryCancelCallback(java.lang.String)",
+        "PUBLIC(+) void registerMseCancelCallback(java.lang.String, org.apache.pinot.spi.accounting.MseCancelCallback)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "com.google.common.cache.Cache<java.lang.String,org.apache.pinot.spi.accounting.MseCancelCallback> _queryCancelCallbacks"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$WatcherTask",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void interruptRunnerThread(org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$AggregatedStats)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void terminateQuery(org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$AggregatedStats)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.QueryRunner",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant _resourceUsageAccountant",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.accounting.MseCancelCallback _mseCancelCallback"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.MseCancelCallback",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void cancelQuery(long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void registerMseCancelCallback(java.lang.String, org.apache.pinot.spi.accounting.MseCancelCallback)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Accounting",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_CANCEL_CALLBACK_CACHE_MAX_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_CANCEL_CALLBACK_CACHE_MAX_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_CANCEL_CALLBACK_CACHE_EXPIRY_SECONDS",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_CANCEL_CALLBACK_CACHE_EXPIRY_SECONDS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
