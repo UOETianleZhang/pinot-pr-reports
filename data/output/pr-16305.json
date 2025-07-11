@@ -1,0 +1,15 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/App.tsx",
+    "pinot-controller/src/main/resources/app/components/Query/QuerySideBar.tsx",
+    "pinot-controller/src/main/resources/app/components/Query/TimeseriesQueryPage.tsx",
+    "pinot-controller/src/main/resources/app/pages/TimeseriesQueryPage.tsx",
+    "pinot-controller/src/main/resources/app/requests/index.ts",
+    "pinot-controller/src/main/resources/app/router.tsx"
+  ],
+  "mergedAt": "2025-07-11T04:41:52Z",
+  "number": 16305,
+  "title": "[timeseries] Adding timeseries query execution UI in pinot-controller",
+  "url": "https://github.com/apache/pinot/pull/16305",
+  "jcmpClasses": []
+}
