@@ -1,0 +1,88 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/BaseIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/ForwardIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/InvertedIndexAndDictionaryBasedForwardIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/bloomfilter/BloomFilterHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/BaseDefaultColumnHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/FSTIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/H3IndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/InvertedIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/JsonIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/RangeIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/TextIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/VectorIndexHandler.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/creator/IndexCreationContext.java"
+  ],
+  "mergedAt": "2025-07-11T06:21:30Z",
+  "number": 16331,
+  "title": "Add the continueOnError flag to the IndexCreationContext",
+  "url": "https://github.com/apache/pinot/pull/16331",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.InvertedIndexAndDictionaryBasedForwardIndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) InvertedIndexAndDictionaryBasedForwardIndexCreator(java.lang.String, org.apache.pinot.segment.spi.store.SegmentDirectory, boolean, org.apache.pinot.segment.spi.index.ForwardIndexConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, boolean, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) InvertedIndexAndDictionaryBasedForwardIndexCreator(java.lang.String, org.apache.pinot.segment.spi.store.SegmentDirectory, boolean, org.apache.pinot.segment.spi.index.ForwardIndexConfig, org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, boolean, java.lang.String, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.creator.IndexCreationContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean isContinueOnError()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.creator.IndexCreationContext$Builder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.creator.IndexCreationContext$Builder withContinueOnError(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.creator.IndexCreationContext$Common",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isContinueOnError()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) IndexCreationContext$Common(java.io.File, int, int, int, boolean, org.apache.pinot.spi.data.FieldSpec, boolean, int, int, int, boolean, java.lang.Comparable<?>, java.lang.Comparable<?>, boolean, java.lang.Object, boolean, boolean, boolean, org.apache.pinot.segment.spi.creator.ColumnStatistics, boolean, java.io.File, int[], java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) IndexCreationContext$Common(java.io.File, int, int, int, boolean, org.apache.pinot.spi.data.FieldSpec, boolean, int, int, int, boolean, java.lang.Comparable<?>, java.lang.Comparable<?>, boolean, java.lang.Object, boolean, boolean, boolean, org.apache.pinot.segment.spi.creator.ColumnStatistics, boolean, java.io.File, int[], java.lang.String, boolean)"
+      ]
+    }
+  ]
+}
