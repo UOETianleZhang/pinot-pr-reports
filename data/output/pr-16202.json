@@ -1,0 +1,57 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTenantRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantTableWithProperties.java"
+  ],
+  "mergedAt": "2025-07-11T03:17:22Z",
+  "number": 16202,
+  "title": "Add withTableProperties to Get Tenant Table API",
+  "url": "https://github.com/apache/pinot/pull/16202",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTenantRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getTablesOnTenant(java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(-) java.lang.String getTablesServedFromServerTenant(java.lang.String, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getTablesOnTenant(java.lang.String, java.lang.String, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(+) java.lang.String getTablesServedFromServerTenant(java.lang.String, java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TABLES_WITH_PROPERTIES",
+        "org.apache.pinot.controller.util.TableSizeReader _tableSizeReader"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantTableWithProperties",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _isDedupEnabled",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.config.table.TableType _tableType",
+        "PRIVATE(+) FINAL(+) boolean _isUpsertEnabled",
+        "PRIVATE(+) FINAL(+) int _replication",
+        "PRIVATE(+) FINAL(+) int _totalSegments",
+        "PRIVATE(+) STATIC(+) FINAL(+) int TABLE_SIZE_READER_TIMEOUT_MS",
+        "PRIVATE(+) FINAL(+) boolean _isDimTable",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) long _estimatedTableSizeInBytes",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TenantTableWithProperties(java.lang.String, org.apache.pinot.spi.config.table.TableType, boolean, int, int, long, boolean, boolean)",
+        "PUBLIC(+) TenantTableWithProperties(org.apache.pinot.spi.config.table.TableConfig, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, org.apache.pinot.controller.util.TableSizeReader)"
+      ]
+    }
+  ]
+}

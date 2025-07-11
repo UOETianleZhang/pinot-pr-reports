@@ -1,0 +1,427 @@
+{
+  "files": [
+    "pinot-connectors/pinot-flink-connector/src/main/java/org/apache/pinot/connector/flink/sink/FlinkSegmentWriter.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/segment/processing/framework/SegmentProcessorFramework.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/segment/processing/mapper/SegmentMapper.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/mergerollup/DimensionValueTransformer.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/mergerollup/DimensionValueTransformerTest.java",
+    "pinot-plugins/pinot-segment-writer/pinot-segment-writer-file-based/src/main/java/org/apache/pinot/plugin/segmentwriter/filebased/FileBasedSegmentWriter.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/converter/RealtimeSegmentConverter.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/writer/StatelessRealtimeSegmentWriter.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/ComplexTypeTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/CompositeTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/DataTypeTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/ExpressionTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/FilterTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/NullValueTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/RecordTransformerUtils.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/SanitizationTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/SchemaConformingTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/SpecialValueTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/TimeValidationTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/RecordReaderSegmentCreationDataSource.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/TransformPipeline.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentIndexCreationDriverImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/IngestionUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentDedupTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplNullValueVectorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplUpsertComparisonColTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplUpsertTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/recordtransformer/ComplexTypeTransformerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/recordtransformer/CompositeTransformerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/recordtransformer/ExpressionTransformerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/recordtransformer/RecordTransformerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/recordtransformer/SchemaConformingTransformerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/creator/TransformPipelineTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/readers/RecordReaderSampleDataTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/data/readers/GenericRow.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/recordtransformer/RecordTransformer.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/recordtransformer/enricher/RecordEnricher.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/DataImportDryRunCommand.java"
+  ],
+  "mergedAt": "2025-07-11T04:04:13Z",
+  "number": 16254,
+  "title": "Refine record transform handling",
+  "url": "https://github.com/apache/pinot/pull/16254",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.segment.processing.mapper.SegmentMapper",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.segment.local.segment.creator.TransformPipeline getTransformPipeline(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.flink.sink.FlinkSegmentWriter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.recordtransformer.RecordTransformer _recordTransformer"
+      ],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.segment.local.segment.creator.TransformPipeline _transformPipeline"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.mergerollup.DimensionValueTransformer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.Set<java.lang.String> _dimensionsToErase",
+        "PRIVATE(-) FINAL(-) java.util.Map<java.lang.String,java.lang.Object> _defaultNullValues"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.Object> _dimensionValues"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer getComplexTypeTransformer(org.apache.pinot.spi.config.table.TableConfig)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.spi.config.table.ingestion.ComplexTypeConfig$CollectionNotUnnestedToJson parseCollectionNotUnnestedToJson(org.apache.pinot.spi.config.table.TableConfig)",
+        "PRIVATE(-) STATIC(-) java.lang.String parseDelimiter(org.apache.pinot.spi.config.table.TableConfig)",
+        "PRIVATE(-) STATIC(-) java.util.List<java.lang.String> parseFieldsToUnnest(org.apache.pinot.spi.config.table.TableConfig)",
+        "PRIVATE(-) STATIC(-) java.util.Map<java.lang.String,java.lang.String> parsePrefixesToRename(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) org.apache.pinot.spi.data.readers.GenericRow transform(org.apache.pinot.spi.data.readers.GenericRow)",
+        "PRIVATE(-) org.apache.pinot.spi.data.readers.GenericRow unnestCollection(org.apache.pinot.spi.data.readers.GenericRow, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer create(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.data.readers.GenericRow> transform(java.util.List<org.apache.pinot.spi.data.readers.GenericRow>)",
+        "PRIVATE(+) java.util.List<org.apache.pinot.spi.data.readers.GenericRow> unnestCollection(java.util.List<org.apache.pinot.spi.data.readers.GenericRow>, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "ComplexTypeTransformer(java.util.List<java.lang.String>, java.lang.String)",
+        "ComplexTypeTransformer(java.util.List<java.lang.String>, java.lang.String, org.apache.pinot.spi.config.table.ingestion.ComplexTypeConfig$CollectionNotUnnestedToJson, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) ComplexTypeTransformer(java.util.List<java.lang.String>, java.lang.String, org.apache.pinot.spi.config.table.ingestion.ComplexTypeConfig$CollectionNotUnnestedToJson, java.util.Map<java.lang.String,java.lang.String>, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer build()",
+        "PUBLIC(+) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer$Builder setCollectionNotUnnestedToJson(org.apache.pinot.spi.config.table.ingestion.ComplexTypeConfig$CollectionNotUnnestedToJson)",
+        "PUBLIC(+) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer$Builder setContinueOnError(boolean)",
+        "PUBLIC(+) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer$Builder setDelimiter(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer$Builder setFieldsToUnnest(java.util.List<java.lang.String>)",
+        "PUBLIC(+) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer$Builder setPrefixesToRename(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.List<java.lang.String> _fieldsToUnnest",
+        "PRIVATE(+) org.apache.pinot.spi.config.table.ingestion.ComplexTypeConfig$CollectionNotUnnestedToJson _collectionNotUnnestedToJson",
+        "PRIVATE(+) java.lang.String _delimiter",
+        "PRIVATE(+) java.util.Map<java.lang.String,java.lang.String> _prefixesToRename",
+        "PRIVATE(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "ComplexTypeTransformer$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.CompositeTransformer",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) void addIfNotNoOp(java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>, org.apache.pinot.spi.recordtransformer.RecordTransformer)",
+        "PRIVATE(-) STATIC(-) void addRecordEnricherTransformers(org.apache.pinot.spi.config.table.TableConfig, java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>, boolean)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.recordtransformer.CompositeTransformer composeAllTransformers(java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.recordtransformer.CompositeTransformer getDefaultTransformer(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, org.apache.pinot.common.metadata.segment.SegmentZKMetadata)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.recordtransformer.CompositeTransformer getDefaultTransformer(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer> getDefaultTransformers(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(-) java.util.Set<java.lang.String> getInputColumns()",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.recordtransformer.CompositeTransformer getPassThroughTransformer()",
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer> getPreComplexTypeTransformers(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) org.apache.pinot.spi.data.readers.GenericRow transform(org.apache.pinot.spi.data.readers.GenericRow)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer> _transformers"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) CompositeTransformer(java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.DataTypeTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.ExpressionTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.FilterTransformer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.data.readers.GenericRow transform(org.apache.pinot.spi.data.readers.GenericRow)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) long getNumRecordsFiltered()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.data.readers.GenericRow> transform(java.util.List<org.apache.pinot.spi.data.readers.GenericRow>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) long _numRecordsFiltered"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.NullValueTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.RecordTransformerUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) void addIfNotNoOp(java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>, org.apache.pinot.spi.recordtransformer.RecordTransformer)",
+        "PRIVATE(+) STATIC(+) void addRecordEnricherTransformers(org.apache.pinot.spi.config.table.TableConfig, java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>, boolean)",
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer> getDefaultTransformers(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer> getTransformers(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema, boolean, boolean, boolean, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) RecordTransformerUtils()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.SanitizationTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.SchemaConformingTransformer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean isNoOp()",
+        "PUBLIC(-) org.apache.pinot.spi.data.readers.GenericRow transform(org.apache.pinot.spi.data.readers.GenericRow)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.recordtransformer.SchemaConformingTransformer create(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)",
+        "PRIVATE(+) void processRecord(org.apache.pinot.spi.data.readers.GenericRow, org.apache.pinot.spi.data.readers.GenericRow, java.util.Map<java.lang.String,java.lang.Object>, java.util.Map<java.lang.String,java.lang.Object>, java.util.Map<java.lang.String,java.lang.Object>)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.data.readers.GenericRow> transform(java.util.List<org.apache.pinot.spi.data.readers.GenericRow>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.SpecialValueTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.TimeValidationTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.TransformPipeline",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.local.segment.creator.TransformPipeline getPassThroughPipeline()",
+        "PRIVATE(-) void processPlainRow(org.apache.pinot.spi.data.readers.GenericRow, org.apache.pinot.segment.local.segment.creator.TransformPipeline$Result)",
+        "PUBLIC(-) void processRow(org.apache.pinot.spi.data.readers.GenericRow, org.apache.pinot.segment.local.segment.creator.TransformPipeline$Result)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.segment.creator.TransformPipeline getPassThroughPipeline(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.segment.local.segment.creator.TransformPipeline$Result processRow(org.apache.pinot.spi.data.readers.GenericRow)",
+        "PUBLIC(+) void reportStats()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer _complexTypeTransformer",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.recordtransformer.RecordTransformer _recordTransformer",
+        "PRIVATE(-) FINAL(-) java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer> _preComplexTypeTransformers"
+      ],
+      "addedFields": [
+        "PRIVATE(+) long _numRowsIncomplete",
+        "PRIVATE(+) long _numRowsSanitized",
+        "PRIVATE(+) long _numRowsProcessed",
+        "PRIVATE(+) long _numRowsFiltered",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer> _transformers",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.local.recordtransformer.FilterTransformer _filterTransformer"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) TransformPipeline(java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>, org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer, org.apache.pinot.spi.recordtransformer.RecordTransformer)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TransformPipeline(java.lang.String, java.util.List<org.apache.pinot.spi.recordtransformer.RecordTransformer>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.TransformPipeline$Result",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void addTransformedRows(org.apache.pinot.spi.data.readers.GenericRow)",
+        "PUBLIC(-) void incIncompleteRowCount()",
+        "PUBLIC(-) void incSanitizedRowCount()",
+        "PUBLIC(-) void incSkippedRowCount()",
+        "PUBLIC(-) void reset()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TransformPipeline$Result()"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) TransformPipeline$Result(java.util.List<org.apache.pinot.spi.data.readers.GenericRow>, int, int, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.IngestionUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean shouldIngestRow(org.apache.pinot.spi.data.readers.GenericRow)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.segmentwriter.filebased.FileBasedSegmentWriter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.recordtransformer.RecordTransformer _recordTransformer"
+      ],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.segment.local.segment.creator.TransformPipeline _transformPipeline"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.data.readers.GenericRow",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isSpecialKeyType(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean isIncomplete()",
+        "PUBLIC(+) boolean isSanitized()",
+        "PUBLIC(+) void markIncomplete()",
+        "PUBLIC(+) void markSanitized()"
+      ],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String INCOMPLETE_RECORD_KEY",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String SANITIZED_RECORD_KEY"
+      ],
+      "addedFields": [
+        "PRIVATE(+) boolean _sanitized",
+        "PRIVATE(+) boolean _incomplete"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.recordtransformer.enricher.RecordEnricher",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.recordtransformer.RecordTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void reportStats()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.data.readers.GenericRow> transform(java.util.List<org.apache.pinot.spi.data.readers.GenericRow>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
