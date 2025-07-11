@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/query/request/context/QueryContext.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/GroupByTrimmingIntegrationTest.java"
+  ],
+  "mergedAt": "2025-07-11T19:24:50Z",
+  "number": 16312,
+  "title": "Optimize QueryContext.isUnsafeTrim",
+  "url": "https://github.com/apache/pinot/pull/16312",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.query.request.context.QueryContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _isUnsafeTrim"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
