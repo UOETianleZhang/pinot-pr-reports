@@ -1,0 +1,69 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/traits/TraitAssignment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/RelToPRelConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/nodes/PhysicalIntersect.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/WorkerExchangeAssignmentRule.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/QueryRunnerTestBase.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/ResourceBasedQueriesTest.java",
+    "pinot-query-runtime/src/test/resources/queries/QueryHints.json"
+  ],
+  "mergedAt": "2025-07-11T23:02:52Z",
+  "number": 16330,
+  "title": "[multistage] Fix Bugs in SetOp Handling and Multi-Column Join",
+  "url": "https://github.com/apache/pinot/pull/16330",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.calcite.rel.traits.TraitAssignment",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "org.apache.calcite.rel.RelNode assignSetOp(org.apache.calcite.rel.core.SetOp)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.nodes.PhysicalIntersect",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.calcite.rel.core.SetOp copy(org.apache.calcite.plan.RelTraitSet, java.util.List<org.apache.calcite.rel.RelNode>, boolean)",
+        "PUBLIC(+) int getNodeId()",
+        "PUBLIC(+) org.apache.pinot.query.planner.physical.v2.PinotDataDistribution getPinotDataDistribution()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.query.planner.physical.v2.PRelNode> getPRelInputs()",
+        "PUBLIC(+) boolean isLeafStage()",
+        "PUBLIC(+) org.apache.calcite.rel.RelNode unwrap()",
+        "PUBLIC(+) org.apache.pinot.query.planner.physical.v2.PRelNode with(int, java.util.List<org.apache.pinot.query.planner.physical.v2.PRelNode>, org.apache.pinot.query.planner.physical.v2.PinotDataDistribution)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.planner.physical.v2.PRelNode> _pRelInputs",
+        "PRIVATE(+) FINAL(+) int _nodeId",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.physical.v2.PinotDataDistribution _pinotDataDistribution"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PhysicalIntersect(org.apache.calcite.plan.RelOptCluster, org.apache.calcite.plan.RelTraitSet, java.util.List<org.apache.calcite.rel.hint.RelHint>, java.util.List<org.apache.pinot.query.planner.physical.v2.PRelNode>, boolean, int, org.apache.pinot.query.planner.physical.v2.PinotDataDistribution)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.WorkerExchangeAssignmentRule",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Optional<org.apache.pinot.query.planner.physical.v2.HashDistributionDesc> getLeftInputHashDistributionDesc(org.apache.calcite.rel.core.SetOp)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

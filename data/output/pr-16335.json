@@ -1,0 +1,11 @@
+{
+  "files": [
+    "README.md",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-11T23:17:25Z",
+  "number": 16335,
+  "title": "fix: Add macOS ARM64 profiles for protobuf-maven-plugin with Homebrew support",
+  "url": "https://github.com/apache/pinot/pull/16335",
+  "jcmpClasses": []
+}
