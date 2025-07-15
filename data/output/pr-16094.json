@@ -1,0 +1,219 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/ResourceManagerAccountingTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/geospatial/BaseH3IndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/geospatial/OffHeapH3IndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/geospatial/OnHeapH3IndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/json/BaseJsonIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/json/OffHeapJsonIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/json/OnHeapJsonIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/text/LuceneFSTIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/text/NativeTextIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/h3/H3IndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/json/JsonIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/text/TextIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/MetricUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/H3IndexTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/JsonIndexTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/HnswVectorIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/LuceneFSTIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/LuceneTextIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/NativeTextIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/store/FilePerIndexDirectoryTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/creator/FSTIndexCreator.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/creator/JsonIndexCreator.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/JsonUtils.java"
+  ],
+  "mergedAt": "2025-07-15T00:23:44Z",
+  "number": 16094,
+  "title": "Add bad data handling for some IndexCreator::add() functions to skip record or add dummy record",
+  "url": "https://github.com/apache/pinot/pull/16094",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.geospatial.BaseH3IndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [
+        "BaseH3IndexCreator(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ],
+      "addedConstructors": [
+        "BaseH3IndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.geospatial.OffHeapH3IndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) OffHeapH3IndexCreator(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) OffHeapH3IndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.geospatial.OnHeapH3IndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) OnHeapH3IndexCreator(java.io.File, java.lang.String, java.lang.String, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) OnHeapH3IndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, org.apache.pinot.segment.spi.index.reader.H3IndexResolution)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.json.BaseJsonIndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void add(java.util.Map)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) java.lang.String _tableNameWithType",
+        "FINAL(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [
+        "BaseJsonIndexCreator(java.io.File, java.lang.String, org.apache.pinot.spi.config.table.JsonIndexConfig)"
+      ],
+      "addedConstructors": [
+        "BaseJsonIndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, org.apache.pinot.spi.config.table.JsonIndexConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.json.OffHeapJsonIndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) OffHeapJsonIndexCreator(java.io.File, java.lang.String, org.apache.pinot.spi.config.table.JsonIndexConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) OffHeapJsonIndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, org.apache.pinot.spi.config.table.JsonIndexConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.json.OnHeapJsonIndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) OnHeapJsonIndexCreator(java.io.File, java.lang.String, org.apache.pinot.spi.config.table.JsonIndexConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) OnHeapJsonIndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, org.apache.pinot.spi.config.table.JsonIndexConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.text.LuceneFSTIndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _columnName",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType",
+        "PRIVATE(+) FINAL(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) LuceneFSTIndexCreator(java.io.File, java.lang.String, java.lang.String[])"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneFSTIndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, java.lang.String[], org.apache.pinot.segment.local.utils.fst.FSTBuilder)",
+        "PUBLIC(+) LuceneFSTIndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, java.lang.String[])"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.text.NativeTextIndexCreator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType",
+        "PRIVATE(+) FINAL(+) boolean _continueOnError",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) NativeTextIndexCreator(java.lang.String, java.io.File)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) NativeTextIndexCreator(java.lang.String, java.lang.String, boolean, java.io.File)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.MetricUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void updateIndexingErrorMetric(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) MetricUtils()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.creator.FSTIndexCreator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.creator.JsonIndexCreator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void add(java.util.Map)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.JsonUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
