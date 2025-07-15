@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/BaseTableDataManager.java"
+  ],
+  "mergedAt": "2025-07-15T02:39:49Z",
+  "number": 16342,
+  "title": "Improve SEGMENT_TABLE_DOWNLOAD_COUNT accuracy",
+  "url": "https://github.com/apache/pinot/pull/16342",
+  "jcmpClasses": []
+}
