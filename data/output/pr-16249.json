@@ -1,0 +1,63 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/common/MinionConstants.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/RealtimeToOfflineSegmentsMinionClusterIntegrationTest.java",
+    "pinot-minion/src/main/java/org/apache/pinot/minion/MinionConf.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/BaseMultipleSegmentsConversionExecutor.java"
+  ],
+  "mergedAt": "2025-07-15T12:24:04Z",
+  "number": 16249,
+  "title": "Implement parallel segment download and untar for improved performance",
+  "url": "https://github.com/apache/pinot/pull/16249",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.common.MinionConstants",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SEGMENT_DOWNLOAD_PARALLELISM"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.minion.MinionConf",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getSegmentDownloadParallelism()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_SEGMENT_DOWNLOAD_PARALLELISM",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SEGMENT_DOWNLOAD_PARALLELISM"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.BaseMultipleSegmentsConversionExecutor",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void downloadAndUntarSegment(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.io.File, int, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.SegmentMetadata>, int)",
+        "PRIVATE(+) int getParallelism(java.util.Map<java.lang.String,java.lang.String>)",
+        "PRIVATE(+) void parallelDownloadAndUntarSegments(int, java.lang.String, java.lang.String, java.lang.String[], java.lang.String[], java.io.File, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.SegmentMetadata>)",
+        "PRIVATE(+) int processSegmentMetadata(java.lang.String[], java.util.Map<java.lang.String,org.apache.pinot.segment.spi.SegmentMetadata>, java.util.List<java.io.File>)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) int DEFUALT_PUSH_ATTEMPTS"
+      ],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) int DEFAULT_PUSH_ATTEMPTS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
