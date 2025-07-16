@@ -1,0 +1,44 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/RealtimeSegmentAssignment.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/SegmentCompletionManager.java"
+  ],
+  "mergedAt": "2025-07-16T21:08:43Z",
+  "number": 16348,
+  "title": "Fix rebalance logic to treat COMMITTING segments as CONSUMING",
+  "url": "https://github.com/apache/pinot/pull/16348",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.assignment.segment.SegmentAssignmentUtils$CompletedConsumingOfflineSegmentAssignment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "SegmentAssignmentUtils$CompletedConsumingOfflineSegmentAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>)"
+      ],
+      "addedConstructors": [
+        "SegmentAssignmentUtils$CompletedConsumingOfflineSegmentAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Set<java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> getCommittingSegments(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>)",
+        "PRIVATE(+) STATIC(+) java.util.List<java.lang.String> getCommittingSegments(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, java.util.function.BiFunction<java.lang.String,java.lang.String,org.apache.pinot.common.metadata.segment.SegmentZKMetadata>)",
+        "PRIVATE(+) STATIC(+) java.util.List<java.lang.String> getCommittingSegments(java.lang.String, java.util.Collection<java.lang.String>, java.util.function.BiFunction<java.lang.String,java.lang.String,org.apache.pinot.common.metadata.segment.SegmentZKMetadata>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
