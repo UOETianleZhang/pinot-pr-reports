@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-15T23:42:12Z",
+  "number": 16345,
+  "title": "Bump io.netty:netty-bom from 4.1.119.Final to 4.1.122.Final",
+  "url": "https://github.com/apache/pinot/pull/16345",
+  "jcmpClasses": []
+}
