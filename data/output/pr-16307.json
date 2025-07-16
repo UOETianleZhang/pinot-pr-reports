@@ -1,0 +1,69 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/TableConfigsRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/PinotHelixTaskResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/PinotTableRestletResourceTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/ControllerRequestURLBuilder.java"
+  ],
+  "mergedAt": "2025-07-16T12:23:17Z",
+  "number": 16307,
+  "title": "Perform task data cleanup as part of table deletion",
+  "url": "https://github.com/apache/pinot/pull/16307",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTableRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.api.resources.ConfigSuccessResponse addTable(java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders, org.glassfish.grizzly.http.server.Request)",
+        "PUBLIC(-) org.apache.pinot.controller.api.resources.SuccessResponse deleteTable(java.lang.String, java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.api.resources.ConfigSuccessResponse addTable(java.lang.String, java.lang.String, boolean, javax.ws.rs.core.HttpHeaders, org.glassfish.grizzly.http.server.Request)",
+        "PUBLIC(+) org.apache.pinot.controller.api.resources.SuccessResponse deleteTable(java.lang.String, java.lang.String, java.lang.String, boolean, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(+) STATIC(+) void tableTasksCleanup(java.lang.String, boolean, org.apache.pinot.controller.helix.core.PinotHelixResourceManager, org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager)",
+        "PUBLIC(+) STATIC(+) void tableTasksValidation(org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.TableConfigsRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.api.resources.ConfigSuccessResponse addConfig(java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders, org.glassfish.grizzly.http.server.Request)",
+        "PUBLIC(-) org.apache.pinot.controller.api.resources.SuccessResponse deleteConfig(java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.api.resources.ConfigSuccessResponse addConfig(java.lang.String, java.lang.String, boolean, javax.ws.rs.core.HttpHeaders, org.glassfish.grizzly.http.server.Request)",
+        "PUBLIC(+) org.apache.pinot.controller.api.resources.SuccessResponse deleteConfig(java.lang.String, boolean, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager _pinotHelixTaskResourceManager"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.builder.ControllerRequestURLBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String forDeleteMinionTask(java.lang.String)",
+        "PUBLIC(+) java.lang.String forMinionTaskState(java.lang.String)",
+        "PUBLIC(+) java.lang.String forResumeMinionTaskQueue(java.lang.String)",
+        "PUBLIC(+) java.lang.String forStopMinionTaskQueue(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
