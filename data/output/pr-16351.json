@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-16T22:28:05Z",
+  "number": 16351,
+  "title": "Bump maven.version from 3.9.10 to 3.9.11",
+  "url": "https://github.com/apache/pinot/pull/16351",
+  "jcmpClasses": []
+}

@@ -1,0 +1,10 @@
+{
+  "files": [
+    ".mvn/extensions.xml"
+  ],
+  "mergedAt": "2025-07-16T22:28:24Z",
+  "number": 16353,
+  "title": "Bump com.gradle:develocity-maven-extension from 2.0.1 to 2.1",
+  "url": "https://github.com/apache/pinot/pull/16353",
+  "jcmpClasses": []
+}

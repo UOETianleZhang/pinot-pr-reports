@@ -1,0 +1,82 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/GrpcBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/SingleConnectionBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/failuredetector/BaseExponentialBackoffRetryFailureDetector.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/failuredetector/FailureDetector.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/failuredetector/NoOpFailureDetector.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/failuredetector/ConnectionFailureDetectorTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java"
+  ],
+  "mergedAt": "2025-07-16T22:29:08Z",
+  "number": 16357,
+  "title": "log server in broker failure detector",
+  "url": "https://github.com/apache/pinot/pull/16357",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.failuredetector.BaseExponentialBackoffRetryFailureDetector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void markServerHealthy(java.lang.String)",
+        "PUBLIC(-) void markServerUnhealthy(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void markServerHealthy(java.lang.String, java.lang.String)",
+        "PUBLIC(+) void markServerUnhealthy(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.failuredetector.BaseExponentialBackoffRetryFailureDetector$RetryInfo",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) java.lang.String _hostName"
+      ],
+      "removedConstructors": [
+        "BaseExponentialBackoffRetryFailureDetector$RetryInfo(org.apache.pinot.common.failuredetector.BaseExponentialBackoffRetryFailureDetector, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "BaseExponentialBackoffRetryFailureDetector$RetryInfo(org.apache.pinot.common.failuredetector.BaseExponentialBackoffRetryFailureDetector, java.lang.String, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.failuredetector.FailureDetector",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void markServerHealthy(java.lang.String, java.lang.String)",
+        "PUBLIC(+) ABSTRACT(+) void markServerUnhealthy(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.failuredetector.NoOpFailureDetector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void markServerHealthy(java.lang.String)",
+        "PUBLIC(-) void markServerUnhealthy(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void markServerHealthy(java.lang.String, java.lang.String)",
+        "PUBLIC(+) void markServerUnhealthy(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
