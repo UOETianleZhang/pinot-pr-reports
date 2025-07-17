@@ -1,0 +1,44 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineIntegrationTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/ErrorOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/PlanNodeToOpChain.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/service/dispatch/QueryDispatcherTest.java"
+  ],
+  "mergedAt": "2025-07-17T14:10:04Z",
+  "number": 16257,
+  "title": "MSE ErrorOperator",
+  "url": "https://github.com/apache/pinot/pull/16257",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.ErrorOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.common.datatable.StatMap<?> copyStatMaps()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> getChildOperators()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock getNextBlock()",
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PUBLIC(+) void registerExecution(long, int)",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.LiteralValueOperator$StatKey> _statMap",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> _childOperators",
+        "PRIVATE(+) FINAL(+) java.lang.String _errorMessage",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.exception.QueryErrorCode _errorCode",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ErrorOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.spi.exception.QueryErrorCode, java.lang.String, org.apache.pinot.query.runtime.operator.MultiStageOperator)",
+        "PUBLIC(+) ErrorOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.spi.exception.QueryErrorCode, java.lang.String, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>)",
+        "PUBLIC(+) ErrorOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.spi.exception.QueryErrorCode, java.lang.String)"
+      ]
+    }
+  ]
+}
