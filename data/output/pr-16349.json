@@ -1,0 +1,92 @@
+{
+  "files": [
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-plugins/pinot-input-format/pinot-avro/src/main/java/org/apache/pinot/plugin/inputformat/avro/KafkaAvroMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-avro/src/main/java/org/apache/pinot/plugin/inputformat/avro/SimpleAvroMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-clp-log/src/main/java/org/apache/pinot/plugin/inputformat/clplog/CLPLogMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-confluent-avro/src/main/java/org/apache/pinot/plugin/inputformat/avro/confluent/KafkaConfluentSchemaRegistryAvroMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-confluent-json/src/main/java/org/apache/pinot/plugin/inputformat/json/confluent/KafkaConfluentSchemaRegistryJsonMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-confluent-protobuf/src/main/java/org/apache/pinot/plugin/inputformat/protobuf/KafkaConfluentSchemaRegistryProtoBufMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-csv/src/main/java/org/apache/pinot/plugin/inputformat/csv/CSVMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-csv/src/test/java/org/apache/pinot/plugin/inputformat/csv/CSVMessageDecoderTest.java",
+    "pinot-plugins/pinot-input-format/pinot-json/src/main/java/org/apache/pinot/plugin/inputformat/json/JSONMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-protobuf/src/main/java/org/apache/pinot/plugin/inputformat/protobuf/ProtoBufCodeGenMessageDecoder.java",
+    "pinot-plugins/pinot-input-format/pinot-protobuf/src/main/java/org/apache/pinot/plugin/inputformat/protobuf/ProtoBufMessageDecoder.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/TableConfigUtilsTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/StreamDataDecoderImpl.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/JsonUtils.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/stream/StreamDataDecoderImplTest.java"
+  ],
+  "mergedAt": "2025-07-16T23:19:43Z",
+  "number": 16349,
+  "title": "Avoid bytes copy in MessageDecoder",
+  "url": "https://github.com/apache/pinot/pull/16349",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.inputformat.avro.SimpleAvroMessageDecoder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.inputformat.json.JSONMessageDecoder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.inputformat.protobuf.ProtoBufCodeGenMessageDecoder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.lang.Class _recordExtractor",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.inputformat.protobuf.ProtoBufMessageDecoder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.JsonUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) com.fasterxml.jackson.databind.JsonNode bytesToJsonNode(byte[], int, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
