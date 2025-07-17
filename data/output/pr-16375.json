@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerTimer.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/BaseTableDataManager.java"
+  ],
+  "mergedAt": "2025-07-17T19:54:06Z",
+  "number": 16375,
+  "title": "Add metric to track latency for segment download",
+  "url": "https://github.com/apache/pinot/pull/16375",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.ServerTimer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerTimer SEGMENT_DOWNLOAD_FROM_PEERS_TIME_MS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerTimer SEGMENT_DOWNLOAD_FROM_DEEP_STORE_TIME_MS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
