@@ -1,0 +1,38 @@
+{
+  "files": [
+    "pinot-plugins/pinot-file-system/pinot-adls/src/main/java/org/apache/pinot/plugin/filesystem/ADLSGen2PinotFS.java",
+    "pinot-plugins/pinot-file-system/pinot-adls/src/test/java/org/apache/pinot/plugin/filesystem/test/ADLSGen2PinotFSTest.java"
+  ],
+  "mergedAt": "2025-07-16T23:52:36Z",
+  "number": 16343,
+  "title": "[pinot-adls] Add SAS token authentication support in ADLSGen2PinotFS",
+  "url": "https://github.com/apache/pinot/pull/16343",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.filesystem.ADLSGen2PinotFS",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String SAS_TOKEN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.filesystem.ADLSGen2PinotFS$AuthenticationType",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.plugin.filesystem.ADLSGen2PinotFS$AuthenticationType SAS_TOKEN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
