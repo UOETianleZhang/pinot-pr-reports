@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterCPUTimeResourceUsageAccountantTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutor.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutorTest.java"
+  ],
+  "mergedAt": "2025-07-18T16:35:17Z",
+  "number": 16386,
+  "title": "ThrottleOnCriticalHeapUsageExecutor throws QueryErrorCode exception",
+  "url": "https://github.com/apache/pinot/pull/16386",
+  "jcmpClasses": []
+}
