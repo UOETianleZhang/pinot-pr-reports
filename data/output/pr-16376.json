@@ -1,0 +1,24 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTenantRestletResource.java"
+  ],
+  "mergedAt": "2025-07-18T00:08:47Z",
+  "number": 16376,
+  "title": "Add a new API GET /tenants/{tenantName}/rebalanceJobs",
+  "url": "https://github.com/apache/pinot/pull/16376",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTenantRestletResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getControllerJobs(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

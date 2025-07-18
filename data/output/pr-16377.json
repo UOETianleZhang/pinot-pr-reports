@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/package-lock.json"
+  ],
+  "mergedAt": "2025-07-17T23:58:22Z",
+  "number": 16377,
+  "title": "Bump on-headers and compression in /pinot-controller/src/main/resources",
+  "url": "https://github.com/apache/pinot/pull/16377",
+  "jcmpClasses": []
+}
