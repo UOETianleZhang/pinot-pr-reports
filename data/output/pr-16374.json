@@ -1,0 +1,60 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/QueryMonitorConfig.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/QueryMonitorConfigTest.java"
+  ],
+  "mergedAt": "2025-07-18T06:57:50Z",
+  "number": 16374,
+  "title": "Remove all calls to System.gc() in PerQueryCPUMemAccountantFactory",
+  "url": "https://github.com/apache/pinot/pull/16374",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void logTerminatedQuery(org.apache.pinot.spi.accounting.QueryResourceTracker, long)"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) void logTerminatedQuery(org.apache.pinot.spi.accounting.QueryResourceTracker, long, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$WatcherTask",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PROTECTED(-) int _numQueriesKilledConsecutively"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.QueryMonitorConfig",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getCriticalLevelAfterGC()",
+        "PUBLIC(-) int getGcBackoffCount()",
+        "PUBLIC(-) int getGcWaitTime()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int _gcWaitTime",
+        "PRIVATE(-) FINAL(-) int _gcBackoffCount",
+        "PRIVATE(-) FINAL(-) long _criticalLevelAfterGC"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
