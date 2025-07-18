@@ -1,0 +1,13 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/package-lock.json",
+    "pinot-controller/src/main/resources/package.json",
+    "pinot-controller/src/main/resources/tsconfig.json",
+    "pinot-controller/src/main/resources/webpack.config.js"
+  ],
+  "mergedAt": "2025-07-18T18:14:02Z",
+  "number": 16365,
+  "title": "Migrating to Webpack 5 and upgrading to TypeScript 5.8 for pinot-controller",
+  "url": "https://github.com/apache/pinot/pull/16365",
+  "jcmpClasses": []
+}
