@@ -1,0 +1,43 @@
+{
+  "files": [
+    "pinot-clients/pinot-java-client/src/main/java/org/apache/pinot/client/BrokerCache.java",
+    "pinot-clients/pinot-java-client/src/main/java/org/apache/pinot/client/Connection.java",
+    "pinot-clients/pinot-jdbc-client/src/main/java/org/apache/pinot/client/PinotConnection.java",
+    "pinot-clients/pinot-jdbc-client/src/test/java/org/apache/pinot/client/PinotConnectionTest.java",
+    "pinot-clients/pinot-jdbc-client/src/test/java/org/apache/pinot/client/PinotPreparedStatementTest.java",
+    "pinot-clients/pinot-jdbc-client/src/test/java/org/apache/pinot/client/PinotStatementTest.java"
+  ],
+  "mergedAt": "2025-07-21T16:37:32Z",
+  "number": 16366,
+  "title": "Small fixes in Java clients",
+  "url": "https://github.com/apache/pinot/pull/16366",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.client.Connection",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.client.ResultSetGroup execute(java.lang.Iterable<java.lang.String>, java.lang.String)",
+        "PUBLIC(+) java.util.concurrent.CompletableFuture<org.apache.pinot.client.ResultSetGroup> executeAsync(java.lang.Iterable<java.lang.String>, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.client.PinotConnection",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.List<java.lang.String> getBrokerList(java.lang.String, java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

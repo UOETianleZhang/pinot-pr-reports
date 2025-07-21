@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-21T16:18:18Z",
+  "number": 16394,
+  "title": "Bump commons-io:commons-io from 2.11.0 to 2.20.0",
+  "url": "https://github.com/apache/pinot/pull/16394",
+  "jcmpClasses": []
+}

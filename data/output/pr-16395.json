@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-21T16:21:29Z",
+  "number": 16395,
+  "title": "Bump org.xerial.snappy:snappy-java from 1.1.10.7 to 1.1.10.8",
+  "url": "https://github.com/apache/pinot/pull/16395",
+  "jcmpClasses": []
+}

@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Table.tsx"
+  ],
+  "mergedAt": "2025-07-21T16:23:55Z",
+  "number": 16389,
+  "title": "[UI] Reset table pagination on data, search, and sort changes to fix bug in Controller UI",
+  "url": "https://github.com/apache/pinot/pull/16389",
+  "jcmpClasses": []
+}
