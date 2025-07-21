@@ -1,0 +1,55 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/BaseTableDataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/data/manager/TableDataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/upsert/BasePartitionUpsertMetadataManager.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/HelixInstanceDataManager.java"
+  ],
+  "mergedAt": "2025-07-21T21:08:39Z",
+  "number": 16362,
+  "title": "Add a Boolean marker when Delete Table operation is triggered",
+  "url": "https://github.com/apache/pinot/pull/16362",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.BaseTableDataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isDeleted()",
+        "PUBLIC(+) void setDeleted(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) VOLATILE(+) boolean _isDeleted"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.data.manager.TableDataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean isDeleted()",
+        "PUBLIC(+) ABSTRACT(+) void setDeleted(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.upsert.BasePartitionUpsertMetadataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
