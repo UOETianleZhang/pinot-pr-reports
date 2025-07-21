@@ -1,0 +1,81 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/TransformFunctionType.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/JsonFunctions.java",
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/ParserUtils.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/function/JsonFunctionsTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/function/scalar/JsonFunctionsUtilTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/transform/function/JsonExtractKeyTransformFunction.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/JsonExtractScalarTransformFunctionTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/custom/JsonPathTest.java"
+  ],
+  "mergedAt": "2025-07-21T09:41:24Z",
+  "number": 16306,
+  "title": "feat: Enhance jsonExtractKey function with depth control and dot notation support",
+  "url": "https://github.com/apache/pinot/pull/16306",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.function.scalar.JsonFunctions",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "STATIC(+) java.lang.String convertToDotNotation(java.lang.String)",
+        "PRIVATE(+) STATIC(+) void extractKeysFromNode(com.fasterxml.jackson.databind.JsonNode, java.lang.String, java.util.List<java.lang.String>, int, int, boolean)",
+        "STATIC(+) int getKeyDepth(java.lang.String)",
+        "PUBLIC(+) STATIC(+) boolean isExtractAllKeys(java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> jsonExtractAllKeysInternal(java.lang.Object, int, boolean)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> jsonExtractKey(java.lang.Object, java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> jsonExtractKey(java.lang.Object, java.lang.String, java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> jsonExtractKeyInternal(java.lang.Object, com.jayway.jsonpath.JsonPath)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> jsonExtractKeyInternal(java.lang.Object, com.jayway.jsonpath.JsonPath, int, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) com.jayway.jsonpath.ParseContext KEY_PARSE_CONTEXT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.function.scalar.JsonFunctions$JsonExtractFunctionParameters",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getMaxDepth()",
+        "PUBLIC(+) boolean isDotNotation()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "STATIC(+) FINAL(+) java.lang.String MAX_DEPTH_KEY",
+        "boolean _dotNotation",
+        "STATIC(+) FINAL(+) char PARAMETER_KEY_VALUE_SEPARATOR",
+        "int _maxDepth",
+        "STATIC(+) FINAL(+) char PARAMETER_DELIMITER",
+        "STATIC(+) FINAL(+) java.lang.String DOT_NOTATION_KEY"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) JsonFunctions$JsonExtractFunctionParameters(java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.transform.function.JsonExtractKeyTransformFunction",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) com.jayway.jsonpath.ParseContext JSON_PARSER_CONTEXT"
+      ],
+      "addedFields": [
+        "PRIVATE(+) boolean _dotNotation",
+        "PRIVATE(+) int _maxDepth",
+        "PRIVATE(+) boolean _isExtractAllKeys"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
