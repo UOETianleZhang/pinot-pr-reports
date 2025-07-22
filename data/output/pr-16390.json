@@ -1,0 +1,17 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Query/MetricStatsTable.tsx",
+    "pinot-controller/src/main/resources/app/components/Query/TimeseriesChart.tsx",
+    "pinot-controller/src/main/resources/app/components/Query/TimeseriesQueryPage.tsx",
+    "pinot-controller/src/main/resources/app/interfaces/types.d.ts",
+    "pinot-controller/src/main/resources/app/utils/ChartConstants.ts",
+    "pinot-controller/src/main/resources/app/utils/TimeseriesUtils.ts",
+    "pinot-controller/src/main/resources/package-lock.json",
+    "pinot-controller/src/main/resources/package.json"
+  ],
+  "mergedAt": "2025-07-22T16:10:37Z",
+  "number": 16390,
+  "title": "[timeseries] Introducing Apache ECharts timeseries results visualization in Controller UI",
+  "url": "https://github.com/apache/pinot/pull/16390",
+  "jcmpClasses": []
+}
