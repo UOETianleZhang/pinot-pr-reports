@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentUtilsTest.java"
+  ],
+  "mergedAt": "2025-07-21T23:18:40Z",
+  "number": 16400,
+  "title": "Add unit test for CompletedConsumingOfflineSegmentAssignment",
+  "url": "https://github.com/apache/pinot/pull/16400",
+  "jcmpClasses": []
+}

@@ -1,0 +1,495 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/regexp/RegexpLikeConstFunctions.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/regexp/RegexpLikeVarFunctions.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/request/context/RequestContextUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/request/context/predicate/RegexpLikePredicate.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/RegexpPatternConverterUtils.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/regex/JavaUtilPattern.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/regex/PatternFactory.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/regex/Re2jPattern.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/function/scalar/regexp/RegexpLikeConstFunctionsTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/function/scalar/regexp/RegexpLikeVarFunctionsTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/sql/parsers/CalciteSqlCompilerTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/FilterOperatorUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/predicate/IFSTBasedRegexpPredicateEvaluatorFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/plan/FilterPlanNode.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/request/context/predicate/PredicateTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/BaseFSTBasedRegexpLikeQueriesTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/FSTBasedRegexpLikeQueriesTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/IFSTBasedRegexpLikeQueriesTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/text/LuceneFSTIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/inv/text/LuceneIFSTIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/datasource/BaseDataSource.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/fst/IFSTIndexPlugin.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/fst/IFSTIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/IFSTIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/map/NullDataSource.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/LuceneFSTIndexReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/LuceneIFSTIndexReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/fst/FSTBuilder.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/fst/IFSTBuilder.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/fst/RegexpMatcher.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/fst/RegexpMatcherCaseInsensitive.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/LuceneFSTIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/fst/IFSTIndexTypeTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/fst/FSTBuilderTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/fst/IFSTBuilderTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/V1Constants.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/datasource/DataSource.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/StandardIndexes.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/table/FieldConfig.java"
+  ],
+  "mergedAt": "2025-07-21T23:19:15Z",
+  "number": 16276,
+  "title": "Add new Index Type IFST to support case-insensitive regex matching support for FST LUCENE",
+  "url": "https://github.com/apache/pinot/pull/16276",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.function.scalar.regexp.RegexpLikeConstFunctions",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean regexpLike(java.lang.String, java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.function.scalar.regexp.RegexpLikeVarFunctions",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean regexpLikeVar(java.lang.String, java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.request.context.predicate.RegexpLikePredicate",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isCaseInsensitive()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _caseInsensitive"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RegexpLikePredicate(org.apache.pinot.common.request.context.ExpressionContext, java.lang.String, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.regex.JavaUtilPattern",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) JavaUtilPattern(java.lang.String, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.regex.PatternFactory",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.utils.regex.Pattern compile(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.regex.Re2jPattern",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) Re2jPattern(java.lang.String, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.utils.RegexpPatternConverterUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isCaseInsensitive(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.IFSTBasedRegexpPredicateEvaluatorFactory",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.operator.filter.predicate.BaseDictionaryBasedPredicateEvaluator newIFSTBasedEvaluator(org.apache.pinot.common.request.context.predicate.RegexpLikePredicate, org.apache.pinot.segment.spi.index.reader.TextIndexReader, org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) IFSTBasedRegexpPredicateEvaluatorFactory()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.IFSTBasedRegexpPredicateEvaluatorFactory$IFSTBasedRegexpPredicateEvaluator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean applySV(int)",
+        "PUBLIC(+) int applySV(int, int[], int[])",
+        "PROTECTED(+) int[] calculateMatchingDictIds()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) org.roaringbitmap.buffer.ImmutableRoaringBitmap _matchingDictIdBitmap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) IFSTBasedRegexpPredicateEvaluatorFactory$IFSTBasedRegexpPredicateEvaluator(org.apache.pinot.common.request.context.predicate.RegexpLikePredicate, org.apache.pinot.segment.spi.index.reader.TextIndexReader, org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.text.LuceneFSTIndexCreator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.inv.text.LuceneIFSTIndexCreator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void add(java.lang.String)",
+        "PUBLIC(+) void add(java.lang.String[], int)",
+        "PUBLIC(+) void close()",
+        "PUBLIC(+) void seal()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.io.File _ifstIndexFile",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.local.utils.fst.IFSTBuilder _ifstBuilder",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) int _dictId",
+        "PRIVATE(+) FINAL(+) java.lang.String _columnName",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType",
+        "PRIVATE(+) FINAL(+) boolean _continueOnError"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneIFSTIndexCreator(org.apache.pinot.segment.spi.creator.IndexCreationContext)",
+        "PUBLIC(+) LuceneIFSTIndexCreator(java.io.File, java.lang.String, java.lang.String, boolean, java.lang.String[])"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.datasource.BaseDataSource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.reader.TextIndexReader getIFSTIndex()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.fst.IFSTIndexPlugin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.local.segment.index.fst.IFSTIndexType getIndexType()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.segment.local.segment.index.fst.IFSTIndexType INSTANCE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) IFSTIndexPlugin()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.fst.IFSTIndexType",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.segment.spi.index.ColumnConfigDeserializer<org.apache.pinot.segment.spi.index.FstIndexConfig> createDeserializerForLegacyConfigs()",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.creator.FSTIndexCreator createIndexCreator(org.apache.pinot.segment.spi.creator.IndexCreationContext, org.apache.pinot.segment.spi.index.FstIndexConfig)",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.IndexHandler createIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.data.Schema, org.apache.pinot.spi.config.table.TableConfig)",
+        "PROTECTED(+) org.apache.pinot.segment.spi.index.IndexReaderFactory<org.apache.pinot.segment.spi.index.reader.TextIndexReader> createReaderFactory()",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.FstIndexConfig getDefaultConfig()",
+        "PUBLIC(+) java.util.List<java.lang.String> getFileExtensions(org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PUBLIC(+) java.lang.Class<org.apache.pinot.segment.spi.index.FstIndexConfig> getIndexConfigClass()",
+        "PUBLIC(+) java.lang.String getPrettyName()",
+        "PROTECTED(+) void handleIndexSpecificCleanup(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.spi.index.reader.TextIndexReader read(org.apache.pinot.segment.spi.memory.PinotDataBuffer, org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PUBLIC(+) void validate(org.apache.pinot.segment.spi.index.FieldIndexConfigs, org.apache.pinot.spi.data.FieldSpec, org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.util.List<java.lang.String> EXTENSIONS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String INDEX_DISPLAY_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PROTECTED(+) IFSTIndexType()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.fst.IFSTIndexType$ReaderFactory",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.segment.spi.index.reader.TextIndexReader createIndexReader(org.apache.pinot.segment.spi.memory.PinotDataBuffer, org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PROTECTED(+) org.apache.pinot.segment.spi.index.reader.TextIndexReader createIndexReader(org.apache.pinot.segment.spi.memory.PinotDataBuffer, org.apache.pinot.segment.spi.ColumnMetadata, org.apache.pinot.segment.spi.index.FstIndexConfig)",
+        "PROTECTED(+) org.apache.pinot.segment.spi.index.IndexType<org.apache.pinot.segment.spi.index.FstIndexConfig,org.apache.pinot.segment.spi.index.reader.TextIndexReader,?> getIndexType()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.segment.local.segment.index.fst.IFSTIndexType$ReaderFactory INSTANCE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) IFSTIndexType$ReaderFactory()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.IFSTIndexHandler",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void checkUnsupportedOperationsForIFSTIndex(org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PRIVATE(+) void createIFSTIndexForColumn(org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PUBLIC(+) boolean needUpdateIndices(org.apache.pinot.segment.spi.store.SegmentDirectory$Reader)",
+        "PUBLIC(+) void postUpdateIndicesCleanup(org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)",
+        "PRIVATE(+) boolean shouldCreateIFSTIndex(org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PUBLIC(+) void updateIndices(org.apache.pinot.segment.spi.store.SegmentDirectory$Writer)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _columnsToAddIdx"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) IFSTIndexHandler(org.apache.pinot.segment.spi.store.SegmentDirectory, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.index.FieldIndexConfigs>, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.map.NullDataSource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.reader.TextIndexReader getIFSTIndex()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.LuceneFSTIndexReader",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.lucene.util.fst.FST<java.lang.Long> _readFST",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.segment.local.utils.fst.PinotBufferIndexInput _dataBufferIndexInput",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.segment.spi.memory.PinotDataBuffer _dataBuffer"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.lucene.util.fst.FST<java.lang.Long> _fst"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.LuceneIFSTIndexReader",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()",
+        "PUBLIC(+) org.roaringbitmap.buffer.ImmutableRoaringBitmap getDictIds(java.lang.String)",
+        "PUBLIC(+) org.roaringbitmap.buffer.MutableRoaringBitmap getDocIds(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.lucene.util.fst.FST<org.apache.lucene.util.BytesRef> _ifst",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneIFSTIndexReader(org.apache.pinot.segment.spi.memory.PinotDataBuffer)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.fst.IFSTBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void addEntry(java.lang.String, java.lang.Integer)",
+        "PUBLIC(+) STATIC(+) org.apache.lucene.util.fst.FST<org.apache.lucene.util.BytesRef> buildIFST(java.util.SortedMap<java.lang.String,java.lang.Integer>)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.Integer> deserializeBytesRefToIntegerList(org.apache.lucene.util.BytesRef)",
+        "PUBLIC(+) org.apache.lucene.util.fst.FST<org.apache.lucene.util.BytesRef> done()",
+        "PUBLIC(+) STATIC(+) org.apache.lucene.util.BytesRef serializeIntegerList(java.util.List<java.lang.Integer>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.lucene.util.fst.FSTCompiler<org.apache.lucene.util.BytesRef> _ifstCompiler",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) org.apache.lucene.util.IntsRefBuilder _scratch",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.util.List<java.lang.Integer>> _aggregatedValues"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) IFSTBuilder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.fst.RegexpMatcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.lang.String _regexQuery"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.fst.RegexpMatcherCaseInsensitive",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean match(java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.Long> regexMatch(java.lang.String, org.apache.lucene.util.fst.FST<org.apache.lucene.util.BytesRef>)",
+        "PUBLIC(+) java.util.List<java.lang.Long> regexMatchOnFST()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.lucene.util.fst.FST<org.apache.lucene.util.BytesRef> _ifst",
+        "PRIVATE(+) FINAL(+) org.apache.lucene.util.automaton.Automaton _automaton"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RegexpMatcherCaseInsensitive(java.lang.String, org.apache.lucene.util.fst.FST<org.apache.lucene.util.BytesRef>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.fst.RegexpMatcherCaseInsensitive$Path",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) FINAL(+) java.lang.Object _output",
+        "PUBLIC(+) FINAL(+) int _state",
+        "PUBLIC(+) FINAL(+) org.apache.lucene.util.fst.FST$Arc<T> _fstNode",
+        "PUBLIC(+) FINAL(+) org.apache.lucene.util.IntsRefBuilder _input"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RegexpMatcherCaseInsensitive$Path(int, org.apache.lucene.util.fst.FST$Arc<T>, java.lang.Object, org.apache.lucene.util.IntsRefBuilder)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.datasource.DataSource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.segment.spi.index.reader.TextIndexReader getIFSTIndex()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.StandardIndexes",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.spi.index.IndexType<org.apache.pinot.segment.spi.index.FstIndexConfig,org.apache.pinot.segment.spi.index.reader.TextIndexReader,org.apache.pinot.segment.spi.index.creator.FSTIndexCreator> ifst()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String IFST_ID"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.V1Constants$Indexes",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String LUCENE_V912_IFST_INDEX_FILE_EXTENSION"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.table.FieldConfig$IndexType",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.config.table.FieldConfig$IndexType IFST"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

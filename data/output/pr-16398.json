@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/BrokerTimer.java"
+  ],
+  "mergedAt": "2025-07-21T22:44:55Z",
+  "number": 16398,
+  "title": "add latency metric for multistage queries",
+  "url": "https://github.com/apache/pinot/pull/16398",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.BrokerTimer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.BrokerTimer MULTI_STAGE_QUERY_TOTAL_TIME_MS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
