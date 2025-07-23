@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java"
+  ],
+  "mergedAt": "2025-07-23T19:54:51Z",
+  "number": 16410,
+  "title": "Remove GC mentioned in java docs",
+  "url": "https://github.com/apache/pinot/pull/16410",
+  "jcmpClasses": []
+}
