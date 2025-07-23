@@ -1,0 +1,170 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BaseBrokerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/ControllerRequestClient.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/CPUMemThreadLevelAccountingObjects.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/ResourceUsageAccountantFactory.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/ResourceManagerAccountingTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OOMProtectionEnabledIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/WindowResourceAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultiStageAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultistageResourceUsageAccountingTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/ControllerRequestURLBuilder.java"
+  ],
+  "mergedAt": "2025-07-23T13:06:28Z",
+  "number": 16360,
+  "title": "Allow Reset of ThreadResourceUsageAccountant in Tracing.java",
+  "url": "https://github.com/apache/pinot/pull/16360",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.broker.helix.BaseBrokerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant _resourceUsageAccountant"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.ControllerRequestClient",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void deleteClusterConfig(java.lang.String)",
+        "PUBLIC(+) void updateClusterConfig(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.accounting.QueryMonitorConfig getQueryMonitorConfig()",
+        "PUBLIC(+) void stopWatcherTask()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.util.concurrent.ExecutorService EXECUTOR_SERVICE"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ExecutorService _executorService"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.ResourceUsageAccountantFactory$ResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void stopWatcherTask()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.util.concurrent.ExecutorService EXECUTOR_SERVICE"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ExecutorService _executorService"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.BaseServerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant getResourceUsageAccountant()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant _resourceUsageAccountant"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void stopWatcherTask()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void unregisterThreadAccountant()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$Holder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "STATIC(-) FINAL(-) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant ACCOUNTANT"
+      ],
+      "addedFields": [
+        "STATIC(+) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant _accountant"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant createThreadAccountant(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.spi.config.instance.InstanceType)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.builder.ControllerRequestURLBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String forClusterConfigDelete(java.lang.String)",
+        "PUBLIC(+) java.lang.String forClusterConfigUpdate()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
