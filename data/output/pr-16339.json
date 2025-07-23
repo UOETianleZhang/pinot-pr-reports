@@ -1,0 +1,164 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeConsumptionRateManager.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/RealtimeConsumptionRateManagerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/ServerRateLimitConfigChangeListenerTest.java"
+  ],
+  "mergedAt": "2025-07-23T00:46:47Z",
+  "number": 16339,
+  "title": "Fixes race condition in RealtimeConsumptionRateManager.MetricEmitter used by serverRateLimiter",
+  "url": "https://github.com/apache/pinot/pull/16339",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ConsumptionRateLimiter createServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void createOrUpdateServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$AsyncMetricEmitter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()",
+        "PRIVATE(+) void emit()",
+        "java.util.concurrent.atomic.LongAdder getMessageCount()",
+        "double getRate()",
+        "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$QuotaUtilizationTracker getTracker()",
+        "PUBLIC(+) void record(int)",
+        "PUBLIC(+) void start()",
+        "void start(int, int)",
+        "PUBLIC(+) void updateRateLimit(double)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) int METRIC_EMIT_FREQUENCY_SEC",
+        "PRIVATE(+) FINAL(+) com.google.common.util.concurrent.AtomicDouble _rateLimit",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ScheduledExecutorService _executor",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$QuotaUtilizationTracker _tracker",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.atomic.LongAdder _messageCount",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.atomic.AtomicBoolean _running"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RealtimeConsumptionRateManager$AsyncMetricEmitter(org.apache.pinot.common.metrics.ServerMetrics, java.lang.String, double)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$MetricEmitter",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "int emitMetric(int, double, java.time.Instant)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.lang.String _metricKeyName",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.metrics.ServerMetrics _serverMetrics",
+        "PRIVATE(-) long _previousMinute",
+        "PRIVATE(-) int _aggregateNumMessages"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RealtimeConsumptionRateManager$MetricEmitter(org.apache.pinot.common.metrics.ServerMetrics, java.lang.String)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$PartitionRateLimiter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "double getRate()",
+        "PUBLIC(+) void throttle(int)",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) com.google.common.util.concurrent.RateLimiter _rateLimiter",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$QuotaUtilizationTracker _quotaUtilizationTracker",
+        "PRIVATE(+) FINAL(+) double _rate"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) RealtimeConsumptionRateManager$PartitionRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$QuotaUtilizationTracker",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "int getAggregateNumMessages()",
+        "PUBLIC(+) int update(int, double, java.time.Instant)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _metricKeyName",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.metrics.ServerMetrics _serverMetrics",
+        "PRIVATE(+) long _previousMinute",
+        "PRIVATE(+) int _aggregateNumMessages"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RealtimeConsumptionRateManager$QuotaUtilizationTracker(org.apache.pinot.common.metrics.ServerMetrics, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$RateLimiterImpl",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "double getRate()",
+        "PUBLIC(-) void throttle(int)",
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) com.google.common.util.concurrent.RateLimiter _rateLimiter",
+        "PRIVATE(-) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$MetricEmitter _metricEmitter",
+        "PRIVATE(-) FINAL(-) double _rate"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) RealtimeConsumptionRateManager$RateLimiterImpl(double, org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$MetricEmitter)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ServerRateLimiter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()",
+        "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$AsyncMetricEmitter getMetricEmitter()",
+        "double getRate()",
+        "PUBLIC(+) void throttle(int)",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) void updateRateLimit(double)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) com.google.common.util.concurrent.RateLimiter _rateLimiter",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$AsyncMetricEmitter _metricEmitter"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RealtimeConsumptionRateManager$ServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics, java.lang.String)"
+      ]
+    }
+  ]
+}

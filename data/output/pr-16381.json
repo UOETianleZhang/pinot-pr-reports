@@ -1,0 +1,22 @@
+{
+  "files": [
+    "pinot-spi/src/main/java/org/apache/pinot/spi/ingestion/batch/spec/TlsSpec.java"
+  ],
+  "mergedAt": "2025-07-23T00:09:41Z",
+  "number": 16381,
+  "title": "[BugFix] Serialize TlsSpec when executing DataIngestion backfill job",
+  "url": "https://github.com/apache/pinot/pull/16381",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.ingestion.batch.spec.TlsSpec",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
