@@ -1,0 +1,99 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/AsofJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/NonEquiJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/WindowAggregateOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/DoubleLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/FloatLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/IntLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/LongLookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/LookupTable.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/join/ObjectLookupTable.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/join/LookupTableTest.java"
+  ],
+  "mergedAt": "2025-07-23T21:29:26Z",
+  "number": 16408,
+  "title": "Add proactive memory checking to query runtime operators",
+  "url": "https://github.com/apache/pinot/pull/16408",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.DoubleLookupTable",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int size()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.FloatLookupTable",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int size()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.IntLookupTable",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int size()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.LongLookupTable",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int size()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.LookupTable",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) int size()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.join.ObjectLookupTable",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int size()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
