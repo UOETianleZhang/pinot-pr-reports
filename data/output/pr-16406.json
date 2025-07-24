@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Query/TimeseriesQueryPage.tsx",
+    "pinot-plugins/pinot-timeseries-lang/pinot-timeseries-m3ql/src/main/java/org/apache/pinot/tsdb/m3ql/parser/Tokenizer.java"
+  ],
+  "mergedAt": "2025-07-24T16:53:50Z",
+  "number": 16406,
+  "title": "[timeseries] Adding error banner for timeseries error handling in Controller UI",
+  "url": "https://github.com/apache/pinot/pull/16406",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.tsdb.m3ql.parser.Tokenizer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isValidToken(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
