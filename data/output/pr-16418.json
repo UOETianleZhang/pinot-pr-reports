@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-24T16:39:57Z",
+  "number": 16418,
+  "title": "Bump curator.version from 5.8.0 to 5.9.0",
+  "url": "https://github.com/apache/pinot/pull/16418",
+  "jcmpClasses": []
+}
