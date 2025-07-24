@@ -1,0 +1,789 @@
+{
+  "files": [
+    ".gitignore",
+    "pinot-common/src/main/java/org/apache/pinot/common/function/FunctionRegistry.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/function/PinotScalarFunction.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/transform/function/TransformFunctionFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/udf/Udf.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/udf/UdfExample.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/udf/UdfExampleBuilder.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/udf/UdfParameter.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/udf/UdfSignature.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/BaseClusterIntegrationTest.java",
+    "pinot-integration-tests/pom.xml",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/udf/AvroSink.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/udf/IntegrationUdfTestCluster.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/udf/UdfTest.java",
+    "pinot-integration-tests/src/test/resources/udf-test-results/README.md",
+    "pinot-integration-tests/src/test/resources/udf-test-results/abs.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/acos.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/adler32.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/all-functions.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/and.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/array.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/arrayConcatDouble.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/arrayElementAtInt.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/arrayMax.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/arrayaverage.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/degrees.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/isFalse.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/mult.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/not.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/or.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/plus.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/toDateTime.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/year.yaml",
+    "pinot-plugins/pinot-input-format/pinot-avro-base/src/main/java/org/apache/pinot/plugin/inputformat/avro/AvroUtils.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/AbsUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/AcosUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/Adler32Udf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/AndUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/ArrayAverageUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/ArrayConcatDoubleUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/ArrayElementAtIntUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/ArrayMaxUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/ArrayUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/DegreesUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/IsFalseUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/MultUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/NotUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/OrUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/PlusUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/ToDateTimeUdf.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/function/YearUdf.java",
+    "pinot-udf-test/pom.xml",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/PinotFunctionEnvGenerator.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/ResultByExample.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfExampleResult.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfReporter.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfTestCluster.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfTestFramework.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfTestResult.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfTestScenario.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/scenarios/AbstractUdfTestScenario.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/scenarios/ExpressionTransformerTestScenario.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/scenarios/IntermediateUdfTestScenario.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/scenarios/PredicateUdfTestScenario.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/scenarios/TransformationUdfTestScenario.java",
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-24T07:04:46Z",
+  "number": 16258,
+  "title": "udf test framework",
+  "url": "https://github.com/apache/pinot/pull/16258",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.inputformat.avro.AvroUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.avro.generic.GenericData getGenericData()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.avro.generic.GenericData GENERIC_DATA"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.function.FunctionRegistry",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,org.apache.pinot.common.function.PinotScalarFunction> getFunctions()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.function.FunctionRegistry$ArgumentCountBasedScalarFunction",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Set<java.lang.String> getNames()",
+        "PUBLIC(+) java.lang.String getScalarFunctionId()",
+        "PRIVATE(+) java.lang.String printFunctionInfo(org.apache.pinot.common.function.FunctionInfo)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.lang.String _name"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _names",
+        "PRIVATE(+) FINAL(+) java.lang.String _mainName"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) FunctionRegistry$ArgumentCountBasedScalarFunction(java.util.List<java.lang.String>, java.util.Map<java.lang.Integer,org.apache.pinot.common.function.FunctionInfo>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.function.PinotScalarFunction",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.function.PinotScalarFunction fromMethod(java.lang.reflect.Method, boolean, boolean, java.lang.String[])",
+        "PUBLIC(+) java.util.Set<java.lang.String> getNames()",
+        "PUBLIC(+) java.lang.String getScalarFunctionId()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.transform.function.TransformFunctionFactory",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getAllFunctions()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.udf.Udf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String asSqlCall(java.lang.String, java.util.List<java.lang.String>)",
+        "PUBLIC(+) java.util.Set<java.lang.String> getAllCanonicalNames()",
+        "PUBLIC(+) java.util.Set<java.lang.String> getAllNames()",
+        "PUBLIC(+) ABSTRACT(+) java.lang.String getDescription()",
+        "PUBLIC(+) ABSTRACT(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainCanonicalName()",
+        "PUBLIC(+) ABSTRACT(+) java.lang.String getMainName()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) Udf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.Udf$FromAnnotatedMethod",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Set<java.lang.String> getAllNames()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.annotations.ScalarFunction _annotation",
+        "PRIVATE(+) FINAL(+) java.lang.reflect.Method _method"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) Udf$FromAnnotatedMethod(java.lang.reflect.Method)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExample",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample create(java.lang.String, java.lang.Object[])",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PRIVATE(+) boolean equalValues(java.lang.Object, java.lang.Object)",
+        "PUBLIC(+) ABSTRACT(+) java.lang.String getId()",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<java.lang.Object> getInputValues()",
+        "PUBLIC(+) ABSTRACT(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExample withoutNull(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) UdfExample()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExample$Default",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getId()",
+        "PUBLIC(+) java.util.List<java.lang.Object> getInputValues()",
+        "PUBLIC(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.Object> _inputValues",
+        "PRIVATE(+) FINAL(+) java.lang.Object _expectedResult",
+        "PRIVATE(+) FINAL(+) java.lang.String _id"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) UdfExample$Default(java.lang.String, java.util.List<java.lang.Object>, java.lang.Object)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExample$NullHandling",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample$NullHandling valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample$NullHandling[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.udf.UdfExample$NullHandling DISABLED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.udf.UdfExample$NullHandling ENABLED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) UdfExample$NullHandling(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExample$WithoutNullHandling",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) java.lang.String getId()",
+        "PUBLIC(+) java.util.List<java.lang.Object> getInputValues()",
+        "PUBLIC(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExample withoutNull(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.Object _result",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.udf.UdfExample _base"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) UdfExample$WithoutNullHandling(org.apache.pinot.core.udf.UdfExample, java.lang.Object)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExampleBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder forEndomorphismNumeric(int)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder forSignature(org.apache.pinot.core.udf.UdfSignature)",
+        "PUBLIC(+) ABSTRACT(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> generateExamples()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder addExample(java.lang.String, java.lang.Number[])",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder addExample(org.apache.pinot.core.udf.UdfExample)",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder addExampleWithoutNull(java.lang.String, java.lang.Number[])",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder and(org.apache.pinot.core.udf.UdfExampleBuilder)",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder build()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _arity",
+        "PRIVATE(+) FINAL(+) java.util.Set<org.apache.pinot.core.udf.UdfExample> _cases"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PROTECTED(+) UdfExampleBuilder$EndomorphismNumericTypesBuilder(int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder$NumericPinotUdfExample",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getId()",
+        "PUBLIC(+) java.util.List<java.lang.Object> getInputValues()",
+        "PUBLIC(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.udf.UdfExample _base",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.data.FieldSpec$DataType _type"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) UdfExampleBuilder$EndomorphismNumericTypesBuilder$NumericPinotUdfExample(org.apache.pinot.core.udf.UdfExample, org.apache.pinot.spi.data.FieldSpec$DataType)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder and(org.apache.pinot.core.udf.UdfExampleBuilder)",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> generateExamples()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> _cases"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) UdfExampleBuilder$MultiBuilder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder addExample(org.apache.pinot.core.udf.UdfExample)",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder addExample(java.lang.String, java.lang.Object[])",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder and(org.apache.pinot.core.udf.UdfExampleBuilder)",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder build()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.udf.UdfSignature _signature",
+        "PRIVATE(+) FINAL(+) java.util.Set<org.apache.pinot.core.udf.UdfExample> _examples"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PROTECTED(+) UdfExampleBuilder$SingleBuilder(org.apache.pinot.core.udf.UdfSignature)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfParameter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfParameter asLiteralOnly()",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfParameter asMultiValued()",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfParameter constrainedWith(org.apache.pinot.core.udf.UdfParameter$Constraint)",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.core.udf.UdfParameter$Constraint> getConstraints()",
+        "PUBLIC(+) org.apache.pinot.spi.data.FieldSpec$DataType getDataType()",
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.lang.String getName()",
+        "PUBLIC(+) java.lang.String getTypeString()",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) boolean isLiteralOnly()",
+        "PUBLIC(+) boolean isMultivalued()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfParameter of(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfParameter result(org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfParameter withDescription(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _name",
+        "PRIVATE(+) FINAL(+) boolean _multivalued",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.data.FieldSpec$DataType _dataType",
+        "PRIVATE(+) FINAL(+) java.lang.String _description",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.core.udf.UdfParameter$Constraint> _constraints"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) UdfParameter(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, java.util.List<org.apache.pinot.core.udf.UdfParameter$Constraint>, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfParameter$Constraint",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void updateTableConfig(org.apache.pinot.spi.utils.builder.TableConfigBuilder, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfParameter$LiteralConstraint",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) void updateTableConfig(org.apache.pinot.spi.utils.builder.TableConfigBuilder, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.udf.UdfParameter$LiteralConstraint INSTANCE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) UdfParameter$LiteralConstraint()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfSignature",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) int getArity()",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.core.udf.UdfParameter> getParameters()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.udf.UdfParameter getReturnType()",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfSignature of(org.apache.pinot.core.udf.UdfParameter[])",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) UdfSignature()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.udf.UdfSignature$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<org.apache.pinot.core.udf.UdfParameter> getParameters()",
+        "PUBLIC(+) org.apache.pinot.core.udf.UdfParameter getReturnType()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "UdfSignature$1(org.apache.pinot.core.udf.UdfParameter[])"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.AbsUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AbsUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.AcosUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AcosUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.Adler32Udf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) Adler32Udf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.AndUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AndUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.ArrayAverageUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ArrayAverageUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.ArrayConcatDoubleUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ArrayConcatDoubleUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.ArrayElementAtIntUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ArrayElementAtIntUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.ArrayMaxUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ArrayMaxUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.ArrayUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ArrayUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.DegreesUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) DegreesUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.IsFalseUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) IsFalseUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.MultUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String asSqlCall(java.lang.String, java.util.List<java.lang.String>)",
+        "PUBLIC(+) java.util.Set<java.lang.String> getAllNames()",
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) MultUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.NotUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) NotUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.OrUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) OrUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.PlusUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String asSqlCall(java.lang.String, java.util.List<java.lang.String>)",
+        "PUBLIC(+) java.util.Set<java.lang.String> getAllNames()",
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) java.lang.String getMainName()",
+        "PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PlusUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.ToDateTimeUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ToDateTimeUdf()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.function.YearUdf",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDescription()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()",
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) YearUdf()"
+      ]
+    }
+  ]
+}

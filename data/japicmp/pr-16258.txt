@@ -1,0 +1,508 @@
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/assembly-descriptor-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/assembly-descriptor-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-adls-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-adls-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.plugin.inputformat.avro.AvroUtils  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.apache.avro.generic.GenericData GENERIC_DATA
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.avro.generic.GenericData getGenericData()
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-azure-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-azure-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-broker-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-broker-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-clp-log-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-clp-log-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.common.function.FunctionRegistry  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	***  MODIFIED FIELD: PUBLIC (<- PRIVATE) STATIC FINAL int VAR_ARG_KEY
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,org.apache.pinot.common.function.PinotScalarFunction> getFunctions()
+***  MODIFIED CLASS: PUBLIC STATIC org.apache.pinot.common.function.FunctionRegistry$ArgumentCountBasedScalarFunction  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	---  REMOVED FIELD: PRIVATE(-) FINAL(-) java.lang.String _name
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _names
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String _mainName
+	***  MODIFIED CONSTRUCTOR: PUBLIC (<- PRIVATE) FunctionRegistry$ArgumentCountBasedScalarFunction(java.lang.String, java.util.Map<java.lang.Integer,org.apache.pinot.common.function.FunctionInfo><java.lang.Integer,org.apache.pinot.common.function.FunctionInfo>)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) FunctionRegistry$ArgumentCountBasedScalarFunction(java.util.List<java.lang.String>, java.util.Map<java.lang.Integer,org.apache.pinot.common.function.FunctionInfo>)
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<java.lang.String> getNames()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getScalarFunctionId()
+	+++  NEW METHOD: PRIVATE(+) java.lang.String printFunctionInfo(org.apache.pinot.common.function.FunctionInfo)
+***  MODIFIED INTERFACE: PUBLIC ABSTRACT org.apache.pinot.common.function.PinotScalarFunction  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.function.PinotScalarFunction fromMethod(java.lang.reflect.Method, boolean, boolean, java.lang.String[])
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<java.lang.String> getNames()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getScalarFunctionId()
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compound-metrics-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compound-metrics-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-controller-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-controller-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-core-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-core-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.core.operator.transform.function.TransformFunctionFactory  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getAllFunctions()
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.udf.Udf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) Udf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String asSqlCall(java.lang.String, java.util.List<java.lang.String>)
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<java.lang.String> getAllCanonicalNames()
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<java.lang.String> getAllNames()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainCanonicalName()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.core.udf.Udf$FromAnnotatedMethod  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.core.udf.Udf
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.spi.annotations.ScalarFunction _annotation
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.reflect.Method _method
+	+++  NEW CONSTRUCTOR: PUBLIC(+) Udf$FromAnnotatedMethod(java.lang.reflect.Method)
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<java.lang.String> getAllNames()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.udf.UdfExample  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) UdfExample()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample create(java.lang.String, java.lang.Object[])
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PRIVATE(+) boolean equalValues(java.lang.Object, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.String getId()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<java.lang.Object> getInputValues()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExample withoutNull(java.lang.Object)
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample$Default  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.core.udf.UdfExample
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<java.lang.Object> _inputValues
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.Object _expectedResult
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String _id
+	+++  NEW CONSTRUCTOR: PRIVATE(+) UdfExample$Default(java.lang.String, java.util.List<java.lang.Object>, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getId()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.Object> getInputValues()
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.udf.UdfExample$NullHandling  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.constant.Constable
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW SUPERCLASS: java.lang.Enum
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.udf.UdfExample$NullHandling DISABLED
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.udf.UdfExample$NullHandling ENABLED
+	+++  NEW CONSTRUCTOR: PRIVATE(+) UdfExample$NullHandling(java.lang.String, int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample$NullHandling valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample$NullHandling[] values()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExample$WithoutNullHandling  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.core.udf.UdfExample
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.Object _result
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.udf.UdfExample _base
+	+++  NEW CONSTRUCTOR: PRIVATE(+) UdfExample$WithoutNullHandling(org.apache.pinot.core.udf.UdfExample, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getId()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.Object> getInputValues()
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExample withoutNull(java.lang.Object)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.udf.UdfExampleBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder forEndomorphismNumeric(int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder forSignature(org.apache.pinot.core.udf.UdfSignature)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> generateExamples()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _arity
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.Set<org.apache.pinot.core.udf.UdfExample> _cases
+	+++  NEW CONSTRUCTOR: PROTECTED(+) UdfExampleBuilder$EndomorphismNumericTypesBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder addExample(java.lang.String, java.lang.Number[])
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder addExample(org.apache.pinot.core.udf.UdfExample)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder addExampleWithoutNull(java.lang.String, java.lang.Number[])
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder and(org.apache.pinot.core.udf.UdfExampleBuilder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder build()
++++  NEW CLASS: PRIVATE(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$EndomorphismNumericTypesBuilder$NumericPinotUdfExample  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.core.udf.UdfExample
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.udf.UdfExample _base
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.spi.data.FieldSpec$DataType _type
+	+++  NEW CONSTRUCTOR: PUBLIC(+) UdfExampleBuilder$EndomorphismNumericTypesBuilder$NumericPinotUdfExample(org.apache.pinot.core.udf.UdfExample, org.apache.pinot.spi.data.FieldSpec$DataType)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getId()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.Object> getInputValues()
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object getResult(org.apache.pinot.core.udf.UdfExample$NullHandling)
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.core.udf.UdfExampleBuilder
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> _cases
+	+++  NEW CONSTRUCTOR: PUBLIC(+) UdfExampleBuilder$MultiBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder and(org.apache.pinot.core.udf.UdfExampleBuilder)
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> generateExamples()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.udf.UdfSignature _signature
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.Set<org.apache.pinot.core.udf.UdfExample> _examples
+	+++  NEW CONSTRUCTOR: PROTECTED(+) UdfExampleBuilder$SingleBuilder(org.apache.pinot.core.udf.UdfSignature)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder addExample(org.apache.pinot.core.udf.UdfExample)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$SingleBuilder addExample(java.lang.String, java.lang.Object[])
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder$MultiBuilder and(org.apache.pinot.core.udf.UdfExampleBuilder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfExampleBuilder build()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.udf.UdfParameter  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String _name
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) boolean _multivalued
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.spi.data.FieldSpec$DataType _dataType
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String _description
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.core.udf.UdfParameter$Constraint> _constraints
+	+++  NEW CONSTRUCTOR: PRIVATE(+) UdfParameter(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType, boolean, java.util.List<org.apache.pinot.core.udf.UdfParameter$Constraint>, java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfParameter asLiteralOnly()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfParameter asMultiValued()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfParameter constrainedWith(org.apache.pinot.core.udf.UdfParameter$Constraint)
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.core.udf.UdfParameter$Constraint> getConstraints()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.spi.data.FieldSpec$DataType getDataType()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getName()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getTypeString()
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) boolean isLiteralOnly()
+	+++  NEW METHOD: PUBLIC(+) boolean isMultivalued()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfParameter of(java.lang.String, org.apache.pinot.spi.data.FieldSpec$DataType)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfParameter result(org.apache.pinot.spi.data.FieldSpec$DataType)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfParameter withDescription(java.lang.String)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.core.udf.UdfParameter$Constraint  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) void updateTableConfig(org.apache.pinot.spi.utils.builder.TableConfigBuilder, java.lang.String)
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfParameter$LiteralConstraint  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.core.udf.UdfParameter$Constraint
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.udf.UdfParameter$LiteralConstraint INSTANCE
+	+++  NEW CONSTRUCTOR: PRIVATE(+) UdfParameter$LiteralConstraint()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) void updateTableConfig(org.apache.pinot.spi.utils.builder.TableConfigBuilder, java.lang.String)
++++  NEW CLASS: PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.udf.UdfSignature  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PUBLIC(+) UdfSignature()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) int getArity()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.core.udf.UdfParameter> getParameters()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.udf.UdfParameter getReturnType()
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.udf.UdfSignature of(org.apache.pinot.core.udf.UdfParameter[])
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
++++  NEW CLASS: org.apache.pinot.core.udf.UdfSignature$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.core.udf.UdfSignature
+	+++  NEW CONSTRUCTOR: UdfSignature$1(org.apache.pinot.core.udf.UdfParameter[])
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.core.udf.UdfParameter> getParameters()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.udf.UdfParameter getReturnType()
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-csv-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-csv-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-distribution-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-distribution-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dropwizard-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dropwizard-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-flink-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-flink-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-gcs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-gcs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-hdfs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-hdfs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-test-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-test-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-tests-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-tests-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-java-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-java-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-jdbc-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-jdbc-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kinesis-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kinesis-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-orc-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-orc-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-parquet-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-parquet-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-perf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-perf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-pulsar-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-pulsar-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-runtime-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-runtime-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.AbsUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) AbsUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.AcosUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) AcosUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.Adler32Udf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) Adler32Udf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.AndUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) AndUdf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.ArrayAverageUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ArrayAverageUdf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.ArrayConcatDoubleUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ArrayConcatDoubleUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.ArrayElementAtIntUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ArrayElementAtIntUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.ArrayMaxUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ArrayMaxUdf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.ArrayUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ArrayUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.DegreesUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) DegreesUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.IsFalseUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) IsFalseUdf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.MultUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) MultUdf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String asSqlCall(java.lang.String, java.util.List<java.lang.String>)
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<java.lang.String> getAllNames()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.NotUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) NotUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.OrUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) OrUdf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.PlusUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) PlusUdf()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String asSqlCall(java.lang.String, java.util.List<java.lang.String>)
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<java.lang.String> getAllNames()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getMainName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.function.PinotScalarFunction getScalarFunction()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.ToDateTimeUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ToDateTimeUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.function.YearUdf  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PUBLIC(+) YearUdf()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getDescription()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.udf.UdfSignature,java.util.Set<org.apache.pinot.core.udf.UdfExample>> getExamples()
+	+++  NEW METHOD: PUBLIC(+) org.apache.commons.lang3.tuple.Pair<org.apache.pinot.common.function.TransformFunctionType,java.lang.Class<org.apache.pinot.core.operator.transform.function.TransformFunction>> getTransformFunction()
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-s3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-s3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-local-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-local-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-server-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-server-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-thrift-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-thrift-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-tools-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-tools-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+It seems pinot-udf-test-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-yammer-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-yammer-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
