@@ -1,0 +1,77 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/forward/ForwardIndexReaderFactory.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/forward/ForwardIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/ForwardIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/bloomfilter/BloomFilterHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/columnminmaxvalue/ColumnMinMaxValueGenerator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/defaultcolumn/BaseDefaultColumnHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/H3IndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/InvertedIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/JsonIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/MultiColumnTextIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/RangeIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/TextIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/VectorIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/startree/v2/store/StarTreeLoaderUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/MultiValueFixedByteRawIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/MultiValueVarByteRawIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/creator/RawIndexCreatorTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/ForwardIndexHandlerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/loader/SegmentPreProcessorTest.java"
+  ],
+  "mergedAt": "2025-07-24T11:07:58Z",
+  "number": 16363,
+  "title": "Make ForwardIndexReader pluggable by removing static methods from ForwardIndexType and ForwardIndexReaderFactory",
+  "url": "https://github.com/apache/pinot/pull/16363",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.forward.ForwardIndexReaderFactory",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.forward.ForwardIndexType",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.index.reader.ForwardIndexReader<?> read(org.apache.pinot.segment.spi.store.SegmentDirectory$Reader, org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.index.reader.ForwardIndexReader read(org.apache.pinot.segment.spi.memory.PinotDataBuffer, org.apache.pinot.segment.spi.ColumnMetadata)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.segment.spi.index.reader.ForwardIndexReader<?> read(org.apache.pinot.segment.spi.store.SegmentDirectory$Reader, org.apache.pinot.segment.spi.index.FieldIndexConfigs, org.apache.pinot.segment.spi.ColumnMetadata)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.defaultcolumn.BaseDefaultColumnHandler$ValueReader",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.MultiColumnTextIndexHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
