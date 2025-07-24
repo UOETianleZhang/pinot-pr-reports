@@ -1,0 +1,24 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/upsert/BasePartitionUpsertMetadataManager.java"
+  ],
+  "mergedAt": "2025-07-24T00:30:41Z",
+  "number": 16414,
+  "title": "Add a protected method for deleting snapshots to be extended ",
+  "url": "https://github.com/apache/pinot/pull/16414",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.upsert.BasePartitionUpsertMetadataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) void deleteSnapshot(org.apache.pinot.segment.local.indexsegment.immutable.ImmutableSegmentImpl)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
