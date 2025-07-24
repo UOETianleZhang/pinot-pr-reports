@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentUploadDownloadRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/ResourceUtils.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/ResourceUtilsTest.java"
+  ],
+  "mergedAt": "2025-07-24T03:18:28Z",
+  "number": 16379,
+  "title": "Emit segment download metrics for local (NFS/GPFS) file access",
+  "url": "https://github.com/apache/pinot/pull/16379",
+  "jcmpClasses": []
+}
