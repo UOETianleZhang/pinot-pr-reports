@@ -1,0 +1,231 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/IngestionDelayTracker.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeTableDataManager.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/main/java/org/apache/pinot/plugin/stream/kafka20/KafkaStreamMetadataProvider.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/test/java/org/apache/pinot/plugin/stream/kafka20/KafkaPartitionLevelConsumerTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/main/java/org/apache/pinot/plugin/stream/kafka30/KafkaStreamMetadataProvider.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/test/java/org/apache/pinot/plugin/stream/kafka30/KafkaPartitionLevelConsumerTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-base/src/main/java/org/apache/pinot/plugin/stream/kafka/KafkaStreamMessageMetadata.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/main/java/org/apache/pinot/plugin/stream/kinesis/KinesisConsumer.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/main/java/org/apache/pinot/plugin/stream/kinesis/KinesisStreamMessageMetadata.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/main/java/org/apache/pinot/plugin/stream/kinesis/KinesisStreamMetadataProvider.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/test/java/org/apache/pinot/plugin/stream/kinesis/KinesisMessageBatchTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-pulsar/src/main/java/org/apache/pinot/plugin/stream/pulsar/PulsarPartitionLevelConsumer.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-pulsar/src/main/java/org/apache/pinot/plugin/stream/pulsar/PulsarStreamMessageMetadata.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-pulsar/src/test/java/org/apache/pinot/plugin/stream/pulsar/PulsarConsumerTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/writer/StatelessRealtimeSegmentWriter.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/IndexingFailureTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentEntriesAboveThresholdTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplAggregateMetricsTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplIngestionAggregationTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplRawMVTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/MutableSegment.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/BytesStreamMessage.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/ConsumerPartitionState.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/MessageBatch.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/RowMetadata.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/StreamDataDecoderImpl.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/StreamMessage.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/StreamMessageMetadata.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/stream/StreamDataDecoderImplTest.java"
+  ],
+  "mergedAt": "2025-07-24T22:30:51Z",
+  "number": 16388,
+  "title": "Cleanup stream message related APIs",
+  "url": "https://github.com/apache/pinot/pull/16388",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeSegmentDataManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void updateIngestionMetrics(org.apache.pinot.spi.stream.RowMetadata)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void updateIngestionMetrics(org.apache.pinot.spi.stream.StreamMessageMetadata)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka.KafkaStreamMessageMetadata",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) KafkaStreamMessageMetadata(long, org.apache.pinot.spi.data.readers.GenericRow, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) KafkaStreamMessageMetadata()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kinesis.KinesisStreamMessageMetadata",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) KinesisStreamMessageMetadata(long, org.apache.pinot.spi.data.readers.GenericRow, java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) KinesisStreamMessageMetadata(long, org.apache.pinot.spi.data.readers.GenericRow)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) KinesisStreamMessageMetadata()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.pulsar.PulsarStreamMessageMetadata",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PulsarStreamMessageMetadata(long, org.apache.pinot.spi.data.readers.GenericRow, java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) PulsarStreamMessageMetadata(long, org.apache.pinot.spi.data.readers.GenericRow)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) PulsarStreamMessageMetadata()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.mutable.MutableSegmentImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean index(org.apache.pinot.spi.data.readers.GenericRow, org.apache.pinot.spi.stream.RowMetadata)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) boolean index(org.apache.pinot.spi.data.readers.GenericRow, org.apache.pinot.spi.stream.StreamMessageMetadata)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.MutableSegment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) boolean index(org.apache.pinot.spi.data.readers.GenericRow, org.apache.pinot.spi.stream.RowMetadata)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean index(org.apache.pinot.spi.data.readers.GenericRow, org.apache.pinot.spi.stream.StreamMessageMetadata)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.BytesStreamMessage",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BytesStreamMessage(byte[])"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.ConsumerPartitionState",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ConsumerPartitionState(java.lang.String, org.apache.pinot.spi.stream.StreamPartitionMsgOffset, long, org.apache.pinot.spi.stream.StreamPartitionMsgOffset, org.apache.pinot.spi.stream.RowMetadata)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ConsumerPartitionState(java.lang.String, org.apache.pinot.spi.stream.StreamPartitionMsgOffset, long, org.apache.pinot.spi.stream.StreamPartitionMsgOffset, org.apache.pinot.spi.stream.StreamMessageMetadata)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.MessageBatch",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Object getMessageAtIndex(int)",
+        "PUBLIC(-) byte[] getMessageBytesAtIndex(int)",
+        "PUBLIC(-) int getMessageLengthAtIndex(int)",
+        "PUBLIC(-) int getMessageOffsetAtIndex(int)",
+        "PUBLIC(-) org.apache.pinot.spi.stream.RowMetadata getMetadataAtIndex(int)",
+        "PUBLIC(-) long getNextStreamMessageOffsetAtIndex(int)",
+        "PUBLIC(-) org.apache.pinot.spi.stream.StreamPartitionMsgOffset getNextStreamPartitionMsgOffsetAtIndex(int)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.RowMetadata",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getFirstStreamRecordIngestionTimeMs()",
+        "PUBLIC(-) org.apache.pinot.spi.data.readers.GenericRow getHeaders()",
+        "PUBLIC(-) org.apache.pinot.spi.stream.StreamPartitionMsgOffset getNextOffset()",
+        "PUBLIC(-) org.apache.pinot.spi.stream.StreamPartitionMsgOffset getOffset()",
+        "PUBLIC(-) ABSTRACT(-) long getRecordIngestionTimeMs()",
+        "PUBLIC(-) java.util.Map<java.lang.String,java.lang.String> getRecordMetadata()",
+        "PUBLIC(-) int getRecordSerializedSize()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.StreamMessage",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) StreamMessage(java.lang.Object, int, org.apache.pinot.spi.stream.StreamMessageMetadata)",
+        "PUBLIC(-) StreamMessage(byte[], java.lang.Object, org.apache.pinot.spi.stream.StreamMessageMetadata, int)",
+        "PUBLIC(-) StreamMessage(java.lang.Object, int)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.StreamMessageMetadata",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) StreamMessageMetadata(long, org.apache.pinot.spi.data.readers.GenericRow)",
+        "PUBLIC(-) StreamMessageMetadata(long)",
+        "PUBLIC(-) StreamMessageMetadata(long, long, org.apache.pinot.spi.data.readers.GenericRow, java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) StreamMessageMetadata(long, org.apache.pinot.spi.data.readers.GenericRow, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
