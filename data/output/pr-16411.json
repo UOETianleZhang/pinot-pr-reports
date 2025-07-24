@@ -1,0 +1,50 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/segment/generation/SegmentGenerationUtils.java",
+    "pinot-plugins/pinot-batch-ingestion/pinot-batch-ingestion-spark-2.4/src/main/java/org/apache/pinot/plugin/ingestion/batch/spark/SparkSegmentGenerationJobRunner.java",
+    "pinot-plugins/pinot-batch-ingestion/pinot-batch-ingestion-spark-3/src/main/java/org/apache/pinot/plugin/ingestion/batch/spark3/SparkSegmentGenerationJobRunner.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/ingestion/batch/spec/TlsSpec.java"
+  ],
+  "mergedAt": "2025-07-24T12:26:59Z",
+  "number": 16411,
+  "title": "[Enhance] Support backfill on clusters with self-signed certificates",
+  "url": "https://github.com/apache/pinot/pull/16411",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.segment.generation.SegmentGenerationUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) java.lang.String fetchUrl(java.net.URL, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.lang.String fetchUrl(java.net.URL, java.lang.String, org.apache.pinot.spi.ingestion.batch.spec.TlsSpec)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.data.Schema getSchema(java.lang.String, java.lang.String, org.apache.pinot.spi.ingestion.batch.spec.TlsSpec)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.config.table.TableConfig getTableConfig(java.lang.String, java.lang.String, org.apache.pinot.spi.ingestion.batch.spec.TlsSpec)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.ingestion.batch.spec.TlsSpec",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getConnectTimeout()",
+        "PUBLIC(+) int getReadTimeout()",
+        "PUBLIC(+) void setConnectTimeout(int)",
+        "PUBLIC(+) void setReadTimeout(int)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) int _readTimeout",
+        "PRIVATE(+) int _connectTimeout"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
