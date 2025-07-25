@@ -1,0 +1,14 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/DataTypeConversionFunctions.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/ErrorCodesIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotEvaluateLiteralRule.java",
+    "pinot-query-planner/src/test/resources/queries/LiteralEvaluationPlans.json",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json"
+  ],
+  "mergedAt": "2025-07-25T09:08:36Z",
+  "number": 16421,
+  "title": "Fix CAST evaluation with literal-only operands in MSQE",
+  "url": "https://github.com/apache/pinot/pull/16421",
+  "jcmpClasses": []
+}
