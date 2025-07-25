@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/PurgeMinionClusterIntegrationTest.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/purge/PurgeTaskGenerator.java"
+  ],
+  "mergedAt": "2025-07-25T00:17:58Z",
+  "number": 16368,
+  "title": "feat: Enhance PurgeTask to automatically delete empty segments",
+  "url": "https://github.com/apache/pinot/pull/16368",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.purge.PurgeTaskGenerator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Set<java.lang.String> getLastLLCSegmentPerPartition(java.util.List<org.apache.pinot.common.metadata.segment.SegmentZKMetadata>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
