@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/executor/ServerQueryExecutorV1Impl.java"
+  ],
+  "mergedAt": "2025-07-25T23:04:44Z",
+  "number": 16164,
+  "title": "[Query Resource Isolation] Additonal Sampling for Broker and Server",
+  "url": "https://github.com/apache/pinot/pull/16164",
+  "jcmpClasses": []
+}
