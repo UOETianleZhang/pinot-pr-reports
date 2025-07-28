@@ -1,0 +1,220 @@
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/assembly-descriptor-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/assembly-descriptor-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-adls-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-adls-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-azure-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-azure-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-broker-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-broker-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-clp-log-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-clp-log-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compound-metrics-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compound-metrics-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-controller-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-controller-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-core-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-core-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-csv-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-csv-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-distribution-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-distribution-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dropwizard-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dropwizard-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-flink-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-flink-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-gcs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-gcs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-hdfs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-hdfs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-test-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-test-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-tests-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-tests-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-java-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-java-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-jdbc-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-jdbc-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kinesis-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kinesis-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-orc-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-orc-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-parquet-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-parquet-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-perf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-perf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-pulsar-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-pulsar-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-runtime-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-runtime-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-s3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-s3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-local-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-local-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	***  MODIFIED FIELD: PRIVATE FINAL (<- NON_FINAL) org.apache.pinot.common.metrics.ServerMetrics _serverMetrics
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap and(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap and(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.roaringbitmap.RoaringBitmap)
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap filter(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap filter(org.roaringbitmap.RoaringBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)
+	+++  NEW METHOD: PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getMatchingDocIds(org.apache.pinot.common.request.context.FilterContext)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap getMatchingFlattenedDocIdsForKeyValue(org.apache.pinot.common.request.context.predicate.Predicate, java.lang.String)
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap or(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)
+***! MODIFIED CLASS: PRIVATE (<- PACKAGE_PROTECTED) STATIC org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	***! MODIFIED FIELD: FINAL (<- NON_FINAL) org.roaringbitmap.RoaringBitmap _value
+	---! REMOVED FIELD: boolean _readOnly
+	+++  NEW FIELD: FINAL(+) boolean _mutable
+	---! REMOVED CONSTRUCTOR: MutableJsonIndexImpl$LazyBitmap(org.roaringbitmap.RoaringBitmap)
+	***! MODIFIED METHOD: org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap (<-void) and(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)
+	+++  NEW METHOD: org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap andNot(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)
+	+++  NEW METHOD: STATIC(+) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap createImmutable(org.roaringbitmap.RoaringBitmap)
+	+++  NEW METHOD: STATIC(+) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap createMutable(org.roaringbitmap.RoaringBitmap)
+	***! MODIFIED METHOD: org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap (<-void) or(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)
+***! MODIFIED CLASS: PUBLIC org.apache.pinot.segment.local.segment.index.readers.json.ImmutableJsonIndexReader  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	***! MODIFIED METHOD: PRIVATE STATIC org.roaringbitmap.buffer.ImmutableRoaringBitmap (<-org.roaringbitmap.buffer.MutableRoaringBitmap) and(org.roaringbitmap.buffer.ImmutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) org.roaringbitmap.buffer.ImmutableRoaringBitmap andNot(org.roaringbitmap.buffer.ImmutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.roaringbitmap.buffer.ImmutableRoaringBitmap filter(org.roaringbitmap.buffer.ImmutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)
+	+++  NEW METHOD: PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getMatchingDocIds(org.apache.pinot.common.request.context.FilterContext)
+	+++  NEW METHOD: PRIVATE(+) org.roaringbitmap.buffer.ImmutableRoaringBitmap getMatchingFlattenedDocIdsForKeyValue(org.apache.pinot.common.request.context.predicate.Predicate, java.lang.String)
+	---  REMOVED METHOD: PRIVATE(-) org.roaringbitmap.PeekableIntIterator intersect(org.roaringbitmap.buffer.MutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)
+	***! MODIFIED METHOD: PRIVATE STATIC org.roaringbitmap.buffer.ImmutableRoaringBitmap (<-org.roaringbitmap.buffer.MutableRoaringBitmap) or(org.roaringbitmap.buffer.ImmutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.roaringbitmap.buffer.MutableRoaringBitmap toMutable(org.roaringbitmap.buffer.ImmutableRoaringBitmap)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-server-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-server-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-thrift-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-thrift-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-tools-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-tools-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-udf-test-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-udf-test-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-yammer-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-yammer-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.

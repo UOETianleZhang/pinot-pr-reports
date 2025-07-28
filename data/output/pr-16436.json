@@ -1,0 +1,73 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/impl/json/MutableJsonIndexImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/BitmapInvertedIndexReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/json/ImmutableJsonIndexReader.java"
+  ],
+  "mergedAt": "2025-07-28T19:02:09Z",
+  "number": 16436,
+  "title": "Enhance and unify JSON index reader",
+  "url": "https://github.com/apache/pinot/pull/16436",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap and(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap and(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.roaringbitmap.RoaringBitmap)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap filter(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap filter(org.roaringbitmap.RoaringBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)",
+        "PRIVATE(-) STATIC(-) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap or(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap, org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getMatchingDocIds(org.apache.pinot.common.request.context.FilterContext)",
+        "PRIVATE(+) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap getMatchingFlattenedDocIdsForKeyValue(org.apache.pinot.common.request.context.predicate.Predicate, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "PRIVATE",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap andNot(org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap)",
+        "STATIC(+) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap createImmutable(org.roaringbitmap.RoaringBitmap)",
+        "STATIC(+) org.apache.pinot.segment.local.realtime.impl.json.MutableJsonIndexImpl$LazyBitmap createMutable(org.roaringbitmap.RoaringBitmap)"
+      ],
+      "removedFields": [
+        "boolean _readOnly"
+      ],
+      "addedFields": [
+        "FINAL(+) boolean _mutable"
+      ],
+      "removedConstructors": [
+        "MutableJsonIndexImpl$LazyBitmap(org.roaringbitmap.RoaringBitmap)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.json.ImmutableJsonIndexReader",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) org.roaringbitmap.buffer.ImmutableRoaringBitmap filter(org.roaringbitmap.buffer.ImmutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)",
+        "PRIVATE(-) org.roaringbitmap.PeekableIntIterator intersect(org.roaringbitmap.buffer.MutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)",
+        "PRIVATE(-) STATIC(-) org.roaringbitmap.buffer.MutableRoaringBitmap toMutable(org.roaringbitmap.buffer.ImmutableRoaringBitmap)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.roaringbitmap.buffer.ImmutableRoaringBitmap andNot(org.roaringbitmap.buffer.ImmutableRoaringBitmap, org.roaringbitmap.buffer.ImmutableRoaringBitmap)",
+        "PRIVATE(+) org.roaringbitmap.buffer.MutableRoaringBitmap getMatchingDocIds(org.apache.pinot.common.request.context.FilterContext)",
+        "PRIVATE(+) org.roaringbitmap.buffer.ImmutableRoaringBitmap getMatchingFlattenedDocIdsForKeyValue(org.apache.pinot.common.request.context.predicate.Predicate, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
