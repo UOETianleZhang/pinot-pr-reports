@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-28T00:37:08Z",
+  "number": 16427,
+  "title": "Bump org.apache.commons:commons-text from 1.13.1 to 1.14.0",
+  "url": "https://github.com/apache/pinot/pull/16427",
+  "jcmpClasses": []
+}
