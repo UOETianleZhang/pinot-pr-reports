@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java"
+  ],
+  "mergedAt": "2025-07-28T17:40:58Z",
+  "number": 16439,
+  "title": "Use Broker's accountant to sample in the request handler.",
+  "url": "https://github.com/apache/pinot/pull/16439",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void sampleAndCheckInterruption(org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
