@@ -1,0 +1,26 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/FileUploadDownloadClient.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/ConsistentDataPushUtils.java"
+  ],
+  "mergedAt": "2025-07-28T22:47:03Z",
+  "number": 16434,
+  "title": "[BugFix] Add auth for revert replace segment",
+  "url": "https://github.com/apache/pinot/pull/16434",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.FileUploadDownloadClient",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.hc.core5.http.ClassicHttpRequest getRevertReplaceSegmentRequest(java.net.URI, org.apache.pinot.spi.auth.AuthProvider)",
+        "PUBLIC(+) org.apache.pinot.common.utils.SimpleHttpResponse revertReplaceSegments(java.net.URI, org.apache.pinot.spi.auth.AuthProvider)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
