@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/utils/PinotMethodUtils.ts"
+  ],
+  "mergedAt": "2025-07-29T09:30:26Z",
+  "number": 16440,
+  "title": "Fix: Handle null values in ZooKeeper node metadata in Pinot UI #14216",
+  "url": "https://github.com/apache/pinot/pull/16440",
+  "jcmpClasses": []
+}
