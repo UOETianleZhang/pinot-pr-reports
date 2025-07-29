@@ -1,0 +1,133 @@
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/assembly-descriptor-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/assembly-descriptor-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+It seems pinot-adls-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-avro-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-avro-base-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-azure-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-broker-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-clp-log-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-common-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-compound-metrics-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-confluent-avro-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-confluent-json-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-controller-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-core-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-csv-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+It seems pinot-distribution-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dropwizard-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dropwizard-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+It seems pinot-flink-connector-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-gcs-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-hdfs-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-integration-test-base-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-integration-tests-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-java-client-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-jdbc-client-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-json-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-kafka-2.0-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-kafka-3.0-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-kafka-base-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-kinesis-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-minion-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-orc-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-parquet-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-perf-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-protobuf-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-pulsar-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-query-planner-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-query-runtime-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-s3-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-segment-local-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+It seems pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-server-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-spark-2-connector-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-spark-3-connector-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-spark-common-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+It seems pinot-thrift-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-timeseries-planner-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+It seems pinot-tools-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+It seems pinot-udf-test-1.4.0-SNAPSHOT.jar does not exist in the previous pull request. Please make sure this is intended.
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-yammer-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-yammer-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
