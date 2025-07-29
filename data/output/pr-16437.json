@@ -1,0 +1,52 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/SegmentStatusChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/util/ServerQueryInfoFetcher.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/common/MinionConstants.java"
+  ],
+  "mergedAt": "2025-07-29T11:30:25Z",
+  "number": 16437,
+  "title": "Add logs for segment status checker to be able to debug which segment is failing check",
+  "url": "https://github.com/apache/pinot/pull/16437",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.util.ServerQueryInfoFetcher",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.util.ServerQueryInfoFetcher$ServerQueryInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.common.MinionConstants",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String DOT_SEPARATOR"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
