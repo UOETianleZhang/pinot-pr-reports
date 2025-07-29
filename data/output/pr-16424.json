@@ -1,0 +1,45 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/ControllerConf.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotControllerTimeseriesResource.java",
+    "pinot-controller/src/main/resources/app/components/Query/TimeseriesQueryPage.tsx",
+    "pinot-controller/src/main/resources/app/requests/index.ts"
+  ],
+  "mergedAt": "2025-07-29T19:09:06Z",
+  "number": 16424,
+  "title": "[timeseries] Adding timeseries language endpoint and UI integration",
+  "url": "https://github.com/apache/pinot/pull/16424",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotControllerTimeseriesResource",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<java.lang.String> getBrokerTimeSeriesLanguages(javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "org.apache.pinot.controller.ControllerConf _controllerConf",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotControllerTimeseriesResource()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.ControllerConf",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<java.lang.String> getTimeseriesLanguages()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
