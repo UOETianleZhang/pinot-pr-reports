@@ -1,0 +1,45 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTaskRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/PinotHelixTaskResourceManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotTaskRestletResourceTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/minion/PinotHelixTaskResourceManagerTest.java"
+  ],
+  "mergedAt": "2025-07-29T02:03:45Z",
+  "number": 16433,
+  "title": "Add state and table filtering support to task counts API",
+  "url": "https://github.com/apache/pinot/pull/16433",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTaskRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskCount> getTaskCounts(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskCount> getTaskCounts(java.lang.String, java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskCount> getTaskCounts(java.lang.String, java.lang.String)",
+        "PUBLIC(+) java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.minion.PinotHelixTaskResourceManager$TaskCount> getTaskCounts(java.lang.String, java.lang.String, java.lang.String)",
+        "PRIVATE(+) boolean hasTasksForTable(java.lang.String, java.lang.String)",
+        "PRIVATE(+) org.apache.helix.task.TaskState validateAndParseTaskState(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
