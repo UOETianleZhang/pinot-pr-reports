@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/dictionary/DictionaryIndexType.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/TableConfigUtilsTest.java"
+  ],
+  "mergedAt": "2025-07-30T19:10:48Z",
+  "number": 16469,
+  "title": "Fix var-length dictionary validation on BIG_DECIMAL",
+  "url": "https://github.com/apache/pinot/pull/16469",
+  "jcmpClasses": []
+}
