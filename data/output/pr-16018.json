@@ -1,0 +1,110 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerMeter.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/QuerySchedulerFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/WorkloadScheduler.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/WorkloadBudgetManagerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/scheduler/QuerySchedulerFactoryTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/core/accounting/WorkloadBudgetManager.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/exception/QueryErrorCode.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-07-30T20:20:48Z",
+  "number": 16018,
+  "title": "[Query Resource Isolation] Workload Scheduler",
+  "url": "https://github.com/apache/pinot/pull/16018",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.ServerMeter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerMeter WORKLOAD_BUDGET_EXCEEDED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.QuerySchedulerFactory",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String WORKLOAD_SCHEDULER_ALGORITHM"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.WorkloadScheduler",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String name()",
+        "PUBLIC(+) void start()",
+        "PUBLIC(+) void stop()",
+        "PUBLIC(+) com.google.common.util.concurrent.ListenableFuture submit(org.apache.pinot.core.query.request.ServerQueryRequest)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.accounting.WorkloadBudgetManager _workloadBudgetManager",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.metrics.ServerMetrics _serverMetrics",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) java.lang.String _secondaryWorkloadName"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) WorkloadScheduler(org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.core.query.executor.QueryExecutor, org.apache.pinot.common.metrics.ServerMetrics, java.util.concurrent.atomic.LongAccumulator, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.WorkloadBudgetManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean canAdmitQuery(java.lang.String)",
+        "PRIVATE(+) void initSecondaryWorkloadBudget(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.exception.QueryErrorCode",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.exception.QueryErrorCode WORKLOAD_BUDGET_EXCEEDED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Accounting",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEFAULT_SECONDARY_WORKLOAD_NAME",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_SECONDARY_WORKLOAD_CPU_PERCENTAGE",
+        "PUBLIC(+) STATIC(+) FINAL(+) double DEFAULT_SECONDARY_WORKLOAD_CPU_PERCENTAGE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_SECONDARY_WORKLOAD_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
