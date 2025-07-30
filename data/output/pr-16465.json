@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-07-30T13:19:05Z",
+  "number": 16465,
+  "title": "Bump org.apache.commons:commons-compress from 1.27.1 to 1.28.0",
+  "url": "https://github.com/apache/pinot/pull/16465",
+  "jcmpClasses": []
+}
