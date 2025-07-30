@@ -1,0 +1,23 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableInstances.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/SegmentAssignmentUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/DefaultRebalancePreChecker.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/BaseTableDataManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/LogicalTableRouteInfo.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/segment/processing/mapper/SegmentMapper.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/server/ServerPlanRequestUtils.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/timeseries/LeafTimeSeriesOperator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/upsert/merger/PartialUpsertColumnarMerger.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/creator/SegmentGeneratorConfig.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/IngestionConfigUtils.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/ControllerRequestURLBuilder.java"
+  ],
+  "mergedAt": "2025-07-30T20:58:30Z",
+  "number": 16468,
+  "title": "Replace all usages of commons-collections with commons-collections4",
+  "url": "https://github.com/apache/pinot/pull/16468",
+  "jcmpClasses": []
+}

@@ -1,0 +1,29 @@
+{
+  "files": [
+    "pinot-common/src/main/codegen/config.fmpp",
+    "pinot-common/src/test/java/org/apache/pinot/sql/parsers/CalciteSqlParserTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/transform/function/CastTransformFunction.java"
+  ],
+  "mergedAt": "2025-07-30T20:57:59Z",
+  "number": 16471,
+  "title": "Make VARIANT/UUID non reserved keyword",
+  "url": "https://github.com/apache/pinot/pull/16471",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.sql.parsers.parser.SqlParserImpl",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) boolean jj_2_1776(int)",
+        "PRIVATE(+) boolean jj_2_1777(int)",
+        "PRIVATE(+) boolean jj_3_1776()",
+        "PRIVATE(+) boolean jj_3_1777()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
