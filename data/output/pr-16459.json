@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/SegmentStatusChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/util/ServerQueryInfoFetcher.java"
+  ],
+  "mergedAt": "2025-07-30T17:16:39Z",
+  "number": 16459,
+  "title": "Reduce log volume added from https://github.com/apache/pinot/pull/16437",
+  "url": "https://github.com/apache/pinot/pull/16459",
+  "jcmpClasses": []
+}

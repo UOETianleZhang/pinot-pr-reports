@@ -1,0 +1,69 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTenantRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/DefaultTenantRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalancerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TenantRebalanceIntegrationTest.java"
+  ],
+  "mergedAt": "2025-07-30T16:57:40Z",
+  "number": 16422,
+  "title": "Incorporate parallelWhitelist and parallelBlacklist to the new Tenant Rebalance API",
+  "url": "https://github.com/apache/pinot/pull/16422",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTenantRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult rebalance(java.lang.String, java.lang.Integer, java.lang.String, java.lang.String, java.lang.Boolean, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult rebalance(java.lang.String, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.DefaultTenantRebalancer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult rebalanceWithIncludeExcludeTables(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig)",
+        "PRIVATE(-) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult rebalanceWithParallelAndSequential(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig)"
+      ],
+      "addedMethods": [
+        "org.apache.commons.lang3.tuple.Pair<java.util.concurrent.ConcurrentLinkedQueue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>,java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>> createParallelAndSequentialQueues(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)",
+        "PRIVATE(+) void doConsumeTablesFromQueue(java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceObserver)",
+        "PRIVATE(+) STATIC(+) java.util.Set<java.lang.String> getTablesToRunInParallel(java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getJobId()",
+        "PUBLIC(+) java.lang.String getTableName()",
+        "PUBLIC(+) boolean shouldRebalanceWithDowntime()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _withDowntime",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableName",
+        "PRIVATE(+) FINAL(+) java.lang.String _jobId"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TenantRebalancer$TenantTableRebalanceJobContext(java.lang.String, java.lang.String, boolean)"
+      ]
+    }
+  ]
+}
