@@ -1,0 +1,394 @@
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/assembly-descriptor-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/assembly-descriptor-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-adls-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-adls-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-azure-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-azure-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-broker-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-broker-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+===* UNCHANGED CLASS: PUBLIC org.apache.pinot.broker.api.resources.PinotBrokerDebug  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED METHOD: PUBLIC java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) getRoutingTableForQueryWithOptionalSegments(java.lang.String, javax.ws.rs.core.HttpHeaders)
+	===* UNCHANGED METHOD: PRIVATE STATIC java.util.Map<org.apache.pinot.core.transport.ServerInstance,java.util.List<java.lang.String>><org.apache.pinot.core.transport.ServerInstance,java.util.List<java.lang.String>> removeOptionalSegments(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>))
+===* UNCHANGED CLASS: PUBLIC org.apache.pinot.broker.requesthandler.GrpcBrokerRequestHandler  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED METHOD: PRIVATE void sendRequest(long, org.apache.pinot.spi.config.table.TableType, org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>), java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,java.util.Iterator<org.apache.pinot.common.proto.Server$ServerResponse>><org.apache.pinot.core.transport.ServerRoutingInstance,java.util.Iterator<org.apache.pinot.common.proto.Server$ServerResponse>>, boolean)
+===* UNCHANGED CLASS: PUBLIC org.apache.pinot.broker.routing.BrokerRoutingManager  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED METHOD: PRIVATE java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) getServerInstanceToSegmentsMap(java.lang.String, org.apache.pinot.broker.routing.instanceselector.InstanceSelector$SelectionResult)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-clp-log-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-clp-log-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compound-metrics-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compound-metrics-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-controller-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-controller-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-core-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-core-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+---! REMOVED CLASS: PUBLIC(-) ABSTRACT(-) org.apache.pinot.core.routing.BaseTableRouteInfo  (not serializable)
+	---  CLASS FILE FORMAT VERSION: n.a. <- 55.0
+	---! REMOVED INTERFACE: org.apache.pinot.core.routing.TableRouteInfo
+	---! REMOVED SUPERCLASS: java.lang.Object
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) BaseTableRouteInfo()
+	---  REMOVED METHOD: PUBLIC(-) boolean isDisabled()
+	---  REMOVED METHOD: PUBLIC(-) boolean isExists()
+	---  REMOVED METHOD: PUBLIC(-) boolean isHybrid()
+	---  REMOVED METHOD: PUBLIC(-) boolean isOffline()
+	---  REMOVED METHOD: PUBLIC(-) boolean isRealtime()
+	---  REMOVED METHOD: PUBLIC(-) boolean isRouteExists()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++! NEW INTERFACE: org.apache.pinot.core.routing.TableRouteInfo
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> _realtimeRoutingTable
+	+++  NEW FIELD: PRIVATE(+) int _numPrunedSegmentsTotal
+	+++  NEW FIELD: PRIVATE(+) java.lang.String _offlineTableName
+	+++  NEW FIELD: PRIVATE(+) java.lang.String _realtimeTableName
+	+++  NEW FIELD: PRIVATE(+) java.util.List<java.lang.String> _unavailableSegments
+	+++  NEW FIELD: PRIVATE(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> _offlineRoutingTable
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.spi.config.table.TableConfig _offlineTableConfig
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo _timeBoundaryInfo
+	+++  NEW FIELD: PRIVATE(+) boolean _isRealtimeRouteExists
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.spi.config.table.TableConfig _realtimeTableConfig
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.request.BrokerRequest _offlineBrokerRequest
+	+++  NEW FIELD: PRIVATE(+) boolean _isRealtimeTableDisabled
+	+++  NEW FIELD: PRIVATE(+) boolean _isOfflineRouteExists
+	+++  NEW FIELD: PRIVATE(+) boolean _isOfflineTableDisabled
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.request.BrokerRequest _realtimeBrokerRequest
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ImplicitHybridTableRouteInfo()
+	+++  NEW CONSTRUCTOR: PUBLIC(+) ImplicitHybridTableRouteInfo(org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.String> getDisabledTableNames()
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.common.request.InstanceRequest getInstanceRequest(long, java.lang.String, org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.core.routing.SegmentsToQuery)
+	+++  NEW METHOD: PUBLIC(+) int getNumPrunedSegmentsTotal()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.request.BrokerRequest getOfflineBrokerRequest()
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getOfflineExecutionServers()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> getOfflineRoutingTable()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getOfflineTableName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.spi.config.table.QueryConfig getOfflineTableQueryConfig()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.request.BrokerRequest getRealtimeBrokerRequest()
+	+++  NEW METHOD: PUBLIC(+) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getRealtimeExecutionServers()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> getRealtimeRoutingTable()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String getRealtimeTableName()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.spi.config.table.QueryConfig getRealtimeTableQueryConfig()
+	+++  NEW METHOD: PUBLIC(+) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMap(long, java.lang.String, boolean)
+	+++  NEW METHOD: PRIVATE(+) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMapFromRoutingTable(org.apache.pinot.spi.config.table.TableType, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>, org.apache.pinot.common.request.BrokerRequest, long, java.lang.String, boolean)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo getTimeBoundaryInfo()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.String> getUnavailableSegments()
+	+++  NEW METHOD: PUBLIC(+) boolean hasOffline()
+	+++  NEW METHOD: PUBLIC(+) boolean hasRealtime()
+	+++  NEW METHOD: PUBLIC(+) boolean isOfflineRouteExists()
+	+++  NEW METHOD: PUBLIC(+) boolean isOfflineTableDisabled()
+	+++  NEW METHOD: PUBLIC(+) boolean isRealtimeRouteExists()
+	+++  NEW METHOD: PUBLIC(+) boolean isRealtimeTableDisabled()
+	+++  NEW METHOD: PUBLIC(+) void setNumPrunedSegmentsTotal(int)
+	+++  NEW METHOD: PUBLIC(+) void setOfflineBrokerRequest(org.apache.pinot.common.request.BrokerRequest)
+	+++  NEW METHOD: PUBLIC(+) void setOfflineRouteExists(boolean)
+	+++  NEW METHOD: PUBLIC(+) void setOfflineRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>)
+	+++  NEW METHOD: PUBLIC(+) void setOfflineTableConfig(org.apache.pinot.spi.config.table.TableConfig)
+	+++  NEW METHOD: PUBLIC(+) void setOfflineTableDisabled(boolean)
+	+++  NEW METHOD: PUBLIC(+) void setOfflineTableName(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) void setRealtimeBrokerRequest(org.apache.pinot.common.request.BrokerRequest)
+	+++  NEW METHOD: PUBLIC(+) void setRealtimeRouteExists(boolean)
+	+++  NEW METHOD: PUBLIC(+) void setRealtimeRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>)
+	+++  NEW METHOD: PUBLIC(+) void setRealtimeTableConfig(org.apache.pinot.spi.config.table.TableConfig)
+	+++  NEW METHOD: PUBLIC(+) void setRealtimeTableDisabled(boolean)
+	+++  NEW METHOD: PUBLIC(+) void setRealtimeTableName(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) void setTimeBoundaryInfo(org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo)
+	+++  NEW METHOD: PUBLIC(+) void setUnavailableSegments(java.util.List<java.lang.String>)
+***! MODIFIED CLASS: PUBLIC org.apache.pinot.core.routing.ImplicitHybridTableRouteProvider  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	---! REMOVED METHOD: PUBLIC(-) void fillRouteMetadata(org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo, org.apache.pinot.core.routing.RoutingManager)
+	+++  NEW METHOD: PUBLIC(+) void fillRouteMetadata(org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo, org.apache.pinot.core.routing.RoutingManager)
+	---! REMOVED METHOD: PUBLIC(-) void fillTableConfigMetadata(org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo, java.lang.String, org.apache.pinot.common.config.provider.TableCache)
+	+++  NEW METHOD: PUBLIC(+) void fillTableConfigMetadata(org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo, java.lang.String, org.apache.pinot.common.config.provider.TableCache)
+***! MODIFIED CLASS: PUBLIC org.apache.pinot.core.routing.LogicalTableRouteInfo  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===! UNCHANGED INTERFACE: org.apache.pinot.core.routing.TableRouteInfo
+	***! MODIFIED SUPERCLASS: java.lang.Object (<- org.apache.pinot.core.routing.BaseTableRouteInfo)
+	===* UNCHANGED FIELD: PRIVATE java.util.List<org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo>(<- <org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo>) _realtimeTables
+	===* UNCHANGED FIELD: PRIVATE java.util.List<org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo>(<- <org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo>) _offlineTables
+	===* UNCHANGED METHOD: PUBLIC java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) getOfflineRoutingTable()
+	===* UNCHANGED METHOD: PUBLIC java.util.List<org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo>(<- <org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo>) getOfflineTables()
+	===* UNCHANGED METHOD: PUBLIC java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) getRealtimeRoutingTable()
+	===* UNCHANGED METHOD: PUBLIC java.util.List<org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo>(<- <org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo>) getRealtimeTables()
+	===* UNCHANGED METHOD: PUBLIC void setOfflineTables(java.util.List<org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo>(<- <org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo>))
+	===* UNCHANGED METHOD: PUBLIC void setRealtimeTables(java.util.List<org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo>(<- <org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo>))
+===! UNCHANGED CLASS: PUBLIC org.apache.pinot.core.routing.PhysicalTableRouteProvider  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+===* UNCHANGED CLASS: PUBLIC org.apache.pinot.core.routing.RoutingTable  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED FIELD: PRIVATE FINAL java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) _serverInstanceToSegmentsMap
+	===* UNCHANGED CONSTRUCTOR: PUBLIC RoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>), java.util.List<java.lang.String><java.lang.String>, int)
+	===* UNCHANGED METHOD: PUBLIC java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) getServerInstanceToSegmentsMap()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.routing.SegmentsToQuery  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _optionalSegments
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _segments
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SegmentsToQuery(java.util.List<java.lang.String>, java.util.List<java.lang.String>)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.String> getOptionalSegments()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.String> getSegments()
+---! REMOVED CLASS: PUBLIC(-) org.apache.pinot.core.routing.ServerRouteInfo  (not serializable)
+	---  CLASS FILE FORMAT VERSION: n.a. <- 55.0
+	---! REMOVED SUPERCLASS: java.lang.Object
+	---  REMOVED FIELD: PRIVATE(-) FINAL(-) java.util.List<java.lang.String> _optionalSegments
+	---  REMOVED FIELD: PRIVATE(-) FINAL(-) java.util.List<java.lang.String> _segments
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) ServerRouteInfo(java.util.List<java.lang.String>, java.util.List<java.lang.String>)
+	---! REMOVED METHOD: PUBLIC(-) java.util.List<java.lang.String> getOptionalSegments()
+	---! REMOVED METHOD: PUBLIC(-) java.util.List<java.lang.String> getSegments()
+***! MODIFIED INTERFACE: PUBLIC ABSTRACT org.apache.pinot.core.routing.TableRouteInfo  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.request.InstanceRequest createInstanceRequest(org.apache.pinot.common.request.BrokerRequest, java.lang.String, long)
+	===* UNCHANGED METHOD: PUBLIC ABSTRACT java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) getOfflineRoutingTable()
+	===* UNCHANGED METHOD: PUBLIC ABSTRACT java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) getRealtimeRoutingTable()
+	***! MODIFIED METHOD: PUBLIC NON_ABSTRACT (<- ABSTRACT) boolean isDisabled()
+	***! MODIFIED METHOD: PUBLIC NON_ABSTRACT (<- ABSTRACT) boolean isExists()
+	***! MODIFIED METHOD: PUBLIC NON_ABSTRACT (<- ABSTRACT) boolean isHybrid()
+	***! MODIFIED METHOD: PUBLIC NON_ABSTRACT (<- ABSTRACT) boolean isOffline()
+	***! MODIFIED METHOD: PUBLIC NON_ABSTRACT (<- ABSTRACT) boolean isRealtime()
+	***! MODIFIED METHOD: PUBLIC NON_ABSTRACT (<- ABSTRACT) boolean isRouteExists()
+---! REMOVED CLASS: PUBLIC(-) org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo  (not serializable)
+	---  CLASS FILE FORMAT VERSION: n.a. <- 55.0
+	---! REMOVED INTERFACE: org.apache.pinot.core.routing.TableRouteInfo
+	---! REMOVED SUPERCLASS: org.apache.pinot.core.routing.BaseTableRouteInfo
+	---  REMOVED FIELD: PRIVATE(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> _realtimeRoutingTable
+	---  REMOVED FIELD: PRIVATE(-) int _numPrunedSegmentsTotal
+	---  REMOVED FIELD: PRIVATE(-) java.lang.String _offlineTableName
+	---  REMOVED FIELD: PRIVATE(-) java.lang.String _realtimeTableName
+	---  REMOVED FIELD: PRIVATE(-) java.util.List<java.lang.String> _unavailableSegments
+	---  REMOVED FIELD: PRIVATE(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> _offlineRoutingTable
+	---  REMOVED FIELD: PRIVATE(-) org.apache.pinot.spi.config.table.TableConfig _offlineTableConfig
+	---  REMOVED FIELD: PRIVATE(-) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo _timeBoundaryInfo
+	---  REMOVED FIELD: PRIVATE(-) boolean _isRealtimeRouteExists
+	---  REMOVED FIELD: PRIVATE(-) org.apache.pinot.spi.config.table.TableConfig _realtimeTableConfig
+	---  REMOVED FIELD: PRIVATE(-) org.apache.pinot.common.request.BrokerRequest _offlineBrokerRequest
+	---  REMOVED FIELD: PRIVATE(-) boolean _isRealtimeTableDisabled
+	---  REMOVED FIELD: PRIVATE(-) boolean _isOfflineRouteExists
+	---  REMOVED FIELD: PRIVATE(-) boolean _isOfflineTableDisabled
+	---  REMOVED FIELD: PRIVATE(-) org.apache.pinot.common.request.BrokerRequest _realtimeBrokerRequest
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) ImplicitHybridTableRouteInfo(org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>)
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) ImplicitHybridTableRouteInfo()
+	---  REMOVED METHOD: PUBLIC(-) java.util.List<java.lang.String> getDisabledTableNames()
+	---! REMOVED METHOD: PROTECTED(-) STATIC(-) org.apache.pinot.common.request.InstanceRequest getInstanceRequest(long, java.lang.String, org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.core.routing.ServerRouteInfo)
+	---  REMOVED METHOD: PUBLIC(-) int getNumPrunedSegmentsTotal()
+	---  REMOVED METHOD: PUBLIC(-) org.apache.pinot.common.request.BrokerRequest getOfflineBrokerRequest()
+	---  REMOVED METHOD: PUBLIC(-) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getOfflineExecutionServers()
+	---  REMOVED METHOD: PUBLIC(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> getOfflineRoutingTable()
+	---  REMOVED METHOD: PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig()
+	---  REMOVED METHOD: PUBLIC(-) java.lang.String getOfflineTableName()
+	---  REMOVED METHOD: PUBLIC(-) org.apache.pinot.spi.config.table.QueryConfig getOfflineTableQueryConfig()
+	---  REMOVED METHOD: PUBLIC(-) org.apache.pinot.common.request.BrokerRequest getRealtimeBrokerRequest()
+	---  REMOVED METHOD: PUBLIC(-) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getRealtimeExecutionServers()
+	---  REMOVED METHOD: PUBLIC(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> getRealtimeRoutingTable()
+	---  REMOVED METHOD: PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig()
+	---  REMOVED METHOD: PUBLIC(-) java.lang.String getRealtimeTableName()
+	---  REMOVED METHOD: PUBLIC(-) org.apache.pinot.spi.config.table.QueryConfig getRealtimeTableQueryConfig()
+	---  REMOVED METHOD: PUBLIC(-) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMap(long, java.lang.String, boolean)
+	---! REMOVED METHOD: PROTECTED(-) STATIC(-) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMapFromRoutingTable(org.apache.pinot.spi.config.table.TableType, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>, org.apache.pinot.common.request.BrokerRequest, long, java.lang.String, boolean)
+	---  REMOVED METHOD: PUBLIC(-) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo getTimeBoundaryInfo()
+	---  REMOVED METHOD: PUBLIC(-) java.util.List<java.lang.String> getUnavailableSegments()
+	---  REMOVED METHOD: PUBLIC(-) boolean hasOffline()
+	---  REMOVED METHOD: PUBLIC(-) boolean hasRealtime()
+	---  REMOVED METHOD: PUBLIC(-) boolean isOfflineRouteExists()
+	---  REMOVED METHOD: PUBLIC(-) boolean isOfflineTableDisabled()
+	---  REMOVED METHOD: PUBLIC(-) boolean isRealtimeRouteExists()
+	---  REMOVED METHOD: PUBLIC(-) boolean isRealtimeTableDisabled()
+	---! REMOVED METHOD: PUBLIC(-) void setNumPrunedSegmentsTotal(int)
+	---! REMOVED METHOD: PUBLIC(-) void setOfflineBrokerRequest(org.apache.pinot.common.request.BrokerRequest)
+	---! REMOVED METHOD: PUBLIC(-) void setOfflineRouteExists(boolean)
+	---! REMOVED METHOD: PUBLIC(-) void setOfflineRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>)
+	---! REMOVED METHOD: PUBLIC(-) void setOfflineTableConfig(org.apache.pinot.spi.config.table.TableConfig)
+	---! REMOVED METHOD: PUBLIC(-) void setOfflineTableDisabled(boolean)
+	---! REMOVED METHOD: PUBLIC(-) void setOfflineTableName(java.lang.String)
+	---! REMOVED METHOD: PUBLIC(-) void setRealtimeBrokerRequest(org.apache.pinot.common.request.BrokerRequest)
+	---! REMOVED METHOD: PUBLIC(-) void setRealtimeRouteExists(boolean)
+	---! REMOVED METHOD: PUBLIC(-) void setRealtimeRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>)
+	---! REMOVED METHOD: PUBLIC(-) void setRealtimeTableConfig(org.apache.pinot.spi.config.table.TableConfig)
+	---! REMOVED METHOD: PUBLIC(-) void setRealtimeTableDisabled(boolean)
+	---! REMOVED METHOD: PUBLIC(-) void setRealtimeTableName(java.lang.String)
+	---! REMOVED METHOD: PUBLIC(-) void setTimeBoundaryInfo(org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo)
+	---! REMOVED METHOD: PUBLIC(-) void setUnavailableSegments(java.util.List<java.lang.String>)
+===* UNCHANGED CLASS: PUBLIC org.apache.pinot.core.transport.QueryRouter  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED METHOD: PUBLIC org.apache.pinot.core.transport.AsyncQueryResponse submitQuery(long, java.lang.String, org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>), org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>), long)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-csv-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-csv-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-distribution-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-distribution-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dropwizard-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dropwizard-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-flink-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-flink-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-gcs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-gcs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-hdfs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-hdfs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-test-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-test-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-tests-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-tests-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-java-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-java-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-jdbc-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-jdbc-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kinesis-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kinesis-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-orc-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-orc-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-parquet-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-parquet-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-perf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-perf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-pulsar-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-pulsar-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+===* UNCHANGED CLASS: PUBLIC org.apache.pinot.query.routing.WorkerManager  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED METHOD: PRIVATE STATIC void transferToServerInstanceLogicalSegmentsMap(java.lang.String, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>), java.util.Map<org.apache.pinot.core.transport.ServerInstance,java.util.Map<java.lang.String,java.util.List<java.lang.String>>><org.apache.pinot.core.transport.ServerInstance,java.util.Map<java.lang.String,java.util.List<java.lang.String>>>)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-runtime-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-runtime-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-s3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-s3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-local-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-local-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-server-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-server-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+===* UNCHANGED CLASS: PUBLIC org.apache.pinot.connector.spark.common.reader.PinotServerDataFetcher  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 52.0 <- 52.0
+	===* UNCHANGED METHOD: PRIVATE java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>) createRoutingTableForRequest()
+	===* UNCHANGED METHOD: PRIVATE org.apache.pinot.core.transport.AsyncQueryResponse submitRequestToPinotServer(org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>), org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>(<- <org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>))
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-thrift-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-thrift-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-tools-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-tools-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-udf-test-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-udf-test-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-yammer-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-yammer-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.

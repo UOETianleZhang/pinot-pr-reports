@@ -1,0 +1,274 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/resources/PinotBrokerDebug.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/GrpcBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/BrokerRoutingManager.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandlerTest.java",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/reader/PinotServerDataFetcher.scala",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/BaseTableRouteInfo.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/ImplicitHybridTableRouteInfo.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/ImplicitHybridTableRouteProvider.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/LogicalTableRouteInfo.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/LogicalTableRouteProvider.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/PhysicalTableRouteProvider.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/RoutingTable.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/SegmentsToQuery.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/TableRouteInfo.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/routing/TableRouteProvider.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/transport/QueryRouter.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/routing/BaseTableRouteTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/routing/ImplicitHybridTableRouteProviderCalculateRouteTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/routing/LogicalTableRouteProviderCalculateRouteTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/routing/MockRoutingManagerFactory.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/transport/QueryRoutingTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/routing/WorkerManager.java"
+  ],
+  "mergedAt": "2025-07-31T05:26:21Z",
+  "number": 16460,
+  "title": "Minor cleanups in logical tables routing related code",
+  "url": "https://github.com/apache/pinot/pull/16460",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.routing.BaseTableRouteInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean isDisabled()",
+        "PUBLIC(-) boolean isExists()",
+        "PUBLIC(-) boolean isHybrid()",
+        "PUBLIC(-) boolean isOffline()",
+        "PUBLIC(-) boolean isRealtime()",
+        "PUBLIC(-) boolean isRouteExists()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BaseTableRouteInfo()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<java.lang.String> getDisabledTableNames()",
+        "PRIVATE(+) org.apache.pinot.common.request.InstanceRequest getInstanceRequest(long, java.lang.String, org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.core.routing.SegmentsToQuery)",
+        "PUBLIC(+) int getNumPrunedSegmentsTotal()",
+        "PUBLIC(+) org.apache.pinot.common.request.BrokerRequest getOfflineBrokerRequest()",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getOfflineExecutionServers()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> getOfflineRoutingTable()",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig()",
+        "PUBLIC(+) java.lang.String getOfflineTableName()",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.QueryConfig getOfflineTableQueryConfig()",
+        "PUBLIC(+) org.apache.pinot.common.request.BrokerRequest getRealtimeBrokerRequest()",
+        "PUBLIC(+) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getRealtimeExecutionServers()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> getRealtimeRoutingTable()",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig()",
+        "PUBLIC(+) java.lang.String getRealtimeTableName()",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.QueryConfig getRealtimeTableQueryConfig()",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMap(long, java.lang.String, boolean)",
+        "PRIVATE(+) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMapFromRoutingTable(org.apache.pinot.spi.config.table.TableType, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>, org.apache.pinot.common.request.BrokerRequest, long, java.lang.String, boolean)",
+        "PUBLIC(+) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo getTimeBoundaryInfo()",
+        "PUBLIC(+) java.util.List<java.lang.String> getUnavailableSegments()",
+        "PUBLIC(+) boolean hasOffline()",
+        "PUBLIC(+) boolean hasRealtime()",
+        "PUBLIC(+) boolean isOfflineRouteExists()",
+        "PUBLIC(+) boolean isOfflineTableDisabled()",
+        "PUBLIC(+) boolean isRealtimeRouteExists()",
+        "PUBLIC(+) boolean isRealtimeTableDisabled()",
+        "PUBLIC(+) void setNumPrunedSegmentsTotal(int)",
+        "PUBLIC(+) void setOfflineBrokerRequest(org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(+) void setOfflineRouteExists(boolean)",
+        "PUBLIC(+) void setOfflineRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>)",
+        "PUBLIC(+) void setOfflineTableConfig(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(+) void setOfflineTableDisabled(boolean)",
+        "PUBLIC(+) void setOfflineTableName(java.lang.String)",
+        "PUBLIC(+) void setRealtimeBrokerRequest(org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(+) void setRealtimeRouteExists(boolean)",
+        "PUBLIC(+) void setRealtimeRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>)",
+        "PUBLIC(+) void setRealtimeTableConfig(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(+) void setRealtimeTableDisabled(boolean)",
+        "PUBLIC(+) void setRealtimeTableName(java.lang.String)",
+        "PUBLIC(+) void setTimeBoundaryInfo(org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo)",
+        "PUBLIC(+) void setUnavailableSegments(java.util.List<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> _realtimeRoutingTable",
+        "PRIVATE(+) int _numPrunedSegmentsTotal",
+        "PRIVATE(+) java.lang.String _offlineTableName",
+        "PRIVATE(+) java.lang.String _realtimeTableName",
+        "PRIVATE(+) java.util.List<java.lang.String> _unavailableSegments",
+        "PRIVATE(+) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery> _offlineRoutingTable",
+        "PRIVATE(+) org.apache.pinot.spi.config.table.TableConfig _offlineTableConfig",
+        "PRIVATE(+) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo _timeBoundaryInfo",
+        "PRIVATE(+) boolean _isRealtimeRouteExists",
+        "PRIVATE(+) org.apache.pinot.spi.config.table.TableConfig _realtimeTableConfig",
+        "PRIVATE(+) org.apache.pinot.common.request.BrokerRequest _offlineBrokerRequest",
+        "PRIVATE(+) boolean _isRealtimeTableDisabled",
+        "PRIVATE(+) boolean _isOfflineRouteExists",
+        "PRIVATE(+) boolean _isOfflineTableDisabled",
+        "PRIVATE(+) org.apache.pinot.common.request.BrokerRequest _realtimeBrokerRequest"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) ImplicitHybridTableRouteInfo()",
+        "PUBLIC(+) ImplicitHybridTableRouteInfo(org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.SegmentsToQuery>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.routing.ImplicitHybridTableRouteProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void fillRouteMetadata(org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo, org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(-) void fillTableConfigMetadata(org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo, java.lang.String, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void fillRouteMetadata(org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo, org.apache.pinot.core.routing.RoutingManager)",
+        "PUBLIC(+) void fillTableConfigMetadata(org.apache.pinot.core.routing.ImplicitHybridTableRouteInfo, java.lang.String, org.apache.pinot.common.config.provider.TableCache)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.routing.LogicalTableRouteInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.routing.SegmentsToQuery",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<java.lang.String> getOptionalSegments()",
+        "PUBLIC(+) java.util.List<java.lang.String> getSegments()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _optionalSegments",
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _segments"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) SegmentsToQuery(java.util.List<java.lang.String>, java.util.List<java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.routing.ServerRouteInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.List<java.lang.String> getOptionalSegments()",
+        "PUBLIC(-) java.util.List<java.lang.String> getSegments()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.List<java.lang.String> _optionalSegments",
+        "PRIVATE(-) FINAL(-) java.util.List<java.lang.String> _segments"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ServerRouteInfo(java.util.List<java.lang.String>, java.util.List<java.lang.String>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.routing.TableRouteInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.request.InstanceRequest createInstanceRequest(org.apache.pinot.common.request.BrokerRequest, java.lang.String, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.transport.ImplicitHybridTableRouteInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.List<java.lang.String> getDisabledTableNames()",
+        "PROTECTED(-) STATIC(-) org.apache.pinot.common.request.InstanceRequest getInstanceRequest(long, java.lang.String, org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.core.routing.ServerRouteInfo)",
+        "PUBLIC(-) int getNumPrunedSegmentsTotal()",
+        "PUBLIC(-) org.apache.pinot.common.request.BrokerRequest getOfflineBrokerRequest()",
+        "PUBLIC(-) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getOfflineExecutionServers()",
+        "PUBLIC(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> getOfflineRoutingTable()",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getOfflineTableConfig()",
+        "PUBLIC(-) java.lang.String getOfflineTableName()",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.QueryConfig getOfflineTableQueryConfig()",
+        "PUBLIC(-) org.apache.pinot.common.request.BrokerRequest getRealtimeBrokerRequest()",
+        "PUBLIC(-) java.util.Set<org.apache.pinot.core.transport.ServerInstance> getRealtimeExecutionServers()",
+        "PUBLIC(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> getRealtimeRoutingTable()",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.TableConfig getRealtimeTableConfig()",
+        "PUBLIC(-) java.lang.String getRealtimeTableName()",
+        "PUBLIC(-) org.apache.pinot.spi.config.table.QueryConfig getRealtimeTableQueryConfig()",
+        "PUBLIC(-) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMap(long, java.lang.String, boolean)",
+        "PROTECTED(-) STATIC(-) java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.request.InstanceRequest> getRequestMapFromRoutingTable(org.apache.pinot.spi.config.table.TableType, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>, org.apache.pinot.common.request.BrokerRequest, long, java.lang.String, boolean)",
+        "PUBLIC(-) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo getTimeBoundaryInfo()",
+        "PUBLIC(-) java.util.List<java.lang.String> getUnavailableSegments()",
+        "PUBLIC(-) boolean hasOffline()",
+        "PUBLIC(-) boolean hasRealtime()",
+        "PUBLIC(-) boolean isOfflineRouteExists()",
+        "PUBLIC(-) boolean isOfflineTableDisabled()",
+        "PUBLIC(-) boolean isRealtimeRouteExists()",
+        "PUBLIC(-) boolean isRealtimeTableDisabled()",
+        "PUBLIC(-) void setNumPrunedSegmentsTotal(int)",
+        "PUBLIC(-) void setOfflineBrokerRequest(org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(-) void setOfflineRouteExists(boolean)",
+        "PUBLIC(-) void setOfflineRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>)",
+        "PUBLIC(-) void setOfflineTableConfig(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) void setOfflineTableDisabled(boolean)",
+        "PUBLIC(-) void setOfflineTableName(java.lang.String)",
+        "PUBLIC(-) void setRealtimeBrokerRequest(org.apache.pinot.common.request.BrokerRequest)",
+        "PUBLIC(-) void setRealtimeRouteExists(boolean)",
+        "PUBLIC(-) void setRealtimeRoutingTable(java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>)",
+        "PUBLIC(-) void setRealtimeTableConfig(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(-) void setRealtimeTableDisabled(boolean)",
+        "PUBLIC(-) void setRealtimeTableName(java.lang.String)",
+        "PUBLIC(-) void setTimeBoundaryInfo(org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo)",
+        "PUBLIC(-) void setUnavailableSegments(java.util.List<java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> _realtimeRoutingTable",
+        "PRIVATE(-) int _numPrunedSegmentsTotal",
+        "PRIVATE(-) java.lang.String _offlineTableName",
+        "PRIVATE(-) java.lang.String _realtimeTableName",
+        "PRIVATE(-) java.util.List<java.lang.String> _unavailableSegments",
+        "PRIVATE(-) java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo> _offlineRoutingTable",
+        "PRIVATE(-) org.apache.pinot.spi.config.table.TableConfig _offlineTableConfig",
+        "PRIVATE(-) org.apache.pinot.core.routing.timeboundary.TimeBoundaryInfo _timeBoundaryInfo",
+        "PRIVATE(-) boolean _isRealtimeRouteExists",
+        "PRIVATE(-) org.apache.pinot.spi.config.table.TableConfig _realtimeTableConfig",
+        "PRIVATE(-) org.apache.pinot.common.request.BrokerRequest _offlineBrokerRequest",
+        "PRIVATE(-) boolean _isRealtimeTableDisabled",
+        "PRIVATE(-) boolean _isOfflineRouteExists",
+        "PRIVATE(-) boolean _isOfflineTableDisabled",
+        "PRIVATE(-) org.apache.pinot.common.request.BrokerRequest _realtimeBrokerRequest"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ImplicitHybridTableRouteInfo(org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>, java.util.Map<org.apache.pinot.core.transport.ServerInstance,org.apache.pinot.core.routing.ServerRouteInfo>)",
+        "PUBLIC(-) ImplicitHybridTableRouteInfo()"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
