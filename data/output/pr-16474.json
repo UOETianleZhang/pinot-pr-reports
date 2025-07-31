@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/SendStatsPredicate.java"
+  ],
+  "mergedAt": "2025-07-31T14:10:33Z",
+  "number": 16474,
+  "title": "mse: change SendStatsPredicate.Safe to only send when the cluster is homogeneous.",
+  "url": "https://github.com/apache/pinot/pull/16474",
+  "jcmpClasses": []
+}
