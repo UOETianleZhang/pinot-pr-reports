@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/ComplexTypeTransformer.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/recordtransformer/ComplexTypeTransformerTest.java"
+  ],
+  "mergedAt": "2025-07-31T17:25:48Z",
+  "number": 16387,
+  "title": "Fix unnesting of non-Map value collections.",
+  "url": "https://github.com/apache/pinot/pull/16387",
+  "jcmpClasses": []
+}
