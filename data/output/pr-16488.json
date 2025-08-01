@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-plugins/pinot-batch-ingestion/pinot-batch-ingestion-spark-2.4/src/main/java/org/apache/pinot/plugin/ingestion/batch/spark/SparkSegmentTarPushJobRunner.java",
+    "pinot-plugins/pinot-batch-ingestion/pinot-batch-ingestion-spark-3/src/main/java/org/apache/pinot/plugin/ingestion/batch/spark3/SparkSegmentTarPushJobRunner.java"
+  ],
+  "mergedAt": "2025-08-01T19:30:53Z",
+  "number": 16488,
+  "title": "Fix linter violation in SparkSegmentTarPushJobRunner and also apply fix for spark2",
+  "url": "https://github.com/apache/pinot/pull/16488",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.ingestion.batch.spark.SparkSegmentTarPushJobRunner",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) org.apache.pinot.spi.ingestion.batch.spec.SegmentGenerationJobSpec _spec"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
