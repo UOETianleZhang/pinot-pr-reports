@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-plugins/pinot-batch-ingestion/pinot-batch-ingestion-spark-3/src/main/java/org/apache/pinot/plugin/ingestion/batch/spark3/SparkSegmentTarPushJobRunner.java"
+  ],
+  "mergedAt": "2025-08-01T10:38:54Z",
+  "number": 16482,
+  "title": "Bug: Field shadowing in SparkSegmentTarPushJobRunner causes _spec to be null",
+  "url": "https://github.com/apache/pinot/pull/16482",
+  "jcmpClasses": []
+}
