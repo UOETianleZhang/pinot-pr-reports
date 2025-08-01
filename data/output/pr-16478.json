@@ -1,0 +1,119 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/FilterOperatorUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/predicate/BaseDictIdBasedRegexpLikePredicateEvaluator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/predicate/FSTBasedRegexpPredicateEvaluatorFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/predicate/IFSTBasedRegexpPredicateEvaluatorFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/predicate/RegexpLikePredicateEvaluatorFactory.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterIntegrationTest.java"
+  ],
+  "mergedAt": "2025-08-01T06:35:05Z",
+  "number": 16478,
+  "title": "Enhance REGEXP_LIKE to scan dictionary when dictionary is small",
+  "url": "https://github.com/apache/pinot/pull/16478",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.BaseDictIdBasedRegexpLikePredicateEvaluator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PROTECTED(+) BaseDictIdBasedRegexpLikePredicateEvaluator(org.apache.pinot.common.request.context.predicate.Predicate, org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.FSTBasedRegexpPredicateEvaluatorFactory$FSTBasedRegexpPredicateEvaluator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.IFSTBasedRegexpPredicateEvaluatorFactory$IFSTBasedRegexpPredicateEvaluator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.RegexpLikePredicateEvaluatorFactory",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int DICTIONARY_CARDINALITY_THRESHOLD_FOR_SCAN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.RegexpLikePredicateEvaluatorFactory$DictIdBasedRegexpLikePredicateEvaluator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean applySV(int)",
+        "PUBLIC(+) int applySV(int, int[], int[])",
+        "PUBLIC(+) int getNumMatchingItems()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) it.unimi.dsi.fastutil.ints.IntSet _matchingDictIdSet"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RegexpLikePredicateEvaluatorFactory$DictIdBasedRegexpLikePredicateEvaluator(org.apache.pinot.common.request.context.predicate.RegexpLikePredicate, org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.RegexpLikePredicateEvaluatorFactory$DictionaryBasedRegexpLikePredicateEvaluator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean applySV(int)",
+        "PUBLIC(-) int applySV(int, int[], int[])"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) org.apache.pinot.common.utils.regex.Matcher _matcher"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RegexpLikePredicateEvaluatorFactory$DictionaryBasedRegexpLikePredicateEvaluator(org.apache.pinot.common.request.context.predicate.RegexpLikePredicate, org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.filter.predicate.RegexpLikePredicateEvaluatorFactory$ScanBasedRegexpLikePredicateEvaluator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean applySV(int)",
+        "PUBLIC(+) int applySV(int, int[], int[])"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) org.apache.pinot.common.utils.regex.Matcher _matcher"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RegexpLikePredicateEvaluatorFactory$ScanBasedRegexpLikePredicateEvaluator(org.apache.pinot.common.request.context.predicate.RegexpLikePredicate, org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ]
+    }
+  ]
+}

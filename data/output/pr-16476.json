@@ -1,0 +1,84 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/queries/TextSearchQueriesTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/text/lucene/parsers/PrefixPhraseQueryParser.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/LuceneTextIndexUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/LuceneTextIndexUtilsTest.java"
+  ],
+  "mergedAt": "2025-08-01T06:17:57Z",
+  "number": 16476,
+  "title": "Adding Match prefix phrase query lucene parser ",
+  "url": "https://github.com/apache/pinot/pull/16476",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.text.lucene.parsers.PrefixPhraseQueryParser",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.lucene.search.Query parse(java.lang.String)",
+        "PUBLIC(+) void ReInit(org.apache.lucene.queryparser.charstream.CharStream)",
+        "PUBLIC(+) void setEnablePrefixMatch(boolean)",
+        "PUBLIC(+) void setInOrder(boolean)",
+        "PUBLIC(+) void setSlop(int)",
+        "PUBLIC(+) org.apache.lucene.search.Query TopLevelQuery(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _field",
+        "PRIVATE(+) FINAL(+) org.apache.lucene.analysis.Analyzer _analyzer",
+        "PRIVATE(+) int _slop",
+        "PRIVATE(+) boolean _inOrder",
+        "PRIVATE(+) boolean _enablePrefixMatch"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PrefixPhraseQueryParser(java.lang.String, org.apache.lucene.analysis.Analyzer)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.LuceneTextIndexUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PARSER_MATCHPHRASE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MATCHPHRASE_QUERY_PARSER_CLASS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$LuceneTextIndexOptions",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getSlop()",
+        "PUBLIC(+) boolean isEnablePrefixMatch()",
+        "PUBLIC(+) boolean isInOrder()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.LuceneTextIndexUtils$OptionKey",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String IN_ORDER",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ENABLE_PREFIX_MATCH",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SLOP"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
