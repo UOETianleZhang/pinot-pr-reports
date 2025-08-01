@@ -1,0 +1,338 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/restlet/resources/SystemResourceInfo.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/PinotAppConfigs.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/HeapUsagePublishingAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/QueryAggregator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/ResourceAggregator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/ResourceUsageAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/WorkloadAggregator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/scheduler/WorkloadScheduler.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/ResourceManagerAccountingTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/TestThreadMXBean.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/BenchmarkWorkloadBudgetManager.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/purge/PurgeTaskExecutor.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageProvider.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/WorkloadBudgetManager.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/ResourceUsageUtils.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/accounting/WorkloadBudgetManagerTest.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutorTest.java"
+  ],
+  "mergedAt": "2025-08-01T18:36:54Z",
+  "number": 16479,
+  "title": "Cleanup deprecated methods in ThreadResourceUsageAccountant",
+  "url": "https://github.com/apache/pinot/pull/16479",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.HeapUsagePublishingAccountantFactory$HeapUsagePublishingResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "STATIC(-) FINAL(-) java.lang.management.MemoryMXBean MEMORY_MX_BEAN"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void createExecutionContext(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)",
+        "PUBLIC(-) void setThreadResourceUsageProvider(org.apache.pinot.spi.accounting.ThreadResourceUsageProvider)",
+        "PUBLIC(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType)",
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String, long, long)",
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "STATIC(-) FINAL(-) java.lang.management.MemoryMXBean MEMORY_MX_BEAN"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.QueryAggregator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "STATIC(-) FINAL(-) java.lang.management.MemoryMXBean MEMORY_MX_BEAN"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.ResourceUsageAccountantFactory$ResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void createExecutionContext(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)",
+        "PUBLIC(-) void setThreadResourceUsageProvider(org.apache.pinot.spi.accounting.ThreadResourceUsageProvider)",
+        "PUBLIC(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType)",
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String, long, long)",
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.config.instance.InstanceType _instanceType",
+        "PRIVATE(-) FINAL(-) java.lang.String _instanceId",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.env.PinotConfiguration _config"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.WorkloadAggregator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.scheduler.WorkloadScheduler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.WorkloadBudgetManager",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void addOrUpdateWorkload(java.lang.String, long, long)",
+        "PUBLIC(-) boolean canAdmitQuery(java.lang.String)",
+        "PUBLIC(-) org.apache.pinot.core.accounting.WorkloadBudgetManager$BudgetStats getRemainingBudgetAcrossAllWorkloads()",
+        "PUBLIC(-) org.apache.pinot.core.accounting.WorkloadBudgetManager$BudgetStats getRemainingBudgetForWorkload(java.lang.String)",
+        "PRIVATE(-) void initSecondaryWorkloadBudget(org.apache.pinot.spi.env.PinotConfiguration)",
+        "PUBLIC(-) void shutdown()",
+        "PRIVATE(-) void startBudgetResetTask()",
+        "PUBLIC(-) org.apache.pinot.core.accounting.WorkloadBudgetManager$BudgetStats tryCharge(java.lang.String, long, long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.concurrent.ScheduledExecutorService _resetScheduler",
+        "PRIVATE(-) FINAL(-) java.util.concurrent.ConcurrentHashMap<java.lang.String,org.apache.pinot.core.accounting.WorkloadBudgetManager$Budget> _workloadBudgets",
+        "PRIVATE(-) VOLATILE(-) boolean _isEnabled",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) long _enforcementWindowMs"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) WorkloadBudgetManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.WorkloadBudgetManager$Budget",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.core.accounting.WorkloadBudgetManager$BudgetStats getStats()",
+        "PUBLIC(-) void reset()",
+        "PUBLIC(-) org.apache.pinot.core.accounting.WorkloadBudgetManager$BudgetStats tryCharge(long, long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.concurrent.atomic.AtomicLong _cpuRemaining",
+        "PRIVATE(-) FINAL(-) java.util.concurrent.atomic.AtomicLong _memoryRemaining",
+        "PRIVATE(-) FINAL(-) long _initialCpuBudget",
+        "PRIVATE(-) FINAL(-) long _initialMemoryBudget"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) WorkloadBudgetManager$Budget(org.apache.pinot.core.accounting.WorkloadBudgetManager, long, long)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.WorkloadBudgetManager$BudgetStats",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) FINAL(-) long _cpuRemaining",
+        "PUBLIC(-) FINAL(-) long _memoryRemaining"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) WorkloadBudgetManager$BudgetStats(long, long)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void createExecutionContext(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)",
+        "PUBLIC(-) ABSTRACT(-) void setThreadResourceUsageProvider(org.apache.pinot.spi.accounting.ThreadResourceUsageProvider)",
+        "PUBLIC(-) ABSTRACT(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType)",
+        "PUBLIC(-) ABSTRACT(-) void updateQueryUsageConcurrently(java.lang.String, long, long)",
+        "PUBLIC(-) ABSTRACT(-) void updateQueryUsageConcurrently(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageProvider",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getThreadAllocatedBytes()",
+        "PUBLIC(-) long getThreadTimeNs()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) int getThreadCount()",
+        "PUBLIC(+) STATIC(+) long getTotalStartedThreadCount()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.WorkloadBudgetManager",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void addOrUpdateWorkload(java.lang.String, long, long)",
+        "PUBLIC(+) boolean canAdmitQuery(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats getRemainingBudgetAcrossAllWorkloads()",
+        "PUBLIC(+) org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats getRemainingBudgetForWorkload(java.lang.String)",
+        "PRIVATE(+) void initSecondaryWorkloadBudget(org.apache.pinot.spi.env.PinotConfiguration)",
+        "PUBLIC(+) void shutdown()",
+        "PRIVATE(+) void startBudgetResetTask()",
+        "PUBLIC(+) org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats tryCharge(java.lang.String, long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ScheduledExecutorService _resetScheduler",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ConcurrentHashMap<java.lang.String,org.apache.pinot.spi.accounting.WorkloadBudgetManager$Budget> _workloadBudgets",
+        "PRIVATE(+) VOLATILE(+) boolean _isEnabled",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) long _enforcementWindowMs"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) WorkloadBudgetManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.WorkloadBudgetManager$Budget",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats getStats()",
+        "PUBLIC(+) void reset()",
+        "PUBLIC(+) org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats tryCharge(long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.concurrent.atomic.AtomicLong _cpuRemaining",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.atomic.AtomicLong _memoryRemaining",
+        "PRIVATE(+) FINAL(+) long _initialCpuBudget",
+        "PRIVATE(+) FINAL(+) long _initialMemoryBudget"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) WorkloadBudgetManager$Budget(org.apache.pinot.spi.accounting.WorkloadBudgetManager, long, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) FINAL(+) long _cpuRemaining",
+        "PUBLIC(+) FINAL(+) long _memoryRemaining"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) WorkloadBudgetManager$BudgetStats(long, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$DefaultThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void createExecutionContext(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)",
+        "PUBLIC(-) void createExecutionContextInner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)",
+        "PUBLIC(-) void setThreadResourceUsageProvider(org.apache.pinot.spi.accounting.ThreadResourceUsageProvider)",
+        "PUBLIC(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType)",
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String)",
+        "PUBLIC(-) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void setThreadResourceUsageProvider()",
+        "PUBLIC(-) STATIC(-) void setupRunner(java.lang.String)",
+        "PUBLIC(-) STATIC(-) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType)",
+        "PUBLIC(-) STATIC(-) void updateQueryUsageConcurrently(java.lang.String)",
+        "PUBLIC(-) STATIC(-) void updateQueryUsageConcurrently(java.lang.String, long, long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.ResourceUsageUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.lang.management.MemoryUsage getHeapMemoryUsage()",
+        "PUBLIC(+) STATIC(+) long getMaxHeapSize()",
+        "PUBLIC(+) STATIC(+) long getUsedHeapSize()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.management.MemoryMXBean MEMORY_MX_BEAN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ResourceUsageUtils()"
+      ]
+    }
+  ]
+}
