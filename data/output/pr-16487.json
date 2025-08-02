@@ -1,0 +1,14 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotControllerTimeseriesResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesAuthIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesIntegrationTest.java"
+  ],
+  "mergedAt": "2025-08-02T16:36:44Z",
+  "number": 16487,
+  "title": "[timeseries][bugfix] Fixed timeseries API clashes in Controller",
+  "url": "https://github.com/apache/pinot/pull/16487",
+  "jcmpClasses": []
+}
