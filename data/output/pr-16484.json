@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-02T23:50:43Z",
+  "number": 16484,
+  "title": "Bump org.apache.pulsar:pulsar-bom from 4.0.5 to 4.0.6",
+  "url": "https://github.com/apache/pinot/pull/16484",
+  "jcmpClasses": []
+}
