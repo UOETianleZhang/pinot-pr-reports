@@ -1,0 +1,46 @@
+{
+  "files": [
+    "pinot-clients/pinot-java-client/src/main/java/org/apache/pinot/client/Connection.java",
+    "pinot-clients/pinot-java-client/src/main/java/org/apache/pinot/client/TableNameExtractor.java",
+    "pinot-clients/pinot-java-client/src/test/java/org/apache/pinot/client/TableNameExtractorTest.java"
+  ],
+  "mergedAt": "2025-08-03T04:03:20Z",
+  "number": 16480,
+  "title": "Fix CalciteSQLParser error for multi-stage queries with SET statements",
+  "url": "https://github.com/apache/pinot/pull/16480",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.client.TableNameExtractor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void extractTableNames(org.apache.calcite.sql.SqlNode)",
+        "PRIVATE(+) STATIC(+) java.util.Set<java.lang.String> extractTableNamesFromPinotQuery(org.apache.calcite.sql.SqlNode)",
+        "PUBLIC(+) java.util.Set<java.lang.String> getTableNames()",
+        "PUBLIC(+) STATIC(+) java.lang.String[] resolveTableName(java.lang.String)",
+        "PRIVATE(+) void visitBasicCall(org.apache.calcite.sql.SqlBasicCall)",
+        "PRIVATE(+) void visitIdentifier(org.apache.calcite.sql.SqlIdentifier)",
+        "PRIVATE(+) void visitJoin(org.apache.calcite.sql.SqlJoin)",
+        "PRIVATE(+) void visitNodeList(org.apache.calcite.sql.SqlNodeList)",
+        "PRIVATE(+) void visitNodeOperands(org.apache.calcite.sql.SqlNode)",
+        "PRIVATE(+) void visitOrderBy(org.apache.calcite.sql.SqlOrderBy)",
+        "PRIVATE(+) void visitSelect(org.apache.calcite.sql.SqlSelect)",
+        "PRIVATE(+) void visitWith(org.apache.calcite.sql.SqlWith)",
+        "PRIVATE(+) void visitWithClause(org.apache.calcite.sql.SqlNode)",
+        "PRIVATE(+) void visitWithItem(org.apache.calcite.sql.SqlWithItem)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _inFromClause",
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _tableNames",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _cteNames"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TableNameExtractor()"
+      ]
+    }
+  ]
+}
