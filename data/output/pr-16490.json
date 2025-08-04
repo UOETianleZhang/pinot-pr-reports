@@ -1,0 +1,104 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/ResourceUsageAccountantFactory.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MultiStageOperator.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultiStageAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultistageResourceUsageAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/PerQueryCPUMemAccountantTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutorTest.java"
+  ],
+  "mergedAt": "2025-08-04T10:27:15Z",
+  "number": 16490,
+  "title": "Remove unnecessary methods and config for ThreadResourceUsageAccountant",
+  "url": "https://github.com/apache/pinot/pull/16490",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void sampleUsageMSE()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PROTECTED(-) FINAL(-) boolean _isThreadSamplingEnabledForMSE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.ResourceUsageAccountantFactory$ResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void sampleUsageMSE()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) boolean _isThreadSamplingEnabledForMSE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void sampleUsageMSE()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$DefaultThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void sampleUsageMSE()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void initializeThreadAccountant(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.spi.config.instance.InstanceType)",
+        "PUBLIC(-) STATIC(-) void sampleMSE()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Accounting",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_ENABLE_THREAD_SAMPLING_MSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.Boolean DEFAULT_ENABLE_THREAD_SAMPLING_MSE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
