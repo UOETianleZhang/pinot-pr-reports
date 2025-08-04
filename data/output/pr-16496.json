@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/SegmentStatusChecker.java"
+  ],
+  "mergedAt": "2025-08-04T16:29:04Z",
+  "number": 16496,
+  "title": "Provide the correct comparison time for evaluating whether a segment should be considered in the SegmentStatusChecker",
+  "url": "https://github.com/apache/pinot/pull/16496",
+  "jcmpClasses": []
+}
