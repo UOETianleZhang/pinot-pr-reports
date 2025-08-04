@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-04T20:59:37Z",
+  "number": 16502,
+  "title": "Bump commons-cli:commons-cli from 1.9.0 to 1.10.0",
+  "url": "https://github.com/apache/pinot/pull/16502",
+  "jcmpClasses": []
+}

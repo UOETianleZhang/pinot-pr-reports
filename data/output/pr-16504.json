@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-04T21:07:49Z",
+  "number": 16504,
+  "title": "Bump com.google.cloud:libraries-bom from 26.64.0 to 26.65.0",
+  "url": "https://github.com/apache/pinot/pull/16504",
+  "jcmpClasses": []
+}

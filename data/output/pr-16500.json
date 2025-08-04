@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-04T21:06:35Z",
+  "number": 16500,
+  "title": "Bump net.minidev:json-smart from 2.5.2 to 2.6.0",
+  "url": "https://github.com/apache/pinot/pull/16500",
+  "jcmpClasses": []
+}
