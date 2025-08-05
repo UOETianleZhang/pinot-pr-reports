@@ -1,0 +1,76 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/FileUploadDownloadClient.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentUploadDownloadRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/retention/RetentionManager.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/SegmentConversionUtils.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/ConsistentDataPushUtils.java"
+  ],
+  "mergedAt": "2025-08-05T22:09:27Z",
+  "number": 16310,
+  "title": "Add prune option for lineage operations",
+  "url": "https://github.com/apache/pinot/pull/16310",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.FileUploadDownloadClient",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.net.URI getEndReplaceSegmentsURI(java.net.URI, java.lang.String, java.lang.String, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.net.URI getEndReplaceSegmentsURI(java.net.URI, java.lang.String, java.lang.String, java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String CLEANUP_PARAMETER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotSegmentUploadDownloadRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) javax.ws.rs.core.Response endReplaceSegments(java.lang.String, java.lang.String, java.lang.String, org.apache.pinot.common.restlet.resources.EndReplaceSegmentsRequest, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) javax.ws.rs.core.Response endReplaceSegments(java.lang.String, java.lang.String, java.lang.String, boolean, org.apache.pinot.common.restlet.resources.EndReplaceSegmentsRequest, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.retention.RetentionManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TASK_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.SegmentConversionUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void endSegmentReplace(java.lang.String, java.lang.String, org.apache.pinot.common.restlet.resources.EndReplaceSegmentsRequest, java.lang.String, int, org.apache.pinot.spi.auth.AuthProvider)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void endSegmentReplace(java.lang.String, java.lang.String, java.lang.String, int, org.apache.pinot.spi.auth.AuthProvider, boolean)",
+        "PUBLIC(+) STATIC(+) void endSegmentReplace(java.lang.String, java.lang.String, org.apache.pinot.common.restlet.resources.EndReplaceSegmentsRequest, java.lang.String, int, org.apache.pinot.spi.auth.AuthProvider, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

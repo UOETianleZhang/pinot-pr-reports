@@ -1,0 +1,27 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTenantRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/DefaultTenantRebalancer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/TableConfigUtilsTest.java"
+  ],
+  "mergedAt": "2025-08-05T21:59:45Z",
+  "number": 16477,
+  "title": "[Bug fix] Update logic that determines if a table is associated with a tenant",
+  "url": "https://github.com/apache/pinot/pull/16477",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.utils.TableConfigUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isRelevantToTenant(org.apache.pinot.spi.config.table.TableConfig, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
