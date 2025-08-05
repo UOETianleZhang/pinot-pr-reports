@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java"
+  ],
+  "mergedAt": "2025-08-05T14:34:12Z",
+  "number": 16493,
+  "title": "Fail task cleanup validation only upon active subtasks",
+  "url": "https://github.com/apache/pinot/pull/16493",
+  "jcmpClasses": []
+}
