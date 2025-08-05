@@ -1,0 +1,42 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BaseBrokerStarter.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/HelixBrokerStarter.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/broker/HelixBrokerStarterHostnamePortTest.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/broker/HelixBrokerStarterTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/ControllerConf.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/ServerStarterIntegrationTest.java",
+    "pinot-minion/src/main/java/org/apache/pinot/minion/MinionConf.java",
+    "pinot-minion/src/main/java/org/apache/pinot/minion/MinionStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/predownload/PredownloadScheduler.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/HelixServerStarter.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/StartBrokerCommand.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/StartMinionCommand.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/admin/command/StartServerCommand.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/perf/PerfBenchmarkDriver.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/service/PinotServiceManager.java",
+    "pinot-tools/src/main/java/org/apache/pinot/tools/utils/PinotConfigUtils.java"
+  ],
+  "mergedAt": "2025-08-04T22:10:59Z",
+  "number": 16505,
+  "title": "Fixing typo CONFIG_OF_ZOOKEEPER_SERVER in the codebase",
+  "url": "https://github.com/apache/pinot/pull/16505",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Helix",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_ZOOKEEPER_SERVER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
