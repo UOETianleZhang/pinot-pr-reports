@@ -1,0 +1,53 @@
+{
+  "files": [
+    "pinot-controller/pom.xml",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java",
+    "pinot-timeseries/pinot-timeseries-planner/src/main/java/org/apache/pinot/tsdb/planner/TimeSeriesQueryEnvironment.java",
+    "pinot-timeseries/pinot-timeseries-spi/src/main/java/org/apache/pinot/tsdb/spi/TimeSeriesLogicalPlanner.java"
+  ],
+  "mergedAt": "2025-08-05T16:52:57Z",
+  "number": 16509,
+  "title": "[timeseries] Enable table based broker selection for time series queries in Pinot Controller",
+  "url": "https://github.com/apache/pinot/pull/16509",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String retrieveBrokerForTimeSeriesQuery(java.lang.String, java.lang.String, java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tsdb.planner.TimeSeriesQueryEnvironment",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.tsdb.spi.TimeSeriesLogicalPlanner buildLogicalPlanner(java.lang.String, org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tsdb.spi.TimeSeriesLogicalPlanner",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getTableName(org.apache.pinot.tsdb.spi.TimeSeriesLogicalPlanResult)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
