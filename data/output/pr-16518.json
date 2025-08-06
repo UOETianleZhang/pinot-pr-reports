@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotQueryRuleSets.java",
+    "pinot-query-planner/src/test/resources/queries/JoinPlans.json"
+  ],
+  "mergedAt": "2025-08-05T23:33:05Z",
+  "number": 16518,
+  "title": "[Planner] Add ProjectRemove rule into PRUNE_RULES ",
+  "url": "https://github.com/apache/pinot/pull/16518",
+  "jcmpClasses": []
+}
