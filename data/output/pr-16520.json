@@ -1,0 +1,68 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotQueryRuleSets.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotSemiJoinDistinctProjectRule.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-06T16:59:14Z",
+  "number": 16520,
+  "title": "Fix typo in semi-join distinct project optimization rule",
+  "url": "https://github.com/apache/pinot/pull/16520",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotSemiJoinDistinctProjectRule",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.calcite.rel.RelNode insertDistinctToProject(org.apache.calcite.plan.RelOptRuleCall, org.apache.calcite.rel.logical.LogicalProject)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotSemiJoinDistinctProjectRule instanceWithDescription(java.lang.String)",
+        "PUBLIC(+) boolean matches(org.apache.calcite.plan.RelOptRuleCall)",
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotSemiJoinDistinctProjectRule INSTANCE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotSemiJoinDistinctProjectRule(org.apache.calcite.tools.RelBuilderFactory, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotSeminJoinDistinctProjectRule",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.calcite.rel.RelNode insertDistinctToProject(org.apache.calcite.plan.RelOptRuleCall, org.apache.calcite.rel.logical.LogicalProject)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.rel.rules.PinotSeminJoinDistinctProjectRule instanceWithDescription(java.lang.String)",
+        "PUBLIC(-) boolean matches(org.apache.calcite.plan.RelOptRuleCall)",
+        "PUBLIC(-) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.calcite.rel.rules.PinotSeminJoinDistinctProjectRule INSTANCE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PinotSeminJoinDistinctProjectRule(org.apache.calcite.tools.RelBuilderFactory, java.lang.String)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$PlannerRuleNames",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String SEMIN_JOIN_DISTINCT_PROJECT"
+      ],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SEMI_JOIN_DISTINCT_PROJECT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
