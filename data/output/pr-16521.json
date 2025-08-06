@@ -1,0 +1,13 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/TaskStatusFilter.tsx",
+    "pinot-controller/src/main/resources/app/components/useTaskListing.tsx",
+    "pinot-controller/src/main/resources/app/pages/TaskDetail.tsx",
+    "pinot-controller/src/main/resources/app/utils/PinotMethodUtils.ts"
+  ],
+  "mergedAt": "2025-08-06T20:58:14Z",
+  "number": 16521,
+  "title": "feat: Enhance Controller UI with comprehensive minion task stats and status filtering",
+  "url": "https://github.com/apache/pinot/pull/16521",
+  "jcmpClasses": []
+}
