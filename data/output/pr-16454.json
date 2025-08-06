@@ -1,0 +1,121 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/combine/GroupByCombineOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/query/FilteredGroupByOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/query/GroupByOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/groupby/AggregationGroupByResult.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/groupby/DictionaryBasedGroupKeyGenerator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/groupby/GroupKeyGenerator.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/groupby/DictionaryBasedGroupKeyGeneratorTest.java"
+  ],
+  "mergedAt": "2025-08-06T06:38:33Z",
+  "number": 16454,
+  "title": "Clear threadLocal maps after use for DictionaryBasedGroupKeyGenerator",
+  "url": "https://github.com/apache/pinot/pull/16454",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.AggregationGroupByResult",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void closeGroupKeyGenerator()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.DictionaryBasedGroupKeyGenerator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.DictionaryBasedGroupKeyGenerator$ArrayBasedHolder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.DictionaryBasedGroupKeyGenerator$ArrayMapBasedHolder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.DictionaryBasedGroupKeyGenerator$IntMapBasedHolder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.DictionaryBasedGroupKeyGenerator$LongMapBasedHolder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.DictionaryBasedGroupKeyGenerator$RawKeyHolder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void close()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.groupby.GroupKeyGenerator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
