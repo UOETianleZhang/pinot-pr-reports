@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterMemBasedServerQueryKillingTest.java"
+  ],
+  "mergedAt": "2025-08-06T11:02:18Z",
+  "number": 16514,
+  "title": "Add tests for OOM Termination of MSE queries.",
+  "url": "https://github.com/apache/pinot/pull/16514",
+  "jcmpClasses": []
+}
