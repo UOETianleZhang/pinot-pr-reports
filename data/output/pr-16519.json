@@ -1,0 +1,100 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/TableIndexingTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/startree/v2/MaxStarTreeV2Test.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/startree/v2/MinStarTreeV2Test.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/startree/v2/SumPrecisionStarTreeV2Test.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/startree/v2/SumStarTreeV2Test.java",
+    "pinot-core/src/test/resources/TableIndexingTest.csv",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/AvgValueAggregator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/MaxValueAggregator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/MinMaxRangeValueAggregator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/MinValueAggregator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/PercentileEstValueAggregator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/PercentileTDigestValueAggregator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/SumValueAggregator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/aggregator/ValueAggregatorUtils.java"
+  ],
+  "mergedAt": "2025-08-06T07:46:03Z",
+  "number": 16519,
+  "title": "Fix string parsing for value aggregator",
+  "url": "https://github.com/apache/pinot/pull/16519",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.aggregator.MaxValueAggregator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Double applyRawValue(java.lang.Double, java.lang.Number)",
+        "PUBLIC(-) java.lang.Double getInitialAggregatedValue(java.lang.Number)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Double applyRawValue(java.lang.Double, java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.aggregator.MinValueAggregator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Double applyRawValue(java.lang.Double, java.lang.Number)",
+        "PUBLIC(-) java.lang.Double getInitialAggregatedValue(java.lang.Number)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Double applyRawValue(java.lang.Double, java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.aggregator.PercentileEstValueAggregator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) long toLong(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.aggregator.SumValueAggregator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.Double applyRawValue(java.lang.Double, java.lang.Number)",
+        "PUBLIC(-) java.lang.Double getInitialAggregatedValue(java.lang.Number)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Double applyRawValue(java.lang.Double, java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.aggregator.ValueAggregatorUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) double toDouble(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ValueAggregatorUtils()"
+      ]
+    }
+  ]
+}
