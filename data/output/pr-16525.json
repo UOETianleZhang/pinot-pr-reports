@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/ResourceManagerAccountingTest.java"
+  ],
+  "mergedAt": "2025-08-06T20:17:34Z",
+  "number": 16525,
+  "title": "Remove ResourceManagerAccountingTest.testWorkerThreadInterruption()",
+  "url": "https://github.com/apache/pinot/pull/16525",
+  "jcmpClasses": []
+}
