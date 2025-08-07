@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/QueryPlannerRuleOptionsTest.java",
+    "pinot-query-planner/src/test/resources/queries/SetOpPlans.json",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-07T10:13:45Z",
+  "number": 16515,
+  "title": "Disable Calcite's AggregateUnionAggregate planner rule by default",
+  "url": "https://github.com/apache/pinot/pull/16515",
+  "jcmpClasses": []
+}
