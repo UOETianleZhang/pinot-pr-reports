@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java"
+  ],
+  "mergedAt": "2025-08-07T02:43:08Z",
+  "number": 16530,
+  "title": "bug-fixing for passive timeout handling in QueryDispatcher",
+  "url": "https://github.com/apache/pinot/pull/16530",
+  "jcmpClasses": []
+}
