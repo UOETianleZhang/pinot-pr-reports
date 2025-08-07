@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterMemBasedServerQueryKillingTest.java"
+  ],
+  "mergedAt": "2025-08-07T07:30:29Z",
+  "number": 16533,
+  "title": "Fix a flaky assert when testing OOM Cancellation of MSE Queries",
+  "url": "https://github.com/apache/pinot/pull/16533",
+  "jcmpClasses": []
+}

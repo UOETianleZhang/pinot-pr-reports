@@ -1,0 +1,27 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeConsumptionRateManager.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java"
+  ],
+  "mergedAt": "2025-08-07T07:41:14Z",
+  "number": 16407,
+  "title": "Allow and Initialise Server Rate Limiter before server starts consuming",
+  "url": "https://github.com/apache/pinot/pull/16407",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void enableThrottling()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void enablePartitionRateLimiter()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
