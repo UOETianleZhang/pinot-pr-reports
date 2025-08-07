@@ -1,0 +1,135 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/DefaultRebalancePreChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceConfig.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/DataLossRiskAssessorTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerTest.java"
+  ],
+  "mergedAt": "2025-08-07T16:53:09Z",
+  "number": 16341,
+  "title": "Table rebalance changes for handling peer-download enabled tables",
+  "url": "https://github.com/apache/pinot/pull/16341",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTableRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, double, boolean, int, int, int, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, double, boolean, int, int, int, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isAllowPeerDownloadDataLoss()",
+        "PUBLIC(+) void setAllowPeerDownloadDataLoss(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _allowPeerDownloadDataLoss"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, boolean, int, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher)",
+        "PRIVATE(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, boolean, int, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher, org.slf4j.Logger)",
+        "PRIVATE(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextNonStrictReplicaGroupAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, int)",
+        "PRIVATE(-) STATIC(-) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextStrictReplicaGroupAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, int, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher, org.slf4j.Logger)",
+        "PRIVATE(-) STATIC(-) void updateNextAssignmentForPartitionIdStrictReplicaGroup(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, int, boolean, java.util.Map<java.lang.String,java.lang.Integer>, java.util.Map<org.apache.commons.lang3.tuple.Pair<java.util.Set<java.lang.String>,java.util.Set<java.lang.String>>,java.util.Set<java.lang.String>>, java.util.Map<java.util.Set<java.lang.String>,java.util.Set<java.lang.String>>, java.util.Map<java.lang.String,java.lang.Integer>)"
+      ],
+      "addedMethods": [
+        "STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, boolean, int, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$DataLossRiskAssessor)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, boolean, int, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$DataLossRiskAssessor, org.slf4j.Logger)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextNonStrictReplicaGroupAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, int, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$DataLossRiskAssessor)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>> getNextStrictReplicaGroupAssignment(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, int, boolean, int, it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PartitionIdFetcher, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$DataLossRiskAssessor, org.slf4j.Logger)",
+        "PRIVATE(+) STATIC(+) void updateNextAssignmentForPartitionIdStrictReplicaGroup(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, boolean, int, boolean, java.util.Map<java.lang.String,java.lang.Integer>, java.util.Map<org.apache.commons.lang3.tuple.Pair<java.util.Set<java.lang.String>,java.util.Set<java.lang.String>>,java.util.Set<java.lang.String>>, java.util.Map<java.util.Set<java.lang.String>,java.util.Set<java.lang.String>>, java.util.Map<java.lang.String,java.lang.Integer>, org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$DataLossRiskAssessor)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$DataLossRiskAssessor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.commons.lang3.tuple.Pair<java.lang.Boolean,java.lang.String> assessDataLossRisk(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.commons.lang3.tuple.Pair<java.lang.Boolean,java.lang.String> NO_DATA_LOSS_RISK_RESULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$NoOpRiskAssessor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<java.lang.Boolean,java.lang.String> assessDataLossRisk(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableRebalancer$NoOpRiskAssessor()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer$PeerDownloadTableDataLossRiskAssessor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.commons.lang3.tuple.Pair<java.lang.Boolean,java.lang.String> assessDataLossRisk(java.lang.String)",
+        "PRIVATE(+) STATIC(+) java.lang.String generateDataLossRiskMessage(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager _pinotLLCRealtimeSegmentManager",
+        "PRIVATE(+) FINAL(+) boolean _isPauselessEnabled",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableNameWithType",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.config.table.TableConfig _tableConfig",
+        "PRIVATE(+) FINAL(+) org.apache.helix.HelixManager _helixManager"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableRebalancer$PeerDownloadTableDataLossRiskAssessor(java.lang.String, org.apache.pinot.spi.config.table.TableConfig, org.apache.helix.HelixManager, org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager)"
+      ]
+    }
+  ]
+}
