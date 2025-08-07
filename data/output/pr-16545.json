@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/RebalanceServer/RebalanceResponse.tsx",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/RebalanceServerStatusOp.tsx",
+    "pinot-controller/src/main/resources/app/components/Homepage/Operations/RebalanceServerTableOp.tsx"
+  ],
+  "mergedAt": "2025-08-07T19:37:46Z",
+  "number": 16545,
+  "title": "rebalance ui flow fixes",
+  "url": "https://github.com/apache/pinot/pull/16545",
+  "jcmpClasses": []
+}
