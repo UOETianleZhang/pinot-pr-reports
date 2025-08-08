@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-08T17:01:58Z",
+  "number": 16558,
+  "title": "Bump org.assertj:assertj-bom from 3.27.3 to 3.27.4",
+  "url": "https://github.com/apache/pinot/pull/16558",
+  "jcmpClasses": []
+}
