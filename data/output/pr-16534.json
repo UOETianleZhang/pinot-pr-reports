@@ -1,0 +1,15 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Homepage/PackageVersions.tsx",
+    "pinot-controller/src/main/resources/app/components/Table.tsx",
+    "pinot-controller/src/main/resources/app/interfaces/types.d.ts",
+    "pinot-controller/src/main/resources/app/pages/HomePage.tsx",
+    "pinot-controller/src/main/resources/app/requests/index.ts",
+    "pinot-controller/src/main/resources/app/utils/PinotMethodUtils.ts"
+  ],
+  "mergedAt": "2025-08-08T06:28:45Z",
+  "number": 16534,
+  "title": "Add Package Versions section to cluster manager UI",
+  "url": "https://github.com/apache/pinot/pull/16534",
+  "jcmpClasses": []
+}
