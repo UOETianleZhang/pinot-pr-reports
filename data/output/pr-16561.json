@@ -1,0 +1,30 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/plan/maker/InstancePlanMakerImplV2.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/groupby/DefaultGroupByExecutor.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/request/context/QueryContext.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/groupby/DictionaryBasedGroupKeyGeneratorTest.java"
+  ],
+  "mergedAt": "2025-08-08T22:34:30Z",
+  "number": 16561,
+  "title": "Parse booleans for optimizeMaxInitialResultHolder once",
+  "url": "https://github.com/apache/pinot/pull/16561",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.query.request.context.QueryContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isOptimizeMaxInitialResultHolderCapacity()",
+        "PUBLIC(+) void setOptimizeMaxInitialResultHolderCapacity(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _optimizeMaxInitialResultHolderCapacity"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
