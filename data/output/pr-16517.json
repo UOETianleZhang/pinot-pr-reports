@@ -1,0 +1,95 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerGauge.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerMeter.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/ImmutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/upsert/BasePartitionUpsertMetadataManager.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/upsert/BasePartitionUpsertMetadataManagerTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/upsert/ConcurrentMapPartitionUpsertMetadataManagerForConsistentDeletesTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/upsert/ConcurrentMapPartitionUpsertMetadataManagerTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/V1Constants.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/TablesResource.java"
+  ],
+  "mergedAt": "2025-08-08T00:32:23Z",
+  "number": 16517,
+  "title": "Persist QueryableDocIds on Disk for Upsert Tables",
+  "url": "https://github.com/apache/pinot/pull/16517",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.ServerGauge",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerGauge UPSERT_QUERYABLE_DOCS_IN_SNAPSHOT_COUNT",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerGauge UPSERT_QUERYABLE_DOC_ID_SNAPSHOT_COUNT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metrics.ServerMeter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerMeter UPSERT_MISSED_QUERYABLE_DOC_ID_SNAPSHOT_COUNT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.immutable.ImmutableSegmentImpl",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void deleteValidDocIdsSnapshot()",
+        "PRIVATE(-) java.io.File getValidDocIdsSnapshotFile()",
+        "PUBLIC(-) boolean hasValidDocIdsSnapshotFile()",
+        "PUBLIC(-) org.roaringbitmap.buffer.MutableRoaringBitmap loadValidDocIdsFromSnapshot()",
+        "PUBLIC(-) void persistValidDocIdsSnapshot()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void deleteSnapshotFile(java.lang.String)",
+        "PRIVATE(+) java.io.File getSnapshotFile(java.lang.String)",
+        "PUBLIC(+) boolean hasSnapshotFile(java.lang.String)",
+        "PUBLIC(+) org.roaringbitmap.buffer.MutableRoaringBitmap loadDocIdsFromSnapshot(java.lang.String)",
+        "PUBLIC(+) void persistDocIdsSnapshot(java.lang.String, org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.upsert.BasePartitionUpsertMetadataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void updateSnapshotMetrics(int, long, long, int, int, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.V1Constants",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String QUERYABLE_DOC_IDS_SNAPSHOT_FILE_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
