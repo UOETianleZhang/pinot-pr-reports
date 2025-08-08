@@ -1,0 +1,46 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineIntegrationTest.java"
+  ],
+  "mergedAt": "2025-08-08T10:35:52Z",
+  "number": 16536,
+  "title": "Add controller REST API to compile / validate MSE query",
+  "url": "https://github.com/apache/pinot/pull/16536",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationResponse validateMultiStageQuery(java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationResponse",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.spi.exception.QueryErrorCode getErrorCode()",
+        "PUBLIC(+) java.lang.String getErrorMessage()",
+        "PUBLIC(+) boolean isCompiledSuccessfully()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _errorMessage",
+        "PRIVATE(+) FINAL(+) boolean _compiledSuccessfully",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.exception.QueryErrorCode _errorCode"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotQueryResource$MultiStageQueryValidationResponse(boolean, java.lang.String, org.apache.pinot.spi.exception.QueryErrorCode)"
+      ]
+    }
+  ]
+}
