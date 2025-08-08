@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java"
+  ],
+  "mergedAt": "2025-08-08T08:56:29Z",
+  "number": 16555,
+  "title": "Remove todo for supporting size based segment threshold for pauseless",
+  "url": "https://github.com/apache/pinot/pull/16555",
+  "jcmpClasses": []
+}
