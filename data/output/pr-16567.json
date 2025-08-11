@@ -1,0 +1,29 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/MailboxService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/channel/ChannelManager.java"
+  ],
+  "mergedAt": "2025-08-11T08:13:36Z",
+  "number": 16567,
+  "title": "Fixing grpc maxInboundMessageSize usage in the GRPC ChannelManager",
+  "url": "https://github.com/apache/pinot/pull/16567",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.mailbox.channel.ChannelManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _maxInboundMessageSize"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ChannelManager(org.apache.pinot.common.config.TlsConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ChannelManager(org.apache.pinot.common.config.TlsConfig, int)"
+      ]
+    }
+  ]
+}

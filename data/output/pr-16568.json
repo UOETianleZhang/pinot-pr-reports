@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/regexp/RegexpLikeConstFunctions.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/regexp/RegexpLikeVarFunctions.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/request/context/RequestContextUtils.java"
+  ],
+  "mergedAt": "2025-08-11T08:12:09Z",
+  "number": 16568,
+  "title": "Making LIKE predicate case in-sensitive.",
+  "url": "https://github.com/apache/pinot/pull/16568",
+  "jcmpClasses": []
+}
