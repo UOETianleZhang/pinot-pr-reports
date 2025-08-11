@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LiteModeSortInsertRule.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json"
+  ],
+  "mergedAt": "2025-08-11T20:05:11Z",
+  "number": 16551,
+  "title": "[multistage] Push Collation from Exchange to Lite Mode Sort",
+  "url": "https://github.com/apache/pinot/pull/16551",
+  "jcmpClasses": []
+}
