@@ -1,0 +1,30 @@
+{
+  "files": [
+    "pinot-plugins/pinot-file-system/pinot-s3/src/main/java/org/apache/pinot/plugin/filesystem/S3PinotFS.java"
+  ],
+  "mergedAt": "2025-08-11T00:21:35Z",
+  "number": 16553,
+  "title": "[Enhancement] Support refresh AWS credentials",
+  "url": "https://github.com/apache/pinot/pull/16553",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.plugin.filesystem.S3PinotFS",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) software.amazon.awssdk.auth.credentials.AwsCredentials getAwsCredentials()",
+        "PUBLIC(+) void initOrRefreshS3Client()",
+        "PRIVATE(+) void logAwsCredentials(java.lang.String)",
+        "PRIVATE(+) STATIC(+) java.lang.String maskKey(java.lang.String)",
+        "PRIVATE(+) java.lang.Object retryWithS3CredentialRefresh(java.util.function.Supplier<T>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.plugin.filesystem.S3Config _s3Config"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
