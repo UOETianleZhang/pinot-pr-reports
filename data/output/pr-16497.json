@@ -1,0 +1,87 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/blocks/results/AggregationResultsBlock.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/AggregationFunctionFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/AggregationFunctionUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/MaxStringAggregationFunction.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/MinStringAggregationFunction.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/function/AggregationFunctionFactoryTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/function/MaxStringAggregationFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/function/MinStringAggregationFunctionTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/AggregationFunctionType.java"
+  ],
+  "mergedAt": "2025-08-11T11:10:14Z",
+  "number": 16497,
+  "title": "Add string type support to MIN/MAX aggregation functions",
+  "url": "https://github.com/apache/pinot/pull/16497",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.MaxStringAggregationFunction",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void aggregate(int, org.apache.pinot.core.query.aggregation.AggregationResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(+) void aggregateGroupByMV(int, int[][], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(+) void aggregateGroupBySV(int, int[], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(+) org.apache.pinot.core.query.aggregation.AggregationResultHolder createAggregationResultHolder()",
+        "PUBLIC(+) org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder createGroupByResultHolder(int, int)",
+        "PUBLIC(+) java.lang.String extractAggregationResult(org.apache.pinot.core.query.aggregation.AggregationResultHolder)",
+        "PUBLIC(+) java.lang.String extractFinalResult(java.lang.String)",
+        "PUBLIC(+) java.lang.String extractGroupByResult(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int)",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema$ColumnDataType getFinalResultColumnType()",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema$ColumnDataType getIntermediateResultColumnType()",
+        "PUBLIC(+) org.apache.pinot.segment.spi.AggregationFunctionType getType()",
+        "PUBLIC(+) java.lang.String merge(java.lang.String, java.lang.String)",
+        "PUBLIC(+) java.lang.String mergeFinalResult(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) MaxStringAggregationFunction(java.util.List<org.apache.pinot.common.request.context.ExpressionContext>, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.MinStringAggregationFunction",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void aggregate(int, org.apache.pinot.core.query.aggregation.AggregationResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(+) void aggregateGroupByMV(int, int[][], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(+) void aggregateGroupBySV(int, int[], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(+) org.apache.pinot.core.query.aggregation.AggregationResultHolder createAggregationResultHolder()",
+        "PUBLIC(+) org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder createGroupByResultHolder(int, int)",
+        "PUBLIC(+) java.lang.String extractAggregationResult(org.apache.pinot.core.query.aggregation.AggregationResultHolder)",
+        "PUBLIC(+) java.lang.String extractFinalResult(java.lang.String)",
+        "PUBLIC(+) java.lang.String extractGroupByResult(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int)",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema$ColumnDataType getFinalResultColumnType()",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema$ColumnDataType getIntermediateResultColumnType()",
+        "PUBLIC(+) org.apache.pinot.segment.spi.AggregationFunctionType getType()",
+        "PUBLIC(+) java.lang.String merge(java.lang.String, java.lang.String)",
+        "PUBLIC(+) java.lang.String mergeFinalResult(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) MinStringAggregationFunction(java.util.List<org.apache.pinot.common.request.context.ExpressionContext>, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.AggregationFunctionType",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.segment.spi.AggregationFunctionType MAXSTRING",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.segment.spi.AggregationFunctionType MINSTRING"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
