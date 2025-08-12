@@ -1,0 +1,77 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/FunctionInfo.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/array/ArrayLengthScalarFunction.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/udf/UdfExampleBuilder.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/udf/AvroSink.java",
+    "pinot-integration-tests/src/test/resources/udf-test-results/arrayconcatdouble.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/arrayelementatint.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/arraymax.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/isfalse.yaml",
+    "pinot-integration-tests/src/test/resources/udf-test-results/todatetime.yaml",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/BigDecimalUtils.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfReporter.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/UdfTestFramework.java",
+    "pinot-udf-test/src/main/java/org/apache/pinot/udf/test/scenarios/IntermediateUdfTestScenario.java"
+  ],
+  "mergedAt": "2025-08-12T16:28:55Z",
+  "number": 16431,
+  "title": "Udf improvements",
+  "url": "https://github.com/apache/pinot/pull/16431",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.function.FunctionInfo",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.function.FunctionInfo fromMethod(java.lang.reflect.Method)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.function.scalar.array.ArrayLengthScalarFunction",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Set<java.lang.String> getNames()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.udf.test.UdfReporter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.lang.String describeValue(java.lang.Object, boolean)",
+        "PRIVATE(+) STATIC(+) void reportScenarioForSignature(org.apache.pinot.core.udf.Udf, java.io.PrintWriter, org.apache.pinot.udf.test.ResultByExample)",
+        "PRIVATE(+) STATIC(+) boolean requiresScenarioForSignature(org.apache.pinot.udf.test.ResultByExample)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.udf.test.UdfTestFramework",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) boolean doubleEquals(double, double)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
