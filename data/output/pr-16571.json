@@ -1,0 +1,105 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/PinotHelixTaskResourceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/PinotTaskManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/TaskSchedulingContext.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/generator/BaseTaskGenerator.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/minion/generator/PinotTaskGenerator.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/minion/PinotTaskManagerStatelessTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/common/MinionConstants.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/purge/PurgeTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/refreshsegment/RefreshSegmentTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/segmentgenerationandpush/SegmentGenerationAndPushTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompaction/UpsertCompactionTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/main/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskGenerator.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/upsertcompaction/UpsertCompactionTaskGeneratorTest.java"
+  ],
+  "mergedAt": "2025-08-13T11:33:58Z",
+  "number": 16571,
+  "title": "Add cluster level configuration for max num subtasks",
+  "url": "https://github.com/apache/pinot/pull/16571",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.minion.generator.BaseTaskGenerator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getAndUpdateMaxNumSubTasks(java.util.Map<java.lang.String,java.lang.String>, int, java.lang.String)",
+        "PUBLIC(+) int getMaxAllowedSubTasksPerTask()",
+        "PUBLIC(+) int getNumSubTasks(java.util.Map<java.lang.String,java.lang.String>, int, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.minion.generator.PinotTaskGenerator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getMaxAllowedSubTasksPerTask()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.minion.PinotTaskManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String TRIGGERED_BY"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.minion.TaskSchedulingContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isUserTriggeredTask(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.common.MinionConstants",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TRIGGERED_BY",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MAX_ALLOWED_SUB_TASKS_KEY",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_MINION_MAX_NUM_OF_SUBTASKS_LIMIT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.minion.tasks.upsertcompaction.UpsertCompactionTaskGenerator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) int getMaxTasks(java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
