@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BaseBrokerStarter.java"
+  ],
+  "mergedAt": "2025-08-13T22:14:51Z",
+  "number": 16590,
+  "title": "Broker: fail fast when broker marked down; keep IdealState/ExternalView checks out of critical path",
+  "url": "https://github.com/apache/pinot/pull/16590",
+  "jcmpClasses": []
+}
