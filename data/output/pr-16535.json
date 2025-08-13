@@ -1,0 +1,44 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentUploadDownloadRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/upload/SegmentValidationUtils.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/validation/StorageQuotaChecker.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/validation/StorageQuotaCheckerTest.java"
+  ],
+  "mergedAt": "2025-08-13T16:43:22Z",
+  "number": 16535,
+  "title": "Bypass storage quota check for segment refresh with smaller size even if the table is over quota",
+  "url": "https://github.com/apache/pinot/pull/16535",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.upload.SegmentValidationUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void checkStorageQuota(java.lang.String, long, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.controller.validation.StorageQuotaChecker)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void checkStorageQuota(java.lang.String, long, long, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.controller.validation.StorageQuotaChecker)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.validation.StorageQuotaChecker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.validation.StorageQuotaChecker$QuotaCheckerResponse isSegmentStorageWithinQuota(org.apache.pinot.spi.config.table.TableConfig, java.lang.String, long)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.validation.StorageQuotaChecker$QuotaCheckerResponse isSegmentStorageWithinQuota(org.apache.pinot.spi.config.table.TableConfig, java.lang.String, long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
