@@ -1,0 +1,128 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/InternalFunctions.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/ResourceUsageAccountantFactory.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/TestResourceAccountant.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/OpChainExecutionContext.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/server/QueryServer.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/executor/OpChainSchedulerServiceTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MailboxSendOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/OperatorTestUtil.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/query/QueryThreadContext.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutorTest.java"
+  ],
+  "mergedAt": "2025-08-13T21:24:29Z",
+  "number": 16532,
+  "title": "Misc bugfix/cleanup for thread accountant",
+  "url": "https://github.com/apache/pinot/pull/16532",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.ResourceUsageAccountantFactory$ResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.OpChainExecutionContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) OpChainExecutionContext(org.apache.pinot.query.mailbox.MailboxService, long, long, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.query.routing.StageMetadata, org.apache.pinot.query.routing.WorkerMetadata, org.apache.pinot.query.runtime.plan.pipeline.PipelineBreakerResult, org.apache.pinot.spi.accounting.ThreadExecutionContext, boolean)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.query.QueryThreadContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) long getDeadlineMs()",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.query.QueryThreadContext$CloseableContext openFromRequestMetadata(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) STATIC(-) void setDeadlineMs(long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.query.QueryThreadContext$Instance",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) long getDeadlineMs()",
+        "PUBLIC(-) void setDeadlineMs(long)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$DefaultThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void setupRunner(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
