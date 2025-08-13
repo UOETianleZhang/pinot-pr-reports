@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-13T18:05:42Z",
+  "number": 16586,
+  "title": "Bump immutables.version from 2.11.2 to 2.11.3",
+  "url": "https://github.com/apache/pinot/pull/16586",
+  "jcmpClasses": []
+}

@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-13T18:13:20Z",
+  "number": 16587,
+  "title": "Bump net.openhft:chronicle-bom from 2.27ea71 to 2.27ea72",
+  "url": "https://github.com/apache/pinot/pull/16587",
+  "jcmpClasses": []
+}
