@@ -1,0 +1,40 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/datatable/StatMap.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/LeafOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/server/QueryServer.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/LeafOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/OperatorTestUtil.java"
+  ],
+  "mergedAt": "2025-08-13T19:32:28Z",
+  "number": 16582,
+  "title": "Enhance LeafOperator",
+  "url": "https://github.com/apache/pinot/pull/16582",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "void execute(org.apache.pinot.spi.accounting.ThreadExecutionContext)",
+        "PRIVATE(+) org.apache.pinot.query.runtime.blocks.ErrorMseBlock getErrorBlock()",
+        "PRIVATE(+) void setErrorBlock(org.apache.pinot.query.runtime.blocks.ErrorMseBlock)",
+        "PRIVATE(+) void terminateAndClearResultsBlocks()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) VOLATILE(-) java.util.Map<java.lang.Integer,java.lang.String> _exceptions"
+      ],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.blocks.ErrorMseBlock TIMEOUT_BLOCK",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.atomic.AtomicReference<org.apache.pinot.query.runtime.blocks.ErrorMseBlock> _errorBlock",
+        "PRIVATE(+) FINAL(+) java.lang.String _tableName",
+        "PRIVATE(+) VOLATILE(+) boolean _terminated",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.blocks.ErrorMseBlock CANCELLED_BLOCK"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
