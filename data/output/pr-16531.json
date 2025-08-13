@@ -1,0 +1,126 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/resources/PinotClientRequest.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandlerDelegate.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/PinotBrokerTimeSeriesResponse.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/ClusterTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/TimeSeriesIntegrationTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/JsonUtils.java"
+  ],
+  "mergedAt": "2025-08-13T03:39:46Z",
+  "number": 16531,
+  "title": "[timeseries] Introducing POST /query/timeseries as a BrokerResponse compatible timeseries API",
+  "url": "https://github.com/apache/pinot/pull/16531",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.api.resources.PinotClientRequest",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse executeTimeSeriesQuery(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse executeTimeSeriesQuery(java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(+) void processTimeSeriesQueryEngine(java.util.Map<java.lang.String,java.lang.String>, javax.ws.rs.container.AsyncResponse, org.glassfish.grizzly.http.server.Request, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandlerDelegate",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.TimeSeriesRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.tsdb.spi.RangeTimeSeriesRequest buildRangeTimeSeriesRequest(java.lang.String, java.lang.String)",
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.tsdb.spi.RangeTimeSeriesRequest buildRangeTimeSeriesRequest(java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse handleTimeSeriesRequest(java.lang.String, java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.spi.auth.broker.RequesterIdentity, javax.ws.rs.core.HttpHeaders)",
+        "PRIVATE(+) int parseIntOrDefault(java.lang.String, int)",
+        "PRIVATE(+) java.lang.Long parseLongSafe(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.common.utils.DataSchema deriveBrokerResponseDataSchema(org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse$Data)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> deriveBrokerResponseRows(org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse$Data, java.lang.String[])",
+        "PUBLIC(+) org.apache.pinot.common.response.BrokerResponse toBrokerResponse()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String LANGUAGE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String QUERY"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.JsonUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.Map<java.lang.String,java.lang.String> jsonNodeToStringMap(com.fasterxml.jackson.databind.JsonNode)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
