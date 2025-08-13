@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/Query/TimeseriesChart.tsx",
+    "pinot-controller/src/main/resources/app/components/Query/TimeseriesQueryPage.tsx",
+    "pinot-controller/src/main/resources/app/utils/ChartConstants.ts"
+  ],
+  "mergedAt": "2025-08-13T05:44:23Z",
+  "number": 16580,
+  "title": "[timeseries][ui] Add configurable max series limit for timeseries chart visualization",
+  "url": "https://github.com/apache/pinot/pull/16580",
+  "jcmpClasses": []
+}
