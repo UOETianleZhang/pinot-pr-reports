@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/utils/TableConfigUtilsTest.java"
+  ],
+  "mergedAt": "2025-08-13T23:51:39Z",
+  "number": 16507,
+  "title": "check pauseless comsumption when multi-topic ingest",
+  "url": "https://github.com/apache/pinot/pull/16507",
+  "jcmpClasses": []
+}
