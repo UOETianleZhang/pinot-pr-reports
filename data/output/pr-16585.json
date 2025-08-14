@@ -1,0 +1,28 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/BrokerRoutingManager.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/routing/BuildRoutingDelayTest.java"
+  ],
+  "mergedAt": "2025-08-14T19:24:38Z",
+  "number": 16585,
+  "title": "broker: per-table routing build lock and request gating",
+  "url": "https://github.com/apache/pinot/pull/16585",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.routing.BrokerRoutingManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.Object getTableLock(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.Object> _routingTableBuildLocks",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.Long> _routingTableBuildStartTimeMs"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
