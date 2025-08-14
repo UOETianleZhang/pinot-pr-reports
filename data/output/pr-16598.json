@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-14T17:44:36Z",
+  "number": 16598,
+  "title": "Bump com.nimbusds:nimbus-jose-jwt from 10.4.1 to 10.4.2",
+  "url": "https://github.com/apache/pinot/pull/16598",
+  "jcmpClasses": []
+}

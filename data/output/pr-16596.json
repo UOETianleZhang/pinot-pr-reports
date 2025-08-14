@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-14T17:44:03Z",
+  "number": 16596,
+  "title": "Bump eclipse.jetty.version from 9.4.57.v20241219 to 9.4.58.v20250814",
+  "url": "https://github.com/apache/pinot/pull/16596",
+  "jcmpClasses": []
+}
