@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/BlockingSegmentCompletionFSM.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PauselessSegmentCompletionFSM.java"
+  ],
+  "mergedAt": "2025-08-14T09:02:40Z",
+  "number": 16593,
+  "title": "Fix logger for pauseless",
+  "url": "https://github.com/apache/pinot/pull/16593",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.BlockingSegmentCompletionFSM",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
