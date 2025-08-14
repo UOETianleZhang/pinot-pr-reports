@@ -1,0 +1,122 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/ProjectionOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/ProjectionOperatorUtils.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/dociditerators/ExpressionScanDocIdIterator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/docidsets/ExpressionDocIdSet.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/filter/ExpressionFilterOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/query/SelectionOrderByOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/plan/ProjectPlanNode.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/request/context/QueryContext.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/startree/plan/StarTreeProjectPlanNode.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/geospatial/transform/GeoFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/BaseTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/ClpTransformFunctionsTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/DateTruncTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/DistinctFromTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/NullHandlingTransformFunctionTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/aggregation/DefaultAggregationExecutorTest.java",
+    "pinot-perf/src/main/java/org/apache/pinot/perf/RawIndexBenchmark.java"
+  ],
+  "mergedAt": "2025-08-14T05:32:55Z",
+  "number": 16589,
+  "title": "Pass QueryContext to ProjectionOperator",
+  "url": "https://github.com/apache/pinot/pull/16589",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.operator.dociditerators.ExpressionScanDocIdIterator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.query.request.context.QueryContext _queryContext"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ExpressionScanDocIdIterator(org.apache.pinot.core.operator.transform.function.TransformFunction, org.apache.pinot.core.operator.filter.predicate.PredicateEvaluator, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, int, boolean, org.apache.pinot.core.operator.dociditerators.ExpressionScanDocIdIterator$PredicateEvaluationResult)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ExpressionScanDocIdIterator(org.apache.pinot.core.operator.transform.function.TransformFunction, org.apache.pinot.core.operator.filter.predicate.PredicateEvaluator, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, int, org.apache.pinot.core.operator.dociditerators.ExpressionScanDocIdIterator$PredicateEvaluationResult, org.apache.pinot.core.query.request.context.QueryContext)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.docidsets.ExpressionDocIdSet",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ExpressionDocIdSet(org.apache.pinot.core.operator.transform.function.TransformFunction, org.apache.pinot.core.operator.filter.predicate.PredicateEvaluator, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, int, boolean, org.apache.pinot.core.operator.dociditerators.ExpressionScanDocIdIterator$PredicateEvaluationResult)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ExpressionDocIdSet(org.apache.pinot.core.operator.transform.function.TransformFunction, org.apache.pinot.core.operator.filter.predicate.PredicateEvaluator, java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, int, org.apache.pinot.core.operator.dociditerators.ExpressionScanDocIdIterator$PredicateEvaluationResult, org.apache.pinot.core.query.request.context.QueryContext)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.ProjectionOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) org.apache.pinot.core.query.request.context.QueryContext _queryContext",
+        "PROTECTED(+) FINAL(+) org.apache.pinot.core.common.DataFetcher _dataFetcher"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>, org.apache.pinot.core.query.request.context.QueryContext)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.operator.ProjectionOperatorUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.core.operator.ProjectionOperator getProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.operator.ProjectionOperator getProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>, org.apache.pinot.core.query.request.context.QueryContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.ProjectionOperatorUtils$DefaultImplementation",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.core.operator.ProjectionOperator getProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.operator.ProjectionOperator getProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>, org.apache.pinot.core.query.request.context.QueryContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.operator.ProjectionOperatorUtils$Implementation",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.core.operator.ProjectionOperator getProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.core.operator.ProjectionOperator getProjectionOperator(java.util.Map<java.lang.String,org.apache.pinot.segment.spi.datasource.DataSource>, org.apache.pinot.core.operator.BaseOperator<org.apache.pinot.core.operator.blocks.DocIdSetBlock>, org.apache.pinot.core.query.request.context.QueryContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
