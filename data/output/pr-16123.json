@@ -1,0 +1,2151 @@
+{
+  "files": [
+    "pinot-common/src/main/proto/plan.proto",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/logical/PinotLogicalEnrichedJoin.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotAggregateExchangeNodeInsertRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/rel/rules/PinotEnrichedJoinRule.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/explain/ExplainNodeSimplifier.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/explain/PhysicalExplainPlanVisitor.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/explain/PlanNodeMerger.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/explain/PlanNodeSorter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/EquivalentStagesFinder.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/PlanFragmenter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/PlanNodeToRelConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/RelToPlanNodeConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/SubPlanFragmenter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/DispatchablePlanVisitor.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/RelToPRelConverter.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/nodes/PhysicalJoin.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/plannode/DefaultPostOrderTraversalVisitor.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/plannode/EnrichedJoinNode.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/plannode/PlanNodeVisitor.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/serde/PlanNodeDeserializer.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/serde/PlanNodeSerializer.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/validation/ArrayToMvValidationVisitor.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/calcite/rel/rules/PinotEnrichedJoinRuleTest.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/planner/logical/RelToPlanNodeConverterTest.java",
+    "pinot-query-planner/src/test/resources/queries/JoinPlans.json",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/InStageStatsTreeBuilder.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/BaseJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/EnrichedHashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/PlanNodeToOpChain.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/server/ServerPlanRequestVisitor.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/EnrichedHashJoinOperatorTest.java",
+    "pinot-query-runtime/src/test/resources/queries/EnrichedJoin.json",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-14T16:51:48Z",
+  "number": 16123,
+  "title": "[MSE] Enriched join operator",
+  "url": "https://github.com/apache/pinot/pull/16123",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.proto.Plan",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor internal_static_org_apache_pinot_common_proto_ProjectAndResultSchema_descriptor",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internal_static_org_apache_pinot_common_proto_FilterProjectRex_fieldAccessorTable",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor internal_static_org_apache_pinot_common_proto_EnrichedJoinNode_descriptor",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internal_static_org_apache_pinot_common_proto_EnrichedJoinNode_fieldAccessorTable",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor internal_static_org_apache_pinot_common_proto_FilterProjectRex_descriptor",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internal_static_org_apache_pinot_common_proto_ProjectAndResultSchema_fieldAccessorTable"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$EnrichedJoinNode",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getDefaultInstance()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getDefaultInstanceForType()",
+        "PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()",
+        "PUBLIC(+) int getFetch()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getFilterProjectRex(int)",
+        "PUBLIC(+) int getFilterProjectRexCount()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> getFilterProjectRexList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder getFilterProjectRexOrBuilder(int)",
+        "PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexOrBuilderList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getJoinResultDataSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getJoinResultDataSchemaOrBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinStrategy getJoinStrategy()",
+        "PUBLIC(+) int getJoinStrategyValue()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinType getJoinType()",
+        "PUBLIC(+) int getJoinTypeValue()",
+        "PUBLIC(+) int getLeftKeys(int)",
+        "PUBLIC(+) int getLeftKeysCount()",
+        "PUBLIC(+) java.util.List<java.lang.Integer> getLeftKeysList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getNonEquiConditions(int)",
+        "PUBLIC(+) int getNonEquiConditionsCount()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getNonEquiConditionsList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getNonEquiConditionsOrBuilder(int)",
+        "PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsOrBuilderList()",
+        "PUBLIC(+) int getOffset()",
+        "PUBLIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$EnrichedJoinNode> getParserForType()",
+        "PUBLIC(+) int getRightKeys(int)",
+        "PUBLIC(+) int getRightKeysCount()",
+        "PUBLIC(+) java.util.List<java.lang.Integer> getRightKeysList()",
+        "PUBLIC(+) int getSerializedSize()",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) boolean hasJoinResultDataSchema()",
+        "PUBLIC(+) boolean hasMatchCondition()",
+        "PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()",
+        "PUBLIC(+) FINAL(+) boolean isInitialized()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilder(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilderForType()",
+        "PROTECTED(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3$BuilderParent)",
+        "PROTECTED(+) java.lang.Object newInstance(com.google.protobuf.GeneratedMessageV3$UnusedPrivateParameter)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseDelimitedFrom(java.io.InputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseDelimitedFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.nio.ByteBuffer)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.nio.ByteBuffer, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.ByteString)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.ByteString, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(byte[])",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(byte[], com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.io.InputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.CodedInputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$EnrichedJoinNode> parser()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder toBuilder()",
+        "PUBLIC(+) void writeTo(com.google.protobuf.CodedOutputStream)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> nonEquiConditions_",
+        "PUBLIC(+) STATIC(+) FINAL(+) int MATCHCONDITION_FIELD_NUMBER",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILTERPROJECTREX_FIELD_NUMBER",
+        "PRIVATE(+) int bitField0_",
+        "PRIVATE(+) com.google.protobuf.Internal$IntList rightKeys_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema joinResultDataSchema_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression matchCondition_",
+        "PRIVATE(+) STATIC(+) FINAL(+) long serialVersionUID",
+        "PRIVATE(+) com.google.protobuf.Internal$IntList leftKeys_",
+        "PUBLIC(+) STATIC(+) FINAL(+) int NONEQUICONDITIONS_FIELD_NUMBER",
+        "PRIVATE(+) int offset_",
+        "PRIVATE(+) int leftKeysMemoizedSerializedSize",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FETCH_FIELD_NUMBER",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode DEFAULT_INSTANCE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int LEFTKEYS_FIELD_NUMBER",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$EnrichedJoinNode> PARSER",
+        "PUBLIC(+) STATIC(+) FINAL(+) int JOINTYPE_FIELD_NUMBER",
+        "PRIVATE(+) int rightKeysMemoizedSerializedSize",
+        "PUBLIC(+) STATIC(+) FINAL(+) int JOINSTRATEGY_FIELD_NUMBER",
+        "PUBLIC(+) STATIC(+) FINAL(+) int RIGHTKEYS_FIELD_NUMBER",
+        "PUBLIC(+) STATIC(+) FINAL(+) int OFFSET_FIELD_NUMBER",
+        "PRIVATE(+) byte memoizedIsInitialized",
+        "PRIVATE(+) int joinType_",
+        "PRIVATE(+) int fetch_",
+        "PRIVATE(+) int joinStrategy_",
+        "PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> filterProjectRex_",
+        "PUBLIC(+) STATIC(+) FINAL(+) int JOINRESULTDATASCHEMA_FIELD_NUMBER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) Plan$EnrichedJoinNode(com.google.protobuf.GeneratedMessageV3$Builder<?>)",
+        "PRIVATE(+) Plan$EnrichedJoinNode()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$EnrichedJoinNode$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parsePartialFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "Plan$EnrichedJoinNode$1()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllFilterProjectRex(java.lang.Iterable<? extends org.apache.pinot.common.proto.Plan$FilterProjectRex>)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllLeftKeys(java.lang.Iterable<? extends java.lang.Integer>)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllNonEquiConditions(java.lang.Iterable<? extends org.apache.pinot.common.proto.Expressions$Expression>)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllRightKeys(java.lang.Iterable<? extends java.lang.Integer>)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(org.apache.pinot.common.proto.Plan$FilterProjectRex)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder addFilterProjectRexBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder addFilterProjectRexBuilder(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addLeftKeys(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addNonEquiConditionsBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addNonEquiConditionsBuilder(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addRightKeys(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode build()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode buildPartial()",
+        "PRIVATE(+) void buildPartial0(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)",
+        "PRIVATE(+) void buildPartialRepeatedFields(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clear()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearFetch()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearField(com.google.protobuf.Descriptors$FieldDescriptor)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearFilterProjectRex()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearJoinResultDataSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearJoinStrategy()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearJoinType()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearLeftKeys()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearMatchCondition()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearNonEquiConditions()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearOffset()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearOneof(com.google.protobuf.Descriptors$OneofDescriptor)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearRightKeys()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clone()",
+        "PRIVATE(+) void ensureFilterProjectRexIsMutable()",
+        "PRIVATE(+) void ensureLeftKeysIsMutable()",
+        "PRIVATE(+) void ensureNonEquiConditionsIsMutable()",
+        "PRIVATE(+) void ensureRightKeysIsMutable()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getDefaultInstanceForType()",
+        "PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()",
+        "PUBLIC(+) com.google.protobuf.Descriptors$Descriptor getDescriptorForType()",
+        "PUBLIC(+) int getFetch()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getFilterProjectRex(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder getFilterProjectRexBuilder(int)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder> getFilterProjectRexBuilderList()",
+        "PUBLIC(+) int getFilterProjectRexCount()",
+        "PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Plan$FilterProjectRex,org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder,org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexFieldBuilder()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> getFilterProjectRexList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder getFilterProjectRexOrBuilder(int)",
+        "PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexOrBuilderList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getJoinResultDataSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema$Builder getJoinResultDataSchemaBuilder()",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> getJoinResultDataSchemaFieldBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getJoinResultDataSchemaOrBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinStrategy getJoinStrategy()",
+        "PUBLIC(+) int getJoinStrategyValue()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinType getJoinType()",
+        "PUBLIC(+) int getJoinTypeValue()",
+        "PUBLIC(+) int getLeftKeys(int)",
+        "PUBLIC(+) int getLeftKeysCount()",
+        "PUBLIC(+) java.util.List<java.lang.Integer> getLeftKeysList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getMatchConditionBuilder()",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getMatchConditionFieldBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getNonEquiConditions(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getNonEquiConditionsBuilder(int)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression$Builder> getNonEquiConditionsBuilderList()",
+        "PUBLIC(+) int getNonEquiConditionsCount()",
+        "PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsFieldBuilder()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getNonEquiConditionsList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getNonEquiConditionsOrBuilder(int)",
+        "PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsOrBuilderList()",
+        "PUBLIC(+) int getOffset()",
+        "PUBLIC(+) int getRightKeys(int)",
+        "PUBLIC(+) int getRightKeysCount()",
+        "PUBLIC(+) java.util.List<java.lang.Integer> getRightKeysList()",
+        "PUBLIC(+) boolean hasJoinResultDataSchema()",
+        "PUBLIC(+) boolean hasMatchCondition()",
+        "PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()",
+        "PUBLIC(+) FINAL(+) boolean isInitialized()",
+        "PRIVATE(+) void maybeForceBuilderInitialization()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeFrom(com.google.protobuf.Message)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeFrom(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeJoinResultDataSchema(org.apache.pinot.common.proto.Plan$DataSchema)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeMatchCondition(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeUnknownFields(com.google.protobuf.UnknownFieldSet)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder removeFilterProjectRex(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder removeNonEquiConditions(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setFetch(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinResultDataSchema(org.apache.pinot.common.proto.Plan$DataSchema)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinResultDataSchema(org.apache.pinot.common.proto.Plan$DataSchema$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinStrategy(org.apache.pinot.common.proto.Plan$JoinStrategy)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinStrategyValue(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinType(org.apache.pinot.common.proto.Plan$JoinType)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinTypeValue(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setLeftKeys(int, int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setMatchCondition(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setMatchCondition(org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setOffset(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, int, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setRightKeys(int, int)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setUnknownFields(com.google.protobuf.UnknownFieldSet)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> nonEquiConditions_",
+        "PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Plan$FilterProjectRex,org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder,org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> filterProjectRexBuilder_",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> matchConditionBuilder_",
+        "PRIVATE(+) int bitField0_",
+        "PRIVATE(+) com.google.protobuf.Internal$IntList rightKeys_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema joinResultDataSchema_",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> joinResultDataSchemaBuilder_",
+        "PRIVATE(+) int joinType_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression matchCondition_",
+        "PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> nonEquiConditionsBuilder_",
+        "PRIVATE(+) int fetch_",
+        "PRIVATE(+) com.google.protobuf.Internal$IntList leftKeys_",
+        "PRIVATE(+) int joinStrategy_",
+        "PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> filterProjectRex_",
+        "PRIVATE(+) int offset_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) Plan$EnrichedJoinNode$Builder(com.google.protobuf.GeneratedMessageV3$BuilderParent)",
+        "PRIVATE(+) Plan$EnrichedJoinNode$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) int getFetch()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getFilterProjectRex(int)",
+        "PUBLIC(+) ABSTRACT(+) int getFilterProjectRexCount()",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> getFilterProjectRexList()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder getFilterProjectRexOrBuilder(int)",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<? extends org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexOrBuilderList()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchema getJoinResultDataSchema()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getJoinResultDataSchemaOrBuilder()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$JoinStrategy getJoinStrategy()",
+        "PUBLIC(+) ABSTRACT(+) int getJoinStrategyValue()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$JoinType getJoinType()",
+        "PUBLIC(+) ABSTRACT(+) int getJoinTypeValue()",
+        "PUBLIC(+) ABSTRACT(+) int getLeftKeys(int)",
+        "PUBLIC(+) ABSTRACT(+) int getLeftKeysCount()",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<java.lang.Integer> getLeftKeysList()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getNonEquiConditions(int)",
+        "PUBLIC(+) ABSTRACT(+) int getNonEquiConditionsCount()",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getNonEquiConditionsList()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getNonEquiConditionsOrBuilder(int)",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsOrBuilderList()",
+        "PUBLIC(+) ABSTRACT(+) int getOffset()",
+        "PUBLIC(+) ABSTRACT(+) int getRightKeys(int)",
+        "PUBLIC(+) ABSTRACT(+) int getRightKeysCount()",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<java.lang.Integer> getRightKeysList()",
+        "PUBLIC(+) ABSTRACT(+) boolean hasJoinResultDataSchema()",
+        "PUBLIC(+) ABSTRACT(+) boolean hasMatchCondition()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$FilterProjectRex",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getDefaultInstance()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getDefaultInstanceForType()",
+        "PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getFilter()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getFilterOrBuilder()",
+        "PUBLIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$FilterProjectRex> getParserForType()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getProjectAndResultSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder getProjectAndResultSchemaOrBuilder()",
+        "PUBLIC(+) int getSerializedSize()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType getType()",
+        "PUBLIC(+) int getTypeValue()",
+        "PUBLIC(+) boolean hasFilter()",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) boolean hasProjectAndResultSchema()",
+        "PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()",
+        "PUBLIC(+) FINAL(+) boolean isInitialized()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilder(org.apache.pinot.common.proto.Plan$FilterProjectRex)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilderForType()",
+        "PROTECTED(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3$BuilderParent)",
+        "PROTECTED(+) java.lang.Object newInstance(com.google.protobuf.GeneratedMessageV3$UnusedPrivateParameter)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseDelimitedFrom(java.io.InputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseDelimitedFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.nio.ByteBuffer)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.nio.ByteBuffer, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.ByteString)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.ByteString, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(byte[])",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(byte[], com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.io.InputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.CodedInputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$FilterProjectRex> parser()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder toBuilder()",
+        "PUBLIC(+) void writeTo(com.google.protobuf.CodedOutputStream)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$FilterProjectRex> PARSER",
+        "PRIVATE(+) STATIC(+) FINAL(+) long serialVersionUID",
+        "PRIVATE(+) int bitField0_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema projectAndResultSchema_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression filter_",
+        "PUBLIC(+) STATIC(+) FINAL(+) int PROJECTANDRESULTSCHEMA_FIELD_NUMBER",
+        "PRIVATE(+) byte memoizedIsInitialized",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex DEFAULT_INSTANCE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int TYPE_FIELD_NUMBER",
+        "PRIVATE(+) int type_",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILTER_FIELD_NUMBER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) Plan$FilterProjectRex()",
+        "PRIVATE(+) Plan$FilterProjectRex(com.google.protobuf.GeneratedMessageV3$Builder<?>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$FilterProjectRex$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parsePartialFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "Plan$FilterProjectRex$1()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder addRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex build()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex buildPartial()",
+        "PRIVATE(+) void buildPartial0(org.apache.pinot.common.proto.Plan$FilterProjectRex)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clear()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearField(com.google.protobuf.Descriptors$FieldDescriptor)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearFilter()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearOneof(com.google.protobuf.Descriptors$OneofDescriptor)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearProjectAndResultSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearType()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clone()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getDefaultInstanceForType()",
+        "PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()",
+        "PUBLIC(+) com.google.protobuf.Descriptors$Descriptor getDescriptorForType()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getFilter()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getFilterBuilder()",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getFilterFieldBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getFilterOrBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getProjectAndResultSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder getProjectAndResultSchemaBuilder()",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema,org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder,org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder> getProjectAndResultSchemaFieldBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder getProjectAndResultSchemaOrBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType getType()",
+        "PUBLIC(+) int getTypeValue()",
+        "PUBLIC(+) boolean hasFilter()",
+        "PUBLIC(+) boolean hasProjectAndResultSchema()",
+        "PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()",
+        "PUBLIC(+) FINAL(+) boolean isInitialized()",
+        "PRIVATE(+) void maybeForceBuilderInitialization()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFilter(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFrom(com.google.protobuf.Message)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFrom(org.apache.pinot.common.proto.Plan$FilterProjectRex)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeProjectAndResultSchema(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeUnknownFields(com.google.protobuf.UnknownFieldSet)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setFilter(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setFilter(org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setProjectAndResultSchema(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setProjectAndResultSchema(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, int, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setType(org.apache.pinot.common.proto.Plan$FilterProjectRexType)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setTypeValue(int)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setUnknownFields(com.google.protobuf.UnknownFieldSet)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema,org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder,org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder> projectAndResultSchemaBuilder_",
+        "PRIVATE(+) int bitField0_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema projectAndResultSchema_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression filter_",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> filterBuilder_",
+        "PRIVATE(+) int type_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) Plan$FilterProjectRex$Builder()",
+        "PRIVATE(+) Plan$FilterProjectRex$Builder(com.google.protobuf.GeneratedMessageV3$BuilderParent)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getFilter()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getFilterOrBuilder()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getProjectAndResultSchema()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder getProjectAndResultSchemaOrBuilder()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType getType()",
+        "PUBLIC(+) ABSTRACT(+) int getTypeValue()",
+        "PUBLIC(+) ABSTRACT(+) boolean hasFilter()",
+        "PUBLIC(+) ABSTRACT(+) boolean hasProjectAndResultSchema()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$FilterProjectRexType",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType forNumber(int)",
+        "PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$EnumDescriptor getDescriptor()",
+        "PUBLIC(+) FINAL(+) com.google.protobuf.Descriptors$EnumDescriptor getDescriptorForType()",
+        "PUBLIC(+) FINAL(+) int getNumber()",
+        "PUBLIC(+) FINAL(+) com.google.protobuf.Descriptors$EnumValueDescriptor getValueDescriptor()",
+        "PUBLIC(+) STATIC(+) com.google.protobuf.Internal$EnumLiteMap<org.apache.pinot.common.proto.Plan$FilterProjectRexType> internalGetValueMap()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType valueOf(int)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType valueOf(com.google.protobuf.Descriptors$EnumValueDescriptor)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType PROJECT",
+        "PUBLIC(+) STATIC(+) FINAL(+) int PROJECT_VALUE",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType FILTER",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Internal$EnumLiteMap<org.apache.pinot.common.proto.Plan$FilterProjectRexType> internalValueMap",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILTER_VALUE",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType[] VALUES",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType UNRECOGNIZED",
+        "PRIVATE(+) FINAL(+) int value"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) Plan$FilterProjectRexType(java.lang.String, int, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$FilterProjectRexType$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType findValueByNumber(int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "Plan$FilterProjectRexType$1()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$PlanNode",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getEnrichedJoinNode()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder getEnrichedJoinNodeOrBuilder()",
+        "PUBLIC(+) boolean hasEnrichedJoinNode()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int ENRICHEDJOINNODE_FIELD_NUMBER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$PlanNode$Builder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder clearEnrichedJoinNode()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getEnrichedJoinNode()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder getEnrichedJoinNodeBuilder()",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$EnrichedJoinNode,org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder,org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder> getEnrichedJoinNodeFieldBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder getEnrichedJoinNodeOrBuilder()",
+        "PUBLIC(+) boolean hasEnrichedJoinNode()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder mergeEnrichedJoinNode(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder setEnrichedJoinNode(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder setEnrichedJoinNode(org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$EnrichedJoinNode,org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder,org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder> enrichedJoinNodeBuilder_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$PlanNode$NodeCase",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$PlanNode$NodeCase ENRICHEDJOINNODE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$PlanNodeOrBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getEnrichedJoinNode()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder getEnrichedJoinNodeOrBuilder()",
+        "PUBLIC(+) ABSTRACT(+) boolean hasEnrichedJoinNode()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$ProjectAndResultSchema",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getDefaultInstance()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getDefaultInstanceForType()",
+        "PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()",
+        "PUBLIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema> getParserForType()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getProject(int)",
+        "PUBLIC(+) int getProjectCount()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getProjectList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getProjectOrBuilder(int)",
+        "PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectOrBuilderList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getSchemaOrBuilder()",
+        "PUBLIC(+) int getSerializedSize()",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) boolean hasSchema()",
+        "PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()",
+        "PUBLIC(+) FINAL(+) boolean isInitialized()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilder(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilderForType()",
+        "PROTECTED(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3$BuilderParent)",
+        "PROTECTED(+) java.lang.Object newInstance(com.google.protobuf.GeneratedMessageV3$UnusedPrivateParameter)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseDelimitedFrom(java.io.InputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseDelimitedFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.nio.ByteBuffer)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.nio.ByteBuffer, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.ByteString)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.ByteString, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(byte[])",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(byte[], com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.io.InputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.CodedInputStream)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) STATIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema> parser()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder toBuilder()",
+        "PUBLIC(+) void writeTo(com.google.protobuf.CodedOutputStream)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema> PARSER",
+        "PRIVATE(+) STATIC(+) FINAL(+) long serialVersionUID",
+        "PRIVATE(+) int bitField0_",
+        "PUBLIC(+) STATIC(+) FINAL(+) int SCHEMA_FIELD_NUMBER",
+        "PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema schema_",
+        "PRIVATE(+) byte memoizedIsInitialized",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema DEFAULT_INSTANCE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int PROJECT_FIELD_NUMBER",
+        "PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> project_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) Plan$ProjectAndResultSchema()",
+        "PRIVATE(+) Plan$ProjectAndResultSchema(com.google.protobuf.GeneratedMessageV3$Builder<?>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parsePartialFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "Plan$ProjectAndResultSchema$1()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addAllProject(java.lang.Iterable<? extends org.apache.pinot.common.proto.Expressions$Expression>)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(int, org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addProjectBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addProjectBuilder(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema build()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema buildPartial()",
+        "PRIVATE(+) void buildPartial0(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)",
+        "PRIVATE(+) void buildPartialRepeatedFields(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clear()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearField(com.google.protobuf.Descriptors$FieldDescriptor)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearOneof(com.google.protobuf.Descriptors$OneofDescriptor)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearProject()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clone()",
+        "PRIVATE(+) void ensureProjectIsMutable()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getDefaultInstanceForType()",
+        "PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()",
+        "PUBLIC(+) com.google.protobuf.Descriptors$Descriptor getDescriptorForType()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getProject(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getProjectBuilder(int)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression$Builder> getProjectBuilderList()",
+        "PUBLIC(+) int getProjectCount()",
+        "PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectFieldBuilder()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getProjectList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getProjectOrBuilder(int)",
+        "PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectOrBuilderList()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getSchema()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema$Builder getSchemaBuilder()",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> getSchemaFieldBuilder()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getSchemaOrBuilder()",
+        "PUBLIC(+) boolean hasSchema()",
+        "PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()",
+        "PUBLIC(+) FINAL(+) boolean isInitialized()",
+        "PRIVATE(+) void maybeForceBuilderInitialization()",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeFrom(com.google.protobuf.Message)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeFrom(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeSchema(org.apache.pinot.common.proto.Plan$DataSchema)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeUnknownFields(com.google.protobuf.UnknownFieldSet)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder removeProject(int)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setProject(int, org.apache.pinot.common.proto.Expressions$Expression)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setProject(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, int, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setSchema(org.apache.pinot.common.proto.Plan$DataSchema)",
+        "PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setSchema(org.apache.pinot.common.proto.Plan$DataSchema$Builder)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setUnknownFields(com.google.protobuf.UnknownFieldSet)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> projectBuilder_",
+        "PRIVATE(+) int bitField0_",
+        "PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema schema_",
+        "PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> project_",
+        "PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> schemaBuilder_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) Plan$ProjectAndResultSchema$Builder()",
+        "PRIVATE(+) Plan$ProjectAndResultSchema$Builder(com.google.protobuf.GeneratedMessageV3$BuilderParent)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getProject(int)",
+        "PUBLIC(+) ABSTRACT(+) int getProjectCount()",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getProjectList()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getProjectOrBuilder(int)",
+        "PUBLIC(+) ABSTRACT(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectOrBuilderList()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchema getSchema()",
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getSchemaOrBuilder()",
+        "PUBLIC(+) ABSTRACT(+) boolean hasSchema()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.util.List<org.apache.calcite.rex.RexNode> combineProjects(java.util.List<org.apache.calcite.rex.RexNode>, java.util.List<org.apache.calcite.rex.RexNode>)",
+        "PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin copy(org.apache.calcite.plan.RelTraitSet, org.apache.calcite.rex.RexNode, org.apache.calcite.rel.RelNode, org.apache.calcite.rel.RelNode, org.apache.calcite.rel.core.JoinRelType, boolean)",
+        "PROTECTED(+) org.apache.calcite.rel.type.RelDataType deriveRowType()",
+        "PUBLIC(+) org.apache.calcite.rel.RelWriter explainTerms(org.apache.calcite.rel.RelWriter)",
+        "PUBLIC(+) org.apache.calcite.rex.RexNode getFetch()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode> getFilterProjectRexNodes()",
+        "PUBLIC(+) FINAL(+) org.apache.calcite.rel.type.RelDataType getJoinRowType()",
+        "PUBLIC(+) org.apache.calcite.rex.RexNode getOffset()",
+        "PUBLIC(+) java.util.List<org.apache.calcite.rex.RexNode> getProjects()",
+        "PRIVATE(+) java.util.List<org.apache.calcite.rex.RexNode> squashProjects()",
+        "PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin withNewFetchOffset(org.apache.calcite.rex.RexNode, org.apache.calcite.rex.RexNode)",
+        "PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin withNewFilter(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode)",
+        "PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin withNewProject(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode, org.apache.calcite.rel.type.RelDataType, java.util.Set<org.apache.calcite.rel.core.CorrelationId>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.calcite.rex.RexNode _fetch",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.rex.RexNode _offset",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode> _filterProjectRexNodes",
+        "PRIVATE(+) FINAL(+) java.util.Set<org.apache.calcite.rel.core.CorrelationId> _projectVariableSet",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.rel.type.RelDataType _outputRowType",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.calcite.rex.RexNode> _squashedProjects"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotLogicalEnrichedJoin(org.apache.calcite.plan.RelOptCluster, org.apache.calcite.plan.RelTraitSet, java.util.List<org.apache.calcite.rel.hint.RelHint>, org.apache.calcite.rel.RelNode, org.apache.calcite.rel.RelNode, org.apache.calcite.rex.RexNode, java.util.Set<org.apache.calcite.rel.core.CorrelationId>, org.apache.calcite.rel.core.JoinRelType, java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode>, org.apache.calcite.rel.type.RelDataType, java.util.Set<org.apache.calcite.rel.core.CorrelationId>, org.apache.calcite.rex.RexNode, org.apache.calcite.rex.RexNode)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.calcite.rex.RexNode visitInputRef(org.apache.calcite.rex.RexInputRef)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PinotLogicalEnrichedJoin$1(java.util.List)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.calcite.rex.RexNode getFilter()",
+        "PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$ProjectAndResultRowType getProjectAndResultRowType()",
+        "PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType getType()",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$ProjectAndResultRowType _projectAndResultRowType",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType _type",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.rex.RexNode _filter"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotLogicalEnrichedJoin$FilterProjectRexNode(java.util.List<org.apache.calcite.rex.RexNode>, org.apache.calcite.rel.type.RelDataType)",
+        "PUBLIC(+) PinotLogicalEnrichedJoin$FilterProjectRexNode(org.apache.calcite.rex.RexNode)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType PROJECT",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType FILTER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotLogicalEnrichedJoin$FilterProjectRexNodeType(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$ProjectAndResultRowType",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.calcite.rel.type.RelDataType getDataType()",
+        "PUBLIC(+) java.util.List<org.apache.calcite.rex.RexNode> getProject()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.calcite.rex.RexNode> _project",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.rel.type.RelDataType _dataType"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotLogicalEnrichedJoin$ProjectAndResultRowType(java.util.List<org.apache.calcite.rex.RexNode>, org.apache.calcite.rel.type.RelDataType)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder builder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig)",
+        "PUBLIC(+) java.lang.String description()",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()",
+        "PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig withDescription(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$InitShim initShim",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING",
+        "PRIVATE(+) FINAL(+) java.lang.String description",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig build()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder description(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig)",
+        "PRIVATE(+) void mergeInternal(java.lang.Object)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) java.lang.String description",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$InitShim",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String formatInitCycleMessage()",
+        "org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte operandSupplierBuildStage",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) byte relBuilderFactoryBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder builder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig)",
+        "PUBLIC(+) java.lang.String description()",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()",
+        "PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig withDescription(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$InitShim initShim",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING",
+        "PRIVATE(+) FINAL(+) java.lang.String description",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig build()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder description(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig)",
+        "PRIVATE(+) void mergeInternal(java.lang.Object)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) java.lang.String description",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$InitShim",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String formatInitCycleMessage()",
+        "org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte operandSupplierBuildStage",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) byte relBuilderFactoryBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder builder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig)",
+        "PUBLIC(+) java.lang.String description()",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()",
+        "PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig withDescription(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$InitShim initShim",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING",
+        "PRIVATE(+) FINAL(+) java.lang.String description",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder)",
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig build()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder description(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)",
+        "PRIVATE(+) void mergeInternal(java.lang.Object)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) java.lang.String description",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$InitShim",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String formatInitCycleMessage()",
+        "org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte operandSupplierBuildStage",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) byte relBuilderFactoryBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder builder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig)",
+        "PUBLIC(+) java.lang.String description()",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()",
+        "PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig withDescription(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$InitShim initShim",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING",
+        "PRIVATE(+) FINAL(+) java.lang.String description",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder)",
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig build()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder description(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)",
+        "PRIVATE(+) void mergeInternal(java.lang.Object)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) java.lang.String description",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$InitShim",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String formatInitCycleMessage()",
+        "org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte operandSupplierBuildStage",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) byte relBuilderFactoryBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder builder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig)",
+        "PUBLIC(+) java.lang.String description()",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()",
+        "PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig withDescription(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$InitShim initShim",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING",
+        "PRIVATE(+) FINAL(+) java.lang.String description",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder)",
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig build()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder description(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)",
+        "PRIVATE(+) void mergeInternal(java.lang.Object)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) java.lang.String description",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$InitShim",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String formatInitCycleMessage()",
+        "org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte operandSupplierBuildStage",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) byte relBuilderFactoryBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder builder()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig)",
+        "PUBLIC(+) java.lang.String description()",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()",
+        "PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig withDescription(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$InitShim initShim",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING",
+        "PRIVATE(+) FINAL(+) java.lang.String description",
+        "PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder)",
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig build()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder description(java.lang.String)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig)",
+        "PRIVATE(+) void mergeInternal(java.lang.Object)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) java.lang.String description",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$InitShim",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String formatInitCycleMessage()",
+        "org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()",
+        "void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)",
+        "org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()",
+        "void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) byte operandSupplierBuildStage",
+        "PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier",
+        "PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory",
+        "PRIVATE(+) byte relBuilderFactoryBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) boolean canConvertJoin(org.apache.calcite.rel.logical.LogicalJoin)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin FILTER_ENRICHED_JOIN",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin PROJECT_ENRICHED_JOIN",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin SORT_ENRICHED_JOIN",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin FILTER_JOIN",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin SORT_JOIN",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.util.List<org.apache.calcite.plan.RelOptRule> PINOT_ENRICHED_JOIN_RULES",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin PROJECT_JOIN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEnrichedJoinRule()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEnrichedJoinRule$FilterEnrichedJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin toRule()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEnrichedJoinRule$FilterJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin toRule()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEnrichedJoinRule$ProjectEnrichedJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin toRule()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEnrichedJoinRule$ProjectJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin toRule()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEnrichedJoinRule$SortEnrichedJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin toRule()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) PinotEnrichedJoinRule$SortJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin toRule()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig DEFAULT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.explain.ExplainNodeSimplifier$Visitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Void)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.explain.PhysicalExplainPlanVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.StringBuilder visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.explain.PhysicalExplainPlanVisitor$Context)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.explain.PlanNodeMerger$Visitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.plannode.PlanNode)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.explain.PlanNodeSorter$Sorter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.util.Comparator<org.apache.pinot.query.planner.plannode.PlanNode>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.EquivalentStagesFinder$Visitor$NodeEquivalence",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Boolean visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.plannode.PlanNode)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.PlanFragmenter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.logical.PlanFragmenter$Context)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.PlanNodeToRelConverter$ConverterVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Void)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.RelToPlanNodeConverter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode convertLogicalEnrichedJoin(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin)",
+        "PRIVATE(+) STATIC(+) java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex> getFilterProjectRexes(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.logical.SubPlanFragmenter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.logical.SubPlanFragmenter$Context)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.DispatchablePlanVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.physical.DispatchablePlanContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.nodes.PhysicalJoin",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.calcite.rel.RelWriter explainTerms(org.apache.calcite.rel.RelWriter)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode> _filterProjectRexNodes"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PhysicalJoin(org.apache.calcite.plan.RelOptCluster, org.apache.calcite.plan.RelTraitSet, java.util.List<org.apache.calcite.rel.hint.RelHint>, org.apache.calcite.rex.RexNode, java.util.Set<org.apache.calcite.rel.core.CorrelationId>, org.apache.calcite.rel.core.JoinRelType, int, org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PinotDataDistribution, java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.DefaultPostOrderTraversalVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.EnrichedJoinNode",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String explain()",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema getDataSchema()",
+        "PUBLIC(+) int getFetch()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex> getFilterProjectRexes()",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema getJoinResultSchema()",
+        "PUBLIC(+) int getOffset()",
+        "PUBLIC(+) java.lang.Object visit(org.apache.pinot.query.planner.plannode.PlanNodeVisitor<T,C>, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode withInputs(java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex> _filterProjectRexes",
+        "PRIVATE(+) FINAL(+) int _fetch",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _joinResultSchema",
+        "PRIVATE(+) FINAL(+) int _offset",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _projectResultSchema"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) EnrichedJoinNode(int, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.planner.plannode.PlanNode$NodeHint, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, org.apache.calcite.rel.core.JoinRelType, java.util.List<java.lang.Integer>, java.util.List<java.lang.Integer>, java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.query.planner.plannode.JoinNode$JoinStrategy, org.apache.pinot.query.planner.logical.RexExpression, java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex>, int, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.planner.logical.RexExpression getFilter()",
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema getProjectAndResultSchema()",
+        "PUBLIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType getType()",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType _type",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema _projectAndResultSchema",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.logical.RexExpression _filter"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) EnrichedJoinNode$FilterProjectRex(org.apache.pinot.query.planner.logical.RexExpression)",
+        "PUBLIC(+) EnrichedJoinNode$FilterProjectRex(java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<org.apache.pinot.query.planner.logical.RexExpression> getProject()",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema getSchema()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _schema",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.planner.logical.RexExpression> _project"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema(java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType PROJECT",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType FILTER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) EnrichedJoinNode$FilterProjectRexType(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.PlanNodeVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) java.lang.Object visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.plannode.PlanNodeVisitor$DepthFirstVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Object visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.serde.PlanNodeDeserializer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode deserializeEnrichedJoinNode(org.apache.pinot.common.proto.Plan$PlanNode)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.common.utils.DataSchema extractDataSchema(org.apache.pinot.common.proto.Plan$DataSchema)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.serde.PlanNodeSerializer$SerializationVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.common.proto.Plan$PlanNode$Builder)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.planner.validation.ArrayToMvValidationVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) org.apache.calcite.plan.hep.HepProgram getTraitProgram(org.apache.pinot.query.routing.WorkerManager, org.apache.pinot.query.QueryEnvironment$Config, boolean)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.calcite.plan.hep.HepProgram getTraitProgram(org.apache.pinot.query.routing.WorkerManager, org.apache.pinot.query.QueryEnvironment$Config, boolean, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.InStageStatsTreeBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseJoinOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) BaseJoinOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.query.planner.plannode.JoinNode, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "PROTECTED",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockAnti(org.apache.pinot.query.runtime.blocks.MseBlock$Data)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockDuplicateKeys(org.apache.pinot.query.runtime.blocks.MseBlock$Data)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockSemi(org.apache.pinot.query.runtime.blocks.MseBlock$Data)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockUniqueKeys(org.apache.pinot.query.runtime.blocks.MseBlock$Data)",
+        "PROTECTED(+) java.util.List<java.lang.Object[]> buildJoinedRows(org.apache.pinot.query.runtime.blocks.MseBlock$Data)",
+        "PROTECTED(+) java.util.List<java.lang.Object[]> buildNonMatchRightRows()",
+        "PRIVATE(+) boolean filterDiscardRow(java.util.List<java.lang.Object>, org.apache.pinot.query.runtime.operator.operands.TransformOperand)",
+        "PRIVATE(+) boolean filterDiscardRow(java.lang.Object[], org.apache.pinot.query.runtime.operator.operands.TransformOperand)",
+        "PRIVATE(+) void filterProjectLimit(java.util.List<java.lang.Object>, java.util.List<java.lang.Object[]>)",
+        "PRIVATE(+) void filterProjectLimit(java.lang.Object[], java.lang.Object[], java.util.List<java.lang.Object[]>, int, int)",
+        "PRIVATE(+) java.util.List<java.lang.Object[]> getOutputRows(java.util.List<java.lang.Object[]>)",
+        "PRIVATE(+) void handleUnmatchedLeftRow(java.lang.Object[], java.util.List<java.lang.Object[]>)",
+        "PROTECTED(+) FINAL(+) boolean matchNonEquiConditions(java.util.List<java.lang.Object>)",
+        "PRIVATE(+) java.lang.Object[] projectRow(java.util.List<java.lang.Object>, java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand>)",
+        "PRIVATE(+) java.lang.Object[] projectRow(java.lang.Object[], java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand>)",
+        "PRIVATE(+) boolean rowNotNeeded()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _resultColumnSize",
+        "PRIVATE(+) int _rowsSeen",
+        "PRIVATE(+) int _numRowsToOffset",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME",
+        "PRIVATE(+) FINAL(+) int _numRowsToKeep",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperand> _filterProjectOperands"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) EnrichedHashJoinOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.query.planner.plannode.EnrichedJoinNode)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperand",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.operands.TransformOperand getFilter()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand> getProject()",
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType getType()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand> _project",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType _type",
+        "FINAL(+) org.apache.pinot.query.runtime.operator.operands.TransformOperand _filter"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) EnrichedHashJoinOperator$FilterProjectOperand(org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType PROJECT",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType FILTER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) EnrichedHashJoinOperator$FilterProjectOperandsType(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.HashJoinOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) HashJoinOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.query.planner.plannode.JoinNode, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.PlanNodeToOpChain$MyVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.runtime.plan.OpChainExecutionContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.server.ServerPlanRequestVisitor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.runtime.plan.server.ServerPlanRequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$PlannerRuleNames",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String JOIN_TO_ENRICHED_JOIN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

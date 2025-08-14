@@ -1,0 +1,1452 @@
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/assembly-descriptor-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/assembly-descriptor-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-adls-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-adls-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-azure-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-azure-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-broker-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-broker-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-clp-log-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-clp-log-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC FINAL org.apache.pinot.common.proto.Plan  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor internal_static_org_apache_pinot_common_proto_ProjectAndResultSchema_descriptor
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internal_static_org_apache_pinot_common_proto_FilterProjectRex_fieldAccessorTable
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor internal_static_org_apache_pinot_common_proto_EnrichedJoinNode_descriptor
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internal_static_org_apache_pinot_common_proto_EnrichedJoinNode_fieldAccessorTable
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor internal_static_org_apache_pinot_common_proto_FilterProjectRex_descriptor
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internal_static_org_apache_pinot_common_proto_ProjectAndResultSchema_fieldAccessorTable
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder
+	+++  NEW FIELD: PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> nonEquiConditions_
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int MATCHCONDITION_FIELD_NUMBER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int FILTERPROJECTREX_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) int bitField0_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.Internal$IntList rightKeys_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema joinResultDataSchema_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression matchCondition_
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) long serialVersionUID
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.Internal$IntList leftKeys_
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int NONEQUICONDITIONS_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) int offset_
+	+++  NEW FIELD: PRIVATE(+) int leftKeysMemoizedSerializedSize
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int FETCH_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode DEFAULT_INSTANCE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int LEFTKEYS_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$EnrichedJoinNode> PARSER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int JOINTYPE_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) int rightKeysMemoizedSerializedSize
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int JOINSTRATEGY_FIELD_NUMBER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int RIGHTKEYS_FIELD_NUMBER
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int OFFSET_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) byte memoizedIsInitialized
+	+++  NEW FIELD: PRIVATE(+) int joinType_
+	+++  NEW FIELD: PRIVATE(+) int fetch_
+	+++  NEW FIELD: PRIVATE(+) int joinStrategy_
+	+++  NEW FIELD: PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> filterProjectRex_
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int JOINRESULTDATASCHEMA_FIELD_NUMBER
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$EnrichedJoinNode(com.google.protobuf.GeneratedMessageV3$Builder<?>)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$EnrichedJoinNode()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getDefaultInstance()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getDefaultInstanceForType()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()
+	+++  NEW METHOD: PUBLIC(+) int getFetch()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getFilterProjectRex(int)
+	+++  NEW METHOD: PUBLIC(+) int getFilterProjectRexCount()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> getFilterProjectRexList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder getFilterProjectRexOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getJoinResultDataSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getJoinResultDataSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinStrategy getJoinStrategy()
+	+++  NEW METHOD: PUBLIC(+) int getJoinStrategyValue()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinType getJoinType()
+	+++  NEW METHOD: PUBLIC(+) int getJoinTypeValue()
+	+++  NEW METHOD: PUBLIC(+) int getLeftKeys(int)
+	+++  NEW METHOD: PUBLIC(+) int getLeftKeysCount()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.Integer> getLeftKeysList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getNonEquiConditions(int)
+	+++  NEW METHOD: PUBLIC(+) int getNonEquiConditionsCount()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getNonEquiConditionsList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getNonEquiConditionsOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) int getOffset()
+	+++  NEW METHOD: PUBLIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$EnrichedJoinNode> getParserForType()
+	+++  NEW METHOD: PUBLIC(+) int getRightKeys(int)
+	+++  NEW METHOD: PUBLIC(+) int getRightKeysCount()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.Integer> getRightKeysList()
+	+++  NEW METHOD: PUBLIC(+) int getSerializedSize()
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) boolean hasJoinResultDataSchema()
+	+++  NEW METHOD: PUBLIC(+) boolean hasMatchCondition()
+	+++  NEW METHOD: PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean isInitialized()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilder(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilderForType()
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3$BuilderParent)
+	+++  NEW METHOD: PROTECTED(+) java.lang.Object newInstance(com.google.protobuf.GeneratedMessageV3$UnusedPrivateParameter)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseDelimitedFrom(java.io.InputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseDelimitedFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.nio.ByteBuffer)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.nio.ByteBuffer, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.ByteString)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.ByteString, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(byte[])
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(byte[], com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.io.InputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.CodedInputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parseFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$EnrichedJoinNode> parser()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder toBuilder()
+	+++  NEW METHOD: PUBLIC(+) void writeTo(com.google.protobuf.CodedOutputStream)
+		+++  NEW EXCEPTION: java.io.IOException
++++  NEW CLASS: org.apache.pinot.common.proto.Plan$EnrichedJoinNode$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: Plan$EnrichedJoinNode$1()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode parsePartialFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder
+	+++  NEW FIELD: PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> nonEquiConditions_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Plan$FilterProjectRex,org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder,org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> filterProjectRexBuilder_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> matchConditionBuilder_
+	+++  NEW FIELD: PRIVATE(+) int bitField0_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.Internal$IntList rightKeys_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema joinResultDataSchema_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> joinResultDataSchemaBuilder_
+	+++  NEW FIELD: PRIVATE(+) int joinType_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression matchCondition_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> nonEquiConditionsBuilder_
+	+++  NEW FIELD: PRIVATE(+) int fetch_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.Internal$IntList leftKeys_
+	+++  NEW FIELD: PRIVATE(+) int joinStrategy_
+	+++  NEW FIELD: PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> filterProjectRex_
+	+++  NEW FIELD: PRIVATE(+) int offset_
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$EnrichedJoinNode$Builder(com.google.protobuf.GeneratedMessageV3$BuilderParent)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$EnrichedJoinNode$Builder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllFilterProjectRex(java.lang.Iterable<? extends org.apache.pinot.common.proto.Plan$FilterProjectRex>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllLeftKeys(java.lang.Iterable<? extends java.lang.Integer>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllNonEquiConditions(java.lang.Iterable<? extends org.apache.pinot.common.proto.Expressions$Expression>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addAllRightKeys(java.lang.Iterable<? extends java.lang.Integer>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(org.apache.pinot.common.proto.Plan$FilterProjectRex)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder addFilterProjectRexBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder addFilterProjectRexBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addLeftKeys(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addNonEquiConditionsBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addNonEquiConditionsBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder addRightKeys(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode build()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode buildPartial()
+	+++  NEW METHOD: PRIVATE(+) void buildPartial0(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)
+	+++  NEW METHOD: PRIVATE(+) void buildPartialRepeatedFields(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clear()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearFetch()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearField(com.google.protobuf.Descriptors$FieldDescriptor)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearFilterProjectRex()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearJoinResultDataSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearJoinStrategy()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearJoinType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearLeftKeys()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearMatchCondition()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearNonEquiConditions()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearOffset()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearOneof(com.google.protobuf.Descriptors$OneofDescriptor)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clearRightKeys()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder clone()
+	+++  NEW METHOD: PRIVATE(+) void ensureFilterProjectRexIsMutable()
+	+++  NEW METHOD: PRIVATE(+) void ensureLeftKeysIsMutable()
+	+++  NEW METHOD: PRIVATE(+) void ensureNonEquiConditionsIsMutable()
+	+++  NEW METHOD: PRIVATE(+) void ensureRightKeysIsMutable()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getDefaultInstanceForType()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()
+	+++  NEW METHOD: PUBLIC(+) com.google.protobuf.Descriptors$Descriptor getDescriptorForType()
+	+++  NEW METHOD: PUBLIC(+) int getFetch()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getFilterProjectRex(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder getFilterProjectRexBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder> getFilterProjectRexBuilderList()
+	+++  NEW METHOD: PUBLIC(+) int getFilterProjectRexCount()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Plan$FilterProjectRex,org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder,org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> getFilterProjectRexList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder getFilterProjectRexOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getJoinResultDataSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema$Builder getJoinResultDataSchemaBuilder()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> getJoinResultDataSchemaFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getJoinResultDataSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinStrategy getJoinStrategy()
+	+++  NEW METHOD: PUBLIC(+) int getJoinStrategyValue()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$JoinType getJoinType()
+	+++  NEW METHOD: PUBLIC(+) int getJoinTypeValue()
+	+++  NEW METHOD: PUBLIC(+) int getLeftKeys(int)
+	+++  NEW METHOD: PUBLIC(+) int getLeftKeysCount()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.Integer> getLeftKeysList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getMatchConditionBuilder()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getMatchConditionFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getNonEquiConditions(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getNonEquiConditionsBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression$Builder> getNonEquiConditionsBuilderList()
+	+++  NEW METHOD: PUBLIC(+) int getNonEquiConditionsCount()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getNonEquiConditionsList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getNonEquiConditionsOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) int getOffset()
+	+++  NEW METHOD: PUBLIC(+) int getRightKeys(int)
+	+++  NEW METHOD: PUBLIC(+) int getRightKeysCount()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<java.lang.Integer> getRightKeysList()
+	+++  NEW METHOD: PUBLIC(+) boolean hasJoinResultDataSchema()
+	+++  NEW METHOD: PUBLIC(+) boolean hasMatchCondition()
+	+++  NEW METHOD: PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean isInitialized()
+	+++  NEW METHOD: PRIVATE(+) void maybeForceBuilderInitialization()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeFrom(com.google.protobuf.Message)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeFrom(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeJoinResultDataSchema(org.apache.pinot.common.proto.Plan$DataSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeMatchCondition(org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder mergeUnknownFields(com.google.protobuf.UnknownFieldSet)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder removeFilterProjectRex(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder removeNonEquiConditions(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setFetch(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setFilterProjectRex(int, org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinResultDataSchema(org.apache.pinot.common.proto.Plan$DataSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinResultDataSchema(org.apache.pinot.common.proto.Plan$DataSchema$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinStrategy(org.apache.pinot.common.proto.Plan$JoinStrategy)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinStrategyValue(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinType(org.apache.pinot.common.proto.Plan$JoinType)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setJoinTypeValue(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setLeftKeys(int, int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setMatchCondition(org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setMatchCondition(org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setNonEquiConditions(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setOffset(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, int, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setRightKeys(int, int)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder setUnknownFields(com.google.protobuf.UnknownFieldSet)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getFetch()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getFilterProjectRex(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getFilterProjectRexCount()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.common.proto.Plan$FilterProjectRex> getFilterProjectRexList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder getFilterProjectRexOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<? extends org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder> getFilterProjectRexOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchema getJoinResultDataSchema()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getJoinResultDataSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$JoinStrategy getJoinStrategy()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getJoinStrategyValue()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$JoinType getJoinType()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getJoinTypeValue()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getLeftKeys(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getLeftKeysCount()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<java.lang.Integer> getLeftKeysList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getMatchCondition()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getMatchConditionOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getNonEquiConditions(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getNonEquiConditionsCount()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getNonEquiConditionsList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getNonEquiConditionsOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getNonEquiConditionsOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getOffset()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getRightKeys(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getRightKeysCount()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<java.lang.Integer> getRightKeysList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean hasJoinResultDataSchema()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean hasMatchCondition()
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$FilterProjectRex> PARSER
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) long serialVersionUID
+	+++  NEW FIELD: PRIVATE(+) int bitField0_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema projectAndResultSchema_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression filter_
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int PROJECTANDRESULTSCHEMA_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) byte memoizedIsInitialized
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex DEFAULT_INSTANCE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int TYPE_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) int type_
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int FILTER_FIELD_NUMBER
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$FilterProjectRex()
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$FilterProjectRex(com.google.protobuf.GeneratedMessageV3$Builder<?>)
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getDefaultInstance()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getDefaultInstanceForType()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getFilter()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getFilterOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$FilterProjectRex> getParserForType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getProjectAndResultSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder getProjectAndResultSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) int getSerializedSize()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType getType()
+	+++  NEW METHOD: PUBLIC(+) int getTypeValue()
+	+++  NEW METHOD: PUBLIC(+) boolean hasFilter()
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) boolean hasProjectAndResultSchema()
+	+++  NEW METHOD: PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean isInitialized()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilder(org.apache.pinot.common.proto.Plan$FilterProjectRex)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilderForType()
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3$BuilderParent)
+	+++  NEW METHOD: PROTECTED(+) java.lang.Object newInstance(com.google.protobuf.GeneratedMessageV3$UnusedPrivateParameter)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseDelimitedFrom(java.io.InputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseDelimitedFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.nio.ByteBuffer)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.nio.ByteBuffer, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.ByteString)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.ByteString, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(byte[])
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(byte[], com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.io.InputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.CodedInputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parseFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$FilterProjectRex> parser()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder toBuilder()
+	+++  NEW METHOD: PUBLIC(+) void writeTo(com.google.protobuf.CodedOutputStream)
+		+++  NEW EXCEPTION: java.io.IOException
++++  NEW CLASS: org.apache.pinot.common.proto.Plan$FilterProjectRex$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: Plan$FilterProjectRex$1()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex parsePartialFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema,org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder,org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder> projectAndResultSchemaBuilder_
+	+++  NEW FIELD: PRIVATE(+) int bitField0_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema projectAndResultSchema_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Expressions$Expression filter_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> filterBuilder_
+	+++  NEW FIELD: PRIVATE(+) int type_
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$FilterProjectRex$Builder()
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$FilterProjectRex$Builder(com.google.protobuf.GeneratedMessageV3$BuilderParent)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder addRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex build()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex buildPartial()
+	+++  NEW METHOD: PRIVATE(+) void buildPartial0(org.apache.pinot.common.proto.Plan$FilterProjectRex)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clear()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearField(com.google.protobuf.Descriptors$FieldDescriptor)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearFilter()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearOneof(com.google.protobuf.Descriptors$OneofDescriptor)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearProjectAndResultSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clearType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder clone()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex getDefaultInstanceForType()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()
+	+++  NEW METHOD: PUBLIC(+) com.google.protobuf.Descriptors$Descriptor getDescriptorForType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getFilter()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getFilterBuilder()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getFilterFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getFilterOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getProjectAndResultSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder getProjectAndResultSchemaBuilder()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema,org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder,org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder> getProjectAndResultSchemaFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder getProjectAndResultSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType getType()
+	+++  NEW METHOD: PUBLIC(+) int getTypeValue()
+	+++  NEW METHOD: PUBLIC(+) boolean hasFilter()
+	+++  NEW METHOD: PUBLIC(+) boolean hasProjectAndResultSchema()
+	+++  NEW METHOD: PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean isInitialized()
+	+++  NEW METHOD: PRIVATE(+) void maybeForceBuilderInitialization()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFilter(org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFrom(com.google.protobuf.Message)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFrom(org.apache.pinot.common.proto.Plan$FilterProjectRex)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeProjectAndResultSchema(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder mergeUnknownFields(com.google.protobuf.UnknownFieldSet)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setFilter(org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setFilter(org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setProjectAndResultSchema(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setProjectAndResultSchema(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, int, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setType(org.apache.pinot.common.proto.Plan$FilterProjectRexType)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setTypeValue(int)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRex$Builder setUnknownFields(com.google.protobuf.UnknownFieldSet)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexOrBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getFilter()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getFilterOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getProjectAndResultSchema()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder getProjectAndResultSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType getType()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getTypeValue()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean hasFilter()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean hasProjectAndResultSchema()
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Enum
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType PROJECT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int PROJECT_VALUE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType FILTER
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Internal$EnumLiteMap<org.apache.pinot.common.proto.Plan$FilterProjectRexType> internalValueMap
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int FILTER_VALUE
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType[] VALUES
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType UNRECOGNIZED
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int value
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$FilterProjectRexType(java.lang.String, int, int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType forNumber(int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$EnumDescriptor getDescriptor()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) com.google.protobuf.Descriptors$EnumDescriptor getDescriptorForType()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) int getNumber()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) com.google.protobuf.Descriptors$EnumValueDescriptor getValueDescriptor()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) com.google.protobuf.Internal$EnumLiteMap<org.apache.pinot.common.proto.Plan$FilterProjectRexType> internalGetValueMap()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType valueOf(int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType valueOf(com.google.protobuf.Descriptors$EnumValueDescriptor)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType[] values()
++++  NEW CLASS: org.apache.pinot.common.proto.Plan$FilterProjectRexType$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: Plan$FilterProjectRexType$1()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$FilterProjectRexType findValueByNumber(int)
+***  MODIFIED CLASS: PUBLIC STATIC FINAL org.apache.pinot.common.proto.Plan$PlanNode  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.common.proto.Plan$PlanNodeOrBuilder
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int ENRICHEDJOINNODE_FIELD_NUMBER
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getEnrichedJoinNode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder getEnrichedJoinNodeOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) boolean hasEnrichedJoinNode()
+***  MODIFIED CLASS: PUBLIC STATIC FINAL org.apache.pinot.common.proto.Plan$PlanNode$Builder  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.common.proto.Plan$PlanNodeOrBuilder
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$EnrichedJoinNode,org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder,org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder> enrichedJoinNodeBuilder_
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder clearEnrichedJoinNode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getEnrichedJoinNode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder getEnrichedJoinNodeBuilder()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$EnrichedJoinNode,org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder,org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder> getEnrichedJoinNodeFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder getEnrichedJoinNodeOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) boolean hasEnrichedJoinNode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder mergeEnrichedJoinNode(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder setEnrichedJoinNode(org.apache.pinot.common.proto.Plan$EnrichedJoinNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$PlanNode$Builder setEnrichedJoinNode(org.apache.pinot.common.proto.Plan$EnrichedJoinNode$Builder)
+***  MODIFIED ENUM: PUBLIC STATIC FINAL org.apache.pinot.common.proto.Plan$PlanNode$NodeCase  (compatible)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$PlanNode$NodeCase ENRICHEDJOINNODE
+**** MODIFIED INTERFACE: PUBLIC ABSTRACT STATIC org.apache.pinot.common.proto.Plan$PlanNodeOrBuilder  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNode getEnrichedJoinNode()
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$EnrichedJoinNodeOrBuilder getEnrichedJoinNodeOrBuilder()
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean hasEnrichedJoinNode()
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema> PARSER
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) long serialVersionUID
+	+++  NEW FIELD: PRIVATE(+) int bitField0_
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int SCHEMA_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema schema_
+	+++  NEW FIELD: PRIVATE(+) byte memoizedIsInitialized
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema DEFAULT_INSTANCE
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int PROJECT_FIELD_NUMBER
+	+++  NEW FIELD: PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> project_
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$ProjectAndResultSchema()
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$ProjectAndResultSchema(com.google.protobuf.GeneratedMessageV3$Builder<?>)
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getDefaultInstance()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getDefaultInstanceForType()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()
+	+++  NEW METHOD: PUBLIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema> getParserForType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getProject(int)
+	+++  NEW METHOD: PUBLIC(+) int getProjectCount()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getProjectList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getProjectOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) int getSerializedSize()
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) boolean hasSchema()
+	+++  NEW METHOD: PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean isInitialized()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilder(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilderForType()
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3$BuilderParent)
+	+++  NEW METHOD: PROTECTED(+) java.lang.Object newInstance(com.google.protobuf.GeneratedMessageV3$UnusedPrivateParameter)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseDelimitedFrom(java.io.InputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseDelimitedFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.nio.ByteBuffer)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.nio.ByteBuffer, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.ByteString)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.ByteString, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(byte[])
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(byte[], com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.io.InputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(java.io.InputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.CodedInputStream)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parseFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) com.google.protobuf.Parser<org.apache.pinot.common.proto.Plan$ProjectAndResultSchema> parser()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder toBuilder()
+	+++  NEW METHOD: PUBLIC(+) void writeTo(com.google.protobuf.CodedOutputStream)
+		+++  NEW EXCEPTION: java.io.IOException
++++  NEW CLASS: org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: Plan$ProjectAndResultSchema$1()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema parsePartialFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: com.google.protobuf.InvalidProtocolBufferException
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> projectBuilder_
+	+++  NEW FIELD: PRIVATE(+) int bitField0_
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.proto.Plan$DataSchema schema_
+	+++  NEW FIELD: PRIVATE(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> project_
+	+++  NEW FIELD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> schemaBuilder_
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$ProjectAndResultSchema$Builder()
+	+++  NEW CONSTRUCTOR: PRIVATE(+) Plan$ProjectAndResultSchema$Builder(com.google.protobuf.GeneratedMessageV3$BuilderParent)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addAllProject(java.lang.Iterable<? extends org.apache.pinot.common.proto.Expressions$Expression>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(int, org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addProject(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addProjectBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder addProjectBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder addRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema build()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema buildPartial()
+	+++  NEW METHOD: PRIVATE(+) void buildPartial0(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)
+	+++  NEW METHOD: PRIVATE(+) void buildPartialRepeatedFields(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clear()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearField(com.google.protobuf.Descriptors$FieldDescriptor)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearOneof(com.google.protobuf.Descriptors$OneofDescriptor)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearProject()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clearSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder clone()
+	+++  NEW METHOD: PRIVATE(+) void ensureProjectIsMutable()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema getDefaultInstanceForType()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) FINAL(+) com.google.protobuf.Descriptors$Descriptor getDescriptor()
+	+++  NEW METHOD: PUBLIC(+) com.google.protobuf.Descriptors$Descriptor getDescriptorForType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression getProject(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$Expression$Builder getProjectBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression$Builder> getProjectBuilderList()
+	+++  NEW METHOD: PUBLIC(+) int getProjectCount()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.RepeatedFieldBuilderV3<org.apache.pinot.common.proto.Expressions$Expression,org.apache.pinot.common.proto.Expressions$Expression$Builder,org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getProjectList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getProjectOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema getSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchema$Builder getSchemaBuilder()
+	+++  NEW METHOD: PRIVATE(+) com.google.protobuf.SingleFieldBuilderV3<org.apache.pinot.common.proto.Plan$DataSchema,org.apache.pinot.common.proto.Plan$DataSchema$Builder,org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder> getSchemaFieldBuilder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) boolean hasSchema()
+	+++  NEW METHOD: PROTECTED(+) com.google.protobuf.GeneratedMessageV3$FieldAccessorTable internalGetFieldAccessorTable()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) boolean isInitialized()
+	+++  NEW METHOD: PRIVATE(+) void maybeForceBuilderInitialization()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeFrom(com.google.protobuf.Message)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeFrom(org.apache.pinot.common.proto.Plan$ProjectAndResultSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite)
+		+++  NEW EXCEPTION: java.io.IOException
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeSchema(org.apache.pinot.common.proto.Plan$DataSchema)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder mergeUnknownFields(com.google.protobuf.UnknownFieldSet)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder removeProject(int)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setField(com.google.protobuf.Descriptors$FieldDescriptor, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setProject(int, org.apache.pinot.common.proto.Expressions$Expression)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setProject(int, org.apache.pinot.common.proto.Expressions$Expression$Builder)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setRepeatedField(com.google.protobuf.Descriptors$FieldDescriptor, int, java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setSchema(org.apache.pinot.common.proto.Plan$DataSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setSchema(org.apache.pinot.common.proto.Plan$DataSchema$Builder)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchema$Builder setUnknownFields(com.google.protobuf.UnknownFieldSet)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.common.proto.Plan$ProjectAndResultSchemaOrBuilder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$Expression getProject(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) int getProjectCount()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.common.proto.Expressions$Expression> getProjectList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder getProjectOrBuilder(int)
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<? extends org.apache.pinot.common.proto.Expressions$ExpressionOrBuilder> getProjectOrBuilderList()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchema getSchema()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) org.apache.pinot.common.proto.Plan$DataSchemaOrBuilder getSchemaOrBuilder()
+	+++  NEW METHOD: PUBLIC(+) ABSTRACT(+) boolean hasSchema()
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compound-metrics-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compound-metrics-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-controller-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-controller-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-core-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-core-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-csv-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-csv-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-distribution-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-distribution-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dropwizard-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dropwizard-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-flink-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-flink-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-gcs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-gcs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-hdfs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-hdfs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-test-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-test-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-tests-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-tests-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-java-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-java-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-jdbc-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-jdbc-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kinesis-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kinesis-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-orc-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-orc-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-parquet-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-parquet-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-perf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-perf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-pulsar-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-pulsar-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.rex.RexNode _fetch
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.rex.RexNode _offset
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode> _filterProjectRexNodes
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.Set<org.apache.calcite.rel.core.CorrelationId> _projectVariableSet
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.rel.type.RelDataType _outputRowType
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.calcite.rex.RexNode> _squashedProjects
+	+++  NEW CONSTRUCTOR: PUBLIC(+) PinotLogicalEnrichedJoin(org.apache.calcite.plan.RelOptCluster, org.apache.calcite.plan.RelTraitSet, java.util.List<org.apache.calcite.rel.hint.RelHint>, org.apache.calcite.rel.RelNode, org.apache.calcite.rel.RelNode, org.apache.calcite.rex.RexNode, java.util.Set<org.apache.calcite.rel.core.CorrelationId>, org.apache.calcite.rel.core.JoinRelType, java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode>, org.apache.calcite.rel.type.RelDataType, java.util.Set<org.apache.calcite.rel.core.CorrelationId>, org.apache.calcite.rex.RexNode, org.apache.calcite.rex.RexNode)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) java.util.List<org.apache.calcite.rex.RexNode> combineProjects(java.util.List<org.apache.calcite.rex.RexNode>, java.util.List<org.apache.calcite.rex.RexNode>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin copy(org.apache.calcite.plan.RelTraitSet, org.apache.calcite.rex.RexNode, org.apache.calcite.rel.RelNode, org.apache.calcite.rel.RelNode, org.apache.calcite.rel.core.JoinRelType, boolean)
+	+++  NEW METHOD: PROTECTED(+) org.apache.calcite.rel.type.RelDataType deriveRowType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.rel.RelWriter explainTerms(org.apache.calcite.rel.RelWriter)
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.rex.RexNode getFetch()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode> getFilterProjectRexNodes()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.calcite.rel.type.RelDataType getJoinRowType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.rex.RexNode getOffset()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.calcite.rex.RexNode> getProjects()
+	+++  NEW METHOD: PRIVATE(+) java.util.List<org.apache.calcite.rex.RexNode> squashProjects()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin withNewFetchOffset(org.apache.calcite.rex.RexNode, org.apache.calcite.rex.RexNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin withNewFilter(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin withNewProject(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode, org.apache.calcite.rel.type.RelDataType, java.util.Set<org.apache.calcite.rel.core.CorrelationId>)
++++  NEW CLASS: org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PinotLogicalEnrichedJoin$1(java.util.List)
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.rex.RexNode visitInputRef(org.apache.calcite.rex.RexInputRef)
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$ProjectAndResultRowType _projectAndResultRowType
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType _type
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.rex.RexNode _filter
+	+++  NEW CONSTRUCTOR: PUBLIC(+) PinotLogicalEnrichedJoin$FilterProjectRexNode(java.util.List<org.apache.calcite.rex.RexNode>, org.apache.calcite.rel.type.RelDataType)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) PinotLogicalEnrichedJoin$FilterProjectRexNode(org.apache.calcite.rex.RexNode)
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.rex.RexNode getFilter()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$ProjectAndResultRowType getProjectAndResultRowType()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType getType()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.constant.Constable
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW SUPERCLASS: java.lang.Enum
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType PROJECT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType FILTER
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotLogicalEnrichedJoin$FilterProjectRexNodeType(java.lang.String, int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNodeType[] values()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$ProjectAndResultRowType  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.calcite.rex.RexNode> _project
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.rel.type.RelDataType _dataType
+	+++  NEW CONSTRUCTOR: PUBLIC(+) PinotLogicalEnrichedJoin$ProjectAndResultRowType(java.util.List<org.apache.calcite.rex.RexNode>, org.apache.calcite.rel.type.RelDataType)
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.rel.type.RelDataType getDataType()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.calcite.rex.RexNode> getProject()
++++  NEW CLASS: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule()
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$InitShim initShim
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder builder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String description()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig withDescription(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig build()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder description(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) void mergeInternal(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$InitShim  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) byte operandSupplierBuildStage
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) byte relBuilderFactoryBuildStage
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterEnrichedJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) java.lang.String formatInitCycleMessage()
+	+++  NEW METHOD: org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$InitShim initShim
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder builder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String description()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig withDescription(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig build()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder description(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) void mergeInternal(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig$InitShim  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) byte operandSupplierBuildStage
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) byte relBuilderFactoryBuildStage
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$FilterJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$FilterJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) java.lang.String formatInitCycleMessage()
+	+++  NEW METHOD: org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$InitShim initShim
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder builder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String description()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig withDescription(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig build()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder description(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)
+	+++  NEW METHOD: PRIVATE(+) void mergeInternal(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$InitShim  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) byte operandSupplierBuildStage
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) byte relBuilderFactoryBuildStage
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectEnrichedJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) java.lang.String formatInitCycleMessage()
+	+++  NEW METHOD: org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$InitShim initShim
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder builder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String description()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig withDescription(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig build()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder description(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)
+	+++  NEW METHOD: PRIVATE(+) void mergeInternal(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$InitShim  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) byte operandSupplierBuildStage
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) byte relBuilderFactoryBuildStage
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$ProjectJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$ProjectJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) java.lang.String formatInitCycleMessage()
+	+++  NEW METHOD: org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$InitShim initShim
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder builder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String description()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig withDescription(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig build()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder description(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)
+	+++  NEW METHOD: PRIVATE(+) void mergeInternal(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$InitShim  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) byte operandSupplierBuildStage
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) byte relBuilderFactoryBuildStage
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortEnrichedJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) java.lang.String formatInitCycleMessage()
+	+++  NEW METHOD: org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZED
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) TRANSIENT(+) VOLATILE(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$InitShim initShim
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_INITIALIZING
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) byte STAGE_UNINITIALIZED
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder)
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig(org.apache.calcite.tools.RelBuilderFactory, java.lang.String, org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder builder()
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig copyOf(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String description()
+	+++  NEW METHOD: PUBLIC(+) boolean equals(java.lang.Object)
+	+++  NEW METHOD: PRIVATE(+) boolean equalsByValue(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) int hashCode()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplierInitialize()
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactoryInitialize()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig withDescription(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig withOperandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig withRelBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) java.lang.String description
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig build()
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder description(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder from(org.apache.calcite.plan.RelRule$Config)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder from(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) void mergeInternal(java.lang.Object)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$Builder relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PRIVATE(+) FINAL(+) org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig$InitShim  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) byte operandSupplierBuildStage
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.plan.RelRule$OperandTransform operandSupplier
+	+++  NEW FIELD: PRIVATE(+) org.apache.calcite.tools.RelBuilderFactory relBuilderFactory
+	+++  NEW FIELD: PRIVATE(+) byte relBuilderFactoryBuildStage
+	+++  NEW CONSTRUCTOR: PRIVATE(+) ImmutablePinotEnrichedJoinRule$SortJoinConfig$InitShim(org.apache.pinot.calcite.rel.rules.ImmutablePinotEnrichedJoinRule$SortJoinConfig)
+	+++  NEW METHOD: PRIVATE(+) java.lang.String formatInitCycleMessage()
+	+++  NEW METHOD: org.apache.calcite.plan.RelRule$OperandTransform operandSupplier()
+	+++  NEW METHOD: void operandSupplier(org.apache.calcite.plan.RelRule$OperandTransform)
+	+++  NEW METHOD: org.apache.calcite.tools.RelBuilderFactory relBuilderFactory()
+	+++  NEW METHOD: void relBuilderFactory(org.apache.calcite.tools.RelBuilderFactory)
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin FILTER_ENRICHED_JOIN
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin PROJECT_ENRICHED_JOIN
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin SORT_ENRICHED_JOIN
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin FILTER_JOIN
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin SORT_JOIN
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.List<org.apache.calcite.plan.RelOptRule> PINOT_ENRICHED_JOIN_RULES
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin PROJECT_JOIN
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotEnrichedJoinRule()
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) boolean canConvertJoin(org.apache.calcite.rel.logical.LogicalJoin)
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotEnrichedJoinRule$FilterEnrichedJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin$FilterEnrichedJoinConfig DEFAULT
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterEnrichedJoin toRule()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotEnrichedJoinRule$FilterJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin$FilterJoinConfig DEFAULT
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$FilterJoin toRule()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotEnrichedJoinRule$ProjectEnrichedJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin$ProjectEnrichedJoinConfig DEFAULT
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectEnrichedJoin toRule()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotEnrichedJoinRule$ProjectJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin$ProjectJoinConfig DEFAULT
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$ProjectJoin toRule()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotEnrichedJoinRule$SortEnrichedJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin$SortEnrichedJoinConfig DEFAULT
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortEnrichedJoin toRule()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW CONSTRUCTOR: PRIVATE(+) PinotEnrichedJoinRule$SortJoin(org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig)
+	+++  NEW METHOD: PUBLIC(+) void onMatch(org.apache.calcite.plan.RelOptRuleCall)
++++  NEW INTERFACE: PUBLIC(+) ABSTRACT(+) STATIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin$SortJoinConfig DEFAULT
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.calcite.rel.rules.PinotEnrichedJoinRule$SortJoin toRule()
+***  MODIFIED CLASS: PRIVATE STATIC org.apache.pinot.query.planner.explain.ExplainNodeSimplifier$Visitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Void)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.planner.explain.PhysicalExplainPlanVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.StringBuilder visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.explain.PhysicalExplainPlanVisitor$Context)
+***  MODIFIED CLASS: PRIVATE STATIC org.apache.pinot.query.planner.explain.PlanNodeMerger$Visitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.plannode.PlanNode)
+***  MODIFIED CLASS: PRIVATE STATIC org.apache.pinot.query.planner.explain.PlanNodeSorter$Sorter  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.util.Comparator<org.apache.pinot.query.planner.plannode.PlanNode>)
+***  MODIFIED CLASS: PRIVATE org.apache.pinot.query.planner.logical.EquivalentStagesFinder$Visitor$NodeEquivalence  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.Boolean visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.plannode.PlanNode)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.planner.logical.PlanFragmenter  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.logical.PlanFragmenter$Context)
+***  MODIFIED CLASS: PRIVATE STATIC org.apache.pinot.query.planner.logical.PlanNodeToRelConverter$ConverterVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Void)
+***  MODIFIED CLASS: PUBLIC FINAL org.apache.pinot.query.planner.logical.RelToPlanNodeConverter  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode convertLogicalEnrichedJoin(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex> getFilterProjectRexes(org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.planner.logical.SubPlanFragmenter  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.logical.SubPlanFragmenter$Context)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.planner.physical.DispatchablePlanVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.planner.physical.DispatchablePlanContext)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.planner.physical.v2.nodes.PhysicalJoin  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode> _filterProjectRexNodes
+	+++  NEW CONSTRUCTOR: PUBLIC(+) PhysicalJoin(org.apache.calcite.plan.RelOptCluster, org.apache.calcite.plan.RelTraitSet, java.util.List<org.apache.calcite.rel.hint.RelHint>, org.apache.calcite.rex.RexNode, java.util.Set<org.apache.calcite.rel.core.CorrelationId>, org.apache.calcite.rel.core.JoinRelType, int, org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PinotDataDistribution, java.util.List<org.apache.pinot.calcite.rel.logical.PinotLogicalEnrichedJoin$FilterProjectRexNode>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.calcite.rel.RelWriter explainTerms(org.apache.calcite.rel.RelWriter)
+***  MODIFIED CLASS: PUBLIC ABSTRACT org.apache.pinot.query.planner.plannode.DefaultPostOrderTraversalVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	GENERIC TEMPLATES: === C:java.lang.Object, === T:java.lang.Object
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Object)
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.query.planner.plannode.PlanNode
+	+++  NEW SUPERCLASS: org.apache.pinot.query.planner.plannode.JoinNode
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex> _filterProjectRexes
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _fetch
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _joinResultSchema
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _offset
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _projectResultSchema
+	+++  NEW CONSTRUCTOR: PUBLIC(+) EnrichedJoinNode(int, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.planner.plannode.PlanNode$NodeHint, java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>, org.apache.calcite.rel.core.JoinRelType, java.util.List<java.lang.Integer>, java.util.List<java.lang.Integer>, java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.query.planner.plannode.JoinNode$JoinStrategy, org.apache.pinot.query.planner.logical.RexExpression, java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex>, int, int)
+	+++  NEW METHOD: PUBLIC(+) java.lang.String explain()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.utils.DataSchema getDataSchema()
+	+++  NEW METHOD: PUBLIC(+) int getFetch()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex> getFilterProjectRexes()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.utils.DataSchema getJoinResultSchema()
+	+++  NEW METHOD: PUBLIC(+) int getOffset()
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object visit(org.apache.pinot.query.planner.plannode.PlanNodeVisitor<T,C>, java.lang.Object)
+		GENERIC TEMPLATES: +++ C:java.lang.Object, +++ T:java.lang.Object
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.PlanNode withInputs(java.util.List<org.apache.pinot.query.planner.plannode.PlanNode>)
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType _type
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema _projectAndResultSchema
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.query.planner.logical.RexExpression _filter
+	+++  NEW CONSTRUCTOR: PUBLIC(+) EnrichedJoinNode$FilterProjectRex(org.apache.pinot.query.planner.logical.RexExpression)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) EnrichedJoinNode$FilterProjectRex(java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.common.utils.DataSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.logical.RexExpression getFilter()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema getProjectAndResultSchema()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType getType()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toString()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _schema
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.planner.logical.RexExpression> _project
+	+++  NEW CONSTRUCTOR: PRIVATE(+) EnrichedJoinNode$FilterProjectRex$ProjectAndResultSchema(java.util.List<org.apache.pinot.query.planner.logical.RexExpression>, org.apache.pinot.common.utils.DataSchema)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.query.planner.logical.RexExpression> getProject()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.utils.DataSchema getSchema()
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.constant.Constable
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW SUPERCLASS: java.lang.Enum
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType PROJECT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType FILTER
+	+++  NEW CONSTRUCTOR: PRIVATE(+) EnrichedJoinNode$FilterProjectRexType(java.lang.String, int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRexType[] values()
+**** MODIFIED INTERFACE: PUBLIC ABSTRACT org.apache.pinot.query.planner.plannode.PlanNodeVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	GENERIC TEMPLATES: === C:java.lang.Object, === T:java.lang.Object
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) java.lang.Object visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Object)
+***  MODIFIED CLASS: PUBLIC ABSTRACT STATIC org.apache.pinot.query.planner.plannode.PlanNodeVisitor$DepthFirstVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	GENERIC TEMPLATES: === C:java.lang.Object, === T:java.lang.Object
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.Object visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Object)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.planner.serde.PlanNodeDeserializer  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) org.apache.pinot.query.planner.plannode.EnrichedJoinNode deserializeEnrichedJoinNode(org.apache.pinot.common.proto.Plan$PlanNode)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) org.apache.pinot.common.utils.DataSchema extractDataSchema(org.apache.pinot.common.proto.Plan$DataSchema)
+***  MODIFIED CLASS: PRIVATE STATIC org.apache.pinot.query.planner.serde.PlanNodeSerializer$SerializationVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.common.proto.Plan$PlanNode$Builder)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.planner.validation.ArrayToMvValidationVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===* UNCHANGED INTERFACE: org.apache.pinot.query.planner.plannode.PlanNodeVisitor
+	+++  NEW METHOD: PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, java.lang.Boolean)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.QueryEnvironment  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	---  REMOVED METHOD: PRIVATE(-) STATIC(-) org.apache.calcite.plan.hep.HepProgram getTraitProgram(org.apache.pinot.query.routing.WorkerManager, org.apache.pinot.query.QueryEnvironment$Config, boolean)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) org.apache.calcite.plan.hep.HepProgram getTraitProgram(org.apache.pinot.query.routing.WorkerManager, org.apache.pinot.query.QueryEnvironment$Config, boolean, java.util.Set<java.lang.String>)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-runtime-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-runtime-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.runtime.InStageStatsTreeBuilder  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) com.fasterxml.jackson.databind.node.ObjectNode visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.runtime.InStageStatsTreeBuilder$Context)
+***  MODIFIED CLASS: PUBLIC ABSTRACT org.apache.pinot.query.runtime.operator.BaseJoinOperator  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BaseJoinOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.query.planner.plannode.JoinNode, org.apache.pinot.common.utils.DataSchema)
+***  MODIFIED CLASS: PROTECTED (<- PRIVATE) ABSTRACT STATIC org.apache.pinot.query.runtime.operator.BaseJoinOperator$JoinedRowView  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.query.runtime.operator.HashJoinOperator
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _resultColumnSize
+	+++  NEW FIELD: PRIVATE(+) int _rowsSeen
+	+++  NEW FIELD: PRIVATE(+) int _numRowsToOffset
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _numRowsToKeep
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperand> _filterProjectOperands
+	+++  NEW CONSTRUCTOR: PUBLIC(+) EnrichedHashJoinOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.query.planner.plannode.EnrichedJoinNode)
+	+++  NEW METHOD: PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockAnti(org.apache.pinot.query.runtime.blocks.MseBlock$Data)
+	+++  NEW METHOD: PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockDuplicateKeys(org.apache.pinot.query.runtime.blocks.MseBlock$Data)
+	+++  NEW METHOD: PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockSemi(org.apache.pinot.query.runtime.blocks.MseBlock$Data)
+	+++  NEW METHOD: PRIVATE(+) java.util.List<java.lang.Object[]> buildJoinedDataBlockUniqueKeys(org.apache.pinot.query.runtime.blocks.MseBlock$Data)
+	+++  NEW METHOD: PROTECTED(+) java.util.List<java.lang.Object[]> buildJoinedRows(org.apache.pinot.query.runtime.blocks.MseBlock$Data)
+	+++  NEW METHOD: PROTECTED(+) java.util.List<java.lang.Object[]> buildNonMatchRightRows()
+	+++  NEW METHOD: PRIVATE(+) boolean filterDiscardRow(java.util.List<java.lang.Object>, org.apache.pinot.query.runtime.operator.operands.TransformOperand)
+	+++  NEW METHOD: PRIVATE(+) boolean filterDiscardRow(java.lang.Object[], org.apache.pinot.query.runtime.operator.operands.TransformOperand)
+	+++  NEW METHOD: PRIVATE(+) void filterProjectLimit(java.util.List<java.lang.Object>, java.util.List<java.lang.Object[]>)
+	+++  NEW METHOD: PRIVATE(+) void filterProjectLimit(java.lang.Object[], java.lang.Object[], java.util.List<java.lang.Object[]>, int, int)
+	+++  NEW METHOD: PRIVATE(+) java.util.List<java.lang.Object[]> getOutputRows(java.util.List<java.lang.Object[]>)
+	+++  NEW METHOD: PRIVATE(+) void handleUnmatchedLeftRow(java.lang.Object[], java.util.List<java.lang.Object[]>)
+	+++  NEW METHOD: PROTECTED(+) FINAL(+) boolean matchNonEquiConditions(java.util.List<java.lang.Object>)
+	+++  NEW METHOD: PRIVATE(+) java.lang.Object[] projectRow(java.util.List<java.lang.Object>, java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand>)
+	+++  NEW METHOD: PRIVATE(+) java.lang.Object[] projectRow(java.lang.Object[], java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand>)
+	+++  NEW METHOD: PRIVATE(+) boolean rowNotNeeded()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toExplainString()
++++  NEW CLASS: PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperand  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: FINAL(+) java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand> _project
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType _type
+	+++  NEW FIELD: FINAL(+) org.apache.pinot.query.runtime.operator.operands.TransformOperand _filter
+	+++  NEW CONSTRUCTOR: PUBLIC(+) EnrichedHashJoinOperator$FilterProjectOperand(org.apache.pinot.query.planner.plannode.EnrichedJoinNode$FilterProjectRex, org.apache.pinot.common.utils.DataSchema)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.runtime.operator.operands.TransformOperand getFilter()
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.query.runtime.operator.operands.TransformOperand> getProject()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType getType()
++++  NEW ENUM: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType  (compatible)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: java.lang.constant.Constable
+	+++  NEW INTERFACE: java.lang.Comparable
+	+++  NEW INTERFACE: java.io.Serializable
+	+++  NEW SUPERCLASS: java.lang.Enum
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType PROJECT
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType FILTER
+	+++  NEW CONSTRUCTOR: PRIVATE(+) EnrichedHashJoinOperator$FilterProjectOperandsType(java.lang.String, int)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType valueOf(java.lang.String)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.EnrichedHashJoinOperator$FilterProjectOperandsType[] values()
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.runtime.operator.HashJoinOperator  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	***  MODIFIED FIELD: PROTECTED (<- PRIVATE) FINAL org.apache.pinot.query.planner.partitioning.KeySelector<?><?> _leftKeySelector
+	***  MODIFIED FIELD: PROTECTED (<- PRIVATE) STATIC FINAL java.util.BitSet BIT_SET_PLACEHOLDER
+	***  MODIFIED FIELD: PROTECTED (<- PRIVATE) java.util.Map<java.lang.Object,java.util.BitSet><java.lang.Object,java.util.BitSet> _matchedRightRows
+	***  MODIFIED FIELD: PROTECTED (<- PRIVATE) FINAL org.apache.pinot.query.planner.partitioning.KeySelector<?><?> _rightKeySelector
+	***  MODIFIED FIELD: PROTECTED (<- PRIVATE) org.apache.pinot.query.runtime.operator.join.LookupTable _rightTable
+	+++  NEW CONSTRUCTOR: PUBLIC(+) HashJoinOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.query.runtime.operator.MultiStageOperator, org.apache.pinot.query.planner.plannode.JoinNode, org.apache.pinot.common.utils.DataSchema)
+***  MODIFIED CLASS: PRIVATE STATIC org.apache.pinot.query.runtime.plan.PlanNodeToOpChain$MyVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.runtime.plan.OpChainExecutionContext)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.query.runtime.plan.server.ServerPlanRequestVisitor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) java.lang.Void visitEnrichedJoin(org.apache.pinot.query.planner.plannode.EnrichedJoinNode, org.apache.pinot.query.runtime.plan.server.ServerPlanRequestContext)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-s3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-s3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-local-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-local-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-server-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-server-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC STATIC org.apache.pinot.spi.utils.CommonConstants$Broker$PlannerRuleNames  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String JOIN_TO_ENRICHED_JOIN
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-thrift-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-thrift-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-tools-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-tools-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-udf-test-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-udf-test-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-yammer-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-yammer-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
