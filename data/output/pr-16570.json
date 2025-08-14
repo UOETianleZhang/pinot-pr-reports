@@ -1,0 +1,86 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/SetOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/UnionAllOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/UnionOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/PlanNodeToOpChain.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/IntersectOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MinusOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/UnionAllOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/UnionOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/ResourceBasedQueriesTest.java",
+    "pinot-query-runtime/src/test/resources/queries/SetOps.json",
+    "pinot-query-runtime/src/test/resources/queries/SetOpsH2.json",
+    "pinot-query-runtime/src/test/resources/queries/SetOpsNonH2.json"
+  ],
+  "mergedAt": "2025-08-14T04:06:22Z",
+  "number": 16570,
+  "title": "Add distinct UNION set operator",
+  "url": "https://github.com/apache/pinot/pull/16570",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.SetOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock constructResultBlockSet()",
+        "PROTECTED(-) void constructRightBlockSet()"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processLeftOperator()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> _inputOperators",
+        "PRIVATE(-) boolean _isRightSetBuilt"
+      ],
+      "addedFields": [
+        "PRIVATE(+) boolean _isRightChildOperatorProcessed"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.UnionAllOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processLeftOperator()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) UnionAllOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.UnionOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) org.apache.pinot.common.datatable.StatMap<?> copyStatMaps()",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock getNextBlock()"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) int _finishedChildren",
+        "PRIVATE(-) org.apache.pinot.query.runtime.plan.MultiStageQueryStats _queryStats"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
