@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/TaskStatusFilter.tsx",
+    "pinot-controller/src/main/resources/app/components/useTaskListing.tsx",
+    "pinot-controller/src/main/resources/app/pages/TaskDetail.tsx"
+  ],
+  "mergedAt": "2025-08-13T23:19:12Z",
+  "number": 16591,
+  "title": "Controller UI: Fix subtask filter crash; add Minion Task page status filters",
+  "url": "https://github.com/apache/pinot/pull/16591",
+  "jcmpClasses": []
+}
