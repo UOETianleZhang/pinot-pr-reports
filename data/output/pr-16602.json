@@ -1,0 +1,470 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MultiStageOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/IntersectAllOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/IntersectOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/MinusAllOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/MinusOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/RightRowSetBasedSetOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/SetOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/UnionAllOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/set/UnionOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/PlanNodeToOpChain.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultiStageAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultistageResourceUsageAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/IntersectAllOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/IntersectOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/MinusAllOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/MinusOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/UnionAllOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/UnionOperatorTest.java"
+  ],
+  "mergedAt": "2025-08-15T06:37:26Z",
+  "number": 16602,
+  "title": "Refactor SetOperator and child classes for cleaner abstraction",
+  "url": "https://github.com/apache/pinot/pull/16602",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.IntersectAllOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(-) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(-) org.slf4j.Logger logger()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) IntersectAllOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.IntersectOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(-) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(-) org.slf4j.Logger logger()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) IntersectOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.MinusAllOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(-) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(-) org.slf4j.Logger logger()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MinusAllOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.MinusOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(-) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(-) org.slf4j.Logger logger()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MinusOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.IntersectAllOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) IntersectAllOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.IntersectOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) IntersectOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.MinusAllOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) MinusAllOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.MinusOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) MinusOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.RightRowSetBasedSetOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) ABSTRACT(+) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processLeftOperator()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) FINAL(+) com.google.common.collect.Multiset<org.apache.pinot.core.data.table.Record> _rightRowSet"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RightRowSetBasedSetOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.SetOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.common.datatable.StatMap<?> copyStatMaps()",
+        "PUBLIC(+) void explainPlan(org.apache.pinot.core.common.ExplainPlanRows, int[], int)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> getChildOperators()",
+        "PUBLIC(+) org.apache.pinot.core.operator.ExecutionStatistics getExecutionStatistics()",
+        "PUBLIC(+) org.apache.pinot.segment.spi.IndexSegment getIndexSegment()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock getNextBlock()",
+        "PUBLIC(+) void prepareForExplainPlan(org.apache.pinot.core.common.ExplainPlanRows)",
+        "PROTECTED(+) ABSTRACT(+) org.apache.pinot.query.runtime.blocks.MseBlock processLeftOperator()",
+        "PROTECTED(+) ABSTRACT(+) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()",
+        "PUBLIC(+) void registerExecution(long, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey> _statMap",
+        "PRIVATE(+) org.apache.pinot.query.runtime.blocks.MseBlock$Eos _eos",
+        "PROTECTED(+) FINAL(+) org.apache.pinot.query.runtime.operator.MultiStageOperator _leftChildOperator",
+        "PRIVATE(+) boolean _isRightChildOperatorProcessed",
+        "PROTECTED(+) FINAL(+) org.apache.pinot.query.runtime.operator.MultiStageOperator _rightChildOperator",
+        "PROTECTED(+) FINAL(+) org.apache.pinot.common.utils.DataSchema _dataSchema"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) SetOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.datatable.StatMap$Type getType()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey valueOf(java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey[] values()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey EMITTED_ROWS",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.datatable.StatMap$Type _type",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey EXECUTION_TIME_MS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) SetOperator$StatKey(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean includeDefaultInJson()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) SetOperator$StatKey$1(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.SetOperator$StatKey$2",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean includeDefaultInJson()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) SetOperator$StatKey$2(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.UnionAllOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processLeftOperator()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) UnionAllOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.set.UnionOperator",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(+) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(+) org.slf4j.Logger logger()",
+        "PROTECTED(+) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()",
+        "PUBLIC(+) java.lang.String toExplainString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) UnionOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.SetOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) org.apache.pinot.common.datatable.StatMap<?> copyStatMaps()",
+        "PUBLIC(-) void explainPlan(org.apache.pinot.core.common.ExplainPlanRows, int[], int)",
+        "PUBLIC(-) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> getChildOperators()",
+        "PUBLIC(-) org.apache.pinot.core.operator.ExecutionStatistics getExecutionStatistics()",
+        "PUBLIC(-) org.apache.pinot.segment.spi.IndexSegment getIndexSegment()",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock getNextBlock()",
+        "PROTECTED(-) ABSTRACT(-) boolean handleRowMatched(java.lang.Object[])",
+        "PUBLIC(-) void prepareForExplainPlan(org.apache.pinot.core.common.ExplainPlanRows)",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock processLeftOperator()",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()",
+        "PUBLIC(-) void registerExecution(long, int)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.SetOperator$StatKey> _statMap",
+        "PRIVATE(-) org.apache.pinot.query.runtime.blocks.MseBlock$Eos _eos",
+        "PROTECTED(-) FINAL(-) org.apache.pinot.query.runtime.operator.MultiStageOperator _leftChildOperator",
+        "PRIVATE(-) boolean _isRightChildOperatorProcessed",
+        "PROTECTED(-) FINAL(-) org.apache.pinot.query.runtime.operator.MultiStageOperator _rightChildOperator",
+        "PROTECTED(-) FINAL(-) org.apache.pinot.common.utils.DataSchema _dataSchema",
+        "PROTECTED(-) FINAL(-) com.google.common.collect.Multiset<org.apache.pinot.core.data.table.Record> _rightRowSet"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) SetOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.SetOperator$StatKey",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.datatable.StatMap$Type getType()",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.SetOperator$StatKey valueOf(java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.SetOperator$StatKey[] values()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.SetOperator$StatKey EMITTED_ROWS",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.datatable.StatMap$Type _type",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.query.runtime.operator.SetOperator$StatKey EXECUTION_TIME_MS"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) SetOperator$StatKey(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.SetOperator$StatKey$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean includeDefaultInJson()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) SetOperator$StatKey$1(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.SetOperator$StatKey$2",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean includeDefaultInJson()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) SetOperator$StatKey$2(java.lang.String, int, org.apache.pinot.common.datatable.StatMap$Type)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.UnionAllOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(-) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(-) org.slf4j.Logger logger()",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock processLeftOperator()",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) UnionAllOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.UnionOperator",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getOperatorType()",
+        "PROTECTED(-) boolean handleRowMatched(java.lang.Object[])",
+        "PROTECTED(-) org.slf4j.Logger logger()",
+        "PROTECTED(-) org.apache.pinot.query.runtime.blocks.MseBlock processRightOperator()",
+        "PUBLIC(-) java.lang.String toExplainString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String EXPLAIN_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) UnionOperator(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator>, org.apache.pinot.common.utils.DataSchema)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
