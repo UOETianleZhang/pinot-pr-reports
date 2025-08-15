@@ -1,0 +1,15 @@
+{
+  "files": [
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/IntersectAllOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/IntersectOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/MinusAllOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/MinusOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/UnionAllOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/set/UnionOperatorTest.java"
+  ],
+  "mergedAt": "2025-08-15T21:34:33Z",
+  "number": 16601,
+  "title": "Refactor set operator tests to use BlockListMultiStageOperator instead of mocks",
+  "url": "https://github.com/apache/pinot/pull/16601",
+  "jcmpClasses": []
+}

@@ -1,0 +1,41 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceSummaryResult.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalanceResult.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/KafkaConsumingSegmentToBeMovedSummaryIntegrationTest.java"
+  ],
+  "mergedAt": "2025-08-15T21:47:34Z",
+  "number": 16614,
+  "title": "[Bug fix] Change consuming segment offset and age from int to long",
+  "url": "https://github.com/apache/pinot/pull/16614",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary$ConsumingSegmentSummaryPerServer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary$ConsumingSegmentSummaryPerServer(int, int)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) RebalanceSummaryResult$ConsumingSegmentToBeMovedSummary$ConsumingSegmentSummaryPerServer(int, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

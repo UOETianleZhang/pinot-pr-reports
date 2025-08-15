@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/function/scalar/DataTypeConversionFunctions.java",
+    "pinot-query-planner/src/test/java/org/apache/pinot/query/QueryEnvironmentTestBase.java"
+  ],
+  "mergedAt": "2025-08-15T22:34:39Z",
+  "number": 16606,
+  "title": "Handle timestamp string to long casts in scalar cast function",
+  "url": "https://github.com/apache/pinot/pull/16606",
+  "jcmpClasses": []
+}
