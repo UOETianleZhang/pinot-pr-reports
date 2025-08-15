@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/io/util/ValueReader.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/readerwriter/FixedByteValueReaderWriterTest.java"
+  ],
+  "mergedAt": "2025-08-15T21:04:22Z",
+  "number": 16608,
+  "title": "Enforce UTF8 when decoding byte[] to string in ValueReader",
+  "url": "https://github.com/apache/pinot/pull/16608",
+  "jcmpClasses": []
+}
