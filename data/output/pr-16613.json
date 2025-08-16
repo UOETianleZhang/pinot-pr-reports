@@ -1,0 +1,24 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/periodictask/BasePeriodicTask.java"
+  ],
+  "mergedAt": "2025-08-16T02:01:18Z",
+  "number": 16613,
+  "title": "Change BasePeriodicTask to use a lock object for start / stop rather than synchronizing the methods",
+  "url": "https://github.com/apache/pinot/pull/16613",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.periodictask.BasePeriodicTask",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.Object _lifeCycleLock"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
