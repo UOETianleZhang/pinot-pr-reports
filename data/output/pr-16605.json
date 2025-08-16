@@ -1,0 +1,218 @@
+{
+  "files": [
+    "pinot-common/src/test/java/org/apache/pinot/common/function/AggregationFunctionTypeTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/query/NonScanBasedAggregationOperator.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/plan/AggregationPlanNode.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/AggregationFunctionFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/BaseDistinctCountSmartSketchAggregationFunction.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/DistinctCountSmartHLLAggregationFunction.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/DistinctCountSmartULLAggregationFunction.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/aggregation/function/DistinctCountULLAggregationFunction.java",
+    "pinot-core/src/test/java/org/apache/pinot/queries/DistinctCountQueriesTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineIntegrationTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/AggregationFunctionType.java"
+  ],
+  "mergedAt": "2025-08-16T16:51:58Z",
+  "number": 16605,
+  "title": "Add distinctCountSmartULL aggregation (set→ULL smart promotion)",
+  "url": "https://github.com/apache/pinot/pull/16605",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.operator.query.NonScanBasedAggregationOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.lang.Object getDistinctCountSmartULLResult(org.apache.pinot.segment.spi.index.reader.Dictionary, org.apache.pinot.core.query.aggregation.function.DistinctCountSmartULLAggregationFunction)",
+        "PRIVATE(+) STATIC(+) com.dynatrace.hash4j.distinctcount.UltraLogLog getDistinctCountULLResult(org.apache.pinot.segment.spi.index.reader.Dictionary, org.apache.pinot.core.query.aggregation.function.DistinctCountULLAggregationFunction)",
+        "PRIVATE(+) STATIC(+) com.dynatrace.hash4j.distinctcount.UltraLogLog getDistinctValueULL(org.apache.pinot.segment.spi.index.reader.Dictionary, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) FINAL(+) void aggregateGroupByMV(int, int[][], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(+) FINAL(+) void aggregateGroupBySV(int, int[], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PROTECTED(+) FINAL(+) void aggregateIntoSet(int, org.apache.pinot.core.query.aggregation.AggregationResultHolder, org.apache.pinot.core.common.BlockValSet)",
+        "PROTECTED(+) ABSTRACT(+) java.lang.Object convertSetToSketch(java.util.Set, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PROTECTED(+) ABSTRACT(+) java.lang.Object convertToSketch(org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper)",
+        "PROTECTED(+) STATIC(+) java.util.Set convertToValueSet(org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper)",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.core.query.aggregation.AggregationResultHolder createAggregationResultHolder()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder createGroupByResultHolder(int, int)",
+        "PUBLIC(+) FINAL(+) java.lang.Object extractAggregationResult(org.apache.pinot.core.query.aggregation.AggregationResultHolder)",
+        "PUBLIC(+) FINAL(+) java.util.Set extractGroupByResult(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int)",
+        "PROTECTED(+) STATIC(+) org.roaringbitmap.RoaringBitmap getDictIdBitmap(org.apache.pinot.core.query.aggregation.AggregationResultHolder, org.apache.pinot.segment.spi.index.reader.Dictionary)",
+        "PROTECTED(+) STATIC(+) org.roaringbitmap.RoaringBitmap getDictIdBitmap(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int, org.apache.pinot.segment.spi.index.reader.Dictionary)",
+        "PROTECTED(+) ABSTRACT(+) java.lang.IllegalStateException getIllegalDataTypeException(org.apache.pinot.spi.data.FieldSpec$DataType, boolean)",
+        "PROTECTED(+) ABSTRACT(+) int getThreshold()",
+        "PROTECTED(+) STATIC(+) java.util.Set getValueSet(org.apache.pinot.core.query.aggregation.AggregationResultHolder, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PROTECTED(+) STATIC(+) java.util.Set getValueSet(org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PROTECTED(+) STATIC(+) java.util.Set getValueSet(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PROTECTED(+) STATIC(+) void setDictIdForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], org.apache.pinot.segment.spi.index.reader.Dictionary, int)",
+        "PROTECTED(+) STATIC(+) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], int)",
+        "PROTECTED(+) STATIC(+) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], long)",
+        "PROTECTED(+) STATIC(+) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], float)",
+        "PROTECTED(+) STATIC(+) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], double)",
+        "PROTECTED(+) STATIC(+) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], java.lang.String)",
+        "PROTECTED(+) STATIC(+) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], org.apache.pinot.spi.utils.ByteArray)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) STATIC(+) FINAL(+) it.unimi.dsi.fastutil.ints.IntSet EMPTY_PLACEHOLDER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PROTECTED(+) BaseDistinctCountSmartSketchAggregationFunction(org.apache.pinot.common.request.context.ExpressionContext)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) org.roaringbitmap.RoaringBitmap _dictIdBitmap",
+        "FINAL(+) org.apache.pinot.segment.spi.index.reader.Dictionary _dictionary"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper(org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.DistinctCountSmartHLLAggregationFunction",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void aggregateGroupByMV(int, int[][], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PUBLIC(-) void aggregateGroupBySV(int, int[], org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PRIVATE(-) void aggregateIntoSet(int, org.apache.pinot.core.query.aggregation.AggregationResultHolder, org.apache.pinot.core.common.BlockValSet)",
+        "PRIVATE(-) com.clearspring.analytics.stream.cardinality.HyperLogLog convertToHLL(org.apache.pinot.core.query.aggregation.function.DistinctCountSmartHLLAggregationFunction$DictIdsWrapper)",
+        "PRIVATE(-) STATIC(-) java.util.Set convertToValueSet(org.apache.pinot.core.query.aggregation.function.DistinctCountSmartHLLAggregationFunction$DictIdsWrapper)",
+        "PUBLIC(-) org.apache.pinot.core.query.aggregation.AggregationResultHolder createAggregationResultHolder()",
+        "PUBLIC(-) org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder createGroupByResultHolder(int, int)",
+        "PUBLIC(-) java.lang.Object extractAggregationResult(org.apache.pinot.core.query.aggregation.AggregationResultHolder)",
+        "PUBLIC(-) java.util.Set extractGroupByResult(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int)",
+        "PROTECTED(-) STATIC(-) org.roaringbitmap.RoaringBitmap getDictIdBitmap(org.apache.pinot.core.query.aggregation.AggregationResultHolder, org.apache.pinot.segment.spi.index.reader.Dictionary)",
+        "PROTECTED(-) STATIC(-) org.roaringbitmap.RoaringBitmap getDictIdBitmap(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int, org.apache.pinot.segment.spi.index.reader.Dictionary)",
+        "PROTECTED(-) STATIC(-) java.util.Set getValueSet(org.apache.pinot.core.query.aggregation.AggregationResultHolder, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PRIVATE(-) STATIC(-) java.util.Set getValueSet(org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PROTECTED(-) STATIC(-) java.util.Set getValueSet(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PRIVATE(-) STATIC(-) void setDictIdForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], org.apache.pinot.segment.spi.index.reader.Dictionary, int)",
+        "PRIVATE(-) STATIC(-) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], int)",
+        "PRIVATE(-) STATIC(-) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], long)",
+        "PRIVATE(-) STATIC(-) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], float)",
+        "PRIVATE(-) STATIC(-) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], double)",
+        "PRIVATE(-) STATIC(-) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], java.lang.String)",
+        "PRIVATE(-) STATIC(-) void setValueForGroupKeys(org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder, int[], org.apache.pinot.spi.utils.ByteArray)"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) java.lang.Object convertSetToSketch(java.util.Set, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PRIVATE(+) com.clearspring.analytics.stream.cardinality.HyperLogLog convertToHLL(org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper)",
+        "PROTECTED(+) java.lang.Object convertToSketch(org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) it.unimi.dsi.fastutil.ints.IntSet EMPTY_PLACEHOLDER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.DistinctCountSmartHLLAggregationFunction$DictIdsWrapper",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) org.roaringbitmap.RoaringBitmap _dictIdBitmap",
+        "FINAL(-) org.apache.pinot.segment.spi.index.reader.Dictionary _dictionary"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) DistinctCountSmartHLLAggregationFunction$DictIdsWrapper(org.apache.pinot.segment.spi.index.reader.Dictionary)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.DistinctCountSmartULLAggregationFunction",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void aggregate(int, org.apache.pinot.core.query.aggregation.AggregationResultHolder, java.util.Map<org.apache.pinot.common.request.context.ExpressionContext,org.apache.pinot.core.common.BlockValSet>)",
+        "PRIVATE(+) void aggregateIntoULL(int, org.apache.pinot.core.query.aggregation.AggregationResultHolder, org.apache.pinot.core.common.BlockValSet)",
+        "PROTECTED(+) com.dynatrace.hash4j.distinctcount.UltraLogLog convertByteArraySetToULL(it.unimi.dsi.fastutil.objects.ObjectSet<org.apache.pinot.spi.utils.ByteArray>)",
+        "PROTECTED(+) com.dynatrace.hash4j.distinctcount.UltraLogLog convertNonByteArraySetToULL(java.util.Set)",
+        "PROTECTED(+) java.lang.Object convertSetToSketch(java.util.Set, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PROTECTED(+) com.dynatrace.hash4j.distinctcount.UltraLogLog convertSetToULL(java.util.Set, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PROTECTED(+) java.lang.Object convertToSketch(org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper)",
+        "PRIVATE(+) com.dynatrace.hash4j.distinctcount.UltraLogLog convertToULL(org.apache.pinot.core.query.aggregation.function.BaseDistinctCountSmartSketchAggregationFunction$DictIdsWrapper)",
+        "PUBLIC(+) java.lang.Object deserializeIntermediateResult(org.apache.pinot.common.CustomObject)",
+        "PUBLIC(+) java.lang.Integer extractFinalResult(java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema$ColumnDataType getFinalResultColumnType()",
+        "PROTECTED(+) java.lang.IllegalStateException getIllegalDataTypeException(org.apache.pinot.spi.data.FieldSpec$DataType, boolean)",
+        "PUBLIC(+) org.apache.pinot.common.utils.DataSchema$ColumnDataType getIntermediateResultColumnType()",
+        "PUBLIC(+) int getP()",
+        "PUBLIC(+) int getThreshold()",
+        "PUBLIC(+) org.apache.pinot.segment.spi.AggregationFunctionType getType()",
+        "PUBLIC(+) java.lang.Object merge(java.lang.Object, java.lang.Object)",
+        "PUBLIC(+) java.lang.Integer mergeFinalResult(java.lang.Integer, java.lang.Integer)",
+        "PRIVATE(+) com.dynatrace.hash4j.distinctcount.UltraLogLog mergeIntoULL(com.dynatrace.hash4j.distinctcount.UltraLogLog, java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.core.query.aggregation.function.AggregationFunction$SerializedIntermediateResult serializeIntermediateResult(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _p",
+        "PRIVATE(+) FINAL(+) int _threshold"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) DistinctCountSmartULLAggregationFunction(java.util.List<org.apache.pinot.common.request.context.ExpressionContext>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.query.aggregation.function.DistinctCountSmartULLAggregationFunction$Parameters",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "int _p",
+        "STATIC(+) FINAL(+) java.lang.String P_KEY",
+        "STATIC(+) FINAL(+) java.lang.String THRESHOLD_KEY",
+        "STATIC(+) FINAL(+) char PARAMETER_KEY_VALUE_SEPARATOR",
+        "STATIC(+) FINAL(+) char PARAMETER_DELIMITER",
+        "int _threshold",
+        "STATIC(+) FINAL(+) int DEFAULT_THRESHOLD"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "DistinctCountSmartULLAggregationFunction$Parameters(java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.AggregationFunctionType",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.segment.spi.AggregationFunctionType DISTINCTCOUNTSMARTULL"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
