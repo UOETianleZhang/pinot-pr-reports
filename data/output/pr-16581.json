@@ -1,0 +1,53 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/context/RuleTimingPlannerListener.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-15T22:51:17Z",
+  "number": 16581,
+  "title": "[Plannner] Support tracing of planner rule productions",
+  "url": "https://github.com/apache/pinot/pull/16581",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isTraceRuleProductions(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.context.RuleTimingPlannerListener",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _traceRuleProductions",
+        "PRIVATE(+) FINAL(+) java.util.List<it.unimi.dsi.fastutil.Pair<org.apache.calcite.plan.RelOptRuleCall,org.apache.calcite.rel.RelNode>> _ruleProductions"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TRACE_RULE_PRODUCTIONS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

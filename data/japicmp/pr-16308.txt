@@ -1,0 +1,2691 @@
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/assembly-descriptor-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/assembly-descriptor-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-adls-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-adls-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-avro-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-avro-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-azure-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-azure-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-hadoop-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-2.4-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-spark-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-batch-ingestion-standalone-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-broker-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-broker-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-clp-log-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-clp-log-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.common.utils.config.QueryOptionsUtils  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.Integer getSortAggregateLimitThreshold(java.util.Map<java.lang.String,java.lang.String>)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.lang.Integer getSortAggregateSequentialCombineNumSegmentsThreshold(java.util.Map<java.lang.String,java.lang.String>)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compatibility-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-compound-metrics-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-compound-metrics-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-avro-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-avro-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-confluent-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-controller-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-controller-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-core-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-core-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.data.table.SortedRecords  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: int _size
+	+++  NEW FIELD: org.apache.pinot.core.data.table.Record[] _records
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SortedRecords(org.apache.pinot.core.data.table.Record[], int)
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.data.table.SortedRecordsMerger  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.Comparator<org.apache.pinot.core.data.table.Record> _comparator
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _numKeyColumns
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.query.aggregation.function.AggregationFunction[] _aggregationFunctions
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _resultSize
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.util.function.BiFunction<java.lang.Object,java.lang.Integer,org.apache.pinot.core.data.table.Record> RECORD_ARRAY_EXTRACTOR
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.util.function.BiFunction<java.lang.Object,java.lang.Integer,org.apache.pinot.core.data.table.Record> INTERMEDIATE_RECORD_EXTRACTOR
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SortedRecordsMerger(org.apache.pinot.core.query.request.context.QueryContext, int, java.util.Comparator<org.apache.pinot.core.data.table.Record>)
+	+++  NEW METHOD: PRIVATE(+) void finalizeRecordMerge(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.core.data.table.Record[], int)
+	+++  NEW METHOD: PRIVATE(+) void merge(org.apache.pinot.core.data.table.SortedRecords, java.lang.Object, int, java.util.function.BiFunction<java.lang.Object,java.lang.Integer,org.apache.pinot.core.data.table.Record>)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.data.table.SortedRecords mergeGroupByResultsBlock(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.core.operator.blocks.results.GroupByResultsBlock)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.data.table.SortedRecords mergeSortedRecordArray(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.core.data.table.SortedRecords)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.data.table.Record updateRecord(org.apache.pinot.core.data.table.Record, org.apache.pinot.core.data.table.Record)
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.data.table.SortedRecordTable  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.core.data.table.Table
+	+++  NEW SUPERCLASS: org.apache.pinot.core.data.table.BaseTable
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _size
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _numKeyColumns
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.query.aggregation.function.AggregationFunction[] _aggregationFunctions
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _numThreadsExtractFinalResult
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.data.table.Record[] _records
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int _chunkSizeExtractFinalResult
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.concurrent.ExecutorService _executorService
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SortedRecordTable(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.common.utils.DataSchema, org.apache.pinot.core.query.request.context.QueryContext, java.util.concurrent.ExecutorService)
+	+++  NEW METHOD: PRIVATE(+) boolean containsExpensiveAggregationFunctions()
+	+++  NEW METHOD: PUBLIC(+) void finish(boolean)
+	+++  NEW METHOD: PUBLIC(+) void finish(boolean, boolean)
+	+++  NEW METHOD: PRIVATE(+) int inferNumThreadsExtractFinalResult()
+	+++  NEW METHOD: PUBLIC(+) java.util.Iterator<org.apache.pinot.core.data.table.Record> iterator()
+	+++  NEW METHOD: PUBLIC(+) int size()
+	+++  NEW METHOD: PUBLIC(+) boolean upsert(org.apache.pinot.core.data.table.Record)
+	+++  NEW METHOD: PUBLIC(+) boolean upsert(org.apache.pinot.core.data.table.Key, org.apache.pinot.core.data.table.Record)
++++  NEW CLASS: org.apache.pinot.core.data.table.SortedRecordTable$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: java.util.concurrent.Callable
+	+++  NEW SUPERCLASS: org.apache.pinot.core.util.trace.TraceCallable
+	+++  NEW CONSTRUCTOR: SortedRecordTable$1(org.apache.pinot.core.data.table.SortedRecordTable, int, int, int)
+	+++  NEW METHOD: PUBLIC(+) java.lang.Void callJob()
+***! MODIFIED CLASS: PUBLIC org.apache.pinot.core.data.table.TableResizer  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.core.data.table.IntermediateRecord> sortInSegmentResults(org.apache.pinot.core.query.aggregation.groupby.GroupKeyGenerator, org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder[], int)
+	---! REMOVED METHOD: PUBLIC(-) java.util.List<org.apache.pinot.core.data.table.IntermediateRecord> trimInSegmentResults(org.apache.pinot.core.query.aggregation.groupby.GroupKeyGenerator, org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder[], int)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.core.data.table.IntermediateRecord> trimInSegmentResults(org.apache.pinot.core.query.aggregation.groupby.GroupKeyGenerator, org.apache.pinot.core.query.aggregation.groupby.GroupByResultHolder[], int, boolean)
+***! MODIFIED CLASS: PUBLIC org.apache.pinot.core.operator.blocks.results.GroupByResultsBlock  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	***  MODIFIED FIELD: PRIVATE FINAL java.util.List (<- java.util.Collection)<org.apache.pinot.core.data.table.IntermediateRecord><org.apache.pinot.core.data.table.IntermediateRecord> _intermediateRecords
+	---! REMOVED CONSTRUCTOR: PUBLIC(-) GroupByResultsBlock(org.apache.pinot.common.utils.DataSchema, java.util.Collection<org.apache.pinot.core.data.table.IntermediateRecord>, org.apache.pinot.core.query.request.context.QueryContext)
+	+++  NEW CONSTRUCTOR: PUBLIC(+) GroupByResultsBlock(org.apache.pinot.common.utils.DataSchema, java.util.List<org.apache.pinot.core.data.table.IntermediateRecord>, org.apache.pinot.core.query.request.context.QueryContext)
+	***! MODIFIED METHOD: PUBLIC java.util.List<org.apache.pinot.core.data.table.IntermediateRecord><org.apache.pinot.core.data.table.IntermediateRecord> (<-java.util.Collection<org.apache.pinot.core.data.table.IntermediateRecord><org.apache.pinot.core.data.table.IntermediateRecord>) getIntermediateRecords()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.operator.combine.SequentialSortedGroupByCombineOperator  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.core.common.Operator
+	+++  NEW SUPERCLASS: org.apache.pinot.core.operator.combine.BaseSingleBlockCombineOperator
+	+++  NEW FIELD: PRIVATE(+) VOLATILE(+) boolean _numGroupsWarningLimitReached
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.core.data.table.SortedRecords _records
+	+++  NEW FIELD: PRIVATE(+) VOLATILE(+) boolean _groupsTrimmed
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.data.table.SortedRecordsMerger _sortedRecordsMerger
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER
+	+++  NEW FIELD: PRIVATE(+) VOLATILE(+) boolean _numGroupsLimitReached
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SequentialSortedGroupByCombineOperator(java.util.List<org.apache.pinot.core.common.Operator>, org.apache.pinot.core.query.request.context.QueryContext, java.util.concurrent.ExecutorService)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.operator.blocks.results.BaseResultsBlock mergeResults()
+		+++  NEW EXCEPTION: java.lang.Exception
+	+++  NEW METHOD: PUBLIC(+) void onProcessSegmentsException(java.lang.Throwable)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) org.apache.pinot.core.query.request.context.QueryContext overrideMaxExecutionThreads(org.apache.pinot.core.query.request.context.QueryContext, int)
+	+++  NEW METHOD: PROTECTED(+) void processSegments()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toExplainString()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.core.operator.combine.SortedGroupByCombineOperator  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.core.common.Operator
+	+++  NEW SUPERCLASS: org.apache.pinot.core.operator.combine.BaseSingleBlockCombineOperator
+	+++  NEW FIELD: PRIVATE(+) VOLATILE(+) boolean _numGroupsWarningLimitReached
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.concurrent.CountDownLatch _operatorLatch
+	+++  NEW FIELD: PRIVATE(+) VOLATILE(+) boolean _groupsTrimmed
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) org.apache.pinot.core.data.table.SortedRecordsMerger _sortedRecordsMerger
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER
+	+++  NEW FIELD: PRIVATE(+) VOLATILE(+) boolean _numGroupsLimitReached
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String EXPLAIN_NAME
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.concurrent.atomic.AtomicReference _waitingRecords
+	+++  NEW FIELD: PRIVATE(+) VOLATILE(+) org.apache.pinot.common.utils.DataSchema _dataSchema
+	+++  NEW CONSTRUCTOR: PUBLIC(+) SortedGroupByCombineOperator(java.util.List<org.apache.pinot.core.common.Operator>, org.apache.pinot.core.query.request.context.QueryContext, java.util.concurrent.ExecutorService)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.operator.blocks.results.GroupByResultsBlock finishSortedRecords(org.apache.pinot.core.data.table.SortedRecords)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.data.table.SortedRecords mergeBlocks(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.core.operator.blocks.results.GroupByResultsBlock)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.data.table.SortedRecords mergeRecords(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.core.data.table.SortedRecords)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.operator.blocks.results.BaseResultsBlock mergeResults()
+		+++  NEW EXCEPTION: java.lang.Exception
+	+++  NEW METHOD: PUBLIC(+) void onProcessSegmentsException(java.lang.Throwable)
+	+++  NEW METHOD: PUBLIC(+) void onProcessSegmentsFinish()
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) org.apache.pinot.core.query.request.context.QueryContext overrideMaxExecutionThreads(org.apache.pinot.core.query.request.context.QueryContext, int)
+	+++  NEW METHOD: PROTECTED(+) void processSegments()
+	+++  NEW METHOD: PUBLIC(+) java.lang.String toExplainString()
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.core.query.aggregation.groupby.DefaultGroupByExecutor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===! UNCHANGED INTERFACE: org.apache.pinot.core.query.aggregation.groupby.GroupByExecutor
+	---  REMOVED METHOD: PUBLIC(-) java.util.Collection<org.apache.pinot.core.data.table.IntermediateRecord> trimGroupByResult(int, org.apache.pinot.core.data.table.TableResizer)
+	+++  NEW METHOD: PUBLIC(+) java.util.List<org.apache.pinot.core.data.table.IntermediateRecord> trimGroupByResult(int, org.apache.pinot.core.data.table.TableResizer, boolean)
+***! MODIFIED INTERFACE: PUBLIC ABSTRACT org.apache.pinot.core.query.aggregation.groupby.GroupByExecutor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	---! REMOVED METHOD: PUBLIC(-) ABSTRACT(-) java.util.Collection<org.apache.pinot.core.data.table.IntermediateRecord> trimGroupByResult(int, org.apache.pinot.core.data.table.TableResizer)
+	+++* NEW METHOD: PUBLIC(+) ABSTRACT(+) java.util.List<org.apache.pinot.core.data.table.IntermediateRecord> trimGroupByResult(int, org.apache.pinot.core.data.table.TableResizer, boolean)
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.core.query.request.context.QueryContext  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PRIVATE(+) int _sortAggregateLimitThreshold
+	+++  NEW FIELD: PRIVATE(+) int _sortAggregateSequentialCombineNumSegmentsThreshold
+	+++  NEW METHOD: PUBLIC(+) int getSortAggregateLimitThreshold()
+	+++  NEW METHOD: PUBLIC(+) int getSortAggregateSequentialCombineNumSegmentsThreshold()
+	+++  NEW METHOD: PUBLIC(+) void setEffectiveSegmentGroupTrimSize(int)
+	+++  NEW METHOD: PUBLIC(+) void setSortAggregateLimitThreshold(int)
+	+++  NEW METHOD: PUBLIC(+) void setSortAggregateSequentialCombineNumSegmentsThreshold(int)
+	+++  NEW METHOD: PUBLIC(+) boolean shouldSortAggregateUnderSafeTrim()
+***  MODIFIED CLASS: PUBLIC org.apache.pinot.core.query.utils.OrderByComparatorFactory  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) java.util.Comparator<java.lang.Object[]> getComparatorWithIndex(java.util.List<org.apache.pinot.core.query.utils.OrderByComparatorFactory$OrderByExpressionWithIndex>, boolean)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,java.lang.Integer> getGroupByExpressionIndexMap(java.util.List<org.apache.pinot.common.request.context.ExpressionContext>)
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) java.util.List<org.apache.pinot.core.query.utils.OrderByComparatorFactory$OrderByExpressionWithIndex> getGroupKeyOrderByExpressionFromRowOrderByExpressions(java.util.List<org.apache.pinot.common.request.context.OrderByExpressionContext>, java.util.List<org.apache.pinot.common.request.context.ExpressionContext>)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) java.util.Comparator<org.apache.pinot.core.data.table.Record> getRecordKeyComparator(java.util.List<org.apache.pinot.common.request.context.OrderByExpressionContext>, java.util.List<org.apache.pinot.common.request.context.ExpressionContext>, boolean)
++++  NEW CLASS: PRIVATE(+) STATIC(+) org.apache.pinot.core.query.utils.OrderByComparatorFactory$OrderByExpressionWithIndex  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: FINAL(+) int _index
+	+++  NEW FIELD: FINAL(+) org.apache.pinot.common.request.context.OrderByExpressionContext _orderByExpressionContext
+	+++  NEW CONSTRUCTOR: OrderByComparatorFactory$OrderByExpressionWithIndex(org.apache.pinot.common.request.context.OrderByExpressionContext, int)
+===! UNCHANGED CLASS: PUBLIC org.apache.pinot.core.startree.executor.StarTreeGroupByExecutor  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	===! UNCHANGED INTERFACE: org.apache.pinot.core.query.aggregation.groupby.GroupByExecutor
+***  MODIFIED CLASS: PUBLIC FINAL org.apache.pinot.core.util.GroupByUtils  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.data.table.SortedRecords getAndPopulateSortedRecords(org.apache.pinot.core.operator.blocks.results.GroupByResultsBlock)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) org.apache.pinot.core.data.table.SortedRecordsMerger getSortedReduceMerger(org.apache.pinot.core.query.request.context.QueryContext, int, java.util.Comparator<org.apache.pinot.core.data.table.Record>)
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-csv-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-csv-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dependency-verifier-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-distribution-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-distribution-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-dropwizard-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-dropwizard-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-flink-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-flink-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-gcs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-gcs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-hdfs-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-hdfs-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-test-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-test-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-integration-tests-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-integration-tests-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-java-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-java-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-jdbc-client-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-jdbc-client-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-json-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-json-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-2.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-3.0-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kafka-base-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kafka-base-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-kinesis-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-kinesis-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-minion-builtin-tasks-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-orc-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-orc-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-parquet-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-parquet-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-perf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-perf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.BenchmarkAggregateGroupByOrderByQueriesSSE  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PROTECTED(+) STATIC(+) FINAL(+) org.apache.pinot.core.plan.maker.PlanMaker PLAN_MAKER
+	+++  NEW FIELD: java.lang.String _query
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String TABLE_NAME
+	+++  NEW FIELD: PRIVATE(+) int _limit
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String SEGMENT_NAME_TEMPLATE
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String RAW_LOW_CARDINALITY_INT_COL_NAME
+	+++  NEW FIELD: java.lang.String _scenario
+	+++  NEW FIELD: PRIVATE(+) java.lang.String _limitThreshold
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MULTI_GROUP_BY_ORDER_BY_WITH_RAW_QUERY_2
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String LOW_CARDINALITY_STRING_COL_NAME
+	+++  NEW FIELD: PRIVATE(+) int _numRows
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.util.List<org.apache.pinot.spi.config.table.FieldConfig> FIELD_CONFIGS
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.spi.data.Schema SCHEMA
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String RAW_INT_COL_NAME
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String LOW_CARDINALITY_INT_COL_NAME
+	+++  NEW FIELD: PRIVATE(+) java.util.List<org.apache.pinot.segment.spi.IndexSegment> _indexSegments
+	+++  NEW FIELD: PRIVATE(+) java.lang.String _singleThreadedThreshold
+	+++  NEW FIELD: PROTECTED(+) STATIC(+) FINAL(+) java.util.concurrent.ExecutorService EXECUTOR_SERVICE
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String INT_COL_NAME
+	+++  NEW FIELD: PRIVATE(+) int _numSegments
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.io.File INDEX_DIR
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.perf.Distribution$DataSupplier _supplier
+	+++  NEW FIELD: PROTECTED(+) STATIC(+) FINAL(+) org.apache.pinot.core.query.optimizer.QueryOptimizer OPTIMIZER
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String RAW_LOW_CARDINALITY_STRING_COL_NAME
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MULTI_GROUP_BY_ORDER_BY_WITH_RAW_QUERY
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.segment.spi.IndexSegment _indexSegment
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) org.apache.pinot.spi.config.table.TableConfig TABLE_CONFIG
+	+++  NEW FIELD: PROTECTED(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.BrokerMetrics BROKER_METRICS
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String STRING_COL_NAME
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.lang.String RAW_STRING_COL_NAME
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkAggregateGroupByOrderByQueriesSSE()
+	+++  NEW METHOD: PRIVATE(+) void buildSegment(java.lang.String)
+		+++  NEW EXCEPTION: java.lang.Exception
+	+++  NEW METHOD: STATIC(+) org.apache.pinot.perf.LazyDataGenerator createTestData(int, org.apache.pinot.perf.Distribution$DataSupplier, java.lang.String)
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponse(java.lang.String)
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponse(java.lang.String, org.apache.pinot.core.plan.maker.PlanMaker)
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponse(java.lang.String, java.util.Map<java.lang.String,java.lang.String>)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponse(java.lang.String, org.apache.pinot.core.plan.maker.PlanMaker, java.util.Map<java.lang.String,java.lang.String>)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponse(org.apache.pinot.common.request.PinotQuery, org.apache.pinot.core.plan.maker.PlanMaker)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponseDistinctInstances(org.apache.pinot.common.request.PinotQuery, org.apache.pinot.core.plan.maker.PlanMaker)
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponseForOptimizedQuery(java.lang.String, org.apache.pinot.spi.config.table.TableConfig, org.apache.pinot.spi.data.Schema)
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.response.broker.BrokerResponseNative getBrokerResponseWithFilter(java.lang.String)
+	+++  NEW METHOD: PROTECTED(+) java.util.List<java.util.List<org.apache.pinot.segment.spi.IndexSegment>> getDistinctInstances()
+	+++  NEW METHOD: PROTECTED(+) java.lang.String getFilter()
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.segment.spi.IndexSegment getIndexSegment()
+	+++  NEW METHOD: PROTECTED(+) java.util.List<org.apache.pinot.segment.spi.IndexSegment> getIndexSegments()
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.core.common.Operator getOperator(java.lang.String)
+		GENERIC TEMPLATES: +++ T:org.apache.pinot.core.common.Operator
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.core.common.Operator getOperatorWithFilter(java.lang.String)
+		GENERIC TEMPLATES: +++ T:org.apache.pinot.core.common.Operator
+	+++  NEW METHOD: PRIVATE(+) STATIC(+) java.util.List<org.apache.pinot.segment.spi.SegmentContext> getSegmentContexts(java.util.List<org.apache.pinot.segment.spi.IndexSegment>)
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void main(java.lang.String[])
+		+++  NEW EXCEPTION: java.lang.Exception
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.common.response.broker.BrokerResponseNative query()
+	+++  NEW METHOD: PROTECTED(+) org.apache.pinot.common.response.broker.BrokerResponseNative reduceOnDataTable(org.apache.pinot.common.request.BrokerRequest, org.apache.pinot.common.request.BrokerRequest, java.util.Map<org.apache.pinot.core.transport.ServerRoutingInstance,org.apache.pinot.common.datatable.DataTable>)
+	+++  NEW METHOD: PUBLIC(+) void setUp()
+		+++  NEW EXCEPTION: java.lang.Exception
+	+++  NEW METHOD: PUBLIC(+) FINAL(+) void shutdownExecutor()
+	+++  NEW METHOD: PUBLIC(+) void tearDown()
++++  NEW CLASS: org.apache.pinot.perf.BenchmarkAggregateGroupByOrderByQueriesSSE$1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW INTERFACE: org.apache.pinot.perf.LazyDataGenerator
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.lang.String[] _lowCardinalityValues
+	+++  NEW FIELD: PRIVATE(+) java.lang.String[] _jsons
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) java.util.Map<java.lang.Integer,java.util.UUID> _strings
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.perf.Distribution$DataSupplier _supplier
+	+++  NEW FIELD: PRIVATE(+) FINAL(+) int[] _lowCardinalityIntValues
+	+++  NEW CONSTRUCTOR: BenchmarkAggregateGroupByOrderByQueriesSSE$1(org.apache.pinot.perf.Distribution$DataSupplier, int)
+	+++  NEW METHOD: PRIVATE(+) java.lang.String[] generateJsons()
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.spi.data.readers.GenericRow next(org.apache.pinot.spi.data.readers.GenericRow, int)
+	+++  NEW METHOD: PUBLIC(+) void rewind()
+	+++  NEW METHOD: PUBLIC(+) int size()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.BenchmarkPairwiseCombineOrderByGroupBy  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: PRIVATE(+) int _numRecordsPerSegment
+	+++  NEW FIELD: PRIVATE(+) java.lang.String _query
+	+++  NEW FIELD: PRIVATE(+) int _limit
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) java.util.Random RANDOM
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.core.query.request.context.QueryContext _queryContext
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.core.data.table.SortedRecordsMerger _sortedRecordsMerger
+	+++  NEW FIELD: PRIVATE(+) java.util.List<java.util.List<org.apache.pinot.core.data.table.IntermediateRecord>> _segmentIntermediateRecords
+	+++  NEW FIELD: PRIVATE(+) int _numSegments
+	+++  NEW FIELD: PRIVATE(+) java.util.Comparator<org.apache.pinot.core.data.table.Record> _recordKeyComparator
+	+++  NEW FIELD: PRIVATE(+) java.util.concurrent.ExecutorService _executorService
+	+++  NEW FIELD: PRIVATE(+) java.util.List<java.lang.Integer> _d2
+	+++  NEW FIELD: PRIVATE(+) org.apache.pinot.common.utils.DataSchema _dataSchema
+	+++  NEW FIELD: PRIVATE(+) java.util.List<java.lang.String> _d1
+	+++  NEW FIELD: PRIVATE(+) int _numThreads
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String QUERY
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) int CARDINALITY_D2
+	+++  NEW FIELD: PRIVATE(+) java.util.concurrent.atomic.AtomicReference<org.apache.pinot.core.data.table.SortedRecords> _waitingRecords
+	+++  NEW FIELD: PRIVATE(+) STATIC(+) FINAL(+) int CARDINALITY_D1
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy()
+	+++  NEW METHOD: PUBLIC(+) void concurrentIndexedTableForCombineGroupBy(org.openjdk.jmh.infra.Blackhole)
+		+++  NEW EXCEPTION: java.lang.InterruptedException
+		+++  NEW EXCEPTION: java.util.concurrent.ExecutionException
+		+++  NEW EXCEPTION: java.util.concurrent.TimeoutException
+	+++  NEW METHOD: PUBLIC(+) void destroy()
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.data.table.SortedRecordTable finishSortedRecords(org.apache.pinot.core.data.table.SortedRecords)
+	+++  NEW METHOD: PUBLIC(+) org.apache.pinot.core.data.table.SortedRecords getAndPopulateSortedRecords(int)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.data.table.IntermediateRecord getIntermediateRecord()
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+		+++  NEW EXCEPTION: java.lang.reflect.InvocationTargetException
+		+++  NEW EXCEPTION: java.lang.InstantiationException
+		+++  NEW EXCEPTION: java.lang.IllegalAccessException
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void main(java.lang.String[])
+		+++  NEW EXCEPTION: java.lang.Exception
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.data.table.SortedRecords mergeRecords(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.core.data.table.SortedRecords)
+	+++  NEW METHOD: PRIVATE(+) org.apache.pinot.core.data.table.SortedRecords mergeRecords(org.apache.pinot.core.data.table.SortedRecords, org.apache.pinot.core.operator.blocks.results.GroupByResultsBlock)
+	+++  NEW METHOD: PUBLIC(+) void processPairWiseSortedGroupByCombine(java.util.concurrent.atomic.AtomicInteger)
+	+++  NEW METHOD: PUBLIC(+) void sequentialCombineGroupBy(org.openjdk.jmh.infra.Blackhole)
+	+++  NEW METHOD: PUBLIC(+) void setup()
+	+++  NEW METHOD: PUBLIC(+) void setupInvocation()
+		+++  NEW EXCEPTION: java.lang.reflect.InvocationTargetException
+		+++  NEW EXCEPTION: java.lang.NoSuchMethodException
+		+++  NEW EXCEPTION: java.lang.InstantiationException
+		+++  NEW EXCEPTION: java.lang.IllegalAccessException
+	+++  NEW METHOD: PUBLIC(+) void sortedPairwiseCombineGroupBy(org.openjdk.jmh.infra.Blackhole)
+		+++  NEW EXCEPTION: java.lang.InterruptedException
+		+++  NEW EXCEPTION: java.util.concurrent.ExecutionException
+		+++  NEW EXCEPTION: java.util.concurrent.TimeoutException
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B3
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.BenchmarkAggregateGroupByOrderByQueriesSSE
+	+++  NEW FIELD: byte b1_250
+	+++  NEW FIELD: byte b1_010
+	+++  NEW FIELD: byte b1_131
+	+++  NEW FIELD: byte b1_252
+	+++  NEW FIELD: byte b1_130
+	+++  NEW FIELD: byte b1_251
+	+++  NEW FIELD: byte b1_009
+	+++  NEW FIELD: byte b1_008
+	+++  NEW FIELD: byte b1_129
+	+++  NEW FIELD: byte b1_001
+	+++  NEW FIELD: byte b1_122
+	+++  NEW FIELD: byte b1_243
+	+++  NEW FIELD: byte b1_000
+	+++  NEW FIELD: byte b1_121
+	+++  NEW FIELD: byte b1_242
+	+++  NEW FIELD: byte b1_003
+	+++  NEW FIELD: byte b1_124
+	+++  NEW FIELD: byte b1_245
+	+++  NEW FIELD: byte b1_002
+	+++  NEW FIELD: byte b1_123
+	+++  NEW FIELD: byte b1_244
+	+++  NEW FIELD: byte b1_005
+	+++  NEW FIELD: byte b1_126
+	+++  NEW FIELD: byte b1_247
+	+++  NEW FIELD: byte b1_004
+	+++  NEW FIELD: byte b1_125
+	+++  NEW FIELD: byte b1_246
+	+++  NEW FIELD: byte b1_007
+	+++  NEW FIELD: byte b1_128
+	+++  NEW FIELD: byte b1_249
+	+++  NEW FIELD: byte b1_006
+	+++  NEW FIELD: byte b1_127
+	+++  NEW FIELD: byte b1_248
+	+++  NEW FIELD: byte b1_140
+	+++  NEW FIELD: byte b1_021
+	+++  NEW FIELD: byte b1_142
+	+++  NEW FIELD: byte b1_020
+	+++  NEW FIELD: byte b1_141
+	+++  NEW FIELD: byte b1_019
+	+++  NEW FIELD: byte b1_012
+	+++  NEW FIELD: byte b1_133
+	+++  NEW FIELD: byte b1_254
+	+++  NEW FIELD: byte b1_011
+	+++  NEW FIELD: byte b1_132
+	+++  NEW FIELD: byte b1_253
+	+++  NEW FIELD: byte b1_014
+	+++  NEW FIELD: byte b1_135
+	+++  NEW FIELD: byte b1_013
+	+++  NEW FIELD: byte b1_134
+	+++  NEW FIELD: byte b1_255
+	+++  NEW FIELD: byte b1_016
+	+++  NEW FIELD: byte b1_137
+	+++  NEW FIELD: byte b1_015
+	+++  NEW FIELD: byte b1_136
+	+++  NEW FIELD: byte b1_018
+	+++  NEW FIELD: byte b1_139
+	+++  NEW FIELD: byte b1_017
+	+++  NEW FIELD: byte b1_138
+	+++  NEW FIELD: byte b1_030
+	+++  NEW FIELD: byte b1_151
+	+++  NEW FIELD: byte b1_150
+	+++  NEW FIELD: byte b1_032
+	+++  NEW FIELD: byte b1_153
+	+++  NEW FIELD: byte b1_031
+	+++  NEW FIELD: byte b1_152
+	+++  NEW FIELD: byte b1_023
+	+++  NEW FIELD: byte b1_144
+	+++  NEW FIELD: byte b1_022
+	+++  NEW FIELD: byte b1_143
+	+++  NEW FIELD: byte b1_025
+	+++  NEW FIELD: byte b1_146
+	+++  NEW FIELD: byte b1_024
+	+++  NEW FIELD: byte b1_145
+	+++  NEW FIELD: byte b1_027
+	+++  NEW FIELD: byte b1_148
+	+++  NEW FIELD: byte b1_026
+	+++  NEW FIELD: byte b1_147
+	+++  NEW FIELD: byte b1_029
+	+++  NEW FIELD: byte b1_028
+	+++  NEW FIELD: byte b1_149
+	+++  NEW FIELD: byte b1_160
+	+++  NEW FIELD: byte b1_041
+	+++  NEW FIELD: byte b1_162
+	+++  NEW FIELD: byte b1_040
+	+++  NEW FIELD: byte b1_161
+	+++  NEW FIELD: byte b1_043
+	+++  NEW FIELD: byte b1_164
+	+++  NEW FIELD: byte b1_042
+	+++  NEW FIELD: byte b1_163
+	+++  NEW FIELD: byte b1_034
+	+++  NEW FIELD: byte b1_155
+	+++  NEW FIELD: byte b1_033
+	+++  NEW FIELD: byte b1_154
+	+++  NEW FIELD: byte b1_036
+	+++  NEW FIELD: byte b1_157
+	+++  NEW FIELD: byte b1_035
+	+++  NEW FIELD: byte b1_156
+	+++  NEW FIELD: byte b1_038
+	+++  NEW FIELD: byte b1_159
+	+++  NEW FIELD: byte b1_037
+	+++  NEW FIELD: byte b1_158
+	+++  NEW FIELD: byte b1_039
+	+++  NEW FIELD: byte b1_050
+	+++  NEW FIELD: byte b1_171
+	+++  NEW FIELD: byte b1_170
+	+++  NEW FIELD: byte b1_052
+	+++  NEW FIELD: byte b1_173
+	+++  NEW FIELD: byte b1_051
+	+++  NEW FIELD: byte b1_172
+	+++  NEW FIELD: byte b1_054
+	+++  NEW FIELD: byte b1_175
+	+++  NEW FIELD: byte b1_053
+	+++  NEW FIELD: byte b1_174
+	+++  NEW FIELD: byte b1_045
+	+++  NEW FIELD: byte b1_166
+	+++  NEW FIELD: byte b1_044
+	+++  NEW FIELD: byte b1_165
+	+++  NEW FIELD: byte b1_047
+	+++  NEW FIELD: byte b1_168
+	+++  NEW FIELD: byte b1_046
+	+++  NEW FIELD: byte b1_167
+	+++  NEW FIELD: byte b1_049
+	+++  NEW FIELD: byte b1_048
+	+++  NEW FIELD: byte b1_169
+	+++  NEW FIELD: byte b1_180
+	+++  NEW FIELD: byte b1_061
+	+++  NEW FIELD: byte b1_182
+	+++  NEW FIELD: byte b1_060
+	+++  NEW FIELD: byte b1_181
+	+++  NEW FIELD: byte b1_063
+	+++  NEW FIELD: byte b1_184
+	+++  NEW FIELD: byte b1_062
+	+++  NEW FIELD: byte b1_183
+	+++  NEW FIELD: byte b1_065
+	+++  NEW FIELD: byte b1_186
+	+++  NEW FIELD: byte b1_064
+	+++  NEW FIELD: byte b1_185
+	+++  NEW FIELD: byte b1_056
+	+++  NEW FIELD: byte b1_177
+	+++  NEW FIELD: byte b1_055
+	+++  NEW FIELD: byte b1_176
+	+++  NEW FIELD: byte b1_058
+	+++  NEW FIELD: byte b1_179
+	+++  NEW FIELD: byte b1_057
+	+++  NEW FIELD: byte b1_178
+	+++  NEW FIELD: byte b1_059
+	+++  NEW FIELD: byte b1_070
+	+++  NEW FIELD: byte b1_191
+	+++  NEW FIELD: byte b1_190
+	+++  NEW FIELD: byte b1_072
+	+++  NEW FIELD: byte b1_193
+	+++  NEW FIELD: byte b1_071
+	+++  NEW FIELD: byte b1_192
+	+++  NEW FIELD: byte b1_074
+	+++  NEW FIELD: byte b1_195
+	+++  NEW FIELD: byte b1_073
+	+++  NEW FIELD: byte b1_194
+	+++  NEW FIELD: byte b1_076
+	+++  NEW FIELD: byte b1_197
+	+++  NEW FIELD: byte b1_075
+	+++  NEW FIELD: byte b1_196
+	+++  NEW FIELD: byte b1_067
+	+++  NEW FIELD: byte b1_188
+	+++  NEW FIELD: byte b1_066
+	+++  NEW FIELD: byte b1_187
+	+++  NEW FIELD: byte b1_069
+	+++  NEW FIELD: byte b1_068
+	+++  NEW FIELD: byte b1_189
+	+++  NEW FIELD: byte b1_081
+	+++  NEW FIELD: byte b1_080
+	+++  NEW FIELD: byte b1_083
+	+++  NEW FIELD: byte b1_082
+	+++  NEW FIELD: byte b1_085
+	+++  NEW FIELD: byte b1_084
+	+++  NEW FIELD: byte b1_087
+	+++  NEW FIELD: byte b1_086
+	+++  NEW FIELD: byte b1_078
+	+++  NEW FIELD: byte b1_199
+	+++  NEW FIELD: byte b1_077
+	+++  NEW FIELD: byte b1_198
+	+++  NEW FIELD: byte b1_079
+	+++  NEW FIELD: byte b1_092
+	+++  NEW FIELD: byte b1_091
+	+++  NEW FIELD: byte b1_094
+	+++  NEW FIELD: byte b1_093
+	+++  NEW FIELD: byte b1_096
+	+++  NEW FIELD: byte b1_095
+	+++  NEW FIELD: byte b1_098
+	+++  NEW FIELD: byte b1_097
+	+++  NEW FIELD: byte b1_090
+	+++  NEW FIELD: byte b1_089
+	+++  NEW FIELD: byte b1_088
+	+++  NEW FIELD: byte b1_099
+	+++  NEW FIELD: byte b1_207
+	+++  NEW FIELD: byte b1_206
+	+++  NEW FIELD: byte b1_209
+	+++  NEW FIELD: byte b1_208
+	+++  NEW FIELD: byte b1_201
+	+++  NEW FIELD: byte b1_200
+	+++  NEW FIELD: byte b1_203
+	+++  NEW FIELD: byte b1_202
+	+++  NEW FIELD: byte b1_205
+	+++  NEW FIELD: byte b1_204
+	+++  NEW FIELD: byte b1_218
+	+++  NEW FIELD: byte b1_217
+	+++  NEW FIELD: byte b1_219
+	+++  NEW FIELD: byte b1_210
+	+++  NEW FIELD: byte b1_212
+	+++  NEW FIELD: byte b1_211
+	+++  NEW FIELD: byte b1_214
+	+++  NEW FIELD: byte b1_213
+	+++  NEW FIELD: byte b1_216
+	+++  NEW FIELD: byte b1_215
+	+++  NEW FIELD: byte b1_230
+	+++  NEW FIELD: byte b1_108
+	+++  NEW FIELD: byte b1_229
+	+++  NEW FIELD: byte b1_107
+	+++  NEW FIELD: byte b1_228
+	+++  NEW FIELD: byte b1_109
+	+++  NEW FIELD: byte b1_100
+	+++  NEW FIELD: byte b1_221
+	+++  NEW FIELD: byte b1_220
+	+++  NEW FIELD: byte b1_102
+	+++  NEW FIELD: byte b1_223
+	+++  NEW FIELD: byte b1_101
+	+++  NEW FIELD: byte b1_222
+	+++  NEW FIELD: byte b1_104
+	+++  NEW FIELD: byte b1_225
+	+++  NEW FIELD: byte b1_103
+	+++  NEW FIELD: byte b1_224
+	+++  NEW FIELD: byte b1_106
+	+++  NEW FIELD: byte b1_227
+	+++  NEW FIELD: byte b1_105
+	+++  NEW FIELD: byte b1_226
+	+++  NEW FIELD: byte b1_120
+	+++  NEW FIELD: byte b1_241
+	+++  NEW FIELD: byte b1_240
+	+++  NEW FIELD: byte b1_119
+	+++  NEW FIELD: byte b1_118
+	+++  NEW FIELD: byte b1_239
+	+++  NEW FIELD: byte b1_111
+	+++  NEW FIELD: byte b1_232
+	+++  NEW FIELD: byte b1_110
+	+++  NEW FIELD: byte b1_231
+	+++  NEW FIELD: byte b1_113
+	+++  NEW FIELD: byte b1_234
+	+++  NEW FIELD: byte b1_112
+	+++  NEW FIELD: byte b1_233
+	+++  NEW FIELD: byte b1_115
+	+++  NEW FIELD: byte b1_236
+	+++  NEW FIELD: byte b1_114
+	+++  NEW FIELD: byte b1_235
+	+++  NEW FIELD: byte b1_117
+	+++  NEW FIELD: byte b1_238
+	+++  NEW FIELD: byte b1_116
+	+++  NEW FIELD: byte b1_237
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B1()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B1
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2> tearTrialMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int tearTrialMutex
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2> tearIterationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int setupIterationMutex
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2> setupIterationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int setupInvocationMutex
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int tearInvocationMutex
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2> setupInvocationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) boolean readyIteration
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2> tearInvocationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int tearIterationMutex
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) boolean readyTrial
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2> setupTrialMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int setupTrialMutex
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) boolean readyInvocation
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B3  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B2
+	+++  NEW FIELD: byte b3_098
+	+++  NEW FIELD: byte b3_097
+	+++  NEW FIELD: byte b3_099
+	+++  NEW FIELD: byte b3_094
+	+++  NEW FIELD: byte b3_093
+	+++  NEW FIELD: byte b3_096
+	+++  NEW FIELD: byte b3_095
+	+++  NEW FIELD: byte b3_090
+	+++  NEW FIELD: byte b3_092
+	+++  NEW FIELD: byte b3_091
+	+++  NEW FIELD: byte b3_087
+	+++  NEW FIELD: byte b3_086
+	+++  NEW FIELD: byte b3_089
+	+++  NEW FIELD: byte b3_088
+	+++  NEW FIELD: byte b3_212
+	+++  NEW FIELD: byte b3_211
+	+++  NEW FIELD: byte b3_214
+	+++  NEW FIELD: byte b3_213
+	+++  NEW FIELD: byte b3_210
+	+++  NEW FIELD: byte b3_219
+	+++  NEW FIELD: byte b3_216
+	+++  NEW FIELD: byte b3_215
+	+++  NEW FIELD: byte b3_218
+	+++  NEW FIELD: byte b3_217
+	+++  NEW FIELD: byte b3_201
+	+++  NEW FIELD: byte b3_200
+	+++  NEW FIELD: byte b3_203
+	+++  NEW FIELD: byte b3_202
+	+++  NEW FIELD: byte b3_209
+	+++  NEW FIELD: byte b3_208
+	+++  NEW FIELD: byte b3_205
+	+++  NEW FIELD: byte b3_204
+	+++  NEW FIELD: byte b3_207
+	+++  NEW FIELD: byte b3_206
+	+++  NEW FIELD: byte b3_113
+	+++  NEW FIELD: byte b3_234
+	+++  NEW FIELD: byte b3_112
+	+++  NEW FIELD: byte b3_233
+	+++  NEW FIELD: byte b3_115
+	+++  NEW FIELD: byte b3_236
+	+++  NEW FIELD: byte b3_114
+	+++  NEW FIELD: byte b3_235
+	+++  NEW FIELD: byte b3_230
+	+++  NEW FIELD: byte b3_111
+	+++  NEW FIELD: byte b3_232
+	+++  NEW FIELD: byte b3_110
+	+++  NEW FIELD: byte b3_231
+	+++  NEW FIELD: byte b3_117
+	+++  NEW FIELD: byte b3_238
+	+++  NEW FIELD: byte b3_116
+	+++  NEW FIELD: byte b3_237
+	+++  NEW FIELD: byte b3_119
+	+++  NEW FIELD: byte b3_118
+	+++  NEW FIELD: byte b3_239
+	+++  NEW FIELD: byte b3_102
+	+++  NEW FIELD: byte b3_223
+	+++  NEW FIELD: byte b3_101
+	+++  NEW FIELD: byte b3_222
+	+++  NEW FIELD: byte b3_104
+	+++  NEW FIELD: byte b3_225
+	+++  NEW FIELD: byte b3_103
+	+++  NEW FIELD: byte b3_224
+	+++  NEW FIELD: byte b3_100
+	+++  NEW FIELD: byte b3_221
+	+++  NEW FIELD: byte b3_220
+	+++  NEW FIELD: byte b3_109
+	+++  NEW FIELD: byte b3_106
+	+++  NEW FIELD: byte b3_227
+	+++  NEW FIELD: byte b3_105
+	+++  NEW FIELD: byte b3_226
+	+++  NEW FIELD: byte b3_108
+	+++  NEW FIELD: byte b3_229
+	+++  NEW FIELD: byte b3_107
+	+++  NEW FIELD: byte b3_228
+	+++  NEW FIELD: byte b3_140
+	+++  NEW FIELD: byte b3_014
+	+++  NEW FIELD: byte b3_135
+	+++  NEW FIELD: byte b3_013
+	+++  NEW FIELD: byte b3_134
+	+++  NEW FIELD: byte b3_255
+	+++  NEW FIELD: byte b3_016
+	+++  NEW FIELD: byte b3_137
+	+++  NEW FIELD: byte b3_015
+	+++  NEW FIELD: byte b3_136
+	+++  NEW FIELD: byte b3_010
+	+++  NEW FIELD: byte b3_131
+	+++  NEW FIELD: byte b3_252
+	+++  NEW FIELD: byte b3_130
+	+++  NEW FIELD: byte b3_251
+	+++  NEW FIELD: byte b3_012
+	+++  NEW FIELD: byte b3_133
+	+++  NEW FIELD: byte b3_254
+	+++  NEW FIELD: byte b3_011
+	+++  NEW FIELD: byte b3_132
+	+++  NEW FIELD: byte b3_253
+	+++  NEW FIELD: byte b3_018
+	+++  NEW FIELD: byte b3_139
+	+++  NEW FIELD: byte b3_017
+	+++  NEW FIELD: byte b3_138
+	+++  NEW FIELD: byte b3_019
+	+++  NEW FIELD: byte b3_250
+	+++  NEW FIELD: byte b3_003
+	+++  NEW FIELD: byte b3_124
+	+++  NEW FIELD: byte b3_245
+	+++  NEW FIELD: byte b3_002
+	+++  NEW FIELD: byte b3_123
+	+++  NEW FIELD: byte b3_244
+	+++  NEW FIELD: byte b3_005
+	+++  NEW FIELD: byte b3_126
+	+++  NEW FIELD: byte b3_247
+	+++  NEW FIELD: byte b3_004
+	+++  NEW FIELD: byte b3_125
+	+++  NEW FIELD: byte b3_246
+	+++  NEW FIELD: byte b3_120
+	+++  NEW FIELD: byte b3_241
+	+++  NEW FIELD: byte b3_240
+	+++  NEW FIELD: byte b3_001
+	+++  NEW FIELD: byte b3_122
+	+++  NEW FIELD: byte b3_243
+	+++  NEW FIELD: byte b3_000
+	+++  NEW FIELD: byte b3_121
+	+++  NEW FIELD: byte b3_242
+	+++  NEW FIELD: byte b3_007
+	+++  NEW FIELD: byte b3_128
+	+++  NEW FIELD: byte b3_249
+	+++  NEW FIELD: byte b3_006
+	+++  NEW FIELD: byte b3_127
+	+++  NEW FIELD: byte b3_248
+	+++  NEW FIELD: byte b3_009
+	+++  NEW FIELD: byte b3_008
+	+++  NEW FIELD: byte b3_129
+	+++  NEW FIELD: byte b3_160
+	+++  NEW FIELD: byte b3_041
+	+++  NEW FIELD: byte b3_162
+	+++  NEW FIELD: byte b3_040
+	+++  NEW FIELD: byte b3_161
+	+++  NEW FIELD: byte b3_036
+	+++  NEW FIELD: byte b3_157
+	+++  NEW FIELD: byte b3_035
+	+++  NEW FIELD: byte b3_156
+	+++  NEW FIELD: byte b3_038
+	+++  NEW FIELD: byte b3_159
+	+++  NEW FIELD: byte b3_037
+	+++  NEW FIELD: byte b3_158
+	+++  NEW FIELD: byte b3_032
+	+++  NEW FIELD: byte b3_153
+	+++  NEW FIELD: byte b3_031
+	+++  NEW FIELD: byte b3_152
+	+++  NEW FIELD: byte b3_034
+	+++  NEW FIELD: byte b3_155
+	+++  NEW FIELD: byte b3_033
+	+++  NEW FIELD: byte b3_154
+	+++  NEW FIELD: byte b3_039
+	+++  NEW FIELD: byte b3_030
+	+++  NEW FIELD: byte b3_151
+	+++  NEW FIELD: byte b3_150
+	+++  NEW FIELD: byte b3_025
+	+++  NEW FIELD: byte b3_146
+	+++  NEW FIELD: byte b3_024
+	+++  NEW FIELD: byte b3_145
+	+++  NEW FIELD: byte b3_027
+	+++  NEW FIELD: byte b3_148
+	+++  NEW FIELD: byte b3_026
+	+++  NEW FIELD: byte b3_147
+	+++  NEW FIELD: byte b3_021
+	+++  NEW FIELD: byte b3_142
+	+++  NEW FIELD: byte b3_020
+	+++  NEW FIELD: byte b3_141
+	+++  NEW FIELD: byte b3_023
+	+++  NEW FIELD: byte b3_144
+	+++  NEW FIELD: byte b3_022
+	+++  NEW FIELD: byte b3_143
+	+++  NEW FIELD: byte b3_029
+	+++  NEW FIELD: byte b3_028
+	+++  NEW FIELD: byte b3_149
+	+++  NEW FIELD: byte b3_061
+	+++  NEW FIELD: byte b3_182
+	+++  NEW FIELD: byte b3_060
+	+++  NEW FIELD: byte b3_181
+	+++  NEW FIELD: byte b3_063
+	+++  NEW FIELD: byte b3_184
+	+++  NEW FIELD: byte b3_062
+	+++  NEW FIELD: byte b3_183
+	+++  NEW FIELD: byte b3_180
+	+++  NEW FIELD: byte b3_058
+	+++  NEW FIELD: byte b3_179
+	+++  NEW FIELD: byte b3_057
+	+++  NEW FIELD: byte b3_178
+	+++  NEW FIELD: byte b3_059
+	+++  NEW FIELD: byte b3_054
+	+++  NEW FIELD: byte b3_175
+	+++  NEW FIELD: byte b3_053
+	+++  NEW FIELD: byte b3_174
+	+++  NEW FIELD: byte b3_056
+	+++  NEW FIELD: byte b3_177
+	+++  NEW FIELD: byte b3_055
+	+++  NEW FIELD: byte b3_176
+	+++  NEW FIELD: byte b3_050
+	+++  NEW FIELD: byte b3_171
+	+++  NEW FIELD: byte b3_170
+	+++  NEW FIELD: byte b3_052
+	+++  NEW FIELD: byte b3_173
+	+++  NEW FIELD: byte b3_051
+	+++  NEW FIELD: byte b3_172
+	+++  NEW FIELD: byte b3_047
+	+++  NEW FIELD: byte b3_168
+	+++  NEW FIELD: byte b3_046
+	+++  NEW FIELD: byte b3_167
+	+++  NEW FIELD: byte b3_049
+	+++  NEW FIELD: byte b3_048
+	+++  NEW FIELD: byte b3_169
+	+++  NEW FIELD: byte b3_043
+	+++  NEW FIELD: byte b3_164
+	+++  NEW FIELD: byte b3_042
+	+++  NEW FIELD: byte b3_163
+	+++  NEW FIELD: byte b3_045
+	+++  NEW FIELD: byte b3_166
+	+++  NEW FIELD: byte b3_044
+	+++  NEW FIELD: byte b3_165
+	+++  NEW FIELD: byte b3_083
+	+++  NEW FIELD: byte b3_082
+	+++  NEW FIELD: byte b3_085
+	+++  NEW FIELD: byte b3_084
+	+++  NEW FIELD: byte b3_081
+	+++  NEW FIELD: byte b3_080
+	+++  NEW FIELD: byte b3_079
+	+++  NEW FIELD: byte b3_076
+	+++  NEW FIELD: byte b3_197
+	+++  NEW FIELD: byte b3_075
+	+++  NEW FIELD: byte b3_196
+	+++  NEW FIELD: byte b3_078
+	+++  NEW FIELD: byte b3_199
+	+++  NEW FIELD: byte b3_077
+	+++  NEW FIELD: byte b3_198
+	+++  NEW FIELD: byte b3_072
+	+++  NEW FIELD: byte b3_193
+	+++  NEW FIELD: byte b3_071
+	+++  NEW FIELD: byte b3_192
+	+++  NEW FIELD: byte b3_074
+	+++  NEW FIELD: byte b3_195
+	+++  NEW FIELD: byte b3_073
+	+++  NEW FIELD: byte b3_194
+	+++  NEW FIELD: byte b3_070
+	+++  NEW FIELD: byte b3_191
+	+++  NEW FIELD: byte b3_190
+	+++  NEW FIELD: byte b3_069
+	+++  NEW FIELD: byte b3_068
+	+++  NEW FIELD: byte b3_189
+	+++  NEW FIELD: byte b3_065
+	+++  NEW FIELD: byte b3_186
+	+++  NEW FIELD: byte b3_064
+	+++  NEW FIELD: byte b3_185
+	+++  NEW FIELD: byte b3_067
+	+++  NEW FIELD: byte b3_188
+	+++  NEW FIELD: byte b3_066
+	+++  NEW FIELD: byte b3_187
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType_B3()
++++  NEW CLASS: PUBLIC(+) FINAL(+) org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_query_jmhTest  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: byte p160
+	+++  NEW FIELD: byte p043
+	+++  NEW FIELD: byte p164
+	+++  NEW FIELD: byte p042
+	+++  NEW FIELD: byte p163
+	+++  NEW FIELD: byte p041
+	+++  NEW FIELD: byte p162
+	+++  NEW FIELD: byte p040
+	+++  NEW FIELD: byte p161
+	+++  NEW FIELD: byte p036
+	+++  NEW FIELD: byte p157
+	+++  NEW FIELD: byte p035
+	+++  NEW FIELD: byte p156
+	+++  NEW FIELD: byte p034
+	+++  NEW FIELD: byte p155
+	+++  NEW FIELD: byte p033
+	+++  NEW FIELD: byte p154
+	+++  NEW FIELD: byte p039
+	+++  NEW FIELD: byte p038
+	+++  NEW FIELD: byte p159
+	+++  NEW FIELD: byte p037
+	+++  NEW FIELD: byte p158
+	+++  NEW FIELD: byte p032
+	+++  NEW FIELD: byte p153
+	+++  NEW FIELD: byte p031
+	+++  NEW FIELD: byte p152
+	+++  NEW FIELD: byte p030
+	+++  NEW FIELD: byte p151
+	+++  NEW FIELD: byte p150
+	+++  NEW FIELD: int startRndMask
+	+++  NEW FIELD: byte p025
+	+++  NEW FIELD: byte p146
+	+++  NEW FIELD: byte p024
+	+++  NEW FIELD: byte p145
+	+++  NEW FIELD: byte p023
+	+++  NEW FIELD: byte p144
+	+++  NEW FIELD: byte p022
+	+++  NEW FIELD: byte p143
+	+++  NEW FIELD: byte p029
+	+++  NEW FIELD: byte p028
+	+++  NEW FIELD: byte p149
+	+++  NEW FIELD: byte p027
+	+++  NEW FIELD: byte p148
+	+++  NEW FIELD: byte p026
+	+++  NEW FIELD: byte p147
+	+++  NEW FIELD: byte p061
+	+++  NEW FIELD: byte p182
+	+++  NEW FIELD: byte p060
+	+++  NEW FIELD: byte p181
+	+++  NEW FIELD: byte p180
+	+++  NEW FIELD: byte p065
+	+++  NEW FIELD: byte p186
+	+++  NEW FIELD: byte p064
+	+++  NEW FIELD: byte p185
+	+++  NEW FIELD: org.openjdk.jmh.infra.Blackhole blackhole
+	+++  NEW FIELD: byte p063
+	+++  NEW FIELD: byte p184
+	+++  NEW FIELD: byte p062
+	+++  NEW FIELD: byte p183
+	+++  NEW FIELD: byte p058
+	+++  NEW FIELD: byte p179
+	+++  NEW FIELD: byte p057
+	+++  NEW FIELD: byte p178
+	+++  NEW FIELD: byte p056
+	+++  NEW FIELD: byte p177
+	+++  NEW FIELD: byte p055
+	+++  NEW FIELD: byte p176
+	+++  NEW FIELD: byte p059
+	+++  NEW FIELD: byte p050
+	+++  NEW FIELD: byte p171
+	+++  NEW FIELD: byte p170
+	+++  NEW FIELD: byte p054
+	+++  NEW FIELD: byte p175
+	+++  NEW FIELD: byte p053
+	+++  NEW FIELD: byte p174
+	+++  NEW FIELD: byte p052
+	+++  NEW FIELD: byte p173
+	+++  NEW FIELD: byte p051
+	+++  NEW FIELD: byte p172
+	+++  NEW FIELD: byte p047
+	+++  NEW FIELD: byte p168
+	+++  NEW FIELD: byte p046
+	+++  NEW FIELD: byte p167
+	+++  NEW FIELD: byte p045
+	+++  NEW FIELD: byte p166
+	+++  NEW FIELD: byte p044
+	+++  NEW FIELD: byte p165
+	+++  NEW FIELD: byte p049
+	+++  NEW FIELD: byte p048
+	+++  NEW FIELD: byte p169
+	+++  NEW FIELD: byte p083
+	+++  NEW FIELD: byte p082
+	+++  NEW FIELD: byte p081
+	+++  NEW FIELD: byte p080
+	+++  NEW FIELD: byte p087
+	+++  NEW FIELD: byte p086
+	+++  NEW FIELD: byte p085
+	+++  NEW FIELD: byte p084
+	+++  NEW FIELD: byte p079
+	+++  NEW FIELD: byte p078
+	+++  NEW FIELD: byte p199
+	+++  NEW FIELD: byte p077
+	+++  NEW FIELD: byte p198
+	+++  NEW FIELD: byte p072
+	+++  NEW FIELD: byte p193
+	+++  NEW FIELD: byte p071
+	+++  NEW FIELD: byte p192
+	+++  NEW FIELD: byte p070
+	+++  NEW FIELD: byte p191
+	+++  NEW FIELD: byte p190
+	+++  NEW FIELD: byte p076
+	+++  NEW FIELD: byte p197
+	+++  NEW FIELD: byte p075
+	+++  NEW FIELD: byte p196
+	+++  NEW FIELD: byte p074
+	+++  NEW FIELD: byte p195
+	+++  NEW FIELD: byte p073
+	+++  NEW FIELD: byte p194
+	+++  NEW FIELD: byte p069
+	+++  NEW FIELD: byte p068
+	+++  NEW FIELD: byte p189
+	+++  NEW FIELD: byte p067
+	+++  NEW FIELD: byte p188
+	+++  NEW FIELD: byte p066
+	+++  NEW FIELD: byte p187
+	+++  NEW FIELD: byte p099
+	+++  NEW FIELD: byte p090
+	+++  NEW FIELD: byte p094
+	+++  NEW FIELD: byte p093
+	+++  NEW FIELD: byte p092
+	+++  NEW FIELD: byte p091
+	+++  NEW FIELD: byte p098
+	+++  NEW FIELD: byte p097
+	+++  NEW FIELD: byte p096
+	+++  NEW FIELD: byte p095
+	+++  NEW FIELD: byte p089
+	+++  NEW FIELD: byte p088
+	+++  NEW FIELD: org.openjdk.jmh.infra.IterationParams iterationParams
+	+++  NEW FIELD: STATIC(+) VOLATILE(+) org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType f_benchmarkaggregategroupbyorderbyqueriessse0_G
+	+++  NEW FIELD: byte p212
+	+++  NEW FIELD: byte p211
+	+++  NEW FIELD: byte p210
+	+++  NEW FIELD: byte p216
+	+++  NEW FIELD: byte p215
+	+++  NEW FIELD: byte p214
+	+++  NEW FIELD: byte p213
+	+++  NEW FIELD: byte p219
+	+++  NEW FIELD: byte p218
+	+++  NEW FIELD: byte p217
+	+++  NEW FIELD: org.openjdk.jmh.infra.ThreadParams threadParams
+	+++  NEW FIELD: org.openjdk.jmh.infra.Control notifyControl
+	+++  NEW FIELD: byte p201
+	+++  NEW FIELD: byte p200
+	+++  NEW FIELD: byte p205
+	+++  NEW FIELD: byte p204
+	+++  NEW FIELD: byte p203
+	+++  NEW FIELD: byte p202
+	+++  NEW FIELD: byte p209
+	+++  NEW FIELD: byte p208
+	+++  NEW FIELD: byte p207
+	+++  NEW FIELD: byte p206
+	+++  NEW FIELD: byte p120
+	+++  NEW FIELD: byte p241
+	+++  NEW FIELD: byte p240
+	+++  NEW FIELD: byte p113
+	+++  NEW FIELD: byte p234
+	+++  NEW FIELD: byte p112
+	+++  NEW FIELD: byte p233
+	+++  NEW FIELD: byte p111
+	+++  NEW FIELD: byte p232
+	+++  NEW FIELD: byte p110
+	+++  NEW FIELD: byte p231
+	+++  NEW FIELD: byte p117
+	+++  NEW FIELD: byte p238
+	+++  NEW FIELD: byte p116
+	+++  NEW FIELD: byte p237
+	+++  NEW FIELD: byte p115
+	+++  NEW FIELD: byte p236
+	+++  NEW FIELD: byte p114
+	+++  NEW FIELD: byte p235
+	+++  NEW FIELD: byte p119
+	+++  NEW FIELD: byte p118
+	+++  NEW FIELD: byte p239
+	+++  NEW FIELD: byte p230
+	+++  NEW FIELD: byte p102
+	+++  NEW FIELD: byte p223
+	+++  NEW FIELD: byte p101
+	+++  NEW FIELD: byte p222
+	+++  NEW FIELD: byte p100
+	+++  NEW FIELD: byte p221
+	+++  NEW FIELD: byte p220
+	+++  NEW FIELD: byte p106
+	+++  NEW FIELD: byte p227
+	+++  NEW FIELD: byte p105
+	+++  NEW FIELD: byte p226
+	+++  NEW FIELD: byte p104
+	+++  NEW FIELD: byte p225
+	+++  NEW FIELD: byte p103
+	+++  NEW FIELD: byte p224
+	+++  NEW FIELD: byte p109
+	+++  NEW FIELD: byte p108
+	+++  NEW FIELD: byte p229
+	+++  NEW FIELD: byte p107
+	+++  NEW FIELD: byte p228
+	+++  NEW FIELD: org.openjdk.jmh.infra.BenchmarkParams benchmarkParams
+	+++  NEW FIELD: byte p021
+	+++  NEW FIELD: byte p142
+	+++  NEW FIELD: byte p020
+	+++  NEW FIELD: byte p141
+	+++  NEW FIELD: byte p140
+	+++  NEW FIELD: byte p014
+	+++  NEW FIELD: byte p135
+	+++  NEW FIELD: byte p013
+	+++  NEW FIELD: byte p134
+	+++  NEW FIELD: byte p255
+	+++  NEW FIELD: byte p012
+	+++  NEW FIELD: byte p133
+	+++  NEW FIELD: byte p254
+	+++  NEW FIELD: byte p011
+	+++  NEW FIELD: byte p132
+	+++  NEW FIELD: byte p253
+	+++  NEW FIELD: byte p018
+	+++  NEW FIELD: byte p139
+	+++  NEW FIELD: byte p017
+	+++  NEW FIELD: byte p138
+	+++  NEW FIELD: byte p016
+	+++  NEW FIELD: byte p137
+	+++  NEW FIELD: byte p015
+	+++  NEW FIELD: byte p136
+	+++  NEW FIELD: byte p019
+	+++  NEW FIELD: byte p010
+	+++  NEW FIELD: byte p131
+	+++  NEW FIELD: byte p252
+	+++  NEW FIELD: byte p130
+	+++  NEW FIELD: byte p251
+	+++  NEW FIELD: byte p250
+	+++  NEW FIELD: byte p003
+	+++  NEW FIELD: byte p124
+	+++  NEW FIELD: byte p245
+	+++  NEW FIELD: byte p002
+	+++  NEW FIELD: byte p123
+	+++  NEW FIELD: byte p244
+	+++  NEW FIELD: byte p001
+	+++  NEW FIELD: byte p122
+	+++  NEW FIELD: byte p243
+	+++  NEW FIELD: byte p000
+	+++  NEW FIELD: byte p121
+	+++  NEW FIELD: byte p242
+	+++  NEW FIELD: byte p007
+	+++  NEW FIELD: byte p128
+	+++  NEW FIELD: byte p249
+	+++  NEW FIELD: byte p006
+	+++  NEW FIELD: byte p127
+	+++  NEW FIELD: byte p248
+	+++  NEW FIELD: byte p005
+	+++  NEW FIELD: byte p126
+	+++  NEW FIELD: byte p247
+	+++  NEW FIELD: byte p004
+	+++  NEW FIELD: byte p125
+	+++  NEW FIELD: byte p246
+	+++  NEW FIELD: byte p009
+	+++  NEW FIELD: byte p008
+	+++  NEW FIELD: byte p129
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkAggregateGroupByOrderByQueriesSSE_query_jmhTest()
+	+++  NEW METHOD: org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType _jmh_tryInit_f_benchmarkaggregategroupbyorderbyqueriessse0_G(org.openjdk.jmh.runner.InfraControl)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult query_AverageTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void query_avgt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void query_sample_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.openjdk.jmh.util.SampleBuffer, int, long, int, org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult query_SampleTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult query_SingleShotTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void query_ss_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, int, org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult query_Throughput(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void query_thrpt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkAggregateGroupByOrderByQueriesSSE_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
++++  NEW CLASS: PUBLIC(+) FINAL(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_concurrentIndexedTableForCombineGroupBy_jmhTest  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: byte p160
+	+++  NEW FIELD: byte p043
+	+++  NEW FIELD: byte p164
+	+++  NEW FIELD: byte p042
+	+++  NEW FIELD: byte p163
+	+++  NEW FIELD: byte p041
+	+++  NEW FIELD: byte p162
+	+++  NEW FIELD: byte p040
+	+++  NEW FIELD: byte p161
+	+++  NEW FIELD: byte p036
+	+++  NEW FIELD: byte p157
+	+++  NEW FIELD: byte p035
+	+++  NEW FIELD: byte p156
+	+++  NEW FIELD: byte p034
+	+++  NEW FIELD: byte p155
+	+++  NEW FIELD: byte p033
+	+++  NEW FIELD: byte p154
+	+++  NEW FIELD: byte p039
+	+++  NEW FIELD: byte p038
+	+++  NEW FIELD: byte p159
+	+++  NEW FIELD: byte p037
+	+++  NEW FIELD: byte p158
+	+++  NEW FIELD: byte p032
+	+++  NEW FIELD: byte p153
+	+++  NEW FIELD: byte p031
+	+++  NEW FIELD: byte p152
+	+++  NEW FIELD: byte p030
+	+++  NEW FIELD: byte p151
+	+++  NEW FIELD: byte p150
+	+++  NEW FIELD: int startRndMask
+	+++  NEW FIELD: byte p025
+	+++  NEW FIELD: byte p146
+	+++  NEW FIELD: byte p024
+	+++  NEW FIELD: byte p145
+	+++  NEW FIELD: byte p023
+	+++  NEW FIELD: byte p144
+	+++  NEW FIELD: byte p022
+	+++  NEW FIELD: byte p143
+	+++  NEW FIELD: byte p029
+	+++  NEW FIELD: byte p028
+	+++  NEW FIELD: byte p149
+	+++  NEW FIELD: byte p027
+	+++  NEW FIELD: byte p148
+	+++  NEW FIELD: byte p026
+	+++  NEW FIELD: byte p147
+	+++  NEW FIELD: byte p061
+	+++  NEW FIELD: byte p182
+	+++  NEW FIELD: byte p060
+	+++  NEW FIELD: byte p181
+	+++  NEW FIELD: byte p180
+	+++  NEW FIELD: byte p065
+	+++  NEW FIELD: byte p186
+	+++  NEW FIELD: byte p064
+	+++  NEW FIELD: byte p185
+	+++  NEW FIELD: org.openjdk.jmh.infra.Blackhole blackhole
+	+++  NEW FIELD: byte p063
+	+++  NEW FIELD: byte p184
+	+++  NEW FIELD: byte p062
+	+++  NEW FIELD: byte p183
+	+++  NEW FIELD: byte p058
+	+++  NEW FIELD: byte p179
+	+++  NEW FIELD: byte p057
+	+++  NEW FIELD: byte p178
+	+++  NEW FIELD: byte p056
+	+++  NEW FIELD: byte p177
+	+++  NEW FIELD: byte p055
+	+++  NEW FIELD: byte p176
+	+++  NEW FIELD: byte p059
+	+++  NEW FIELD: byte p050
+	+++  NEW FIELD: byte p171
+	+++  NEW FIELD: byte p170
+	+++  NEW FIELD: byte p054
+	+++  NEW FIELD: byte p175
+	+++  NEW FIELD: byte p053
+	+++  NEW FIELD: byte p174
+	+++  NEW FIELD: byte p052
+	+++  NEW FIELD: byte p173
+	+++  NEW FIELD: byte p051
+	+++  NEW FIELD: byte p172
+	+++  NEW FIELD: byte p047
+	+++  NEW FIELD: byte p168
+	+++  NEW FIELD: byte p046
+	+++  NEW FIELD: byte p167
+	+++  NEW FIELD: byte p045
+	+++  NEW FIELD: byte p166
+	+++  NEW FIELD: byte p044
+	+++  NEW FIELD: byte p165
+	+++  NEW FIELD: byte p049
+	+++  NEW FIELD: byte p048
+	+++  NEW FIELD: byte p169
+	+++  NEW FIELD: byte p083
+	+++  NEW FIELD: byte p082
+	+++  NEW FIELD: byte p081
+	+++  NEW FIELD: byte p080
+	+++  NEW FIELD: byte p087
+	+++  NEW FIELD: byte p086
+	+++  NEW FIELD: byte p085
+	+++  NEW FIELD: byte p084
+	+++  NEW FIELD: byte p079
+	+++  NEW FIELD: byte p078
+	+++  NEW FIELD: byte p199
+	+++  NEW FIELD: byte p077
+	+++  NEW FIELD: byte p198
+	+++  NEW FIELD: byte p072
+	+++  NEW FIELD: byte p193
+	+++  NEW FIELD: byte p071
+	+++  NEW FIELD: byte p192
+	+++  NEW FIELD: byte p070
+	+++  NEW FIELD: byte p191
+	+++  NEW FIELD: byte p190
+	+++  NEW FIELD: byte p076
+	+++  NEW FIELD: byte p197
+	+++  NEW FIELD: byte p075
+	+++  NEW FIELD: byte p196
+	+++  NEW FIELD: byte p074
+	+++  NEW FIELD: byte p195
+	+++  NEW FIELD: byte p073
+	+++  NEW FIELD: byte p194
+	+++  NEW FIELD: byte p069
+	+++  NEW FIELD: byte p068
+	+++  NEW FIELD: byte p189
+	+++  NEW FIELD: byte p067
+	+++  NEW FIELD: byte p188
+	+++  NEW FIELD: byte p066
+	+++  NEW FIELD: byte p187
+	+++  NEW FIELD: byte p099
+	+++  NEW FIELD: byte p090
+	+++  NEW FIELD: byte p094
+	+++  NEW FIELD: byte p093
+	+++  NEW FIELD: byte p092
+	+++  NEW FIELD: byte p091
+	+++  NEW FIELD: byte p098
+	+++  NEW FIELD: byte p097
+	+++  NEW FIELD: byte p096
+	+++  NEW FIELD: byte p095
+	+++  NEW FIELD: byte p089
+	+++  NEW FIELD: byte p088
+	+++  NEW FIELD: org.openjdk.jmh.infra.IterationParams iterationParams
+	+++  NEW FIELD: byte p212
+	+++  NEW FIELD: byte p211
+	+++  NEW FIELD: byte p210
+	+++  NEW FIELD: byte p216
+	+++  NEW FIELD: byte p215
+	+++  NEW FIELD: byte p214
+	+++  NEW FIELD: byte p213
+	+++  NEW FIELD: byte p219
+	+++  NEW FIELD: byte p218
+	+++  NEW FIELD: byte p217
+	+++  NEW FIELD: org.openjdk.jmh.infra.ThreadParams threadParams
+	+++  NEW FIELD: org.openjdk.jmh.infra.Control notifyControl
+	+++  NEW FIELD: byte p201
+	+++  NEW FIELD: byte p200
+	+++  NEW FIELD: byte p205
+	+++  NEW FIELD: byte p204
+	+++  NEW FIELD: byte p203
+	+++  NEW FIELD: byte p202
+	+++  NEW FIELD: byte p209
+	+++  NEW FIELD: byte p208
+	+++  NEW FIELD: byte p207
+	+++  NEW FIELD: byte p206
+	+++  NEW FIELD: byte p120
+	+++  NEW FIELD: byte p241
+	+++  NEW FIELD: byte p240
+	+++  NEW FIELD: byte p113
+	+++  NEW FIELD: byte p234
+	+++  NEW FIELD: byte p112
+	+++  NEW FIELD: byte p233
+	+++  NEW FIELD: byte p111
+	+++  NEW FIELD: byte p232
+	+++  NEW FIELD: STATIC(+) VOLATILE(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType f_benchmarkpairwisecombineorderbygroupby0_G
+	+++  NEW FIELD: byte p110
+	+++  NEW FIELD: byte p231
+	+++  NEW FIELD: byte p117
+	+++  NEW FIELD: byte p238
+	+++  NEW FIELD: byte p116
+	+++  NEW FIELD: byte p237
+	+++  NEW FIELD: byte p115
+	+++  NEW FIELD: byte p236
+	+++  NEW FIELD: byte p114
+	+++  NEW FIELD: byte p235
+	+++  NEW FIELD: byte p119
+	+++  NEW FIELD: byte p118
+	+++  NEW FIELD: byte p239
+	+++  NEW FIELD: byte p230
+	+++  NEW FIELD: byte p102
+	+++  NEW FIELD: byte p223
+	+++  NEW FIELD: byte p101
+	+++  NEW FIELD: byte p222
+	+++  NEW FIELD: byte p100
+	+++  NEW FIELD: byte p221
+	+++  NEW FIELD: byte p220
+	+++  NEW FIELD: byte p106
+	+++  NEW FIELD: byte p227
+	+++  NEW FIELD: byte p105
+	+++  NEW FIELD: byte p226
+	+++  NEW FIELD: byte p104
+	+++  NEW FIELD: byte p225
+	+++  NEW FIELD: byte p103
+	+++  NEW FIELD: byte p224
+	+++  NEW FIELD: byte p109
+	+++  NEW FIELD: byte p108
+	+++  NEW FIELD: byte p229
+	+++  NEW FIELD: byte p107
+	+++  NEW FIELD: byte p228
+	+++  NEW FIELD: org.openjdk.jmh.infra.BenchmarkParams benchmarkParams
+	+++  NEW FIELD: byte p021
+	+++  NEW FIELD: byte p142
+	+++  NEW FIELD: byte p020
+	+++  NEW FIELD: byte p141
+	+++  NEW FIELD: byte p140
+	+++  NEW FIELD: byte p014
+	+++  NEW FIELD: byte p135
+	+++  NEW FIELD: byte p013
+	+++  NEW FIELD: byte p134
+	+++  NEW FIELD: byte p255
+	+++  NEW FIELD: byte p012
+	+++  NEW FIELD: byte p133
+	+++  NEW FIELD: byte p254
+	+++  NEW FIELD: byte p011
+	+++  NEW FIELD: byte p132
+	+++  NEW FIELD: byte p253
+	+++  NEW FIELD: byte p018
+	+++  NEW FIELD: byte p139
+	+++  NEW FIELD: byte p017
+	+++  NEW FIELD: byte p138
+	+++  NEW FIELD: byte p016
+	+++  NEW FIELD: byte p137
+	+++  NEW FIELD: byte p015
+	+++  NEW FIELD: byte p136
+	+++  NEW FIELD: byte p019
+	+++  NEW FIELD: byte p010
+	+++  NEW FIELD: byte p131
+	+++  NEW FIELD: byte p252
+	+++  NEW FIELD: byte p130
+	+++  NEW FIELD: byte p251
+	+++  NEW FIELD: byte p250
+	+++  NEW FIELD: byte p003
+	+++  NEW FIELD: byte p124
+	+++  NEW FIELD: byte p245
+	+++  NEW FIELD: byte p002
+	+++  NEW FIELD: byte p123
+	+++  NEW FIELD: byte p244
+	+++  NEW FIELD: byte p001
+	+++  NEW FIELD: byte p122
+	+++  NEW FIELD: byte p243
+	+++  NEW FIELD: byte p000
+	+++  NEW FIELD: byte p121
+	+++  NEW FIELD: byte p242
+	+++  NEW FIELD: byte p007
+	+++  NEW FIELD: byte p128
+	+++  NEW FIELD: byte p249
+	+++  NEW FIELD: byte p006
+	+++  NEW FIELD: byte p127
+	+++  NEW FIELD: byte p248
+	+++  NEW FIELD: byte p005
+	+++  NEW FIELD: byte p126
+	+++  NEW FIELD: byte p247
+	+++  NEW FIELD: byte p004
+	+++  NEW FIELD: byte p125
+	+++  NEW FIELD: byte p246
+	+++  NEW FIELD: byte p009
+	+++  NEW FIELD: byte p008
+	+++  NEW FIELD: byte p129
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy_concurrentIndexedTableForCombineGroupBy_jmhTest()
+	+++  NEW METHOD: org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType _jmh_tryInit_f_benchmarkpairwisecombineorderbygroupby0_G(org.openjdk.jmh.runner.InfraControl)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult concurrentIndexedTableForCombineGroupBy_AverageTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void concurrentIndexedTableForCombineGroupBy_avgt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void concurrentIndexedTableForCombineGroupBy_sample_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.openjdk.jmh.util.SampleBuffer, int, long, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult concurrentIndexedTableForCombineGroupBy_SampleTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult concurrentIndexedTableForCombineGroupBy_SingleShotTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void concurrentIndexedTableForCombineGroupBy_ss_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult concurrentIndexedTableForCombineGroupBy_Throughput(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void concurrentIndexedTableForCombineGroupBy_thrpt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B3
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy_jmhType()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B1  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.BenchmarkPairwiseCombineOrderByGroupBy
+	+++  NEW FIELD: byte b1_250
+	+++  NEW FIELD: byte b1_010
+	+++  NEW FIELD: byte b1_131
+	+++  NEW FIELD: byte b1_252
+	+++  NEW FIELD: byte b1_130
+	+++  NEW FIELD: byte b1_251
+	+++  NEW FIELD: byte b1_009
+	+++  NEW FIELD: byte b1_008
+	+++  NEW FIELD: byte b1_129
+	+++  NEW FIELD: byte b1_001
+	+++  NEW FIELD: byte b1_122
+	+++  NEW FIELD: byte b1_243
+	+++  NEW FIELD: byte b1_000
+	+++  NEW FIELD: byte b1_121
+	+++  NEW FIELD: byte b1_242
+	+++  NEW FIELD: byte b1_003
+	+++  NEW FIELD: byte b1_124
+	+++  NEW FIELD: byte b1_245
+	+++  NEW FIELD: byte b1_002
+	+++  NEW FIELD: byte b1_123
+	+++  NEW FIELD: byte b1_244
+	+++  NEW FIELD: byte b1_005
+	+++  NEW FIELD: byte b1_126
+	+++  NEW FIELD: byte b1_247
+	+++  NEW FIELD: byte b1_004
+	+++  NEW FIELD: byte b1_125
+	+++  NEW FIELD: byte b1_246
+	+++  NEW FIELD: byte b1_007
+	+++  NEW FIELD: byte b1_128
+	+++  NEW FIELD: byte b1_249
+	+++  NEW FIELD: byte b1_006
+	+++  NEW FIELD: byte b1_127
+	+++  NEW FIELD: byte b1_248
+	+++  NEW FIELD: byte b1_140
+	+++  NEW FIELD: byte b1_021
+	+++  NEW FIELD: byte b1_142
+	+++  NEW FIELD: byte b1_020
+	+++  NEW FIELD: byte b1_141
+	+++  NEW FIELD: byte b1_019
+	+++  NEW FIELD: byte b1_012
+	+++  NEW FIELD: byte b1_133
+	+++  NEW FIELD: byte b1_254
+	+++  NEW FIELD: byte b1_011
+	+++  NEW FIELD: byte b1_132
+	+++  NEW FIELD: byte b1_253
+	+++  NEW FIELD: byte b1_014
+	+++  NEW FIELD: byte b1_135
+	+++  NEW FIELD: byte b1_013
+	+++  NEW FIELD: byte b1_134
+	+++  NEW FIELD: byte b1_255
+	+++  NEW FIELD: byte b1_016
+	+++  NEW FIELD: byte b1_137
+	+++  NEW FIELD: byte b1_015
+	+++  NEW FIELD: byte b1_136
+	+++  NEW FIELD: byte b1_018
+	+++  NEW FIELD: byte b1_139
+	+++  NEW FIELD: byte b1_017
+	+++  NEW FIELD: byte b1_138
+	+++  NEW FIELD: byte b1_030
+	+++  NEW FIELD: byte b1_151
+	+++  NEW FIELD: byte b1_150
+	+++  NEW FIELD: byte b1_032
+	+++  NEW FIELD: byte b1_153
+	+++  NEW FIELD: byte b1_031
+	+++  NEW FIELD: byte b1_152
+	+++  NEW FIELD: byte b1_023
+	+++  NEW FIELD: byte b1_144
+	+++  NEW FIELD: byte b1_022
+	+++  NEW FIELD: byte b1_143
+	+++  NEW FIELD: byte b1_025
+	+++  NEW FIELD: byte b1_146
+	+++  NEW FIELD: byte b1_024
+	+++  NEW FIELD: byte b1_145
+	+++  NEW FIELD: byte b1_027
+	+++  NEW FIELD: byte b1_148
+	+++  NEW FIELD: byte b1_026
+	+++  NEW FIELD: byte b1_147
+	+++  NEW FIELD: byte b1_029
+	+++  NEW FIELD: byte b1_028
+	+++  NEW FIELD: byte b1_149
+	+++  NEW FIELD: byte b1_160
+	+++  NEW FIELD: byte b1_041
+	+++  NEW FIELD: byte b1_162
+	+++  NEW FIELD: byte b1_040
+	+++  NEW FIELD: byte b1_161
+	+++  NEW FIELD: byte b1_043
+	+++  NEW FIELD: byte b1_164
+	+++  NEW FIELD: byte b1_042
+	+++  NEW FIELD: byte b1_163
+	+++  NEW FIELD: byte b1_034
+	+++  NEW FIELD: byte b1_155
+	+++  NEW FIELD: byte b1_033
+	+++  NEW FIELD: byte b1_154
+	+++  NEW FIELD: byte b1_036
+	+++  NEW FIELD: byte b1_157
+	+++  NEW FIELD: byte b1_035
+	+++  NEW FIELD: byte b1_156
+	+++  NEW FIELD: byte b1_038
+	+++  NEW FIELD: byte b1_159
+	+++  NEW FIELD: byte b1_037
+	+++  NEW FIELD: byte b1_158
+	+++  NEW FIELD: byte b1_039
+	+++  NEW FIELD: byte b1_050
+	+++  NEW FIELD: byte b1_171
+	+++  NEW FIELD: byte b1_170
+	+++  NEW FIELD: byte b1_052
+	+++  NEW FIELD: byte b1_173
+	+++  NEW FIELD: byte b1_051
+	+++  NEW FIELD: byte b1_172
+	+++  NEW FIELD: byte b1_054
+	+++  NEW FIELD: byte b1_175
+	+++  NEW FIELD: byte b1_053
+	+++  NEW FIELD: byte b1_174
+	+++  NEW FIELD: byte b1_045
+	+++  NEW FIELD: byte b1_166
+	+++  NEW FIELD: byte b1_044
+	+++  NEW FIELD: byte b1_165
+	+++  NEW FIELD: byte b1_047
+	+++  NEW FIELD: byte b1_168
+	+++  NEW FIELD: byte b1_046
+	+++  NEW FIELD: byte b1_167
+	+++  NEW FIELD: byte b1_049
+	+++  NEW FIELD: byte b1_048
+	+++  NEW FIELD: byte b1_169
+	+++  NEW FIELD: byte b1_180
+	+++  NEW FIELD: byte b1_061
+	+++  NEW FIELD: byte b1_182
+	+++  NEW FIELD: byte b1_060
+	+++  NEW FIELD: byte b1_181
+	+++  NEW FIELD: byte b1_063
+	+++  NEW FIELD: byte b1_184
+	+++  NEW FIELD: byte b1_062
+	+++  NEW FIELD: byte b1_183
+	+++  NEW FIELD: byte b1_065
+	+++  NEW FIELD: byte b1_186
+	+++  NEW FIELD: byte b1_064
+	+++  NEW FIELD: byte b1_185
+	+++  NEW FIELD: byte b1_056
+	+++  NEW FIELD: byte b1_177
+	+++  NEW FIELD: byte b1_055
+	+++  NEW FIELD: byte b1_176
+	+++  NEW FIELD: byte b1_058
+	+++  NEW FIELD: byte b1_179
+	+++  NEW FIELD: byte b1_057
+	+++  NEW FIELD: byte b1_178
+	+++  NEW FIELD: byte b1_059
+	+++  NEW FIELD: byte b1_070
+	+++  NEW FIELD: byte b1_191
+	+++  NEW FIELD: byte b1_190
+	+++  NEW FIELD: byte b1_072
+	+++  NEW FIELD: byte b1_193
+	+++  NEW FIELD: byte b1_071
+	+++  NEW FIELD: byte b1_192
+	+++  NEW FIELD: byte b1_074
+	+++  NEW FIELD: byte b1_195
+	+++  NEW FIELD: byte b1_073
+	+++  NEW FIELD: byte b1_194
+	+++  NEW FIELD: byte b1_076
+	+++  NEW FIELD: byte b1_197
+	+++  NEW FIELD: byte b1_075
+	+++  NEW FIELD: byte b1_196
+	+++  NEW FIELD: byte b1_067
+	+++  NEW FIELD: byte b1_188
+	+++  NEW FIELD: byte b1_066
+	+++  NEW FIELD: byte b1_187
+	+++  NEW FIELD: byte b1_069
+	+++  NEW FIELD: byte b1_068
+	+++  NEW FIELD: byte b1_189
+	+++  NEW FIELD: byte b1_081
+	+++  NEW FIELD: byte b1_080
+	+++  NEW FIELD: byte b1_083
+	+++  NEW FIELD: byte b1_082
+	+++  NEW FIELD: byte b1_085
+	+++  NEW FIELD: byte b1_084
+	+++  NEW FIELD: byte b1_087
+	+++  NEW FIELD: byte b1_086
+	+++  NEW FIELD: byte b1_078
+	+++  NEW FIELD: byte b1_199
+	+++  NEW FIELD: byte b1_077
+	+++  NEW FIELD: byte b1_198
+	+++  NEW FIELD: byte b1_079
+	+++  NEW FIELD: byte b1_092
+	+++  NEW FIELD: byte b1_091
+	+++  NEW FIELD: byte b1_094
+	+++  NEW FIELD: byte b1_093
+	+++  NEW FIELD: byte b1_096
+	+++  NEW FIELD: byte b1_095
+	+++  NEW FIELD: byte b1_098
+	+++  NEW FIELD: byte b1_097
+	+++  NEW FIELD: byte b1_090
+	+++  NEW FIELD: byte b1_089
+	+++  NEW FIELD: byte b1_088
+	+++  NEW FIELD: byte b1_099
+	+++  NEW FIELD: byte b1_207
+	+++  NEW FIELD: byte b1_206
+	+++  NEW FIELD: byte b1_209
+	+++  NEW FIELD: byte b1_208
+	+++  NEW FIELD: byte b1_201
+	+++  NEW FIELD: byte b1_200
+	+++  NEW FIELD: byte b1_203
+	+++  NEW FIELD: byte b1_202
+	+++  NEW FIELD: byte b1_205
+	+++  NEW FIELD: byte b1_204
+	+++  NEW FIELD: byte b1_218
+	+++  NEW FIELD: byte b1_217
+	+++  NEW FIELD: byte b1_219
+	+++  NEW FIELD: byte b1_210
+	+++  NEW FIELD: byte b1_212
+	+++  NEW FIELD: byte b1_211
+	+++  NEW FIELD: byte b1_214
+	+++  NEW FIELD: byte b1_213
+	+++  NEW FIELD: byte b1_216
+	+++  NEW FIELD: byte b1_215
+	+++  NEW FIELD: byte b1_230
+	+++  NEW FIELD: byte b1_108
+	+++  NEW FIELD: byte b1_229
+	+++  NEW FIELD: byte b1_107
+	+++  NEW FIELD: byte b1_228
+	+++  NEW FIELD: byte b1_109
+	+++  NEW FIELD: byte b1_100
+	+++  NEW FIELD: byte b1_221
+	+++  NEW FIELD: byte b1_220
+	+++  NEW FIELD: byte b1_102
+	+++  NEW FIELD: byte b1_223
+	+++  NEW FIELD: byte b1_101
+	+++  NEW FIELD: byte b1_222
+	+++  NEW FIELD: byte b1_104
+	+++  NEW FIELD: byte b1_225
+	+++  NEW FIELD: byte b1_103
+	+++  NEW FIELD: byte b1_224
+	+++  NEW FIELD: byte b1_106
+	+++  NEW FIELD: byte b1_227
+	+++  NEW FIELD: byte b1_105
+	+++  NEW FIELD: byte b1_226
+	+++  NEW FIELD: byte b1_120
+	+++  NEW FIELD: byte b1_241
+	+++  NEW FIELD: byte b1_240
+	+++  NEW FIELD: byte b1_119
+	+++  NEW FIELD: byte b1_118
+	+++  NEW FIELD: byte b1_239
+	+++  NEW FIELD: byte b1_111
+	+++  NEW FIELD: byte b1_232
+	+++  NEW FIELD: byte b1_110
+	+++  NEW FIELD: byte b1_231
+	+++  NEW FIELD: byte b1_113
+	+++  NEW FIELD: byte b1_234
+	+++  NEW FIELD: byte b1_112
+	+++  NEW FIELD: byte b1_233
+	+++  NEW FIELD: byte b1_115
+	+++  NEW FIELD: byte b1_236
+	+++  NEW FIELD: byte b1_114
+	+++  NEW FIELD: byte b1_235
+	+++  NEW FIELD: byte b1_117
+	+++  NEW FIELD: byte b1_238
+	+++  NEW FIELD: byte b1_116
+	+++  NEW FIELD: byte b1_237
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B1()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B1
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2> tearTrialMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int tearTrialMutex
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2> tearIterationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int setupIterationMutex
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2> setupIterationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int setupInvocationMutex
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int tearInvocationMutex
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2> setupInvocationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) boolean readyIteration
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2> tearInvocationMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int tearIterationMutex
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) boolean readyTrial
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.util.concurrent.atomic.AtomicIntegerFieldUpdater<org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2> setupTrialMutexUpdater
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) int setupTrialMutex
+	+++  NEW FIELD: PUBLIC(+) VOLATILE(+) boolean readyInvocation
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2()
++++  NEW CLASS: PUBLIC(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B3  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B2
+	+++  NEW FIELD: byte b3_098
+	+++  NEW FIELD: byte b3_097
+	+++  NEW FIELD: byte b3_099
+	+++  NEW FIELD: byte b3_094
+	+++  NEW FIELD: byte b3_093
+	+++  NEW FIELD: byte b3_096
+	+++  NEW FIELD: byte b3_095
+	+++  NEW FIELD: byte b3_090
+	+++  NEW FIELD: byte b3_092
+	+++  NEW FIELD: byte b3_091
+	+++  NEW FIELD: byte b3_087
+	+++  NEW FIELD: byte b3_086
+	+++  NEW FIELD: byte b3_089
+	+++  NEW FIELD: byte b3_088
+	+++  NEW FIELD: byte b3_212
+	+++  NEW FIELD: byte b3_211
+	+++  NEW FIELD: byte b3_214
+	+++  NEW FIELD: byte b3_213
+	+++  NEW FIELD: byte b3_210
+	+++  NEW FIELD: byte b3_219
+	+++  NEW FIELD: byte b3_216
+	+++  NEW FIELD: byte b3_215
+	+++  NEW FIELD: byte b3_218
+	+++  NEW FIELD: byte b3_217
+	+++  NEW FIELD: byte b3_201
+	+++  NEW FIELD: byte b3_200
+	+++  NEW FIELD: byte b3_203
+	+++  NEW FIELD: byte b3_202
+	+++  NEW FIELD: byte b3_209
+	+++  NEW FIELD: byte b3_208
+	+++  NEW FIELD: byte b3_205
+	+++  NEW FIELD: byte b3_204
+	+++  NEW FIELD: byte b3_207
+	+++  NEW FIELD: byte b3_206
+	+++  NEW FIELD: byte b3_113
+	+++  NEW FIELD: byte b3_234
+	+++  NEW FIELD: byte b3_112
+	+++  NEW FIELD: byte b3_233
+	+++  NEW FIELD: byte b3_115
+	+++  NEW FIELD: byte b3_236
+	+++  NEW FIELD: byte b3_114
+	+++  NEW FIELD: byte b3_235
+	+++  NEW FIELD: byte b3_230
+	+++  NEW FIELD: byte b3_111
+	+++  NEW FIELD: byte b3_232
+	+++  NEW FIELD: byte b3_110
+	+++  NEW FIELD: byte b3_231
+	+++  NEW FIELD: byte b3_117
+	+++  NEW FIELD: byte b3_238
+	+++  NEW FIELD: byte b3_116
+	+++  NEW FIELD: byte b3_237
+	+++  NEW FIELD: byte b3_119
+	+++  NEW FIELD: byte b3_118
+	+++  NEW FIELD: byte b3_239
+	+++  NEW FIELD: byte b3_102
+	+++  NEW FIELD: byte b3_223
+	+++  NEW FIELD: byte b3_101
+	+++  NEW FIELD: byte b3_222
+	+++  NEW FIELD: byte b3_104
+	+++  NEW FIELD: byte b3_225
+	+++  NEW FIELD: byte b3_103
+	+++  NEW FIELD: byte b3_224
+	+++  NEW FIELD: byte b3_100
+	+++  NEW FIELD: byte b3_221
+	+++  NEW FIELD: byte b3_220
+	+++  NEW FIELD: byte b3_109
+	+++  NEW FIELD: byte b3_106
+	+++  NEW FIELD: byte b3_227
+	+++  NEW FIELD: byte b3_105
+	+++  NEW FIELD: byte b3_226
+	+++  NEW FIELD: byte b3_108
+	+++  NEW FIELD: byte b3_229
+	+++  NEW FIELD: byte b3_107
+	+++  NEW FIELD: byte b3_228
+	+++  NEW FIELD: byte b3_140
+	+++  NEW FIELD: byte b3_014
+	+++  NEW FIELD: byte b3_135
+	+++  NEW FIELD: byte b3_013
+	+++  NEW FIELD: byte b3_134
+	+++  NEW FIELD: byte b3_255
+	+++  NEW FIELD: byte b3_016
+	+++  NEW FIELD: byte b3_137
+	+++  NEW FIELD: byte b3_015
+	+++  NEW FIELD: byte b3_136
+	+++  NEW FIELD: byte b3_010
+	+++  NEW FIELD: byte b3_131
+	+++  NEW FIELD: byte b3_252
+	+++  NEW FIELD: byte b3_130
+	+++  NEW FIELD: byte b3_251
+	+++  NEW FIELD: byte b3_012
+	+++  NEW FIELD: byte b3_133
+	+++  NEW FIELD: byte b3_254
+	+++  NEW FIELD: byte b3_011
+	+++  NEW FIELD: byte b3_132
+	+++  NEW FIELD: byte b3_253
+	+++  NEW FIELD: byte b3_018
+	+++  NEW FIELD: byte b3_139
+	+++  NEW FIELD: byte b3_017
+	+++  NEW FIELD: byte b3_138
+	+++  NEW FIELD: byte b3_019
+	+++  NEW FIELD: byte b3_250
+	+++  NEW FIELD: byte b3_003
+	+++  NEW FIELD: byte b3_124
+	+++  NEW FIELD: byte b3_245
+	+++  NEW FIELD: byte b3_002
+	+++  NEW FIELD: byte b3_123
+	+++  NEW FIELD: byte b3_244
+	+++  NEW FIELD: byte b3_005
+	+++  NEW FIELD: byte b3_126
+	+++  NEW FIELD: byte b3_247
+	+++  NEW FIELD: byte b3_004
+	+++  NEW FIELD: byte b3_125
+	+++  NEW FIELD: byte b3_246
+	+++  NEW FIELD: byte b3_120
+	+++  NEW FIELD: byte b3_241
+	+++  NEW FIELD: byte b3_240
+	+++  NEW FIELD: byte b3_001
+	+++  NEW FIELD: byte b3_122
+	+++  NEW FIELD: byte b3_243
+	+++  NEW FIELD: byte b3_000
+	+++  NEW FIELD: byte b3_121
+	+++  NEW FIELD: byte b3_242
+	+++  NEW FIELD: byte b3_007
+	+++  NEW FIELD: byte b3_128
+	+++  NEW FIELD: byte b3_249
+	+++  NEW FIELD: byte b3_006
+	+++  NEW FIELD: byte b3_127
+	+++  NEW FIELD: byte b3_248
+	+++  NEW FIELD: byte b3_009
+	+++  NEW FIELD: byte b3_008
+	+++  NEW FIELD: byte b3_129
+	+++  NEW FIELD: byte b3_160
+	+++  NEW FIELD: byte b3_041
+	+++  NEW FIELD: byte b3_162
+	+++  NEW FIELD: byte b3_040
+	+++  NEW FIELD: byte b3_161
+	+++  NEW FIELD: byte b3_036
+	+++  NEW FIELD: byte b3_157
+	+++  NEW FIELD: byte b3_035
+	+++  NEW FIELD: byte b3_156
+	+++  NEW FIELD: byte b3_038
+	+++  NEW FIELD: byte b3_159
+	+++  NEW FIELD: byte b3_037
+	+++  NEW FIELD: byte b3_158
+	+++  NEW FIELD: byte b3_032
+	+++  NEW FIELD: byte b3_153
+	+++  NEW FIELD: byte b3_031
+	+++  NEW FIELD: byte b3_152
+	+++  NEW FIELD: byte b3_034
+	+++  NEW FIELD: byte b3_155
+	+++  NEW FIELD: byte b3_033
+	+++  NEW FIELD: byte b3_154
+	+++  NEW FIELD: byte b3_039
+	+++  NEW FIELD: byte b3_030
+	+++  NEW FIELD: byte b3_151
+	+++  NEW FIELD: byte b3_150
+	+++  NEW FIELD: byte b3_025
+	+++  NEW FIELD: byte b3_146
+	+++  NEW FIELD: byte b3_024
+	+++  NEW FIELD: byte b3_145
+	+++  NEW FIELD: byte b3_027
+	+++  NEW FIELD: byte b3_148
+	+++  NEW FIELD: byte b3_026
+	+++  NEW FIELD: byte b3_147
+	+++  NEW FIELD: byte b3_021
+	+++  NEW FIELD: byte b3_142
+	+++  NEW FIELD: byte b3_020
+	+++  NEW FIELD: byte b3_141
+	+++  NEW FIELD: byte b3_023
+	+++  NEW FIELD: byte b3_144
+	+++  NEW FIELD: byte b3_022
+	+++  NEW FIELD: byte b3_143
+	+++  NEW FIELD: byte b3_029
+	+++  NEW FIELD: byte b3_028
+	+++  NEW FIELD: byte b3_149
+	+++  NEW FIELD: byte b3_061
+	+++  NEW FIELD: byte b3_182
+	+++  NEW FIELD: byte b3_060
+	+++  NEW FIELD: byte b3_181
+	+++  NEW FIELD: byte b3_063
+	+++  NEW FIELD: byte b3_184
+	+++  NEW FIELD: byte b3_062
+	+++  NEW FIELD: byte b3_183
+	+++  NEW FIELD: byte b3_180
+	+++  NEW FIELD: byte b3_058
+	+++  NEW FIELD: byte b3_179
+	+++  NEW FIELD: byte b3_057
+	+++  NEW FIELD: byte b3_178
+	+++  NEW FIELD: byte b3_059
+	+++  NEW FIELD: byte b3_054
+	+++  NEW FIELD: byte b3_175
+	+++  NEW FIELD: byte b3_053
+	+++  NEW FIELD: byte b3_174
+	+++  NEW FIELD: byte b3_056
+	+++  NEW FIELD: byte b3_177
+	+++  NEW FIELD: byte b3_055
+	+++  NEW FIELD: byte b3_176
+	+++  NEW FIELD: byte b3_050
+	+++  NEW FIELD: byte b3_171
+	+++  NEW FIELD: byte b3_170
+	+++  NEW FIELD: byte b3_052
+	+++  NEW FIELD: byte b3_173
+	+++  NEW FIELD: byte b3_051
+	+++  NEW FIELD: byte b3_172
+	+++  NEW FIELD: byte b3_047
+	+++  NEW FIELD: byte b3_168
+	+++  NEW FIELD: byte b3_046
+	+++  NEW FIELD: byte b3_167
+	+++  NEW FIELD: byte b3_049
+	+++  NEW FIELD: byte b3_048
+	+++  NEW FIELD: byte b3_169
+	+++  NEW FIELD: byte b3_043
+	+++  NEW FIELD: byte b3_164
+	+++  NEW FIELD: byte b3_042
+	+++  NEW FIELD: byte b3_163
+	+++  NEW FIELD: byte b3_045
+	+++  NEW FIELD: byte b3_166
+	+++  NEW FIELD: byte b3_044
+	+++  NEW FIELD: byte b3_165
+	+++  NEW FIELD: byte b3_083
+	+++  NEW FIELD: byte b3_082
+	+++  NEW FIELD: byte b3_085
+	+++  NEW FIELD: byte b3_084
+	+++  NEW FIELD: byte b3_081
+	+++  NEW FIELD: byte b3_080
+	+++  NEW FIELD: byte b3_079
+	+++  NEW FIELD: byte b3_076
+	+++  NEW FIELD: byte b3_197
+	+++  NEW FIELD: byte b3_075
+	+++  NEW FIELD: byte b3_196
+	+++  NEW FIELD: byte b3_078
+	+++  NEW FIELD: byte b3_199
+	+++  NEW FIELD: byte b3_077
+	+++  NEW FIELD: byte b3_198
+	+++  NEW FIELD: byte b3_072
+	+++  NEW FIELD: byte b3_193
+	+++  NEW FIELD: byte b3_071
+	+++  NEW FIELD: byte b3_192
+	+++  NEW FIELD: byte b3_074
+	+++  NEW FIELD: byte b3_195
+	+++  NEW FIELD: byte b3_073
+	+++  NEW FIELD: byte b3_194
+	+++  NEW FIELD: byte b3_070
+	+++  NEW FIELD: byte b3_191
+	+++  NEW FIELD: byte b3_190
+	+++  NEW FIELD: byte b3_069
+	+++  NEW FIELD: byte b3_068
+	+++  NEW FIELD: byte b3_189
+	+++  NEW FIELD: byte b3_065
+	+++  NEW FIELD: byte b3_186
+	+++  NEW FIELD: byte b3_064
+	+++  NEW FIELD: byte b3_185
+	+++  NEW FIELD: byte b3_067
+	+++  NEW FIELD: byte b3_188
+	+++  NEW FIELD: byte b3_066
+	+++  NEW FIELD: byte b3_187
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy_jmhType_B3()
++++  NEW CLASS: PUBLIC(+) FINAL(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_sequentialCombineGroupBy_jmhTest  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: byte p160
+	+++  NEW FIELD: byte p043
+	+++  NEW FIELD: byte p164
+	+++  NEW FIELD: byte p042
+	+++  NEW FIELD: byte p163
+	+++  NEW FIELD: byte p041
+	+++  NEW FIELD: byte p162
+	+++  NEW FIELD: byte p040
+	+++  NEW FIELD: byte p161
+	+++  NEW FIELD: byte p036
+	+++  NEW FIELD: byte p157
+	+++  NEW FIELD: byte p035
+	+++  NEW FIELD: byte p156
+	+++  NEW FIELD: byte p034
+	+++  NEW FIELD: byte p155
+	+++  NEW FIELD: byte p033
+	+++  NEW FIELD: byte p154
+	+++  NEW FIELD: byte p039
+	+++  NEW FIELD: byte p038
+	+++  NEW FIELD: byte p159
+	+++  NEW FIELD: byte p037
+	+++  NEW FIELD: byte p158
+	+++  NEW FIELD: byte p032
+	+++  NEW FIELD: byte p153
+	+++  NEW FIELD: byte p031
+	+++  NEW FIELD: byte p152
+	+++  NEW FIELD: byte p030
+	+++  NEW FIELD: byte p151
+	+++  NEW FIELD: byte p150
+	+++  NEW FIELD: int startRndMask
+	+++  NEW FIELD: byte p025
+	+++  NEW FIELD: byte p146
+	+++  NEW FIELD: byte p024
+	+++  NEW FIELD: byte p145
+	+++  NEW FIELD: byte p023
+	+++  NEW FIELD: byte p144
+	+++  NEW FIELD: byte p022
+	+++  NEW FIELD: byte p143
+	+++  NEW FIELD: byte p029
+	+++  NEW FIELD: byte p028
+	+++  NEW FIELD: byte p149
+	+++  NEW FIELD: byte p027
+	+++  NEW FIELD: byte p148
+	+++  NEW FIELD: byte p026
+	+++  NEW FIELD: byte p147
+	+++  NEW FIELD: byte p061
+	+++  NEW FIELD: byte p182
+	+++  NEW FIELD: byte p060
+	+++  NEW FIELD: byte p181
+	+++  NEW FIELD: byte p180
+	+++  NEW FIELD: byte p065
+	+++  NEW FIELD: byte p186
+	+++  NEW FIELD: byte p064
+	+++  NEW FIELD: byte p185
+	+++  NEW FIELD: org.openjdk.jmh.infra.Blackhole blackhole
+	+++  NEW FIELD: byte p063
+	+++  NEW FIELD: byte p184
+	+++  NEW FIELD: byte p062
+	+++  NEW FIELD: byte p183
+	+++  NEW FIELD: byte p058
+	+++  NEW FIELD: byte p179
+	+++  NEW FIELD: byte p057
+	+++  NEW FIELD: byte p178
+	+++  NEW FIELD: byte p056
+	+++  NEW FIELD: byte p177
+	+++  NEW FIELD: byte p055
+	+++  NEW FIELD: byte p176
+	+++  NEW FIELD: byte p059
+	+++  NEW FIELD: byte p050
+	+++  NEW FIELD: byte p171
+	+++  NEW FIELD: byte p170
+	+++  NEW FIELD: byte p054
+	+++  NEW FIELD: byte p175
+	+++  NEW FIELD: byte p053
+	+++  NEW FIELD: byte p174
+	+++  NEW FIELD: byte p052
+	+++  NEW FIELD: byte p173
+	+++  NEW FIELD: byte p051
+	+++  NEW FIELD: byte p172
+	+++  NEW FIELD: byte p047
+	+++  NEW FIELD: byte p168
+	+++  NEW FIELD: byte p046
+	+++  NEW FIELD: byte p167
+	+++  NEW FIELD: byte p045
+	+++  NEW FIELD: byte p166
+	+++  NEW FIELD: byte p044
+	+++  NEW FIELD: byte p165
+	+++  NEW FIELD: byte p049
+	+++  NEW FIELD: byte p048
+	+++  NEW FIELD: byte p169
+	+++  NEW FIELD: byte p083
+	+++  NEW FIELD: byte p082
+	+++  NEW FIELD: byte p081
+	+++  NEW FIELD: byte p080
+	+++  NEW FIELD: byte p087
+	+++  NEW FIELD: byte p086
+	+++  NEW FIELD: byte p085
+	+++  NEW FIELD: byte p084
+	+++  NEW FIELD: byte p079
+	+++  NEW FIELD: byte p078
+	+++  NEW FIELD: byte p199
+	+++  NEW FIELD: byte p077
+	+++  NEW FIELD: byte p198
+	+++  NEW FIELD: byte p072
+	+++  NEW FIELD: byte p193
+	+++  NEW FIELD: byte p071
+	+++  NEW FIELD: byte p192
+	+++  NEW FIELD: byte p070
+	+++  NEW FIELD: byte p191
+	+++  NEW FIELD: byte p190
+	+++  NEW FIELD: byte p076
+	+++  NEW FIELD: byte p197
+	+++  NEW FIELD: byte p075
+	+++  NEW FIELD: byte p196
+	+++  NEW FIELD: byte p074
+	+++  NEW FIELD: byte p195
+	+++  NEW FIELD: byte p073
+	+++  NEW FIELD: byte p194
+	+++  NEW FIELD: byte p069
+	+++  NEW FIELD: byte p068
+	+++  NEW FIELD: byte p189
+	+++  NEW FIELD: byte p067
+	+++  NEW FIELD: byte p188
+	+++  NEW FIELD: byte p066
+	+++  NEW FIELD: byte p187
+	+++  NEW FIELD: byte p099
+	+++  NEW FIELD: byte p090
+	+++  NEW FIELD: byte p094
+	+++  NEW FIELD: byte p093
+	+++  NEW FIELD: byte p092
+	+++  NEW FIELD: byte p091
+	+++  NEW FIELD: byte p098
+	+++  NEW FIELD: byte p097
+	+++  NEW FIELD: byte p096
+	+++  NEW FIELD: byte p095
+	+++  NEW FIELD: byte p089
+	+++  NEW FIELD: byte p088
+	+++  NEW FIELD: org.openjdk.jmh.infra.IterationParams iterationParams
+	+++  NEW FIELD: byte p212
+	+++  NEW FIELD: byte p211
+	+++  NEW FIELD: byte p210
+	+++  NEW FIELD: byte p216
+	+++  NEW FIELD: byte p215
+	+++  NEW FIELD: byte p214
+	+++  NEW FIELD: byte p213
+	+++  NEW FIELD: byte p219
+	+++  NEW FIELD: byte p218
+	+++  NEW FIELD: byte p217
+	+++  NEW FIELD: org.openjdk.jmh.infra.ThreadParams threadParams
+	+++  NEW FIELD: org.openjdk.jmh.infra.Control notifyControl
+	+++  NEW FIELD: byte p201
+	+++  NEW FIELD: byte p200
+	+++  NEW FIELD: byte p205
+	+++  NEW FIELD: byte p204
+	+++  NEW FIELD: byte p203
+	+++  NEW FIELD: byte p202
+	+++  NEW FIELD: byte p209
+	+++  NEW FIELD: byte p208
+	+++  NEW FIELD: byte p207
+	+++  NEW FIELD: byte p206
+	+++  NEW FIELD: byte p120
+	+++  NEW FIELD: byte p241
+	+++  NEW FIELD: byte p240
+	+++  NEW FIELD: byte p113
+	+++  NEW FIELD: byte p234
+	+++  NEW FIELD: byte p112
+	+++  NEW FIELD: byte p233
+	+++  NEW FIELD: byte p111
+	+++  NEW FIELD: byte p232
+	+++  NEW FIELD: STATIC(+) VOLATILE(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType f_benchmarkpairwisecombineorderbygroupby0_G
+	+++  NEW FIELD: byte p110
+	+++  NEW FIELD: byte p231
+	+++  NEW FIELD: byte p117
+	+++  NEW FIELD: byte p238
+	+++  NEW FIELD: byte p116
+	+++  NEW FIELD: byte p237
+	+++  NEW FIELD: byte p115
+	+++  NEW FIELD: byte p236
+	+++  NEW FIELD: byte p114
+	+++  NEW FIELD: byte p235
+	+++  NEW FIELD: byte p119
+	+++  NEW FIELD: byte p118
+	+++  NEW FIELD: byte p239
+	+++  NEW FIELD: byte p230
+	+++  NEW FIELD: byte p102
+	+++  NEW FIELD: byte p223
+	+++  NEW FIELD: byte p101
+	+++  NEW FIELD: byte p222
+	+++  NEW FIELD: byte p100
+	+++  NEW FIELD: byte p221
+	+++  NEW FIELD: byte p220
+	+++  NEW FIELD: byte p106
+	+++  NEW FIELD: byte p227
+	+++  NEW FIELD: byte p105
+	+++  NEW FIELD: byte p226
+	+++  NEW FIELD: byte p104
+	+++  NEW FIELD: byte p225
+	+++  NEW FIELD: byte p103
+	+++  NEW FIELD: byte p224
+	+++  NEW FIELD: byte p109
+	+++  NEW FIELD: byte p108
+	+++  NEW FIELD: byte p229
+	+++  NEW FIELD: byte p107
+	+++  NEW FIELD: byte p228
+	+++  NEW FIELD: org.openjdk.jmh.infra.BenchmarkParams benchmarkParams
+	+++  NEW FIELD: byte p021
+	+++  NEW FIELD: byte p142
+	+++  NEW FIELD: byte p020
+	+++  NEW FIELD: byte p141
+	+++  NEW FIELD: byte p140
+	+++  NEW FIELD: byte p014
+	+++  NEW FIELD: byte p135
+	+++  NEW FIELD: byte p013
+	+++  NEW FIELD: byte p134
+	+++  NEW FIELD: byte p255
+	+++  NEW FIELD: byte p012
+	+++  NEW FIELD: byte p133
+	+++  NEW FIELD: byte p254
+	+++  NEW FIELD: byte p011
+	+++  NEW FIELD: byte p132
+	+++  NEW FIELD: byte p253
+	+++  NEW FIELD: byte p018
+	+++  NEW FIELD: byte p139
+	+++  NEW FIELD: byte p017
+	+++  NEW FIELD: byte p138
+	+++  NEW FIELD: byte p016
+	+++  NEW FIELD: byte p137
+	+++  NEW FIELD: byte p015
+	+++  NEW FIELD: byte p136
+	+++  NEW FIELD: byte p019
+	+++  NEW FIELD: byte p010
+	+++  NEW FIELD: byte p131
+	+++  NEW FIELD: byte p252
+	+++  NEW FIELD: byte p130
+	+++  NEW FIELD: byte p251
+	+++  NEW FIELD: byte p250
+	+++  NEW FIELD: byte p003
+	+++  NEW FIELD: byte p124
+	+++  NEW FIELD: byte p245
+	+++  NEW FIELD: byte p002
+	+++  NEW FIELD: byte p123
+	+++  NEW FIELD: byte p244
+	+++  NEW FIELD: byte p001
+	+++  NEW FIELD: byte p122
+	+++  NEW FIELD: byte p243
+	+++  NEW FIELD: byte p000
+	+++  NEW FIELD: byte p121
+	+++  NEW FIELD: byte p242
+	+++  NEW FIELD: byte p007
+	+++  NEW FIELD: byte p128
+	+++  NEW FIELD: byte p249
+	+++  NEW FIELD: byte p006
+	+++  NEW FIELD: byte p127
+	+++  NEW FIELD: byte p248
+	+++  NEW FIELD: byte p005
+	+++  NEW FIELD: byte p126
+	+++  NEW FIELD: byte p247
+	+++  NEW FIELD: byte p004
+	+++  NEW FIELD: byte p125
+	+++  NEW FIELD: byte p246
+	+++  NEW FIELD: byte p009
+	+++  NEW FIELD: byte p008
+	+++  NEW FIELD: byte p129
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy_sequentialCombineGroupBy_jmhTest()
+	+++  NEW METHOD: org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType _jmh_tryInit_f_benchmarkpairwisecombineorderbygroupby0_G(org.openjdk.jmh.runner.InfraControl)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sequentialCombineGroupBy_AverageTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sequentialCombineGroupBy_avgt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sequentialCombineGroupBy_sample_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.openjdk.jmh.util.SampleBuffer, int, long, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sequentialCombineGroupBy_SampleTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sequentialCombineGroupBy_SingleShotTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sequentialCombineGroupBy_ss_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sequentialCombineGroupBy_Throughput(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sequentialCombineGroupBy_thrpt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
++++  NEW CLASS: PUBLIC(+) FINAL(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_sortedPairwiseCombineGroupBy_jmhTest  (not serializable)
+	+++  CLASS FILE FORMAT VERSION: 55.0 <- n.a.
+	+++  NEW SUPERCLASS: java.lang.Object
+	+++  NEW FIELD: byte p160
+	+++  NEW FIELD: byte p043
+	+++  NEW FIELD: byte p164
+	+++  NEW FIELD: byte p042
+	+++  NEW FIELD: byte p163
+	+++  NEW FIELD: byte p041
+	+++  NEW FIELD: byte p162
+	+++  NEW FIELD: byte p040
+	+++  NEW FIELD: byte p161
+	+++  NEW FIELD: byte p036
+	+++  NEW FIELD: byte p157
+	+++  NEW FIELD: byte p035
+	+++  NEW FIELD: byte p156
+	+++  NEW FIELD: byte p034
+	+++  NEW FIELD: byte p155
+	+++  NEW FIELD: byte p033
+	+++  NEW FIELD: byte p154
+	+++  NEW FIELD: byte p039
+	+++  NEW FIELD: byte p038
+	+++  NEW FIELD: byte p159
+	+++  NEW FIELD: byte p037
+	+++  NEW FIELD: byte p158
+	+++  NEW FIELD: byte p032
+	+++  NEW FIELD: byte p153
+	+++  NEW FIELD: byte p031
+	+++  NEW FIELD: byte p152
+	+++  NEW FIELD: byte p030
+	+++  NEW FIELD: byte p151
+	+++  NEW FIELD: byte p150
+	+++  NEW FIELD: int startRndMask
+	+++  NEW FIELD: byte p025
+	+++  NEW FIELD: byte p146
+	+++  NEW FIELD: byte p024
+	+++  NEW FIELD: byte p145
+	+++  NEW FIELD: byte p023
+	+++  NEW FIELD: byte p144
+	+++  NEW FIELD: byte p022
+	+++  NEW FIELD: byte p143
+	+++  NEW FIELD: byte p029
+	+++  NEW FIELD: byte p028
+	+++  NEW FIELD: byte p149
+	+++  NEW FIELD: byte p027
+	+++  NEW FIELD: byte p148
+	+++  NEW FIELD: byte p026
+	+++  NEW FIELD: byte p147
+	+++  NEW FIELD: byte p061
+	+++  NEW FIELD: byte p182
+	+++  NEW FIELD: byte p060
+	+++  NEW FIELD: byte p181
+	+++  NEW FIELD: byte p180
+	+++  NEW FIELD: byte p065
+	+++  NEW FIELD: byte p186
+	+++  NEW FIELD: byte p064
+	+++  NEW FIELD: byte p185
+	+++  NEW FIELD: org.openjdk.jmh.infra.Blackhole blackhole
+	+++  NEW FIELD: byte p063
+	+++  NEW FIELD: byte p184
+	+++  NEW FIELD: byte p062
+	+++  NEW FIELD: byte p183
+	+++  NEW FIELD: byte p058
+	+++  NEW FIELD: byte p179
+	+++  NEW FIELD: byte p057
+	+++  NEW FIELD: byte p178
+	+++  NEW FIELD: byte p056
+	+++  NEW FIELD: byte p177
+	+++  NEW FIELD: byte p055
+	+++  NEW FIELD: byte p176
+	+++  NEW FIELD: byte p059
+	+++  NEW FIELD: byte p050
+	+++  NEW FIELD: byte p171
+	+++  NEW FIELD: byte p170
+	+++  NEW FIELD: byte p054
+	+++  NEW FIELD: byte p175
+	+++  NEW FIELD: byte p053
+	+++  NEW FIELD: byte p174
+	+++  NEW FIELD: byte p052
+	+++  NEW FIELD: byte p173
+	+++  NEW FIELD: byte p051
+	+++  NEW FIELD: byte p172
+	+++  NEW FIELD: byte p047
+	+++  NEW FIELD: byte p168
+	+++  NEW FIELD: byte p046
+	+++  NEW FIELD: byte p167
+	+++  NEW FIELD: byte p045
+	+++  NEW FIELD: byte p166
+	+++  NEW FIELD: byte p044
+	+++  NEW FIELD: byte p165
+	+++  NEW FIELD: byte p049
+	+++  NEW FIELD: byte p048
+	+++  NEW FIELD: byte p169
+	+++  NEW FIELD: byte p083
+	+++  NEW FIELD: byte p082
+	+++  NEW FIELD: byte p081
+	+++  NEW FIELD: byte p080
+	+++  NEW FIELD: byte p087
+	+++  NEW FIELD: byte p086
+	+++  NEW FIELD: byte p085
+	+++  NEW FIELD: byte p084
+	+++  NEW FIELD: byte p079
+	+++  NEW FIELD: byte p078
+	+++  NEW FIELD: byte p199
+	+++  NEW FIELD: byte p077
+	+++  NEW FIELD: byte p198
+	+++  NEW FIELD: byte p072
+	+++  NEW FIELD: byte p193
+	+++  NEW FIELD: byte p071
+	+++  NEW FIELD: byte p192
+	+++  NEW FIELD: byte p070
+	+++  NEW FIELD: byte p191
+	+++  NEW FIELD: byte p190
+	+++  NEW FIELD: byte p076
+	+++  NEW FIELD: byte p197
+	+++  NEW FIELD: byte p075
+	+++  NEW FIELD: byte p196
+	+++  NEW FIELD: byte p074
+	+++  NEW FIELD: byte p195
+	+++  NEW FIELD: byte p073
+	+++  NEW FIELD: byte p194
+	+++  NEW FIELD: byte p069
+	+++  NEW FIELD: byte p068
+	+++  NEW FIELD: byte p189
+	+++  NEW FIELD: byte p067
+	+++  NEW FIELD: byte p188
+	+++  NEW FIELD: byte p066
+	+++  NEW FIELD: byte p187
+	+++  NEW FIELD: byte p099
+	+++  NEW FIELD: byte p090
+	+++  NEW FIELD: byte p094
+	+++  NEW FIELD: byte p093
+	+++  NEW FIELD: byte p092
+	+++  NEW FIELD: byte p091
+	+++  NEW FIELD: byte p098
+	+++  NEW FIELD: byte p097
+	+++  NEW FIELD: byte p096
+	+++  NEW FIELD: byte p095
+	+++  NEW FIELD: byte p089
+	+++  NEW FIELD: byte p088
+	+++  NEW FIELD: org.openjdk.jmh.infra.IterationParams iterationParams
+	+++  NEW FIELD: byte p212
+	+++  NEW FIELD: byte p211
+	+++  NEW FIELD: byte p210
+	+++  NEW FIELD: byte p216
+	+++  NEW FIELD: byte p215
+	+++  NEW FIELD: byte p214
+	+++  NEW FIELD: byte p213
+	+++  NEW FIELD: byte p219
+	+++  NEW FIELD: byte p218
+	+++  NEW FIELD: byte p217
+	+++  NEW FIELD: org.openjdk.jmh.infra.ThreadParams threadParams
+	+++  NEW FIELD: org.openjdk.jmh.infra.Control notifyControl
+	+++  NEW FIELD: byte p201
+	+++  NEW FIELD: byte p200
+	+++  NEW FIELD: byte p205
+	+++  NEW FIELD: byte p204
+	+++  NEW FIELD: byte p203
+	+++  NEW FIELD: byte p202
+	+++  NEW FIELD: byte p209
+	+++  NEW FIELD: byte p208
+	+++  NEW FIELD: byte p207
+	+++  NEW FIELD: byte p206
+	+++  NEW FIELD: byte p120
+	+++  NEW FIELD: byte p241
+	+++  NEW FIELD: byte p240
+	+++  NEW FIELD: byte p113
+	+++  NEW FIELD: byte p234
+	+++  NEW FIELD: byte p112
+	+++  NEW FIELD: byte p233
+	+++  NEW FIELD: byte p111
+	+++  NEW FIELD: byte p232
+	+++  NEW FIELD: STATIC(+) VOLATILE(+) org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType f_benchmarkpairwisecombineorderbygroupby0_G
+	+++  NEW FIELD: byte p110
+	+++  NEW FIELD: byte p231
+	+++  NEW FIELD: byte p117
+	+++  NEW FIELD: byte p238
+	+++  NEW FIELD: byte p116
+	+++  NEW FIELD: byte p237
+	+++  NEW FIELD: byte p115
+	+++  NEW FIELD: byte p236
+	+++  NEW FIELD: byte p114
+	+++  NEW FIELD: byte p235
+	+++  NEW FIELD: byte p119
+	+++  NEW FIELD: byte p118
+	+++  NEW FIELD: byte p239
+	+++  NEW FIELD: byte p230
+	+++  NEW FIELD: byte p102
+	+++  NEW FIELD: byte p223
+	+++  NEW FIELD: byte p101
+	+++  NEW FIELD: byte p222
+	+++  NEW FIELD: byte p100
+	+++  NEW FIELD: byte p221
+	+++  NEW FIELD: byte p220
+	+++  NEW FIELD: byte p106
+	+++  NEW FIELD: byte p227
+	+++  NEW FIELD: byte p105
+	+++  NEW FIELD: byte p226
+	+++  NEW FIELD: byte p104
+	+++  NEW FIELD: byte p225
+	+++  NEW FIELD: byte p103
+	+++  NEW FIELD: byte p224
+	+++  NEW FIELD: byte p109
+	+++  NEW FIELD: byte p108
+	+++  NEW FIELD: byte p229
+	+++  NEW FIELD: byte p107
+	+++  NEW FIELD: byte p228
+	+++  NEW FIELD: org.openjdk.jmh.infra.BenchmarkParams benchmarkParams
+	+++  NEW FIELD: byte p021
+	+++  NEW FIELD: byte p142
+	+++  NEW FIELD: byte p020
+	+++  NEW FIELD: byte p141
+	+++  NEW FIELD: byte p140
+	+++  NEW FIELD: byte p014
+	+++  NEW FIELD: byte p135
+	+++  NEW FIELD: byte p013
+	+++  NEW FIELD: byte p134
+	+++  NEW FIELD: byte p255
+	+++  NEW FIELD: byte p012
+	+++  NEW FIELD: byte p133
+	+++  NEW FIELD: byte p254
+	+++  NEW FIELD: byte p011
+	+++  NEW FIELD: byte p132
+	+++  NEW FIELD: byte p253
+	+++  NEW FIELD: byte p018
+	+++  NEW FIELD: byte p139
+	+++  NEW FIELD: byte p017
+	+++  NEW FIELD: byte p138
+	+++  NEW FIELD: byte p016
+	+++  NEW FIELD: byte p137
+	+++  NEW FIELD: byte p015
+	+++  NEW FIELD: byte p136
+	+++  NEW FIELD: byte p019
+	+++  NEW FIELD: byte p010
+	+++  NEW FIELD: byte p131
+	+++  NEW FIELD: byte p252
+	+++  NEW FIELD: byte p130
+	+++  NEW FIELD: byte p251
+	+++  NEW FIELD: byte p250
+	+++  NEW FIELD: byte p003
+	+++  NEW FIELD: byte p124
+	+++  NEW FIELD: byte p245
+	+++  NEW FIELD: byte p002
+	+++  NEW FIELD: byte p123
+	+++  NEW FIELD: byte p244
+	+++  NEW FIELD: byte p001
+	+++  NEW FIELD: byte p122
+	+++  NEW FIELD: byte p243
+	+++  NEW FIELD: byte p000
+	+++  NEW FIELD: byte p121
+	+++  NEW FIELD: byte p242
+	+++  NEW FIELD: byte p007
+	+++  NEW FIELD: byte p128
+	+++  NEW FIELD: byte p249
+	+++  NEW FIELD: byte p006
+	+++  NEW FIELD: byte p127
+	+++  NEW FIELD: byte p248
+	+++  NEW FIELD: byte p005
+	+++  NEW FIELD: byte p126
+	+++  NEW FIELD: byte p247
+	+++  NEW FIELD: byte p004
+	+++  NEW FIELD: byte p125
+	+++  NEW FIELD: byte p246
+	+++  NEW FIELD: byte p009
+	+++  NEW FIELD: byte p008
+	+++  NEW FIELD: byte p129
+	+++  NEW CONSTRUCTOR: PUBLIC(+) BenchmarkPairwiseCombineOrderByGroupBy_sortedPairwiseCombineGroupBy_jmhTest()
+	+++  NEW METHOD: org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType _jmh_tryInit_f_benchmarkpairwisecombineorderbygroupby0_G(org.openjdk.jmh.runner.InfraControl)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sortedPairwiseCombineGroupBy_AverageTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sortedPairwiseCombineGroupBy_avgt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sortedPairwiseCombineGroupBy_sample_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.openjdk.jmh.util.SampleBuffer, int, long, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sortedPairwiseCombineGroupBy_SampleTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sortedPairwiseCombineGroupBy_SingleShotTime(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sortedPairwiseCombineGroupBy_ss_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) org.openjdk.jmh.results.BenchmarkTaskResult sortedPairwiseCombineGroupBy_Throughput(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.infra.ThreadParams)
+		+++  NEW EXCEPTION: java.lang.Throwable
+	+++  NEW METHOD: PUBLIC(+) STATIC(+) void sortedPairwiseCombineGroupBy_thrpt_jmhStub(org.openjdk.jmh.runner.InfraControl, org.openjdk.jmh.results.RawResults, org.openjdk.jmh.infra.BenchmarkParams, org.openjdk.jmh.infra.IterationParams, org.openjdk.jmh.infra.ThreadParams, org.openjdk.jmh.infra.Blackhole, org.openjdk.jmh.infra.Control, int, org.apache.pinot.perf.jmh_generated.BenchmarkPairwiseCombineOrderByGroupBy_jmhType)
+		+++  NEW EXCEPTION: java.lang.Throwable
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-protobuf-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-protobuf-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-pulsar-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-pulsar-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-query-runtime-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-query-runtime-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-s3-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-s3-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-local-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-local-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-uploader-default-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-segment-writer-file-based-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-server-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-server-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-2-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-3-connector-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spark-common-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spark-common-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+***  MODIFIED CLASS: PUBLIC STATIC org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SORT_AGGREGATE_LIMIT_THRESHOLD
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SORT_AGGREGATE_SINGLE_THREADED_NUM_SEGMENTS_THRESHOLD
+***  MODIFIED CLASS: PUBLIC STATIC org.apache.pinot.spi.utils.CommonConstants$Server  (not serializable)
+	===  CLASS FILE FORMAT VERSION: 55.0 <- 55.0
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_SORT_AGGREGATE_SEQUENTIAL_COMBINE_NUM_SEGMENTS_THRESHOLD
+	+++  NEW FIELD: PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_SORT_AGGREGATE_LIMIT_THRESHOLD
+
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-thrift-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-thrift-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-m3ql-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-planner-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-timeseries-spi-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-tools-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-tools-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-udf-test-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-udf-test-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
+Comparing source compatibility of /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_new/pinot-yammer-1.4.0-SNAPSHOT.jar against /home/runner/work/pinot-pr-reports/pinot-pr-reports/commit_jars_old/pinot-yammer-1.4.0-SNAPSHOT.jar
+WARNING: You are using the option '--ignore-missing-classes', i.e. superclasses and interfaces that could not be found on the classpath are ignored. Hence changes caused by these superclasses and interfaces are not reflected in the output.
+No changes.
