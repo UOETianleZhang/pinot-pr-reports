@@ -1,0 +1,61 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotTableRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/DefaultRebalancePreChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/RebalanceConfig.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/TableRebalancerClusterStatelessTest.java"
+  ],
+  "mergedAt": "2025-08-17T01:39:30Z",
+  "number": 16615,
+  "title": "Add a rebalance option to disable the summary",
+  "url": "https://github.com/apache/pinot/pull/16615",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotTableRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, double, boolean, int, int, int, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceResult rebalance(java.lang.String, java.lang.String, boolean, boolean, boolean, boolean, boolean, org.apache.pinot.spi.utils.Enablement, boolean, boolean, boolean, int, boolean, boolean, int, long, long, long, long, int, long, boolean, double, boolean, int, int, int, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isDisableSummary()",
+        "PUBLIC(+) void setDisableSummary(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _disableSummary"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.TableRebalancer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult calculateDryRunSummary(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.lang.String, org.apache.pinot.controller.util.TableSizeReader$TableSubTypeSizeDetails, org.apache.pinot.spi.config.table.TableConfig, org.slf4j.Logger)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.controller.helix.core.rebalance.RebalanceSummaryResult calculateRebalanceSummary(java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.util.Map<java.lang.String,java.util.Map<java.lang.String,java.lang.String>>, java.lang.String, org.apache.pinot.controller.util.TableSizeReader$TableSubTypeSizeDetails, org.apache.pinot.spi.config.table.TableConfig, org.slf4j.Logger)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
