@@ -1,0 +1,74 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/utils/config/QueryOptionsUtils.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/utils/config/QueryOptionsUtilsTest.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/executor/ServerQueryExecutorV1Impl.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/reduce/BrokerReduceService.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/reduce/StreamingReduceService.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/executor/QueryExecutorExceptionsTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/reduce/BrokerReduceServiceTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/reduce/StreamingReduceServiceTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-18T06:57:54Z",
+  "number": 16556,
+  "title": "Add ignoreMissingSegments query option and broker auto-config",
+  "url": "https://github.com/apache/pinot/pull/16556",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BaseSingleStageBrokerRequestHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void setIgnoreMissingSegmentsIfConfigured(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.utils.config.QueryOptionsUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isIgnoreMissingSegments(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_IGNORE_MISSING_SEGMENTS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_IGNORE_MISSING_SEGMENTS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker$Request$QueryOptionKey",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String IGNORE_MISSING_SEGMENTS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
