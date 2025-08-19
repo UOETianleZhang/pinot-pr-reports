@@ -1,0 +1,191 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/CPUMemThreadLevelAccountingObjects.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/ResourceUsageAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/query/reduce/GroupByDataTableReducer.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/TestResourceAccountant.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/executor/OpChainSchedulerService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/server/QueryServer.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultiStageAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MultistageResourceUsageAccountingTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/QueryRunnerTestBase.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadExecutionContext.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceTracker.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/ThreadResourceUsageAccountant.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/executor/ThrottleOnCriticalHeapUsageExecutorTest.java"
+  ],
+  "mergedAt": "2025-08-19T19:11:11Z",
+  "number": 16633,
+  "title": "Remove TaskType from ThreadExecutionContext",
+  "url": "https://github.com/apache/pinot/pull/16633",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.CPUMemThreadLevelAccountingObjects$TaskEntry",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType getTaskType()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType _taskType"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) CPUMemThreadLevelAccountingObjects$TaskEntry(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.Thread, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) CPUMemThreadLevelAccountingObjects$TaskEntry(java.lang.String, int, java.lang.Thread, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.CPUMemThreadLevelAccountingObjects$ThreadEntry",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType getTaskType()",
+        "PUBLIC(-) void setThreadTaskStatus(java.lang.String, int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.Thread, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void setThreadTaskStatus(java.lang.String, int, java.lang.Thread, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)",
+        "PUBLIC(-) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void setupRunner(java.lang.String, java.lang.String)",
+        "PUBLIC(+) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.ResourceUsageAccountantFactory$ResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)",
+        "PUBLIC(-) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void setupRunner(java.lang.String, java.lang.String)",
+        "PUBLIC(+) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadExecutionContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType getTaskType()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType valueOf(java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType[] values()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType SSE",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType UNKNOWN",
+        "PUBLIC(-) STATIC(-) FINAL(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType MSE"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) ThreadExecutionContext$TaskType(java.lang.String, int)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceTracker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType getTaskType()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)",
+        "PUBLIC(-) ABSTRACT(-) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void setupRunner(java.lang.String, java.lang.String)",
+        "PUBLIC(+) ABSTRACT(+) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$DefaultThreadResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)",
+        "PUBLIC(-) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void setupRunner(java.lang.String, java.lang.String)",
+        "PUBLIC(+) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) void setupRunner(java.lang.String, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, java.lang.String)",
+        "PUBLIC(-) STATIC(-) void setupWorker(int, org.apache.pinot.spi.accounting.ThreadExecutionContext$TaskType, org.apache.pinot.spi.accounting.ThreadExecutionContext)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
