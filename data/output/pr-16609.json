@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-controller/src/main/resources/app/components/TaskStatusFilter.tsx",
+    "pinot-controller/src/main/resources/app/pages/TaskDetail.tsx"
+  ],
+  "mergedAt": "2025-08-19T17:40:53Z",
+  "number": 16609,
+  "title": "Add TASK_ERROR to subtask status filter",
+  "url": "https://github.com/apache/pinot/pull/16609",
+  "jcmpClasses": []
+}
