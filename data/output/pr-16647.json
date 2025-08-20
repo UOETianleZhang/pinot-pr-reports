@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java"
+  ],
+  "mergedAt": "2025-08-20T20:48:44Z",
+  "number": 16647,
+  "title": "Improve OOM log about entering CPU/normal mode",
+  "url": "https://github.com/apache/pinot/pull/16647",
+  "jcmpClasses": []
+}
