@@ -1,0 +1,224 @@
+{
+  "files": [
+    "pinot-common/pom.xml",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfig.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfigManager.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditEvent.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditLogFilter.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditLogger.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditRequestProcessor.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditRequestProcessorTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/ControllerAdminApiApplication.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-tools/src/main/resources/conf/log4j2.xml",
+    "pinot-tools/src/main/resources/log4j2.xml"
+  ],
+  "mergedAt": "2025-08-20T18:29:45Z",
+  "number": 16616,
+  "title": "Add initial configs, classes and stubs for audit logging support. Disabled by default",
+  "url": "https://github.com/apache/pinot/pull/16616",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getExcludedEndpoints()",
+        "PUBLIC(+) int getMaxPayloadSize()",
+        "PUBLIC(+) boolean isCaptureRequestHeaders()",
+        "PUBLIC(+) boolean isCaptureRequestPayload()",
+        "PUBLIC(+) boolean isEnabled()",
+        "PUBLIC(+) void setCaptureRequestHeaders(boolean)",
+        "PUBLIC(+) void setCaptureRequestPayload(boolean)",
+        "PUBLIC(+) void setEnabled(boolean)",
+        "PUBLIC(+) void setExcludedEndpoints(java.lang.String)",
+        "PUBLIC(+) void setMaxPayloadSize(int)",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _captureRequestPayload",
+        "PRIVATE(+) int _maxPayloadSize",
+        "PRIVATE(+) java.lang.String _excludedEndpoints",
+        "PRIVATE(+) boolean _captureRequestHeaders",
+        "PRIVATE(+) boolean _enabled"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditConfig()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfigManager",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditConfig getCurrentConfig()",
+        "PUBLIC(+) boolean isEnabled()",
+        "PUBLIC(+) STATIC(+) boolean isEndpointExcluded(java.lang.String, java.lang.String)",
+        "PUBLIC(+) boolean isEndpointExcluded(java.lang.String)",
+        "PRIVATE(+) STATIC(+) boolean matchesWildcard(java.lang.String, java.lang.String)",
+        "PRIVATE(+) STATIC(+) java.util.Set<java.lang.String> parseExcludedEndpoints(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.audit.AuditConfig _currentConfig",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOG"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditConfigManager()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditEvent",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getEndpoint()",
+        "PUBLIC(+) java.lang.String getMethod()",
+        "PUBLIC(+) java.lang.String getOriginIpAddress()",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload getRequest()",
+        "PUBLIC(+) java.lang.String getServiceId()",
+        "PUBLIC(+) java.lang.String getTimestamp()",
+        "PUBLIC(+) java.lang.String getUserId()",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setEndpoint(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setMethod(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setOriginIpAddress(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setRequest(org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setServiceId(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setTimestamp(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setUserId(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String _method",
+        "PRIVATE(+) java.lang.String _endpoint",
+        "PRIVATE(+) java.lang.String _originIpAddress",
+        "PRIVATE(+) java.lang.String _serviceId",
+        "PRIVATE(+) java.lang.String _timestamp",
+        "PRIVATE(+) java.lang.String _userId",
+        "PRIVATE(+) org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload _request"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditEvent()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getBody()",
+        "PUBLIC(+) java.lang.String getError()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.Object> getHeaders()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.Object> getQueryParameters()",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload setBody(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload setError(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload setHeaders(java.util.Map<java.lang.String,java.lang.Object>)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload setQueryParameters(java.util.Map<java.lang.String,java.lang.Object>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.Map<java.lang.String,java.lang.Object> _headers",
+        "PRIVATE(+) java.util.Map<java.lang.String,java.lang.Object> _queryParameters",
+        "PRIVATE(+) java.lang.String _error",
+        "PRIVATE(+) java.lang.String _body"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditEvent$AuditRequestPayload()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditLogFilter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void filter(javax.ws.rs.container.ContainerRequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "javax.inject.Provider<org.glassfish.grizzly.http.server.Request> _requestProvider",
+        "PRIVATE(+) org.apache.pinot.common.audit.AuditRequestProcessor _auditRequestProcessor"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditLogFilter()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditLogger",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void auditLog(org.apache.pinot.common.audit.AuditEvent)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String PINOT_AUDIT_LOGGER_NAME",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOG",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger AUDIT_LOGGER",
+        "PRIVATE(+) STATIC(+) FINAL(+) com.fasterxml.jackson.databind.ObjectMapper OBJECT_MAPPER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) AuditLogger()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditRequestProcessor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.common.audit.AuditEvent$AuditRequestPayload captureRequestPayload(javax.ws.rs.container.ContainerRequestContext)",
+        "PRIVATE(+) java.lang.String extractClientIpAddress(javax.ws.rs.container.ContainerRequestContext, java.lang.String)",
+        "PRIVATE(+) java.lang.String extractServiceId(javax.ws.rs.container.ContainerRequestContext)",
+        "PRIVATE(+) java.lang.String extractUserId(javax.ws.rs.container.ContainerRequestContext)",
+        "PUBLIC(+) boolean isEnabled()",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent processRequest(javax.ws.rs.container.ContainerRequestContext, java.lang.String)",
+        "PRIVATE(+) java.lang.String readRequestBody(javax.ws.rs.container.ContainerRequestContext, int)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,java.lang.Object> toMap(javax.ws.rs.core.MultivaluedMap<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOG",
+        "PRIVATE(+) org.apache.pinot.common.audit.AuditConfigManager _configManager"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditRequestProcessor()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$AuditLogConstants",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_AUDIT_LOG_CAPTURE_REQUEST_PAYLOAD",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PREFIX",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_AUDIT_LOG_CAPTURE_REQUEST_HEADERS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_AUDIT_LOG_EXCLUDED_ENDPOINTS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_AUDIT_LOG_ENABLED",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_AUDIT_LOG_MAX_PAYLOAD_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_AUDIT_LOG_LOGGER_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CommonConstants$AuditLogConstants()"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/PerQueryCPUMemAccountantFactory.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/QueryAggregator.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/accounting/TestResourceAccountant.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterMemBasedBrokerQueryKillingTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterMemBasedServerQueryKillingTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterServerCPUTimeQueryKillingTest.java"
+  ],
+  "mergedAt": "2025-08-20T18:26:50Z",
+  "number": 16642,
+  "title": "Reduce log verbosity for PerQueryCPUMemResourceUsageAccountant",
+  "url": "https://github.com/apache/pinot/pull/16642",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PROTECTED(-) PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant(org.apache.pinot.spi.env.PinotConfiguration, boolean, boolean, boolean, java.util.Set<java.lang.String>, java.lang.String, org.apache.pinot.spi.config.instance.InstanceType)"
+      ],
+      "addedConstructors": [
+        "PROTECTED(+) PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant(org.apache.pinot.spi.env.PinotConfiguration, boolean, boolean, java.util.Set<java.lang.String>, java.lang.String, org.apache.pinot.spi.config.instance.InstanceType)"
+      ]
+    },
+    {
+      "className": "PROTECTED",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.accounting.PerQueryCPUMemAccountantFactory$PerQueryCPUMemResourceUsageAccountant$WatcherTask",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) boolean outOfMemoryPanicTrigger()",
+        "void reschedule()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
