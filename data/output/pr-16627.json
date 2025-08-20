@@ -1,0 +1,31 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/WorkerExchangeAssignmentRule.java",
+    "pinot-query-runtime/src/test/resources/queries/SetOpsH2.json",
+    "pinot-query-runtime/src/test/resources/queries/SetOpsNonH2.json"
+  ],
+  "mergedAt": "2025-08-20T02:38:35Z",
+  "number": 16627,
+  "title": "[multistage] Fix Bug in Physical Optimizer for SetOp Heterogenous Dists",
+  "url": "https://github.com/apache/pinot/pull/16627",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.planner.physical.v2.opt.rules.WorkerExchangeAssignmentRule",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "org.apache.pinot.query.planner.physical.v2.PRelNode processCurrentNode(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNode)"
+      ],
+      "addedMethods": [
+        "org.apache.pinot.query.planner.physical.v2.PRelNode inheritDistDescFromInputsForJoin(org.apache.pinot.query.planner.physical.v2.PRelNode)",
+        "org.apache.pinot.query.planner.physical.v2.PRelNode inheritDistDescFromInputsForSetOp(org.apache.pinot.query.planner.physical.v2.PRelNode)",
+        "org.apache.pinot.query.planner.physical.v2.PRelNode meetCurrentNodeConstraints(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNode)",
+        "org.apache.pinot.query.planner.physical.v2.PRelNode processCurrentNode(org.apache.pinot.query.planner.physical.v2.PRelNode, org.apache.pinot.query.planner.physical.v2.PRelNode, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
