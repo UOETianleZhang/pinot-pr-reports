@@ -1,0 +1,56 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/recordtransformer/ComplexTypeTransformer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/TransformPipeline.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/creator/TransformPipelineTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/recordtransformer/RecordTransformer.java"
+  ],
+  "mergedAt": "2025-08-20T00:26:57Z",
+  "number": 16624,
+  "title": "Keep value of necessary columns only in ComplexTypeTranformer",
+  "url": "https://github.com/apache/pinot/pull/16624",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.recordtransformer.ComplexTypeTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String renamePrefix(java.lang.String)",
+        "PUBLIC(+) void withInputColumnsForDownstreamTransformers(java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _fieldsToUnnestAndKeepOriginalValue"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.TransformPipeline",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _inputColumns"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.recordtransformer.RecordTransformer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void withInputColumnsForDownstreamTransformers(java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
