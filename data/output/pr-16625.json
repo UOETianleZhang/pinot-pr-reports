@@ -1,0 +1,68 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/executor/OpChainSchedulerService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/pipeline/PipelineBreakerExecutor.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/executor/OpChainSchedulerServiceTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-20T23:35:35Z",
+  "number": 16625,
+  "title": "Fix query cancellation on op-chain not scheduled",
+  "url": "https://github.com/apache/pinot/pull/16625",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.executor.OpChainSchedulerService",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.util.concurrent.locks.ReadWriteLock getQueryLock(long)",
+        "PRIVATE(+) void registerInternal(org.apache.pinot.query.runtime.operator.OpChain)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) com.google.common.cache.Cache<java.lang.Long,java.lang.Boolean> _cancelledQueryCache",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.locks.ReadWriteLock[] _queryLocks",
+        "PRIVATE(+) STATIC(+) FINAL(+) int NUM_QUERY_LOCKS",
+        "PRIVATE(+) STATIC(+) FINAL(+) int QUERY_LOCK_MASK"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) OpChainSchedulerService(java.util.concurrent.ExecutorService, int, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) OpChainSchedulerService(java.util.concurrent.ExecutorService, int, long, int, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.executor.OpChainSchedulerService$1",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "OpChainSchedulerService$1(org.apache.pinot.query.runtime.executor.OpChainSchedulerService, org.apache.pinot.query.runtime.operator.OpChain)"
+      ],
+      "addedConstructors": [
+        "OpChainSchedulerService$1(org.apache.pinot.query.runtime.executor.OpChainSchedulerService, org.apache.pinot.query.runtime.operator.OpChain, org.apache.pinot.query.runtime.operator.OpChainId)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$MultiStageQueryRunner",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_OF_CANCELLED_QUERY_CACHE_EXPIRE_MS",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_OF_CANCELLED_QUERY_CACHE_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String KEY_OF_CANCELLED_QUERY_CACHE_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String KEY_OF_CANCELLED_QUERY_CACHE_EXPIRE_MS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
