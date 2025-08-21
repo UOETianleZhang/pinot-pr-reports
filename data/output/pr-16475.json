@@ -1,0 +1,139 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/access/AuthorizationInterceptor.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/access/QueryAccessControl.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/access/QueryAccessControlFactory.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/MailboxService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/channel/GrpcMailboxServer.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/server/QueryServer.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/service/server/QueryServerAuthzTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-21T07:38:15Z",
+  "number": 16475,
+  "title": "Propose MSE Grpc Channel Authorization",
+  "url": "https://github.com/apache/pinot/pull/16475",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.access.AuthorizationInterceptor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) io.grpc.ServerCall$Listener<T> interceptCall(io.grpc.ServerCall<T,R>, io.grpc.Metadata, io.grpc.ServerCallHandler<T,R>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.access.QueryAccessControlFactory _accessControlFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuthorizationInterceptor(org.apache.pinot.query.access.QueryAccessControlFactory)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.access.AuthorizationInterceptor$1",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "AuthorizationInterceptor$1(org.apache.pinot.query.access.AuthorizationInterceptor)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.access.QueryAccessControl",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean hasAccess(io.grpc.Attributes, io.grpc.Metadata)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.access.QueryAccessControlFactory",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) org.apache.pinot.query.access.QueryAccessControl create()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.query.access.QueryAccessControlFactory fromConfig(org.apache.pinot.spi.env.PinotConfiguration)",
+        "PROTECTED(+) void init(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) QueryAccessControlFactory()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.channel.GrpcMailboxServer",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) GrpcMailboxServer(org.apache.pinot.query.mailbox.MailboxService, org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.common.config.TlsConfig)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) GrpcMailboxServer(org.apache.pinot.query.mailbox.MailboxService, org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.query.access.QueryAccessControlFactory)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.MailboxService",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.access.QueryAccessControlFactory _accessControlFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) MailboxService(java.lang.String, int, org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.query.access.QueryAccessControlFactory)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.service.server.QueryServer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.query.access.QueryAccessControlFactory _accessControlFactory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) QueryServer(java.lang.String, int, org.apache.pinot.query.runtime.QueryRunner, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.spi.env.PinotConfiguration, org.apache.pinot.query.access.QueryAccessControlFactory)",
+        "PUBLIC(+) QueryServer(int, org.apache.pinot.query.runtime.QueryRunner, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.query.access.QueryAccessControlFactory)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Helix",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_MULTI_STAGE_CHANNEL_ACCESS_CONTROL_FACTORY_CLASS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
