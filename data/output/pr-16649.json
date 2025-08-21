@@ -1,0 +1,55 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfig.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfigManager.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditLogger.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditRequestProcessor.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditConfigManagerTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java"
+  ],
+  "mergedAt": "2025-08-21T21:05:51Z",
+  "number": 16649,
+  "title": "[audit] Add audit logging configuration support with cluster config listener",
+  "url": "https://github.com/apache/pinot/pull/16649",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfigManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "STATIC(+) org.apache.pinot.common.audit.AuditConfig buildFromClusterConfig(org.apache.helix.model.ClusterConfig)",
+        "PRIVATE(+) STATIC(+) java.lang.Object mapPrefixedConfigToObject(java.util.Map<java.lang.String,java.lang.String>, java.lang.String, java.lang.Class<T>)",
+        "PUBLIC(+) void onClusterConfigChange(org.apache.helix.model.ClusterConfig, org.apache.helix.NotificationContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditLogger",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.BaseControllerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) org.apache.pinot.common.audit.AuditConfigManager _auditConfigManager"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
