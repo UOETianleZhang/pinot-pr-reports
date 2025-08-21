@@ -1,0 +1,13 @@
+{
+  "files": [
+    "LICENSE-binary",
+    "licenses-binary/LICENSE-isc.txt",
+    "licenses-binary/LICENSE-lgpl-2.1.txt",
+    "licenses-binary/LICENSE-mit-0.txt"
+  ],
+  "mergedAt": "2025-08-20T23:32:34Z",
+  "number": 16648,
+  "title": "[release-1.4.0] Updating LICENSE-binary file",
+  "url": "https://github.com/apache/pinot/pull/16648",
+  "jcmpClasses": []
+}
