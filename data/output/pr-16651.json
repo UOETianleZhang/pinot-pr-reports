@@ -1,0 +1,41 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/LeafOperator.java"
+  ],
+  "mergedAt": "2025-08-22T18:10:40Z",
+  "number": 16651,
+  "title": "Fix LeafOperator thread accountant",
+  "url": "https://github.com/apache/pinot/pull/16651",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void executeOneRequest(org.apache.pinot.core.query.request.ServerQueryRequest, java.lang.Runnable)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.query.executor.ResultsBlockStreamer _resultsBlockStreamer"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.LeafOperator$ResultsBlockConsumer",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void send(org.apache.pinot.core.operator.blocks.results.BaseResultsBlock)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) LeafOperator$ResultsBlockConsumer(org.apache.pinot.query.runtime.operator.LeafOperator)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}

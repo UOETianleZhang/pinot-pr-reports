@@ -1,0 +1,129 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BaseBrokerStarter.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestIdGenerator.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/GrpcBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/SingleConnectionBrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/requesthandler/BaseSingleStageBrokerRequestHandlerTest.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/requesthandler/LiteralOnlyBrokerRequestTest.java"
+  ],
+  "mergedAt": "2025-08-22T18:06:10Z",
+  "number": 16661,
+  "title": "Fix broker request id generator to avoid generating same id",
+  "url": "https://github.com/apache/pinot/pull/16661",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BaseBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BaseBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BaseBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.broker.requesthandler.BrokerRequestIdGenerator, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BaseSingleStageBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BaseSingleStageBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BaseSingleStageBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.broker.requesthandler.BrokerRequestIdGenerator, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestIdGenerator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) long _mask"
+      ],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _base"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) BrokerRequestIdGenerator(java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BrokerRequestIdGenerator()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.GrpcBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) GrpcBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.common.failuredetector.FailureDetector, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) GrpcBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.broker.requesthandler.BrokerRequestIdGenerator, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.common.failuredetector.FailureDetector, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.MultiStageBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MultiStageBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.broker.requesthandler.MultiStageQueryThrottler, org.apache.pinot.common.failuredetector.FailureDetector, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) MultiStageBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.broker.requesthandler.BrokerRequestIdGenerator, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.broker.requesthandler.MultiStageQueryThrottler, org.apache.pinot.common.failuredetector.FailureDetector, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.SingleConnectionBrokerRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) SingleConnectionBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.common.config.NettyConfig, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.core.transport.server.routing.stats.ServerRoutingStatsManager, org.apache.pinot.common.failuredetector.FailureDetector, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) SingleConnectionBrokerRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.broker.requesthandler.BrokerRequestIdGenerator, org.apache.pinot.core.routing.RoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.common.config.NettyConfig, org.apache.pinot.common.config.TlsConfig, org.apache.pinot.core.transport.server.routing.stats.ServerRoutingStatsManager, org.apache.pinot.common.failuredetector.FailureDetector, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.TimeSeriesRequestHandler",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TimeSeriesRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.broker.routing.BrokerRoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.query.service.dispatch.QueryDispatcher, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) TimeSeriesRequestHandler(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.broker.requesthandler.BrokerRequestIdGenerator, org.apache.pinot.broker.routing.BrokerRoutingManager, org.apache.pinot.broker.broker.AccessControlFactory, org.apache.pinot.broker.queryquota.QueryQuotaManager, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.query.service.dispatch.QueryDispatcher, org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant)"
+      ]
+    }
+  ]
+}
