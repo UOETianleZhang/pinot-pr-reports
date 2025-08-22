@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/physical/v2/opt/rules/LeafStageWorkerAssignmentRule.java"
+  ],
+  "mergedAt": "2025-08-22T16:26:18Z",
+  "number": 16660,
+  "title": "[bugfix] Fixing the TableType value passed for unavailable segments in physical optimizer",
+  "url": "https://github.com/apache/pinot/pull/16660",
+  "jcmpClasses": []
+}
