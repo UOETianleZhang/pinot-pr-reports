@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/SegmentColumnarIndexCreator.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/ColumnMetadataTest.java"
+  ],
+  "mergedAt": "2025-08-22T05:11:13Z",
+  "number": 16462,
+  "title": "Gracefully handle bad segment time data during ingestion if continueOnError is true",
+  "url": "https://github.com/apache/pinot/pull/16462",
+  "jcmpClasses": []
+}
