@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-23T00:28:35Z",
+  "number": 16669,
+  "title": "Bump com.uber:h3 from 4.1.1 to 4.3.0",
+  "url": "https://github.com/apache/pinot/pull/16669",
+  "jcmpClasses": []
+}
