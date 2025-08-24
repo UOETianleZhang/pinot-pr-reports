@@ -1,0 +1,146 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/BalancedInstanceSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/BaseInstanceSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/InstanceSelectorConfig.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/InstanceSelectorFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/MultiStageReplicaGroupSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/ReplicaGroupInstanceSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/StrictReplicaGroupInstanceSelector.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/routing/instanceselector/InstanceSelectorTest.java",
+    "pinot-broker/src/test/java/org/apache/pinot/broker/routing/instanceselector/MultiStageReplicaGroupSelectorTest.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/BrokerMeter.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-24T21:04:30Z",
+  "number": 16334,
+  "title": "Add broker metrics to count segments that are not zone failure tolerant",
+  "url": "https://github.com/apache/pinot/pull/16334",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.BalancedInstanceSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) BalancedInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, boolean, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) BalancedInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.BaseInstanceSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) boolean _emitSinglePoolSegmentsMetric"
+      ],
+      "removedConstructors": [
+        "BaseInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, boolean, long)"
+      ],
+      "addedConstructors": [
+        "BaseInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getNewSegmentExpirationTimeInSeconds()",
+        "PUBLIC(+) boolean isUseFixedReplica()",
+        "PUBLIC(+) boolean shouldEmitSinglePoolSegmentsMetrics()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _newSegmentExpirationTimeInSeconds",
+        "PRIVATE(+) FINAL(+) boolean _useFixedReplica",
+        "PRIVATE(+) FINAL(+) boolean _emitSinglePoolSegmentsMetrics"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) InstanceSelectorConfig(boolean, long, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.MultiStageReplicaGroupSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MultiStageReplicaGroupSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, boolean, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) MultiStageReplicaGroupSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.ReplicaGroupInstanceSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) ReplicaGroupInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, boolean, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ReplicaGroupInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.StrictReplicaGroupInstanceSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) StrictReplicaGroupInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, boolean, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) StrictReplicaGroupInstanceSelector(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.BrokerMetrics, org.apache.pinot.broker.routing.adaptiveserverselector.AdaptiveServerSelector, java.time.Clock, org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.metrics.BrokerMeter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.BrokerMeter SINGLE_POOL_SEGMENTS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Broker",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_BROKER_ENABLE_SINGLE_POOL_SEGMENTS_METRIC",
+        "PUBLIC(+) STATIC(+) FINAL(+) boolean DEFAULT_ENABLE_SINGLE_POOL_SEGMENTS_METRIC"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
