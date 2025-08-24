@@ -1,0 +1,125 @@
+{
+  "files": [
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/QueryRunner.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/timeseries/TimeSeriesDispatchObserver.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java",
+    "pinot-timeseries/pinot-timeseries-planner/src/main/java/org/apache/pinot/tsdb/planner/TimeSeriesPlanConstants.java"
+  ],
+  "mergedAt": "2025-08-24T02:11:57Z",
+  "number": 16673,
+  "title": "Move time-series constants into CommonConstants",
+  "url": "https://github.com/apache/pinot/pull/16673",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.service.dispatch.QueryDispatcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.util.Map<org.apache.pinot.query.planner.physical.DispatchablePlanFragment,org.apache.pinot.query.service.dispatch.QueryDispatcher$StageInfo> serializePlanFragments(java.util.Set<org.apache.pinot.query.planner.physical.DispatchablePlanFragment>, java.util.Set<org.apache.pinot.query.routing.QueryServerInstance>, io.grpc.Deadline)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Map<org.apache.pinot.query.planner.physical.DispatchablePlanFragment,org.apache.pinot.query.service.dispatch.QueryDispatcher$StageInfo> serializePlanFragments(java.util.Set<org.apache.pinot.query.planner.physical.DispatchablePlanFragment>, java.util.Set<org.apache.pinot.query.routing.QueryServerInstance>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Query$Request$MetadataKeys$TimeSeries",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.lang.String decodeSegmentListKey(java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.lang.String encodeSegmentListKey(java.lang.String)",
+        "PUBLIC(+) STATIC(+) boolean isKeySegmentList(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String LANGUAGE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String WINDOW_SECONDS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String NUM_ELEMENTS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String START_TIME_SECONDS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String DEADLINE_MS",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String SEGMENT_MAP_ENTRY_PREFIX"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CommonConstants$Query$Request$MetadataKeys$TimeSeries()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Query$Response$MetadataKeys$TimeSeries",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ERROR_TYPE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String ERROR_MESSAGE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PLAN_ID"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CommonConstants$Query$Response$MetadataKeys$TimeSeries()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.tsdb.planner.TimeSeriesPlanConstants",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) TimeSeriesPlanConstants()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tsdb.planner.TimeSeriesPlanConstants$WorkerRequestMetadataKeys",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.lang.String decodeSegmentListKey(java.lang.String)",
+        "PUBLIC(-) STATIC(-) java.lang.String encodeSegmentListKey(java.lang.String)",
+        "PUBLIC(-) STATIC(-) boolean isKeySegmentList(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String LANGUAGE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String WINDOW_SECONDS",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String NUM_ELEMENTS",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String START_TIME_SECONDS",
+        "PRIVATE(-) STATIC(-) FINAL(-) java.lang.String SEGMENT_MAP_ENTRY_PREFIX",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String DEADLINE_MS"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) TimeSeriesPlanConstants$WorkerRequestMetadataKeys()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.tsdb.planner.TimeSeriesPlanConstants$WorkerResponseMetadataKeys",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String ERROR_TYPE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String ERROR_MESSAGE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PLAN_ID"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) TimeSeriesPlanConstants$WorkerResponseMetadataKeys()"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
