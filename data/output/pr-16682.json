@@ -1,0 +1,30 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/rewriter/CastTypeAliasRewriter.java",
+    "pinot-common/src/main/java/org/apache/pinot/sql/parsers/rewriter/QueryRewriterFactory.java",
+    "pinot-common/src/test/java/org/apache/pinot/sql/parsers/CalciteSqlCompilerTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/sql/parsers/rewriter/QueryRewriterFactoryTest.java"
+  ],
+  "mergedAt": "2025-08-25T15:15:44Z",
+  "number": 16682,
+  "title": "Fix upgrade compatibility issue with type casts in SSE",
+  "url": "https://github.com/apache/pinot/pull/16682",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.sql.parsers.rewriter.CastTypeAliasRewriter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.request.PinotQuery rewrite(org.apache.pinot.common.request.PinotQuery)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.request.Expression rewriteCastTypeAlias(org.apache.pinot.common.request.Expression)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CastTypeAliasRewriter()"
+      ]
+    }
+  ]
+}
