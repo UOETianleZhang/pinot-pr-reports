@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java"
+  ],
+  "mergedAt": "2025-08-25T16:22:34Z",
+  "number": 16663,
+  "title": "Improve segment build auto retry logics",
+  "url": "https://github.com/apache/pinot/pull/16663",
+  "jcmpClasses": []
+}
