@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterMemBasedServerQueryKillingTest.java"
+  ],
+  "mergedAt": "2025-08-26T10:18:18Z",
+  "number": 16554,
+  "title": "Disable Flaky Tests",
+  "url": "https://github.com/apache/pinot/pull/16554",
+  "jcmpClasses": []
+}
