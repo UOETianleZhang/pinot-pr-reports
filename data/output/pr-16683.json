@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/operator/transform/function/JsonExtractScalarTransformFunction.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/operator/transform/function/JsonExtractScalarTransformFunctionTest.java"
+  ],
+  "mergedAt": "2025-08-26T11:42:20Z",
+  "number": 16683,
+  "title": "Handle null values in JsonExtractScalarTransformFunction with default value support",
+  "url": "https://github.com/apache/pinot/pull/16683",
+  "jcmpClasses": []
+}

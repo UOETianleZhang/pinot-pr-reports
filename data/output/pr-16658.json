@@ -1,0 +1,124 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/MultiStageBrokerRequestHandler.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/ExplainIntegrationTestTrait.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/NullHandlingIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/calcite/sql/fun/PinotOperatorTable.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/QueryEnvironment.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/logical/RexExpressionUtils.java",
+    "pinot-query-planner/src/test/resources/queries/PhysicalOptimizerPlans.json"
+  ],
+  "mergedAt": "2025-08-26T12:46:52Z",
+  "number": 16658,
+  "title": "Fix a basic null handling issue in MSE",
+  "url": "https://github.com/apache/pinot/pull/16658",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.calcite.sql.fun.PinotOperatorTable",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.calcite.sql.fun.PinotOperatorTable instance()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.calcite.sql.fun.PinotOperatorTable instance(boolean)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) java.util.function.Supplier<org.apache.pinot.calcite.sql.fun.PinotOperatorTable> INSTANCE"
+      ],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.calcite.sql.SqlPostfixOperator PINOT_IS_NULL",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.util.function.Supplier<org.apache.pinot.calcite.sql.fun.PinotOperatorTable> WITHOUT_NULL_HANDLING",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.util.function.Supplier<org.apache.pinot.calcite.sql.fun.PinotOperatorTable> WITH_NULL_HANDLING",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.calcite.sql.SqlPostfixOperator PINOT_IS_NOT_NULL"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) PinotOperatorTable()"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) PinotOperatorTable(boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isNullHandlingEnabled()",
+        "PRIVATE(+) boolean isNullHandlingEnabledInitialize()",
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config withIsNullHandlingEnabled(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean isNullHandlingEnabled"
+      ],
+      "removedConstructors": [
+        "PRIVATE(-) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, int, java.lang.String, org.apache.pinot.query.routing.WorkerManager)"
+      ],
+      "addedConstructors": [
+        "PRIVATE(+) ImmutableQueryEnvironment$Config(long, java.lang.String, org.apache.pinot.common.config.provider.TableCache, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, int, java.lang.String, org.apache.pinot.query.routing.WorkerManager)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) FINAL(+) org.apache.pinot.query.ImmutableQueryEnvironment$Config$Builder isNullHandlingEnabled(boolean)",
+        "PRIVATE(+) boolean isNullHandlingEnabledIsSet()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean isNullHandlingEnabled",
+        "PRIVATE(+) STATIC(+) FINAL(+) long OPT_BIT_IS_NULL_HANDLING_ENABLED"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.ImmutableQueryEnvironment$Config$InitShim",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "boolean isNullHandlingEnabled()",
+        "void isNullHandlingEnabled(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean isNullHandlingEnabled",
+        "PRIVATE(+) byte isNullHandlingEnabledBuildStage"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) QueryEnvironment(java.lang.String, org.apache.pinot.common.config.provider.TableCache, org.apache.pinot.query.routing.WorkerManager, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.QueryEnvironment$Config",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isNullHandlingEnabled()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

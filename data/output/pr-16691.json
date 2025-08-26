@@ -1,0 +1,61 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/config/GrpcConfig.java",
+    "pinot-integration-tests/src/test/resources/log4j2-test.xml",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/MailboxService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/channel/ChannelManager.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-08-26T11:41:42Z",
+  "number": 16691,
+  "title": "Disable idle mailboxes by default",
+  "url": "https://github.com/apache/pinot/pull/16691",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.mailbox.channel.ChannelManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) io.grpc.ManagedChannelBuilder<?> decorate(io.grpc.ManagedChannelBuilder<?>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.time.Duration _idleTimeout"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ChannelManager(org.apache.pinot.common.config.TlsConfig, int)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ChannelManager(org.apache.pinot.common.config.TlsConfig, int, java.time.Duration)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.mailbox.MailboxService",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.time.Duration getIdleTimeout(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$MultiStageQueryRunner",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String KEY_OF_CHANNEL_IDLE_TIMEOUT_SECONDS",
+        "PUBLIC(+) STATIC(+) FINAL(+) long DEFAULT_CHANNEL_IDLE_TIMEOUT_SECONDS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
