@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineIntegrationTest.java",
+    "pinot-query-planner/src/main/java/org/apache/pinot/query/planner/validation/ArrayToMvValidationVisitor.java"
+  ],
+  "mergedAt": "2025-08-26T06:58:54Z",
+  "number": 16577,
+  "title": "Enhance validation for multi-value columns in aggregate grouping",
+  "url": "https://github.com/apache/pinot/pull/16577",
+  "jcmpClasses": []
+}

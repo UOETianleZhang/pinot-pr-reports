@@ -1,0 +1,39 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/common/datablock/DataBlockBuilder.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MailboxSendOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MultiStageOperator.java"
+  ],
+  "mergedAt": "2025-08-26T06:58:18Z",
+  "number": 16595,
+  "title": "Be sure block serialization can be interrupted",
+  "url": "https://github.com/apache/pinot/pull/16595",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.common.datablock.DataBlockBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "STATIC(+) void interruptableLoop(int, int, int, org.apache.pinot.core.common.datablock.DataBlockBuilder$InnerLoop)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.common.datablock.DataBlockBuilder$InnerLoop",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void run(int, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
