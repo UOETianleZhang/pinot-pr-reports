@@ -1,0 +1,45 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfig.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditRequestProcessor.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditConfigManagerTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditRequestProcessorTest.java"
+  ],
+  "mergedAt": "2025-08-27T18:28:20Z",
+  "number": 16694,
+  "title": "[audit] Implement support for comma-separated header filtering",
+  "url": "https://github.com/apache/pinot/pull/16694",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfig",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean isCaptureRequestHeaders()",
+        "PUBLIC(-) void setCaptureRequestHeaders(boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getCaptureRequestHeaders()",
+        "PUBLIC(+) void setCaptureRequestHeaders(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditRequestProcessor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "STATIC(+) java.util.Set<java.lang.String> parseAllowedHeaders(java.lang.String)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,java.lang.Object> toMap(javax.ws.rs.core.MultivaluedMap<java.lang.String,java.lang.String>, java.util.Set<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
