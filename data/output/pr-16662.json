@@ -1,0 +1,102 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfigManager.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/config/DefaultClusterConfigChangeHandler.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditConfigManagerTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-spi/pom.xml",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/config/provider/PinotClusterConfigProviderTest.java"
+  ],
+  "mergedAt": "2025-08-26T22:38:59Z",
+  "number": 16662,
+  "title": "Refactor DefaultClusterConfigChangeHandler to common module to enable sharing same infra across pinot components",
+  "url": "https://github.com/apache/pinot/pull/16662",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfigManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) org.apache.pinot.common.audit.AuditConfig buildFromClusterConfig(org.apache.helix.model.ClusterConfig)",
+        "PUBLIC(-) void onClusterConfigChange(org.apache.helix.model.ClusterConfig, org.apache.helix.NotificationContext)"
+      ],
+      "addedMethods": [
+        "STATIC(+) org.apache.pinot.common.audit.AuditConfig buildFromClusterConfig(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) void onChange(java.util.Set<java.lang.String>, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.config.DefaultClusterConfigChangeHandler",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getClusterConfigs()",
+        "PUBLIC(+) void onClusterConfigChange(org.apache.helix.model.ClusterConfig, org.apache.helix.NotificationContext)",
+        "PRIVATE(+) void process(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(+) boolean registerClusterConfigChangeListener(org.apache.pinot.spi.config.provider.PinotClusterConfigChangeListener)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.spi.config.provider.PinotClusterConfigChangeListener> _clusterConfigChangeListeners",
+        "PRIVATE(+) VOLATILE(+) java.util.Map<java.lang.String,java.lang.String> _properties",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) DefaultClusterConfigChangeHandler()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.BaseControllerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) org.apache.pinot.common.config.DefaultClusterConfigChangeHandler _clusterConfigChangeHandler"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.BaseServerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.DefaultClusterConfigChangeHandler",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.util.Map<java.lang.String,java.lang.String> getClusterConfigs()",
+        "PUBLIC(-) void onClusterConfigChange(org.apache.helix.model.ClusterConfig, org.apache.helix.NotificationContext)",
+        "PRIVATE(-) void process(java.util.Map<java.lang.String,java.lang.String>)",
+        "PUBLIC(-) boolean registerClusterConfigChangeListener(org.apache.pinot.spi.config.provider.PinotClusterConfigChangeListener)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) java.util.List<org.apache.pinot.spi.config.provider.PinotClusterConfigChangeListener> _clusterConfigChangeListeners",
+        "PRIVATE(-) VOLATILE(-) java.util.Map<java.lang.String,java.lang.String> _properties",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) DefaultClusterConfigChangeHandler()"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
