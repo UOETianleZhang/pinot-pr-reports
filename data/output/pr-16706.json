@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/assignment/segment/RealtimeSegmentAssignment.java"
+  ],
+  "mergedAt": "2025-08-28T17:53:31Z",
+  "number": 16706,
+  "title": "Fix rebalance for RealtimeSegmentAssignment for ONLINE segments with COMMITTING status",
+  "url": "https://github.com/apache/pinot/pull/16706",
+  "jcmpClasses": []
+}
