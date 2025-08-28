@@ -1,0 +1,52 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeTableDataManager.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/data/manager/TableDataManager.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/SegmentOnlineOfflineStateModelFactory.java"
+  ],
+  "mergedAt": "2025-08-28T10:33:16Z",
+  "number": 16657,
+  "title": "Removes ingestion metrics for consuming -> offline transition",
+  "url": "https://github.com/apache/pinot/pull/16657",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeTableDataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onConsumingToOffline(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.data.manager.TableDataManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void onConsumingToOffline(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SegmentOnlineOfflineStateModelFactory$SegmentOnlineOfflineStateModel",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void onConsumingToOffline(java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
