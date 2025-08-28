@@ -1,0 +1,101 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BrokerUserDefinedMessageHandlerFactory.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/messages/QueryWorkloadRefreshMessage.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/QueryWorkloadMessageHandlerFactory.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/SegmentMessageHandlerFactory.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/WorkloadBudgetManager.java"
+  ],
+  "mergedAt": "2025-08-28T19:52:21Z",
+  "number": 16636,
+  "title": "[Query Resource Isolation] Fix Refresh message",
+  "url": "https://github.com/apache/pinot/pull/16636",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.broker.helix.BrokerUserDefinedMessageHandlerFactory$QueryWorkloadRefreshMessageHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) java.lang.String _messageType"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.QueryWorkloadMessageHandlerFactory",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.messaging.handling.MessageHandler createHandler(org.apache.helix.model.Message, org.apache.helix.NotificationContext)",
+        "PUBLIC(-) java.lang.String getMessageType()",
+        "PUBLIC(-) void reset()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.metrics.ServerMetrics _metrics"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) QueryWorkloadMessageHandlerFactory(org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.QueryWorkloadMessageHandlerFactory$QueryWorkloadRefreshMessageHandler",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.helix.messaging.handling.HelixTaskResult handleMessage()",
+        "PUBLIC(-) void onError(java.lang.Exception, org.apache.helix.messaging.handling.MessageHandler$ErrorCode, org.apache.helix.messaging.handling.MessageHandler$ErrorType)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) java.lang.String _queryWorkloadName",
+        "FINAL(-) org.apache.pinot.spi.config.workload.InstanceCost _instanceCost"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "QueryWorkloadMessageHandlerFactory$QueryWorkloadRefreshMessageHandler(org.apache.pinot.common.messages.QueryWorkloadRefreshMessage, org.apache.helix.NotificationContext)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.SegmentMessageHandlerFactory$QueryWorkloadRefreshMessageHandler",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.helix.messaging.handling.HelixTaskResult handleMessage()",
+        "PUBLIC(+) void onError(java.lang.Exception, org.apache.helix.messaging.handling.MessageHandler$ErrorCode, org.apache.helix.messaging.handling.MessageHandler$ErrorType)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) java.lang.String _messageType",
+        "FINAL(+) java.lang.String _queryWorkloadName",
+        "FINAL(+) org.apache.pinot.spi.config.workload.InstanceCost _instanceCost"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "SegmentMessageHandlerFactory$QueryWorkloadRefreshMessageHandler(org.apache.pinot.common.messages.QueryWorkloadRefreshMessage, org.apache.pinot.common.metrics.ServerMetrics, org.apache.helix.NotificationContext)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.WorkloadBudgetManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void deleteWorkload(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

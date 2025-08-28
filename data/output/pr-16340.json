@@ -1,0 +1,84 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/broker/helix/BaseBrokerStarter.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/BaseServerStarter.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/accounting/WorkloadBudgetManager.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/trace/Tracing.java"
+  ],
+  "mergedAt": "2025-08-28T19:51:09Z",
+  "number": 16340,
+  "title": "[Query Resource Isolation]Interface for Workload Stats Collection",
+  "url": "https://github.com/apache/pinot/pull/16340",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.broker.helix.BaseBrokerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.spi.accounting.WorkloadBudgetManager createWorkloadBudgetManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.starter.helix.BaseServerStarter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) org.apache.pinot.spi.accounting.WorkloadBudgetManager createWorkloadBudgetManager(org.apache.pinot.spi.env.PinotConfiguration)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.WorkloadBudgetManager",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) void collectWorkloadStats(java.lang.String, org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.accounting.WorkloadBudgetManager$BudgetStats",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) FINAL(+) long _initialCpuBudget",
+        "PUBLIC(+) FINAL(+) long _initialMemoryBudget"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) WorkloadBudgetManager$BudgetStats(long, long)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) WorkloadBudgetManager$BudgetStats(long, long, long, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.trace.Tracing$ThreadAccountantOps",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.accounting.ThreadResourceUsageAccountant createThreadAccountant(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.spi.config.instance.InstanceType, org.apache.pinot.spi.accounting.WorkloadBudgetManager)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

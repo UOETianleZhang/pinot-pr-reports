@@ -1,0 +1,99 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/GroupByOptionsIntegrationTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/executor/OpChainSchedulerService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/AggregateOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/AsofJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/BaseMailboxReceiveOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/HashJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MailboxSendOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/MultiStageOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/NonEquiJoinOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/WindowAggregateOperator.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/pipeline/PipelineBreakerOperator.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/PerQueryCPUMemAccountantTest.java"
+  ],
+  "mergedAt": "2025-08-28T19:39:08Z",
+  "number": 16696,
+  "title": "Fix early termination on MSE operator",
+  "url": "https://github.com/apache/pinot/pull/16696",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.runtime.executor.OpChainSchedulerService$1",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "OpChainSchedulerService$1(org.apache.pinot.query.runtime.executor.OpChainSchedulerService, org.apache.pinot.query.runtime.operator.OpChain, org.apache.pinot.query.runtime.operator.OpChainId)"
+      ],
+      "addedConstructors": [
+        "OpChainSchedulerService$1(org.apache.pinot.query.runtime.executor.OpChainSchedulerService, org.apache.pinot.query.runtime.operator.OpChain, org.apache.pinot.query.runtime.operator.OpChainId, org.apache.pinot.query.runtime.operator.MultiStageOperator)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.BaseMailboxReceiveOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void sampleAndCheckInterruption()"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) long getDeadlineMs()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.MailboxSendOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void sampleAndCheckInterruption()"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) long getDeadlineMs()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.MultiStageOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) void sampleAndCheckInterruption(long)"
+      ],
+      "addedMethods": [
+        "PROTECTED(+) void checkInterruption()",
+        "PROTECTED(+) long getDeadlineMs()",
+        "PROTECTED(+) void sampleAndCheckInterruptionPeriodically(int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.pipeline.PipelineBreakerOperator",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void close()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.query.runtime.operator.MultiStageOperator> _childOperators"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
