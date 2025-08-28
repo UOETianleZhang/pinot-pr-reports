@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/accounting/QueryAggregator.java"
+  ],
+  "mergedAt": "2025-08-27T23:16:44Z",
+  "number": 16698,
+  "title": "[Query Resource Isolation] Reduce logging in QueryAggregator",
+  "url": "https://github.com/apache/pinot/pull/16698",
+  "jcmpClasses": []
+}
