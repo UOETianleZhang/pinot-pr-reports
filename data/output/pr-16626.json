@@ -1,0 +1,226 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/StaticTableCache.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/TableCache.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/ZkTableCache.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotQueryResourceStaticValidationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineIntegrationTest.java"
+  ],
+  "mergedAt": "2025-08-28T23:20:12Z",
+  "number": 16626,
+  "title": "Add extra JSON fields (schemas and tableConfigs) in the validateMultiStageQuery API - MSE",
+  "url": "https://github.com/apache/pinot/pull/16626",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.config.provider.StaticTableCache",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getActualLogicalTableName(java.lang.String)",
+        "PUBLIC(+) java.lang.String getActualTableName(java.lang.String)",
+        "PUBLIC(+) java.util.List<java.lang.String> getAllDimensionTables()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getColumnNameMap(java.lang.String)",
+        "PUBLIC(+) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> getExpressionOverrideMap(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.spi.data.LogicalTableConfig getLogicalTableConfig(java.lang.String)",
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.data.LogicalTableConfig> getLogicalTableConfigs()",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getLogicalTableNameMap()",
+        "PUBLIC(+) org.apache.pinot.spi.data.Schema getSchema(java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.TableConfig getTableConfig(java.lang.String)",
+        "PUBLIC(+) java.util.Map<java.lang.String,java.lang.String> getTableNameMap()",
+        "PUBLIC(+) java.util.Set<java.lang.String> getTimestampIndexColumns(java.lang.String)",
+        "PUBLIC(+) boolean isIgnoreCase()",
+        "PUBLIC(+) boolean isLogicalTable(java.lang.String)",
+        "PUBLIC(+) boolean registerLogicalTableConfigChangeListener(org.apache.pinot.spi.config.provider.LogicalTableConfigChangeListener)",
+        "PUBLIC(+) boolean registerSchemaChangeListener(org.apache.pinot.spi.config.provider.SchemaChangeListener)",
+        "PUBLIC(+) boolean registerTableConfigChangeListener(org.apache.pinot.spi.config.provider.TableConfigChangeListener)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _ignoreCase",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.String> _tableNameMap",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.common.config.provider.TableCache$TableConfigInfo> _tableConfigInfoMap",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.spi.data.LogicalTableConfig> _logicalTableConfigMap",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.common.config.provider.TableCache$LogicalTableConfigInfo> _logicalTableConfigInfoMap",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,java.lang.String> _logicalTableNameMap",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.spi.config.table.TableConfig> _tableConfigMap",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.spi.data.Schema> _schemaMap",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.common.config.provider.TableCache$SchemaInfo> _schemaInfoMap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) StaticTableCache(java.util.List<org.apache.pinot.spi.config.table.TableConfig>, java.util.List<org.apache.pinot.spi.data.Schema>, java.util.List<org.apache.pinot.spi.data.LogicalTableConfig>, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.TableCache",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void addBuiltInVirtualColumns(org.apache.pinot.spi.data.Schema)",
+        "PUBLIC(+) STATIC(+) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> createExpressionOverrideMap(java.lang.String, org.apache.pinot.spi.config.table.QueryConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.TableCache$LogicalTableConfigInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) org.apache.pinot.spi.data.LogicalTableConfig _logicalTableConfig",
+        "FINAL(+) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> _expressionOverrideMap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableCache$LogicalTableConfigInfo(org.apache.pinot.spi.data.LogicalTableConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.TableCache$SchemaInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) org.apache.pinot.spi.data.Schema _schema",
+        "FINAL(+) java.util.Map<java.lang.String,java.lang.String> _columnNameMap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "TableCache$SchemaInfo(org.apache.pinot.spi.data.Schema, java.util.Map<java.lang.String,java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.TableCache$TableConfigInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) java.util.Set<java.lang.String> _timestampIndexColumns",
+        "FINAL(+) org.apache.pinot.spi.config.table.TableConfig _tableConfig",
+        "FINAL(+) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> _expressionOverrideMap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TableCache$TableConfigInfo(org.apache.pinot.spi.config.table.TableConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.ZkTableCache",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) STATIC(-) void addBuiltInVirtualColumns(org.apache.pinot.spi.data.Schema)",
+        "PRIVATE(-) STATIC(-) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> createExpressionOverrideMap(java.lang.String, org.apache.pinot.spi.config.table.QueryConfig)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.ZkTableCache$LogicalTableConfigInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) org.apache.pinot.spi.data.LogicalTableConfig _logicalTableConfig",
+        "FINAL(-) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> _expressionOverrideMap"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) ZkTableCache$LogicalTableConfigInfo(org.apache.pinot.spi.data.LogicalTableConfig)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.ZkTableCache$SchemaInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) org.apache.pinot.spi.data.Schema _schema",
+        "FINAL(-) java.util.Map<java.lang.String,java.lang.String> _columnNameMap"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) ZkTableCache$SchemaInfo(org.apache.pinot.spi.data.Schema, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.config.provider.ZkTableCache$TableConfigInfo",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) java.util.Set<java.lang.String> _timestampIndexColumns",
+        "FINAL(-) org.apache.pinot.spi.config.table.TableConfig _tableConfig",
+        "FINAL(-) java.util.Map<org.apache.pinot.common.request.Expression,org.apache.pinot.common.request.Expression> _expressionOverrideMap"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PRIVATE(-) ZkTableCache$TableConfigInfo(org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationResponse validateMultiStageQuery(java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationResponse validateMultiStageQuery(org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationRequest, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationRequest",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.data.LogicalTableConfig> getLogicalTableConfigs()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.data.Schema> getSchemas()",
+        "PUBLIC(+) java.lang.String getSql()",
+        "PUBLIC(+) java.util.List<org.apache.pinot.spi.config.table.TableConfig> getTableConfigs()",
+        "PUBLIC(+) boolean isIgnoreCase()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.spi.config.table.TableConfig> _tableConfigs",
+        "PRIVATE(+) FINAL(+) boolean _ignoreCase",
+        "PRIVATE(+) FINAL(+) java.lang.String _sql",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.spi.data.Schema> _schemas",
+        "PRIVATE(+) FINAL(+) java.util.List<org.apache.pinot.spi.data.LogicalTableConfig> _logicalTableConfigs"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotQueryResource$MultiStageQueryValidationRequest(java.lang.String, java.util.List<org.apache.pinot.spi.config.table.TableConfig>, java.util.List<org.apache.pinot.spi.data.Schema>, java.util.List<org.apache.pinot.spi.data.LogicalTableConfig>, boolean)"
+      ]
+    }
+  ]
+}
