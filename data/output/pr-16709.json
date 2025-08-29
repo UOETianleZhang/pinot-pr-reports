@@ -1,0 +1,162 @@
+{
+  "files": [
+    "pinot-common/pom.xml",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfig.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditEvent.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditIdentityResolver.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditLogFilter.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditRequestProcessor.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditIdentityResolverTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditRequestProcessorTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/audit/AuditServiceBinder.java"
+  ],
+  "mergedAt": "2025-08-29T16:30:46Z",
+  "number": 16709,
+  "title": "[audit] Enhance user identity resolution with custom header and jwt. +DI refactor",
+  "url": "https://github.com/apache/pinot/pull/16709",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getUseridHeader()",
+        "PUBLIC(+) java.lang.String getUseridJwtClaimName()",
+        "PUBLIC(+) void setUseridHeader(java.lang.String)",
+        "PUBLIC(+) void setUseridJwtClaimName(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String _useridHeader",
+        "PRIVATE(+) java.lang.String _useridJwtClaimName"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditEvent",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getUserId()",
+        "PUBLIC(-) org.apache.pinot.common.audit.AuditEvent setUserId(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$UserIdentity getUserid()",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent setUserid(org.apache.pinot.common.audit.AuditEvent$UserIdentity)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) java.lang.String _userId"
+      ],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.common.audit.AuditEvent$UserIdentity _userid"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditEvent$UserIdentity",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getPrincipal()",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$UserIdentity setPrincipal(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String _principal"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditEvent$UserIdentity()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditIdentityResolver",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String extractJwtPrincipal(java.lang.String, java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.common.audit.AuditEvent$UserIdentity resolveIdentity(javax.ws.rs.container.ContainerRequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOG",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.audit.AuditConfigManager _configManager",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String BEARER_PREFIX"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditIdentityResolver(org.apache.pinot.common.audit.AuditConfigManager)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditLogFilter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) AuditLogFilter()"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) AuditLogFilter(javax.inject.Provider<org.glassfish.grizzly.http.server.Request>, org.apache.pinot.common.audit.AuditRequestProcessor)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditRequestProcessor",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.lang.String extractUserId(javax.ws.rs.container.ContainerRequestContext)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.audit.AuditIdentityResolver _identityResolver"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) AuditRequestProcessor()"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) AuditRequestProcessor(org.apache.pinot.common.audit.AuditConfigManager, org.apache.pinot.common.audit.AuditIdentityResolver)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.api.audit.AuditServiceBinder",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PROTECTED(+) void configure()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.config.DefaultClusterConfigChangeHandler _clusterConfigChangeHandler"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditServiceBinder(org.apache.pinot.common.config.DefaultClusterConfigChangeHandler)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.BaseControllerStarter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PROTECTED(-) org.apache.pinot.common.audit.AuditConfigManager _auditConfigManager"
+      ],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
