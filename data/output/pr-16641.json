@@ -1,0 +1,128 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/api/resources/PinotClientRequest.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandler.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/BrokerRequestHandlerDelegate.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/PinotBrokerTimeSeriesResponse.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/response/mapper/TimeSeriesResponseMapper.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/response/mapper/TimeSeriesResponseMapperTest.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/exception/QueryErrorCode.java"
+  ],
+  "mergedAt": "2025-08-29T02:09:54Z",
+  "number": 16641,
+  "title": "[timeseries] Returning TimeSeriesBlock to API handlers to eliminate extraneous transformation",
+  "url": "https://github.com/apache/pinot/pull/16641",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.api.resources.PinotClientRequest",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.BrokerRequestHandlerDelegate",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.requesthandler.TimeSeriesRequestHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.response.mapper.TimeSeriesResponseMapper",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) org.apache.pinot.common.utils.DataSchema deriveDataSchemaFromTimeSeriesBlock(org.apache.pinot.tsdb.spi.series.TimeSeriesBlock)",
+        "PRIVATE(+) STATIC(+) java.util.List<java.lang.Object[]> deriveRowsFromTimeSeriesBlock(org.apache.pinot.tsdb.spi.series.TimeSeriesBlock, java.lang.String[])",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.response.BrokerResponse toBrokerResponse(org.apache.pinot.tsdb.spi.series.TimeSeriesBlock)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.response.BrokerResponse toBrokerResponse(org.apache.pinot.spi.exception.QueryException)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String TS_COLUMN",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String NAME_COLUMN",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String VALUES_COLUMN"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) TimeSeriesResponseMapper()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.pinot.common.utils.DataSchema deriveBrokerResponseDataSchema(org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse$Data)",
+        "PRIVATE(-) java.util.List<java.lang.Object[]> deriveBrokerResponseRows(org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse$Data, java.lang.String[])",
+        "PUBLIC(-) org.apache.pinot.common.response.BrokerResponse toBrokerResponse()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse fromException(java.lang.Exception)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.service.dispatch.QueryDispatcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.response.PinotBrokerTimeSeriesResponse submitAndGet(org.apache.pinot.spi.trace.RequestContext, org.apache.pinot.tsdb.planner.physical.TimeSeriesDispatchablePlan, long, java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.exception.QueryErrorCode",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.spi.exception.QueryErrorCode TIMESERIES_PARSING"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
