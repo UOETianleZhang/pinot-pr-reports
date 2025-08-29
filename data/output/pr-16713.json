@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-29T18:48:56Z",
+  "number": 16713,
+  "title": "Bump io.dropwizard.metrics:metrics-bom from 4.2.34 to 4.2.35",
+  "url": "https://github.com/apache/pinot/pull/16713",
+  "jcmpClasses": []
+}

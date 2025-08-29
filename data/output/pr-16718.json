@@ -1,0 +1,135 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/requesthandler/TimeSeriesRequestHandler.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/GrpcSendingMailbox.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/mailbox/MailboxService.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/executor/OpChainScheduler.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/operator/utils/BlockingStream.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/MultiStageQueryStats.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/runtime/plan/server/ServerPlanRequestUtils.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/QueryDispatcher.java",
+    "pinot-query-runtime/src/main/java/org/apache/pinot/query/service/dispatch/timeseries/AsyncQueryTimeSeriesDispatchResponse.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/EnrichedHashJoinOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/operator/MailboxSendOperatorTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/QueryRunnerTestBase.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/runtime/queries/ResourceBasedQueriesTest.java",
+    "pinot-query-runtime/src/test/java/org/apache/pinot/query/testutils/MockInstanceDataManagerFactory.java"
+  ],
+  "mergedAt": "2025-08-29T18:58:38Z",
+  "number": 16718,
+  "title": "Cleanup some unused code in pinot-query-runtime",
+  "url": "https://github.com/apache/pinot/pull/16718",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.query.mailbox.GrpcSendingMailbox",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) GrpcSendingMailbox(org.apache.pinot.spi.env.PinotConfiguration, java.lang.String, org.apache.pinot.query.mailbox.channel.ChannelManager, java.lang.String, int, long, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.MailboxSendOperator$StatKey>, int)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) GrpcSendingMailbox(java.lang.String, org.apache.pinot.query.mailbox.channel.ChannelManager, java.lang.String, int, long, org.apache.pinot.common.datatable.StatMap<org.apache.pinot.query.runtime.operator.MailboxSendOperator$StatKey>, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.executor.OpChainScheduler",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void deregister(org.apache.pinot.query.runtime.operator.OpChain)",
+        "PUBLIC(-) ABSTRACT(-) org.apache.pinot.query.runtime.operator.OpChain next(long, java.util.concurrent.TimeUnit)",
+        "PUBLIC(-) ABSTRACT(-) void onDataAvailable(org.apache.pinot.query.runtime.operator.OpChainId)",
+        "PUBLIC(-) ABSTRACT(-) void register(org.apache.pinot.query.runtime.operator.OpChain)",
+        "PUBLIC(-) ABSTRACT(-) void shutdownNow()",
+        "PUBLIC(-) ABSTRACT(-) int size()",
+        "PUBLIC(-) ABSTRACT(-) void yield(org.apache.pinot.query.runtime.operator.OpChain)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.operator.utils.BlockingStream",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void cancel()",
+        "PUBLIC(-) ABSTRACT(-) java.lang.Object get()",
+        "PUBLIC(-) ABSTRACT(-) java.lang.Object getId()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.MultiStageQueryStats$StageStats",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.query.runtime.operator.MultiStageOperator$Type getLastType()"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.runtime.plan.server.ServerPlanRequestUtils",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.query.runtime.operator.OpChain compileLeafStage(org.apache.pinot.query.runtime.plan.OpChainExecutionContext, org.apache.pinot.query.routing.StagePlan, org.apache.pinot.core.query.executor.QueryExecutor, java.util.concurrent.ExecutorService)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.service.dispatch.QueryDispatcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.tsdb.spi.series.TimeSeriesBlock submitAndGet(long, org.apache.pinot.tsdb.planner.physical.TimeSeriesDispatchablePlan, long, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.spi.trace.RequestContext)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.tsdb.spi.series.TimeSeriesBlock submitAndGet(long, org.apache.pinot.tsdb.planner.physical.TimeSeriesDispatchablePlan, long, org.apache.pinot.spi.trace.RequestContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.query.service.dispatch.timeseries.AsyncQueryTimeSeriesDispatchResponse",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.common.proto.Worker$TimeSeriesResponse getQueryResponse()",
+        "PUBLIC(-) org.apache.pinot.query.routing.QueryServerInstance getServerInstance()",
+        "PUBLIC(-) java.lang.Throwable getThrowable()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.common.proto.Worker$TimeSeriesResponse _queryResponse",
+        "PRIVATE(-) FINAL(-) java.lang.Throwable _throwable",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.query.routing.QueryServerInstance _serverInstance"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) AsyncQueryTimeSeriesDispatchResponse(org.apache.pinot.query.routing.QueryServerInstance, org.apache.pinot.common.proto.Worker$TimeSeriesResponse, java.lang.Throwable)"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
