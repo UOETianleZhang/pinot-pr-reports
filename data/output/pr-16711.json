@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/query/postaggregation/PostAggregationFunction.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/query/postaggregation/PostAggregationFunctionTest.java"
+  ],
+  "mergedAt": "2025-08-29T09:34:54Z",
+  "number": 16711,
+  "title": "Handle null values gracefully in SSE's post aggregation functions",
+  "url": "https://github.com/apache/pinot/pull/16711",
+  "jcmpClasses": []
+}
