@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-29T14:14:31Z",
+  "number": 16712,
+  "title": "Bump hadoop.version from 3.4.1 to 3.4.2",
+  "url": "https://github.com/apache/pinot/pull/16712",
+  "jcmpClasses": []
+}

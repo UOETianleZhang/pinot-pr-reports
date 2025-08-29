@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-29T14:20:41Z",
+  "number": 16715,
+  "title": "Bump org.apache.zookeeper:zookeeper from 3.9.3 to 3.9.4",
+  "url": "https://github.com/apache/pinot/pull/16715",
+  "jcmpClasses": []
+}

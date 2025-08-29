@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-08-29T14:22:17Z",
+  "number": 16716,
+  "title": "Bump com.microsoft.azure:msal4j from 1.22.0 to 1.23.0",
+  "url": "https://github.com/apache/pinot/pull/16716",
+  "jcmpClasses": []
+}
