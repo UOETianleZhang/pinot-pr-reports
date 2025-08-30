@@ -1,0 +1,122 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotRealtimeTableResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/SegmentStatusChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotTableIdealStateBuilder.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/MissingConsumingSegmentFinder.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManagerTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/table/PauseState.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/PartitionGroupMetadataFetcher.java",
+    "pinot-spi/src/test/java/org/apache/pinot/spi/stream/PartitionGroupMetadataFetcherTest.java"
+  ],
+  "mergedAt": "2025-08-29T22:48:37Z",
+  "number": 16692,
+  "title": "[Auto reset 2/3]Introduce topic 'inactive' status",
+  "url": "https://github.com/apache/pinot/pull/16692",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotRealtimeTableResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) javax.ws.rs.core.Response pauseTopicConsumption(java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)",
+        "PUBLIC(+) javax.ws.rs.core.Response resumeTopicConsumption(java.lang.String, java.lang.String, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.PinotTableIdealStateBuilder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) java.util.List<org.apache.pinot.spi.stream.PartitionGroupMetadata> getPartitionGroupMetadataList(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>, boolean)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) java.util.List<org.apache.pinot.spi.stream.PartitionGroupMetadata> getPartitionGroupMetadataList(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>, java.util.List<java.lang.Integer>, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.MissingConsumingSegmentFinder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) MissingConsumingSegmentFinder(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.ControllerMetrics, java.util.List<org.apache.pinot.spi.stream.StreamConfig>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) MissingConsumingSegmentFinder(java.lang.String, org.apache.helix.store.zk.ZkHelixPropertyStore<org.apache.helix.zookeeper.datamodel.ZNRecord>, org.apache.pinot.common.metrics.ControllerMetrics, java.util.List<org.apache.pinot.spi.stream.StreamConfig>, org.apache.helix.model.IdealState)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.PinotLLCRealtimeSegmentManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "java.util.List<org.apache.pinot.spi.stream.PartitionGroupMetadata> getNewPartitionGroupMetadataList(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>)",
+        "java.util.List<org.apache.pinot.spi.stream.PartitionGroupMetadata> getNewPartitionGroupMetadataList(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>, boolean)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.Set<java.lang.String> findConsumingSegmentsOfTopics(org.apache.helix.model.IdealState, java.util.List<java.lang.Integer>)",
+        "java.util.List<org.apache.pinot.spi.stream.PartitionGroupMetadata> getNewPartitionGroupMetadataList(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>, org.apache.helix.model.IdealState)",
+        "java.util.List<org.apache.pinot.spi.stream.PartitionGroupMetadata> getNewPartitionGroupMetadataList(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>, org.apache.helix.model.IdealState, boolean)",
+        "PUBLIC(+) STATIC(+) boolean isTopicPaused(org.apache.helix.model.IdealState, int)",
+        "PUBLIC(+) STATIC(+) boolean isTopicPaused(org.apache.helix.model.IdealState, java.lang.String)",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.PauseState pauseTopicsConsumption(java.lang.String, java.util.List<java.lang.Integer>)",
+        "PUBLIC(+) org.apache.pinot.spi.config.table.PauseState resumeTopicsConsumption(java.lang.String, java.util.List<java.lang.Integer>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.table.PauseState",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<java.lang.Integer> getIndexOfInactiveTopics()",
+        "PUBLIC(+) void setIndexOfInactiveTopics(java.util.List<java.lang.Integer>)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) java.util.List<java.lang.Integer> _indexOfInactiveTopics"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PauseState(boolean, org.apache.pinot.spi.config.table.PauseState$ReasonCode, java.lang.String, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PauseState(boolean, org.apache.pinot.spi.config.table.PauseState$ReasonCode, java.lang.String, java.lang.String, java.util.List<java.lang.Integer>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.PartitionGroupMetadataFetcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.Integer> _pausedTopicIndices"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PartitionGroupMetadataFetcher(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PartitionGroupMetadataFetcher(java.util.List<org.apache.pinot.spi.stream.StreamConfig>, java.util.List<org.apache.pinot.spi.stream.PartitionGroupConsumptionStatus>, java.util.List<java.lang.Integer>, boolean)"
+      ]
+    }
+  ]
+}
