@@ -1,0 +1,210 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/ControllerConf.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/PinotHelixResourceManager.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/DefaultTenantRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalanceChecker.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalanceContext.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalanceProgressStats.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalancer.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/rebalance/tenant/ZkBasedTenantRebalanceObserver.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/ControllerPeriodicTaskStarterStatelessTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalanceCheckerTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/rebalance/tenant/TenantRebalancerTest.java"
+  ],
+  "mergedAt": "2025-08-30T07:41:51Z",
+  "number": 16455,
+  "title": "Add TenantRebalanceChecker for improved tenant rebalance monitoring",
+  "url": "https://github.com/apache/pinot/pull/16455",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.ControllerConf",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getTenantRebalanceCheckerFrequencyInSeconds()",
+        "PUBLIC(+) long getTenantRebalanceCheckerInitialDelayInSeconds()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.ControllerConf$ControllerPeriodicTasksConf",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TENANT_REBALANCE_CHECKER_FREQUENCY_PERIOD",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String TENANT_REBALANCE_CHECKER_INITIAL_DELAY_IN_SECONDS",
+        "PUBLIC(+) STATIC(+) FINAL(+) int DEFAULT_TENANT_REBALANCE_CHECKER_FREQUENCY_IN_SECONDS"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.DefaultTenantRebalancer",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "org.apache.commons.lang3.tuple.Pair<java.util.concurrent.ConcurrentLinkedQueue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>,java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>> createParallelAndSequentialQueues(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)",
+        "java.util.concurrent.ConcurrentLinkedQueue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> createTableQueue(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>)",
+        "PRIVATE(-) java.lang.String createUniqueRebalanceJobIdentifier()",
+        "PRIVATE(-) void doConsumeTablesFromQueue(java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceObserver)",
+        "PRIVATE(-) java.util.Set<java.lang.String> getDimensionalTables(java.lang.String)",
+        "PRIVATE(-) STATIC(-) java.util.Set<java.lang.String> getTablesToRunInParallel(java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)",
+        "java.util.Set<java.lang.String> getTenantTables(java.lang.String)",
+        "PUBLIC(-) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceResult rebalance(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig)",
+        "PRIVATE(-) void rebalanceTable(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, java.lang.String, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceObserver)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager",
+        "PRIVATE(-) STATIC(-) FINAL(-) org.slf4j.Logger LOGGER",
+        "PRIVATE(-) FINAL(-) org.apache.pinot.controller.helix.core.rebalance.TableRebalanceManager _tableRebalanceManager",
+        "PRIVATE(-) FINAL(-) java.util.concurrent.ExecutorService _executorService"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) DefaultTenantRebalancer(org.apache.pinot.controller.helix.core.rebalance.TableRebalanceManager, org.apache.pinot.controller.helix.core.PinotHelixResourceManager, java.util.concurrent.ExecutorService)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceChecker",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void abortTableRebalanceJob(java.lang.String)",
+        "PRIVATE(+) void checkAndRetryTenantRebalance()",
+        "PRIVATE(+) boolean isOngoingTableRebalanceJobStuck(java.lang.String, long, long)",
+        "PRIVATE(+) void markTenantRebalanceJobAsAborted(java.lang.String, java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats)",
+        "PRIVATE(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext prepareRetryIfTenantRebalanceJobStuck(java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext, long)",
+        "PRIVATE(+) void retryTenantRebalanceJob(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats)",
+        "PROTECTED(+) void runTask(java.util.Properties)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer _tenantRebalancer",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String TASK_NAME",
+        "PRIVATE(+) org.apache.pinot.controller.helix.core.rebalance.tenant.ZkBasedTenantRebalanceObserver _ongoingJobObserver",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TenantRebalanceChecker(org.apache.pinot.controller.ControllerConf, org.apache.pinot.controller.helix.core.PinotHelixResourceManager, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.lang.String createAttemptJobId(java.lang.String, int)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext forInitialRebalance(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, java.util.concurrent.ConcurrentLinkedDeque<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext forRetry(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, int, java.util.concurrent.ConcurrentLinkedDeque<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, java.util.concurrent.ConcurrentLinkedQueue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>)",
+        "PUBLIC(+) int getAttemptId()",
+        "PUBLIC(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig getConfig()",
+        "PUBLIC(+) java.lang.String getJobId()",
+        "PUBLIC(+) java.util.concurrent.ConcurrentLinkedQueue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> getOngoingJobsQueue()",
+        "PUBLIC(+) java.lang.String getOriginalJobId()",
+        "PUBLIC(+) java.util.concurrent.ConcurrentLinkedDeque<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> getParallelQueue()",
+        "PUBLIC(+) java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> getSequentialQueue()",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> _sequentialQueue",
+        "PRIVATE(+) FINAL(+) int _attemptId",
+        "PROTECTED(+) STATIC(+) FINAL(+) int INITIAL_ATTEMPT_ID",
+        "PRIVATE(+) FINAL(+) java.lang.String _originalJobId",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ConcurrentLinkedDeque<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> _parallelQueue",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig _config",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ConcurrentLinkedQueue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> _ongoingJobsQueue",
+        "PRIVATE(+) FINAL(+) java.lang.String _jobId"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TenantRebalanceContext()",
+        "PUBLIC(+) TenantRebalanceContext(java.lang.String, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, int, java.util.concurrent.ConcurrentLinkedDeque<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, java.util.concurrent.ConcurrentLinkedQueue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TenantRebalanceProgressStats(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats$TableStatus",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "org.apache.commons.lang3.tuple.Pair<java.util.concurrent.ConcurrentLinkedDeque<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>,java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>> createParallelAndSequentialQueues(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)",
+        "java.util.concurrent.ConcurrentLinkedDeque<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext> createTableQueue(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceConfig, java.util.Map<java.lang.String,org.apache.pinot.controller.helix.core.rebalance.RebalanceResult>)",
+        "PRIVATE(+) java.lang.String createUniqueRebalanceJobIdentifier()",
+        "PRIVATE(+) void doConsumeTablesFromQueueAndRebalance(java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, java.util.Queue<org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalancer$TenantTableRebalanceJobContext>, org.apache.pinot.controller.helix.core.rebalance.RebalanceConfig, org.apache.pinot.controller.helix.core.rebalance.tenant.ZkBasedTenantRebalanceObserver)",
+        "PRIVATE(+) java.util.Set<java.lang.String> getDimensionalTables(java.lang.String)",
+        "PRIVATE(+) STATIC(+) java.util.Set<java.lang.String> getTablesToRunInParallel(java.util.Set<java.lang.String>, java.util.Set<java.lang.String>, java.util.Set<java.lang.String>)",
+        "java.util.Set<java.lang.String> getTenantTables(java.lang.String)",
+        "PUBLIC(+) void rebalanceWithContext(org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext, org.apache.pinot.controller.helix.core.rebalance.tenant.ZkBasedTenantRebalanceObserver)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats$TableStatus CANCELLED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats$TableStatus ABORTED",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.PinotHelixResourceManager _pinotHelixResourceManager",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.TableRebalanceManager _tableRebalanceManager",
+        "PRIVATE(+) FINAL(+) java.util.concurrent.ExecutorService _executorService"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TenantRebalancer(org.apache.pinot.controller.helix.core.rebalance.TableRebalanceManager, org.apache.pinot.controller.helix.core.PinotHelixResourceManager, java.util.concurrent.ExecutorService)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.rebalance.tenant.ZkBasedTenantRebalanceObserver",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void trackStatsInZk()"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getJobId()",
+        "PUBLIC(+) java.lang.String getTenantName()",
+        "PUBLIC(+) boolean isDone()",
+        "void setDone(boolean)",
+        "PRIVATE(+) void syncStatsAndContextInZk()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext _tenantRebalanceContext",
+        "PRIVATE(+) boolean _isDone"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ZkBasedTenantRebalanceObserver(java.lang.String, java.lang.String, java.util.Set<java.lang.String>, org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ZkBasedTenantRebalanceObserver(java.lang.String, java.lang.String, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceProgressStats, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext, org.apache.pinot.controller.helix.core.PinotHelixResourceManager)",
+        "PUBLIC(+) ZkBasedTenantRebalanceObserver(java.lang.String, java.lang.String, java.util.Set<java.lang.String>, org.apache.pinot.controller.helix.core.rebalance.tenant.TenantRebalanceContext, org.apache.pinot.controller.helix.core.PinotHelixResourceManager)"
+      ]
+    }
+  ]
+}
