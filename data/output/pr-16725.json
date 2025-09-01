@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManager.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/realtime/PinotLLCRealtimeSegmentManagerTest.java"
+  ],
+  "mergedAt": "2025-09-01T17:45:40Z",
+  "number": 16725,
+  "title": "force commit API does not fail for non-existing segment names",
+  "url": "https://github.com/apache/pinot/pull/16725",
+  "jcmpClasses": []
+}
