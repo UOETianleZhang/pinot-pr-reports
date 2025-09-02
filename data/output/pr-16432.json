@@ -1,0 +1,43 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/BaseTableDataManager.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/BaseTableDataManagerTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/starter/helix/HelixInstanceDataManagerConfig.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/instance/InstanceDataManagerConfig.java"
+  ],
+  "mergedAt": "2025-09-02T17:21:10Z",
+  "number": 16432,
+  "title": "Allow skip CRC check during segment load when server starting.",
+  "url": "https://github.com/apache/pinot/pull/16432",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.server.starter.helix.HelixInstanceDataManagerConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean shouldCheckCRCOnSegmentLoad()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String CHECK_CRC_ON_SEGMENT_LOAD",
+        "PRIVATE(+) STATIC(+) FINAL(+) boolean DEFAULT_CHECK_CRC_ON_SEGMENT_LOAD"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.instance.InstanceDataManagerConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) boolean shouldCheckCRCOnSegmentLoad()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
