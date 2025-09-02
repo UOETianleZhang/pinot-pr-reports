@@ -1,0 +1,297 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeConsumptionRateManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/RealtimeSegmentDataManager.java",
+    "pinot-core/src/main/java/org/apache/pinot/core/data/manager/realtime/ServerRateLimitConfigChangeListener.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/RealtimeConsumptionRateManagerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/data/manager/realtime/ServerRateLimitConfigChangeListenerTest.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/realtime/impl/fakestream/FakeStreamMessageBatch.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/pom.xml",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/main/java/org/apache/pinot/plugin/stream/kafka20/KafkaPartitionLevelConnectionHandler.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/main/java/org/apache/pinot/plugin/stream/kafka20/KafkaPartitionLevelConsumer.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-2.0/src/test/java/org/apache/pinot/plugin/stream/kafka20/KafkaPartitionLevelConsumerTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/pom.xml",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/main/java/org/apache/pinot/plugin/stream/kafka30/KafkaPartitionLevelConnectionHandler.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/main/java/org/apache/pinot/plugin/stream/kafka30/KafkaPartitionLevelConsumer.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-3.0/src/test/java/org/apache/pinot/plugin/stream/kafka30/KafkaPartitionLevelConsumerTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kafka-base/src/main/java/org/apache/pinot/plugin/stream/kafka/KafkaMessageBatch.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/main/java/org/apache/pinot/plugin/stream/kinesis/KinesisConsumer.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/main/java/org/apache/pinot/plugin/stream/kinesis/KinesisMessageBatch.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/test/java/org/apache/pinot/plugin/stream/kinesis/KinesisConsumerTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/test/java/org/apache/pinot/plugin/stream/kinesis/KinesisMessageBatchTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-kinesis/src/test/java/org/apache/pinot/plugin/stream/kinesis/KinesisStreamMetadataProviderTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-pulsar/src/main/java/org/apache/pinot/plugin/stream/pulsar/PulsarMessageBatch.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-pulsar/src/main/java/org/apache/pinot/plugin/stream/pulsar/PulsarPartitionLevelConsumer.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-pulsar/src/test/java/org/apache/pinot/plugin/stream/pulsar/PulsarConsumerTest.java",
+    "pinot-plugins/pinot-stream-ingestion/pinot-pulsar/src/test/java/org/apache/pinot/plugin/stream/pulsar/PulsarMessageBatchTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/stream/MessageBatch.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-09-02T05:47:29Z",
+  "number": 16572,
+  "title": "Adds Byte based throttling",
+  "url": "https://github.com/apache/pinot/pull/16572",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) void createOrUpdateServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics)",
+        "PUBLIC(-) void updateServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) void createOrUpdateServerRateLimiter(org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ServerRateLimitConfig, org.apache.pinot.common.metrics.ServerMetrics)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ServerRateLimitConfig resolveServerRateLimit(double, double)",
+        "PUBLIC(+) void updateServerRateLimiter(org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ServerRateLimitConfig, org.apache.pinot.common.metrics.ServerMetrics)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ByteCountThrottlingStrategy",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getUnits(org.apache.pinot.spi.stream.MessageBatch)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ByteCountThrottlingStrategy INSTANCE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) RealtimeConsumptionRateManager$ByteCountThrottlingStrategy()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ConsumptionRateLimiter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) ABSTRACT(-) void throttle(int)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) void throttle(org.apache.pinot.spi.stream.MessageBatch)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$MessageCountThrottlingStrategy",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getUnits(org.apache.pinot.spi.stream.MessageBatch)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$MessageCountThrottlingStrategy INSTANCE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) RealtimeConsumptionRateManager$MessageCountThrottlingStrategy()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$PartitionRateLimiter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void throttle(int)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void throttle(org.apache.pinot.spi.stream.MessageBatch)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$QuotaUtilizationTracker",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "int getAggregateNumMessages()"
+      ],
+      "addedMethods": [
+        "int getAggregateUnits()"
+      ],
+      "removedFields": [
+        "PRIVATE(-) int _aggregateNumMessages"
+      ],
+      "addedFields": [
+        "PRIVATE(+) int _aggregateUnits"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ServerRateLimitConfig",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ThrottlingStrategy _throttlingStrategy",
+        "PRIVATE(+) FINAL(+) double _serverRateLimit"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "RealtimeConsumptionRateManager$ServerRateLimitConfig(double, org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ThrottlingStrategy)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ServerRateLimiter",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) void throttle(int)",
+        "PUBLIC(-) void updateRateLimit(double)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ThrottlingStrategy getThrottlingStrategy()",
+        "PUBLIC(+) void throttle(org.apache.pinot.spi.stream.MessageBatch)",
+        "PUBLIC(+) void updateRateLimit(double, org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ThrottlingStrategy)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ThrottlingStrategy _throttlingStrategy"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) RealtimeConsumptionRateManager$ServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics, java.lang.String)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) RealtimeConsumptionRateManager$ServerRateLimiter(double, org.apache.pinot.common.metrics.ServerMetrics, java.lang.String, org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ThrottlingStrategy)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.core.data.manager.realtime.RealtimeConsumptionRateManager$ThrottlingStrategy",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) int getUnits(org.apache.pinot.spi.stream.MessageBatch)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka20.KafkaPartitionLevelConnectionHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka30.KafkaPartitionLevelConnectionHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kafka.KafkaMessageBatch",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getSizeInBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _sizeInBytes"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) KafkaMessageBatch(java.util.List<org.apache.pinot.spi.stream.BytesStreamMessage>, int, long, long, org.apache.pinot.spi.stream.StreamMessageMetadata, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) KafkaMessageBatch(java.util.List<org.apache.pinot.spi.stream.BytesStreamMessage>, int, long, long, org.apache.pinot.spi.stream.StreamMessageMetadata, boolean, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.kinesis.KinesisMessageBatch",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getSizeInBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _sizeInBytes"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) KinesisMessageBatch(java.util.List<org.apache.pinot.spi.stream.BytesStreamMessage>, org.apache.pinot.plugin.stream.kinesis.KinesisPartitionGroupOffset, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) KinesisMessageBatch(java.util.List<org.apache.pinot.spi.stream.BytesStreamMessage>, org.apache.pinot.plugin.stream.kinesis.KinesisPartitionGroupOffset, boolean, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.plugin.stream.pulsar.PulsarMessageBatch",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) long getSizeInBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _sizeInBytes"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PulsarMessageBatch(java.util.List<org.apache.pinot.spi.stream.BytesStreamMessage>, org.apache.pinot.plugin.stream.pulsar.MessageIdStreamOffset, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PulsarMessageBatch(java.util.List<org.apache.pinot.spi.stream.BytesStreamMessage>, org.apache.pinot.plugin.stream.pulsar.MessageIdStreamOffset, boolean, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.stream.MessageBatch",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) ABSTRACT(+) long getSizeInBytes()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Server",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String CONFIG_OF_SERVER_CONSUMPTION_RATE_LIMIT_BYTES"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

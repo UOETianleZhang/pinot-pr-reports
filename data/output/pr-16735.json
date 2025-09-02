@@ -1,0 +1,10 @@
+{
+  "files": [
+    ".mvn/extensions.xml"
+  ],
+  "mergedAt": "2025-09-02T06:31:12Z",
+  "number": 16735,
+  "title": "Bump com.gradle:common-custom-user-data-maven-extension from 2.0.4 to 2.0.5",
+  "url": "https://github.com/apache/pinot/pull/16735",
+  "jcmpClasses": []
+}
