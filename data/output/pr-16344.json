@@ -1,0 +1,257 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerGauge.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/ServerMeter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/segment/CommittingSegmentDescriptor.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/helix/core/realtime/segment/SizeBasedSegmentFlushThresholdComputer.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/core/realtime/segment/SizeBasedSegmentFlushThresholdComputerTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/CommitTimeCompactionIntegrationTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/converter/RealtimeSegmentConverter.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/converter/stats/CompactedDictEncodedColumnStatistics.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/converter/stats/CompactedRawIndexDictColumnStatistics.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/converter/stats/RealtimeSegmentSegmentCreationDataSource.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/converter/stats/RealtimeSegmentStatsContainer.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/readers/CompactedPinotSegmentRecordReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/utils/TableConfigUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/realtime/converter/stats/CompactedDictEncodedColumnStatisticsTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/realtime/converter/stats/CompactedRawIndexDictColumnStatisticsTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/config/table/UpsertConfig.java"
+  ],
+  "mergedAt": "2025-09-02T18:40:41Z",
+  "number": 16344,
+  "title": "Commit time compaction for upsert tables",
+  "url": "https://github.com/apache/pinot/pull/16344",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.metrics.ServerGauge",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerGauge COMMIT_TIME_COMPACTION_RATIO_PERCENT"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.metrics.ServerMeter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerMeter COMMIT_TIME_COMPACTION_ROWS_POST_COMPACTION",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerMeter COMMIT_TIME_COMPACTION_BUILD_TIME_MS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerMeter COMMIT_TIME_COMPACTION_ROWS_REMOVED",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerMeter COMMIT_TIME_COMPACTION_ENABLED_SEGMENTS",
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.metrics.ServerMeter COMMIT_TIME_COMPACTION_ROWS_PRE_COMPACTION"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.segment.CommittingSegmentDescriptor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getPreCommitRowCount()",
+        "PUBLIC(+) void setPreCommitRowCount(int)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) int _preCommitRowCount"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.helix.core.realtime.segment.SizeBasedSegmentFlushThresholdComputer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "long calculateSizeForCalculation(boolean, long, long, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.indexsegment.mutable.MutableSegmentImpl",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getDeleteRecordColumn()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.realtime.converter.RealtimeSegmentConverter",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void buildSegmentWithReader(org.apache.pinot.segment.local.segment.creator.impl.SegmentIndexCreationDriverImpl, org.apache.pinot.segment.spi.creator.SegmentGeneratorConfig, org.apache.pinot.spi.data.readers.RecordReader, int[], boolean, org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)",
+        "PRIVATE(+) org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap getValidDocIdSnapshot()",
+        "PRIVATE(+) void publishCompactionMetrics(org.apache.pinot.common.metrics.ServerMetrics, int, org.apache.pinot.segment.local.segment.creator.impl.SegmentIndexCreationDriverImpl, long)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.realtime.converter.stats.CompactedDictEncodedColumnStatistics",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getCardinality()",
+        "PUBLIC(+) int getMaxNumberOfMultiValues()",
+        "PUBLIC(+) java.lang.Object getMaxValue()",
+        "PUBLIC(+) java.lang.Object getMinValue()",
+        "PUBLIC(+) int getTotalNumberOfEntries()",
+        "PUBLIC(+) java.lang.Object getUniqueValuesSet()",
+        "PRIVATE(+) void updateMinMaxValue(java.lang.Object)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.spi.datasource.DataSource _dataSource",
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.Integer> _usedDictIds",
+        "PRIVATE(+) int _maxNumberOfMultiValues",
+        "PRIVATE(+) FINAL(+) java.lang.Object _compactedUniqueValues",
+        "PRIVATE(+) int _totalNumberOfEntries",
+        "PRIVATE(+) FINAL(+) int _compactedCardinality",
+        "PRIVATE(+) java.lang.Object _minValue",
+        "PRIVATE(+) java.lang.Object _maxValue"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CompactedDictEncodedColumnStatistics(org.apache.pinot.segment.spi.datasource.DataSource, int[], org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.realtime.converter.stats.CompactedRawIndexDictColumnStatistics",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getCardinality()",
+        "PRIVATE(+) int getDictIdForValue(org.apache.pinot.segment.spi.index.reader.Dictionary, java.lang.Object, org.apache.pinot.spi.data.FieldSpec$DataType)",
+        "PRIVATE(+) java.lang.Object getRawValue(org.apache.pinot.segment.spi.index.mutable.MutableForwardIndex, int)",
+        "PUBLIC(+) java.lang.Object getUniqueValuesSet()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.Integer> _usedDictIds",
+        "PRIVATE(+) FINAL(+) java.lang.Object _compactedUniqueValues",
+        "PRIVATE(+) FINAL(+) int _compactedCardinality"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CompactedRawIndexDictColumnStatistics(org.apache.pinot.segment.spi.datasource.DataSource, int[], org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.realtime.converter.stats.RealtimeSegmentSegmentCreationDataSource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap _validDocIdsSnapshot",
+        "PRIVATE(+) FINAL(+) int[] _sortedDocIds"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RealtimeSegmentSegmentCreationDataSource(org.apache.pinot.segment.spi.MutableSegment, org.apache.pinot.spi.data.readers.RecordReader, int[], org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.realtime.converter.stats.RealtimeSegmentStatsContainer",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.segment.spi.creator.ColumnStatistics createDictionaryColumnStatistics(org.apache.pinot.segment.spi.datasource.DataSource, int[], boolean, org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)",
+        "PRIVATE(+) org.apache.pinot.segment.spi.creator.ColumnStatistics createMapColumnStatistics(org.apache.pinot.segment.spi.datasource.DataSource, boolean, org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap, org.apache.pinot.segment.spi.creator.StatsCollectorConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int _totalDocCount"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) RealtimeSegmentStatsContainer(org.apache.pinot.segment.spi.MutableSegment, int[], org.apache.pinot.segment.spi.creator.StatsCollectorConfig, org.apache.pinot.spi.data.readers.RecordReader)",
+        "PUBLIC(+) RealtimeSegmentStatsContainer(org.apache.pinot.segment.spi.MutableSegment, int[], org.apache.pinot.segment.spi.creator.StatsCollectorConfig, org.apache.pinot.spi.data.readers.RecordReader, org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.readers.CompactedPinotSegmentRecordReader",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) boolean getNextRowFromBitmapIterator()",
+        "PRIVATE(+) boolean getNextRowFromSortedValidDocIds()",
+        "PUBLIC(+) int[] getSortedDocIds()",
+        "PUBLIC(+) void init(org.apache.pinot.segment.spi.MutableSegment, int[])",
+        "PRIVATE(+) void prepareSortedValidDocIds()",
+        "PRIVATE(+) boolean processAndValidateRecord(int)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) int[] _sortedValidDocIds",
+        "PRIVATE(+) int _currentDocIndex"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) CompactedPinotSegmentRecordReader(org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap, java.lang.String)",
+        "PUBLIC(+) CompactedPinotSegmentRecordReader(org.apache.pinot.segment.spi.index.mutable.ThreadSafeMutableRoaringBitmap)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.utils.TableConfigUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) boolean isCommitTimeCompactionEnabled(org.apache.pinot.spi.config.table.TableConfig)",
+        "PUBLIC(+) STATIC(+) void validateCommitTimeCompactionConfig(org.apache.pinot.spi.config.table.TableConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.config.table.UpsertConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isEnableCommitTimeCompaction()",
+        "PUBLIC(+) void setEnableCommitTimeCompaction(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) boolean _enableCommitTimeCompaction"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
