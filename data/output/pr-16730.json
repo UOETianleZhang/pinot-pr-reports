@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-09-02T08:23:30Z",
+  "number": 16730,
+  "title": "Bump org.yaml:snakeyaml from 2.4 to 2.5",
+  "url": "https://github.com/apache/pinot/pull/16730",
+  "jcmpClasses": []
+}
