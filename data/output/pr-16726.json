@@ -1,0 +1,28 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/restlet/resources/ValidDocIdsType.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/TablesResource.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/BaseResourceTest.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/TablesResourceTest.java",
+    "pinot-server/src/test/resources/data/test_data_with_delete.avro"
+  ],
+  "mergedAt": "2025-09-03T02:54:26Z",
+  "number": 16726,
+  "title": "Add support for SNAPSHOT_WITH_DELETE validDocIdsType to server APIs.",
+  "url": "https://github.com/apache/pinot/pull/16726",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.restlet.resources.ValidDocIdsType",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) org.apache.pinot.common.restlet.resources.ValidDocIdsType SNAPSHOT_WITH_DELETE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
