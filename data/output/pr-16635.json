@@ -1,0 +1,25 @@
+{
+  "files": [
+    "pinot-core/src/main/java/org/apache/pinot/core/metadata/DefaultMetadataExtractor.java",
+    "pinot-core/src/test/java/org/apache/pinot/core/metadata/DefaultMetadataExtractorTest.java"
+  ],
+  "mergedAt": "2025-09-03T20:44:00Z",
+  "number": 16635,
+  "title": "Extract segment metadata from slim tar ball",
+  "url": "https://github.com/apache/pinot/pull/16635",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.core.metadata.DefaultMetadataExtractor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "STATIC(+) FINAL(+) java.lang.String SEGMENT_METADATA_DIR_NAME"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
