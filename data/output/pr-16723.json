@@ -1,0 +1,116 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfig.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfigManager.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditRequestProcessor.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditUrlPathFilter.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditConfigManagerTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditRequestProcessorTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditUrlPathFilterTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/audit/AuditServiceBinder.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-09-03T16:35:22Z",
+  "number": 16723,
+  "title": "[audit] Replace URL exclusion with PathMatcher glob patterns",
+  "url": "https://github.com/apache/pinot/pull/16723",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfig",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) java.lang.String getExcludedEndpoints()",
+        "PUBLIC(-) void setExcludedEndpoints(java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getUrlFilterExcludePatterns()",
+        "PUBLIC(+) void setUrlFilterExcludePatterns(java.lang.String)"
+      ],
+      "removedFields": [
+        "PRIVATE(-) java.lang.String _excludedEndpoints"
+      ],
+      "addedFields": [
+        "PRIVATE(+) java.lang.String _urlFilterExcludePatterns"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfigManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) boolean isEndpointExcluded(java.lang.String, java.lang.String)",
+        "PUBLIC(-) boolean isEndpointExcluded(java.lang.String)",
+        "PRIVATE(-) STATIC(-) boolean matchesWildcard(java.lang.String, java.lang.String)",
+        "PRIVATE(-) STATIC(-) java.util.Set<java.lang.String> parseExcludedEndpoints(java.lang.String)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String AUDIT_CONFIG_PREFIX"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditRequestProcessor",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.common.audit.AuditUrlPathFilter _auditUrlPathFilter"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) AuditRequestProcessor(org.apache.pinot.common.audit.AuditConfigManager, org.apache.pinot.common.audit.AuditIdentityResolver)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) AuditRequestProcessor(org.apache.pinot.common.audit.AuditConfigManager, org.apache.pinot.common.audit.AuditIdentityResolver, org.apache.pinot.common.audit.AuditUrlPathFilter)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditUrlPathFilter",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isExcluded(java.lang.String, java.lang.String)",
+        "PRIVATE(+) STATIC(+) boolean matches(java.nio.file.Path, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOG",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String PREFIX_GLOB",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String PREFIX_REGEX"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) AuditUrlPathFilter()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$AuditLogConstants",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_AUDIT_LOG_CAPTURE_REQUEST_PAYLOAD",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String PREFIX",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_AUDIT_LOG_CAPTURE_REQUEST_HEADERS",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_AUDIT_LOG_EXCLUDED_ENDPOINTS",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_AUDIT_LOG_ENABLED",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_AUDIT_LOG_MAX_PAYLOAD_SIZE",
+        "PUBLIC(-) STATIC(-) FINAL(-) java.lang.String CONFIG_OF_AUDIT_LOG_LOGGER_NAME"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) CommonConstants$AuditLogConstants()"
+      ],
+      "addedConstructors": []
+    }
+  ]
+}
