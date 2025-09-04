@@ -1,0 +1,41 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfig.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditRequestProcessor.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditConfigManagerTest.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditRequestProcessorTest.java"
+  ],
+  "mergedAt": "2025-09-04T15:39:41Z",
+  "number": 16747,
+  "title": "[audit] Implement request body handling with payload size limits and truncation support",
+  "url": "https://github.com/apache/pinot/pull/16747",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int MAX_AUDIT_PAYLOAD_SIZE_BYTES_DEFAULT",
+        "PUBLIC(+) STATIC(+) FINAL(+) int MAX_AUDIT_PAYLOAD_SIZE_BYTES"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.common.audit.AuditRequestProcessor",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "STATIC(+) FINAL(+) java.lang.String TRUNCATION_MARKER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
