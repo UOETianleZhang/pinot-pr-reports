@@ -1,0 +1,85 @@
+{
+  "files": [
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/adaptiveserverselector/ServerSelectionContext.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/BalancedInstanceSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/BaseInstanceSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/InstanceSelectorFactory.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/MultiStageReplicaGroupSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/ReplicaGroupInstanceSelector.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/SegmentInstanceCandidate.java",
+    "pinot-broker/src/main/java/org/apache/pinot/broker/routing/instanceselector/SegmentStates.java",
+    "pinot-common/src/main/java/org/apache/pinot/common/metrics/BrokerMeter.java"
+  ],
+  "mergedAt": "2025-09-04T03:42:14Z",
+  "number": 16744,
+  "title": "Minor cleanups and refactors in instance selector module",
+  "url": "https://github.com/apache/pinot/pull/16744",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.broker.routing.adaptiveserverselector.ServerSelectionContext",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isUseFixedReplica()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _isUseFixedReplica",
+        "PRIVATE(+) FINAL(+) org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig _config"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) ServerSelectionContext(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) ServerSelectionContext(java.util.Map<java.lang.String,java.lang.String>, org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.BaseInstanceSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PROTECTED(-) boolean isUseFixedReplica(java.util.Map<java.lang.String,java.lang.String>)"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "FINAL(-) boolean _useFixedReplica"
+      ],
+      "addedFields": [
+        "FINAL(+) org.apache.pinot.broker.routing.instanceselector.InstanceSelectorConfig _config"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.ReplicaGroupInstanceSelector",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) org.apache.commons.lang3.tuple.Pair<java.util.Map<java.lang.String,java.lang.String>,java.util.Map<java.lang.String,java.lang.String>> selectServersUsingAdaptiveServerSelector(java.util.List<java.lang.String>, int, org.apache.pinot.broker.routing.instanceselector.SegmentStates, java.util.Map<java.lang.String,java.lang.Integer>, org.apache.pinot.broker.routing.adaptiveserverselector.ServerSelectionContext)",
+        "PRIVATE(-) org.apache.commons.lang3.tuple.Pair<java.util.Map<java.lang.String,java.lang.String>,java.util.Map<java.lang.String,java.lang.String>> selectServersUsingRoundRobin(java.util.List<java.lang.String>, int, org.apache.pinot.broker.routing.instanceselector.SegmentStates, org.apache.pinot.broker.routing.adaptiveserverselector.ServerSelectionContext)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.commons.lang3.tuple.Pair<java.util.Map<java.lang.String,java.lang.String>,java.util.Map<java.lang.String,java.lang.String>> selectServers(java.util.List<java.lang.String>, int, org.apache.pinot.broker.routing.instanceselector.SegmentStates, java.util.Map<java.lang.String,java.lang.Integer>, org.apache.pinot.broker.routing.adaptiveserverselector.ServerSelectionContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.broker.routing.instanceselector.SegmentInstanceCandidate",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}

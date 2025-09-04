@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-09-04T03:58:42Z",
+  "number": 16749,
+  "title": "Bump parquet.version from 1.15.2 to 1.16.0",
+  "url": "https://github.com/apache/pinot/pull/16749",
+  "jcmpClasses": []
+}
