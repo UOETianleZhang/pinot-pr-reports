@@ -1,0 +1,396 @@
+{
+  "files": [
+    "pinot-core/src/test/java/org/apache/pinot/queries/TextSearchQueriesWithCombinedFilesTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/text/LuceneCombinedTextIndexConstants.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/text/LuceneTextIndexCombined.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/creator/impl/text/LuceneTextIndexCreator.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/converter/SegmentV1V2ToV3FormatConverter.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/loader/invertedindex/TextIndexHandler.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/text/LuceneTextIndexBufferReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/text/LuceneTextIndexHeader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/text/LuceneTextIndexReader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/text/PinotBufferIndexInput.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/readers/text/PinotBufferLuceneDirectory.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/text/TextIndexConfigBuilder.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/index/text/TextIndexType.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/store/SingleFileIndexDirectory.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/store/TextIndexUtils.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/creator/impl/text/LuceneTextIndexBufferIntegrationTest.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/segment/index/text/LuceneTextIndexConfigReloadTest.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/V1Constants.java",
+    "pinot-segment-spi/src/main/java/org/apache/pinot/segment/spi/index/TextIndexConfig.java"
+  ],
+  "mergedAt": "2025-09-04T06:52:50Z",
+  "number": 16688,
+  "title": "Support to create combined Lucene Text Index Files and merge into columns.psf",
+  "url": "https://github.com/apache/pinot/pull/16688",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.text.LuceneCombinedTextIndexConstants",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) int getFileMetadataEntrySize()",
+        "PUBLIC(+) STATIC(+) int getFileMetadataEntrySizeWithFilename(java.lang.String)",
+        "PUBLIC(+) STATIC(+) int getHeaderSize()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILE_SIZE_FIELD_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILE_NAME_LENGTH_FIELD_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String MAGIC_NUMBER",
+        "PUBLIC(+) STATIC(+) FINAL(+) int MAGIC_NUMBER_LENGTH",
+        "PUBLIC(+) STATIC(+) FINAL(+) int VERSION",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILE_OFFSET_FIELD_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int TOTAL_SIZE_FIELD_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILE_COUNT_FIELD_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int VERSION_SIZE",
+        "PUBLIC(+) STATIC(+) FINAL(+) int RESERVED_FIELD_SIZE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LuceneCombinedTextIndexConstants()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.text.LuceneCombinedTextIndexConstants$HeaderOffsets",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) int MAGIC_NUMBER_OFFSET",
+        "PUBLIC(+) STATIC(+) FINAL(+) int TOTAL_SIZE_OFFSET",
+        "PUBLIC(+) STATIC(+) FINAL(+) int FILE_COUNT_OFFSET",
+        "PUBLIC(+) STATIC(+) FINAL(+) int VERSION_OFFSET",
+        "PUBLIC(+) STATIC(+) FINAL(+) int RESERVED_OFFSET"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LuceneCombinedTextIndexConstants$HeaderOffsets()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCombined",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) long calculateMetadataSize(java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCombined$FileInfo>)",
+        "PRIVATE(+) STATIC(+) long calculateTotalBufferSize(java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCombined$FileInfo>)",
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCombined$FileInfo> collectFiles(java.io.File)",
+        "PUBLIC(+) STATIC(+) void combineLuceneIndexFiles(java.io.File, java.lang.String)",
+        "PRIVATE(+) STATIC(+) void writeFileData(java.nio.channels.FileChannel, java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCombined$FileInfo>)",
+        "PRIVATE(+) STATIC(+) void writeFileMetadata(java.nio.channels.FileChannel, java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCombined$FileInfo>, long)",
+        "PRIVATE(+) STATIC(+) void writeHeader(java.nio.channels.FileChannel, int, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LuceneTextIndexCombined()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCombined$FileInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "FINAL(+) long _size",
+        "FINAL(+) java.io.File _file",
+        "FINAL(+) java.lang.String _name"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "LuceneTextIndexCombined$FileInfo(java.io.File, java.lang.String, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.creator.impl.text.LuceneTextIndexCreator",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void combineAndCleanupTextIndexFiles()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _combineAndCleanupFiles",
+        "PRIVATE(+) java.io.File _segmentDirectory"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneTextIndexCreator(java.lang.String, java.io.File, boolean, boolean, java.io.File, int[], boolean, org.apache.pinot.segment.spi.index.TextIndexConfig)",
+        "PUBLIC(+) LuceneTextIndexCreator(org.apache.pinot.segment.spi.creator.IndexCreationContext, boolean, org.apache.pinot.segment.spi.index.TextIndexConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.loader.invertedindex.TextIndexHandler",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) void cleanupExistingTextIndexFiles(java.io.File, java.lang.String)",
+        "PRIVATE(+) void convertTextIndexToV3Format(org.apache.pinot.segment.spi.store.SegmentDirectory$Writer, java.lang.String, java.io.File)",
+        "PRIVATE(+) boolean hasTextIndexConfigurationChanged(java.lang.String, org.apache.pinot.segment.spi.store.SegmentDirectory$Reader)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexBufferReader",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) STATIC(+) java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo> buildFileMap(org.apache.pinot.segment.spi.memory.PinotDataBuffer, org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$TextIndexMetadata)",
+        "PUBLIC(+) STATIC(+) org.apache.lucene.store.Directory createLuceneDirectory(org.apache.pinot.segment.spi.memory.PinotDataBuffer, java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.spi.memory.PinotDataBuffer extractDocIdMappingBuffer(org.apache.pinot.segment.spi.memory.PinotDataBuffer, java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.Properties extractProperties(org.apache.pinot.segment.spi.memory.PinotDataBuffer, java.lang.String)",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo getFileInfo(org.apache.pinot.segment.spi.memory.PinotDataBuffer, java.lang.String)",
+        "PUBLIC(+) STATIC(+) boolean hasFile(org.apache.pinot.segment.spi.memory.PinotDataBuffer, java.lang.String)",
+        "PUBLIC(+) STATIC(+) java.util.List<java.lang.String> listFiles(org.apache.pinot.segment.spi.memory.PinotDataBuffer)",
+        "PRIVATE(+) STATIC(+) org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$TextIndexMetadata parseBufferMetadata(org.apache.pinot.segment.spi.memory.PinotDataBuffer)",
+        "PRIVATE(+) STATIC(+) java.util.Properties parsePropertiesFromBuffer(org.apache.pinot.segment.spi.memory.PinotDataBuffer)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) LuceneTextIndexBufferReader()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneTextIndexHeader()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getName()",
+        "PUBLIC(+) long getOffset()",
+        "PUBLIC(+) long getSize()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _size",
+        "PRIVATE(+) FINAL(+) java.lang.String _name",
+        "PRIVATE(+) FINAL(+) long _offset"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneTextIndexHeader$FileInfo(java.lang.String, long, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$TextIndexMetadata",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) int getFileCount()",
+        "PUBLIC(+) java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo> getFileInfoMap()",
+        "PUBLIC(+) java.util.List<java.lang.String> getFileNames()",
+        "PUBLIC(+) java.lang.String getMagicNumber()",
+        "PUBLIC(+) long getTotalSize()",
+        "PUBLIC(+) int getVersion()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) long _totalSize",
+        "PRIVATE(+) FINAL(+) int _fileCount",
+        "PRIVATE(+) FINAL(+) java.lang.String _magicNumber",
+        "PRIVATE(+) FINAL(+) int _version",
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _fileNames",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo> _fileInfoMap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneTextIndexHeader$TextIndexMetadata(java.lang.String, int, long, int, java.util.List<java.lang.String>, java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexReader",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) org.apache.pinot.segment.local.segment.index.readers.text.DocIdTranslator createDocIdTranslator(org.apache.pinot.segment.spi.memory.PinotDataBuffer, org.apache.pinot.segment.spi.index.TextIndexConfig, int)",
+        "PRIVATE(+) org.apache.pinot.segment.spi.index.TextIndexConfig updateConfigFromProperties(java.util.Properties, org.apache.pinot.segment.spi.index.TextIndexConfig)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) LuceneTextIndexReader(java.lang.String, org.apache.pinot.segment.spi.memory.PinotDataBuffer, int, org.apache.pinot.segment.spi.index.TextIndexConfig)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexReader$2DocIdVisitor",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void intField(org.apache.lucene.index.FieldInfo, int)",
+        "PUBLIC(+) org.apache.lucene.index.StoredFieldVisitor$Status needsField(org.apache.lucene.index.FieldInfo)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "int _pinotDocId"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "LuceneTextIndexReader$2DocIdVisitor(org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexReader)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.PinotBufferIndexInput",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()",
+        "PUBLIC(+) long length()",
+        "PROTECTED(+) void readInternal(java.nio.ByteBuffer)",
+        "PROTECTED(+) void seekInternal(long)",
+        "PUBLIC(+) org.apache.lucene.store.IndexInput slice(java.lang.String, long, long)",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.spi.memory.PinotDataBuffer _buffer",
+        "PRIVATE(+) FINAL(+) long _length"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotBufferIndexInput(java.lang.String, org.apache.pinot.segment.spi.memory.PinotDataBuffer, long, long)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.readers.text.PinotBufferLuceneDirectory",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()",
+        "PUBLIC(+) org.apache.lucene.store.IndexOutput createOutput(java.lang.String, org.apache.lucene.store.IOContext)",
+        "PUBLIC(+) org.apache.lucene.store.IndexOutput createTempOutput(java.lang.String, java.lang.String, org.apache.lucene.store.IOContext)",
+        "PUBLIC(+) void deleteFile(java.lang.String)",
+        "PUBLIC(+) long fileLength(java.lang.String)",
+        "PUBLIC(+) java.util.Set<java.lang.String> getPendingDeletions()",
+        "PUBLIC(+) java.lang.String[] listAll()",
+        "PUBLIC(+) org.apache.lucene.store.Lock obtainLock(java.lang.String)",
+        "PUBLIC(+) org.apache.lucene.store.IndexInput openInput(java.lang.String, org.apache.lucene.store.IOContext)",
+        "PUBLIC(+) void rename(java.lang.String, java.lang.String)",
+        "PUBLIC(+) void sync(java.util.Collection<java.lang.String>)",
+        "PUBLIC(+) void syncMetaData()",
+        "PUBLIC(+) java.lang.String toString()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.spi.memory.PinotDataBuffer _indexBuffer",
+        "PRIVATE(+) FINAL(+) java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo> _fileMap",
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger LOGGER",
+        "PRIVATE(+) FINAL(+) java.lang.String _column",
+        "PRIVATE(+) FINAL(+) java.util.Set<java.lang.String> _fileNames"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PinotBufferLuceneDirectory(org.apache.pinot.segment.spi.memory.PinotDataBuffer, java.util.Map<java.lang.String,org.apache.pinot.segment.local.segment.index.readers.text.LuceneTextIndexHeader$FileInfo>, java.lang.String)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.index.text.TextIndexConfigBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.local.segment.index.text.TextIndexConfigBuilder setStoreInSegmentFile(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.store.TextIndexUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.TextIndexConfig",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) boolean isStoreInSegmentFile()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean _storeInSegmentFile",
+        "PRIVATE(+) STATIC(+) FINAL(+) boolean LUCENE_INDEX_DEFAULT_STORE_IN_SEGMENT_FILE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) TextIndexConfig(java.lang.Boolean, org.apache.pinot.spi.config.table.FSTType, java.lang.Object, boolean, boolean, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.Boolean, java.lang.Integer, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Integer, java.lang.Boolean, org.apache.pinot.segment.spi.index.TextIndexConfig$DocIdTranslatorMode, java.lang.Boolean, java.lang.Boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.index.TextIndexConfig$AbstractBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.TextIndexConfig$AbstractBuilder withStoreInSegmentFile(boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PROTECTED(+) boolean _storeInSegmentFile"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.segment.spi.V1Constants$Indexes",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String LUCENE_COMBINE_TEXT_INDEX_FILE_EXTENSION"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
