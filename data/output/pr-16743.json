@@ -1,0 +1,11 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/CommitTimeCompactionIntegrationTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/realtime/converter/RealtimeSegmentConverter.java"
+  ],
+  "mergedAt": "2025-09-04T22:51:38Z",
+  "number": 16743,
+  "title": "[Commit time compaction] Do not remove soft-delete record for commit time compaction",
+  "url": "https://github.com/apache/pinot/pull/16743",
+  "jcmpClasses": []
+}

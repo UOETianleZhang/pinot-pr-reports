@@ -1,0 +1,597 @@
+{
+  "files": [
+    "pinot-connectors/pinot-spark-3-connector/README.md",
+    "pinot-connectors/pinot-spark-3-connector/documentation/read_model.md",
+    "pinot-connectors/pinot-spark-3-connector/examples/README.md",
+    "pinot-connectors/pinot-spark-3-connector/examples/read_pinot_from_proxy_with_auth_token.scala",
+    "pinot-connectors/pinot-spark-3-connector/src/main/scala/org/apache/pinot/connector/spark/v3/datasource/DataExtractor.scala",
+    "pinot-connectors/pinot-spark-3-connector/src/main/scala/org/apache/pinot/connector/spark/v3/datasource/PinotDataSource.scala",
+    "pinot-connectors/pinot-spark-3-connector/src/main/scala/org/apache/pinot/connector/spark/v3/datasource/PinotScan.scala",
+    "pinot-connectors/pinot-spark-3-connector/src/main/scala/org/apache/pinot/connector/spark/v3/datasource/PinotScanBuilder.scala",
+    "pinot-connectors/pinot-spark-3-connector/src/main/scala/org/apache/pinot/connector/spark/v3/datasource/SparkToPinotTypeTranslator.scala",
+    "pinot-connectors/pinot-spark-3-connector/src/test/scala/org/apache/pinot/connector/spark/v3/datasource/DataExtractorTest.scala",
+    "pinot-connectors/pinot-spark-3-connector/src/test/scala/org/apache/pinot/connector/spark/v3/datasource/SparkToPinotTypeTranslatorTest.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/AuthUtils.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/GrpcUtils.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/HttpUtils.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/NetUtils.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/PinotClusterClient.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/PinotDataSourceReadOptions.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/reader/PinotAbstractPartitionReader.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/reader/PinotGrpcServerDataFetcher.scala",
+    "pinot-connectors/pinot-spark-common/src/main/scala/org/apache/pinot/connector/spark/common/reader/PinotServerDataFetcher.scala",
+    "pinot-connectors/pinot-spark-common/src/test/scala/org/apache/pinot/connector/spark/common/GrpcUtilsTest.scala",
+    "pinot-connectors/pinot-spark-common/src/test/scala/org/apache/pinot/connector/spark/common/HttpUtilsTest.scala",
+    "pinot-connectors/pinot-spark-common/src/test/scala/org/apache/pinot/connector/spark/common/PinotDataSourceReadOptionsTest.scala",
+    "pinot-connectors/pinot-spark-common/src/test/scala/org/apache/pinot/connector/spark/common/PinotSplitterTest.scala"
+  ],
+  "mergedAt": "2025-09-04T23:16:58Z",
+  "number": 16666,
+  "title": "Add Pinot Proxy, unified secureMode, and comprehensive gRPC support to Spark-3 connector",
+  "url": "https://github.com/apache/pinot/pull/16666",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.connector.spark.common.AuthUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) scala.Option<scala.Tuple2<java.lang.String,java.lang.String>> buildAuthHeader(scala.Option<java.lang.String>, scala.Option<java.lang.String>)",
+        "PUBLIC(+) STATIC(+) java.lang.String normalizeBearerValue(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.AuthUtils$",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) scala.Option<scala.Tuple2<java.lang.String,java.lang.String>> buildAuthHeader(scala.Option<java.lang.String>, scala.Option<java.lang.String>)",
+        "PUBLIC(+) java.lang.String normalizeBearerValue(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.AuthUtils$ MODULE$"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) AuthUtils$()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.BrokerEntry",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.BrokerEntry apply(java.lang.String, int)",
+        "PUBLIC(+) boolean canEqual(java.lang.Object)",
+        "PUBLIC(+) org.apache.pinot.connector.spark.common.BrokerEntry copy(java.lang.String, int)",
+        "PUBLIC(+) java.lang.String copy$default$1()",
+        "PUBLIC(+) int copy$default$2()",
+        "PUBLIC(+) STATIC(+) scala.Function1<java.lang.String,scala.Function1<java.lang.Object,org.apache.pinot.connector.spark.common.BrokerEntry>> curried()",
+        "PUBLIC(+) boolean equals(java.lang.Object)",
+        "PUBLIC(+) int hashCode()",
+        "PUBLIC(+) java.lang.String host()",
+        "PUBLIC(+) int port()",
+        "PUBLIC(+) int productArity()",
+        "PUBLIC(+) java.lang.Object productElement(int)",
+        "PUBLIC(+) scala.collection.Iterator<java.lang.Object> productIterator()",
+        "PUBLIC(+) java.lang.String productPrefix()",
+        "PUBLIC(+) java.lang.String toString()",
+        "PUBLIC(+) STATIC(+) scala.Function1<scala.Tuple2<java.lang.String,java.lang.Object>,org.apache.pinot.connector.spark.common.BrokerEntry> tupled()",
+        "PUBLIC(+) STATIC(+) scala.Option<scala.Tuple2<java.lang.String,java.lang.Object>> unapply(org.apache.pinot.connector.spark.common.BrokerEntry)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int port",
+        "PRIVATE(+) FINAL(+) java.lang.String host"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) BrokerEntry(java.lang.String, int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.BrokerEntry$",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.connector.spark.common.BrokerEntry apply(java.lang.String, int)",
+        "PRIVATE(+) java.lang.Object readResolve()",
+        "PUBLIC(+) FINAL(+) java.lang.String toString()",
+        "PUBLIC(+) scala.Option<scala.Tuple2<java.lang.String,java.lang.Object>> unapply(org.apache.pinot.connector.spark.common.BrokerEntry)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.BrokerEntry$ MODULE$"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) BrokerEntry$()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.GrpcUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) io.grpc.stub.AbstractStub applyProxyMetadata(io.grpc.stub.AbstractStub<T>, java.lang.String, int)",
+        "PUBLIC(+) STATIC(+) io.grpc.ManagedChannel createChannel(java.lang.String, int, org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)",
+        "PUBLIC(+) STATIC(+) io.grpc.Metadata createProxyMetadata(java.lang.String, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.GrpcUtils$",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) io.grpc.stub.AbstractStub applyProxyMetadata(io.grpc.stub.AbstractStub<T>, java.lang.String, int)",
+        "PUBLIC(+) io.grpc.ManagedChannel createChannel(java.lang.String, int, org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)",
+        "PUBLIC(+) io.grpc.Metadata createProxyMetadata(java.lang.String, int)",
+        "PRIVATE(+) io.grpc.ManagedChannelBuilder<?> createTlsChannel(java.lang.String, int, org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)",
+        "PUBLIC(+) org.slf4j.Logger log()",
+        "PUBLIC(+) void logDebug(scala.Function0<java.lang.String>)",
+        "PUBLIC(+) void logDebug(scala.Function0<java.lang.String>, java.lang.Throwable)",
+        "PUBLIC(+) void logError(scala.Function0<java.lang.String>)",
+        "PUBLIC(+) void logError(scala.Function0<java.lang.String>, java.lang.Throwable)",
+        "PUBLIC(+) void logInfo(scala.Function0<java.lang.String>)",
+        "PUBLIC(+) void logInfo(scala.Function0<java.lang.String>, java.lang.Throwable)",
+        "PUBLIC(+) java.lang.String logName()",
+        "PUBLIC(+) void logTrace(scala.Function0<java.lang.String>)",
+        "PUBLIC(+) void logTrace(scala.Function0<java.lang.String>, java.lang.Throwable)",
+        "PUBLIC(+) void logWarning(scala.Function0<java.lang.String>)",
+        "PUBLIC(+) void logWarning(scala.Function0<java.lang.String>, java.lang.Throwable)",
+        "PUBLIC(+) org.slf4j.Logger org$apache$pinot$connector$spark$common$Logging$$log_()",
+        "PUBLIC(+) void org$apache$pinot$connector$spark$common$Logging$$log__$eq(org.slf4j.Logger)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.GrpcUtils$ MODULE$",
+        "PRIVATE(+) TRANSIENT(+) org.slf4j.Logger org$apache$pinot$connector$spark$common$Logging$$log_"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) GrpcUtils$()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.HttpUtils",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) void configureHttpsClient(scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>)",
+        "PUBLIC(+) STATIC(+) java.lang.String sendGetRequest(java.net.URI, scala.Option<java.lang.String>, scala.Option<java.lang.String>)",
+        "PUBLIC(+) STATIC(+) java.lang.String sendGetRequestWithProxyHeaders(java.net.URI, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.HttpUtils$",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.lang.String executeRequest(org.apache.hc.core5.http.ClassicHttpRequest)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) void configureHttpsClient(scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>)",
+        "PRIVATE(+) java.lang.String executeRequest(org.apache.hc.core5.http.ClassicHttpRequest, boolean)",
+        "PRIVATE(+) boolean executeRequest$default$2()",
+        "PRIVATE(+) scala.Option<org.apache.hc.client5.http.impl.classic.CloseableHttpClient> httpsClient()",
+        "PRIVATE(+) void httpsClient_$eq(scala.Option<org.apache.hc.client5.http.impl.classic.CloseableHttpClient>)",
+        "PUBLIC(+) java.lang.String sendGetRequest(java.net.URI, scala.Option<java.lang.String>, scala.Option<java.lang.String>)",
+        "PUBLIC(+) java.lang.String sendGetRequestWithProxyHeaders(java.net.URI, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) scala.Option<org.apache.hc.client5.http.impl.classic.CloseableHttpClient> httpsClient"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.NetUtils",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) scala.Tuple2<java.lang.String,java.lang.String> parseHostPort(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.NetUtils$",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) scala.Tuple2<java.lang.String,java.lang.String> parseHostPort(java.lang.String, boolean)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.NetUtils$ MODULE$"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PRIVATE(+) NetUtils$()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.PinotClusterClient",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) scala.collection.immutable.List<java.lang.String> getBrokerInstances(java.lang.String, java.lang.String)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.connector.spark.common.InstanceInfo getInstanceInfo(java.lang.String, java.lang.String)",
+        "PUBLIC(-) STATIC(-) scala.collection.immutable.Map<org.apache.pinot.spi.config.table.TableType,scala.collection.immutable.Map<java.lang.String,scala.collection.immutable.List<java.lang.String>>> getRoutingTable(java.lang.String, org.apache.pinot.connector.spark.common.query.ScanQuery)",
+        "PUBLIC(-) STATIC(-) org.apache.pinot.spi.data.Schema getTableSchema(java.lang.String, java.lang.String)",
+        "PUBLIC(-) STATIC(-) scala.Option<org.apache.pinot.connector.spark.common.TimeBoundaryInfo> getTimeBoundaryInfo(java.lang.String, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) scala.collection.immutable.List<java.lang.String> getBrokerInstances(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean getBrokerInstances$default$3()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getBrokerInstances$default$4()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getBrokerInstances$default$5()",
+        "PUBLIC(+) STATIC(+) boolean getBrokerInstances$default$6()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.InstanceInfo getInstanceInfo(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean getInstanceInfo$default$3()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getInstanceInfo$default$4()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getInstanceInfo$default$5()",
+        "PUBLIC(+) STATIC(+) boolean getInstanceInfo$default$6()",
+        "PUBLIC(+) STATIC(+) scala.collection.immutable.Map<org.apache.pinot.spi.config.table.TableType,scala.collection.immutable.Map<java.lang.String,scala.collection.immutable.List<java.lang.String>>> getRoutingTable(java.lang.String, org.apache.pinot.connector.spark.common.query.ScanQuery, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean getRoutingTable$default$3()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getRoutingTable$default$4()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getRoutingTable$default$5()",
+        "PUBLIC(+) STATIC(+) boolean getRoutingTable$default$6()",
+        "PUBLIC(+) STATIC(+) org.apache.pinot.spi.data.Schema getTableSchema(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean getTableSchema$default$3()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getTableSchema$default$4()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getTableSchema$default$5()",
+        "PUBLIC(+) STATIC(+) boolean getTableSchema$default$6()",
+        "PUBLIC(+) STATIC(+) scala.Option<org.apache.pinot.connector.spark.common.TimeBoundaryInfo> getTimeBoundaryInfo(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) STATIC(+) boolean getTimeBoundaryInfo$default$3()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getTimeBoundaryInfo$default$4()",
+        "PUBLIC(+) STATIC(+) scala.Option<java.lang.String> getTimeBoundaryInfo$default$5()",
+        "PUBLIC(+) STATIC(+) boolean getTimeBoundaryInfo$default$6()"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.PinotClusterClient$",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) FINAL(-) org.apache.pinot.connector.spark.common.PinotClusterClient$BrokerEntry$2$ BrokerEntry$3(scala.runtime.LazyRef)",
+        "PUBLIC(-) scala.collection.immutable.List<java.lang.String> getBrokerInstances(java.lang.String, java.lang.String)",
+        "PUBLIC(-) org.apache.pinot.connector.spark.common.InstanceInfo getInstanceInfo(java.lang.String, java.lang.String)",
+        "PUBLIC(-) scala.collection.immutable.Map<org.apache.pinot.spi.config.table.TableType,scala.collection.immutable.Map<java.lang.String,scala.collection.immutable.List<java.lang.String>>> getRoutingTable(java.lang.String, org.apache.pinot.connector.spark.common.query.ScanQuery)",
+        "PRIVATE(-) scala.collection.immutable.Map<java.lang.String,scala.collection.immutable.List<java.lang.String>> getRoutingTableForQuery(java.lang.String, java.lang.String)",
+        "PUBLIC(-) org.apache.pinot.spi.data.Schema getTableSchema(java.lang.String, java.lang.String)",
+        "PUBLIC(-) scala.Option<org.apache.pinot.connector.spark.common.TimeBoundaryInfo> getTimeBoundaryInfo(java.lang.String, java.lang.String)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) scala.collection.immutable.List<java.lang.String> getBrokerInstances(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) boolean getBrokerInstances$default$3()",
+        "PUBLIC(+) scala.Option<java.lang.String> getBrokerInstances$default$4()",
+        "PUBLIC(+) scala.Option<java.lang.String> getBrokerInstances$default$5()",
+        "PUBLIC(+) boolean getBrokerInstances$default$6()",
+        "PUBLIC(+) org.apache.pinot.connector.spark.common.InstanceInfo getInstanceInfo(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) boolean getInstanceInfo$default$3()",
+        "PUBLIC(+) scala.Option<java.lang.String> getInstanceInfo$default$4()",
+        "PUBLIC(+) scala.Option<java.lang.String> getInstanceInfo$default$5()",
+        "PUBLIC(+) boolean getInstanceInfo$default$6()",
+        "PUBLIC(+) scala.collection.immutable.Map<org.apache.pinot.spi.config.table.TableType,scala.collection.immutable.Map<java.lang.String,scala.collection.immutable.List<java.lang.String>>> getRoutingTable(java.lang.String, org.apache.pinot.connector.spark.common.query.ScanQuery, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) boolean getRoutingTable$default$3()",
+        "PUBLIC(+) scala.Option<java.lang.String> getRoutingTable$default$4()",
+        "PUBLIC(+) scala.Option<java.lang.String> getRoutingTable$default$5()",
+        "PUBLIC(+) boolean getRoutingTable$default$6()",
+        "PRIVATE(+) scala.collection.immutable.Map<java.lang.String,scala.collection.immutable.List<java.lang.String>> getRoutingTableForQuery(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PRIVATE(+) boolean getRoutingTableForQuery$default$3()",
+        "PRIVATE(+) scala.Option<java.lang.String> getRoutingTableForQuery$default$4()",
+        "PRIVATE(+) scala.Option<java.lang.String> getRoutingTableForQuery$default$5()",
+        "PRIVATE(+) boolean getRoutingTableForQuery$default$6()",
+        "PUBLIC(+) org.apache.pinot.spi.data.Schema getTableSchema(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) boolean getTableSchema$default$3()",
+        "PUBLIC(+) scala.Option<java.lang.String> getTableSchema$default$4()",
+        "PUBLIC(+) scala.Option<java.lang.String> getTableSchema$default$5()",
+        "PUBLIC(+) boolean getTableSchema$default$6()",
+        "PUBLIC(+) scala.Option<org.apache.pinot.connector.spark.common.TimeBoundaryInfo> getTimeBoundaryInfo(java.lang.String, java.lang.String, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean)",
+        "PUBLIC(+) boolean getTimeBoundaryInfo$default$3()",
+        "PUBLIC(+) scala.Option<java.lang.String> getTimeBoundaryInfo$default$4()",
+        "PUBLIC(+) scala.Option<java.lang.String> getTimeBoundaryInfo$default$5()",
+        "PUBLIC(+) boolean getTimeBoundaryInfo$default$6()",
+        "PRIVATE(+) java.lang.String ROUTING_TABLE_SIMPLE_TEMPLATE()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String ROUTING_TABLE_SIMPLE_TEMPLATE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.PinotClusterClient$BrokerEntry$1",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) boolean canEqual(java.lang.Object)",
+        "PUBLIC(-) org.apache.pinot.connector.spark.common.PinotClusterClient$BrokerEntry$1 copy(java.lang.String, int)",
+        "PUBLIC(-) java.lang.String copy$default$1()",
+        "PUBLIC(-) int copy$default$2()",
+        "PUBLIC(-) boolean equals(java.lang.Object)",
+        "PUBLIC(-) int hashCode()",
+        "PUBLIC(-) java.lang.String host()",
+        "PUBLIC(-) int port()",
+        "PUBLIC(-) int productArity()",
+        "PUBLIC(-) java.lang.Object productElement(int)",
+        "PUBLIC(-) scala.collection.Iterator<java.lang.Object> productIterator()",
+        "PUBLIC(-) java.lang.String productPrefix()",
+        "PUBLIC(-) java.lang.String toString()"
+      ],
+      "addedMethods": [],
+      "removedFields": [
+        "PRIVATE(-) FINAL(-) int port",
+        "PRIVATE(-) FINAL(-) java.lang.String host"
+      ],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PinotClusterClient$BrokerEntry$1(java.lang.String, int)"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.PinotClusterClient$BrokerEntry$2$",
+      "type": "deletion",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.connector.spark.common.PinotClusterClient$BrokerEntry$1 apply(java.lang.String, int)",
+        "PUBLIC(-) FINAL(-) java.lang.String toString()",
+        "PUBLIC(-) scala.Option<scala.Tuple2<java.lang.String,java.lang.Object>> unapply(org.apache.pinot.connector.spark.common.PinotClusterClient$BrokerEntry$1)"
+      ],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [
+        "PUBLIC(-) PinotClusterClient$BrokerEntry$2$()"
+      ],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions apply(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean)",
+        "PUBLIC(-) org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions copy(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean)",
+        "PUBLIC(-) STATIC(-) scala.Option<scala.Tuple10<java.lang.String,scala.Option<org.apache.pinot.spi.config.table.TableType>,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,scala.collection.immutable.Set<java.lang.String>,java.lang.Object>> unapply(org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions apply(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean, int, long, boolean, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>)",
+        "PUBLIC(+) scala.Option<java.lang.String> authHeader()",
+        "PUBLIC(+) scala.Option<java.lang.String> authToken()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_AUTH_HEADER()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_AUTH_TOKEN()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_MAX_INBOUND_MESSAGE_SIZE()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_PORT()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_PROXY_URI()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_PASSWORD()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_PATH()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_TYPE()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_TLS_SSL_PROVIDER()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_PASSWORD()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_PATH()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_TYPE()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_GRPC_USE_PLAIN_TEXT()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_KEYSTORE_PASSWORD()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_KEYSTORE_PATH()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_PROXY_ENABLED()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_SECURE_MODE()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_TRUSTSTORE_PASSWORD()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_TRUSTSTORE_PATH()",
+        "PUBLIC(+) STATIC(+) java.lang.String CONFIG_USE_HTTPS()",
+        "PUBLIC(+) org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions copy(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean, int, long, boolean, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>)",
+        "PUBLIC(+) boolean copy$default$11()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$12()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$13()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$14()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$15()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$16()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$17()",
+        "PUBLIC(+) boolean copy$default$18()",
+        "PUBLIC(+) int copy$default$19()",
+        "PUBLIC(+) long copy$default$20()",
+        "PUBLIC(+) boolean copy$default$21()",
+        "PUBLIC(+) java.lang.String copy$default$22()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$23()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$24()",
+        "PUBLIC(+) java.lang.String copy$default$25()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$26()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$27()",
+        "PUBLIC(+) java.lang.String copy$default$28()",
+        "PUBLIC(+) scala.Option<java.lang.String> copy$default$29()",
+        "PUBLIC(+) long grpcMaxInboundMessageSize()",
+        "PUBLIC(+) int grpcPort()",
+        "PUBLIC(+) scala.Option<java.lang.String> grpcProxyUri()",
+        "PUBLIC(+) scala.Option<java.lang.String> grpcTlsKeystorePassword()",
+        "PUBLIC(+) scala.Option<java.lang.String> grpcTlsKeystorePath()",
+        "PUBLIC(+) java.lang.String grpcTlsKeystoreType()",
+        "PUBLIC(+) java.lang.String grpcTlsSslProvider()",
+        "PUBLIC(+) scala.Option<java.lang.String> grpcTlsTruststorePassword()",
+        "PUBLIC(+) scala.Option<java.lang.String> grpcTlsTruststorePath()",
+        "PUBLIC(+) java.lang.String grpcTlsTruststoreType()",
+        "PUBLIC(+) boolean grpcUsePlainText()",
+        "PUBLIC(+) scala.Option<java.lang.String> keystorePassword()",
+        "PUBLIC(+) scala.Option<java.lang.String> keystorePath()",
+        "PUBLIC(+) boolean proxyEnabled()",
+        "PUBLIC(+) scala.Option<java.lang.String> truststorePassword()",
+        "PUBLIC(+) scala.Option<java.lang.String> truststorePath()",
+        "PUBLIC(+) boolean useHttps()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) boolean proxyEnabled",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> grpcTlsTruststorePassword",
+        "PRIVATE(+) FINAL(+) boolean grpcUsePlainText",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> authToken",
+        "PRIVATE(+) FINAL(+) long grpcMaxInboundMessageSize",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> authHeader",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> truststorePassword",
+        "PRIVATE(+) FINAL(+) java.lang.String grpcTlsTruststoreType",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> grpcProxyUri",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> keystorePassword",
+        "PRIVATE(+) FINAL(+) java.lang.String grpcTlsKeystoreType",
+        "PRIVATE(+) FINAL(+) int grpcPort",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> truststorePath",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> keystorePath",
+        "PRIVATE(+) FINAL(+) boolean useHttps",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> grpcTlsTruststorePath",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> grpcTlsKeystorePath",
+        "PRIVATE(+) FINAL(+) scala.Option<java.lang.String> grpcTlsKeystorePassword",
+        "PRIVATE(+) FINAL(+) java.lang.String grpcTlsSslProvider"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PinotDataSourceReadOptions(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PinotDataSourceReadOptions(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean, int, long, boolean, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions$",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions apply(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean)",
+        "PUBLIC(-) scala.Option<scala.Tuple10<java.lang.String,scala.Option<org.apache.pinot.spi.config.table.TableType>,java.lang.String,java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object,scala.collection.immutable.Set<java.lang.String>,java.lang.Object>> unapply(org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions apply(java.lang.String, scala.Option<org.apache.pinot.spi.config.table.TableType>, java.lang.String, java.lang.String, boolean, int, long, boolean, scala.collection.immutable.Set<java.lang.String>, boolean, boolean, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, scala.Option<java.lang.String>, boolean, int, long, boolean, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>, scala.Option<java.lang.String>, java.lang.String, scala.Option<java.lang.String>)",
+        "PUBLIC(+) java.lang.String CONFIG_AUTH_HEADER()",
+        "PUBLIC(+) java.lang.String CONFIG_AUTH_TOKEN()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_MAX_INBOUND_MESSAGE_SIZE()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_PORT()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_PROXY_URI()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_PASSWORD()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_PATH()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_TYPE()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_TLS_SSL_PROVIDER()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_PASSWORD()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_PATH()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_TYPE()",
+        "PUBLIC(+) java.lang.String CONFIG_GRPC_USE_PLAIN_TEXT()",
+        "PUBLIC(+) java.lang.String CONFIG_KEYSTORE_PASSWORD()",
+        "PUBLIC(+) java.lang.String CONFIG_KEYSTORE_PATH()",
+        "PUBLIC(+) java.lang.String CONFIG_PROXY_ENABLED()",
+        "PUBLIC(+) java.lang.String CONFIG_SECURE_MODE()",
+        "PUBLIC(+) java.lang.String CONFIG_TRUSTSTORE_PASSWORD()",
+        "PUBLIC(+) java.lang.String CONFIG_TRUSTSTORE_PATH()",
+        "PUBLIC(+) java.lang.String CONFIG_USE_HTTPS()",
+        "PUBLIC(+) long DEFAULT_GRPC_MAX_INBOUND_MESSAGE_SIZE()",
+        "PUBLIC(+) int DEFAULT_GRPC_PORT()",
+        "PUBLIC(+) java.lang.String DEFAULT_GRPC_TLS_KEYSTORE_TYPE()",
+        "PUBLIC(+) java.lang.String DEFAULT_GRPC_TLS_SSL_PROVIDER()",
+        "PUBLIC(+) java.lang.String DEFAULT_GRPC_TLS_TRUSTSTORE_TYPE()",
+        "PUBLIC(+) boolean DEFAULT_GRPC_USE_PLAIN_TEXT()",
+        "PUBLIC(+) boolean DEFAULT_PROXY_ENABLED()",
+        "PUBLIC(+) boolean DEFAULT_SECURE_MODE()",
+        "PUBLIC(+) boolean DEFAULT_USE_HTTPS()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_PATH",
+        "PRIVATE(+) FINAL(+) java.lang.String DEFAULT_GRPC_TLS_KEYSTORE_TYPE",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_AUTH_TOKEN",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_PROXY_ENABLED",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_AUTH_HEADER",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_PASSWORD",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_TRUSTSTORE_PASSWORD",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_PATH",
+        "PRIVATE(+) FINAL(+) boolean DEFAULT_PROXY_ENABLED",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_KEYSTORE_PASSWORD",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_USE_HTTPS",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_PASSWORD",
+        "PRIVATE(+) FINAL(+) boolean DEFAULT_USE_HTTPS",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_KEYSTORE_PATH",
+        "PRIVATE(+) FINAL(+) boolean DEFAULT_GRPC_USE_PLAIN_TEXT",
+        "PRIVATE(+) FINAL(+) java.lang.String DEFAULT_GRPC_TLS_SSL_PROVIDER",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_TRUSTSTORE_PATH",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_TLS_KEYSTORE_TYPE",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_PORT",
+        "PRIVATE(+) FINAL(+) java.lang.String DEFAULT_GRPC_TLS_TRUSTSTORE_TYPE",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_SECURE_MODE",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_PROXY_URI",
+        "PRIVATE(+) FINAL(+) boolean DEFAULT_SECURE_MODE",
+        "PRIVATE(+) FINAL(+) int DEFAULT_GRPC_PORT",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_MAX_INBOUND_MESSAGE_SIZE",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_USE_PLAIN_TEXT",
+        "PRIVATE(+) FINAL(+) long DEFAULT_GRPC_MAX_INBOUND_MESSAGE_SIZE",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_TLS_SSL_PROVIDER",
+        "PRIVATE(+) FINAL(+) java.lang.String CONFIG_GRPC_TLS_TRUSTSTORE_TYPE"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.reader.PinotGrpcServerDataFetcher",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) STATIC(-) org.apache.pinot.connector.spark.common.reader.PinotGrpcServerDataFetcher apply(org.apache.pinot.connector.spark.common.partition.PinotSplit)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) STATIC(+) org.apache.pinot.connector.spark.common.reader.PinotGrpcServerDataFetcher apply(org.apache.pinot.connector.spark.common.partition.PinotSplit, org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)",
+        "PRIVATE(+) io.grpc.ManagedChannelBuilder<? extends io.grpc.ManagedChannelBuilder<? extends io.grpc.ManagedChannelBuilder>> baseChannelBuilder()",
+        "PRIVATE(+) java.lang.String channelHost()",
+        "PRIVATE(+) int channelPort()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int channelPort",
+        "PRIVATE(+) FINAL(+) java.lang.String channelHost",
+        "PRIVATE(+) FINAL(+) io.grpc.ManagedChannelBuilder<? extends io.grpc.ManagedChannelBuilder<? extends io.grpc.ManagedChannelBuilder>> baseChannelBuilder"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PinotGrpcServerDataFetcher(org.apache.pinot.connector.spark.common.partition.PinotSplit)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PinotGrpcServerDataFetcher(org.apache.pinot.connector.spark.common.partition.PinotSplit, org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.connector.spark.common.reader.PinotGrpcServerDataFetcher$",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) org.apache.pinot.connector.spark.common.reader.PinotGrpcServerDataFetcher apply(org.apache.pinot.connector.spark.common.partition.PinotSplit)"
+      ],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.connector.spark.common.reader.PinotGrpcServerDataFetcher apply(org.apache.pinot.connector.spark.common.partition.PinotSplit, org.apache.pinot.connector.spark.common.PinotDataSourceReadOptions)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
