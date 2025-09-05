@@ -1,0 +1,55 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/audit/AuditConfigManager.java",
+    "pinot-common/src/test/java/org/apache/pinot/common/audit/AuditConfigManagerTest.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/BaseControllerStarter.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/audit/AuditServiceBinder.java"
+  ],
+  "mergedAt": "2025-09-05T22:12:16Z",
+  "number": 16766,
+  "title": "[audit] Make audit config prefix component-specific (controller, broker, server)",
+  "url": "https://github.com/apache/pinot/pull/16766",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.common.audit.AuditConfigManager",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "STATIC(-) org.apache.pinot.common.audit.AuditConfig buildFromClusterConfig(java.util.Map<java.lang.String,java.lang.String>)",
+        "PRIVATE(-) STATIC(-) java.lang.Object mapPrefixedConfigToObject(java.util.Map<java.lang.String,java.lang.String>, java.lang.String, java.lang.Class<T>)"
+      ],
+      "addedMethods": [
+        "STATIC(+) org.apache.pinot.common.audit.AuditConfig buildFromClusterConfig(java.util.Map<java.lang.String,java.lang.String>, java.lang.String)",
+        "PRIVATE(+) STATIC(+) java.lang.String constructAuditConfigPrefix(org.apache.pinot.spi.services.ServiceRole)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.util.Map<org.apache.pinot.spi.services.ServiceRole,java.lang.String> SERVICE_ROLE_CONFIG_PREFIX_MAP",
+        "PRIVATE(+) FINAL(+) java.lang.String _configPrefix"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) AuditConfigManager()"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) AuditConfigManager(org.apache.pinot.spi.services.ServiceRole)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.api.audit.AuditServiceBinder",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.spi.services.ServiceRole _serviceRole"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) AuditServiceBinder(org.apache.pinot.common.config.DefaultClusterConfigChangeHandler)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) AuditServiceBinder(org.apache.pinot.common.config.DefaultClusterConfigChangeHandler, org.apache.pinot.spi.services.ServiceRole)"
+      ]
+    }
+  ]
+}
