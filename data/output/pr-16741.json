@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/TablesResource.java"
+  ],
+  "mergedAt": "2025-09-05T17:09:48Z",
+  "number": 16741,
+  "title": "Do not return UNHEALTHY status when Temporary ConcurrentModificationException from Kafka",
+  "url": "https://github.com/apache/pinot/pull/16741",
+  "jcmpClasses": []
+}
