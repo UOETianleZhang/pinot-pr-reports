@@ -1,0 +1,124 @@
+{
+  "files": [
+    "pinot-common/src/main/java/org/apache/pinot/common/config/provider/TableCache.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/api/resources/PinotQueryResourceStaticValidationTest.java",
+    "pinot-controller/src/test/java/org/apache/pinot/controller/helix/TableCacheTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/BaseClusterIntegrationTestSet.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/NullHandlingIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/OfflineClusterIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/SegmentPartitionLLCRealtimeClusterIntegrationTest.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/ImmutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/immutable/ImmutableSegmentLoader.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImpl.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/virtualcolumn/PartitionIdVirtualColumnProvider.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/virtualcolumn/VirtualColumnContext.java",
+    "pinot-segment-local/src/main/java/org/apache/pinot/segment/local/segment/virtualcolumn/VirtualColumnProviderFactory.java",
+    "pinot-segment-local/src/test/java/org/apache/pinot/segment/local/indexsegment/mutable/MutableSegmentImplRawMVTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/CommonConstants.java"
+  ],
+  "mergedAt": "2025-09-06T14:07:46Z",
+  "number": 16721,
+  "title": "Add $partitionId as a new virtual column",
+  "url": "https://github.com/apache/pinot/pull/16721",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.segment.local.segment.virtualcolumn.PartitionIdVirtualColumnProvider",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.reader.Dictionary buildDictionary(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.reader.ForwardIndexReader<?> buildForwardIndex(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.reader.InvertedIndexReader<?> buildInvertedIndex(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)",
+        "PUBLIC(+) org.apache.pinot.segment.spi.index.metadata.ColumnMetadataImpl buildMetadata(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)",
+        "PRIVATE(+) java.util.List<java.lang.String> getPartitionInfo(org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PartitionIdVirtualColumnProvider()"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.virtualcolumn.PartitionIdVirtualColumnProvider$MultiValueConstantForwardIndexReader",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) void close()",
+        "PUBLIC(+) int getDictIdMV(int, int[], org.apache.pinot.segment.spi.index.reader.ForwardIndexReaderContext)",
+        "PUBLIC(+) int[] getDictIdMV(int, org.apache.pinot.segment.spi.index.reader.ForwardIndexReaderContext)",
+        "PUBLIC(+) int getNumValuesMV(int, org.apache.pinot.segment.spi.index.reader.ForwardIndexReaderContext)",
+        "PUBLIC(+) org.apache.pinot.spi.data.FieldSpec$DataType getStoredType()",
+        "PUBLIC(+) boolean isDictionaryEncoded()",
+        "PUBLIC(+) boolean isSingleValue()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) int[] _dictIds",
+        "PRIVATE(+) FINAL(+) int _numValues"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PartitionIdVirtualColumnProvider$MultiValueConstantForwardIndexReader(int)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.virtualcolumn.PartitionIdVirtualColumnProvider$MultiValueConstantStringDictionary",
+      "type": "addition",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String get(int)",
+        "PUBLIC(+) java.math.BigDecimal getBigDecimalValue(int)",
+        "PUBLIC(+) double getDoubleValue(int)",
+        "PUBLIC(+) float getFloatValue(int)",
+        "PUBLIC(+) int getIntValue(int)",
+        "PUBLIC(+) long getLongValue(int)",
+        "PUBLIC(+) java.lang.String getStringValue(int)",
+        "PUBLIC(+) org.apache.pinot.spi.data.FieldSpec$DataType getValueType()",
+        "PUBLIC(+) int insertionIndexOf(java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _values",
+        "PRIVATE(+) FINAL(+) it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap<java.lang.String> _valueToIndexMap"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) PartitionIdVirtualColumnProvider$MultiValueConstantStringDictionary(java.util.List<java.lang.String>)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.segment.local.segment.virtualcolumn.VirtualColumnContext",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) org.apache.pinot.segment.spi.SegmentMetadata getSegmentMetadata()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) org.apache.pinot.segment.spi.SegmentMetadata _segmentMetadata"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": [
+        "PUBLIC(+) VirtualColumnContext(org.apache.pinot.spi.data.FieldSpec, int, org.apache.pinot.segment.spi.SegmentMetadata)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.CommonConstants$Segment$BuiltInVirtualColumn",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [
+        "PUBLIC(+) STATIC(+) FINAL(+) java.lang.String PARTITIONID"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
