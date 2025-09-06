@@ -1,0 +1,61 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotQueryResource.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/MultiStageEngineIntegrationTest.java"
+  ],
+  "mergedAt": "2025-09-06T03:58:40Z",
+  "number": 16746,
+  "title": "Add Multiple Query Requests field into validateMultiStageQuery API",
+  "url": "https://github.com/apache/pinot/pull/16746",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationRequest",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.util.List<java.lang.String> getSqls()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.util.List<java.lang.String> _sqls"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PinotQueryResource$MultiStageQueryValidationRequest(java.lang.String, java.util.List<org.apache.pinot.spi.config.table.TableConfig>, java.util.List<org.apache.pinot.spi.data.Schema>, java.util.List<org.apache.pinot.spi.data.LogicalTableConfig>, boolean)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PinotQueryResource$MultiStageQueryValidationRequest(java.lang.String, java.util.List<org.apache.pinot.spi.config.table.TableConfig>, java.util.List<org.apache.pinot.spi.data.Schema>, java.util.List<org.apache.pinot.spi.data.LogicalTableConfig>, java.util.List<java.lang.String>, boolean)"
+      ]
+    },
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotQueryResource$MultiStageQueryValidationResponse",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getSql()"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) FINAL(+) java.lang.String _sql"
+      ],
+      "removedConstructors": [
+        "PUBLIC(-) PinotQueryResource$MultiStageQueryValidationResponse(boolean, java.lang.String, org.apache.pinot.spi.exception.QueryErrorCode)"
+      ],
+      "addedConstructors": [
+        "PUBLIC(+) PinotQueryResource$MultiStageQueryValidationResponse(boolean, java.lang.String, org.apache.pinot.spi.exception.QueryErrorCode, java.lang.String)"
+      ]
+    }
+  ]
+}
