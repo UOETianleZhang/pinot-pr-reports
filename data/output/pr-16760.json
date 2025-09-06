@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-09-06T22:17:28Z",
+  "number": 16760,
+  "title": "Bump org.codehaus.mojo:versions-maven-plugin from 2.18.0 to 2.19.0",
+  "url": "https://github.com/apache/pinot/pull/16760",
+  "jcmpClasses": []
+}

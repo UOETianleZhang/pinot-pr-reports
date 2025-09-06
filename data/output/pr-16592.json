@@ -1,0 +1,12 @@
+{
+  "files": [
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/UpsertCompactMergeTaskIntegrationTest.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskExecutorTest.java",
+    "pinot-plugins/pinot-minion-tasks/pinot-minion-builtin-tasks/src/test/java/org/apache/pinot/plugin/minion/tasks/upsertcompactmerge/UpsertCompactMergeTaskGeneratorTest.java"
+  ],
+  "mergedAt": "2025-09-06T22:16:25Z",
+  "number": 16592,
+  "title": "Adding ITs and UTs for UpsertCompactMergeTask",
+  "url": "https://github.com/apache/pinot/pull/16592",
+  "jcmpClasses": []
+}
