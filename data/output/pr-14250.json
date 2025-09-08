@@ -1,0 +1,104 @@
+{
+  "files": [
+    "pinot-controller/src/main/java/org/apache/pinot/controller/api/resources/PinotSegmentRestletResource.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/util/ServerSegmentMetadataReader.java",
+    "pinot-controller/src/main/java/org/apache/pinot/controller/util/TableMetadataReader.java",
+    "pinot-integration-test-base/src/test/java/org/apache/pinot/integration/tests/BaseClusterIntegrationTest.java",
+    "pinot-integration-tests/src/test/java/org/apache/pinot/integration/tests/HybridClusterIntegrationTest.java",
+    "pinot-server/src/main/java/org/apache/pinot/server/api/resources/TablesResource.java",
+    "pinot-server/src/test/java/org/apache/pinot/server/api/TablesResourceTest.java",
+    "pinot-spi/src/main/java/org/apache/pinot/spi/utils/builder/ControllerRequestURLBuilder.java"
+  ],
+  "mergedAt": "2025-09-08T15:27:18Z",
+  "number": 14250,
+  "title": "Modify segment metadata call",
+  "url": "https://github.com/apache/pinot/pull/14250",
+  "jcmpClasses": [
+    {
+      "className": "org.apache.pinot.controller.api.resources.PinotSegmentRestletResource",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) com.fasterxml.jackson.databind.JsonNode getSegmentsMetadataFromServer(java.lang.String, java.util.List<java.lang.String>)",
+        "PUBLIC(-) java.lang.String getServerMetadata(java.lang.String, java.lang.String, java.util.List<java.lang.String>, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) com.fasterxml.jackson.databind.JsonNode getSegmentsMetadataFromServer(java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>)",
+        "PUBLIC(+) java.lang.String getServerMetadata(java.lang.String, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.util.ServerSegmentMetadataReader",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PRIVATE(-) java.lang.String generateColumnsParam(java.util.List<java.lang.String>)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String generateParam(java.lang.String, java.util.List<java.lang.String>)",
+        "PUBLIC(+) java.lang.String generateTableMetadataServerURL(java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, java.lang.String)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String COLUMNS_KEY",
+        "PRIVATE(+) STATIC(+) FINAL(+) java.lang.String SEGMENTS_KEY"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.controller.util.TableMetadataReader",
+      "type": "modification",
+      "compatible": false,
+      "removedMethods": [
+        "PUBLIC(-) com.fasterxml.jackson.databind.JsonNode getSegmentsMetadata(java.lang.String, java.util.List<java.lang.String>, java.util.Set<java.lang.String>, int)",
+        "PUBLIC(-) com.fasterxml.jackson.databind.JsonNode getSegmentsMetadata(java.lang.String, java.util.List<java.lang.String>, int)",
+        "PRIVATE(-) com.fasterxml.jackson.databind.JsonNode getSegmentsMetadataInternal(java.lang.String, java.util.List<java.lang.String>, java.util.Set<java.lang.String>, int)"
+      ],
+      "addedMethods": [
+        "PRIVATE(+) java.util.List<java.lang.String> buildSegmentLevelUrls(java.util.Map<java.lang.String,java.util.List<java.lang.String>>, com.google.common.collect.BiMap<java.lang.String,java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, org.apache.pinot.controller.util.ServerSegmentMetadataReader)",
+        "PRIVATE(+) java.util.List<java.lang.String> buildTableLevelUrls(java.util.Map<java.lang.String,java.util.List<java.lang.String>>, com.google.common.collect.BiMap<java.lang.String,java.lang.String>, java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, org.apache.pinot.controller.util.ServerSegmentMetadataReader)",
+        "PRIVATE(+) com.fasterxml.jackson.databind.JsonNode fetchAndAggregateMetadata(java.util.List<java.lang.String>, com.google.common.collect.BiMap<java.lang.String,java.lang.String>, boolean, java.lang.String, int)",
+        "PUBLIC(+) com.fasterxml.jackson.databind.JsonNode getSegmentsMetadata(java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, int)",
+        "PRIVATE(+) com.fasterxml.jackson.databind.JsonNode getSegmentsMetadataInternal(java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, int)"
+      ],
+      "removedFields": [],
+      "addedFields": [
+        "PRIVATE(+) STATIC(+) FINAL(+) org.slf4j.Logger log"
+      ],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.server.api.resources.TablesResource",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PUBLIC(+) java.lang.String getSegmentsMetadata(java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>, javax.ws.rs.core.HttpHeaders)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    },
+    {
+      "className": "org.apache.pinot.spi.utils.builder.ControllerRequestURLBuilder",
+      "type": "modification",
+      "compatible": true,
+      "removedMethods": [],
+      "addedMethods": [
+        "PRIVATE(+) java.lang.String constructQueryParametersString(java.util.Map<java.lang.String,java.util.List<java.lang.String>>)",
+        "PUBLIC(+) java.lang.String forSegmentsMetadataFromServer(java.lang.String, java.util.List<java.lang.String>, java.util.List<java.lang.String>)"
+      ],
+      "removedFields": [],
+      "addedFields": [],
+      "removedConstructors": [],
+      "addedConstructors": []
+    }
+  ]
+}
