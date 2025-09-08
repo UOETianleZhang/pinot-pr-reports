@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-09-08T06:33:56Z",
+  "number": 16761,
+  "title": "Bump io.github.hakky54:sslcontext-kickstart-bom from 9.1.0 to 9.2.1",
+  "url": "https://github.com/apache/pinot/pull/16761",
+  "jcmpClasses": []
+}

@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-09-08T06:34:19Z",
+  "number": 16754,
+  "title": "Bump com.azure:azure-sdk-bom from 1.2.37 to 1.2.38",
+  "url": "https://github.com/apache/pinot/pull/16754",
+  "jcmpClasses": []
+}
