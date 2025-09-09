@@ -1,0 +1,10 @@
+{
+  "files": [
+    "pom.xml"
+  ],
+  "mergedAt": "2025-09-09T13:34:17Z",
+  "number": 16771,
+  "title": "Bump org.asynchttpclient:async-http-client from 3.0.2 to 3.0.3",
+  "url": "https://github.com/apache/pinot/pull/16771",
+  "jcmpClasses": []
+}
